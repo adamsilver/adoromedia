@@ -28,7 +28,7 @@ Adoro.DropDownMenu = function(ul, options) {
 	if(!ul) return;
 	var IE6 = ($.browser.msie && parseInt($.browser.version) <=6);
 	var config = {delay: 10};
-	var iframe = (function(){
+	/*var iframe = (function(){
 		iframe = null;
 		if (IE6) {
 			iframe = document.createElement("iframe");
@@ -38,7 +38,7 @@ Adoro.DropDownMenu = function(ul, options) {
 			$(iframe).css({height: "1px",position: "absolute",top: "0px",left: "0px",width: "200px",filter: "alpha(opacity=0)",	display: "none",border: "0px"});
 		}
 		return iframe;
-	}());
+	}());*/
 	
 	var links = $(ul).find("a"), link, subMenu, parentLi, menuActivator, menuActivatorSubMenu;
 	for(var i=links.length-1; i>=0;i--) {
@@ -50,6 +50,7 @@ Adoro.DropDownMenu = function(ul, options) {
 		
 		if(subMenu) {
 			link.subMenu = subMenu;
+			$(link.subMenu).bgiframe();
 			$(link).bind("mouseenter", showSubMenu);
 		}
 		
@@ -72,21 +73,21 @@ Adoro.DropDownMenu = function(ul, options) {
 			zIndex: 10
 		});
 		
-		if(this.iframe !== null) {
+		/*if(this.iframe !== null) {
 			$(this.iframe).css({
 				left: this.offsetLeft-1+"px",
 				top: this.offsetTop+this.offsetHeight+"px",
 				zIndex: 9,
 				height: this.subMenu.offsetHeight+"px"
 			});
-		}
+		}*/
 	}
 	
 	function hideSubMenu() {
 		$(this.subMenu).css({"left": "-999999em"});
-		if(this.iframe !== null) {
+		/*if(this.iframe !== null) {
 			$(this.iframe).css({"left": "-999999em"});
-		}	
+		}*/
 	}	
 
 }
