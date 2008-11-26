@@ -13,6 +13,7 @@
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/dropdownmenu.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->		
+		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DropDownMenu.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
