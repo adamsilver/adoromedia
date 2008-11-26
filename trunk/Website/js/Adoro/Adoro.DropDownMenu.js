@@ -50,7 +50,7 @@ Adoro.DropDownMenu = function(ul, options) {
 		
 		if(subMenu) {
 			link.subMenu = subMenu;
-			$(link.subMenu).bgiframe();
+			//$(link.subMenu).bgiframe();
 			$(link).bind("mouseenter", showSubMenu);
 		}
 		
