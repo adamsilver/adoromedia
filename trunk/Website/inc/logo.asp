@@ -1,0 +1,1 @@
+<a id="logo" href="<%=Adoro.URL%>default.asp"><img src="<%=Adoro.URL%>img/logo_new.gif" alt="Home page"/></a>

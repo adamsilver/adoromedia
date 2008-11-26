@@ -1,0 +1,57 @@
+div#container,
+div.faux,
+div#primaryNavigation,
+div#primaryNavigation ul,
+div#primaryNavigation ul li,
+div#footer,
+div.field,
+div.action,
+div#content div.tabset ul.tabNavigation,
+div.field div.checkboxes div.input, 
+div.field div.radios div.input,
+div.accordian1,
+div.accordian2,
+div.carousel,
+div#lightBox div.header,
+div#myLightBox div.login,
+ul.generic,
+ul.projects,
+ul.generic li {
+	height: 1%;
+}
+
+div#controls, {
+	display: inline;
+}
+
+div#primaryNavigation ul li a {
+	float: left;
+	width: 199px;
+}
+
+div.tabset ul.tabNavigation li a {
+	float: left;
+}
+
+div.tabset ul.tabNavigation li a.selected {
+	background-color: #344148 !important;
+}
+
+div.field div.radios div.input label,
+div.field div.checkboxes div.input label {
+	margin-top: 3px;
+}
+
+div.carousel {
+	width: 678px;
+}
+
+div.tabset div.tab {
+	height: 200px;
+}
+
+div#primaryNavigation ul li a.selected {
+	background-color: #1D2B33 !important;
+	color: #ffffff !important;
+	border-bottom: 4px solid #898F2C !important;	
+}

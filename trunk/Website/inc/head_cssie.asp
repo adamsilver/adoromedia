@@ -1,0 +1,2 @@
+<!--[if IE 7]><link rel="stylesheet" href="<%=Adoro.URL%>css/ie7-patch.css" type="text/css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="<%=Adoro.URL%>css/ie6-patch.css" type="text/css" /><![endif]-->	

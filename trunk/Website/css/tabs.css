@@ -1,0 +1,44 @@
+div.tabset {
+	margin-bottom: 10px;
+}
+
+div#content div.tabset ul.tabNavigation {
+	list-style: none;
+	overflow: hidden;
+}
+
+div#content div.tabset ul.tabNavigation li {
+	float: left;
+	list-style: none;
+	margin-right: 1px;
+	margin-bottom: 0px;
+	font-size: 1.2em;
+}
+
+div.tabset ul.tabNavigation li a,
+div.tabset ul.tabNavigation li a:visited,
+div.tabset ul.tabNavigation li a:link {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	background-color: #f5f5f5;
+}
+
+div.tabset ul.tabNavigation li a.selected,
+div.tabset ul.tabNavigation li a:hover,
+div.tabset ul.tabNavigation li a:active {
+	background-color: #344148;
+	color: #ffffff;
+}
+
+div.tabset div.unselected {
+	display: none;
+}
+
+div.tabset div.tab {
+	min-height: 200px;
+	background-color: #344148;
+	font-size: 1.6em;
+	color: #ffffff;
+	padding: 10px;
+}
