@@ -1,0 +1,21 @@
+div#collapseMe {
+	border: 1px solid #ffffff;
+}
+
+div#collapseMe a.activator {
+	padding: 10px;
+	display: block;
+	font-size: 1.2em;
+	background-color: #989D44;
+	color: #ffffff;
+}
+
+div#collapseMe div.panel div {
+	padding: 20px;
+	background-color:#EFF2E6;
+	font-size: 1.2em;
+}
+
+div.hiddenView a.toggle {
+	background-color: #7B7F37 !important;
+}

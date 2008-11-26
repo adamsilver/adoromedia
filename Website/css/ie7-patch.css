@@ -1,0 +1,24 @@
+/********************************************************
+* hasLayout
+********************************************************/
+
+div#container,
+div.faux,
+div#primaryNavigation,
+div#primaryNavigation ul,
+div#footer,
+div.field,
+div.action,
+div#lightBox div.header,
+div#myLightBox div.login {
+	zoom: 1;
+}
+
+/********************************************************
+* Forms
+********************************************************/
+
+div.field div.checkboxes div.input label, 
+div.field div.radios div.input label {
+	margin-top: 3px;
+}

@@ -1,0 +1,47 @@
+var form = new( function() {
+	var performValidation = function() {
+		this.details.method.call(this.details.field, this.details.params);
+	}
+	
+	var validator = function(o) {
+		this.details = o;
+	}
+	
+	var validators = function() {
+		var validators = [];
+		this.add = function(o) {
+			validators.push(o);
+			o.added = true;
+			return this;
+		}
+		this.remove = function() {
+			return this;
+		}
+		this.validate = function() {
+			for (i=0; i<validators.length; i++)
+				performValidation.call(validators[i]);
+		}
+	}
+	
+	var getFormConfig = function(options) {
+		return {
+			errorClass: options.errorClass || "error",
+			errorSummaryID: options.errorSummaryID || "errorMessage",
+			hideClass: options.hideClass || "hide",
+			errorSpanClass: options.errorSpanClass || "errorText"
+		};
+	}
+	
+	var form = function(formNode, options) {
+		options = getFormConfig(options);
+		this.validators = new validators();
+		var me = this;
+		formNode.addEvent("submit", function() {me.validate();});
+	}
+	form.prototype.validator = validator;
+	form.prototype.validate = function() {
+		form.validators.validate.call(this);
+	}
+	
+	return form;
+});

@@ -1,0 +1,40 @@
+var myForm = new form();
+
+var val1 = new form.validator();
+var val2 = new form.validator();
+
+form.validators.add(val1).add(val2);
+
+form.valdators.add({ 
+	field: "name/id/ref", 
+	validators: [ {
+		method: function(obj) {
+			//do something
+		},
+		message: "",
+		params: {
+			minLength: 2
+		}
+	}]
+}).add()
+	
+form.validators.remove( val1 );
+
+form.validators.remove( 
+	{ field: "name/id/ref", validators: [ {
+			method: function() {
+			
+			}
+		]
+	}
+).remove()	
+
+	
+	
+function add(o) {
+	if (o instanceof form.validator) {
+		validatorsArray.push(o);
+	} else if (typeof o === typeof {}) {
+		validatorsArray.push( new form.validator(o) );
+	}
+}

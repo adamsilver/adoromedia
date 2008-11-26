@@ -1,0 +1,245 @@
+/*******************************************************************
+* Global
+*******************************************************************/
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4D595F;
+}
+
+textarea {
+	font: inherit;
+}
+
+a,
+a:link,
+a:visited {
+	color: #1D2B33;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus
+a:active {
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+abbr {
+	
+}
+
+a abbr {
+	border: none;
+}
+
+.hide {
+	display: none;
+}
+
+/*******************************************************************
+* Clearfix
+*******************************************************************/
+
+.clearfix,
+div.faux {
+	display:block;
+}
+
+.clearfix:after,
+div.faux:after  {
+	clear:both;
+	content:".";
+	display:block;
+	height:0px;
+	visibility:hidden;
+}
+
+/*******************************************************************
+* Main structure
+*******************************************************************/
+
+a#logo {
+	display: block;
+	border-bottom: 1px solid #f5f5f5;
+	margin-bottom: 20px;
+}
+
+a#logo img {
+	display: block;
+}
+
+div#container {
+	border-top: 10px solid #898F2C;
+	padding-left: 40px;
+
+}
+
+div.faux {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: url(../img/bg.gif) repeat-y 270px 0px;	
+}
+
+div#controls {
+	float: left;
+	width: 240px;
+	padding-top: 20px;
+	margin-right: 58px;
+}
+
+div#content {
+	float: left;
+	width: 600px;
+	padding-top: 26px;
+}
+
+div#footer {
+	background-color: #1D2B33;
+	padding: 20px 40px 15px 40px;
+}
+
+div#footer p {
+	font-size: 1.1em;
+	color: #ffffff;
+	margin-bottom: 5px;
+}
+
+div#footer a {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/*******************************************************************
+* Primary navigation
+*******************************************************************/
+
+div#primaryNavigation {
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 20px;
+}
+
+div#primaryNavigation ul {
+	list-style: none;
+}
+
+div#primaryNavigation ul li {
+	display: block;
+	font-size: 1.2em;
+	margin-bottom: 3px;
+	margin-left: 25px;
+}
+
+div#primaryNavigation ul li a,
+div#primaryNavigation ul li a:link, 
+div#primaryNavigation ul li a:visited {
+	display: block;
+	background-color: #f9f9f9;
+	padding: 4px 8px;
+	text-decoration: none;
+	border-bottom: 4px solid #f3f3f3;
+	font-weight: bold;
+}
+
+div#primaryNavigation ul li a:hover,
+div#primaryNavigation ul li a:focus, 
+div#primaryNavigation ul li a:active,
+div#primaryNavigation ul li a.selected {
+	background-color: #1D2B33;
+	color: #ffffff;
+	border-bottom: 4px solid #898F2C;
+}
+
+/*******************************************************************
+* Headings
+*******************************************************************/
+
+h1 {
+	font-size: 3em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-bottom: 15px;
+	color: #898F2C;
+	text-transform: uppercase;
+	border-bottom: 1px solid #f5f5f5;
+	padding-bottom: 4px;
+}
+
+h2 {
+	font-size: 2em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-bottom: 15px;
+	color: #67777F;
+}
+
+p {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+ul.generic {
+	list-style: square;
+	margin-bottom: 10px;
+}
+
+ul.generic li {
+	margin-left: 30px;
+	font-size: 1.2em;
+}
+
+ul.generic li ul {
+	list-style: disc;
+	margin-left: 30px;
+}
+
+ul.generic li ul li {
+	font-size: 1em;
+}
+
+/*******************************************************************
+* Projects
+*******************************************************************/
+
+ul.projects {
+	overflow: hidden;
+	list-style: none;
+}
+
+ul.projects li {
+	float: left;
+	width: 180px;
+	margin-right: 15px;
+	margin-bottom: 5px;
+	font-size: 1.2em;
+}
+
+ul.projects li a,
+ul.projects li a:link,
+ul.projects li a:visited {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+ul.projects li a:hover,
+ul.projects li a:focus,
+ul.projects li a:active {
+	background-color: #1D2B33;
+	color: #ffffff;
+}
+
+ul.projects li h2 {
+	font-size: 1.3em;
+	margin-bottom: 0px;	
+}
+
+ul.projects li p {
+	font-size: 1em;
+}

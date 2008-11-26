@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="<$BlogLanguageDirection$>">
+	<head>
+		<title><$BlogPageTitle$></title>
+		<$BlogMetaData$>
+		<link rel="stylesheet" href="http://www.adoromedia.com/css/default.css" type="text/css" />
+		<link rel="shortcut icon" href="http://www.adoromedia.com/img/favicon.ico" type="image/x-icon" />
+		<!--[if IE 7]><link rel="stylesheet" href="http://www.adoromedia.com/css/ie7-patch.css" type="text/css" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="http://www.adoromedia.com/css/ie6-patch.css" type="text/css" /><![endif]-->
+	</head>
+	<body id="blog">
+		<div id="container">
+			<div id="header">
+				<div id="logo">
+					<a href="default.asp"><img src="http://www.adoromedia.com/img/logo.gif" alt="Adoro Media Limited" /></a>
+				</div>
+				<div id="primaryNavigation">
+					<ul>
+						<li class="home"><a href="http://www.adoromedia.com/default.asp">Home</a></li>
+						<li class="services"><a href="http://www.adoromedia.com/services.asp">Services</a></li>
+						<li class="portfolio"><a href="http://www.adoromedia.com/portfolio.asp">Portfolio</a></li>
+						<li class="blog"><a href="http://www.adoromedia.com/blog/index.html">Blog</a></li>
+						<li class="contact"><a href="http://www.adoromedia.com/contact.asp">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="content">
+				<h1><ItemPage><a href="<$BlogURL$>"></ItemPage><$BlogTitle$><ItemPage></a></ItemPage></h1>
+				<div id="mainContent">
+					
+					<p id="description"><$BlogDescription$></p>
+					
+					<Blogger>
+						<BlogDateHeader><h2 class="date-header"><$BlogDateHeaderDate$></h2></BlogDateHeader>
+						<div class="post">
+							<a name="<$BlogItemNumber$>"></a>
+							<BlogItemTitle>
+								<h3 class="post-title">
+									<BlogItemUrl><a href="<$BlogItemUrl$>" title="external link"></BlogItemUrl>
+										<$BlogItemTitle$>
+									<BlogItemUrl></a></BlogItemUrl>
+								</h3>
+							</BlogItemTitle>
+							<div class="post-body">
+								<div>
+									<$BlogItemBody$>
+								</div>
+							</div>
+							
+							<p class="post-footer">
+								<em><$I18NPostedByAuthorNickname$> <$I18NAtTimeWithPermalink$></em>
+								<MainOrArchivePage><BlogItemCommentsEnabled>
+								<a class="comment-link" href="<$BlogItemCommentCreate$>"<$BlogItemCommentFormOnclick$>><span style="text-transform:lowercase"><$I18NNumComments$></span></a>
+								</BlogItemCommentsEnabled><BlogItemBacklinksEnabled>
+								<a class="comment-link" href="<$BlogItemPermalinkUrl$>#links"><span style="text-transform:lowercase"><$I18NLinksToThisPost$></span></a>
+								</BlogItemBacklinksEnabled>
+								</MainOrArchivePage>
+								<$BlogItemControl$>
+							</p>
+						</div>
+						<!-- Begin #comments -->
+						<ItemPage>
+							<div id="comments">
+								<BlogItemCommentsEnabled>
+									<a name="comments"></a>
+									<h4><$I18NNumComments$>:</h4>
+									<dl id="comments-block">
+										<$CommentPager$>
+										<BlogItemComments>
+											<dt class="comment-poster" id="<$BlogCommentAnchorName$>">
+												<a name="<$BlogCommentAnchorName$>"></a>
+												<$I18NCommentAuthorSaid$>
+											</dt>
+											<dd class="comment-body">
+												<p><$BlogCommentBody$></p>
+											</dd>
+											<dd class="comment-timestamp">
+												<a href="<$BlogCommentPermalinkURL$>" title="comment permalink"><$BlogCommentDateTime$></a>
+												<$BlogCommentDeleteIcon$>
+											</dd>
+										</BlogItemComments>
+								    	<$CommentPager$>
+						    		</dl>
+									<p class="comment-timestamp"><$BlogItemCreate$></p>
+									<p id="postfeeds"><$BlogItemFeedLinks$></p>
+								</BlogItemCommentsEnabled>
+								<BlogItemBacklinksEnabled>
+									<a name="links"></a>
+									<h4><$I18NLinksToThisPost$>:</h4>
+									<dl id="comments-block">
+										<BlogItemBacklinks>
+											<dt class="comment-title">
+						        				<$BlogBacklinkControl$>
+						       					<a href="<$BlogBacklinkURL$>" rel="nofollow"><$BlogBacklinkTitle$></a> 
+												<$BlogBacklinkDeleteIcon$>
+											</dt>
+											<dd class="comment-body">
+												<$BlogBacklinkSnippet$><br />
+												<span class="comment-poster">
+													<em><$I18NPostedByBacklinkAuthor$> @ <$BlogBacklinkDateTime$></em>
+												</span>
+											</dd>
+										</BlogItemBacklinks>
+									</dl>
+									<p class="comment-timestamp"><$BlogItemBacklinkCreate$></p>
+								</BlogItemBacklinksEnabled>
+								<p class="comment-timestamp"><a href="<$BlogURL$>">&lt;&lt; <$I18NHome$></a></p>
+							</div>
+						</ItemPage>
+					</Blogger>
+				</div>
+				<div id="subContent">
+					<!-- Begin #profile-container -->
+					<$BlogMemberProfile$>
+					<!-- End #profile -->
+					
+					<MainOrArchivePage>
+						<div id="blogLinks">
+							<h2 class="sidebar-title"><$I18NLinks$></h2>
+							<ul>
+								<li><a href="http://news.google.com/">Google News</a></li>
+							</ul>
+						</div>
+					</MainOrArchivePage>
+
+					<h2 class="sidebar-title"><$I18NPreviousPosts$></h2>
+					<ul id="recently">
+						<BloggerPreviousItems>
+							<li><a href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a></li>
+						</BloggerPreviousItems>
+					</ul>
+				
+					<MainOrArchivePage>
+						<h2 class="sidebar-title"><$I18NArchives$></h2>
+						<ul class="archive-list">
+							<BloggerArchives>
+								<li><a href="<$BlogArchiveURL$>"><$BlogArchiveName$></a></li>
+							</BloggerArchives>
+						</ul>
+					</MainOrArchivePage>
+					
+					<p id="powered-by"><a href="http://www.blogger.com"><img src="http://buttons.blogger.com/bloggerbutton1.gif" alt="Powered by Blogger" /></a></p>
+					<p id="blogfeeds"><$BlogFeedsVertical$></p>
+				</div>
+			</div>
+			<div id="footer">
+				<p>&copy; Copyright 2008 Adoro Media Limited. All rights reserved.</p>
+			</div>
+		</div>
+	</body>
+</html>
