@@ -87,7 +87,8 @@
 								</ul>
 							</li>
 						</ul>
-					</div>								
+					</div>
+					<select><option>1</option></select>						
 									
 				</div>
 			</div>
