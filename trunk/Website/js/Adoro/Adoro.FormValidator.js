@@ -42,7 +42,15 @@ Adoro.FormValidator = function(form, options) {
 		errorClass: "error", 
 		errorSummaryID: "errorMessage",
 		hideClass: "hide", 
-		errorSpanClass: "errorText" 
+		errorSpanClass: "errorText",
+		errorSummaryHeaderSingleErrorBeforeHTML: "<h3>The form has ",
+		errorSummaryHeaderSingleErrorAfterHTML: " error. Please check.</h3>",
+		errorSummaryHeaderMultiErrorBeforeHTML: "<h3>The form has ",
+		errorSummaryHeaderMultiErrorAfterHTML: " errors. Please check.</h3>",
+		errorTitleSingleErrorBeforeHTML: "The form has ",
+		errorTitleSingleErrorAfterHTML: " error. Please check. ",
+		errorTitleMultiErrorBeforeHTML: "The form has ",
+		errorTitleMultiErrorAfterHTML: " errors. Please check. "
 	};
 	
 	if (typeof options === "object") {
@@ -375,7 +383,12 @@ Adoro.FormValidator = function(form, options) {
 	}
 	
 	function showErrorTitle() {
-		document.title = 'The form has '+ errors.length + ' error(s). Please check. ' + docTitle;
+		if(errors.length === 1) {
+			document.title = config.errorTitleSingleErrorBeforeHTML + errors.length + config.errorTitleSingleErrorAfterHTML + docTitle;
+		}
+		else {
+			document.title = config.errorTitleMultiErrorBeforeHTML + errors.length + config.errorTitleMultiErrorAfterHTML + docTitle;
+		}
 	}
 	
 	/**
@@ -385,10 +398,16 @@ Adoro.FormValidator = function(form, options) {
 	 */
 	function showErrorSummary() {
 		if(errorSummary === null) return;
+		var length = errors.length;
 		var html = 	'';
-		html += '<h3>The form has '+ errors.length + ' error(s). Please check.</h3>';
+		if(length === 1) {
+			html += config.errorSummaryHeaderSingleErrorBeforeHTML + errors.length + config.errorSummaryHeaderSingleErrorAfterHTML;
+		}
+		else {
+			html += config.errorSummaryHeaderMultiErrorBeforeHTML + errors.length + config.errorSummaryHeaderMultiErrorAfterHTML;
+		}
 		html +=	'<ul>';
-		for(var i = 0; i < errors.length; i++) {
+		for(var i = 0; i < length; i++) {
 			html +=	'<li><a href="#'+ errors[i].id + '">'+ errors[i].message +'</a></li>';
 		}
 		html +=	'</ul>';
