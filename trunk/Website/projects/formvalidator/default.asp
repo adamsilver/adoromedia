@@ -127,6 +127,7 @@
 										<label for="year01">Year <%devForm.writeErrorSpan(["year01"])%></label>
 										<input type="text" class="text" name="year01" id="year01" value="<%=Request.Form("year01")%>" />
 									</div>
+									<input class="submit" type="submit" name="contextualSubmitButton" id="contextualSubmitButton" value="Validate dates only" />
 								</div>
 								<div class="contextualHelpType2">
 									<p>This is contextual help after the form element(s).</p>
@@ -264,7 +265,7 @@
 								<input class="reset" type="reset" name="resetButton" id="resetButton" value="Clear" />
 								
 								<input class="submit" type="submit" name="submitButton" id="submitButton" value="Submit" />
-								<input class="submit" type="submit" name="contextualSubmitButton" id="contextualSubmitButton" value="Contextual Submit" />
+								
 							</div>
 						</div>												
 					</form>
