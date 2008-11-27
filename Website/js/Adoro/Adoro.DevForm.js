@@ -37,7 +37,7 @@ $(document).ready(function(){
 			message: "You must choose a friend."
 		}]);	
 		
-		form.addGroup("contextualSubmitButton", ["fullName", "day01"]);
+		form.addGroup("contextualSubmitButton", ["day01", "month01", "year01"]);
 		
 		form.setMessage("fullName", "notEmpty", "blah");
 		
