@@ -1,0 +1,12 @@
+div#blogPrimaryPanel {
+	
+}
+
+div#blogSidePanel {
+	padding-left: 25px;
+	border-bottom:1px solid #F5F5F5;
+}
+
+div#blogSidePanel h2 {
+	font-size: 1.3em;
+}

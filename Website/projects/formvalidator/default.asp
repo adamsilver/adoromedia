@@ -45,8 +45,8 @@
 					
 					<h3>Collaboration</h3>
 					<ul class="generic">
-						<li>In collaboration with the <a href="http://www.rnib.org.uk"><abbr title="Royal National Institute of the Blind">RNIB</abbr></a> for high accessibility.</li>
-						<li>Some guidance taken from <a href="http://www.webaim.org/techniques/formvalidation/">WebAIM</a></li>
+						<li>Adoro worked with the <a href="http://www.rnib.org.uk"><abbr title="Royal National Institute of the Blind">RNIB</abbr></a> to ensure high accessiblity and usability standards.</li>
+						<li>Guidance taken from <a href="http://www.webaim.org/techniques/formvalidation/">WebAIM</a></li>
 					</ul>
 					
 					<h3>Features</h3>
@@ -55,10 +55,12 @@
 						pattern matching, value tests, dependency matching, cross field validation, field matching.</li>
 						<li>Can have contextual submits (advise heaviliy against this (see above), but functionality is provided)</li>
 						<li>Extremely accessible using labels and legends to give the user contextual information about an error</li>
+						<li>The form can be validated with the keyboard and with a screen reader with ease.</li>
 						<li>The document title is updated as well as the error summary display to inform the user of errors.</li>
 						<li>Integrates with server side errors seamlessly</li>
 						<li>Adding a validator is 1 line of code.</li>
 						<li>Can create as many custom validators as you wish.</li>
+						<li>When there is an error, the field indicator and / or input element can be highlighted with css using the error class.</li>
 					</ul>					
 					
 					<h3>Other information</h3>
