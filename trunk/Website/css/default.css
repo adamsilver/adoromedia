@@ -216,6 +216,14 @@ ul.generic li ul li {
 	font-size: 1em;
 }
 
+ul.generic li ol {
+	margin-left: 30px;
+}
+
+ul.generic li ol li {
+	font-size: 1em;
+}
+
 /*******************************************************************
 * Projects
 *******************************************************************/
