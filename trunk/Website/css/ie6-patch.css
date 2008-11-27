@@ -16,7 +16,9 @@ div#lightBox div.header,
 div#myLightBox div.login,
 ul.generic,
 ul.projects,
-ul.generic li {
+ul.generic li,
+div#dropDownMenu,
+div#dropDownMenu ul li ul li {
 	height: 1%;
 }
 
