@@ -62,8 +62,9 @@ $(document).ready(function(){
 			o = document.createElement("div");
 			o.id = "lightBox";
 			document.body.appendChild(o);
+			$(o).bgiframe();
 			return o;
-		}());	
+		}());
 		
 		if(IE6 || FF2) {
 			$(window).resize(fixOverlay);

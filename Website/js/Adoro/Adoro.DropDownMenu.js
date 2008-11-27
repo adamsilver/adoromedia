@@ -26,12 +26,9 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
 Adoro.DropDownMenu = function(ul, options) {
 	var ul = ul || null;
 	if(!ul) return;
-	var IE6 = ($.browser.msie && parseInt($.browser.version) <=6);
 
 	// TO DO
 		// set config to change events handling for onlick etc
-
-
 
 	var links = $(ul).find("a"), link, subMenu, parentLi, menuActivator, menuActivatorSubMenu;
 	for(var i=links.length-1; i>=0;i--) {
