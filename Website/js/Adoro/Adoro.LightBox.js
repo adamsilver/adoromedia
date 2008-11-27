@@ -80,13 +80,6 @@ $(document).ready(function(){
 		*/			
 		function showOverlay() {
 			if(state.showingOverlay) return;
-			if (IE6) {
-				setSelectsVisibilityStyle(false);
-				fixOverlay();
-			}
-			if (IE7 || IE6) {
-				setFlashVisibilityStyle(false);
-			}
 			
 			if(config.animateOverlay) {
 				$(overlay).fadeIn();
@@ -94,7 +87,6 @@ $(document).ready(function(){
 			else {
 				$(overlay).css("display", "block");
 			}
-			
 			state.showingOverlay = true;
 		}
 
@@ -107,13 +99,6 @@ $(document).ready(function(){
 		*/			
 		function hideOverlay(){
 			if (!state.showingOverlay) return;
-			if (IE6) {
-				setSelectsVisibilityStyle(true);
-			}
-			if (IE7 || IE6) {
-				setFlashVisibilityStyle(true);
-			}
-			
 			if(config.animateOverlay) {
 				$(overlay).fadeOut();
 			}
@@ -204,29 +189,7 @@ $(document).ready(function(){
 				hideOverlay();
 				return false;
 			});
-		}
-		
-		/**
-		 * toggle <select> visibility to fix IE6 select zIndex issue
-		 * @function
-		 * @private
-		 * @param {Boolean} toVisible Visible when true otherwise hidden
-		 */
-		function setSelectsVisibilityStyle(toVisible) {
-			var visibility = toVisible ? "visible" : "hidden";
-			$("select").css({visibility: visibility});		
-		}
-		
-		/**
-		 * toggle <embed> or <object> visibility to fix IE6/IE7 zIndex issue
-		 * @function
-		 * @private
-		 * @param {Boolean} toVisible Visible when true otherwise hidden
-		 */
-		function setFlashVisibilityStyle(toVisible) {
-			var visibility = toVisible ? "visible" : "hidden";
-			$("embed, object").css({visibility: visibility});
-		}			
+		}		
 		
 		/**
 		 * Fixes overlay by setting coordinates and dimensions
