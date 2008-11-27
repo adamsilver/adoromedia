@@ -8,6 +8,9 @@ $(document).ready(function(){
 		form.addValidator("fullName",[{
 			method: Adoro.FormRules.notEmpty,
 			message: "Full name is required."
+		}]).addValidator("age",[{
+			method: Adoro.FormRules.notEmpty,
+			message: "You must fill in your age."
 		}]).addValidator("terms",[{
 			method: Adoro.FormRules.minChecked, 
 			params: {
@@ -17,6 +20,12 @@ $(document).ready(function(){
 		}]).addValidator("day01",[{
 			method: Adoro.FormRules.notEmpty,
 			message: "Day 1 is required."
+		}]).addValidator("month01",[{
+			method: Adoro.FormRules.notEmpty,
+			message: "Month 1 is required."
+		}]).addValidator("year01",[{
+			method: Adoro.FormRules.notEmpty,
+			message: "Year 1 is required."
 		}]).addValidator("searchEngine",[{
 			method: Adoro.FormRules.minChecked,
 			params: {
@@ -26,6 +35,12 @@ $(document).ready(function(){
 		}]).addValidator("day02",[{
 			method: Adoro.FormRules.notEmpty,
 			message: "You must fill in day 02."
+		}]).addValidator("month02",[{
+			method: Adoro.FormRules.notEmpty,
+			message: "You must fill in month 02."
+		}]).addValidator("year02",[{
+			method: Adoro.FormRules.notEmpty,
+			message: "You must fill in year 02."
 		}]).addValidator("gender",[{
 			method: Adoro.FormRules.minChecked, 
 			params: {

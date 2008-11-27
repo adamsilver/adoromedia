@@ -9,7 +9,7 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Form validator, JavaScript user interface component library, Adoro Media Ltd</title>
+		<title>Form validator framework, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
@@ -66,7 +66,7 @@
 					
 					<% devForm.showErrors(); %>
 											
-					<form action="formvalidation.asp" method="post" id="devForm">
+					<form action="default.asp" method="post" id="devForm">
 						<div class="form">
 							<!--Single input-->
 							<div class="field <%devForm.writeErrorClass(["fullName"])%>">

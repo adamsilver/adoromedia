@@ -60,7 +60,22 @@ Adoro.FormValidator = function(form, options) {
 		config.errorSpanClass = (typeof options.errorSpanClass === "string") ? options.errorSpanClass: config.errorSpanClass;
 	}
 	
-	form.onsubmit = validate;
+	$(form).bind("submit", function(e){
+		return validate.call(form);
+	});
+	
+	// yuck contextual submit hack.
+	$(form).find("input").keypress(function (e) { 
+		// if user presses enter i want to validate the whole form
+		// not the form according to the submit button that is first in the flow		
+		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+			// submit the form normally without context of what triggered it.
+			$(form).submit();
+			return false;
+		}
+		return true;
+	});  	
+
 	var validators = [];
 	var errors = [];
 	var groups = []; // stores contextual groups for the form
@@ -241,7 +256,7 @@ Adoro.FormValidator = function(form, options) {
 	 * @private
 	 * @return {Boolean} false when errors otherwise true
 	 */
-	function validate() {
+	function validate() {		
 		clearErrors();
 		var trigger = getLastFired();
 		var isContextualSubmit = (function(){
