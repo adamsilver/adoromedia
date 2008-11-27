@@ -37,8 +37,11 @@
 					
 					<h2>About</h2>
 					<ul class="generic">
-						<li>A drop down menu.</li>
+						<li>A lightweight drop down menu using nested list elements.</li>
+						<li>Currently only supports 1 level.</li>
+						<li>Currently only supports a horizontal version.</li>
 						<li>Drop downs work with JS only.</li>
+						<li>No css z-index issues.</li>
 						<li>Uses the <a href="http://www.jquery.com">JQuery</a> JavaScript library.</li>
 					</ul>
 					
@@ -104,9 +107,7 @@
 						<div id="flash">
 							My flash here
 						</div>
-					</div>
-														
-									
+					</div>		
 				</div>
 			</div>
 		</div>
