@@ -85,7 +85,9 @@
 						</div>		
 					</div>		
 							
-						
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/jquery.asp"-->
+					<!--#include file="../../inc/code/checkboxdisabler.asp"-->
 				</div>
 			</div>
 		</div>
