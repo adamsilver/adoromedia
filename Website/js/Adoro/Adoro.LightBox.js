@@ -55,6 +55,7 @@ $(document).ready(function(){
 				$(o).bind("click", hideLightBox);
 			}			
 			document.body.appendChild(o);
+			$(o).bgiframe();
 			return o;
 		}());
 		var dialogue = (function(){
