@@ -13,6 +13,7 @@ Adoro.siteSection = "blog";
 		<title><$BlogPageTitle$>, Adoro Media Ltd</title>
 		<$BlogMetaData$>
 		<link rel="stylesheet" href="<%=Adoro.URL%>css/default.css" type="text/css" />
+		<link rel="stylesheet" href="<%=Adoro.URL%>css/blog.css" type="text/css" />
 		<link rel="shortcut icon" href="<%=Adoro.URL%>img/favicon.ico" type="image/x-icon" />
 		<!--[if IE 7]><link rel="stylesheet" href="<%=Adoro.URL%>css/ie7-patch.css" type="text/css" /><![endif]-->
 		<!--[if IE 6]><link rel="stylesheet" href="<%=Adoro.URL%>css/ie6-patch.css" type="text/css" /><![endif]-->
