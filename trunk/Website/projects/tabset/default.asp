@@ -7,7 +7,7 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Tabset, JavaScript user interface component library, Adoro Media Ltd</title>
+		<title>Tabset, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
