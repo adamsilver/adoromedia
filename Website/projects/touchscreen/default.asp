@@ -8,7 +8,7 @@
 <% Adoro.siteSection = "library" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Tooltips, JavaScript user interface component library, Adoro Media Ltd</title>
+		<title>Touchscreen, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../inc/head.asp"-->
 		<script type="text/javascript" src="../Adoro.TtouchScreen.js"></script>
 		<script type="text/javascript">
