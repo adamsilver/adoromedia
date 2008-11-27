@@ -192,6 +192,13 @@ h2 {
 	color: #67777F;
 }
 
+h3 {
+	font-size: 1.3em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-bottom: 15px;
+	color: #67777F;
+}
+
 p {
 	font-size: 1.2em;
 	margin-bottom: 10px;
