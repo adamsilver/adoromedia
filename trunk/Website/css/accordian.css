@@ -10,13 +10,14 @@ div.accordian div.header {
 	margin-bottom: 1px;
 	padding: 10px;
 	cursor: pointer;
-	color: #ffffff;
+	
 	background-color: #344148;
 }
 
 div.accordian div.header h3 {
 	margin-bottom: 0px;
 	font-size: 1.2em;
+	color: #ffffff;
 }
 
 div.accordian div.headerOn {
