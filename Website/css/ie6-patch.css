@@ -55,3 +55,7 @@ div#primaryNavigation ul li a.selected {
 	color: #ffffff !important;
 	border-bottom: 4px solid #898F2C !important;	
 }
+
+div.code {
+	word-wrap: break-word;
+}
