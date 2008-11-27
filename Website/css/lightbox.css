@@ -30,6 +30,9 @@ div#lightBox div.error {
 /*****************************************************************
 * custom
 *****************************************************************/
+div.lightBoxActivator {
+	margin-bottom: 10px;
+}
 
 div.lightBoxActivator a {
 	font-size: 1.2em;
