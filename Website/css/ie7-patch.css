@@ -10,7 +10,9 @@ div#footer,
 div.field,
 div.action,
 div#lightBox div.header,
-div#myLightBox div.login {
+div#myLightBox div.login,
+div#dropDownMenu,
+div#dropDownMenu ul li ul li {
 	zoom: 1;
 }
 
