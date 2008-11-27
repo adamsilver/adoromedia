@@ -15,6 +15,10 @@
 		<!--#include file="../../inc/head_cssie.asp"-->		
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DropDownMenu.js"></script>
+		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
+		<script type="text/javascript">
+			swfobject.embedSWF("../../swf/snail.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
+		</script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				new Adoro.DropDownMenu($("#dropDownMenu ul"));
@@ -96,7 +100,12 @@
 							</div>
 						</div>
 					</div>
-									
+					<div>
+						<div id="flash">
+							My flash here
+						</div>
+					</div>
+														
 									
 				</div>
 			</div>
