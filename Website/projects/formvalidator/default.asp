@@ -31,37 +31,56 @@
 					<h1>Form validator</h1>
 					
 					<h2>About</h2>
+					
+					<h3>Multiple submit buttons</h3>
+					<ul class="generic">
+						<li>It is very highly recommended that a form has only 1 submit button unless your 
+						multiple submit buttons run the same action. Useful for long forms. If you have more 
+						than 1 button it causes an accessiblity problem via using the keyboard.</li>
+						<li>When a user presses the enter key the form is submitted. 
+						A contextual submit relies on the user clicking with the mouse.</li>
+						<li>Natively in the browser, if you submit a form via the enter key and the form has multiple buttons, the form
+						is submitted as if the first button in the HTML flow was clicked.</li>						
+					</ul>
+					
+					<h3>Collaboration</h3>
 					<ul class="generic">
 						<li>In collaboration with the <a href="http://www.rnib.org.uk"><abbr title="Royal National Institute of the Blind">RNIB</abbr></a> for high accessibility.</li>
-						<li>
-							It is very highly recommended that a form has only 1 submit button unless your multiple submit buttons run the same action. Useful for long forms.
-							If you have more than 1 button it causes an accessiblity problem via using the keyboard.
-							<ul>
-								<li>When a user presses the enter key the form is submitted. 
-								A contextual submit relies on the user clicking with the mouse.</li>
-							</ul>
-						</li>
-						<li>Uses <a href="http://www.jquery.com">JQuery</a> JavaScript library.</li>
-						<li>Uses field indicators for all fields for several purposes.
-							<ol>
-								<li>It is a consistent visual representation of a field.</li>
-								<li>Can be styled in many ways to cater for many design patterns.</li>
-							</ol>
-						</li>
-						<li>Use of fieldsets with legends, when a field requires it.</li>
-						<li>Some fields will need to use the legend in order to insert errors. The fields that currently meet 
-						this criteria are:
+						<li>Some guidance taken from <a href="http://www.webaim.org/techniques/formvalidation/">WebAIM</a></li>
+					</ul>
+					
+					<h3>Features</h3>
+					<ul class="generic">
+						<li>Can validate absolutely anything, with any custom function for any field including regex validation, 
+						pattern matching, value tests, dependency matching, cross field validation, field matching.</li>
+						<li>Can have contextual submits (advise heaviliy against this (see above), but functionality is provided)</li>
+						<li>Extremely accessible using labels and legends to give the user contextual information about an error</li>
+						<li>The document title is updated as well as the error summary display to inform the user of errors.</li>
+						<li>Integrates with server side errors seamlessly</li>
+						<li>Adding a validator is 1 line of code.</li>
+						<li>Can create as many custom validators as you wish.</li>
+					</ul>					
+					
+					<h3>Other information</h3>
+					<ul class="generic">
+						<li>Uses the <a href="http://www.jquery.com">JQuery</a> JavaScript library.</li>
+						<li>With regards to radio or checkbox groups, the server only sees the "name" of the field, so in order to bring focus, 
+						using the error messages, the first item in the group must have an ID that is the same as the name. The proceeding radios 
+						or checkboxes, have the same name, but will have a different ID (for label useage).</li>						
+						<li>Some fields will need to use the legend in order to insert errors:
 							<ul>
 								<li>radio group</li>
 								<li>checkbox group</li>
 							</ul>
 						</li>
-						<li>With regards to radio or checkbox groups, the server only sees the "name" of the field, so in order to bring focus, 
-						using the error messages, the first item in the group must have an ID that is the same as the name. The proceeding radios 
-						or checkboxes, have the same name, but will have a different ID (for label useage).</li>
-						<li>The document title is updated as well as the error summary display to inform the user of errors.</li>
-						<li>Some guidance taken from <a href="http://www.webaim.org/techniques/formvalidation/">WebAIM</a></li>
-					</ul>
+						<li>Uses field indicators for all fields for several purposes.
+							<ol>
+								<li>It is a consistent visual representation of a field.</li>
+								<li>Can be styled in many ways to cater for many design patterns.</li>
+							</ol>
+						</li>											
+					</ul>	
+					
 					<h2>Demo</h2>
 					
 					<% devForm.showErrors(); %>
