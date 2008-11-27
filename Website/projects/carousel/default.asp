@@ -36,7 +36,7 @@
 						<li>Can be automatic with stop and start buttons.</li>
 						<li>Can be manual with previous and next buttons.</li>
 						<li>Elements can be of varying width.</li>
-						<li>Can have different speeds</li>
+						<li>Can have different speeds.</li>
 					</ul>
 					
 					<h2>Demo</h2>

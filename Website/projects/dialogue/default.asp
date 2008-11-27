@@ -15,9 +15,14 @@
 		<link rel="stylesheet" href="../../css/lightbox.css" type="text/css" />
 		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
-		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>	
+		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
+		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.LightBox.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
+		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
+		<script type="text/javascript">
+			swfobject.embedSWF("../../swf/snail.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
+		</script>		
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$("a#showLightBox").click(function() {
@@ -104,7 +109,19 @@
 					<h2>Demo</h2>
 					<div class="lightBoxActivator">	
 						<a id="showLightBox" href="#">Show a lightbox</a>
-					</div>				
+					</div>
+					
+					<div class="form">
+						<div class="field">
+							<div class="indicator"><label for="iframedd">Ifame drop down test</label></div>
+							<div class="singleInput">
+								<select id="iframedd"><option value="1">Iframe zIndex issue fixed longer select</option></select>		
+							</div>
+						</div>
+					</div>
+					<div id="flash">
+						My flash here
+					</div>							
 						
 				</div>
 			</div>

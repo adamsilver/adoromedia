@@ -31,9 +31,8 @@
 					<h1>Checkbox disabler</h1>
 					<h2>About</h2>
 					<ul class="generic">
-						<li>Create multiple instances of a checkbox group.</li> 
-						<li>Pass in a collection of checkboxes (that make up a group) and a max size.</li>
-						<li>Once the max size number of checkboxes has been checked within the group, the rest of the checkboxes will disable.</li>
+						<li>Create multiple instances of a checkbox group that disables remaining checkboxes,
+						when a certain amount of checkboxes (configurable by you) have been checked.</li> 
 						<li>They will enable again when the user unchecks the checkboxes bringing the threshold below the max size again.</li>
 					</ul>
 					

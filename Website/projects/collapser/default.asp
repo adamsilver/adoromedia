@@ -43,12 +43,12 @@
 						dynamically inserted using progressive enhancement.</li>
 						<li>Can be configured:
 							<ul>
-								<li>to animate.</li>
+								<li>to animate or not.</li>
 								<li>to set hide and show text and or html for the activator.</li>
 								<li>to start open or shut on instantiation using the 
 								constructor or the mark-up (useful when server dictates state).</li>
 								<li>Add a custom class name to any nodes you wish when hidden - useful to style
-								whole containers or sub containers when in hidden and showing mode.</li>
+								whole containers or sub containers when in hidden or visible mode.</li>
 							</ul>
 						</li>
 						<li>Animation is smoother when the animating element has no padding or margins so

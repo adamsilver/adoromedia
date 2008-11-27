@@ -103,11 +103,10 @@
 							</div>
 						</div>
 					</div>
-					<div>
-						<div id="flash">
-							My flash here
-						</div>
-					</div>		
+					<div id="flash">
+						My flash here
+					</div>
+		
 				</div>
 			</div>
 		</div>
