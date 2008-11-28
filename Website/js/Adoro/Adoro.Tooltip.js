@@ -77,6 +77,7 @@ Adoro.Tooltip = function(activator, content, options) {
 		if (!config.followMouse && state.isActivated) return;
 		state.isActivated = true;
 		document.body.appendChild(tooltip);
+		$(tooltip).bgiframe();
 		var tooltipPosition = {left: e.pageX + config.offsetLeft, top: e.pageY + config.offsetTop};
 		var tooltipWidth = $(tooltip).outerWidth({margin: true});
 		var tooltipHeight = $(tooltip).outerHeight({margin: true});
