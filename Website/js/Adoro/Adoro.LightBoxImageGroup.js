@@ -23,12 +23,17 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 
+// nooby code so they can just do SOMETHING with minimal effort
+$(document).ready(function(){
+	new Adoro.LightBoxImageGroup($("a.lightBoxImage"));
+});
+
 /**
  * @constructor
  * @class Represents a light box image group
  */
 Adoro.LightBoxImageGroup = function(anchors, options) {
-	if(anchors.length === 0) return;
+	if(anchors.length === 0) return null;
 	var lightBoxImages = [];
 
 	var i = 0, imageSrc, anchor, lightBoxImage;
@@ -40,11 +45,11 @@ Adoro.LightBoxImageGroup = function(anchors, options) {
 	}
 			
 	if(typeof options ==="object") {
-		
+		// none yet
 	}
 	
 	function LightBoxImage(imageSrc, index, anchor) {
-		var html = '<img src="'+imageSrc+'" alt="" />'
+		var html = '<img src="'+imageSrc+'" alt="" />';
 		anchor.onclick = show;
 		this.show = show;
 		function show() {
@@ -60,8 +65,13 @@ Adoro.LightBoxImageGroup = function(anchors, options) {
 		}
 	}
 	
-	function showItem() {
-		// go and get the LightBoxImage by looping thru the array
-		// show it
+	function showItem(index) {
+		lightBoxImages[index].show();
+	}
+	
+	// if dynamically adding a new anchor/lightboximage then need to run this method
+	this.reInstantiate = reInstantiate;
+	function reInstantiate() {
+		// delete array and init() again;
 	}
 }
