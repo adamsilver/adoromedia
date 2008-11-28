@@ -43,30 +43,43 @@ Adoro.LightBoxImageGroup = function(anchors, options) {
 		lightBoxImage = new LightBoxImage(imageSrc, i, anchor);
 		lightBoxImages.push(lightBoxImage);
 	}
-			
+	
+	var config = {
+		htmlBefore: '<div class="header">Header and close here perhaps<a href="#" class="closeLightBox">Close</a></div>',
+		htmlAfter: '<div class="footer">Footer and close here perhaps</div>',
+		backHTML: ''
+	}
+	
 	if(typeof options ==="object") {
 		// none yet
 	}
 	
 	function LightBoxImage(imageSrc, index, anchor) {
-		var html = '<img src="'+imageSrc+'" alt="" />';
+		//var image = new Image();
+		//image.src=imageSrc;
+		//console.log
+		var html = '<img class="lightboximage" src="'+imageSrc+'" alt="" />';
 		anchor.onclick = show;
 		this.show = show;
-		function show() {
-			LightBox.hideLightBox();
-			LightBox.setHTML(html);
-			$("back").bind("click", function(){
+		function show() {			
+			Adoro.Dialogue.hideDialogue();
+			Adoro.Dialogue.setHTML(config.htmlBefore+html+config.htmlAfter);
+			$("img.lightboximage").bind("click", function(){
 				showItem(index-1);
 			});
 			$("next").bind("click", function(){
 				showItem(index+1);
-			});			
-			LightBox.showLightBox();
+			});
+			Adoro.Dialogue.showOverlay();			
+			Adoro.Dialogue.showDialogue();
+			return false;
 		}
 	}
 	
 	function showItem(index) {
-		lightBoxImages[index].show();
+		var lightBoxImage = lightBoxImages[index];
+		if(lightBoxImage == undefined) return;
+		lightBoxImage.show();
 	}
 	
 	// if dynamically adding a new anchor/lightboximage then need to run this method
