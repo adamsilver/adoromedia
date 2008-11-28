@@ -17,7 +17,7 @@
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
-		<script type="text/javascript" src="../../js/Adoro/Adoro.LightBox.js"></script>
+		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript">
@@ -39,9 +39,9 @@
 					html +=		'</div>';
 					html +=	'</div>';
 					
-					Adoro.LightBox.showOverlay();
-					Adoro.LightBox.setHTML(html);
-					Adoro.LightBox.showLightBox({x: 100, y:150});
+					Adoro.Dialogue.showOverlay();
+					Adoro.Dialogue.setHTML(html);
+					Adoro.Dialogue.showDialogue({x: 100, y:150});
 					$("a.new").click(function(){
 						var html2 = '';
 						html2 += 	'<div id="myLightBox2">';
@@ -53,9 +53,9 @@
 						html2 +=			'<p>Centered as no coordinates specified.</p>';
 						html2 +=		'</div>';						
 						html2 +=	'</div>';
-						Adoro.LightBox.hideLightBox();
-						Adoro.LightBox.setHTML(html2);
-						Adoro.LightBox.showLightBox();
+						Adoro.Dialogue.hideDialogue();
+						Adoro.Dialogue.setHTML(html2);
+						Adoro.Dialogue.showDialogue();
 						return false;
 					});
 					return false;
@@ -76,7 +76,7 @@
 					<!--#include file="../../inc/primaryNavigation.asp"-->
 				</div>
 				<div id="content">
-					<h1>Dialogue (A.K.A. Lightbox)</h1>
+					<h1>Dialogue</h1>
 					<h2>About</h2>
 					<ul class="generic">
 						<li>The most lightweight and powerful LightBox (popup, dialogue, window, 
