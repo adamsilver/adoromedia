@@ -70,7 +70,7 @@
 							<p>Max length indicator control for inputs &amp textareas using the jQuery library.</p>
 						</li>
 						<li>
-							<h2><a href="<%=Adoro.URL%>projects/formvalidator" <%if(Adoro.pageName === "formvalidation"){%>class="selected"<%}%>>Form validator</a></h2>
+							<h2><a href="<%=Adoro.URL%>projects/formvalidator" <%if(Adoro.pageName === "formvalidator"){%>class="selected"<%}%>>Form validator</a></h2>
 							<p>Highly, advanced, accessible and flexible JavaScript form validation framework.</p>
 						</li>
 						<!--<li><a href="<%=Adoro.URL%>projects/demos/formvalidator.asp" <%if(Adoro.pageName === "formvalidator"){%>class="selected"<%}%>>Form validator</a></li>-->
