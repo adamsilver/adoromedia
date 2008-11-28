@@ -186,7 +186,7 @@ Adoro.FormValidator = function(form, options) {
 	 * Create a new form validator object
 	 * @class Represents a validator object
 	 * @constructor
-	 * @name Adoro.FormValidation
+	 * @name Adoro.FormValidator
 	 * @param {Node[]} field An array of nodes
 	 * @param {Array} rules The rules for the validator
 	 */
