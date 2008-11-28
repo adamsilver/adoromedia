@@ -29,7 +29,7 @@ $(document).ready(function(){
 	 * @constructor
 	 * @static
 	 */
-	Adoro.LightBox = new (function(){
+	Adoro.Dialogue = new (function(){
 		/*
 		 * Known, fixed issues.
 		 * a) IE6 cannot do the overlay correctly with position fixed width and height 100%
@@ -119,7 +119,7 @@ $(document).ready(function(){
 		* @param {Number} options.x The dialogue x coordinate for positioning
 		* @param {Number} options.y The dialogue y coordinate for positioning
 		*/			
-		function showLightBox(options) {
+		function showDialogue(options) {
 			// set default to center x and y position
 			var position = {
 				x: (function(){
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		* @memberOf Adoro.LightBox
 		* @name hideLightBox
 		*/	
-		function hideLightBox() {
+		function hideDialogue() {
 			$(dialogue).css({left: "-99999em"});
 			return false;
 		}
@@ -186,7 +186,7 @@ $(document).ready(function(){
 		 */
 		function setCloseEvent() {
 			$("a."+config.closeClass, dialogue).click(function(){
-				hideLightBox();
+				hideDialogue();
 				hideOverlay();
 				return false;
 			});
@@ -209,8 +209,8 @@ $(document).ready(function(){
 		// public members
 		this.showOverlay = showOverlay;
 		this.hideOverlay = hideOverlay;
-		this.showLightBox = showLightBox;
-		this.hideLightBox = hideLightBox;
+		this.showDialogue = showDialogue;
+		this.hideDialogue = hideDialogue;
 		this.setHTML = setHTML;
 	});
 });
