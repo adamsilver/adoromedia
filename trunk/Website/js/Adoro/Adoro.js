@@ -55,17 +55,6 @@ Adoro.addNamespace = function(namespace) {
 	}
 }
 
-Adoro.getScrollbarWidth = function() {
-	var div = $('<div style="width:50px;height:50px;overflow:hidden;position:absolute;top:-200px;left:-200px;"><div style="height:100px;"></div>');
-    // Append our div, do our calculation and then remove it
-    $('body').append(div);
-    var w1 = $('div', div).innerWidth();
-    $(div).css('overflow-y', 'scroll');
-    var w2 = $('div', div).innerWidth();
-    $(div).remove();
-    return (w1 - w2);
-}
-
 /**
  * Get node reference for HTML string
  * @function
@@ -81,71 +70,6 @@ Adoro.getHTMLFirstChild = function(html) {
 	var root = document.createElement("div");
 	root.innerHTML = html;
 	return root.firstChild;
-}
-
-/**
- * Get the mouse coordinates
- * @function
- * @name getMouseCoords
- * @memberOf Adoro
- * @param {Event} e The event object
- * @return {Object} object with x and y coordinates
- */
-Adoro.getMouseCoords = function(e) {
-	e = e || event;
-	var coordinates = new Object();
-	coordinates.x = 0;
-	coordinates.y = 0;
-	if (e.pageX || e.pageY) {
-		coordinates.x = e.pageX;
-		coordinates.y = e.pageY;
-	}
-	else if (e.screenX || e.screenY) {
-		coordinates.x = e.clientX + document.documentElement.scrollLeft;
-		coordinates.y = e.clientY + document.documentElement.scrollTop;
-	}
-	return coordinates;
-}
-
-/**
- * Get the view port dimensions
- * @function
- * @name getViewportDimensions
- * @memberOf Adoro
- * @return {Object} object with width and height properties
- */
-Adoro.getViewportDimensions = function() {
-	var vp = {};
-	if (typeof window.innerWidth != "undefined") {
-		vp.width = window.innerWidth;
-		vp.height = window.innerHeight;
-	}
-	else if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientWidth != "undefined" && document.documentElement.clientWidth != 0) {
-		vp.width = document.documentElement.clientWidth;
-		vp.height = document.documentElement.clientHeight;
-	}
-	return vp;
-}
-
-/**
- * Get scroll position for y axis
- * @function
- * @name getScrollPosition
- * @memberOf Adoro
- * @return {Number}
- */
-Adoro.getScrollPosition = function() {
-	var y = 0;
-	if (self.pageYOffset) {
-		y = self.pageYOffset;
-	} 
-	else if (document.documentElement && document.documentElement.scrollTop) {
-		y = document.documentElement.scrollTop; 
-	} 
-	else if (document.body) {
-		y = document.body.scrollTop;
-	}
-	return y;
 }
 
 /**
