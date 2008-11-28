@@ -108,7 +108,7 @@
 					
 					<h2>Demo</h2>
 					<div class="lightBoxActivator">	
-						<a id="showLightBox" href="#">Show a lightbox</a>
+						<a id="showLightBox" href="#">Show a dialogue</a>
 					</div>
 					
 					<div class="form">
