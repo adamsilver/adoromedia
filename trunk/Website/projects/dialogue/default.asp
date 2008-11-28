@@ -7,7 +7,7 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Dialogue (aka LightBox), jQuery JavaScript library, Adoro Media Ltd</title>
+		<title>Dialogue, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->
 		
