@@ -52,7 +52,8 @@
 					<h3>Features</h3>
 					<ul class="generic">
 						<li>Can validate absolutely anything, with any custom function for any field including regex validation, 
-						pattern matching, value tests, dependency matching, cross field validation, field matching.</li>
+						pattern matching, value tests, dependency matching, cross field validation, field matching - you can even
+						validate a field based on its border-color or any other css property if you felt like you wanted to.</li>
 						<li>Can have contextual submits (advise heaviliy against this (see above), but functionality is provided)</li>
 						<li>Extremely accessible using labels and legends to give the user contextual information about an error</li>
 						<li>The form can be validated with the keyboard and with a screen reader with ease.</li>
@@ -60,7 +61,22 @@
 						<li>Integrates with server side errors seamlessly</li>
 						<li>Adding a validator is 1 line of code.</li>
 						<li>Can create as many custom validators as you wish.</li>
+						<li>Custom error messages which either come from the server or set in the JavaScript only.</li>
 						<li>When there is an error, the field indicator and / or input element can be highlighted with css using the error class.</li>
+					</ul>					
+					
+					<h3>Current built-in validators</h3>
+					<ul class="generic">
+						<li>Not empty</li>
+						<li>Is length</li>
+						<li>Min checked</li>
+						<li>Email address</li>
+						<li>Name characters (custom regex)</li>
+						<li>Phone number (allows + sign and brackets)</li>
+						<li>Password (Between 6 and 12 upper or lowercase letters, and numbers)</li>
+						<li>Number</li>
+						<li>Alpha digit sspecial full stop</li>
+						<li>Matches - matches another fields value i.e. password confirmation made generic</li>
 					</ul>					
 					
 					<h3>Other information</h3>
@@ -81,7 +97,8 @@
 								<li>Can be styled in many ways to cater for many design patterns.</li>
 							</ol>
 						</li>											
-					</ul>	
+					</ul>
+					
 					
 					<h2>Demo</h2>
 					
