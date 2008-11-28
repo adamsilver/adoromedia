@@ -145,6 +145,35 @@ Adoro.FormValidator = function(form, options) {
 	 * @return {Object} this To enable chaining
 	 */
 	function removeValidator(key, ruleKeys) {
+		var ruleKeys = ruleKeys || null;
+		var validator, rule;
+		var numberOfItemsToRemoveFromArray = 1;
+		for(var i = 0; i<validators.length; i++) {
+			validator = validators[i];
+			if(validator.key === key) {
+				// remove just the key in question
+				if(Adoro.isArray(ruleKeys)) {
+					// loop thru rules in validator
+					for(var j = 0; j < validator.rules.length; j++) {
+						rule = validator.rules[j];
+						
+						// loop thru ruleKeys against rule.method
+						console.log(rule.method);
+						console.log(Adoro.FormRules[rule])
+					}
+					// if key found then remove
+				}
+				// remove whole validator
+				else {
+					
+					validators.splice(i, numberOfItemsToRemoveFromArray);
+				}
+				break;
+			}
+		}
+		
+		console.log(validators);
+		
 		// CURRENT
 		// loop through all validators
 			// grab the validator with the appropriate key

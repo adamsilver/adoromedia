@@ -56,6 +56,8 @@ $(document).ready(function(){
 		
 		form.setMessage("fullName", "notEmpty", "blah");
 		
+		form.removeValidator("fullName", ["notEmpty"]);
+		
 		var el = $('<p class="remaining"></p>')[0];
 		document.getElementById("message").parentNode.appendChild(el);
 		var myFieldMax = new Adoro.FieldMaxLength(document.getElementById("message"),{
