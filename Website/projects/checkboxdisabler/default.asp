@@ -84,7 +84,13 @@
 							</div>
 						</div>		
 					</div>		
-							
+					
+					<h2>Dependencies</h2>
+					<ul class="generic">
+						<li>jquery-1.2.6.js</li>
+						<li>Adoro.CheckboxDisabler.js</li>
+					</ul>					
+					
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/jquery.asp"-->
 					<!--#include file="../../inc/code/checkboxdisabler.asp"-->

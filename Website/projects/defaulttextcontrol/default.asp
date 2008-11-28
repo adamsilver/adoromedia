@@ -59,6 +59,13 @@
 						</div>
 					</form>
 					
+					<h2>Dependencies</h2>
+					<ul class="generic">
+						<li>Adoro.DefaultTextConrol.js</li>
+					</ul>
+					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/defaulttextcontrol.asp"-->					
 									
 				</div>
 			</div>
