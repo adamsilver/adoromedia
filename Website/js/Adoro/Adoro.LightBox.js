@@ -34,7 +34,7 @@ $(document).ready(function(){
 		 * Known, fixed issues.
 		 * a) IE6 cannot do the overlay correctly with position fixed width and height 100%
 		 * b) FF2 and below cannot show a cursor inside form elements when inside absolute lightbox on top of fixed overlay
-		 * c) IE6 and IE7 have zIndex issues with flash elements and select elements
+		 * c) IE6 has zIndex issues with flash elements and select elements
 		 */
 		var me = this;
 		var config = {closeOnOverlayClick: false, closeClass: "closeLightBox", opacity: "0.45", animateOverlay: true, animateDialogue: true};
