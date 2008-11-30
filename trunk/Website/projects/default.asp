@@ -32,8 +32,8 @@
 					<p>Open source projects for the world.</p>
 					<ul class="projects">
 						<li>
-							<h2><a href="<%=Adoro.URL%>projects/accordian" <%if(Adoro.pageName === "accordian"){%>class="selected"<%}%>>Accordian</a></h2>
-							<p>Lightweight JavaScript accordian using the jQuery JavaScript library.</p>
+							<h2><a href="<%=Adoro.URL%>projects/accordion" <%if(Adoro.pageName === "accordion"){%>class="selected"<%}%>>Accordion</a></h2>
+							<p>Lightweight JavaScript accordion using the jQuery JavaScript library.</p>
 						</li>
 						<!--<li><a href="<%=Adoro.URL%>projects/demos/autofade.asp" <%if(Adoro.pageName === "autofade"){%>class="selected"<%}%>>Auto fade</a></li>-->
 						<li>
