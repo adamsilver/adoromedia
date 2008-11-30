@@ -1,13 +1,13 @@
-<p>Include the Adoro.Accordian.js file</p>
+<p>Include the Adoro.Accordion.js file</p>
 <div class="code"><pre>
-&lt;script type=&quot;text/javascript&quot; src=&quot;Adoro.Accordian.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;Adoro.Accordion.js&quot;&gt;&lt;/script&gt;
 </pre></div>
 
 <p>Create 2 accordians</p>
 <div class="code"><pre>
 &lt;script type=&quot;text/javascript&quot;&gt;
 	$(document).ready(function(){ 
-		var horizontal = new Adoro.Accordian({
+		var horizontal = new Adoro.Accordion({
 			container: $(&quot;div.myHorizontalAccordian&quot;)[0], 
 			activatorClass: &quot;header2&quot;,
 			panelClass: &quot;panel2&quot;,					
@@ -17,7 +17,7 @@
 			animationHideSpeed: 1500			
 		});			
 	
-		var vertical = new Adoro.Accordian({
+		var vertical = new Adoro.Accordion({
 			container: $(&quot;div.accordian&quot;)[0], 
 			animationShowSpeed: 300,
 			animationHideSpeed: 300,
