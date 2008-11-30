@@ -24,11 +24,11 @@
 if(typeof Adoro !== "object") var Adoro = {};
 
 /**
-* Create a new accordian
-* @class Represents an accordian
+* Create a new accordion
+* @class Represents an accordion
 * @constructor
 * @name Adoro.Accordian
-* @param {Object} options The options for this accordian instance
+* @param {Object} options The options for this accordion instance
 * @param {HTMLElement} options.container The container node
 * @param {Object} options.animationShowParams Different animation styles when the element is shown
 * @param {Object} options.animationHideParams Different animation styles when the element is hidden
@@ -40,9 +40,9 @@ if(typeof Adoro !== "object") var Adoro = {};
 * @param {String} options.activatorActiveClass Class name for the activator when in active mode
 * @param {String} options.panelActiveClass Class name for the panel when in active mode
 * @example
-* var myAccordian = new Adoro.Accordian({container: document.getElementById("container")})
+* var myAccordion = new Adoro.Accordion({container: document.getElementById("container")})
 */
-Adoro.Accordian = function(options) {
+Adoro.Accordion = function(options) {
 	if(typeof options !== "object") return null;
 	var state = {animating: false};
 	var config = {
