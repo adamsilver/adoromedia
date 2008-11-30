@@ -7,18 +7,18 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Accordian, jQuery JavaScript library, Adoro Media Ltd</title>
+		<title>Accordion, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/accordian.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DevNotes.js"></script>
-		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordian.js"></script>
+		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
 			
-				var horizontal = new Adoro.Accordian({
+				var horizontal = new Adoro.Accordion({
 					container: $("div.myHorizontalAccordian")[0], 
 					activatorClass: "header2",
 					panelClass: "panel2",					
@@ -28,7 +28,7 @@
 					animationHideSpeed: 1500			
 				});			
 			
-				var vertical = new Adoro.Accordian({
+				var vertical = new Adoro.Accordion({
 					container: $("div.accordian")[0], 
 					animationShowSpeed: 300,
 					animationHideSpeed: 300,
@@ -49,14 +49,14 @@
 					<!--#include file="../../inc/primaryNavigation.asp"-->
 				</div>
 				<div id="content">
-					<h1>Accordian</h1>
+					<h1>Accordion</h1>
 					
 					<h2>About</h2>
 					<ul class="generic">
-						<li>Lightweight accordian using the JQuery library.</li>
-						<li>Takes one line of JS code to instatiate the accordian.</li>
+						<li>Lightweight accordion using the JQuery library.</li>
+						<li>Takes one line of JS code to instatiate the accordion.</li>
 						<li>Can configure the animation and the event that triggers it i.e. mouseover, click etc.</li>
-						<li>Supports nested accordians.</li>
+						<li>Supports nested accordions.</li>
 						<!--<li>Accordians will work with dynamically added content i.e. flexible heights or widths.</li>-->
 					</ul>
 					
@@ -155,12 +155,12 @@
 					<h2>Dependencies</h2>
 					<ul class="generic">
 						<li>jquery-1.2.6.js</li>
-						<li>Adoro.Accordian.js</li>
+						<li>Adoro.Accordion.js</li>
 					</ul>
 					
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/jquery.asp"-->
-					<!--#include file="../../inc/code/accordian.asp"-->
+					<!--#include file="../../inc/code/accordion.asp"-->
 				</div>
 			</div>
 		</div>
