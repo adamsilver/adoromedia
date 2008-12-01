@@ -105,6 +105,8 @@
 						<!-- user agent and type detection -->
 						<!-- image zoom -->
 						<!-- slide -->
+						<!-- select box api -->
+						<!-- select box styling -->
 					</ul>
 				</div>
 			</div>
