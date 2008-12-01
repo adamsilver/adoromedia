@@ -36,7 +36,7 @@
 				<div id="content">
 					<h1>Bespoke new media digital solutions</h1>
 					
-					<p>Adoro Media specialise in user friendly, accessible website 
+					<p>We specialise in user friendly, accessible website 
 					design for various media including personal computers, PDAs, screen readers and mobile phones.</p>
 					<p>We organically develop your website which results in fast loading, search engine 
 					friendly sites, that are accessible to the widest possible audience.</p> 
