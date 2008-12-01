@@ -1,0 +1,87 @@
+div#overlay {
+	background-color: #000000;
+	position: fixed;
+	display: none;
+	left: 0;
+	top:0;
+	width:100%;
+	height: 100%;
+	z-index: 5000;
+}
+
+div#dialogue {
+	position: absolute;
+	left: -99999em;
+	top: 0;
+	z-index: 9999;
+}
+
+
+
+/*****************************************************************
+* custom
+*****************************************************************/
+div.lightBoxActivator {
+	margin-bottom: 10px;
+}
+
+div.lightBoxActivator a {
+	font-size: 1.2em;
+}
+
+div#dialogue {
+	border: 1px solid #1D2B33;
+	background-color: #ffffff;
+}
+
+div#dialogue div.header {
+	overflow: hidden;
+	background-color: #989D44;
+	padding: 10px;
+}
+
+div#dialogue div.header h2 {
+	float: left;
+	color:#ffffff;
+	font-size: 1.2em;
+	font-family: arial;
+	margin-bottom: 0px;
+}
+
+div#dialogue div.header a.closeLightBox {
+	color: #ffffff;
+	float: right;
+	font-size: 1.2em;
+}
+
+div#myLightBox {
+	width: 300px;
+}
+
+div#myLightBox div.panel {
+	padding: 10px;
+	background-color: #f5f5f5;
+}
+
+div#myLightBox div.panel a.new {
+	color: #1D2B33;
+	font-size: 1.2em;
+	display: block;
+	text-align: center;
+}
+
+div#myLightBox2 {
+	width: 500px;
+}
+
+div#myLightBox2 div.panel {
+	padding: 10px;
+	background-color: #f5f5f5;
+}
+
+div#myLightBox2 div.panel a.new {
+	color: #1D2B33;
+	font-size: 1.2em;
+	display: block;
+	text-align: center;
+}
