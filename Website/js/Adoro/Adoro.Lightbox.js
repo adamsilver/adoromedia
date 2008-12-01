@@ -45,7 +45,7 @@ Adoro.Lightbox = function(anchors, options) {
 	}
 	
 	var config = {
-		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeLightBox">Close</a></div>',
+		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeDialogue">Close</a></div>',
 		htmlAfter: '<div class="footer">Footer and close here perhaps</div></div>',
 		backHTML: ''
 	}
