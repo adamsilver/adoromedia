@@ -25,14 +25,14 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
 
 // nooby code so they can just do SOMETHING with minimal effort
 $(document).ready(function(){
-	new Adoro.LightBoxImageGroup($("a.lightBoxImage"));
+	new Adoro.Lightbox($("a.lightBoxImage"));
 });
 
 /**
  * @constructor
  * @class Represents a light box image group
  */
-Adoro.LightBoxImageGroup = function(anchors, options) {
+Adoro.Lightbox = function(anchors, options) {
 	if(anchors.length === 0) return null;
 	var lightBoxImages = [];
 
@@ -45,8 +45,8 @@ Adoro.LightBoxImageGroup = function(anchors, options) {
 	}
 	
 	var config = {
-		htmlBefore: '<div class="header">Header and close here perhaps<a href="#" class="closeLightBox">Close</a></div>',
-		htmlAfter: '<div class="footer">Footer and close here perhaps</div>',
+		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeLightBox">Close</a></div>',
+		htmlAfter: '<div class="footer">Footer and close here perhaps</div></div>',
 		backHTML: ''
 	}
 	

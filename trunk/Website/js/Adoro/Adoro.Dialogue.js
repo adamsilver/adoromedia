@@ -37,7 +37,14 @@ $(document).ready(function(){
 		 * c) IE6 has zIndex issues with flash elements and select elements
 		 */
 		var me = this;
-		var config = {closeOnOverlayClick: false, closeClass: "closeLightBox", opacity: "0.45", animateOverlay: true, animateDialogue: true};
+		var config = {
+			dialogueID: "dialogue", // if you change this then the css must change
+			closeClass: "closeDialogue", 
+			closeOnOverlayClick: false,
+			opacity: "0.45", 
+			animateOverlay: true, 
+			animateDialogue: true
+		};
 		var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
 		var IE7 = ($.browser.msie && parseInt($.browser.version) === 7);
 		var FF2 = ($.browser.mozilla && parseInt($.browser.versionX) === 2);
@@ -61,7 +68,7 @@ $(document).ready(function(){
 		var dialogue = (function(){
 			var o;
 			o = document.createElement("div");
-			o.id = "lightBox";
+			o.id = config.dialogueID;
 			document.body.appendChild(o);
 			$(o).bgiframe();
 			return o;
