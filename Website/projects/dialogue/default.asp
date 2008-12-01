@@ -12,7 +12,7 @@
 		<!--#include file="../../inc/head_js.asp"-->
 		
 		<!--#include file="../../inc/head_css.asp"-->
-		<link rel="stylesheet" href="../../css/lightbox.css" type="text/css" />
+		<link rel="stylesheet" href="../../css/dialogue.css" type="text/css" />
 		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
@@ -22,16 +22,80 @@
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript">
 			swfobject.embedSWF("../../swf/snail.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
-		</script>		
+		</script>
+		<style type="text/css">
+			
+			div#dialogue01,
+			div#dialogue02 {
+				border: 1px solid #1D2B33;
+				background-color: #ffffff;
+			}
+			
+			div#dialogue01 div.header,
+			div#dialogue02 div.header {
+				overflow: hidden;
+				background-color: #989D44;
+				padding: 10px;
+			}
+			
+			div#dialogue01 div.header h2,
+			div#dialogue02 div.header h2 {
+				float: left;
+				color:#ffffff;
+				font-size: 1.2em;
+				font-family: arial;
+				margin-bottom: 0px;
+			}
+			
+			div#dialogue01 div.header a.closeDialogue,
+			div#dialogue02 div.header a.closeDialogue {
+				color: #ffffff;
+				float: right;
+				font-size: 1.2em;
+			}
+			
+			div#dialogue01 {
+				width: 300px;
+			}
+			
+			div#dialogue01 div.panel {
+				padding: 10px;
+				background-color: #f5f5f5;
+			}
+			
+			div#dialogue01 div.panel a.new {
+				color: #1D2B33;
+				font-size: 1.2em;
+				display: block;
+				text-align: center;
+			}
+			
+			div#dialogue02 {
+				width: 500px;
+			}
+			
+			div#dialogue02 div.panel {
+				padding: 10px;
+				background-color: #f5f5f5;
+			}
+			
+			div#dialogue02 div.panel a.new {
+				color: #1D2B33;
+				font-size: 1.2em;
+				display: block;
+				text-align: center;
+			}
+			
+		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("a#showLightBox").click(function() {
+				$("p.lightBoxActivator a").click(function() {
 				
 					var html = '';
-					html += 	'<div id="myLightBox">';
+					html += 	'<div id="dialogue01">';
 					html += 		'<div class="header">'
 					html +=			'<h2>Demo 01 - positioning</h2>'
-					html +=			'<a href="#" class="closeLightBox">Close</a>';
+					html +=			'<a href="#" class="closeDialogue">Close</a>';
 					html +=		'</div>';
 					html +=		'<div class="panel">';
 					html +=			'<p>Positioned at x(100), y(150).</p>';
@@ -44,10 +108,10 @@
 					Adoro.Dialogue.showDialogue({x: 100, y:150});
 					$("a.new").click(function(){
 						var html2 = '';
-						html2 += 	'<div id="myLightBox2">';
+						html2 += 	'<div id="dialogue02">';
 						html2 += 		'<div class="header">'
 						html2 +=			'<h2>Demo 02 - centered</h2>'
-						html2 +=			'<a href="#" class="closeLightBox">Close</a>';
+						html2 +=			'<a href="#" class="closeDialogue">Close</a>';
 						html2 +=		'</div>';
 						html2 +=		'<div class="panel">';
 						html2 +=			'<p>Centered as no coordinates specified.</p>';
@@ -107,9 +171,7 @@
 					</ul>
 					
 					<h2>Demo</h2>
-					<div class="lightBoxActivator">	
-						<a id="showLightBox" href="#">Show a dialogue</a>
-					</div>
+					<p class="lightBoxActivator"><a href="#">Show a dialogue</a></p>
 					
 					<div class="form">
 						<div class="field">
