@@ -40,9 +40,11 @@
 					</ul>
 					
 					<h2>Demo</h2>
-					<div class="lightBoxActivator">	
-						<a class="lightbox" href="../../img/portfolio/boots.jpg"><img src="../../img/portfolio/boots.jpg" alt="Boots" /></a>
-					</div>
+					<ul>
+						<li><a class="lightbox" href="../../img/portfolio/cpplus.jpg"><img src="../../img/portfolio/cpplus.jpg" alt="CP Plus" /></a></li>
+						<li><a class="lightbox" href="../../img/portfolio/hamleys.jpg"><img src="../../img/portfolio/hamleys.jpg" alt="Hamleys" /></a></li>
+						<li><a class="lightbox" href="../../img/portfolio/flyingflowers.jpg"><img src="../../img/portfolio/flyingflowers.jpg" alt="Flying flowers" /></a></li>
+					</ul>
 					
 					<div class="form">
 						<div class="field">
