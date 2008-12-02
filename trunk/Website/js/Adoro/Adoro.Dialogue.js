@@ -41,9 +41,7 @@ $(document).ready(function(){
 			dialogueID: "dialogue", // if you change this then the css must change
 			closeClass: "closeDialogue", 
 			closeOnOverlayClick: false,
-			opacity: "0.45", 
-			animateOverlay: true, 
-			animateDialogue: true
+			opacity: "0.45"
 		};
 		var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
 		var IE7 = ($.browser.msie && parseInt($.browser.version) === 7);
@@ -86,10 +84,15 @@ $(document).ready(function(){
 		* @memberOf Adoro.LightBox
 		* @name showOverlay
 		*/			
-		function showOverlay() {
+		function showOverlay(options) {
 			if(state.showingOverlay) return;
 			
-			if(config.animateOverlay) {
+			var animate = false;
+			if(typeof options === "object") {
+				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+			}
+			
+			if(animate) {
 				$(overlay).fadeIn();
 			}
 			else {
@@ -105,9 +108,15 @@ $(document).ready(function(){
 		* @memberOf Adoro.LightBox
 		* @name hideOverlay
 		*/			
-		function hideOverlay(){
+		function hideOverlay(options){
 			if (!state.showingOverlay) return;
-			if(config.animateOverlay) {
+			
+			var animate = false;
+			if(typeof options === "object") {
+				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+			}			
+			
+			if(animate) {
 				$(overlay).fadeOut();
 			}
 			else {
@@ -141,15 +150,18 @@ $(document).ready(function(){
 				}())
 			}; 
 			
+			var animate = false;
+			
 			// if manual coordinates then override centering
 			if(typeof options === "object") {
 				position.x = (typeof options.x === "number") ? options.x : position.x;
 				position.y = (typeof options.y === "number") ? options.y : position.y;
+				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
 			}
 			
 			$(dialogue).css({left:position.x+"px",top:position.y+"px"});
-
-			if(config.animateDialogue) {
+			
+			if(animate) {
 				$(dialogue).css({display: "none"});
 				$(dialogue).fadeIn();
 			}
