@@ -52,14 +52,13 @@
 							<h2><a href="<%=Adoro.URL%>projects/collapser" <%if(Adoro.pageName === "collapse"){%>class="selected"<%}%>>Collapser</a></h2>
 							<p>Expanding and collapsing elements made simple using the jQuery library.</p>
 						</li>
-						<!--<li><a href="<%=Adoro.URL%>projects/demos/dropdownmenu.asp" <%if(Adoro.pageName === "dropdown"){%>class="selected"<%}%>>Drop down menu</a></li>-->
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/defaulttextcontrol" <%if(Adoro.pageName === "defaulttextcontrol"){%>class="selected"<%}%>>Default text control</a></h2>
 							<p>Putting place holder text for inputs made simple using jQuery library.</p>
 						</li>						
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/dialogue" <%if(Adoro.pageName === "dialogue"){%>class="selected"<%}%>>Dialogue</a></h2>
-							<p>The most customisable and lightweight Dialogue (A.K.A. LightBox) on the internet.</p>
+							<p>The most customisable and lightweight Dialogue on the internet using the jQuery library.</p>
 						</li>
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/dropdownmenu" <%if(Adoro.pageName === "dropdownmenu"){%>class="selected"<%}%>>Drop down menu</a></h2>
@@ -73,11 +72,14 @@
 							<h2><a href="<%=Adoro.URL%>projects/formvalidator" <%if(Adoro.pageName === "formvalidator"){%>class="selected"<%}%>>Form validator</a></h2>
 							<p>Highly, advanced, accessible and flexible JavaScript form validation framework.</p>
 						</li>
-						<!--<li><a href="<%=Adoro.URL%>projects/demos/formvalidator.asp" <%if(Adoro.pageName === "formvalidator"){%>class="selected"<%}%>>Form validator</a></li>-->
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/googlemap" <%if(Adoro.pageName === "gmap"){%>class="selected"<%}%>>Google map</a></h2>
 							<p>Creating Google maps made simple using a JavaScript control.</p>
 						</li>
+						<li>
+							<h2><a href="<%=Adoro.URL%>projects/lightbox" <%if(Adoro.pageName === "lightbox"){%>class="selected"<%}%>>Lightbox</a></h2>
+							<p>Lightweight and customisable Lightbox image gallery using the jQuery library.</p>
+						</li>						
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/listcollapser" <%if(Adoro.pageName === "listcollapse"){%>class="selected"<%}%>>List collapser</a></h2>
 							<p>Expanding and collapsing list items using the jQuery library - useful for facet navigation.</p>
