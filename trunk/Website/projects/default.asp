@@ -110,6 +110,7 @@
 						<!-- select box api -->
 						<!-- select box styling -->
 						<!-- maps - gmap, mmap, ymap -->
+						<!-- indicator for lightbox images -->
 					</ul>
 				</div>
 			</div>
