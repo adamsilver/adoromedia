@@ -45,9 +45,10 @@ Adoro.Lightbox = function(anchors, options) {
 	}
 	
 	var config = {
-		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeDialogue">Close</a></div><div class="image"><img src="" alt=""/>',
+		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeDialogue">Close</a></div><div class="image">',
 		htmlAfter: '</div><div class="footer">Footer and close here perhaps</div></div>',
-		backHTML: ''
+		backHTML: '<a class="back" href="#">Back</a>',
+		nextHTML: '<a class="next" href="#">Next</a>'
 	}
 	
 	if(typeof options ==="object") {
@@ -57,32 +58,47 @@ Adoro.Lightbox = function(anchors, options) {
 	function LightBoxImage(imageSrc, index, anchor) {
 		anchor.onclick = show;
 		this.show = show;
-		var objImage = new Image();
+		
 		function show() {
 			Adoro.Dialogue.setHTML(config.htmlBefore+config.htmlAfter);
-			objImage.src = imageSrc;
+			var lightbox = document.getElementById("lightbox");
+			var objImage = new Image();
 			objImage.onload = function() {
-				var lightboxImage = $("#lightbox div.image img")[0];
-				lightboxImage.src = objImage.src;
-				lightboxImage.width = objImage.width;
-				lightboxImage.height = objImage.height;
-				var lightbox = document.getElementById("lightbox");
-				$("#lightbox").css({
+				var lightboxImage = $("#lightbox div.image")[0];
+				lightboxImage.appendChild(objImage);
+				
+				$(lightbox).css({
 					"height": $(lightbox).height()+"px",
 					"width": $(lightbox).width()+"px"
 				});
 				Adoro.Dialogue.hideDialogue();
 				Adoro.Dialogue.showOverlay();
 				Adoro.Dialogue.showDialogue();
+			}				
+			
+			if(lightBoxImages[index-1] !== undefined) {
+				var back = $(config.backHTML)[0];
+				lightbox.appendChild(back);
+				
+				$(back).bind("click", function(){
+					showItem(index-1);
+					return false;
+				});
 			}
 			
-			/*$("img.lightboximage").bind("click", function(){
-				showItem(index-1);
-			});
-			$("next").bind("click", function(){
-				showItem(index+1);
-			});*/
-
+			if(lightBoxImages[index+1] !== undefined) {
+				var next = $(config.nextHTML)[0];
+				lightbox.appendChild(next);
+				
+				$(next).bind("click", function(){
+					showItem(index+1);
+					return false;
+				});
+			}
+			
+		
+			
+			objImage.src = imageSrc;
 			return false;
 		}
 	}
