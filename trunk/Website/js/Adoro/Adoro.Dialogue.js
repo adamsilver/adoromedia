@@ -55,10 +55,7 @@ $(document).ready(function(){
 			if(IE6 || FF2) {
 				$(o).css({position: "absolute"});
 			}			
-			if (config.closeOnOverlayClick) {
-				$(o).bind("click", hideOverlay);
-				$(o).bind("click", hideLightBox);
-			}			
+		
 			document.body.appendChild(o);
 			$(o).bgiframe();
 			return o;
@@ -88,9 +85,17 @@ $(document).ready(function(){
 			if(state.showingOverlay) return;
 			
 			var animate = false;
+			var closeOnClick = true;
+			
 			if(typeof options === "object") {
 				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+				closeOnClick = (typeof options.closeOnClick === "boolean" && options.closeOnClick === false) ? false : true;
 			}
+			
+			if (closeOnClick) {
+				$(overlay).bind("click", hideOverlay);
+				$(overlay).bind("click", hideDialogue);
+			}				
 			
 			if(animate) {
 				$(overlay).fadeIn();
@@ -112,6 +117,7 @@ $(document).ready(function(){
 			if (!state.showingOverlay) return;
 			
 			var animate = false;
+			
 			if(typeof options === "object") {
 				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
 			}			
