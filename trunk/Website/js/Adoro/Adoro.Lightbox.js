@@ -45,10 +45,11 @@ Adoro.Lightbox = function(anchors, options) {
 	}
 	
 	var config = {
-		htmlBefore: '<div class="header"><h2>Lightbox</h2><a href="#" class="closeDialogue">Close</a></div><div class="image">',
-		htmlAfter: '</div><div class="footer">Footer and close here perhaps</div>',
+		htmlBefore: '<div id="lightbox"><div class="header"><h2>Lightbox</h2><a href="#" class="closeDialogue">Close</a></div><div class="image">',
+		htmlAfter: '</div><div class="footer">Footer and close here perhaps</div></div>',
 		backHTML: '<a class="back" href="#">Back</a>',
-		nextHTML: '<a class="next" href="#">Next</a>'
+		nextHTML: '<a class="next" href="#">Next</a>',
+		loadingHTML: '<div id="lightboxLoading">Loading...</div>'
 	}
 	
 	if(typeof options ==="object") {
@@ -60,57 +61,49 @@ Adoro.Lightbox = function(anchors, options) {
 		this.show = show;
 		
 		function show() {
-			clear();
-			var lightbox = document.getElementById("lightbox") || null;
-			if(!lightbox) return;
-			
 			// set loading html
 			Adoro.Dialogue.hideDialogue();
-			lightbox.innerHTML = "loading";
+			Adoro.Dialogue.setHTML(config.loadingHTML);
 			Adoro.Dialogue.showDialogue();
-
+		
 			// preload image
 			var objImage = new Image();
-			
-			// when the image is loaded
-			objImage.onload = function() {
-				Adoro.Dialogue.hideDialogue();
-				lightbox.innerHTML = config.htmlBefore+config.htmlAfter;
-				var lightboxImage = $("#lightbox div.image")[0];
-				lightboxImage.appendChild(objImage);
-				
-				$(lightbox).css({
-					"width": objImage.width+"px"
-				});
-				
-				Adoro.Dialogue.showOverlay();
-				Adoro.Dialogue.showDialogue();
-			}				
+			objImage.onload = imageOnLoad;		
 			
 			if(lightBoxImages[index-1] !== undefined) {
-				var back = $(config.backHTML)[0];
+				/*var back = $(config.backHTML)[0];
 				$(lightbox).append(back);
 				$(back).bind("click", function(){
 					showItem(index-1);
 					return false;
-				});
+				});*/
 			}
 			
 			if(lightBoxImages[index+1] !== undefined) {
-				var next = $(config.nextHTML)[0];
+				/*var next = $(config.nextHTML)[0];
 				lightbox.appendChild(next);
 				
 				$(next).bind("click", function(){
 					showItem(index+1);
 					return false;
-				});
+				});*/
 			}
-			
-		
 			
 			objImage.src = imageSrc;
 			return false;
 		}
+		
+		function imageOnLoad() {
+			Adoro.Dialogue.hideDialogue();
+			Adoro.Dialogue.setHTML(config.htmlBefore+config.htmlAfter);
+			var lightboxImage = $("#lightbox div.image")[0];
+			lightboxImage.appendChild(this);
+			$("#lightbox").css({"width": this.width+"px"});
+			// add back and next buttons still to do
+			Adoro.Dialogue.showOverlay();
+			Adoro.Dialogue.showDialogue();
+		}
+		
 	}
 	
 	function clear() {
