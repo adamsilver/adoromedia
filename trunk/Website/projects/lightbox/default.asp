@@ -17,10 +17,10 @@
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
+		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Lightbox.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
-		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript">
 			swfobject.embedSWF("../../swf/snail.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
 		</script>		
@@ -41,9 +41,7 @@
 					
 					<h2>Demo</h2>
 					<div class="lightBoxActivator">	
-						<a id="showLightBox" class="lightBoxImage" href="../../img/logo.gif">Show a dialogue</a>
-						<a class="lightBoxImage" href="../../img/logo_new.gif">Show a dialogue</a>
-						<a class="lightBoxImage" href="../../img/portfolio/boots.jpg">Show a dialogue</a>
+						<a class="lightbox" href="../../img/portfolio/boots.jpg"><img src="../../img/portfolio/boots.jpg" alt="Boots" /></a>
 					</div>
 					
 					<div class="form">
