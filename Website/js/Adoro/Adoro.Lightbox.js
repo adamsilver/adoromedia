@@ -45,8 +45,8 @@ Adoro.Lightbox = function(anchors, options) {
 	}
 	
 	var config = {
-		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeDialogue">Close</a></div><div class="image">',
-		htmlAfter: '</div><div class="footer">Footer and close here perhaps</div></div>',
+		htmlBefore: '<div class="header"><h2>Lightbox</h2><a href="#" class="closeDialogue">Close</a></div><div class="image">',
+		htmlAfter: '</div><div class="footer">Footer and close here perhaps</div>',
 		backHTML: '<a class="back" href="#">Back</a>',
 		nextHTML: '<a class="next" href="#">Next</a>'
 	}
@@ -60,26 +60,36 @@ Adoro.Lightbox = function(anchors, options) {
 		this.show = show;
 		
 		function show() {
-			Adoro.Dialogue.setHTML(config.htmlBefore+config.htmlAfter);
-			var lightbox = document.getElementById("lightbox");
+			clear();
+			var lightbox = document.getElementById("lightbox") || null;
+			if(!lightbox) return;
+			
+			// set loading html
+			Adoro.Dialogue.hideDialogue();
+			lightbox.innerHTML = "loading";
+			Adoro.Dialogue.showDialogue();
+
+			// preload image
 			var objImage = new Image();
+			
+			// when the image is loaded
 			objImage.onload = function() {
+				Adoro.Dialogue.hideDialogue();
+				lightbox.innerHTML = config.htmlBefore+config.htmlAfter;
 				var lightboxImage = $("#lightbox div.image")[0];
 				lightboxImage.appendChild(objImage);
 				
 				$(lightbox).css({
-					"height": $(lightbox).height()+"px",
-					"width": $(lightbox).width()+"px"
+					"width": objImage.width+"px"
 				});
-				Adoro.Dialogue.hideDialogue();
+				
 				Adoro.Dialogue.showOverlay();
 				Adoro.Dialogue.showDialogue();
 			}				
 			
 			if(lightBoxImages[index-1] !== undefined) {
 				var back = $(config.backHTML)[0];
-				lightbox.appendChild(back);
-				
+				$(lightbox).append(back);
 				$(back).bind("click", function(){
 					showItem(index-1);
 					return false;
@@ -101,6 +111,12 @@ Adoro.Lightbox = function(anchors, options) {
 			objImage.src = imageSrc;
 			return false;
 		}
+	}
+	
+	function clear() {
+		var dialogue = document.getElementById("dialogue") || null;
+		if(!dialogue) return;
+		dialogue.innerHTML = '<div id="lightbox"></div>';
 	}
 	
 	function showItem(index) {
