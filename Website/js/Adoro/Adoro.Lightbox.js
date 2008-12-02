@@ -25,7 +25,7 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
 
 // nooby code so they can just do SOMETHING with minimal effort
 $(document).ready(function(){
-	new Adoro.Lightbox($("a.lightBoxImage"));
+	new Adoro.Lightbox($("a.lightbox"));
 });
 
 /**
@@ -45,8 +45,8 @@ Adoro.Lightbox = function(anchors, options) {
 	}
 	
 	var config = {
-		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeDialogue">Close</a></div>',
-		htmlAfter: '<div class="footer">Footer and close here perhaps</div></div>',
+		htmlBefore: '<div id="lightbox"><div class="header">Header and close here perhaps<a href="#" class="closeDialogue">Close</a></div><div class="image"><img src="" alt=""/>',
+		htmlAfter: '</div><div class="footer">Footer and close here perhaps</div></div>',
 		backHTML: ''
 	}
 	
@@ -55,36 +55,48 @@ Adoro.Lightbox = function(anchors, options) {
 	}
 	
 	function LightBoxImage(imageSrc, index, anchor) {
-		//var image = new Image();
-		//image.src=imageSrc;
-		//console.log
-		var html = '<img class="lightboximage" src="'+imageSrc+'" alt="" />';
 		anchor.onclick = show;
 		this.show = show;
-		function show() {			
-			Adoro.Dialogue.hideDialogue();
-			Adoro.Dialogue.setHTML(config.htmlBefore+html+config.htmlAfter);
-			$("img.lightboximage").bind("click", function(){
+		var objImage = new Image();
+		function show() {
+			Adoro.Dialogue.setHTML(config.htmlBefore+config.htmlAfter);
+			objImage.src = imageSrc;
+			objImage.onload = function() {
+				var lightboxImage = $("#lightbox div.image img")[0];
+				lightboxImage.src = objImage.src;
+				lightboxImage.width = objImage.width;
+				lightboxImage.height = objImage.height;
+				var lightbox = document.getElementById("lightbox");
+				$("#lightbox").css({
+					"height": $(lightbox).height()+"px",
+					"width": $(lightbox).width()+"px"
+				});
+				Adoro.Dialogue.hideDialogue();
+				Adoro.Dialogue.showOverlay();
+				Adoro.Dialogue.showDialogue();
+			}
+			
+			/*$("img.lightboximage").bind("click", function(){
 				showItem(index-1);
 			});
 			$("next").bind("click", function(){
 				showItem(index+1);
-			});
-			Adoro.Dialogue.showOverlay();			
-			Adoro.Dialogue.showDialogue();
+			});*/
+
 			return false;
 		}
 	}
 	
 	function showItem(index) {
 		var lightBoxImage = lightBoxImages[index];
-		if(lightBoxImage == undefined) return;
+		if(lightBoxImage === undefined) return;
 		lightBoxImage.show();
 	}
 	
 	// if dynamically adding a new anchor/lightboximage then need to run this method
-	this.reInstantiate = reInstantiate;
-	function reInstantiate() {
+	// not important for now
+	//this.reInstantiate = reInstantiate;
+	//function reInstantiate() {
 		// delete array and init() again;
-	}
+	//}
 }
