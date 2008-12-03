@@ -82,8 +82,7 @@ $(document).ready(function(){
 		* @name showOverlay
 		*/			
 		function showOverlay(options) {
-			if(state.showingOverlay) return;
-			
+			// TO DO: unbind all events
 			var animate = false;
 			var closeOnClick = true;
 			
@@ -114,8 +113,6 @@ $(document).ready(function(){
 		* @name hideOverlay
 		*/			
 		function hideOverlay(options){
-			if (!state.showingOverlay) return;
-			
 			var animate = false;
 			
 			if(typeof options === "object") {
@@ -142,33 +139,40 @@ $(document).ready(function(){
 		* @param {Number} options.y The dialogue y coordinate for positioning
 		*/			
 		function showDialogue(options) {
-			// set default to center x and y position
-			var position = {
-				x: (function(){
+			var config = {
+				animate: false,
+				closeOverlayOnClick: true,
+				showOverlay: true,
+				positionX: (function(){
 					var x = (($(window).width()+ - $(dialogue).width()) / 2) + $(window).scrollLeft();
 					if(x < 0) x = 0;
 					return x;
-				}()), 
-				y: (function(){
+				}()),
+				positionY: (function(){
 					var y = (($(window).height() - $(dialogue).height()) / 2) + $(window).scrollTop();
 					if(y < 0) y = 0;
 					return y;			
 				}())
-			}; 
-			
-			var animate = false;
-			
-			// if manual coordinates then override centering
-			if(typeof options === "object") {
-				position.x = (typeof options.x === "number") ? options.x : position.x;
-				position.y = (typeof options.y === "number") ? options.y : position.y;
-				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
 			}
 			
-			$(dialogue).css({left:position.x+"px",top:position.y+"px"});
+			if(typeof options === "object") {
+				config.positionX = (typeof options.x === "number") ? options.x : config.positionX;
+				config.positionY = (typeof options.y === "number") ? options.y : config.positionY;
+				config.animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+				config.showOverlay = (typeof options.showOverlay === "boolean" && options.showOverlay === false) ? false : true;
+			}
 			
-			if(animate) {
-				$(dialogue).css({display: "none"});
+			if(config.showOverlay) {
+				showOverlay();
+			}
+			else {
+				hideOverlay();
+			}
+			
+			$(dialogue).css({"left":config.positionX+"px","top":config.positionY+"px", "display":"block"});
+			
+			if(config.animate) {
+				$(dialogue).css({"display":"none"});
 				$(dialogue).fadeIn();
 			}
 			
