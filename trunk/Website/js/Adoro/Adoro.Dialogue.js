@@ -177,9 +177,9 @@ $(document).ready(function(){
 				fixOverlay();
 			}
 			
-			var anchor = $(dialogue).find("a")[0] || null;
-			if(anchor) {
-				anchor.focus();
+			var focusElement = $(dialogue).find("a, input, textarea, select")[0] || null;
+			if(focusElement) {
+				focusElement.focus();
 			}
 			return false;
 		}
