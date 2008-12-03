@@ -73,7 +73,6 @@ Adoro.Lightbox = function(anchors, options) {
 			// set loading html
 			Adoro.Dialogue.hideDialogue();
 			Adoro.Dialogue.setHTML(config.htmlLoading);
-			Adoro.Dialogue.showOverlay();
 			Adoro.Dialogue.showDialogue();
 
 			// preload image
@@ -100,8 +99,7 @@ Adoro.Lightbox = function(anchors, options) {
 			addBackButton();
 			addNextButton();
 			
-			Adoro.Dialogue.showOverlay({animate: true});
-			Adoro.Dialogue.showDialogue({animate: true});
+			Adoro.Dialogue.showDialogue({animateDialogue: true});
 		}
 		
 		function addBackButton() {
@@ -141,7 +139,9 @@ Adoro.Lightbox = function(anchors, options) {
 	this.showItem = showItem;
 	function showItem(index) {
 		var lightBoxImage = lightBoxImages[index];
-		if(lightBoxImage === undefined) return;
+		if(lightBoxImage === undefined) {
+			Adoro.Dialogue.hideDialogue();
+		}
 		lightBoxImage.show();
 	}
 	

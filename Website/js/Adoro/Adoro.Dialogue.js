@@ -38,6 +38,7 @@ $(document).ready(function(){
 		 */
 		var me = this;
 		var config = {
+			overlayID: "overlay", // if you change this then the css must change
 			dialogueID: "dialogue", // if you change this then the css must change
 			closeClass: "closeDialogue",
 			opacity: "0.45" // need to move this to when we use like all the rest
@@ -48,7 +49,7 @@ $(document).ready(function(){
 		var overlay = (function(){
 			var o;
 			o = document.createElement("div");
-			o.id = "overlay";
+			o.id = config.overlayID;
 			$(o).css({opacity: config.opacity});// for cross browser lovelyness
 			if(IE6 || FF2) {
 				$(o).css({position: "absolute"});
@@ -84,7 +85,7 @@ $(document).ready(function(){
 				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
 			}
 			if(animate) {
-				$(overlay).fadeIn();
+				$(overlay).fadeIn("slow");
 			}
 			else {
 				$(overlay).css("display", "block");
@@ -99,16 +100,7 @@ $(document).ready(function(){
 		* @name hideOverlay
 		*/			
 		function hideOverlay(options){
-			var animate = false;
-			if(typeof options === "object") {
-				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
-			}
-			if(animate) {
-				$(overlay).fadeOut();
-			}
-			else {
-				$(overlay).css("display", "none");
-			}			
+			$(overlay).css("display", "none");
 		}
 		
 		/**
@@ -123,9 +115,10 @@ $(document).ready(function(){
 		*/			
 		function showDialogue(options) {
 			var config = {
-				animate: false,
+				animateDialogue: false,
 				closeOnClick: true,
 				showOverlay: true,
+				animateOverlay: false,
 				positionX: (function(){
 					var x = (($(window).width()+ - $(dialogue).width()) / 2) + $(window).scrollLeft();
 					if(x < 0) x = 0;
@@ -141,22 +134,22 @@ $(document).ready(function(){
 			if(typeof options === "object") {
 				config.positionX = (typeof options.x === "number") ? options.x : config.positionX;
 				config.positionY = (typeof options.y === "number") ? options.y : config.positionY;
-				config.animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+				config.animateDialogue = (typeof options.animateDialogue === "boolean" && options.animateDialogue === true) ? true : false;
+				config.animateOverlay = (typeof options.animateOverlay === "boolean" && options.animateOverlay === true) ? true : false;
 				config.showOverlay = (typeof options.showOverlay === "boolean" && options.showOverlay === false) ? false : true;
 				config.closeOnClick = (typeof options.closeOnClick === "boolean" && options.closeOnClick === false) ? false : true;
 			}
 			
 			if (config.closeOnClick) {
-				$(overlay).bind("click", hideOverlay);
 				$(overlay).bind("click", hideDialogue);
 			}
 			else {
-				$(overlay).unbind("click", hideOverlay);
 				$(overlay).unbind("click", hideDialogue);			
 			}			
 			
 			if(config.showOverlay) {
-				showOverlay();
+				var overlayAnimationOptions = (config.animateOverlay) ? {animate: true} : {};
+				showOverlay(overlayAnimationOptions);
 			}
 			else {
 				hideOverlay();
@@ -164,7 +157,7 @@ $(document).ready(function(){
 			
 			$(dialogue).css({"left":config.positionX+"px","top":config.positionY+"px", "display":"block"});
 			
-			if(config.animate) {
+			if(config.animateDialogue) {
 				$(dialogue).css({"display":"none"});
 				$(dialogue).fadeIn();
 			}
@@ -189,7 +182,9 @@ $(document).ready(function(){
 		* @name hideLightBox
 		*/	
 		function hideDialogue() {
+			
 			$(dialogue).css({left: "-99999em"});
+			hideOverlay();
 			return false;
 		}
 
@@ -211,11 +206,7 @@ $(document).ready(function(){
 		 * @private
 		 */
 		function setCloseEvent() {
-			$("a."+config.closeClass, dialogue).click(function(){
-				hideDialogue();
-				hideOverlay();
-				return false;
-			});
+			$(dialogue).find("a."+config.closeClass).bind("click", hideDialogue);
 		}		
 		
 		/**
@@ -233,8 +224,6 @@ $(document).ready(function(){
 		}
 		
 		// public members
-		this.showOverlay = showOverlay;
-		this.hideOverlay = hideOverlay;
 		this.showDialogue = showDialogue;
 		this.hideDialogue = hideDialogue;
 		this.setHTML = setHTML;

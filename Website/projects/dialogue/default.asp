@@ -105,7 +105,7 @@
 					
 					//Adoro.Dialogue.showOverlay();
 					Adoro.Dialogue.setHTML(html);
-					Adoro.Dialogue.showDialogue({x: 100, y:150});
+					Adoro.Dialogue.showDialogue({x: 100, y:150, animateOverlay: true});
 					$("a.new").click(function(){
 						var html2 = '';
 						html2 += 	'<div id="dialogue02">';
@@ -119,7 +119,7 @@
 						html2 +=	'</div>';
 						Adoro.Dialogue.hideDialogue();
 						Adoro.Dialogue.setHTML(html2);
-						Adoro.Dialogue.showDialogue({animate:true, closeOnClick: false, showOverlay: true});
+						Adoro.Dialogue.showDialogue({animateDialogue:true, closeOnClick: false, showOverlay: true});
 						return false;
 					});
 					return false;
