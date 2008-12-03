@@ -22,7 +22,7 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Lightbox.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
 		<script type="text/javascript">
-			swfobject.embedSWF("../../swf/snail.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
+			swfobject.embedSWF("../../swf/butterfly.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
 		</script>
 		<style type="text/css">
 			/* custom lightbox styling - style how you wish */
