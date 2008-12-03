@@ -31,7 +31,8 @@
 					htmlAfter: '<div class="afterShizzle">Could put something after like this if you want</div>',
 					htmlBack: '<a class="back" href="#">Previous gallery image</a>',
 					htmlNext: '<a class="next" href="#">Next gallery image</a>',
-					htmlLoading: '<div class="loading">My special loading gif in here</div>'
+					htmlLoading: '<div class="loading">My special loading gif in here</div>',
+					overlayOpacity: "0.78"
 				});
 			});
 		</script>		

@@ -46,7 +46,8 @@ Adoro.Lightbox = function(anchors, options) {
 		htmlAfter: '<div class="footer">This is the footer or whatever you want</div>',
 		htmlBack: '<a class="back" href="#">Back</a>',
 		htmlNext: '<a class="next" href="#">Next</a>',
-		htmlLoading: '<div id="lightboxLoading">Loading...</div>'
+		htmlLoading: '<div id="lightboxLoading">Loading...</div>',
+		overlayOpacity: "0.9"
 	}
 	
 	if(typeof options ==="object") {
@@ -57,6 +58,7 @@ Adoro.Lightbox = function(anchors, options) {
 		config.htmlBack = (typeof options.htmlBack === "string") ? options.htmlBack : config.htmlBack;
 		config.htmlNext = (typeof options.htmlNext === "string") ? options.htmlNext : config.htmlNext;
 		config.htmlLoading = (typeof options.htmlLoading === "string") ? options.htmlLoading : config.htmlLoading;
+		config.overlayOpacity = (typeof options.overlayOpacity === "string") ? options.overlayOpacity : config.overlayOpacity;
 	}
 	
 	var HTML = 		'<div id="'+config.containerID+'">';
@@ -73,7 +75,7 @@ Adoro.Lightbox = function(anchors, options) {
 			// set loading html
 			Adoro.Dialogue.hideDialogue();
 			Adoro.Dialogue.setHTML(config.htmlLoading);
-			Adoro.Dialogue.showDialogue();
+			Adoro.Dialogue.showDialogue({overlayOpacity: config.overlayOpacity});
 
 			// preload image
 			var objImage = new Image();
@@ -83,7 +85,8 @@ Adoro.Lightbox = function(anchors, options) {
 		}
 		
 		function imageOnLoad() {
-			Adoro.Dialogue.hideDialogue();
+			console.log("after the image is loaded just hide dialogue and not overlay");
+			Adoro.Dialogue.hideDialogue({closeOverlay: false});
 			Adoro.Dialogue.setHTML(HTML);
 			
 			// inject image
