@@ -26,7 +26,13 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				// create a lightbox effect by finding all anchors with a class of lightbox
-				new Adoro.Lightbox($("a.lightbox"));
+				new Adoro.Lightbox($("a.lightbox"), {
+					htmlBefore: '<div class="beforeShizzle"><a class="closeDialogue" href="#">Close the lightbox</a></div>',
+					htmlAfter: '<div class="afterShizzle">Could put something after like this if you want</div>',
+					htmlBack: '<a class="back" href="#">Previous gallery image</a>',
+					htmlNext: '<a class="next" href="#">Next gallery image</a>',
+					htmlLoading: '<div class="loading">My special loading gif in here</div>'
+				});
 			});
 		</script>		
 		<style type="text/css">
@@ -92,7 +98,8 @@
 					<h1>Lightbox</h1>
 					<h2>About</h2>
 					<ul class="generic">
-						<li>Built on top of the very lightweight <a href="../dialogue">Dialogue (Adoro.Dialogue)</a> plugin .</li>					
+						<li>Built on top of the very lightweight <a href="../dialogue">Dialogue (Adoro.Dialogue)</a> plugin .</li>
+						<li>Accessible via keyboard navigation</li>
 					</ul>
 					
 					<h2>Demo</h2>

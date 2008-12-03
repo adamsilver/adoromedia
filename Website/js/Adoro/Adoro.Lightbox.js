@@ -44,9 +44,9 @@ Adoro.Lightbox = function(anchors, options) {
 		imageContainerID: "lightboxImage",
 		htmlBefore: '<div class="header"><h2>Lightbox</h2><a href="#" class="closeDialogue">Close</a></div>',
 		htmlAfter: '<div class="footer">This is the footer or whatever you want</div>',
-		backHTML: '<a class="back" href="#">Back</a>',
-		nextHTML: '<a class="next" href="#">Next</a>',
-		loadingHTML: '<div id="lightboxLoading">Loading...</div>'
+		htmlBack: '<a class="back" href="#">Back</a>',
+		htmlNext: '<a class="next" href="#">Next</a>',
+		htmlLoading: '<div id="lightboxLoading">Loading...</div>'
 	}
 	
 	if(typeof options ==="object") {
@@ -54,9 +54,9 @@ Adoro.Lightbox = function(anchors, options) {
 		config.imageContainerID = (typeof options.imageContainerID === "string") ? options.imageContainerID : config.imageContainerID;
 		config.htmlBefore = (typeof options.htmlBefore === "string") ? options.htmlBefore : config.htmlBefore;
 		config.htmlAfter = (typeof options.htmlAfter === "string") ? options.htmlAfter : config.htmlAfter;
-		config.backHTML = (typeof options.backHTML === "string") ? options.backHTML : config.backHTML;
-		config.nextHTML = (typeof options.nextHTML === "string") ? options.nextHTML : config.nextHTML;
-		config.loadingHTML = (typeof options.loadingHTML === "string") ? options.loadingHTML : config.loadingHTML;
+		config.htmlBack = (typeof options.htmlBack === "string") ? options.htmlBack : config.htmlBack;
+		config.htmlNext = (typeof options.htmlNext === "string") ? options.htmlNext : config.htmlNext;
+		config.htmlLoading = (typeof options.htmlLoading === "string") ? options.htmlLoading : config.htmlLoading;
 	}
 	
 	var HTML = 		'<div id="'+config.containerID+'">';
@@ -72,7 +72,7 @@ Adoro.Lightbox = function(anchors, options) {
 		function show() {
 			// set loading html
 			Adoro.Dialogue.hideDialogue();
-			Adoro.Dialogue.setHTML(config.loadingHTML);
+			Adoro.Dialogue.setHTML(config.htmlLoading);
 			Adoro.Dialogue.showOverlay();
 			Adoro.Dialogue.showDialogue();
 
@@ -106,7 +106,7 @@ Adoro.Lightbox = function(anchors, options) {
 		
 		function addBackButton() {
 			if(lightBoxImages[index-1] !== undefined) {
-				var back = $(config.backHTML)[0] || null;
+				var back = $(config.htmlBack)[0] || null;
 				if(!back) return;
 				
 				var lightboxContainer = document.getElementById(config.containerID);
@@ -122,7 +122,7 @@ Adoro.Lightbox = function(anchors, options) {
 		
 		function addNextButton() {
 			if(lightBoxImages[index+1] !== undefined) {
-				var next = $(config.nextHTML)[0] || null;
+				var next = $(config.htmlNext)[0] || null;
 				if(!next) return;
 				
 				var lightboxContainer = document.getElementById(config.containerID);
