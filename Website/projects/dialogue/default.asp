@@ -25,6 +25,10 @@
 		</script>
 		<style type="text/css">
 			
+			#flash {
+				margin-bottom: 20px;
+			}
+			
 			div#dialogue01,
 			div#dialogue02 {
 				border: 1px solid #1D2B33;
@@ -90,7 +94,7 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$("p.lightBoxActivator a").click(function() {
-				
+					// could get html from ajax request etc
 					var html = '';
 					html += 	'<div id="dialogue01">';
 					html += 		'<div class="header">'
@@ -103,10 +107,10 @@
 					html +=		'</div>';
 					html +=	'</div>';
 					
-					//Adoro.Dialogue.showOverlay();
 					Adoro.Dialogue.setHTML(html);
 					Adoro.Dialogue.showDialogue({x: 100, y:150, animateOverlay: true});
 					$("a.new").click(function(){
+						// could get html from ajax request etc
 						var html2 = '';
 						html2 += 	'<div id="dialogue02">';
 						html2 += 		'<div class="header">'
@@ -185,6 +189,19 @@
 					<div id="flash">
 						My flash here
 					</div>							
+						
+						
+					<h2>Dependencies</h2>
+					<ul class="generic">
+						<li>jquery-1.2.6.js</li>
+						<li>jquery.bgiframe.js</li>
+						<li>jquery.browser.js</li>
+						<li>Adoro.Dialogue.js</li>
+					</ul>
+					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/jquery.asp"-->
+					<!--#include file="../../inc/code/dialogue.asp"-->						
 						
 				</div>
 			</div>
