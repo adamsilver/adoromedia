@@ -1,48 +1,7 @@
-div#lightbox {
-	background: #ffffff;
-	border: 1px solid #333333;
-	overflow: hidden;
+ul.lightBoxDemo {
+	list-style: none;
 }
 
-div#lightbox div.header {
-	padding: 10px;
-	border-bottom: 1px solid #333333;
-	overflow: hidden;
-	background: #898F2C;
-	color: #ffffff;
-}
-
-div#lightbox div.header h2 {
-	float: left;
-	color: #ffffff;
-	font-size: 1.1em;
-	margin: 0px;
-}
-
-div#lightbox div.header a.closeDialogue {
-	float: right;
-	color: #ffffff;
-	font-size: 1.1em;
-}
-
-div#lightbox div.footer {
-	padding: 10px;
-	border-top: 1px solid #333333;
-	overflow: hidden;
-	background: #898F2C;
-	color: #ffffff;	
-}
-
-div#lightbox a.back {
-	float: left;
-	padding: 10px;
-	font-size: 1.1em;
-	border-right: 1px solid #333333;
-}
-
-div#lightbox a.next {
-	float: right;
-	padding: 10px;
-	font-size: 1.1em;
-	border-left: 1px solid #333333;
+ul.lightBoxDemo li {
+	margin-bottom: 10px;
 }

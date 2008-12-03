@@ -23,7 +23,58 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
 		<script type="text/javascript">
 			swfobject.embedSWF("../../swf/snail.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
-		</script>		
+		</script>
+		<style type="text/css">
+			/* custom lightbox styling - style how you wish */
+			div#lightbox {
+				background: #ffffff;
+				border: 1px solid #333333;
+				overflow: hidden;
+			}
+			
+			div#lightbox div.header {
+				padding: 10px;
+				border-bottom: 1px solid #333333;
+				overflow: hidden;
+				background: #898F2C;
+				color: #ffffff;
+			}
+			
+			div#lightbox div.header h2 {
+				float: left;
+				color: #ffffff;
+				font-size: 1.1em;
+				margin: 0px;
+			}
+			
+			div#lightbox div.header a.closeDialogue {
+				float: right;
+				color: #ffffff;
+				font-size: 1.1em;
+			}
+			
+			div#lightbox div.footer {
+				padding: 10px;
+				border-top: 1px solid #333333;
+				overflow: hidden;
+				background: #898F2C;
+				color: #ffffff;	
+			}
+			
+			div#lightbox a.back {
+				float: left;
+				padding: 10px;
+				font-size: 1.1em;
+				border-right: 1px solid #333333;
+			}
+			
+			div#lightbox a.next {
+				float: right;
+				padding: 10px;
+				font-size: 1.1em;
+				border-left: 1px solid #333333;
+			}		
+		</style>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -40,7 +91,7 @@
 					</ul>
 					
 					<h2>Demo</h2>
-					<ul>
+					<ul class="lightBoxDemo">
 						<li><a class="lightbox" href="../../img/portfolio/cpplus.jpg"><img src="../../img/portfolio/cpplus.jpg" alt="CP Plus" /></a></li>
 						<li><a class="lightbox" href="../../img/portfolio/hamleys.jpg"><img src="../../img/portfolio/hamleys.jpg" alt="Hamleys" /></a></li>
 						<li><a class="lightbox" href="../../img/portfolio/flyingflowers.jpg"><img src="../../img/portfolio/flyingflowers.jpg" alt="Flying flowers" /></a></li>
