@@ -43,7 +43,7 @@
 				overflow: hidden;
 			}
 			
-			div#lightbox div.header {
+			div#lightbox div.beforeShizzle {
 				padding: 10px;
 				border-bottom: 1px solid #333333;
 				overflow: hidden;
@@ -51,25 +51,21 @@
 				color: #ffffff;
 			}
 			
-			div#lightbox div.header h2 {
-				float: left;
-				color: #ffffff;
-				font-size: 1.1em;
-				margin: 0px;
-			}
-			
-			div#lightbox div.header a.closeDialogue {
-				float: right;
+			div#lightbox div.beforeShizzle a.closeDialogue {
+				display: block;
+				text-align: center;
 				color: #ffffff;
 				font-size: 1.1em;
 			}
 			
-			div#lightbox div.footer {
+			div#lightbox div.afterShizzle {
 				padding: 10px;
 				border-top: 1px solid #333333;
 				overflow: hidden;
 				background: #898F2C;
 				color: #ffffff;	
+				font-size: 1.1em;
+				text-align: center;
 			}
 			
 			div#lightbox a.back {
