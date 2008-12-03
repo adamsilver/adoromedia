@@ -18,7 +18,8 @@ ul.generic,
 ul.projects,
 ul.generic li,
 div#dropDownMenu,
-div#dropDownMenu ul li ul li {
+div#dropDownMenu ul li ul li,
+div#dialogue div.header {
 	height: 1%;
 }
 

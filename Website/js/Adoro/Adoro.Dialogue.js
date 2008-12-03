@@ -40,8 +40,7 @@ $(document).ready(function(){
 		var config = {
 			overlayID: "overlay", // if you change this then the css must change
 			dialogueID: "dialogue", // if you change this then the css must change
-			closeClass: "closeDialogue",
-			opacity: "0.45" // need to move this to when we use like all the rest
+			closeClass: "closeDialogue"
 		};
 		var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
 		var IE7 = ($.browser.msie && parseInt($.browser.version) === 7);
@@ -50,7 +49,6 @@ $(document).ready(function(){
 			var o;
 			o = document.createElement("div");
 			o.id = config.overlayID;
-			$(o).css({opacity: config.opacity});// for cross browser lovelyness
 			if(IE6 || FF2) {
 				$(o).css({position: "absolute"});
 			}
@@ -75,16 +73,20 @@ $(document).ready(function(){
 		/**
 		* Show overlay
 		* @function
-		* @public
+		* @private
 		* @memberOf Adoro.LightBox
 		* @name showOverlay
 		*/			
 		function showOverlay(options) {
-			var animate = false;
+			var config = {animate: false,opacity: "0.8"};
 			if(typeof options === "object") {
-				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+				config.animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
+				config.opacity = (typeof options.opacity === "string") ? options.opacity : config.opacity;
 			}
-			if(animate) {
+			
+			$(overlay).css({opacity: config.opacity});
+			
+			if(config.animate) {
 				$(overlay).fadeIn("slow");
 			}
 			else {
@@ -95,7 +97,7 @@ $(document).ready(function(){
 		/**
 		* Hide overlay
 		* @function
-		* @public
+		* @private
 		* @memberOf Adoro.LightBox
 		* @name hideOverlay
 		*/			
@@ -110,15 +112,21 @@ $(document).ready(function(){
 		* @memberOf Adoro.LightBox
 		* @name showLightBox
 		* @param {Object} options for the function
-		* @param {Number} options.x The dialogue x coordinate for positioning
-		* @param {Number} options.y The dialogue y coordinate for positioning
+		* @param {Number} options.x The dialogue x coordinate for positioning, default center
+		* @param {Number} options.y The dialogue y coordinate for positioning, default center
+		* @param {Boolean} options.animateDialogue If true the dialogue will animate, default false
+		* @param {Boolean} options.animateOverlay If true the overlay will animate, defailt false
+		* @param {Boolean} options.showOverlay If true the overlay will be shown, otherwise it will not be shown, default true.
+		* @param {Boolean} options.closeOnOverlayClick If true the dialogue and overlay will close when the overlay is clicked, otherwise false, default true
+		* @param {String} options.overlayOpacity The opacity value between "0" and "1". Default value "0.8"
 		*/			
 		function showDialogue(options) {
 			var config = {
 				animateDialogue: false,
-				closeOnClick: true,
-				showOverlay: true,
 				animateOverlay: false,
+				showOverlay: true,
+				closeOnOverlayClick: true,
+				overlayOpacity: "0.8",
 				positionX: (function(){
 					var x = (($(window).width()+ - $(dialogue).width()) / 2) + $(window).scrollLeft();
 					if(x < 0) x = 0;
@@ -137,10 +145,11 @@ $(document).ready(function(){
 				config.animateDialogue = (typeof options.animateDialogue === "boolean" && options.animateDialogue === true) ? true : false;
 				config.animateOverlay = (typeof options.animateOverlay === "boolean" && options.animateOverlay === true) ? true : false;
 				config.showOverlay = (typeof options.showOverlay === "boolean" && options.showOverlay === false) ? false : true;
-				config.closeOnClick = (typeof options.closeOnClick === "boolean" && options.closeOnClick === false) ? false : true;
+				config.closeOnOverlayClick = (typeof options.closeOnOverlayClick === "boolean" && options.closeOnOverlayClick === false) ? false : true;
+				config.overlayOpacity = (typeof options.overlayOpacity === "string") ? options.overlayOpacity : config.overlayOpacity;
 			}
 			
-			if (config.closeOnClick) {
+			if (config.closeOnOverlayClick) {
 				$(overlay).bind("click", hideDialogue);
 			}
 			else {
@@ -148,8 +157,10 @@ $(document).ready(function(){
 			}			
 			
 			if(config.showOverlay) {
-				var overlayAnimationOptions = (config.animateOverlay) ? {animate: true} : {};
-				showOverlay(overlayAnimationOptions);
+				showOverlay({
+					animate: config.animateOverlay,
+					opacity: config.overlayOpacity
+				});
 			}
 			else {
 				hideOverlay();
@@ -182,7 +193,6 @@ $(document).ready(function(){
 		* @name hideLightBox
 		*/	
 		function hideDialogue() {
-			
 			$(dialogue).css({left: "-99999em"});
 			hideOverlay();
 			return false;
