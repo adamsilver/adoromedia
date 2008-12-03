@@ -45,6 +45,7 @@ $(document).ready(function(){
 		var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
 		var IE7 = ($.browser.msie && parseInt($.browser.version) === 7);
 		var FF2 = ($.browser.mozilla && parseInt($.browser.versionX) === 2);
+		var state = {showingOverlay: false};
 		var overlay = (function(){
 			var o;
 			o = document.createElement("div");
@@ -78,6 +79,7 @@ $(document).ready(function(){
 		* @name showOverlay
 		*/			
 		function showOverlay(options) {
+			if(state.showingOverlay) return;
 			var config = {animate: false,opacity: "0.8"};
 			if(typeof options === "object") {
 				config.animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
@@ -87,11 +89,12 @@ $(document).ready(function(){
 			$(overlay).css({opacity: config.opacity});
 			
 			if(config.animate) {
-				$(overlay).fadeIn("slow");
+				$(overlay).fadeIn();
 			}
 			else {
 				$(overlay).css("display", "block");
 			}
+			state.showingOverlay = true;
 		}
 
 		/**
@@ -102,6 +105,7 @@ $(document).ready(function(){
 		* @name hideOverlay
 		*/			
 		function hideOverlay(options){
+			state.showingOverlay = false;
 			$(overlay).css("display", "none");
 		}
 		
@@ -192,9 +196,20 @@ $(document).ready(function(){
 		* @memberOf Adoro.LightBox
 		* @name hideLightBox
 		*/	
-		function hideDialogue() {
-			$(dialogue).css({left: "-99999em"});
-			hideOverlay();
+		function hideDialogue(options) {
+			var config = {
+				closeOverlay: true
+			};
+			
+			if(typeof options === "object") {
+				config.closeOverlay = (typeof options.closeOverlay === "boolean" && options.closeOverlay === false) ? false : true;
+			}
+			
+			$(dialogue).css({left: "-99999em"});			
+			if(config.closeOverlay) {
+				hideOverlay();
+			}
+			
 			return false;
 		}
 
