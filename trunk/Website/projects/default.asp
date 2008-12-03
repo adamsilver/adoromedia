@@ -14,10 +14,10 @@
 		<!--#include file="../inc/head_css.asp"-->	
 		<!--#include file="../inc/head_cssie.asp"-->
 		<script type="text/javascript">
-			$(document).ready(function(){				
+			/*$(document).ready(function(){				
 				var lis = $("ul.projects li");
 				new Adoro.ListAnimator(lis, {"speed": 100, "cssStart": {"opacity": "0.5", "marginLeft":"5px"}, "cssEnd":{"opacity":"1", "marginLeft":"0px"}}).start();
-			});
+			});*/
 		</script>
 	</head>
 	<body class="library">

@@ -15,13 +15,13 @@
 		<!--#include file="inc/head_js.asp"-->
 		<script type="text/javascript" src="<%=Adoro.URL%>js/Adoro/Adoro.ListAnimator.js"></script>
 		<script type="text/javascript">
-			$(document).ready(function(){				
+			/*$(document).ready(function(){				
 				var lis = $("ul.generic li");
 				var start = {"paddingLeft": "30px","opacity": "0"};
 				var end = {"paddingLeft": "-=30px", "opacity":"1"};
 				var speed = 100;
 				new Adoro.ListAnimator(lis, {cssStart: start, cssEnd: end, speed: speed}).start();
-			});
+			});*/
 		</script>
 
 		<!--#include file="inc/head_cssie.asp"-->
