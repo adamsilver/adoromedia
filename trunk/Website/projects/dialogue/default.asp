@@ -98,7 +98,7 @@
 					html +=			'<a href="#" class="closeDialogue">Close</a>';
 					html +=		'</div>';
 					html +=		'<div class="panel">';
-					html +=			'<p>Positioned at x(100), y(150).</p>';
+					html +=			'<p>{x: 100, y:150, animateOverlay: true}</p>';
 					html +=			'<a class="new" href="#">Show next demo</a>';
 					html +=		'</div>';
 					html +=	'</div>';
@@ -110,16 +110,16 @@
 						var html2 = '';
 						html2 += 	'<div id="dialogue02">';
 						html2 += 		'<div class="header">'
-						html2 +=			'<h2>Demo 02 - centered, animate, dont close on overlay click</h2>'
+						html2 +=			'<h2>Demo 02</h2>'
 						html2 +=			'<a href="#" class="closeDialogue">Close</a>';
 						html2 +=		'</div>';
 						html2 +=		'<div class="panel">';
-						html2 +=			'<p>Centered as no coordinates specified.</p>';
+						html2 +=			'<p>{animateDialogue:true, closeOnOverlayClick: false, showOverlay: true, overlayOpacity: "1"}</p>';
 						html2 +=		'</div>';						
 						html2 +=	'</div>';
 						Adoro.Dialogue.hideDialogue();
 						Adoro.Dialogue.setHTML(html2);
-						Adoro.Dialogue.showDialogue({animateDialogue:true, closeOnClick: false, showOverlay: true});
+						Adoro.Dialogue.showDialogue({animateDialogue:true, closeOnOverlayClick: false, showOverlay: true, overlayOpacity: "1"});
 						return false;
 					});
 					return false;
