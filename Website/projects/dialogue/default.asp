@@ -168,6 +168,7 @@
 								<li>be a certain opacity.</li>
 							</ul>
 						</li>
+						<li>If there are any links or form fields (i.e. focusable elements) inside the dialogue then the first 1 will be automatically focused.</li>
 					</ul>
 					
 					<h2>Demo</h2>
