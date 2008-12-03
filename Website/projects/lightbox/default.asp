@@ -100,6 +100,7 @@
 					<ul class="generic">
 						<li>Built on top of the very lightweight <a href="../dialogue">Dialogue (Adoro.Dialogue)</a> plugin .</li>
 						<li>Accessible via keyboard navigation</li>
+						<li>Very flexible - customisable IDs, HTML and CSS to create custom look and feel.</li>
 					</ul>
 					
 					<h2>Demo</h2>
