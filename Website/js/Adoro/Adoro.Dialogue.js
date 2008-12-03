@@ -39,14 +39,12 @@ $(document).ready(function(){
 		var me = this;
 		var config = {
 			dialogueID: "dialogue", // if you change this then the css must change
-			closeClass: "closeDialogue", 
-			closeOnOverlayClick: false,
-			opacity: "0.45"
+			closeClass: "closeDialogue",
+			opacity: "0.45" // need to move this to when we use like all the rest
 		};
 		var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
 		var IE7 = ($.browser.msie && parseInt($.browser.version) === 7);
 		var FF2 = ($.browser.mozilla && parseInt($.browser.versionX) === 2);
-		var state = {showingOverlay: false,showingDialogue: false};
 		var overlay = (function(){
 			var o;
 			o = document.createElement("div");
@@ -54,8 +52,7 @@ $(document).ready(function(){
 			$(o).css({opacity: config.opacity});// for cross browser lovelyness
 			if(IE6 || FF2) {
 				$(o).css({position: "absolute"});
-			}			
-		
+			}
 			document.body.appendChild(o);
 			$(o).bgiframe();
 			return o;
@@ -82,27 +79,16 @@ $(document).ready(function(){
 		* @name showOverlay
 		*/			
 		function showOverlay(options) {
-			// TO DO: unbind all events
 			var animate = false;
-			var closeOnClick = true;
-			
 			if(typeof options === "object") {
 				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
-				closeOnClick = (typeof options.closeOnClick === "boolean" && options.closeOnClick === false) ? false : true;
 			}
-			
-			if (closeOnClick) {
-				$(overlay).bind("click", hideOverlay);
-				$(overlay).bind("click", hideDialogue);
-			}				
-			
 			if(animate) {
 				$(overlay).fadeIn();
 			}
 			else {
 				$(overlay).css("display", "block");
 			}
-			state.showingOverlay = true;
 		}
 
 		/**
@@ -114,18 +100,15 @@ $(document).ready(function(){
 		*/			
 		function hideOverlay(options){
 			var animate = false;
-			
 			if(typeof options === "object") {
 				animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
-			}			
-			
+			}
 			if(animate) {
 				$(overlay).fadeOut();
 			}
 			else {
 				$(overlay).css("display", "none");
 			}			
-			state.showingOverlay = false;
 		}
 		
 		/**
@@ -141,7 +124,7 @@ $(document).ready(function(){
 		function showDialogue(options) {
 			var config = {
 				animate: false,
-				closeOverlayOnClick: true,
+				closeOnClick: true,
 				showOverlay: true,
 				positionX: (function(){
 					var x = (($(window).width()+ - $(dialogue).width()) / 2) + $(window).scrollLeft();
@@ -160,7 +143,17 @@ $(document).ready(function(){
 				config.positionY = (typeof options.y === "number") ? options.y : config.positionY;
 				config.animate = (typeof options.animate === "boolean" && options.animate === true) ? true : false;
 				config.showOverlay = (typeof options.showOverlay === "boolean" && options.showOverlay === false) ? false : true;
+				config.closeOnClick = (typeof options.closeOnClick === "boolean" && options.closeOnClick === false) ? false : true;
 			}
+			
+			if (config.closeOnClick) {
+				$(overlay).bind("click", hideOverlay);
+				$(overlay).bind("click", hideDialogue);
+			}
+			else {
+				$(overlay).unbind("click", hideOverlay);
+				$(overlay).unbind("click", hideDialogue);			
+			}			
 			
 			if(config.showOverlay) {
 				showOverlay();

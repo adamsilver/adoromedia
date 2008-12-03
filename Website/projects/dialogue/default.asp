@@ -110,7 +110,7 @@
 						var html2 = '';
 						html2 += 	'<div id="dialogue02">';
 						html2 += 		'<div class="header">'
-						html2 +=			'<h2>Demo 02 - centered</h2>'
+						html2 +=			'<h2>Demo 02 - centered, animate, dont close on overlay click</h2>'
 						html2 +=			'<a href="#" class="closeDialogue">Close</a>';
 						html2 +=		'</div>';
 						html2 +=		'<div class="panel">';
