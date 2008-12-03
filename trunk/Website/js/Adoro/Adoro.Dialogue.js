@@ -176,7 +176,11 @@ $(document).ready(function(){
 			if(IE6) {
 				fixOverlay();
 			}
-			dialogue.focus();
+			
+			var anchor = $(dialogue).find("a")[0] || null;
+			if(anchor) {
+				anchor.focus();
+			}
 			return false;
 		}
 		
