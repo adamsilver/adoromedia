@@ -76,7 +76,6 @@ Adoro.Lightbox = function(anchors, options) {
 			Adoro.Dialogue.hideDialogue();
 			Adoro.Dialogue.setHTML(config.htmlLoading);
 			Adoro.Dialogue.showDialogue({overlayOpacity: config.overlayOpacity});
-
 			// preload image
 			var objImage = new Image();
 			objImage.onload = imageOnLoad;
