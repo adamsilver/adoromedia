@@ -200,7 +200,6 @@
 					</ul>
 					
 					<h2>Example setup</h2>
-					<!--#include file="../../inc/code/jquery.asp"-->
 					<!--#include file="../../inc/code/dialogue.asp"-->						
 						
 				</div>

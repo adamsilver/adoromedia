@@ -391,7 +391,6 @@
 					</ul>
 					
 					<h2>Example setup</h2>
-					<!--#include file="../../inc/code/jquery.asp"-->
 					<!--#include file="../../inc/code/formvalidator.asp"-->
 					
 					<h2>Creating a custom validator</h2>						

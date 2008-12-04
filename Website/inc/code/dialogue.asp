@@ -1,5 +1,6 @@
-<p>Include the Adoro.Accordion.js file with other dependent jQuery files</p>
+<p>Include following JS files</p>
 <div class="code"><pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.2.6.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;jquery.browser.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;jquery.bigiframe.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;Adoro.Dialogue.js&quot;&gt;&lt;/script&gt;
