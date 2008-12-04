@@ -141,7 +141,8 @@ Adoro.FormValidator = function(form, options) {
 	/**
 	 * remove a validator from the form
 	 * remove the whole validator or remove particular rules for the validator
-	 * @param {Object} validator The validator
+	 * @param {String} key The key for the validator being the name of the field
+	 * @param {String[]} ruleKeys Array of strings representing the names of the rule methods
 	 * @return {Object} this To enable chaining
 	 */
 	function removeValidator(key, ruleKeys) {
@@ -150,43 +151,28 @@ Adoro.FormValidator = function(form, options) {
 		var numberOfItemsToRemoveFromArray = 1;
 		for(var i = 0; i<validators.length; i++) {
 			validator = validators[i];
+			// at this point we get the key i.e name of field
+			// and if there are ruleKeys
 			if(validator.key === key) {
 				// remove just the key in question
 				if(Adoro.isArray(ruleKeys)) {
 					// loop thru rules in validator
 					for(var j = 0; j < validator.rules.length; j++) {
 						rule = validator.rules[j];
-						
-						// loop thru ruleKeys against rule.method
-						console.log(rule.method);
-						console.log(Adoro.FormRules[rule])
+						for(var k = 0; k < ruleKeys.length; k++) {
+							if(Adoro.FormRules[ruleKeys[k]] === rule.method) {
+								validator.rules.splice(j,numberOfItemsToRemoveFromArray);
+								j--; //we altered the array so carry on looping from the same point.
+							}
+						}
 					}
-					// if key found then remove
 				}
 				// remove whole validator
 				else {
-					
 					validators.splice(i, numberOfItemsToRemoveFromArray);
 				}
-				break;
 			}
 		}
-		
-		console.log(validators);
-		
-		// CURRENT
-		// loop through all validators
-			// grab the validator with the appropriate key
-			// if ruleKeys are supplied remove just the rules that related to the rulekeys from the validator object
-		
-		// NEW
-		// this needs to remove a whole validator or a particular rule for a validator.
-		// NEW
-		// check to see if the argument is an instance of any of the validators
-		// and remove that validator with splice
-		// NEW
-		// if not an instance then i guess we can either check for its parts
-		// or try and delete a specific validator method.
 		return this;
 	}
 	
