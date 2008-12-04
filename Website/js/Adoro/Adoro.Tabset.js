@@ -23,12 +23,6 @@
 
 if(typeof Adoro !== "object") var Adoro = {};
 
-$(document).ready(function(){
-	var tabsets = $(".tabset").each(function(i) {
-		new Adoro.Tabset(this);
-	});
-});
-
 /**
  * Create a new tabset module.
  * @constructor

@@ -14,6 +14,14 @@
 		<link rel="stylesheet" href="../../css/tabs.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tabset.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// grab all nodes with a tabset 
+				var tabsets = $(".tabset").each(function(i) {
+					new Adoro.Tabset(this);
+				});
+			});
+		</script>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -61,6 +69,15 @@
 							Tab contents 3
 						</div>							
 					</div>							
+					
+					<h2>Dependencies</h2>
+					<ul class="generic">
+						<li>jquery-1.2.6.js</li>
+						<li>Adoro.Tabset.js</li>
+					</ul>
+					
+					<h2>Example setup</h2>
+					<!--include file="../../inc/code/tabset.asp"-->					
 					
 				</div>
 			</div>
