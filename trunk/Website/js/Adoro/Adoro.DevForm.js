@@ -8,6 +8,9 @@ $(document).ready(function(){
 		form.addValidator("fullName",[{
 			method: Adoro.FormRules.notEmpty,
 			message: "Full name is required."
+		},{
+			method: Adoro.FormRules.emailAddress,
+			message: "Full name for some reason should look like an email address."
 		}]).addValidator("age",[{
 			method: Adoro.FormRules.notEmpty,
 			message: "You must fill in your age."
@@ -54,19 +57,8 @@ $(document).ready(function(){
 		
 		form.addGroup("contextualSubmitButton", ["day01", "month01", "year01"]);
 		
-		form.setMessage("fullName", "notEmpty", "blah");
+		form.setMessage("fullName", "notEmpty", "Custom is not empty message");
 		
-		form.removeValidator("fullName", ["notEmpty"]);
-		
-		var el = $('<p class="remaining"></p>')[0];
-		document.getElementById("message").parentNode.appendChild(el);
-		var myFieldMax = new Adoro.FieldMaxLength(document.getElementById("message"),{
-			statusIndicator: el,
-			max: 400,
-			beforeText: "You have: ",
-			afterText: " chars remaining!"
-		});
-		
-		
+		form.removeValidator("fullName", ["emailAddress"]);		
 	});
 });

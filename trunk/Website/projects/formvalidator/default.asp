@@ -60,6 +60,7 @@
 						<li>The document title is updated as well as the error summary display to inform the user of errors.</li>
 						<li>Integrates with server side errors seamlessly</li>
 						<li>Adding a validator is 1 line of code.</li>
+						<li>You can remove a validator - a whole fields validators or a particular validator for a field if it has multiple validators.</li>
 						<li>Can create as many custom validators as you wish.</li>
 						<li>Custom error messages which either come from the server or set in the JavaScript only.</li>
 						<li>When there is an error, the field indicator and / or input element can be highlighted with css using the error class.</li>
