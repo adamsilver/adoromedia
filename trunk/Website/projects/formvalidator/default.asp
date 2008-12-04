@@ -17,7 +17,6 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.FormValidator.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldHighlight.js"></script>
-		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldMaxLength.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DevForm.js"></script>
 	</head>
 	<body class="library">
@@ -308,6 +307,20 @@
 							</div>
 						</div>												
 					</form>
+					
+					<h2>Dependencies</h2>
+					<ul class="generic">
+						<li>jquery-1.2.6.js</li>
+						<li>Adoro.FormValidator.js</li>
+						<li>Adoro.FormRules.js</li>
+					</ul>
+					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/jquery.asp"-->
+					<!--#include file="../../inc/code/formvalidator.asp"-->
+					
+					<h2>Creating a custom validator</h2>						
+					<p>Coming soon</p>
 					
 				</div>
 			</div>
