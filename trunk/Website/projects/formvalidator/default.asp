@@ -119,7 +119,7 @@
 					
 					<h3>Collaboration</h3>
 					<ul class="generic">
-						<li>Adoro worked with the <a href="http://www.rnib.org.uk"><abbr title="Royal National Institute of the Blind">RNIB</abbr></a> to ensure high accessiblity and usability standards.</li>
+						<li>We worked with the <a href="http://www.rnib.org.uk"><abbr title="Royal National Institute of the Blind">RNIB</abbr></a> to ensure high accessiblity and usability standards.</li>
 						<li>Guidance taken from <a href="http://www.webaim.org/techniques/formvalidation/">WebAIM</a></li>
 					</ul>
 					
