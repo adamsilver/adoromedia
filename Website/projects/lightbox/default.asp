@@ -31,13 +31,22 @@
 					htmlAfter: '<div class="afterShizzle">Could put something after like this if you want</div>',
 					htmlBack: '<a class="back" href="#">Previous gallery image</a>',
 					htmlNext: '<a class="next" href="#">Next gallery image</a>',
-					htmlLoading: '<div class="loading">My special loading gif in here</div>',
+					htmlLoading: '<div id="lightboxLoading"><img src="../../img/loading.gif" alt="Loading image"/></div>',
 					overlayOpacity: "0.78"
 				});
 			});
 		</script>		
 		<style type="text/css">
 			/* custom lightbox styling - style how you wish */
+			
+			div#lightboxLoading {
+				width: 200px;
+				height: 120px;
+				background-color: #ffffff;
+				padding-top: 80px;
+				text-align: center;
+			}
+			
 			div#lightbox {
 				background: #ffffff;
 				border: 1px solid #333333;
