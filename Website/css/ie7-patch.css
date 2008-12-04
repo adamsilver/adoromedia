@@ -17,10 +17,18 @@ div#dropDownMenu ul li ul li {
 }
 
 /********************************************************
-* Forms
+* Misc
 ********************************************************/
 
 div.field div.checkboxes div.input label, 
 div.field div.radios div.input label {
 	margin-top: 3px;
+}
+
+/********************************************************
+* break word
+********************************************************/
+
+div.code {
+	word-wrap: break-word;
 }

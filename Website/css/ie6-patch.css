@@ -1,3 +1,7 @@
+/********************************************************
+* hasLayout
+********************************************************/
+
 div#container,
 div.faux,
 div#primaryNavigation,
@@ -23,9 +27,17 @@ div#dialogue div.header {
 	height: 1%;
 }
 
+/********************************************************
+* Double margin
+********************************************************/
+
 div#controls, {
 	display: inline;
 }
+
+/********************************************************
+* Misc
+********************************************************/
 
 div#primaryNavigation ul li a {
 	float: left;
@@ -49,16 +61,24 @@ div.carousel {
 	width: 678px;
 }
 
-div.tabset div.tab {
-	height: 200px;
-}
-
 div#primaryNavigation ul li a.selected {
 	background-color: #1D2B33 !important;
 	color: #ffffff !important;
 	border-bottom: 4px solid #898F2C !important;	
 }
 
+/********************************************************
+* break word
+********************************************************/
+
 div.code {
 	word-wrap: break-word;
+}
+
+/********************************************************
+* min height
+********************************************************/
+
+div.tabset div.tab {
+	height: 200px;
 }
