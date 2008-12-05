@@ -20,7 +20,7 @@
 				
 				var node1 = $("div.carousel")[0];
 				var carousel01 = new Adoro.Carousel(node1, {
-					scrollCount: 5, 
+					scrollCount: 1, 
 					animationSpeed: 1100, 
 					animationEasing: "easeInBounce",
 					nextButtonHTML: "Forwards", 
@@ -30,7 +30,7 @@
 				
 				var node2 = $("div.carousel")[1];
 				var carousel02 = new Adoro.Carousel(node2, {
-					scrollCount: 5, 
+					scrollCount: 3, 
 					animationEasing: "easeOutQuad",
 					animationSpeed: 650,
 					animate: true
@@ -61,36 +61,41 @@
 					</ul>
 					
 					<h2>Demo</h2>
-					<div class="carousel">
-						<ul>
-							<li><div>1</div></li>
-							<li><div>2</div></li>
-							<li><div>3</div></li>
-							<li><div>4</div></li>
-							<li><div>5</div></li>
-							<li><div>6</div></li>
-							<li><div>7</div></li>
-							<li><div>8</div></li>
-							<li><div>9</div></li>
-							<li><div>10</div></li>
-							<li><div>11</div></li>				
-						</ul>
-					</div>
+					
+					<h3>Custom animation, scrolling images, scrolling through 1 item at a time, with custom buttons</h3>
 					
 					<div class="carousel">
 						<ul>
-							<li><div>1</div></li>
-							<li><div>2</div></li>
-							<li><div>3</div></li>
-							<li><div>4</div></li>
-							<li><div>5</div></li>
-							<li><div>6</div></li>
-							<li><div>7</div></li>
-							<li><div>8</div></li>
-							<li><div>9</div></li>
-				
+							<li><img src="../../img/portfolio/cpplus.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/flyingflowers.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/gardeningdirect.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/hamleys.jpg" alt="" /></li>		
+							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>	
+							<li><img src="../../img/portfolio/ps3.jpg" alt="" /></li>		
+						</ul>
+					</div>
+					
+					<h3>Custom animation, mixture of any content and images, scrolling thought 3 items at a time</h3>
+					<div class="carousel">
+						<ul>
+							<li><p>Varying content 1</p></li>
+							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>
+							<li><p>Varying content 2</p></li>
+							<li><img src="../../img/portfolio/cpplus.jpg" alt="" /></li>
+							<li><p>Varying content 3</p></li>
+							<li><img src="../../img/portfolio/flyingflowers.jpg" alt="" /></li>
+							<li><p>Varying content 4</p></li>
+							<li><img src="../../img/portfolio/gardeningdirect.jpg" alt="" /></li>
+							<li><p>Varying content 5</p></li>
+							<li><img src="../../img/portfolio/hamleys.jpg" alt="" /></li>		
+							<li><p>Varying content 6</p></li>
+							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>	
+							<li><p>Varying content 7</p></li>
+							<li><img src="../../img/portfolio/ps3.jpg" alt="" /></li>
 						</ul>
 					</div>		
+					
+					<h3>No animation, scrolling through 1 item of normal content at a time.</h3>
 					
 					<div class="carousel">
 						<ul>

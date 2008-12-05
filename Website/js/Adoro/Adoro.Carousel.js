@@ -63,21 +63,25 @@ Adoro.Carousel = function(container, options) {
 		// start button
 		hasStartButton: true,
 		startButtonHTML: '<span>Start</span>',
+		startButtonClass: "start",
 		startButtonAppend: container,
 		
 		// stop/pause button
 		hasStopButton: true,
 		stopButtonHTML: '<span>Stop</span>',
+		stopButtonClass: "stop",
 		stopButtonAppend: container,
 		
 		// previous button
 		hasPreviousButton: true,
 		previousButtonHTML: '<span>Previous</span>',
+		previousButtonClass: "previous",
 		previousButtonAppend: container,
 		
 		// next button
 		hasNextButton: true,
 		nextButtonHTML: '<span>Next</span>',
+		nextButtonClass: "next",
 		nextButtonAppend: container		
 	}
 	
@@ -111,24 +115,26 @@ Adoro.Carousel = function(container, options) {
 	
 	// add previous button
 	if(config.previousButtonAppend) {
-		var previousLink = $(Adoro.Carousel.previousLink).clone()[0];
-		previousLink.innerHTML = config.previousButtonHTML;
-		$(previousLink).bind("click", function(){
+		var previousButton = $(Adoro.Carousel.button).clone()[0];
+		previousButton.innerHTML = config.previousButtonHTML;
+		previousButton.className = config.previousButtonClass;
+		$(previousButton).bind("click", function(){
 			moveToLi(-config.scrollCount);
 			return false;
 		});
-		config.previousButtonAppend.appendChild(previousLink);
+		config.previousButtonAppend.appendChild(previousButton);
 	}	
 	
 	// add next button
 	if(config.hasNextButton) {
-		var nextLink = $(Adoro.Carousel.nextLink).clone()[0];
-		nextLink.innerHTML = config.nextButtonHTML;
-		$(nextLink).bind("click", function(){
+		var nextButton = $(Adoro.Carousel.button).clone()[0];
+		nextButton.innerHTML = config.nextButtonHTML;
+		nextButton.className = config.nextButtonClass;
+		$(nextButton).bind("click", function(){
 			moveToLi(config.scrollCount);
 			return false;
 		});
-		config.nextButtonAppend.appendChild(nextLink);
+		config.nextButtonAppend.appendChild(nextButton);
 	}
 	
 	/**
@@ -218,30 +224,4 @@ Adoro.Carousel = function(container, options) {
 	}
 }
 
-/**
- * Previous link
- * @property 
- * @type {Node} previousLink The DOM reference
- */
-Adoro.Carousel.previousLink = $('<a href="#" class="previous">Previous</a>');
-
-/**
- * Next link
- * @property 
- * @type {Node} nextLink The DOM reference
- */
-Adoro.Carousel.nextLink = $('<a href="#" class="next">Next</a>');
-
-/**
- * Stop link
- * @property 
- * @type {Node} stopLink The DOM reference
- */
-Adoro.Carousel.stopLink = $('<a href="#" class="stop">Stop</a>');
-
-/**
- * Start link
- * @property 
- * @type {Node} startLink The DOM reference
- */
-Adoro.Carousel.startLink = $('<a href="#" class="start">Start</a>');
+Adoro.Carousel.button = $('<a href="#">Start</a>');
