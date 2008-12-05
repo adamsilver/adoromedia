@@ -40,7 +40,9 @@ Adoro.Carousel = function(container, options) {
 	var config = {
 		animate: false,
 		animationSpeed: 300,
-		animationAutomatic: true,
+		automatic: false,
+		automaticDelay: 300,
+		automaticDirection: "forwards", // STILL TO DO THIS IF NECCESSARY
 		animationEasing: "linear",
 		scrollCount: 3,
 		mouseWheel: true,
@@ -61,13 +63,13 @@ Adoro.Carousel = function(container, options) {
 		indicatorAppend: container,					
 		
 		// start button
-		hasStartButton: true,
+		hasStartButton: false,
 		startButtonHTML: '<span>Start</span>',
 		startButtonClass: "start",
 		startButtonAppend: container,
 		
 		// stop/pause button
-		hasStopButton: true,
+		hasStopButton: false,
 		stopButtonHTML: '<span>Stop</span>',
 		stopButtonClass: "stop",
 		stopButtonAppend: container,
@@ -89,18 +91,34 @@ Adoro.Carousel = function(container, options) {
 		// general
 		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
 		config.animationSpeed = (typeof options.animationSpeed === "number") ? options.animationSpeed : config.animationSpeed;
+		config.automatic = (typeof options.automatic === "boolean") ? options.automatic : config.automatic;
+		config.automaticDelay = (typeof options.automaticDelay === "number") ? options.automaticDelay : config.automaticDelay;
 		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
 		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
 		
 		// previous button
 		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
 		config.previousButtonHTML = (typeof options.previousButtonHTML === "string") ? options.previousButtonHTML : config.previousButtonHTML;
+		config.previousButtonClass = (typeof options.previousButtonClass === "string") ? options.previousButtonClass : config.previousButtonClass;
 		config.previousButtonAppend = options.previousButtonAppend || config.previousButtonAppend;	
 		
 		// next button		
 		config.hasNextButton = (typeof options.hasNextButton === "boolean") ? options.hasNextButton : config.hasNextButton;
 		config.nextButtonHTML = (typeof options.nextButtonHTML === "string") ? options.nextButtonHTML : config.nextButtonHTML;
+		config.nextButtonClass = (typeof options.nextButtonClass === "string") ? options.nextButtonClass : config.nextButtonClass;
 		config.nextButtonAppend = options.nextButtonAppend || config.nextButtonAppend;
+		
+		// start button		
+		config.hasStartButton = (typeof options.hasStartButton === "boolean") ? options.hasStartButton : config.hasStartButton;
+		config.startButtonHTML = (typeof options.startButtonHTML === "string") ? options.startButtonHTML : config.startButtonHTML;
+		config.startButtonClass = (typeof options.startButtonClass === "string") ? options.startButtonClass : config.startButtonClass;
+		config.startButtonAppend = options.startButtonAppend || config.startButtonAppend;
+		
+		// stop button		
+		config.hasStopButton = (typeof options.hasStopButton === "boolean") ? options.hasStopButton : config.hasStopButton;
+		config.stopButtonHTML = (typeof options.stopButtonHTML === "string") ? options.stopButtonHTML : config.stopButtonHTML;
+		config.stopButtonClass = (typeof options.stopButtonClass === "string") ? options.stopButtonClass : config.stopButtonClass;
+		config.stopButtonAppend = options.stopButtonAppend || config.stopButtonAppend;
 	}
 	
 	// setting general styling
@@ -114,7 +132,7 @@ Adoro.Carousel = function(container, options) {
 	}
 	
 	// add previous button
-	if(config.previousButtonAppend) {
+	if(config.hasPreviousButton) {
 		var previousButton = $(Adoro.Carousel.button).clone()[0];
 		previousButton.innerHTML = config.previousButtonHTML;
 		previousButton.className = config.previousButtonClass;
@@ -136,6 +154,42 @@ Adoro.Carousel = function(container, options) {
 		});
 		config.nextButtonAppend.appendChild(nextButton);
 	}
+	
+	// add stop button
+	if(config.hasStopButton) {
+		var stopButton = $(Adoro.Carousel.button).clone()[0];
+		stopButton.innerHTML = config.stopButtonHTML;
+		stopButton.className = config.stopButtonClass;
+		$(stopButton).bind("click", function(){
+			config.automatic = false;
+			return false;
+		});
+		config.stopButtonAppend.appendChild(stopButton);
+	}
+	
+	// add start button
+	if(config.hasStartButton) {
+		var startButton = $(Adoro.Carousel.button).clone()[0];
+		startButton.innerHTML = config.startButtonHTML;
+		startButton.className = config.startButtonClass;
+		$(startButton).bind("click", function(){
+			config.automatic = true;
+			play();
+			return false;
+		});
+		config.startButtonAppend.appendChild(startButton);
+	}
+	
+	if(config.automatic) {
+		play();
+	}
+	
+	function play() {
+		window.setTimeout(function(){
+			moveToLi(config.scrollCount);
+		},config.automaticDelay);
+	}
+	
 	
 	/**
 	 * get list items
@@ -198,10 +252,16 @@ Adoro.Carousel = function(container, options) {
 				state.animating = true;
 				$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 					state.animating = false;
+					if(config.automatic) {
+						play();
+					}
 				}});				
 			}
 			else {
 				$(ul).prepend(lisToManipulate);
+				if(config.automatic) {
+					play();
+				}
 			}
 		}
 		else {
@@ -214,10 +274,16 @@ Adoro.Carousel = function(container, options) {
 					$(ul).append(lisToManipulate);
 					$(ul).css({left: "0px"});
 					state.animating = false;
+					if(config.automatic) {
+						play();
+					}
 				}});
 			}
 			else {
 				$(ul).append(lisToManipulate);
+				if(config.automatic) {
+					play();
+				}
 			}			
 		}
 	}

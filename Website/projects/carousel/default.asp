@@ -19,26 +19,35 @@
 			$(document).ready(function(){ 
 				
 				var node1 = $("div.carousel")[0];
-				var carousel01 = new Adoro.Carousel(node1, {
+				new Adoro.Carousel(node1, {
+					scrollCount: 1,
+					animationSpeed: 650,
+					animationEasing: "easeInOutQuad",
+					animate: true,
+					hasStartButton: true,
+					hasStopButton: true
+				});
+				
+				var node2 = $("div.carousel")[1];
+				new Adoro.Carousel(node2, {
 					scrollCount: 1, 
 					animationSpeed: 1100, 
 					animationEasing: "easeInBounce",
 					nextButtonHTML: "Forwards", 
 					previousButtonHTML: "Backwards",
-					animate: true
-				});
-				
-				var node2 = $("div.carousel")[1];
-				var carousel02 = new Adoro.Carousel(node2, {
-					scrollCount: 3,
-					animationSpeed: 650,
-					animationEasing: "easeInOutQuad",
-					animate: true
+					animate: true,
+					automatic: false,
+					automaticDelay: 0,
+					hasStartButton: true,
+					hasStopButton: true
+					
 				});
 				
 				var node3 = $("div.carousel")[2];
-				var carousel03 = new Adoro.Carousel(node3, {
-					scrollCount: 1
+				new Adoro.Carousel(node3, {
+					scrollCount: 1,
+					automatic: true,
+					automaticDelay: 1000
 				});
 			});
 		</script>
@@ -62,7 +71,7 @@
 					
 					<h2>Demo</h2>
 					
-					<h3>Custom animation, scrolling images, scrolling through 1 item at a time, with custom buttons</h3>
+					<h3></h3>
 					
 					<div class="carousel">
 						<ul>
@@ -75,7 +84,8 @@
 						</ul>
 					</div>
 					
-					<h3>Custom animation, mixture of any content and images, scrolling thought 3 items at a time</h3>
+					<h3></h3>
+					
 					<div class="carousel">
 						<ul>
 							<li><p>Varying content here 1</p></li>
