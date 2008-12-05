@@ -176,9 +176,8 @@ Adoro.Carousel = function(container, options) {
 		for(var i = lis.length-1; i>=0; i--) {
 			li = lis[i];
 			if (li.parentNode !== ul) continue;
-			width = width + $(li).outerWidth();
-			// may be able to be more efficient here
-			width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
+			width = width + $(li).outerWidth({margin: true});
+			//width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
 		}
 		return width;
 	}

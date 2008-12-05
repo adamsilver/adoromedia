@@ -30,9 +30,9 @@
 				
 				var node2 = $("div.carousel")[1];
 				var carousel02 = new Adoro.Carousel(node2, {
-					scrollCount: 3, 
-					animationEasing: "easeOutQuad",
+					scrollCount: 3,
 					animationSpeed: 650,
+					animationEasing: "easeInOutQuad",
 					animate: true
 				});
 				
@@ -78,20 +78,17 @@
 					<h3>Custom animation, mixture of any content and images, scrolling thought 3 items at a time</h3>
 					<div class="carousel">
 						<ul>
-							<li><p>Varying content 1</p></li>
+							<li><p>Varying content here 1</p></li>
 							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>
-							<li><p>Varying content 2</p></li>
+							<li><p>Varying content here 2</p></li>
 							<li><img src="../../img/portfolio/cpplus.jpg" alt="" /></li>
-							<li><p>Varying content 3</p></li>
+							<li><p>Varying content here 3</p></li>
 							<li><img src="../../img/portfolio/flyingflowers.jpg" alt="" /></li>
-							<li><p>Varying content 4</p></li>
+							<li><p>Varying content here 4</p></li>
 							<li><img src="../../img/portfolio/gardeningdirect.jpg" alt="" /></li>
-							<li><p>Varying content 5</p></li>
+							<li><p>Varying content here 5</p></li>
 							<li><img src="../../img/portfolio/hamleys.jpg" alt="" /></li>		
-							<li><p>Varying content 6</p></li>
-							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>	
-							<li><p>Varying content 7</p></li>
-							<li><img src="../../img/portfolio/ps3.jpg" alt="" /></li>
+							<li><p>Varying content here 6</p></li>
 						</ul>
 					</div>		
 					
