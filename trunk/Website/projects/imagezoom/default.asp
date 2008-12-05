@@ -3,20 +3,69 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<% Adoro.pageName = "accordian"; %>
+<% Adoro.pageName = "imagezoom"; %>
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Accordion, jQuery JavaScript library, Adoro Media Ltd</title>
+		<title>Image zoom, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/accordian.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
+		<script type="text/javascript" src="../../js/JQuery/jquery.jqzoom.js"></script>
+		<style type="text/css">
+			.jqzoom {
+				border:1px solid black;
+				float:left;
+				position:relative;
+				padding:0px;
+				cursor:pointer;
+				}
+			
+			.jqzoom img {
+				float:left;
+				}
+			
+			div.zoomdiv {
+				z-index: 100;
+				position: absolute;
+				top:0px;
+				left:0px;
+				width: 260px;
+				height: 260px;
+				background: #ffffff;
+				border:1px solid #CCC;
+				display:none;
+				text-align: center;
+				overflow: hidden;
+				}
+				
+			div.zoomdiv img {
+				z-index: 100;
+				}
+			
+			
+			div.jqZoomPup {
+				z-index: 10;
+				visibility: hidden;
+				position: absolute;
+				top:0px;
+				left:0px;
+				/*width: 35px;
+				height: 35px;*/
+				border: 1px solid #999;
+				background: #fff url(../images/zoomlens.gif) 50% top  no-repeat;
+				opacity: 0.5;
+				-moz-opacity: 0.5;
+				-khtml-opacity: 0.5;
+				filter: alpha(Opacity=50);
+			}			
+		
+		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-	
-			
+				$(".jqzoom").jqueryzoom({preload: 0});
 			});
 		</script>
 	</head>
@@ -28,117 +77,11 @@
 					<!--#include file="../../inc/primaryNavigation.asp"-->
 				</div>
 				<div id="content">
-					<h1>Accordion</h1>
+					<h1>Image zoom</h1>
 					
-					<h2>About</h2>
-					<ul class="generic">
-						<li>Lightweight accordion using the JQuery library.</li>
-						<li>Takes one line of JS code to instatiate the accordion.</li>
-						<li>Can configure the animation and the event that triggers it i.e. mouseover, click etc.</li>
-						<li>Supports nested accordions.</li>
-						<!--<li>Accordians will work with dynamically added content i.e. flexible heights or widths.</li>-->
-					</ul>
-					
-					<h2>Demo</h2>
-					
-					<div class="accordian">
-						<div class="header headerOn">
-							<h3>Nested accordian</h3>
-						</div>
-						<div class="panel">
-							<div class="inner">
-								<div class="myHorizontalAccordian">
-									<div class="header2 activatedActivator">
-										<h4>Header</h4>
-									</div>
-									<div class="panel2 activatedPanel">
-										<div class="inner">
-											<p>panel</p>
-										</div>
-									</div>
-									<div class="header2">
-										<h4>Header</h4>
-									</div>
-									<div class="panel2">
-										<div class="inner">
-											<p>panel</p>
-										</div>
-									</div>
-									<div class="header2">
-										<h4>Header</h4>
-									</div>
-									<div class="panel2">
-										<div class="inner">
-											<p>panel</p>
-										</div>
-									</div>										
-								</div>	
-							</div>
-						</div>
-						<div class="header">
-							<h3>Section header</h3>
-						</div>
-						<div class="panel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>
-						<div class="header">
-							<h3>Section header</h3>
-						</div>
-						<div class="panel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>
-						<div class="header">
-							<h3>Section header</h3>
-						</div>
-						<div class="panel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>											
+					<div class="jqzoom">
+						<img alt="" src="http://washford.scene7.com/is/image/Washford/960484?$prod$" id="fullImage" jqimg="http://washford.scene7.com/is/image/Washford/960484?$prodzoom$"/>
 					</div>
-					
-					<h2>Dependencies</h2>
-					<ul class="generic">
-						<li>jquery-1.2.6.js</li>
-						<li>Adoro.Accordion.js</li>
-					</ul>
-					
-					<h2>Example setup</h2>
-					<!--#include file="../../inc/code/accordion.asp"-->
 				</div>
 			</div>
 		</div>

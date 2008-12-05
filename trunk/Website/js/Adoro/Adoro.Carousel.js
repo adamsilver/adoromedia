@@ -34,9 +34,136 @@ if (typeof Adoro !== "object") var Adoro = {};
  * @param {Boolean} options.automatic If true then no previous/next controls present and animates always
  */
 Adoro.Carousel = function(container, options) {
-	if(container === null) return;
+	var container = container || null;
+	if(!container) return;
 	var ul = container.getElementsByTagName("ul")[0] || null;
 	if (!ul) return null;
+	var lis = getLis();
+	
+	var state = {animating: false};
+	var config = {
+		animate: false,
+		animationSpeed: 300,
+		animationAutomatic: true,
+		animationEasing: "from plugin need to go find out",
+		scrollCount: 3,
+		mouseWheel: true,
+		vertical: false,
+		circular: true,
+		revealAmount: 150, // see yui 
+		
+		//? not sure about these
+		firstVisible: null,
+		selectedItem: null,
+		
+		// call backs
+		beforeStartCallback: null,
+		afterEndCallback: null,
+		
+		indicator: true,
+		indicatorItemHTML: '<span class="indicator">indicator item</span>',
+		indicatorAppend: container,					
+		
+		starButton: true,
+		startButtonHTML: '<span>Start</span>',
+		startAppend: container,
+		
+		stopButton: true,
+		stopButtonHTML: '<span>Stop</span>',
+		stopAppend: container,
+		
+		nextButton: true,
+		nextButtonHTML: '<span>Next</span>',
+		nextAppend: container,
+		
+		previousButton: true,
+		previousButtonHTML: '<span>Previous</span>',
+		previousAppend: container	
+	}
+	
+	if(config.vertical) {
+		$(ul).find("li").css({"display": "block","float": "none"});
+		$(ul).css({"width": getLisHeight() + "px"});
+	}
+	else {
+		$(ul).find("li").css({"display": "inline","float": "left"});
+		$(ul).css({"width": getLisWidth() + "px"});
+	}
+	
+	if(config.nextButton) {
+		var nextLink = $(Adoro.Carousel.nextLink).clone()[0];
+		nextLink.innerHTML = config.nextButtonHTML;
+		$(nextLink).bind("click", function(){
+			moveToLi(config.scrollCount);
+			return false;
+		});
+		config.nextAppend.appendChild(nextLink);
+	}
+	
+	if(config.previousButton) {
+		var previousLink = $(Adoro.Carousel.previousLink).clone()[0];
+		previousLink.innerHTML = config.previousButtonHTML;
+		$(previousLink).bind("click", function(){
+			moveToLi(-config.scrollCount);
+			return false;
+		});
+		config.previousAppend.appendChild(previousLink);
+	}
+	
+	function getLis(from, to) {
+		var lis = [];
+		var allLis = $(ul).find("li");
+		var li = null;
+		for(var i = allLis.length-1; i>=0; i--) {
+			li = allLis[i];
+			if(from !== undefined && i<from) continue;
+			if(to !== undefined && i>to-1) continue;
+			if (li.parentNode !== ul) continue;
+			lis.push(li);
+		}
+		return lis;
+	}
+	
+	function getLisHeight() {
+		return 100;
+	}
+	
+	function getLisWidth(from, to) {
+		var lis = getLis();
+		var width = 0;
+		var li;
+		for(var i = lis.length-1; i>=0; i--) {
+			li = lis[i];
+			if (li.parentNode !== ul) continue;
+			width = width + $(li).outerWidth();
+			// may be able to be more efficient here
+			width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
+		}
+		return width;
+	}
+	
+	// need to handle circular and not circular
+	// need to hand animate and not animate
+	function moveToLi(newIndex) {
+		var lis = null;
+		if(newIndex < 0) {
+			// going backwards
+			lis = getLis(getLis().length+newIndex, getLis().length);
+			$(ul).prepend(lis);
+		}
+		else {
+			// going forwards
+			lis = getLis(0, newIndex);
+			$(ul).append(lis);
+		}		
+	}
+	
+	
+	return;
+	
+	
+	
+	
 	var config = { 
 		scrollCount: 8, 
 		speed: 250,
@@ -45,8 +172,8 @@ Adoro.Carousel = function(container, options) {
 		nextHTML: "Next",
 		stopHTML: "Stop",
 		startHTML: "Start"
-	}
-	var state = {animate: false, animating: false}
+	};
+	var state = {animate: false, animating: false};
 	if(typeof options === "object") {
 		config.scrollCount =( typeof options.scrollCount === "number" ) ?  options.scrollCount : config.scrollCount;
 		config.speed = (typeof options.speed === "number" ) ? options.speed : config.speed;

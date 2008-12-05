@@ -47,28 +47,34 @@
 						<ul>
 							<li>
 								<div style="width: 150px;height: 318px;">
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
+									<p>stuff1</p>
 								</div>
 							</li>
 							<li>
 								<div style="width: 150px;height: 118px;">
 									<p>stuff2</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
-									<p>stuff</p>
 								</div>
 							</li>
+							<li>
+								<div style="width: 150px;height: 318px;">
+									<p>stuff3</p>
+								</div>
+							</li>
+							<li>
+								<div style="width: 150px;height: 118px;">
+									<p>stuff4</p>
+								</div>
+							</li>
+							<li>
+								<div style="width: 150px;height: 318px;">
+									<p>stuff5</p>
+								</div>
+							</li>
+							<li>
+								<div style="width: 150px;height: 118px;">
+									<p>stuff6</p>
+								</div>
+							</li>														
 						
 						</ul>
 						<a class="prev" href="#">prev</a> | <a class="next" href="#">next</a>
