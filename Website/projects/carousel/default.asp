@@ -38,7 +38,7 @@
 					previousButtonHTML: "Backwards",
 					animate: true,
 					automatic: false,
-					automaticDelay: 0,
+					automaticDelay: 100,
 					hasStartButton: true,
 					hasStopButton: true
 					
