@@ -8,23 +8,26 @@ div.carousel {
 }
 
 div.carousel a.next,
-div.carousel a.start {
-}
-
-div.carousel a.previous,
-div.carousel a.stop {
+div.carousel a.previous {
+	font-size: 1.2em;
+	float: left;
+	padding: 10px;
+	border: 1px solid #333;
+	margin-right: 5px;	
 }
 
 div.carousel ul {
 	list-style: none;
 	overflow: hidden;
 	position: relative;
+	margin-bottom: 10px;
 }
 
 div.carousel ul li {
 	font-weight: bold;
 	font-size: 1.2em;
 	background: #f5f5f5;
+	margin-right: 10px;
 }
 
 div.carousel ul li div {
