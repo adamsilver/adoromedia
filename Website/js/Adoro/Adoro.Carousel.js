@@ -48,7 +48,7 @@ Adoro.Carousel = function(container, options) {
 		
 		mouseWheel: true, // STILL TO DO
 		vertical: false, // STILL TO DO
-		iscircular: false, // STILL TO DO
+		isCircular: false, // STILL TO DO
 		revealAmount: 150, // STILL TO DO
 		beforeStartCallback: null, // STILL TO DO
 		afterEndCallback: null, // STILL TO DO
@@ -246,48 +246,16 @@ Adoro.Carousel = function(container, options) {
 			// going backwards
 			lisToManipulate = getLis(lis.length+newIndex, lis.length).reverse();
 			
+			// dont go back, we are at the start
+			if(!config.isCircular && (state.currentIndex <= 0)) return;
+			// animation
 			if(config.animate) {
-				//animate
 				$(ul).css("left", -getLisWidth(lisToManipulate));
 				$(ul).prepend(lisToManipulate);
 				state.animating = true;
 				$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 					state.animating = false;
-					if(config.automatic) {
-						play();
-					}
-				}});				
-			}
-			else {
-				if(config.iscircular) {
-					$(ul).prepend(lisToManipulate);
-				}
-				else {
-					if(state.currentIndex > 0) {
-						$(ul).prepend(lisToManipulate);
-						state.currentIndex += newIndex; 
-					}
-				}
-				
-				if(config.automatic) {
-					play();
-				}
-			}
-		}
-		else {
-			// going forwards
-			// move the ul -value to the left
-			lisToManipulate = getLis(0, newIndex).reverse();
-			
-			// animation
-			if(config.animate) {
-				state.animating = true;
-				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
-					//if (config.isCircular) {
-					$(ul).append(lisToManipulate);
-					$(ul).css({left: "0px"});
-					//}
-					state.animating = false;
+					state.currentIndex += newIndex; 
 					if(config.automatic) {
 						play();
 					}
@@ -295,16 +263,38 @@ Adoro.Carousel = function(container, options) {
 			}
 			// no animation
 			else {
-				if(config.iscircular) {
+				$(ul).prepend(lisToManipulate);
+				state.currentIndex += newIndex; 
+				if(config.automatic) {
+					play();
+				}
+			}
+		}
+		else {
+			// going forwards
+			lisToManipulate = getLis(0, newIndex).reverse(); // move the ul -value to the left
+			// dont go forwards, we are at the end
+			if(!config.isCircular && (state.currentIndex + config.scrollCount > lis.length - config.scrollCount)) return;
+			// animation
+			if(config.animate) {
+				state.animating = true;
+				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
 					$(ul).append(lisToManipulate);
-				}
-				else {
-					if(state.currentIndex+config.scrollCount < lis.length-config.scrollCount) {
-						$(ul).append(lisToManipulate);
-						state.currentIndex += newIndex;						
+					$(ul).css({
+						left: "0px"
+					});
+					state.animating = false;
+					state.currentIndex += newIndex;
+					if (config.automatic) {
+						play();
 					}
-				}
+				}});
 				
+			}
+			// no animation
+			else {
+				$(ul).append(lisToManipulate);
+				state.currentIndex += newIndex;
 				if(config.automatic) {
 					play();
 				}
