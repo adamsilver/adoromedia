@@ -42,7 +42,7 @@ Adoro.Carousel = function(container, options) {
 	
 	var state = {animating: false};
 	var config = {
-		animate: false,
+		animate: true,
 		animationSpeed: 300,
 		animationAutomatic: true,
 		animationEasing: "from plugin need to go find out",
@@ -68,18 +68,34 @@ Adoro.Carousel = function(container, options) {
 		startButtonHTML: '<span>Start</span>',
 		startAppend: container,
 		
-		stopButton: true,
+		hasStopButton: true,
 		stopButtonHTML: '<span>Stop</span>',
-		stopAppend: container,
+		stopButtonAppend: container,
 		
-		nextButton: true,
+		hasNextButton: true,
 		nextButtonHTML: '<span>Next</span>',
-		nextAppend: container,
+		nextButtonAppend: container,
 		
-		previousButton: true,
+		hasPreviousButton: true,
 		previousButtonHTML: '<span>Previous</span>',
-		previousAppend: container	
+		previousButtonAppend: container	
 	}
+	
+	if(typeof options === "object") {
+		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
+		config.animationSpeed = (typeof options.animationSpeed === "number") ? options.animationSpeed : config.animationSpeed;
+		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
+		
+		config.hasNextButton = (typeof options.hasNextButton === "boolean") ? options.hasNextButton : config.hasNextButton;
+		config.nextButtonHTML = (typeof options.nextButtonHTML === "string") ? options.nextButtonHTML : config.nextButtonHTML;
+		config.nextButtonAppend = options.nextButtonAppend || config.nextButtonAppend;
+		
+		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
+		config.previousButtonHTML = (typeof options.previousButtonHTML === "string") ? options.previousButtonHTML : config.previousButtonHTML;
+		config.previousButtonAppend = options.previousButtonAppend || config.previousButtonAppend;		
+		
+	}
+	
 	
 	if(config.vertical) {
 		$(ul).find("li").css({"display": "block","float": "none"});
@@ -87,28 +103,30 @@ Adoro.Carousel = function(container, options) {
 	}
 	else {
 		$(ul).find("li").css({"display": "inline","float": "left"});
-		$(ul).css({"width": getLisWidth() + "px"});
+		$(ul).css({"width": getLisWidth(lis) + "px"});
 	}
 	
-	if(config.nextButton) {
-		var nextLink = $(Adoro.Carousel.nextLink).clone()[0];
-		nextLink.innerHTML = config.nextButtonHTML;
-		$(nextLink).bind("click", function(){
-			moveToLi(config.scrollCount);
-			return false;
-		});
-		config.nextAppend.appendChild(nextLink);
-	}
-	
-	if(config.previousButton) {
+	if(config.previousButtonAppend) {
 		var previousLink = $(Adoro.Carousel.previousLink).clone()[0];
 		previousLink.innerHTML = config.previousButtonHTML;
 		$(previousLink).bind("click", function(){
 			moveToLi(-config.scrollCount);
 			return false;
 		});
-		config.previousAppend.appendChild(previousLink);
+		config.previousButtonAppend.appendChild(previousLink);
+	}	
+	
+	if(config.hasNextButton) {
+		var nextLink = $(Adoro.Carousel.nextLink).clone()[0];
+		nextLink.innerHTML = config.nextButtonHTML;
+		$(nextLink).bind("click", function(){
+			moveToLi(config.scrollCount);
+			return false;
+		});
+		config.nextButtonAppend.appendChild(nextLink);
 	}
+	
+
 	
 	function getLis(from, to) {
 		var lis = [];
@@ -128,8 +146,8 @@ Adoro.Carousel = function(container, options) {
 		return 100;
 	}
 	
-	function getLisWidth(from, to) {
-		var lis = getLis();
+	function getLisWidth(lis) {
+		var lis = lis;
 		var width = 0;
 		var li;
 		for(var i = lis.length-1; i>=0; i--) {
@@ -145,160 +163,41 @@ Adoro.Carousel = function(container, options) {
 	// need to handle circular and not circular
 	// need to hand animate and not animate
 	function moveToLi(newIndex) {
-		var lis = null;
+		if(state.animating) return;
+		var lisToManipulate = null;
 		if(newIndex < 0) {
 			// going backwards
-			lis = getLis(getLis().length+newIndex, getLis().length);
-			$(ul).prepend(lis);
+			lisToManipulate = getLis(lis.length+newIndex, lis.length).reverse();
+			
+			if(config.animate) {
+				//animate
+				$(ul).css("left", -getLisWidth(lisToManipulate));
+				$(ul).prepend(lisToManipulate);
+				state.animating = true;
+				$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": "linear", "complete": function(){
+					state.animating = false;
+				}});				
+			}
+			else {
+				$(ul).prepend(lisToManipulate);
+			}
 		}
 		else {
 			// going forwards
-			lis = getLis(0, newIndex);
-			$(ul).append(lis);
-		}		
-	}
-	
-	
-	return;
-	
-	
-	
-	
-	var config = { 
-		scrollCount: 8, 
-		speed: 250,
-		automatic: false,
-		previousHTML: "Previous",
-		nextHTML: "Next",
-		stopHTML: "Stop",
-		startHTML: "Start"
-	};
-	var state = {animate: false, animating: false};
-	if(typeof options === "object") {
-		config.scrollCount =( typeof options.scrollCount === "number" ) ?  options.scrollCount : config.scrollCount;
-		config.speed = (typeof options.speed === "number" ) ? options.speed : config.speed;
-		config.automatic = (typeof options.automatic === "boolean" ) ? options.automatic : config.automatic;
-		config.previousHTML = (typeof options.previousHTML === "string" ) ? options.previousHTML : config.previousHTML;
-		config.nextHTML = (typeof options.nextHTML === "string" ) ? options.nextHTML : config.nextHTML;
-		config.stopHTML = (typeof options.stopHTML === "string" ) ? options.stopHTML : config.stopHTML;
-		config.startHTML = (typeof options.startHTML === "string" ) ? options.startHTML : config.startHTML;
-	}
-	
-	/********************************************************************
-	 * before trying to animate or do things with the carousel we need to 
-	 * check if it can animate, by seeing if any lis are beyond view
-	 * do we check ul width vs container width? i think so
-	 */
-	
-	$(ul).css({
-		position: "relative",
-		overflow: "hidden",
-		width: (function(){
-			var lis = $(this).find("li");
-			var width = 0;
-			var li;
-			for(var i = lis.length-1; i>=0; i--) {
-				li = lis[i];
-				if (li.parentNode !== ul) continue;
-				$(li).css({"display": "inline","float": "left"});
-				width = width + $(li).outerWidth();
-				width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
+			lisToManipulate = getLis(0, newIndex).reverse();
+			
+			if(config.animate) {
+				state.animating = true;
+				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed, easing: "linear", "complete": function(){
+					$(ul).append(lisToManipulate);
+					$(ul).css({left: "0px"});
+					state.animating = false;
+				}});
 			}
-			return width;
-		}.call(ul))	
-	});
-	
-	if(!config.automatic) {
-		// create back and next links
-		var previousLink = $(Adoro.Carousel.previousLink).clone()[0];
-		previousLink.innerHTML = config.previousHTML;
-		var nextLink = $(Adoro.Carousel.nextLink).clone()[0];
-		nextLink.innerHTML = config.nextHTML;
-		$(previousLink).bind("click", previous_onClick);
-		$(nextLink).bind("click", next_onClick);
-		container.appendChild(previousLink);
-		container.appendChild(nextLink);
-	}
-	
-	if(config.automatic) {
-		// set state
-		state.animate = true;
-		automaticAnimate();
-		// create stop and start links
-		var stopLink = $(Adoro.Carousel.stopLink).clone()[0];
-		stopLink.innerHTML = config.stopHTML;
-		$(stopLink).bind("click", stop_onClick);
-		container.appendChild(stopLink);
-		var startLink = $(Adoro.Carousel.startLink).clone()[0];
-		startLink.innerHTML = config.startHTML;
-		$(startLink).bind("click", start_onClick);
-		container.appendChild(startLink);		
-	}
-	
-	function automaticAnimate() {
-		if(!state.animate) return;
-		var lis = $(ul).find("li");
-		var firstLi = lis[0];
-		$(ul).animate({left: -getLiWidth(firstLi)}, {duration: config.speed, easing: "linear", complete: function(){
-			$(ul).append(firstLi);
-			$(ul).css({left: "0px"});
-			automaticAnimate();
-		}});
-	}
-	
-	function stop_onClick() {
-		state.animate = false;
-		return false;
-	}
-	
-	function start_onClick() {
-		if(state.animate) return false;;
-		state.animate = true;
-		automaticAnimate();
-		return false;
-	}	
-	
-	var count = 0; // used for previous and next click
-	function previous_onClick() {
-		if(state.animating) return;
-		if(count === config.scrollCount) {
-			count = 0;
-			return false;
+			else {
+				$(ul).append(lisToManipulate);
+			}			
 		}
-		var lis = $(ul).find("li");
-		var lastLi = $(ul).find("li")[lis.length-1];
-		$(ul).prepend(lastLi);
-		$(ul).css("left", -getLiWidth(lastLi));
-		state.animating = true;
-		$(ul).animate({left: "0px"}, {duration: config.speed, easing: "linear", complete: function(){
-			count++
-			state.animating = false;
-			previous_onClick();
-		}});
-		return false;
-	}
-	
-	function getLiWidth(li) {
-		return $(li).outerWidth() + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
-	}
-	
-	function next_onClick() {
-		if(state.animating) return;
-		if(count === config.scrollCount) {
-			count = 0;
-			return false;
-		}		
-		var lis = $(ul).find("li");
-		var firstLi = lis[0];
-		state.animating = true;	
-		$(ul).animate({left: -getLiWidth(firstLi)}, {duration: config.speed, easing: "linear", complete: function(){
-			count++
-			$(ul).append(firstLi);
-			$(ul).css({left: "0px"});
-			state.animating = false;
-			next_onClick();
-		}});
-		return false;
 	}
 }
 

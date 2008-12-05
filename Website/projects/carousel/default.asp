@@ -16,9 +16,20 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-				var carousel01 = new Adoro.Carousel($("div.carousel")[0], {scrollCount: 5, speed: 900, nextHTML: "Forwards", previousHTML: "Backwards"});
-				var carousel02 = new Adoro.Carousel($("div.carousel")[1], {scrollCount: 4, speed: 150});
-				var carousel03 = new Adoro.Carousel($("div.carousel")[2], {speed: 450, automatic: true, startHTML: "Play", stopHTML: "Pause"});
+				var carousel01 = new Adoro.Carousel($("div.carousel")[0], {
+					scrollCount: 5, 
+					animationSpeed: 1100, 
+					nextButtonHTML: "Forwards", 
+					previousButtonHTML: "Backwards"
+				});
+				var carousel02 = new Adoro.Carousel($("div.carousel")[1], {
+					scrollCount: 2, 
+					animationSpeed: 450
+				});
+				var carousel03 = new Adoro.Carousel($("div.carousel")[2], {
+					scrollCount: 1, 
+					animate: false
+				});
 			});
 		</script>
 	</head>
