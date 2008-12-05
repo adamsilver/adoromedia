@@ -45,10 +45,10 @@ Adoro.Carousel = function(container, options) {
 		automaticDirection: "forwards", // STILL TO DO
 		animationEasing: "linear",
 		scrollCount: 3,
+		isCircular: true,
 		
 		mouseWheel: true, // STILL TO DO
 		vertical: false, // STILL TO DO
-		isCircular: false, // STILL TO DO
 		revealAmount: 150, // STILL TO DO
 		beforeStartCallback: null, // STILL TO DO
 		afterEndCallback: null, // STILL TO DO
@@ -91,6 +91,7 @@ Adoro.Carousel = function(container, options) {
 		config.automaticDelay = (typeof options.automaticDelay === "number") ? options.automaticDelay : config.automaticDelay;
 		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
 		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
+		config.isCircular = (typeof options.isCircular === "boolean") ? options.isCircular : config.isCircular;
 		
 		// previous button
 		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;

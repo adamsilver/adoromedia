@@ -25,7 +25,8 @@
 					animationEasing: "easeInOutQuad",
 					animate: true,
 					hasStartButton: true,
-					hasStopButton: true
+					hasStopButton: true,
+					isCircular: false
 				});
 				
 				var node2 = $("div.carousel")[1];
@@ -46,8 +47,9 @@
 				var node3 = $("div.carousel")[2];
 				new Adoro.Carousel(node3, {
 					scrollCount: 2,
-					/*automatic: true,
-					automaticDelay: 1000*/
+					hasStartButton: true,
+					hasStopButton: true,
+					automaticDelay: 1000
 				});
 			});
 		</script>
@@ -102,7 +104,7 @@
 						</ul>
 					</div>		
 					
-					<h3>No animation, scrolling through 1 item of normal content at a time.</h3>
+					<h3></h3>
 					
 					<div class="carousel">
 						<ul>
