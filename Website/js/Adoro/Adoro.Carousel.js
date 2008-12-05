@@ -42,11 +42,11 @@ Adoro.Carousel = function(container, options) {
 		animationSpeed: 300,
 		automatic: false,
 		automaticDelay: 300,
-		automaticDirection: "forwards", // STILL TO DO
 		animationEasing: "linear",
 		scrollCount: 3,
 		isCircular: true,
 		
+		automaticDirection: "forwards", // STILL TO DO
 		mouseWheel: true, // STILL TO DO
 		vertical: false, // STILL TO DO
 		revealAmount: 150, // STILL TO DO
