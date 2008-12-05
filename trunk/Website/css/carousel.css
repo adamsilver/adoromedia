@@ -8,7 +8,9 @@ div.carousel {
 }
 
 div.carousel a.next,
-div.carousel a.previous {
+div.carousel a.previous,
+div.carousel a.stop,
+div.carousel a.start {
 	font-size: 1.2em;
 	float: left;
 	padding: 10px;
@@ -26,11 +28,12 @@ div.carousel ul {
 
 div.carousel ul li {
 	white-space:nowrap; /* this is important*/
+	border: 1px solid #333;
+	margin-right: 10px;
 }
 
 div.carousel ul li div {
 	padding: 50px;
-	border: 1px solid #333;
 	font-size: 1.2em;
 }
 
