@@ -17,21 +17,28 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-				var carousel01 = new Adoro.Carousel($("div.carousel")[0], {
+				
+				var node1 = $("div.carousel")[0];
+				var carousel01 = new Adoro.Carousel(node1, {
 					scrollCount: 5, 
 					animationSpeed: 1100, 
 					animationEasing: "easeInBounce",
 					nextButtonHTML: "Forwards", 
-					previousButtonHTML: "Backwards"
+					previousButtonHTML: "Backwards",
+					animate: true
 				});
-				var carousel02 = new Adoro.Carousel($("div.carousel")[1], {
-					scrollCount: 2, 
-					animationEasing: "easeOutElastic",
-					animationSpeed: 1650
+				
+				var node2 = $("div.carousel")[1];
+				var carousel02 = new Adoro.Carousel(node2, {
+					scrollCount: 5, 
+					animationEasing: "easeOutQuad",
+					animationSpeed: 650,
+					animate: true
 				});
-				var carousel03 = new Adoro.Carousel($("div.carousel")[2], {
-					scrollCount: 1, 
-					animate: false
+				
+				var node3 = $("div.carousel")[2];
+				var carousel03 = new Adoro.Carousel(node3, {
+					scrollCount: 1
 				});
 			});
 		</script>

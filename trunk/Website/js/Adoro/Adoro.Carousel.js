@@ -28,10 +28,6 @@ if (typeof Adoro !== "object") var Adoro = {};
  * @constructor
  * @class Represents a Carousel
  * @param {Node} container DOM reference to container element
- * @param {Object} options The options for this instance
- * @param {Number} options.scrollCount How many elements to scroll
- * @param {Number} options.speed How quickly the carousel scrolls
- * @param {Boolean} options.automatic If true then no previous/next controls present and animates always
  */
 Adoro.Carousel = function(container, options) {
 	var container = container || null;
@@ -42,7 +38,7 @@ Adoro.Carousel = function(container, options) {
 	
 	var state = {animating: false};
 	var config = {
-		animate: true,
+		animate: false,
 		animationSpeed: 300,
 		animationAutomatic: true,
 		animationEasing: "linear",
@@ -55,49 +51,55 @@ Adoro.Carousel = function(container, options) {
 		//? not sure about these
 		firstVisible: null,
 		selectedItem: null,
-		
 		// call backs
 		beforeStartCallback: null,
 		afterEndCallback: null,
 		
+		// indicator
 		indicator: true,
 		indicatorItemHTML: '<span class="indicator">indicator item</span>',
 		indicatorAppend: container,					
 		
-		starButton: true,
+		// start button
+		hasStartButton: true,
 		startButtonHTML: '<span>Start</span>',
-		startAppend: container,
+		startButtonAppend: container,
 		
+		// stop/pause button
 		hasStopButton: true,
 		stopButtonHTML: '<span>Stop</span>',
 		stopButtonAppend: container,
 		
-		hasNextButton: true,
-		nextButtonHTML: '<span>Next</span>',
-		nextButtonAppend: container,
-		
+		// previous button
 		hasPreviousButton: true,
 		previousButtonHTML: '<span>Previous</span>',
-		previousButtonAppend: container	
+		previousButtonAppend: container,
+		
+		// next button
+		hasNextButton: true,
+		nextButtonHTML: '<span>Next</span>',
+		nextButtonAppend: container		
 	}
 	
 	if(typeof options === "object") {
+		// general
 		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
 		config.animationSpeed = (typeof options.animationSpeed === "number") ? options.animationSpeed : config.animationSpeed;
 		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
 		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
 		
+		// previous button
+		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
+		config.previousButtonHTML = (typeof options.previousButtonHTML === "string") ? options.previousButtonHTML : config.previousButtonHTML;
+		config.previousButtonAppend = options.previousButtonAppend || config.previousButtonAppend;	
+		
+		// next button		
 		config.hasNextButton = (typeof options.hasNextButton === "boolean") ? options.hasNextButton : config.hasNextButton;
 		config.nextButtonHTML = (typeof options.nextButtonHTML === "string") ? options.nextButtonHTML : config.nextButtonHTML;
 		config.nextButtonAppend = options.nextButtonAppend || config.nextButtonAppend;
-		
-		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
-		config.previousButtonHTML = (typeof options.previousButtonHTML === "string") ? options.previousButtonHTML : config.previousButtonHTML;
-		config.previousButtonAppend = options.previousButtonAppend || config.previousButtonAppend;		
-		
 	}
 	
-	
+	// setting general styling
 	if(config.vertical) {
 		$(ul).find("li").css({"display": "block","float": "none"});
 		$(ul).css({"width": getLisHeight() + "px"});
@@ -107,6 +109,7 @@ Adoro.Carousel = function(container, options) {
 		$(ul).css({"width": getLisWidth(lis) + "px"});
 	}
 	
+	// add previous button
 	if(config.previousButtonAppend) {
 		var previousLink = $(Adoro.Carousel.previousLink).clone()[0];
 		previousLink.innerHTML = config.previousButtonHTML;
@@ -117,6 +120,7 @@ Adoro.Carousel = function(container, options) {
 		config.previousButtonAppend.appendChild(previousLink);
 	}	
 	
+	// add next button
 	if(config.hasNextButton) {
 		var nextLink = $(Adoro.Carousel.nextLink).clone()[0];
 		nextLink.innerHTML = config.nextButtonHTML;
@@ -127,8 +131,12 @@ Adoro.Carousel = function(container, options) {
 		config.nextButtonAppend.appendChild(nextLink);
 	}
 	
-
-	
+	/**
+	 * get list items
+	 * @param {Number} from The from index of the lis to return
+	 * @param {Number} to The to index of the lis to return
+	 * @return {Array} lis The list items
+	 */
 	function getLis(from, to) {
 		var lis = [];
 		var allLis = $(ul).find("li");
@@ -143,10 +151,18 @@ Adoro.Carousel = function(container, options) {
 		return lis;
 	}
 	
+	/**
+	 * TO DO
+	 */
 	function getLisHeight() {
 		return 100;
 	}
 	
+	/**
+	 * Get the total width in pixels of the list items
+	 * @param {Array} lis The array of list items to measure
+	 * @return {Number} width
+	 */
 	function getLisWidth(lis) {
 		var lis = lis;
 		var width = 0;
