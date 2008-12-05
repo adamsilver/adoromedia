@@ -45,9 +45,9 @@
 				
 				var node3 = $("div.carousel")[2];
 				new Adoro.Carousel(node3, {
-					scrollCount: 1,
-					automatic: true,
-					automaticDelay: 1000
+					scrollCount: 2,
+					/*automatic: true,
+					automaticDelay: 1000*/
 				});
 			});
 		</script>

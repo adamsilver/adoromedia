@@ -36,31 +36,27 @@ Adoro.Carousel = function(container, options) {
 	if (!ul) return null;
 	var lis = getLis();
 	
-	var state = {animating: false};
+	var state = {animating: false, currentIndex: 0};
 	var config = {
 		animate: false,
 		animationSpeed: 300,
 		automatic: false,
 		automaticDelay: 300,
-		automaticDirection: "forwards", // STILL TO DO THIS IF NECCESSARY
+		automaticDirection: "forwards", // STILL TO DO
 		animationEasing: "linear",
 		scrollCount: 3,
-		mouseWheel: true,
-		vertical: false,
-		circular: true,
-		revealAmount: 150, // see yui 
 		
-		//? not sure about these
-		firstVisible: null,
-		selectedItem: null,
-		// call backs
-		beforeStartCallback: null,
-		afterEndCallback: null,
+		mouseWheel: true, // STILL TO DO
+		vertical: false, // STILL TO DO
+		iscircular: false, // STILL TO DO
+		revealAmount: 150, // STILL TO DO
+		beforeStartCallback: null, // STILL TO DO
+		afterEndCallback: null, // STILL TO DO
 		
 		// indicator
-		indicator: true,
-		indicatorItemHTML: '<span class="indicator">indicator item</span>',
-		indicatorAppend: container,					
+		indicator: true, // STILL TO DO
+		indicatorItemHTML: '<span class="indicator">indicator item</span>', // STILL TO DO
+		indicatorAppend: container, // STILL TO DO
 		
 		// start button
 		hasStartButton: false,
@@ -100,6 +96,7 @@ Adoro.Carousel = function(container, options) {
 		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
 		config.previousButtonHTML = (typeof options.previousButtonHTML === "string") ? options.previousButtonHTML : config.previousButtonHTML;
 		config.previousButtonClass = (typeof options.previousButtonClass === "string") ? options.previousButtonClass : config.previousButtonClass;
+		config.previousButtonDisabledClass = (typeof options.previousButtonDisabledClass === "string") ? options.previousButtonDisabledClass : config.previousButtonDisabledClass;		
 		config.previousButtonAppend = options.previousButtonAppend || config.previousButtonAppend;	
 		
 		// next button		
@@ -201,11 +198,14 @@ Adoro.Carousel = function(container, options) {
 		var lis = [];
 		var allLis = $(ul).find("li");
 		var li = null;
+		//console.log("=========");
 		for(var i = allLis.length-1; i>=0; i--) {
 			li = allLis[i];
 			if(from !== undefined && i<from) continue;
 			if(to !== undefined && i>to-1) continue;
 			if (li.parentNode !== ul) continue;
+			
+			//console.log(li);
 			lis.push(li);
 		}
 		return lis;
@@ -240,6 +240,7 @@ Adoro.Carousel = function(container, options) {
 	// need to hand animate and not animate
 	function moveToLi(newIndex) {
 		if(state.animating) return;
+	
 		var lisToManipulate = null;
 		if(newIndex < 0) {
 			// going backwards
@@ -258,7 +259,16 @@ Adoro.Carousel = function(container, options) {
 				}});				
 			}
 			else {
-				$(ul).prepend(lisToManipulate);
+				if(config.iscircular) {
+					$(ul).prepend(lisToManipulate);
+				}
+				else {
+					if(state.currentIndex > 0) {
+						$(ul).prepend(lisToManipulate);
+						state.currentIndex += newIndex; 
+					}
+				}
+				
 				if(config.automatic) {
 					play();
 				}
@@ -266,21 +276,35 @@ Adoro.Carousel = function(container, options) {
 		}
 		else {
 			// going forwards
+			// move the ul -value to the left
 			lisToManipulate = getLis(0, newIndex).reverse();
 			
+			// animation
 			if(config.animate) {
 				state.animating = true;
 				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
+					//if (config.isCircular) {
 					$(ul).append(lisToManipulate);
 					$(ul).css({left: "0px"});
+					//}
 					state.animating = false;
 					if(config.automatic) {
 						play();
 					}
 				}});
 			}
+			// no animation
 			else {
-				$(ul).append(lisToManipulate);
+				if(config.iscircular) {
+					$(ul).append(lisToManipulate);
+				}
+				else {
+					if(state.currentIndex+config.scrollCount < lis.length-config.scrollCount) {
+						$(ul).append(lisToManipulate);
+						state.currentIndex += newIndex;						
+					}
+				}
+				
 				if(config.automatic) {
 					play();
 				}
