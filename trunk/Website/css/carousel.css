@@ -1,35 +1,24 @@
 div.carousel {
 	margin-bottom: 10px;
+	padding: 10px;
 	overflow: hidden;
-	position: relative;
+	border: 1px solid #333;
+	background-color: #eeeeee;
+	/*position: relative;*/
 }
 
 div.carousel a.next,
 div.carousel a.start {
-	display: block;
-	padding: 10px;
-	font-weight: bold;
-	font-size: 1.2em;
-	position: absolute;
-	bottom: 5px;
-	right: 0;
-	background-color: #eeeeee;
 }
 
 div.carousel a.previous,
 div.carousel a.stop {
-	display: block;
-	padding: 10px;
-	font-weight: bold;
-	font-size: 1.2em;
-	position: absolute;
-	bottom: 5px;
-	left: 0;
-	background-color: #eeeeee;
 }
 
 div.carousel ul {
 	list-style: none;
+	overflow: hidden;
+	position: relative;
 }
 
 div.carousel ul li {
@@ -40,4 +29,5 @@ div.carousel ul li {
 
 div.carousel ul li div {
 	padding: 50px;
+	border: 1px solid #333;
 }
