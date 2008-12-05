@@ -13,7 +13,6 @@
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/accordian.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
-		<script type="text/javascript" src="../../js/Adoro/Adoro.DevNotes.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
