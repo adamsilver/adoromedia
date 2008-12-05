@@ -13,18 +13,21 @@
 		<!--#include file="../../inc/head_css.asp"-->
 		<link rel="stylesheet" href="../../css/carousel.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
+		<script type="text/javascript" src="../../js/JQuery/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
 				var carousel01 = new Adoro.Carousel($("div.carousel")[0], {
 					scrollCount: 5, 
 					animationSpeed: 1100, 
+					animationEasing: "easeInBounce",
 					nextButtonHTML: "Forwards", 
 					previousButtonHTML: "Backwards"
 				});
 				var carousel02 = new Adoro.Carousel($("div.carousel")[1], {
 					scrollCount: 2, 
-					animationSpeed: 450
+					animationEasing: "easeOutElastic",
+					animationSpeed: 1650
 				});
 				var carousel03 = new Adoro.Carousel($("div.carousel")[2], {
 					scrollCount: 1, 

@@ -45,7 +45,7 @@ Adoro.Carousel = function(container, options) {
 		animate: true,
 		animationSpeed: 300,
 		animationAutomatic: true,
-		animationEasing: "from plugin need to go find out",
+		animationEasing: "linear",
 		scrollCount: 3,
 		mouseWheel: true,
 		vertical: false,
@@ -85,6 +85,7 @@ Adoro.Carousel = function(container, options) {
 		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
 		config.animationSpeed = (typeof options.animationSpeed === "number") ? options.animationSpeed : config.animationSpeed;
 		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
+		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
 		
 		config.hasNextButton = (typeof options.hasNextButton === "boolean") ? options.hasNextButton : config.hasNextButton;
 		config.nextButtonHTML = (typeof options.nextButtonHTML === "string") ? options.nextButtonHTML : config.nextButtonHTML;
@@ -174,7 +175,7 @@ Adoro.Carousel = function(container, options) {
 				$(ul).css("left", -getLisWidth(lisToManipulate));
 				$(ul).prepend(lisToManipulate);
 				state.animating = true;
-				$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": "linear", "complete": function(){
+				$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 					state.animating = false;
 				}});				
 			}
@@ -188,7 +189,7 @@ Adoro.Carousel = function(container, options) {
 			
 			if(config.animate) {
 				state.animating = true;
-				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed, easing: "linear", "complete": function(){
+				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 					$(ul).append(lisToManipulate);
 					$(ul).css({left: "0px"});
 					state.animating = false;
