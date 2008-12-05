@@ -51,6 +51,13 @@
 					hasStopButton: true,
 					automaticDelay: 1000
 				});
+				
+				var node4 = $("div.carousel")[3];
+				new Adoro.Carousel(node4, {
+					scrollCount: 3,
+					animate: true,
+					animationEasing: "easeInOutQuad"
+				});
 			});
 		</script>
 	</head>
@@ -73,7 +80,7 @@
 					
 					<h2>Demo</h2>
 					
-					<h3></h3>
+					<h3>Non-circular, animated carousel, that can be automatic via "start"</h3>
 					
 					<div class="carousel">
 						<ul>
@@ -86,7 +93,7 @@
 						</ul>
 					</div>
 					
-					<h3></h3>
+					<h3>Varying content, heights and widths with custom button html, with custom bounce animation</h3>
 					
 					<div class="carousel">
 						<ul>
@@ -104,7 +111,7 @@
 						</ul>
 					</div>		
 					
-					<h3></h3>
+					<h3>Basic non-animated, circular, carousel with stop and start buttons</h3>
 					
 					<div class="carousel">
 						<ul>
@@ -124,6 +131,19 @@
 						</ul>
 					</div>						
 					
+					<h3>Simple animated circular carousel</h3>
+					
+					<div class="carousel">
+						<ul>
+							<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
+						</ul>
+					</div>
 					
 				</div>
 			</div>
