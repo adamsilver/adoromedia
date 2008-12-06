@@ -43,7 +43,6 @@ $(document).ready(function(){
 			closeClass: "closeDialogue"
 		};
 		var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
-		var IE7 = ($.browser.msie && parseInt($.browser.version) === 7);
 		var FF2 = ($.browser.mozilla && parseInt($.browser.versionX) === 2);
 		var state = {showingOverlay: false};
 		var overlay = (function(){
@@ -54,7 +53,6 @@ $(document).ready(function(){
 				$(o).css({position: "absolute"});
 			}
 			document.body.appendChild(o);
-			$(o).bgiframe();
 			return o;
 		}());
 		var dialogue = (function(){
@@ -62,7 +60,6 @@ $(document).ready(function(){
 			o = document.createElement("div");
 			o.id = config.dialogueID;
 			document.body.appendChild(o);
-			$(o).bgiframe();
 			return o;
 		}());
 		
@@ -179,6 +176,7 @@ $(document).ready(function(){
 			
 			// needs to be done for when the lightbox increases the page size
 			if(IE6) {
+				$("select, object, embed").css("display", "none");
 				fixOverlay();
 			}
 			
@@ -208,6 +206,10 @@ $(document).ready(function(){
 			$(dialogue).css({left: "-99999em"});			
 			if(config.closeOverlay) {
 				hideOverlay();
+			}
+			
+			if (IE6) {
+				$("select, object, embed").css("display", "block");
 			}
 			
 			return false;

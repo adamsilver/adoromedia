@@ -84,7 +84,6 @@ Adoro.Lightbox = function(anchors, options) {
 		}
 		
 		function imageOnLoad() {
-			console.log("after the image is loaded just hide dialogue and not overlay");
 			Adoro.Dialogue.hideDialogue({closeOverlay: false});
 			Adoro.Dialogue.setHTML(HTML);
 			

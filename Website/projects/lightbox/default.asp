@@ -16,7 +16,6 @@
 		<link rel="stylesheet" href="../../css/lightbox.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
-		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Lightbox.js"></script>
