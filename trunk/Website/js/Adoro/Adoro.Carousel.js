@@ -53,33 +53,39 @@ Adoro.Carousel = function(container, options) {
 		beforeStartCallback: null, // STILL TO DO
 		afterEndCallback: null, // STILL TO DO
 		
-		// indicator
-		indicator: true, // STILL TO DO
-		indicatorItemHTML: '<span class="indicator">indicator item</span>', // STILL TO DO
-		indicatorAppend: container, // STILL TO DO
+		// indicator - STILL TO DO
+		hasIndicator: true,
+		indicatorContainerClass: "indicatorContainer",
+		indicatorItemHTML: '<span class="indicator">indicator item</span>',
+		indicatorItemClass: 'go',
+		indicatorAppend: container,
 		
 		// start button
 		hasStartButton: false,
 		startButtonHTML: '<span>Start</span>',
 		startButtonClass: "start",
+		startButtonDisabledClass: "startDisabled", // to do
 		startButtonAppend: container,
 		
 		// stop/pause button
 		hasStopButton: false,
 		stopButtonHTML: '<span>Stop</span>',
 		stopButtonClass: "stop",
+		stopButtonDisabledClass: "stopDisabled", // to do
 		stopButtonAppend: container,
 		
 		// previous button
 		hasPreviousButton: true,
 		previousButtonHTML: '<span>Previous</span>',
 		previousButtonClass: "previous",
+		previousButtonDisabledClass: "previousDisabled", // to do
 		previousButtonAppend: container,
 		
 		// next button
 		hasNextButton: true,
 		nextButtonHTML: '<span>Next</span>',
 		nextButtonClass: "next",
+		nextButtonDisabledClass: "nextDisabled", // to do
 		nextButtonAppend: container		
 	}
 	
@@ -128,6 +134,15 @@ Adoro.Carousel = function(container, options) {
 		$(ul).find("li").css({"display": "inline","float": "left"});
 		$(ul).css({"width": getLisWidth(lis) + "px"});
 	}
+	
+	// add indicator control
+	if(config.hasIndicator) {
+		var indicatorContainer = $('<div></div>')[0];
+		indicatorContainer.innerHTML = "yo yo";
+		indicatorContainer.className = config.indicatorContainerClass;
+		config.indicatorAppend.appendChild(indicatorContainer);
+	}
+	
 	
 	// add previous button
 	if(config.hasPreviousButton) {
@@ -232,76 +247,85 @@ Adoro.Carousel = function(container, options) {
 			li = lis[i];
 			if (li.parentNode !== ul) continue;
 			width = width + $(li).outerWidth({margin: true});
-			//width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
+			// OLD - width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
 		}
 		return width;
 	}
 	
-	// need to handle circular and not circular
-	// need to hand animate and not animate
+	/**
+	 * move to list item
+	 * @param {Number} newIndex The index of the list item to move to
+	 */
 	function moveToLi(newIndex) {
 		if(state.animating) return;
-	
-		var lisToManipulate = null;
 		if(newIndex < 0) {
-			// going backwards
-			lisToManipulate = getLis(lis.length+newIndex, lis.length).reverse();
-			
-			// dont go back, we are at the start
-			if(!config.isCircular && (state.currentIndex <= 0)) return;
-			// animation
-			if(config.animate) {
-				$(ul).css("left", -getLisWidth(lisToManipulate));
-				$(ul).prepend(lisToManipulate);
-				state.animating = true;
-				$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
-					state.animating = false;
-					state.currentIndex += newIndex; 
-					if(config.automatic) {
-						play();
-					}
-				}});
-			}
-			// no animation
-			else {
-				$(ul).prepend(lisToManipulate);
+			goBackwards(newIndex);
+		}
+		else {
+			goForwards(newIndex);		
+		}
+	}
+	
+	function goBackwards(newIndex) {
+		var lisToManipulate = getLis(lis.length+newIndex, lis.length).reverse();
+		
+		// at the beginning so don't go further back
+		if(!config.isCircular && (state.currentIndex <= 0)) return;
+
+		// animate
+		if(config.animate) {
+			$(ul).css("left", -getLisWidth(lisToManipulate));
+			$(ul).prepend(lisToManipulate);
+			state.animating = true;
+			$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
+				state.animating = false;
 				state.currentIndex += newIndex; 
 				if(config.automatic) {
 					play();
 				}
-			}
+			}});
 		}
+		// non-animate
 		else {
-			// going forwards
-			lisToManipulate = getLis(0, newIndex).reverse(); // move the ul -value to the left
-			// dont go forwards, we are at the end
-			if(!config.isCircular && (state.currentIndex + config.scrollCount > lis.length - config.scrollCount)) return;
-			// animation
-			if(config.animate) {
-				state.animating = true;
-				$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
-					$(ul).append(lisToManipulate);
-					$(ul).css({
-						left: "0px"
-					});
-					state.animating = false;
-					state.currentIndex += newIndex;
-					if (config.automatic) {
-						play();
-					}
-				}});
-				
+			$(ul).prepend(lisToManipulate);
+			state.currentIndex += newIndex; 
+			if(config.automatic) {
+				play();
 			}
-			// no animation
-			else {
-				$(ul).append(lisToManipulate);
-				state.currentIndex += newIndex;
-				if(config.automatic) {
-					play();
-				}
-			}			
 		}
 	}
+	
+	function goForwards(newIndex) {
+		var	lisToManipulate = getLis(0, newIndex).reverse();
+		
+		// we are at the end, so don't go further forward
+		if(!config.isCircular && (state.currentIndex + config.scrollCount > lis.length - config.scrollCount)) return;
+		
+		// animate
+		if(config.animate) {
+			state.animating = true;
+			$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
+				$(ul).append(lisToManipulate);
+				$(ul).css({
+					left: "0px"
+				});
+				state.animating = false;
+				state.currentIndex += newIndex;
+				if (config.automatic) {
+					play();
+				}
+			}});
+		}
+		// no animate
+		else {
+			$(ul).append(lisToManipulate);
+			state.currentIndex += newIndex;
+			if(config.automatic) {
+				play();
+			}
+		}	
+	}
+	
 }
 
 Adoro.Carousel.button = $('<a href="#">Start</a>');
