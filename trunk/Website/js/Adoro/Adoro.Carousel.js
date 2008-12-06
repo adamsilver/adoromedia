@@ -56,7 +56,7 @@ Adoro.Carousel = function(container, options) {
 		// indicator - STILL TO DO
 		hasIndicator: true,
 		indicatorContainerClass: "indicatorContainer",
-		indicatorItemHTML: '<span class="indicator">indicator item</span>',
+		indicatorItemHTML: '<span class="indicator">GO /</span>',
 		indicatorItemClass: 'go',
 		indicatorAppend: container,
 		
@@ -138,11 +138,43 @@ Adoro.Carousel = function(container, options) {
 	// add indicator control
 	if(config.hasIndicator) {
 		var indicatorContainer = $('<div></div>')[0];
-		indicatorContainer.innerHTML = "yo yo";
 		indicatorContainer.className = config.indicatorContainerClass;
 		config.indicatorAppend.appendChild(indicatorContainer);
+		var indicatorLis = getLis().reverse();
+		var indicatorItem = null;
+		for(var i = 0; i<indicatorLis.length; i++) {
+			indicatorItem = $(Adoro.Carousel.button).clone()[0];
+			indicatorItem.className = config.indicatorItemClass;
+			indicatorItem.innerHTML = config.indicatorItemHTML;
+			
+			(function(i){
+				$(indicatorItem).bind("click", function(){
+					
+					// currentIndex = 4
+					// i = 3
+					// move -1
+					
+					// currentIndex = 5
+					// i = 3
+					// move -2
+					
+					// currentIndex = 0
+					// i = 3
+					// move 3
+					
+					i = i - state.currentIndex;	
+					if(state.currentIndex - (-i) === 0) return false; // may or may not help		
+					
+					
+					moveToLi(i);
+					
+					return false;
+				});
+			})(i);
+
+			indicatorContainer.appendChild(indicatorItem);
+		}
 	}
-	
 	
 	// add previous button
 	if(config.hasPreviousButton) {
@@ -214,14 +246,11 @@ Adoro.Carousel = function(container, options) {
 		var lis = [];
 		var allLis = $(ul).find("li");
 		var li = null;
-		//console.log("=========");
 		for(var i = allLis.length-1; i>=0; i--) {
 			li = allLis[i];
 			if(from !== undefined && i<from) continue;
 			if(to !== undefined && i>to-1) continue;
 			if (li.parentNode !== ul) continue;
-			
-			//console.log(li);
 			lis.push(li);
 		}
 		return lis;
@@ -280,6 +309,10 @@ Adoro.Carousel = function(container, options) {
 			$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 				state.animating = false;
 				state.currentIndex += newIndex; 
+				if(newIndex < 0) {
+					state.currentIndex = lis.length + newIndex; // may or may not need this check like this...
+					console.log(state.currentIndex);
+				}
 				if(config.automatic) {
 					play();
 				}
@@ -311,6 +344,7 @@ Adoro.Carousel = function(container, options) {
 				});
 				state.animating = false;
 				state.currentIndex += newIndex;
+				console.log(state.currentIndex);
 				if (config.automatic) {
 					play();
 				}
@@ -328,4 +362,4 @@ Adoro.Carousel = function(container, options) {
 	
 }
 
-Adoro.Carousel.button = $('<a href="#">Start</a>');
+Adoro.Carousel.button = $('<a href="#"></a>');
