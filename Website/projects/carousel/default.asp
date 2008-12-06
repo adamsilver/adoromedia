@@ -84,12 +84,12 @@
 					
 					<div class="carousel">
 						<ul>
-							<li><img src="../../img/portfolio/cpplus.jpg" alt="" /></li>
-							<li><img src="../../img/portfolio/flyingflowers.jpg" alt="" /></li>
-							<li><img src="../../img/portfolio/gardeningdirect.jpg" alt="" /></li>
-							<li><img src="../../img/portfolio/hamleys.jpg" alt="" /></li>		
-							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>	
-							<li><img src="../../img/portfolio/ps3.jpg" alt="" /></li>		
+							<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
+							<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
+							<li><img src="../../img/portfolio/gardeningdirect.jpg" width="500" height="167" alt="" /></li>
+							<li><img src="../../img/portfolio/hamleys.jpg" width="500" height="167" alt="" /></li>		
+							<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>	
+							<li><img src="../../img/portfolio/ps3.jpg" width="500" height="167" alt="" /></li>		
 						</ul>
 					</div>
 					
@@ -98,15 +98,15 @@
 					<div class="carousel">
 						<ul>
 							<li><p>Varying content here 1</p></li>
-							<li><img src="../../img/portfolio/houseoffraser.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>
 							<li><p>Varying content here 2</p></li>
-							<li><img src="../../img/portfolio/cpplus.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
 							<li><p>Varying content here 3</p></li>
-							<li><img src="../../img/portfolio/flyingflowers.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
 							<li><p>Varying content here 4</p></li>
-							<li><img src="../../img/portfolio/gardeningdirect.jpg" alt="" /></li>
+							<li><img src="../../img/portfolio/gardeningdirect.jpg" width="500" height="167" alt="" /></li>
 							<li><p>Varying content here 5</p></li>
-							<li><img src="../../img/portfolio/hamleys.jpg" alt="" /></li>		
+							<li><img src="../../img/portfolio/hamleys.jpg" width="500" height="167" alt="" /></li>		
 							<li><p>Varying content here 6</p></li>
 						</ul>
 					</div>		
