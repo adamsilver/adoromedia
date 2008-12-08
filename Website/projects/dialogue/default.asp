@@ -189,16 +189,7 @@
 					<div id="flash">
 						My flash here
 					</div>							
-						
-						
-					<h2>Dependencies</h2>
-					<ul class="generic">
-						<li>jquery-1.2.6.js</li>
-						<li>jquery.bgiframe.js</li>
-						<li>jquery.browser.js</li>
-						<li>Adoro.Dialogue.js</li>
-					</ul>
-					
+											
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/dialogue.asp"-->						
 						

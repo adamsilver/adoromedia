@@ -150,13 +150,7 @@
 							</div>
 						</div>											
 					</div>
-					
-					<h2>Dependencies</h2>
-					<ul class="generic">
-						<li>jquery-1.2.6.js</li>
-						<li>Adoro.Accordion.js</li>
-					</ul>
-					
+									
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/accordion.asp"-->
 				</div>
