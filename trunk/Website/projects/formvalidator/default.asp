@@ -383,13 +383,6 @@
 						</div>												
 					</form>
 					
-					<h2>Dependencies</h2>
-					<ul class="generic">
-						<li>jquery-1.2.6.js</li>
-						<li>Adoro.FormValidator.js</li>
-						<li>Adoro.FormRules.js</li>
-					</ul>
-					
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/formvalidator.asp"-->
 					
