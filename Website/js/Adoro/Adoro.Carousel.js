@@ -144,6 +144,12 @@ Adoro.Carousel = function(container, options) {
 		var indicatorLis = getLis().reverse();
 		var indicatorItem = null;
 		for(var i = 0; i<indicatorLis.length; i++) {
+			
+			// we only want to do this for each scrollCount ie 1,2,3 or 1,3,5 or 1,4,7,10
+			
+			//if(i % config.scrollCount > 0) continue;
+			
+			
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
 			indicatorItem.innerHTML = config.indicatorItemHTML+i;
@@ -261,7 +267,6 @@ Adoro.Carousel = function(container, options) {
 			li = lis[i];
 			if (li.parentNode !== ul) continue;
 			width = width + $(li).outerWidth({margin: true});
-			// OLD - width = width + parseInt($(li).css("marginLeft").split("px")[0]) + parseInt($(li).css("marginRight").split("px")[0]);
 		}
 		return width;
 	}
