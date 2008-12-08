@@ -150,7 +150,7 @@
 						<li>Phone number (allows + sign and brackets)</li>
 						<li>Password (Between 6 and 12 upper or lowercase letters, and numbers)</li>
 						<li>Number</li>
-						<li>Alpha digit sspecial full stop</li>
+						<li>Alpha digit special full stop</li>
 						<li>Matches - matches another fields value i.e. password confirmation made generic</li>
 					</ul>					
 					
