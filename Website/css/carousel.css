@@ -32,6 +32,10 @@ div.carousel div.indicatorContainer a {
 	margin-right: 5px;
 }
 
+div.carousel div.indicatorContainer a.selected {
+	border-color: red;
+}
+
 div.carousel ul {
 	list-style: none;
 	overflow: hidden;

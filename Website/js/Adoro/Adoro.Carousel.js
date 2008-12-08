@@ -57,7 +57,8 @@ Adoro.Carousel = function(container, options) {
 		hasIndicator: true,
 		indicatorContainerClass: "indicatorContainer",
 		indicatorItemHTML: '<span class="indicator">Go </span>',
-		indicatorItemClass: 'go',
+		indicatorItemClass: "go",
+		inicatorItemSelectedClass: "selected",
 		indicatorAppend: container,
 		
 		// start button
@@ -218,6 +219,7 @@ Adoro.Carousel = function(container, options) {
 		},config.automaticDelay);
 	}
 	
+	setIndicatorSelectedState();
 	
 	/**
 	 * get list items
@@ -303,7 +305,7 @@ Adoro.Carousel = function(container, options) {
 				else {
 					state.currentIndex += move;
 				}
-				
+				setIndicatorSelectedState();
 				if(config.automatic) {
 					play();
 				}
@@ -318,6 +320,7 @@ Adoro.Carousel = function(container, options) {
 			else {
 				state.currentIndex += move;
 			}
+			setIndicatorSelectedState();
 			if(config.automatic) {
 				play();
 			}
@@ -348,7 +351,7 @@ Adoro.Carousel = function(container, options) {
 				else {
 					state.currentIndex += move;
 				}
-				
+				setIndicatorSelectedState();
 				if (config.automatic) {
 					play();
 				}
@@ -363,10 +366,19 @@ Adoro.Carousel = function(container, options) {
 			else {
 				state.currentIndex += move;
 			}
+			setIndicatorSelectedState();
 			if(config.automatic) {
 				play();
 			}
 		}	
+	}
+	
+	function setIndicatorSelectedState() {
+		var anchors = $(indicatorContainer).find("a");
+		$(anchors).removeClass(config.inicatorItemSelectedClass);
+		var a = $(anchors).get(state.currentIndex);
+		$(a).addClass(config.inicatorItemSelectedClass);
+		
 	}
 	
 }
