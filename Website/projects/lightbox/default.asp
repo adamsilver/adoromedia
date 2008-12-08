@@ -110,9 +110,9 @@
 					
 					<h2>Demo</h2>
 					<ul class="lightBoxDemo">
-						<li><a class="lightbox" href="../../img/portfolio/cpplus.jpg"><img src="../../img/portfolio/cpplus.jpg" alt="CP Plus" /></a></li>
-						<li><a class="lightbox" href="../../img/portfolio/hamleys.jpg"><img src="../../img/portfolio/hamleys.jpg" alt="Hamleys" /></a></li>
-						<li><a class="lightbox" href="../../img/portfolio/flyingflowers.jpg"><img src="../../img/portfolio/flyingflowers.jpg" alt="Flying flowers" /></a></li>
+						<li><a class="lightbox" href="../../img/portfolio/cpplus.jpg"><img src="../../img/portfolio/cpplus.jpg" alt="CP Plus" width="250" height="83" /></a></li>
+						<li><a class="lightbox" href="../../img/portfolio/hamleys.jpg"><img src="../../img/portfolio/hamleys.jpg" alt="Hamleys" width="250" height="83" /></a></li>
+						<li><a class="lightbox" href="../../img/portfolio/flyingflowers.jpg"><img src="../../img/portfolio/flyingflowers.jpg" alt="Flying flowers" width="250" height="83" /></a></li>
 					</ul>
 					
 					<div class="form">
