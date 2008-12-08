@@ -19,6 +19,19 @@ div.carousel a.start {
 	margin-top: 10px;
 }
 
+div.carousel div.indicatorContainer {
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+div.carousel div.indicatorContainer a {
+	float: left;
+	padding: 5px;
+	font-size: 1.1em;
+	border: 1px solid #333;
+	margin-right: 5px;
+}
+
 div.carousel ul {
 	list-style: none;
 	overflow: hidden;

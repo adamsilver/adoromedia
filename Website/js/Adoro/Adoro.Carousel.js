@@ -56,7 +56,7 @@ Adoro.Carousel = function(container, options) {
 		// indicator - STILL TO DO
 		hasIndicator: true,
 		indicatorContainerClass: "indicatorContainer",
-		indicatorItemHTML: '<span class="indicator">GO /</span>',
+		indicatorItemHTML: '<span class="indicator">Go </span>',
 		indicatorItemClass: 'go',
 		indicatorAppend: container,
 		
@@ -145,44 +145,12 @@ Adoro.Carousel = function(container, options) {
 		for(var i = 0; i<indicatorLis.length; i++) {
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
-			indicatorItem.innerHTML = config.indicatorItemHTML;
+			indicatorItem.innerHTML = config.indicatorItemHTML+i;
 			
 			(function(i){
 				$(indicatorItem).bind("click", function(){
-					// for this to work we need to know where we currenlty are
-					// and where we need to get to
-					
-					// we always need to get to "i"
-					// we need to work out how to get to i from where we currently are
-					
-					alert(state.currentIndex);
-					alert(i);
-					
-					// eg
-					// we start at currentIndex = 0
-					// we click i = 5 (move+5)
-					// currentIndex become 5
-					
-					// we are at currentIndex = 5
-					// we click i = 0 (move-5)
-					// currentIndex becomes 0 
-					
-					// we are at currentIndex = 0
-					// we click i = 3 (move+3)
-					// currentIndex becomes 3
-					
-					// we are at currentIndex = 3
-					// we click i = 2 (move-1)
-					// currentIndex = 2
-					
-					// we are at currentIndex = 2
-					// we click i = 7 (move+5)
-					// currentIndex = 7
-					
 					var move = i - state.currentIndex;
-					
-					moveToLi(move);
-					
+					moveBy(move);
 					return false;
 				});
 			})(i);
@@ -197,7 +165,7 @@ Adoro.Carousel = function(container, options) {
 		previousButton.innerHTML = config.previousButtonHTML;
 		previousButton.className = config.previousButtonClass;
 		$(previousButton).bind("click", function(){
-			moveToLi(-config.scrollCount);
+			moveBy(-config.scrollCount);
 			return false;
 		});
 		config.previousButtonAppend.appendChild(previousButton);
@@ -209,7 +177,7 @@ Adoro.Carousel = function(container, options) {
 		nextButton.innerHTML = config.nextButtonHTML;
 		nextButton.className = config.nextButtonClass;
 		$(nextButton).bind("click", function(){
-			moveToLi(config.scrollCount);
+			moveBy(config.scrollCount);
 			return false;
 		});
 		config.nextButtonAppend.appendChild(nextButton);
@@ -246,7 +214,7 @@ Adoro.Carousel = function(container, options) {
 	
 	function play() {
 		window.setTimeout(function(){
-			moveToLi(config.scrollCount);
+			moveBy(config.scrollCount);
 		},config.automaticDelay);
 	}
 	
@@ -297,21 +265,26 @@ Adoro.Carousel = function(container, options) {
 	}
 	
 	/**
-	 * move to list item
-	 * @param {Number} newIndex The amount of list items to move +1 goes forward 1, -1 goes back 1
+	 * move list items
+	 * @param {Number} move The amount of list items to move +1 goes forward 1, -1 goes back 1
 	 */
-	function moveToLi(newIndex) {
-		if(state.animating) return;
-		if(newIndex < 0) {
-			goBackwards(newIndex);
+	function moveBy(move) {
+		if(state.animating || move === 0) return;
+		if(move < 0) {
+			goBackwards(move);
 		}
 		else {
-			goForwards(newIndex);		
+			goForwards(move);
 		}
 	}
 	
-	function goBackwards(newIndex) {
-		var lisToManipulate = getLis(lis.length+newIndex, lis.length).reverse();
+	/**
+	 * move backwards
+	 * can be made more efficient
+	 * @param {Number} move Amount of list items to move backwards by
+	 */
+	function goBackwards(move) {
+		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
 		
 		// at the beginning so don't go further back
 		if(!config.isCircular && (state.currentIndex <= 0)) return;
@@ -323,11 +296,14 @@ Adoro.Carousel = function(container, options) {
 			state.animating = true;
 			$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 				state.animating = false;
-				state.currentIndex += newIndex; 
-				if(newIndex < 0) {
-					state.currentIndex = lis.length + newIndex; // may or may not need this check like this...
-					//console.log(state.currentIndex);
+							
+				if(state.currentIndex + move < 0) {
+					state.currentIndex = lis.length + move + state.currentIndex;
 				}
+				else {
+					state.currentIndex += move;
+				}
+				
 				if(config.automatic) {
 					play();
 				}
@@ -336,38 +312,43 @@ Adoro.Carousel = function(container, options) {
 		// non-animate
 		else {
 			$(ul).prepend(lisToManipulate);
-			state.currentIndex += newIndex; 
+			if(state.currentIndex + move < 0) {
+				state.currentIndex = lis.length + move + state.currentIndex;
+			}
+			else {
+				state.currentIndex += move;
+			}
 			if(config.automatic) {
 				play();
 			}
 		}
 	}
 	
-	// newIndex === amountOFlistomove
-	function goForwards(newIndex) {
-		var	lisToManipulate = getLis(0, newIndex).reverse();
-		
-		// eg
-		// CI = 0
-		// SC = 3
-		// LISLENGTH = 10
-		console.log(state.currentIndex);
-		console.log(newIndex);
+	/**
+	 * move forwards
+	 * can be made more efficient
+	 * @param {Number} move Amount of list items to move forwards by
+	 */
+	function goForwards(move) {
+		var	lisToManipulate = getLis(0, move).reverse();
 		
 		// we are at the end, so don't go further forward
 		if(!config.isCircular && (state.currentIndex + config.scrollCount > lis.length - config.scrollCount)) return;
-		//if(!config.isCircular && (newIndex * config.scrollCount > lis.length - config.scrollCount)) return;
 		// animate
 		if(config.animate) {
 			state.animating = true;
 			$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
 				$(ul).append(lisToManipulate);
-				$(ul).css({
-					left: "0px"
-				});
+				$(ul).css({left: "0px"});
 				state.animating = false;
-				state.currentIndex += newIndex;
-				//console.log(state.currentIndex);
+				
+				if(state.currentIndex+move > lis.length-1) {
+					state.currentIndex = state.currentIndex - lis.length + move;
+				}
+				else {
+					state.currentIndex += move;
+				}
+				
 				if (config.automatic) {
 					play();
 				}
@@ -376,7 +357,12 @@ Adoro.Carousel = function(container, options) {
 		// no animate
 		else {
 			$(ul).append(lisToManipulate);
-			state.currentIndex += newIndex;
+			if(state.currentIndex+move > lis.length-1) {
+				state.currentIndex = state.currentIndex - lis.length + move;
+			}
+			else {
+				state.currentIndex += move;
+			}
 			if(config.automatic) {
 				play();
 			}
