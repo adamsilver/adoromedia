@@ -26,6 +26,15 @@
 					<p>Here is a selection of recent work. Just click the images to view the sites.</p>
 					<ul class="portfolio">
 						<li class="work">
+							<h2>DG Retro Collectables</h2>
+							<p>Responsible for complete design and build of user interface.</p>
+							<div class="image">
+								<a href="http://www.dgretro.com">
+									<img src="img/portfolio/dgretro.jpg" alt="DG Retro collectables" />
+								</a>
+							</div>
+						</li>						
+						<li class="work">
 							<h2>CP Plus Car Park Management</h2>
 							<p>Responsible for complete design and build of user interface.</p>
 							<div class="image">
