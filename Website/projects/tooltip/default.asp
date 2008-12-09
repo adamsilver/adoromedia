@@ -17,28 +17,11 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var myTip1 = new Adoro.Tooltip($("a.tooltipAnchor")[0], "This is on the fly content with no styling", {showEvent: "click",delay: 2000});
+				var myTip1 = new Adoro.Tooltip($("a.tooltipAnchor")[0], '<div class="myTooltip">This is my default tooltip with a delay</div>');
 				
 				$("div.tooltipContainer div.tooltip").hide();
-				var myTip2 = new Adoro.Tooltip($("div.tooltipContainer a.tooltipAnchor")[0], $("div.tooltipContainer div.tooltip")[0].innerHTML, {followMouse: true});
+				var myTip2 = new Adoro.Tooltip($("div.tooltipContainer a.tooltipAnchor")[0], $("div.tooltipContainer div.tooltip")[0].innerHTML, {delay: 0,followMouse: true});
 				
-				
-				(function() {
-					var helpField = document.getElementById("help");
-					var helpText = $("div.contextualHelp")[0];
-					var left = $(helpField).position().left + $(helpField).outerWidth();
-					var top = $(helpField).position().top;
-					$(helpText).hide();
-					var myTip3 = new Adoro.Tooltip(helpField, helpText.innerHTML, {
-						showEvent: "focus",
-						hideEvent: "blur",
-						positionX: left,
-						positionY: top,
-						offsetLeft: 0,
-						offsetTop: 0
-					});		
-					
-				}());
 			});
 		</script>
 		<style type="text/css">
@@ -54,6 +37,10 @@
 				border: 2px solid #898F2C;
 				background: #ffffff;
 				padding: 10px;
+			}
+			
+			div.yo p {
+				margin: 0px;
 			}
 		</style>
 	</head>
@@ -72,7 +59,7 @@
 						<li>The HTML for the tooltip can come from the DOM or inserted on the fly.</li>
 						<li>Will check that it doesn't fall off-screen.</li>
 						<li>Different tooltips can have different content and different styles.</li>
-						<li>Will construct itself and destory itself on showing and hiding.</li>
+						<li>Will construct itself and destroy itself on showing and hiding.</li>
 						<li>Can be configured
 							<ul>
 								<li>to follow the mouse.</li>
@@ -82,29 +69,12 @@
 						</li>
 					</ul>
 					<h2>Demo</h2>
-					<p><a class="tooltipAnchor" href="#">Click tooltip (no in-page content)</a></p>
+					<p><a class="tooltipAnchor" href="#">Default tooltip</a></p>
 					
 					<div class="tooltipContainer">		
-						<p><a class="tooltipAnchor" href="#">Hover tooltip (information inside page)</a></p>
+						<p><a class="tooltipAnchor" href="#">Tracking toolip</a></p>
 						<div class="tooltip">
-							<div class="myTooltip">This is a tooltip that follows the mouse, and looks like a native tooltip</div>
-						</div>
-					</div>
-					
-					<div class="form">
-						<div class="field">
-							<div class="indicator">
-								<label for="help">Help field (information inside page)</label>
-							</div>
-							<div class="singleInput">
-								<input type="text" id="help" name="help" />
-								<div class="contextualHelp">
-									<div class="yo">
-										<h3>My contextual help tooltip</h3>
-										<p>This is the contextual help onfocus/onblur</p>
-									</div>
-								</div>
-							</div>
+							<div class="yo"><p>This is a tooltip that follows the mouse, and has custom style</p></div>
 						</div>
 					</div>
 						

@@ -129,12 +129,7 @@
 					return false;
 				});
 			});
-		</script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var myTip1 = new Adoro.Tooltip($("#overlay")[0], '<div style="white-space: nowrap;">To close the LightBox press close.</div>', {showEvent: "click",delay: 2000});
-			});
-		</script>			
+		</script>		
 	</head>
 	<body class="library">
 		<div id="container">
