@@ -34,6 +34,9 @@
 					a number of diverse websites - some of these can be seen in the porfolio section.</p>
 					
 					<h2>Adam Silver, Director</h2>
+					<p>I am the director and founder of Adoro Media Limited, and it has been through 2 previous 
+					incarnations. You will deal with the director of the company, and I am always involved throught
+					the entire project process. Working together from the start always produces the best results.</p>
 					
 					
 				</div>
