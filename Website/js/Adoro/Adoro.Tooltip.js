@@ -50,17 +50,20 @@ Adoro.Tooltip = function(activator, content, options) {
 	var config = {
 		showEvent: "mouseover",
 		hideEvent: null,
-		delay: 1000,
+		delay: 0,
 		offsetLeft: 10, 
 		offsetTop: 10,
+		positionX: 0,
+		positionY: 0,
 		followMouse: false
 	};
 	
 	if(typeof options === "object") {
-		config.showEvent = options.showEvent || config.showEvent;
-		config.hideEvent = options.hideEvent || config.hideEvent;
-		config.delay = options.delay || config.delay;
-		config.offsetLeft = options.offsetLeft || config.offsetLeft;
+		config.showEvent = (typeof options.showEvent === "string") ? options.showEvent : config.showEvent;
+		config.hideEvent = (typeof options.hideEvent === "string") ? options.hideEvent : config.hideEvent;
+		config.delay = (typeof options.delay === "number") ? options.delay : config.delay;
+		config.offsetLeft = (typeof options.offsetLeft === "number") ? options.offsetLeft : config.offsetLeft;
+		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
 		config.followMouse = (typeof options.followMouse === "boolean") ? options.followMouse : config.followMouse;	
 	}
 	$(activator).bind(config.showEvent, show);
@@ -90,7 +93,7 @@ Adoro.Tooltip = function(activator, content, options) {
 		$(tooltip).css({left: tooltipPosition.left+"px",top: tooltipPosition.top+"px"});
 		
 		// if we are not following mouse then hide after timeout
-		if (!config.followMouse) {
+		if (config.delay > 0) {
 			window.setTimeout(hide, config.delay);
 		}
 	};

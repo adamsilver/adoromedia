@@ -21,6 +21,12 @@
 				
 				$("div.tooltipContainer div.tooltip").hide();
 				var myTip2 = new Adoro.Tooltip($("div.tooltipContainer a.tooltipAnchor")[0], $("div.tooltipContainer div.tooltip")[0].innerHTML, {followMouse: true});
+				
+				var myTip3 = new Adoro.Tooltip(document.getElementById("help"), $("p.contextualHelp")[0].innerHTML, {
+					showEvent: "focus",
+					hideEvent: "blur"
+				});
+				
 			});
 		</script>	
 	</head>
@@ -54,6 +60,18 @@
 					<div class="tooltipContainer">		
 						<p><a class="tooltipAnchor" href="#">Hover tooltip</a></p>
 						<div class="tooltip">tooltip 2</div>
+					</div>
+					
+					<div class="form">
+						<div class="field">
+							<div class="indicator">
+								<label for="help">Help field</label>
+							</div>
+							<div class="singleInput">
+								<input type="text" id="help" name="help" />
+								<p class="contextualHelp">This is the contextual help</p>
+							</div>
+						</div>
 					</div>
 						
 				</div>
