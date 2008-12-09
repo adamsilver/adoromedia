@@ -104,13 +104,13 @@
 						<!-- scrolling div -->
 						<!-- tree nav -->
 						<!-- custom pointers/icons for googlemaps, controls optional -->
-						<!-- user agent and type detection -->
 						<!-- image zoom -->
 						<!-- slide -->
 						<!-- select box api -->
 						<!-- select box styling -->
 						<!-- maps - gmap, mmap, ymap -->
 						<!-- indicator for lightbox images -->
+						<!-- tooltip - contextual help -->
 					</ul>
 				</div>
 			</div>
