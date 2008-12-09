@@ -25,7 +25,7 @@
 				
 				(function() {
 					var helpField = document.getElementById("help");
-					var helpText = $("p.contextualHelp")[0];
+					var helpText = $("div.contextualHelp")[0];
 					var left = $(helpField).position().left + $(helpField).outerWidth();
 					var top = $(helpField).position().top;
 					$(helpText).hide();
@@ -83,7 +83,14 @@
 							</div>
 							<div class="singleInput">
 								<input type="text" id="help" name="help" />
-								<p class="contextualHelp">This is the contextual help</p>
+								<div class="contextualHelp">
+									<div>
+										<h3>Whoopdey</h3>
+										<p>This is the contextual help</p>
+									
+									</div>
+									
+								</div>
 							</div>
 						</div>
 					</div>
