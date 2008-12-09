@@ -22,10 +22,24 @@
 				$("div.tooltipContainer div.tooltip").hide();
 				var myTip2 = new Adoro.Tooltip($("div.tooltipContainer a.tooltipAnchor")[0], $("div.tooltipContainer div.tooltip")[0].innerHTML, {followMouse: true});
 				
-				var myTip3 = new Adoro.Tooltip(document.getElementById("help"), $("p.contextualHelp")[0].innerHTML, {
-					showEvent: "focus",
-					hideEvent: "blur"
-				});
+				
+				(function() {
+					var helpField = document.getElementById("help");
+					var helpText = $("p.contextualHelp")[0];
+					var left = $(helpField).position().left + $(helpField).outerWidth();
+					var top = $(helpField).position().top;
+					$(helpText).hide();
+					var myTip3 = new Adoro.Tooltip(helpField, helpText.innerHTML, {
+						showEvent: "focus",
+						hideEvent: "blur",
+						positionX: left,
+						positionY: top
+					});		
+					
+				}());
+				
+				
+
 				
 			});
 		</script>	
