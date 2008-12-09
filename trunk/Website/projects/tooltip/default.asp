@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var myTip1 = new Adoro.Tooltip($("a.tooltipAnchor")[0], "this is the content blah", {showEvent: "click",delay: 2000});
+				var myTip1 = new Adoro.Tooltip($("a.tooltipAnchor")[0], "This is on the fly content with no styling", {showEvent: "click",delay: 2000});
 				
 				$("div.tooltipContainer div.tooltip").hide();
 				var myTip2 = new Adoro.Tooltip($("div.tooltipContainer a.tooltipAnchor")[0], $("div.tooltipContainer div.tooltip")[0].innerHTML, {followMouse: true});
@@ -33,16 +33,29 @@
 						showEvent: "focus",
 						hideEvent: "blur",
 						positionX: left,
-						positionY: top
+						positionY: top,
+						offsetLeft: 0,
+						offsetTop: 0
 					});		
 					
 				}());
-				
-				
-
-				
 			});
-		</script>	
+		</script>
+		<style type="text/css">
+			div.myTooltip {
+				border: 1px solid #404040;
+				padding: 2px 6px;
+				background-color: #FFFFE1;
+				font-size: 11px;
+			}
+			
+			div.yo {
+				width: 500px;
+				border: 2px solid #898F2C;
+				background: #ffffff;
+				padding: 10px;
+			}
+		</style>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -69,27 +82,27 @@
 						</li>
 					</ul>
 					<h2>Demo</h2>
-					<p><a class="tooltipAnchor" href="#">Click tooltip</a></p>
+					<p><a class="tooltipAnchor" href="#">Click tooltip (no in-page content)</a></p>
 					
 					<div class="tooltipContainer">		
-						<p><a class="tooltipAnchor" href="#">Hover tooltip</a></p>
-						<div class="tooltip">tooltip 2</div>
+						<p><a class="tooltipAnchor" href="#">Hover tooltip (information inside page)</a></p>
+						<div class="tooltip">
+							<div class="myTooltip">This is a tooltip that follows the mouse, and looks like a native tooltip</div>
+						</div>
 					</div>
 					
 					<div class="form">
 						<div class="field">
 							<div class="indicator">
-								<label for="help">Help field</label>
+								<label for="help">Help field (information inside page)</label>
 							</div>
 							<div class="singleInput">
 								<input type="text" id="help" name="help" />
 								<div class="contextualHelp">
-									<div>
-										<h3>Whoopdey</h3>
-										<p>This is the contextual help</p>
-									
+									<div class="yo">
+										<h3>My contextual help tooltip</h3>
+										<p>This is the contextual help onfocus/onblur</p>
 									</div>
-									
 								</div>
 							</div>
 						</div>
