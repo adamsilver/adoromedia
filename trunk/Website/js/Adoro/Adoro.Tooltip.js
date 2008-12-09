@@ -64,6 +64,8 @@ Adoro.Tooltip = function(activator, content, options) {
 		config.delay = (typeof options.delay === "number") ? options.delay : config.delay;
 		config.offsetLeft = (typeof options.offsetLeft === "number") ? options.offsetLeft : config.offsetLeft;
 		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
+		config.positionX = (typeof options.positionX === "number") ? options.positionX : config.positionX;
+		config.positionY = (typeof options.positionY === "number") ? options.positionY : config.positionY;
 		config.followMouse = (typeof options.followMouse === "boolean") ? options.followMouse : config.followMouse;	
 	}
 	$(activator).bind(config.showEvent, show);
@@ -81,6 +83,7 @@ Adoro.Tooltip = function(activator, content, options) {
 		state.isActivated = true;
 		document.body.appendChild(tooltip);
 		$(tooltip).bgiframe();
+		
 		var tooltipPosition = {left: e.pageX + config.offsetLeft, top: e.pageY + config.offsetTop};
 		var tooltipWidth = $(tooltip).outerWidth({margin: true});
 		var tooltipHeight = $(tooltip).outerHeight({margin: true});
@@ -89,7 +92,13 @@ Adoro.Tooltip = function(activator, content, options) {
 		}
 		if(tooltipPosition.top + tooltipHeight > $(window).height()) {
 			tooltipPosition.top = - tooltipHeight - config.offsetLeft + e.pageY;
-		}		
+		}			
+		
+		if(config.positionX > 0 || config.positionY > 0) {
+			tooltipPosition.left = config.positionX;
+			tooltipPosition.top = config.positionY;			
+		}
+	
 		$(tooltip).css({left: tooltipPosition.left+"px",top: tooltipPosition.top+"px"});
 		
 		// if we are not following mouse then hide after timeout
