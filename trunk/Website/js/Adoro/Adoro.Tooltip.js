@@ -48,35 +48,24 @@ Adoro.Tooltip = function(activator, content, options) {
 	$(tooltip).css({zIndex: "5001",position: "absolute",left: "-99999em",top: "0px"});		
 	var state = {isActivated: false};
 	var config = {
-		showEvent: "mouseover",
-		hideEvent: null,
-		delay: 0,
+		delay: 2000,
 		offsetLeft: 10, 
 		offsetTop: 10,
-		positionX: 0,
-		positionY: 0,
 		followMouse: false
 	};
 	
 	if(typeof options === "object") {
-		config.showEvent = (typeof options.showEvent === "string") ? options.showEvent : config.showEvent;
-		config.hideEvent = (typeof options.hideEvent === "string") ? options.hideEvent : config.hideEvent;
 		config.delay = (typeof options.delay === "number") ? options.delay : config.delay;
 		config.offsetLeft = (typeof options.offsetLeft === "number") ? options.offsetLeft : config.offsetLeft;
 		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
-		config.positionX = (typeof options.positionX === "number") ? options.positionX : config.positionX;
-		config.positionY = (typeof options.positionY === "number") ? options.positionY : config.positionY;
 		config.followMouse = (typeof options.followMouse === "boolean") ? options.followMouse : config.followMouse;	
 	}
-	$(activator).bind(config.showEvent, show);
-	if(config.hideEvent !== null && !config.follow) {
-		$(activator).bind(config.hideEvent, hide);
-	}
 	
+	$(activator).bind("mouseover", show);
 	if(config.followMouse) {
 		$(activator).bind("mousemove", show);
-		$(activator).bind("mouseout", hide);
 	}
+	$(activator).bind("mouseout", hide);
 	
 	function show(e){
 		if (!config.followMouse && state.isActivated) return;
@@ -87,43 +76,21 @@ Adoro.Tooltip = function(activator, content, options) {
 		var tooltipInfo = {
 			width: $(tooltip).outerWidth({margin: true}),
 			height: $(tooltip).outerHeight({margin: true}),
-			positionX: 0,
-			positionY: 0
+			positionX: e.pageX + config.offsetLeft,
+			positionY: e.pageY + config.offsetTop
 		}
-		
-		// set position X
-		if(config.positionX > 0) {
-			tooltipInfo.positionX = config.positionX;
-		}
-		else {
-			tooltipInfo.positionX = e.pageX;
-		}
-		
-		// set position Y
-		if(config.positionY > 0) {
-			tooltipInfo.positionY = config.positionY;
-		}
-		else {
-			tooltipInfo.positionY = e.pageY;
-		}		
 		
 		// check for off screen X
-		if(tooltipInfo.positionX + tooltipInfo.width + config.offsetLeft > $(window).width()) {
-			tooltipInfo.positionX = - tooltipInfo.width - config.offsetLeft + tooltipInfo.positionX;
-		}
-		else {
-			tooltipInfo.positionX = tooltipInfo.positionX + config.offsetLeft;
+		if(tooltipInfo.positionX + tooltipInfo.width > $(window).width()) {
+			tooltipInfo.positionX = - tooltipInfo.width + tooltipInfo.positionX;
 		}
 		
 		// check for off screen Y
-		if(tooltipInfo.positionY + tooltipInfo.height + config.offsetTop > $(window).height()) {
-			tooltipInfo.positionY = - tooltipInfo.height - config.offsetTop + tooltipInfo.positionY;
-		}
-		else {
-			tooltipInfo.positionY = tooltipInfo.positionY + config.offsetTop;
+		if(tooltipInfo.positionY + tooltipInfo.height > $(window).height()) {
+			tooltipInfo.positionY = - tooltipInfo.height + tooltipInfo.positionY;
 		}
 
-		$(tooltip).css({left: tooltipInfo.positionX+"px",top: tooltipInfo.positionY+"px"});
+		$(tooltip).css({"left": tooltipInfo.positionX+"px","top": tooltipInfo.positionY+"px"});
 		
 		if (config.delay > 0) {
 			window.setTimeout(hide, config.delay);
