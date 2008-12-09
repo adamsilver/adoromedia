@@ -84,24 +84,47 @@ Adoro.Tooltip = function(activator, content, options) {
 		document.body.appendChild(tooltip);
 		$(tooltip).bgiframe();
 		
-		var tooltipPosition = {left: e.pageX + config.offsetLeft, top: e.pageY + config.offsetTop};
-		var tooltipWidth = $(tooltip).outerWidth({margin: true});
-		var tooltipHeight = $(tooltip).outerHeight({margin: true});
-		if(tooltipPosition.left + tooltipWidth > $(window).width()) {
-			tooltipPosition.left = - tooltipWidth - config.offsetLeft + e.pageX;
+		var tooltipInfo = {
+			width: $(tooltip).outerWidth({margin: true}),
+			height: $(tooltip).outerHeight({margin: true}),
+			positionX: 0,
+			positionY: 0
 		}
-		if(tooltipPosition.top + tooltipHeight > $(window).height()) {
-			tooltipPosition.top = - tooltipHeight - config.offsetLeft + e.pageY;
-		}			
 		
-		if(config.positionX > 0 || config.positionY > 0) {
-			tooltipPosition.left = config.positionX;
-			tooltipPosition.top = config.positionY;			
+		// set position X
+		if(config.positionX > 0) {
+			tooltipInfo.positionX = config.positionX;
 		}
-	
-		$(tooltip).css({left: tooltipPosition.left+"px",top: tooltipPosition.top+"px"});
+		else {
+			tooltipInfo.positionX = e.pageX;
+		}
 		
-		// if we are not following mouse then hide after timeout
+		// set position Y
+		if(config.positionY > 0) {
+			tooltipInfo.positionY = config.positionY;
+		}
+		else {
+			tooltipInfo.positionY = e.pageY;
+		}		
+		
+		// check for off screen X
+		if(tooltipInfo.positionX + tooltipInfo.width + config.offsetLeft > $(window).width()) {
+			tooltipInfo.positionX = - tooltipInfo.width - config.offsetLeft + tooltipInfo.positionX;
+		}
+		else {
+			tooltipInfo.positionX = tooltipInfo.positionX + config.offsetLeft;
+		}
+		
+		// check for off screen Y
+		if(tooltipInfo.positionY + tooltipInfo.height + config.offsetTop > $(window).height()) {
+			tooltipInfo.positionY = - tooltipInfo.height - config.offsetTop + tooltipInfo.positionY;
+		}
+		else {
+			tooltipInfo.positionY = tooltipInfo.positionY + config.offsetTop;
+		}
+
+		$(tooltip).css({left: tooltipInfo.positionX+"px",top: tooltipInfo.positionY+"px"});
+		
 		if (config.delay > 0) {
 			window.setTimeout(hide, config.delay);
 		}
