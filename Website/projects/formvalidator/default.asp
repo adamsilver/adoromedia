@@ -42,9 +42,9 @@
 					placement: "bottom"
 				});	
 				new Adoro.FieldContextualHelp(year01,contextualHelpNodes[1], {
-					offsetTop: 5,
-					offsetLeft: -5,
-					placement: "left"
+					offsetTop: -15,
+					offsetLeft: 5,
+					placement: "right"
 				});		
 				
 				// applying different contextualHelp nodes to different input fields
