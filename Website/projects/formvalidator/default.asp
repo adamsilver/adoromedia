@@ -254,7 +254,7 @@
 					</form>
 					
 					<h2>Example setup</h2>
-					<!--include file="../../inc/code/formvalidator.asp"-->
+					<!--#include file="../../inc/code/fieldcontextualhelp.asp"-->
 					
 					
 				</div>
