@@ -19,6 +19,7 @@
 			$(document).ready(function(){ 
 				var contextualHelpNodes = jQuery.makeArray($(".contextualHelp"));
 				
+				// apply a contextual help node to the full name field
 				var fullname = document.getElementById("fullName");
 				new Adoro.FieldContextualHelp(fullname, contextualHelpNodes[0], {
 					offsetTop: 5,
@@ -26,6 +27,7 @@
 					placement:"bottom"
 				});
 				
+				// applying the same contextual help node  to each of the input fields
 				var day01 = document.getElementById("day01");
 				var month01 = document.getElementById("month01");
 				var year01 = document.getElementById("year01");
@@ -45,6 +47,7 @@
 					placement: "left"
 				});		
 				
+				// applying different contextualHelp nodes to different input fields
 				var day02 = document.getElementById("day02");
 				var month02 = document.getElementById("month02");
 				var year02 = document.getElementById("year02");
@@ -64,6 +67,7 @@
 					placement: "bottom"
 				});	
 				
+				// applying same contextual help to each checkbox input field
 				var checkboxes = $('[name="searchEngine"]');
 				for(var i=0; i<checkboxes.length; i++) {
 					new Adoro.FieldContextualHelp(checkboxes[i], contextualHelpNodes[5], {
@@ -105,7 +109,10 @@
 					<h2>About</h2>
 
 					<ul class="generic">
-						<li>Something</li>										
+						<li>Apply contextual help hints that show on focus and on blur</li>										
+						<li>Can have custom HTML mark-up.</li>
+						<li>Can be configured to be placed to the left, right, top or bottom of the field easily.</li>
+						<li>The offset left and offset top can be configured.</li>
 					</ul>
 					
 					<h2>Demo</h2>
