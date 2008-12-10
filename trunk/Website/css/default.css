@@ -61,6 +61,12 @@ a abbr {
 	display: none;
 }
 
+.off {
+	position: absolute !important;
+	left: -999999em !important;
+	top: 0 !important;
+}
+
 /*******************************************************************
 * Clearfix
 *******************************************************************/
