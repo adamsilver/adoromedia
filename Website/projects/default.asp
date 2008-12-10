@@ -10,15 +10,8 @@
 		<title>Projects, Adoro Media Ltd</title>
 		<!--#include file="../inc/head_other.asp"-->
 		<!--#include file="../inc/head_js.asp"-->
-		<script type="text/javascript" src="<%=Adoro.URL%>js/Adoro/Adoro.ListAnimator.js"></script>
 		<!--#include file="../inc/head_css.asp"-->	
 		<!--#include file="../inc/head_cssie.asp"-->
-		<script type="text/javascript">
-			/*$(document).ready(function(){				
-				var lis = $("ul.projects li");
-				new Adoro.ListAnimator(lis, {"speed": 100, "cssStart": {"opacity": "0.5", "marginLeft":"5px"}, "cssEnd":{"opacity":"1", "marginLeft":"0px"}}).start();
-			});*/
-		</script>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -35,7 +28,6 @@
 							<h2><a href="<%=Adoro.URL%>projects/accordion" <%if(Adoro.pageName === "accordion"){%>class="selected"<%}%>>Accordion</a></h2>
 							<p>Lightweight JavaScript accordion using the jQuery JavaScript library.</p>
 						</li>
-						<!--<li><a href="<%=Adoro.URL%>projects/demos/autofade.asp" <%if(Adoro.pageName === "autofade"){%>class="selected"<%}%>>Auto fade</a></li>-->
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/calendar" <%if(Adoro.pageName === "calendar"){%>class="selected"<%}%>>Calendar</a></h2>
 							<p>Lightweight JavaScript calendar using the jQuery JavaScript library.</p>
@@ -63,7 +55,11 @@
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/dropdownmenu" <%if(Adoro.pageName === "dropdownmenu"){%>class="selected"<%}%>>Drop down menu</a></h2>
 							<p>Lightweight, accessible drop down menu using the jQuery library.</p>
-						</li>											
+						</li>
+						<li>
+							<h2><a href="<%=Adoro.URL%>projects/fieldcontextualhelp" <%if(Adoro.pageName === "fieldcontextualhelp"){%>class="selected"<%}%>>Field contextual help</a></h2>
+							<p>Add contextual help hints to form fields on focus using jQuery library.</p>
+						</li>																
 						<li>
 							<h2><a href="<%=Adoro.URL%>projects/fieldmaxlength" <%if(Adoro.pageName === "fieldmaxlength"){%>class="selected"<%}%>>Field max length</a></h2>
 							<p>Max length indicator control for inputs &amp textareas using the jQuery library.</p>
