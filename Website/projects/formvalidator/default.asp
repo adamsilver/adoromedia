@@ -17,18 +17,78 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldContextualHelp.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-			
-				var node = $(".contextualHelp")[0];
-				var node2 = $(".contextualHelp")[1];			
-				new Adoro.FieldContextualHelp(document.getElementById("fullName"),node);
-				new Adoro.FieldContextualHelp(document.getElementById("day01"),node2);
+				var contextualHelpNodes = jQuery.makeArray($(".contextualHelp"));
+				
+				var fullname = document.getElementById("fullName");
+				new Adoro.FieldContextualHelp(fullname, contextualHelpNodes[0], {
+					offsetTop: 5,
+					offsetLeft: 0,
+					placement:"bottom"
+				});
+				
+				var day01 = document.getElementById("day01");
+				var month01 = document.getElementById("month01");
+				var year01 = document.getElementById("year01");
+				new Adoro.FieldContextualHelp(day01,contextualHelpNodes[1], {
+					offsetTop: -5,
+					offsetLeft: 0,
+					placement: "top"
+				});	
+				new Adoro.FieldContextualHelp(month01,contextualHelpNodes[1], {
+					offsetTop: 5,
+					offsetLeft: 0,
+					placement: "bottom"
+				});	
+				new Adoro.FieldContextualHelp(year01,contextualHelpNodes[1], {
+					offsetTop: 5,
+					offsetLeft: -5,
+					placement: "left"
+				});		
+				
+				var day02 = document.getElementById("day02");
+				var month02 = document.getElementById("month02");
+				var year02 = document.getElementById("year02");
+				new Adoro.FieldContextualHelp(day02,contextualHelpNodes[2], {
+					offsetTop: 5,
+					offsetLeft: 0,
+					placement: "bottom"
+				});	
+				new Adoro.FieldContextualHelp(month02,contextualHelpNodes[3], {
+					offsetTop: 5,
+					offsetLeft: 0,
+					placement: "bottom"
+				});	
+				new Adoro.FieldContextualHelp(year02,contextualHelpNodes[4], {
+					offsetTop: 5,
+					offsetLeft: 0,
+					placement: "bottom"
+				});	
+				
+				var checkboxes = $('[name="searchEngine"]');
+				for(var i=0; i<checkboxes.length; i++) {
+					new Adoro.FieldContextualHelp(checkboxes[i], contextualHelpNodes[5], {
+						offsetTop: 5,
+						placement: "bottom"
+					});
+				}					
+				
 			});
 		</script>
 		<style type="text/css">
 			.contextualHelp {
-				border: 1px solid #333;
-				padding: 5px;
-				background-color: #fff;
+				background:transparent url(../../img/bubble_bot.gif) no-repeat left bottom;
+				width:337px;
+				z-index: 100;
+				clear: both;
+			}
+			
+			.contextualHelpInner {
+				background:transparent url(../../img/bubble_top.gif) no-repeat left top;
+				padding:10px;
+			}
+			
+			.contextualHelp p {
+				margin: 0;
 			}
 		</style>
 	</head>
@@ -62,7 +122,9 @@
 									<input type="text" class="text" name="fullName" id="fullName" value="<%=Request.Form("fullName")%>" />
 								</div>
 								<div class="contextualHelp">
-									<p>Contextual help 1.</p>
+									<div class="contextualHelpInner">
+										<p>Contextual help 1.</p>
+									</div>
 								</div>
 							</div>
 								
@@ -75,19 +137,24 @@
 									<div class="input">
 										<label for="day01">Day <%devForm.writeErrorSpan(["day01"])%></label>
 										<input type="text" class="text" name="day01" id="day01" value="<%=Request.Form("day01")%>" />
-										<div class="contextualHelp">
-											<p>Contextual help 2.</p>
-										</div>
+										
 									</div>
 									<div class="input">
 										<label for="month01">Month <%devForm.writeErrorSpan(["month01"])%></label>
 										<input type="text" class="text" name="month01" id="month01" value="<%=Request.Form("month01")%>" />
+								
 									</div>
 									<div class="input">
 										<label for="year01">Year <%devForm.writeErrorSpan(["year01"])%></label>
-										<input type="text" class="text" name="year01" id="year01" value="<%=Request.Form("year01")%>" />
+										<input type="text" class="text" name="year01" id="year01" value="<%=Request.Form("year01")%>" />								
 									</div>
-								</div>					
+								</div>
+								<div class="contextualHelp">
+									<div class="contextualHelpInner">
+										<p>All three separate fields referencing this same contextual help node - 
+										all of them place the node in different locations relative to the field</p>
+									</div>
+								</div>											
 							</div>
 							
 							<!--Multiple select-->
@@ -103,6 +170,11 @@
 											<option value="1" <%devForm.writeSelected(Request.Form("day02"), "1")%>>1</option>
 											<option value="2" <%devForm.writeSelected(Request.Form("day02"), "2")%>>2</option>
 										</select>
+										<div class="contextualHelp">
+											<div class="contextualHelpInner">
+												<p>Seperate contextual help for day 02.</p>
+											</div>
+										</div>										
 									</div>
 									<div class="input">
 										<label for="month02">Month <%devForm.writeErrorSpan(["month02"])%></label>
@@ -111,6 +183,11 @@
 											<option value="1" <%devForm.writeSelected(Request.Form("month02"), "1")%>>1</option>
 											<option value="2" <%devForm.writeSelected(Request.Form("month02"), "2")%>>2</option>
 										</select>
+										<div class="contextualHelp">
+											<div class="contextualHelpInner">
+												<p>Seperate contextual help for month 02.</p>
+											</div>
+										</div>										
 									</div>
 									<div class="input">
 										<label for="year02">Year <%devForm.writeErrorSpan(["year02"])%></label>
@@ -119,6 +196,11 @@
 											<option value="1" <%devForm.writeSelected(Request.Form("year02"), "1")%>>1</option>
 											<option value="2" <%devForm.writeSelected(Request.Form("year02"), "2")%>>2</option>
 										</select>
+										<div class="contextualHelp">
+											<div class="contextualHelpInner">
+												<p>Seperate contextual help for year 02.</p>
+											</div>
+										</div>										
 									</div>
 								</div>
 							</div>
@@ -145,6 +227,11 @@
 											<label for="searchEngine03">Google</label>
 										</div>
 									</fieldset>
+									<div class="contextualHelp">
+										<div class="contextualHelpInner">
+											<p>Each checkbox uses same contextual help, but show contextually to the field you are focused on.</p>
+										</div>
+									</div>									
 								</div>
 							</div>
 														
