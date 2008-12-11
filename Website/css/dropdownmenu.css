@@ -50,8 +50,11 @@ div#dropDownMenu ul li a {
 	position: relative;
 }
 
-div#dropDownMenu ul li a:hover {
-	background: #ddd;
+div#dropDownMenu ul li a:hover,
+div#dropDownMenu ul li a.selected,
+div#dropDownMenu ul li a:focus {
+	background-color: #333333;
+	color: #ffffff;
 }
 
 /**********************************************************
@@ -69,9 +72,4 @@ div#dropDownMenu ul li ul li {
 	float: none;
 	display: block;
 	border-right: 0px;
-}
-
-div#dropDownMenu ul li a:focus {
-	background-color: #333333;
-	color: #ffffff;
 }
