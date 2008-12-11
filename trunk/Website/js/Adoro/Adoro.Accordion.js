@@ -44,7 +44,7 @@ if(typeof Adoro !== "object") var Adoro = {};
 Adoro.Accordion = function(anchors, options) {
 	var state = {animating: false};
 	var config = {
-		alwaysOneVisible: true, // TO DO
+		alwaysOpen: false,
 		animate: false,
 		cssActiveClass: "selected",
 		animationShowParams: {height: "show"},
@@ -56,8 +56,11 @@ Adoro.Accordion = function(anchors, options) {
 	var panels = [];
 	
 	if(typeof options === "object") {
+		config.alwaysOpen = (typeof options.alwaysOpen === "boolean") ? options.alwaysOpen : config.alwaysOpen;
 		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
 		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
+		config.animationShowParams = (typeof options.animationShowParams === "object") ? options.animationShowParams : config.animationShowParams;
+		config.animationHideParams = (typeof options.animationHideParams === "object") ? options.animationHideParams : config.animationHideParams;
 	}
 	
 	var anchor, section, panel, open = false;
@@ -74,8 +77,13 @@ Adoro.Accordion = function(anchors, options) {
 		}
 	}
 	
-	if(config.alwaysOneVisible) {
-		// if none visible set first one to "open";
+	// make sure 1 is open
+	if(config.alwaysOpen) {		
+		if(getCurrentlyOpened()===null) {
+			if(panels.length > 0) {
+				panels[panels.length-1].open();
+			}
+		}
 	}
 	
 	function Panel(anchor, section) {
@@ -130,13 +138,15 @@ Adoro.Accordion = function(anchors, options) {
 	function toggle() {
 		if(state.animating) return;
 		var currentlyOpened = getCurrentlyOpened();
+		if(config.alwaysOpen && currentlyOpened === this) return;
+
 		if(currentlyOpened !== null) {
 			if(config.animate) {
 				currentlyOpened.closeAnimate();
 			}
 			else {
 				currentlyOpened.close();
-			}			
+			}
 		}
 		
 		// don't open what we just closed
