@@ -26,18 +26,31 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
 Adoro.DropDownMenu = function(ul, options) {
 	var ul = ul || null;
 	if(!ul) return;
-
+	
+	var config = {
+		subMenuType: "ul",
+		offsetLeft: 0,
+		offsetTop: 0
+	};
+	
+	if(typeof options === "object") {
+		config.subMenuType = (typeof options.subMenuType === "string") ? options.subMenuType : config.subMenuType;
+		config.offsetLeft = (typeof options.offsetLeft === "number") ? options.offsetLeft : config.offsetLeft;
+		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
+	}
+	
 	// TO DO
 		// set config to change events handling for onlick etc
+		// to handle finding a particular node for a submenu
 
 	var links = $(ul).find("a"), link, subMenu, parentLi, menuActivator, menuActivatorSubMenu;
 	for(var i=links.length-1; i>=0;i--) {
 		link = links[i];
-		subMenu = $(link).parent("li").find("ul")[0] || null;
+		subMenu = $(link).parent("li").find(config.subMenuType)[0] || null;
 		parentLi = $(link).parent("li")[0] || null;
 		menuActivator = $(link).parents("ul").parent("li").children("a")[0] || null;		
-		menuActivatorSubMenu = $(menuActivator).parent("li").find("ul")[0] || null;
-		
+		menuActivatorSubMenu = $(menuActivator).parent("li").find(config.subMenuType)[0] || null;
+
 		if(subMenu) {
 			link.subMenu = subMenu;
 			$(link.subMenu).bgiframe();
@@ -55,11 +68,12 @@ Adoro.DropDownMenu = function(ul, options) {
 			$(link).bind("blur", hideSubMenu);
 		}
 	}
+
 	
 	function showSubMenu() {
 		$(this.subMenu).css({
-			left: this.offsetLeft-1+"px",
-			top: this.offsetTop+this.offsetHeight+"px",
+			left: this.offsetLeft+config.offsetLeft+"px",
+			top: this.offsetTop+this.offsetHeight+config.offsetTop+"px",
 			zIndex: 10
 		});
 	}
