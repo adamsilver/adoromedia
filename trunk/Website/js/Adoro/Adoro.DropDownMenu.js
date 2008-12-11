@@ -38,6 +38,7 @@ Adoro.DropDownMenu = function(ul, options) {
 		config.subMenuType = (typeof options.subMenuType === "string") ? options.subMenuType : config.subMenuType;
 		config.offsetLeft = (typeof options.offsetLeft === "number") ? options.offsetLeft : config.offsetLeft;
 		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
+		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
 	}
 	
 	var links = $(ul).find("a"), link, subMenu, subLinks, li;
@@ -60,6 +61,13 @@ Adoro.DropDownMenu = function(ul, options) {
 		}
 	}
 	
+	/**
+	 * The abstraction to handle the interaction between a link and the associated sub menu.
+	 * @param {Node} link
+	 * @param {Node} li
+	 * @param {Node} subMenu
+	 * @param {Node} subMenuLink
+	 */
 	function Anchor(link, li, subMenu, subMenuLink) {
 		var me = this;
 		this.link = link;
