@@ -126,7 +126,6 @@ Adoro.Accordion = function(anchors, options) {
 				me.isOpen = true;
 			}});
 		}
-		
 	}
 	
 	function toggle() {
