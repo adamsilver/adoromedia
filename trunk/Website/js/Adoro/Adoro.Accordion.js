@@ -161,4 +161,3 @@ Adoro.Accordion = function(anchors, options) {
 		return o;		
 	}
 }
-
