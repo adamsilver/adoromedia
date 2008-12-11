@@ -28,20 +28,16 @@ if(typeof Adoro !== "object") var Adoro = {};
 * @class Represents an accordion
 * @constructor
 * @name Adoro.Accordian
+* @param {Nodes[]} anchors Array of anchor nodes
 * @param {Object} options The options for this accordion instance
-* @param {HTMLElement} options.container The container node
 * @param {Object} options.animationShowParams Different animation styles when the element is shown
 * @param {Object} options.animationHideParams Different animation styles when the element is hidden
 * @param {Number} options.animationShowSpeed Number in milleseconds
 * @param {Number} options.animationHideSpeed Number in milleseconds
-* @param {String} options.event Event that triggers accordian interaction
-* @param {String} options.activatorClass Class name for the activator
-* @param {String} options.panelClass Class name for the panel
-* @param {String} options.activatorActiveClass Class name for the activator when in active mode
-* @param {String} options.panelActiveClass Class name for the panel when in active mode
 * @example
 */
 Adoro.Accordion = function(anchors, options) {
+	if(anchors.length === 0) return null;
 	var state = {animating: false};
 	var config = {
 		alwaysOpen: false,
