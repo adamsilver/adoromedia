@@ -11,34 +11,32 @@
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
-		<link rel="stylesheet" href="../../css/accordian.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-			
-				var horizontal = new Adoro.Accordion({
-					container: $("div.myHorizontalAccordian")[0], 
-					activatorClass: "header2",
-					panelClass: "panel2",					
-					animationShowParams: {width: "show"},
-					animationHideParams: {width: "hide"},
-					animationShowSpeed: 1500,
-					animationHideSpeed: 1500			
-				});			
-			
-				var vertical = new Adoro.Accordion({
-					container: $("div.accordian")[0], 
-					animationShowSpeed: 300,
-					animationHideSpeed: 300,
-					activatorClass: "header",
-					panelClass: "panel",
-					activatorActiveClass: "headerOn",
-					panelActiveClass: "panelOn"
-				});			
-			
+				new Adoro.Accordion($("a.accordian1"));
 			});
 		</script>
+		<style type="text/css">
+			.selectedBlah {
+				border: 1px solid red;
+			}
+			
+			div#myAccordion {
+				margin-bottom: 20px;
+			}
+			
+			div#myAccordion a.accordian1 {
+				font-size: 1.2em;
+			}
+			
+			div#myAccordion div.accordionPanel div.inner {
+				padding: 10px;
+				background: #F9F9F9;
+				border: 2px solid #1D2B33;
+			}
+		</style>
 	</head>
 	<body class="projects">
 		<div id="container">
@@ -61,96 +59,27 @@
 					
 					<h2>Demo</h2>
 					
-					<div class="accordian">
-						<div class="header headerOn">
-							<h3>Nested accordian</h3>
-						</div>
-						<div class="panel">
+					<div id="myAccordion">
+						<a class="accordian1" href="#accordion1_activator1">Activator 1</a>
+						<a class="accordian1" href="#accordion1_activator2">Activator 2</a>
+						<a class="accordian1" href="#accordion1_activator3">Activator 3</a>
+						<div id="accordion1_activator1" class="accordionPanel">
 							<div class="inner">
-								<div class="myHorizontalAccordian">
-									<div class="header2 activatedActivator">
-										<h4>Header</h4>
-									</div>
-									<div class="panel2 activatedPanel">
-										<div class="inner">
-											<p>panel</p>
-										</div>
-									</div>
-									<div class="header2">
-										<h4>Header</h4>
-									</div>
-									<div class="panel2">
-										<div class="inner">
-											<p>panel</p>
-										</div>
-									</div>
-									<div class="header2">
-										<h4>Header</h4>
-									</div>
-									<div class="panel2">
-										<div class="inner">
-											<p>panel</p>
-										</div>
-									</div>										
-								</div>	
+								<p>1</p>
 							</div>
 						</div>
-						<div class="header">
-							<h3>Section header</h3>
-						</div>
-						<div class="panel">
+						<div id="accordion1_activator2" class="accordionPanel">
 							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
+								<p>2</p>
 							</div>
 						</div>
-						<div class="header">
-							<h3>Section header</h3>
-						</div>
-						<div class="panel">
+						<div id="accordion1_activator3" class="accordionPanel">
 							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
+								<p>3</p>
 							</div>
 						</div>
-						<div class="header">
-							<h3>Section header</h3>
-						</div>
-						<div class="panel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>											
-					</div>
-									
+					</div>		
+			
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/accordion.asp"-->
 				</div>

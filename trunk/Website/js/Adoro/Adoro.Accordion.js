@@ -40,83 +40,129 @@ if(typeof Adoro !== "object") var Adoro = {};
 * @param {String} options.activatorActiveClass Class name for the activator when in active mode
 * @param {String} options.panelActiveClass Class name for the panel when in active mode
 * @example
-* var myAccordion = new Adoro.Accordion({container: document.getElementById("container")})
 */
-Adoro.Accordion = function(options) {
-	if(typeof options !== "object") return null;
+Adoro.Accordion = function(anchors, options) {
 	var state = {animating: false};
 	var config = {
-		container: options.container || null,
-		animationShowParams: options.animationShowParams || {height: "show"},
-		animationHideParams: options.animationHideParams || {height: "hide"},
-		animationShowSpeed: options.animationShowSpeed || 300,
-		animationHideSpeed: options.animationShowSpeed || 300,
-		event: options.event || "click",
-		activatorClass: options.activatorClass || "accordianActivator",
-		panelClass: options.panelClass || "accordianPanel",
-		activatorActiveClass: options.activatorActiveClass || "activatedActivator",
-		panelActiveClass: options.panelActiveClass || "activatedPanel"
-	}
+		alwaysOneVisible: true, // TO DO
+		animate: true,
+		cssActiveClass: "selectedBlah",
+		animationShowParams: {height: "show"},
+		animationHideParams: {height: "hide"},
+		animationShowSpeed: 300,
+		animationHideSpeed: 300		
+	};
 	
-	if(config.container === null) return null;
-	var activators = $(config.container).find("."+config.activatorClass);
-	var panels = $(config.container).find("."+config.panelClass);
-	if(activators.length === 0 || panels.length === 0) return null;
+	var panels = [];
 	
-	for(var i = activators.length-1; i>=0; i--) {
+	var anchor, section, panel, open = false;
+	for(var i = anchors.length-1; i>=0; i--) {
+		anchor = anchors[i];
+		section = document.getElementById(anchors[i].hash.slice(1));
+		open = $(anchor).hasClass(config.cssActiveClass);
+		if(panel === null) continue;
+		panel = new Panel(anchor, section);
+		panels.push(panel);
 		
-		$(panels[i]).css("width", $(panels[i]).innerWidth()+"px");
-		$(panels[i]).css("height", $(panels[i]).innerHeight()+"px");
-
-		if(!$(activators[i]).hasClass(config.activatorActiveClass)) {
-			$(panels[i]).css({display: "none"});	
+		if(!open) {
+			panel.close();
 		}
-		(function(i){
-			$(activators[i]).bind(config.event, function(){
-				toggle_activate.call(this, this, panels[i]);
-				return false;
-			});
-		})(i);
 	}
 	
-	function toggle_activate(activator, panel) {
-		if(state.animating) return;
-		var current = getCurrentlyOpened();
-			
-		// close an open panel
-		if(current !== null) {
-			$(current.panel).removeClass(config.panelActiveClass);
-			$(current.activator).removeClass(config.activatorActiveClass);
-			close(current.panel);
-			if(current.activator === activator) {
-				return; // dont try and open what we just closed
+	// TO DO: make sure all are closed but 1
+	
+	function Panel(anchor, section) {
+		var me = this;
+		this.anchor = anchor;
+		this.section = section;
+		this.isOpen = $(this.anchor).hasClass(config.cssActiveClass);
+		
+		if(!config.animate){
+			if(this.isOpen) {
+				$(this.section).removeClass(config.cssHidePanelClass);
+			}
+			else {
+				$(this.section).addClass(config.cssHidePanelClass);
 			}
 		}
-		$(panel).addClass(config.panelActiveClass);
-		$(activator).addClass(config.activatorActiveClass);
-		open(panel);
+		else {
+			$(me.section).css("width", $(me.section).innerWidth()+"px");
+			$(me.section).css("height", $(me.section).innerHeight()+"px");
+		}
+		
+		$(anchor).bind("click", function(){
+			toggle.call(me);
+			return false;
+		});
+		
+		this.close = close;
+		function close() {
+			$(me.anchor).removeClass(config.cssActiveClass);
+			$(me.section).css("display", "none");
+			me.isOpen = false;
+		}
+		
+		this.open = open;
+		function open() {
+			$(me.anchor).addClass(config.cssActiveClass);
+			$(me.section).css("display", "block");
+			me.isOpen = true;
+		}		
+		
+		this.closeAnimate = closeAnimate;
+		function closeAnimate() {
+			$(me.anchor).removeClass(config.cssActiveClass);
+			$(me.section).animate(config.animationHideParams, {duration: config.animationHideSpeed, complete: function(){
+				me.isOpen = false;
+			}});
+		}
+		
+		this.openAnimate = openAnimate;
+		function openAnimate() {
+			state.animating = true;
+			$(me.anchor).addClass(config.cssActiveClass);
+			$(me.section).animate(config.animationShowParams, {duration: config.animationShowSpeed, complete: function(){
+				state.animating = false;
+				me.isOpen = true;
+			}});
+		}
+		
 	}
 	
-	function close(panel) {
-		state.animating = true;
-		$(panel).animate(config.animationHideParams, {duration: config.animationHideSpeed, complete: function(){
-			state.animating = false;
-		}});
-	}
-	
-	function open(panel) {
-		$(panel).animate(config.animationShowParams, {duration: config.animationShowSpeed});
+	function toggle() {
+		if(state.animating) return;
+		var currentlyOpened = getCurrentlyOpened();
+		if(currentlyOpened !== null) {
+			if(config.animate) {
+				currentlyOpened.closeAnimate();
+			}
+			else {
+				currentlyOpened.close();
+			}			
+		}
+		
+		// this can be better i am sure
+		if(currentlyOpened === this) {
+			return; // dont try and open what we just closed
+		}
+		
+		if(config.animate) {
+			this.openAnimate();
+		}
+		else {
+			this.open();
+		}
 	}
 	
 	function getCurrentlyOpened() {
 		var o = null;
-		for(var i = 0; i < activators.length; i++) {
-			if($(activators[i]).hasClass(config.activatorActiveClass)) {
-				o = {activator: activators[i],panel: panels[i]};
+		for(var i = panels.length-1; i>=0; i--){
+			if(panels[i].isOpen) {
+				o = panels[i];
 				break;
 			}
 		}
-		return o;
-	}	
+		return o;		
+	}
 }
 
