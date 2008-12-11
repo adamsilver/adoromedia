@@ -53,11 +53,11 @@ Adoro.DropDownMenu = function(ul, options) {
 		subMenu = $(li).find(config.subMenuType)[0] || null;
 		if(!subMenu) continue;
 		
-		new Anchor(link, li, subMenu);
+		new AnchorHandler(link, li, subMenu);
 		
 		subLinks = $(subMenu).find("a");
 		for(var j = subLinks.length-1; j>=0;j-- ) {
-			new Anchor(subLinks[j], li, subMenu, link);
+			new AnchorHandler(subLinks[j], li, subMenu, link);
 		}
 	}
 	
@@ -68,7 +68,7 @@ Adoro.DropDownMenu = function(ul, options) {
 	 * @param {Node} subMenu
 	 * @param {Node} subMenuLink
 	 */
-	function Anchor(link, li, subMenu, subMenuLink) {
+	function AnchorHandler(link, li, subMenu, subMenuLink) {
 		var me = this;
 		this.link = link;
 		this.li = li;
