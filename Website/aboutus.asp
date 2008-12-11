@@ -25,20 +25,14 @@
 				<div id="content">
 					<h1>About us</h1>
 					
+					<h2>Simply</h2>
 					<p>Adoro Media is a website design and development agency, based in London, England, UK.</p>
 					
-					<h2>Affordable, high quality website design and development</h2>
 					
+					<h2>Our aim</h2>
 					<p>Established in 2000, our aim was to produce extremely affordable, high quality websites
 					for charities and businesses both big and small. Since then, we have designed and built
 					a number of diverse websites - some of these can be seen in the porfolio section.</p>
-					
-					<h2>Adam Silver, Director</h2>
-					<p>I am the director and founder of Adoro Media Limited, and it has been through 2 previous 
-					incarnations. You will deal with the director of the company, and I am always involved throught
-					the entire project process. Working together from the start always produces the best results.</p>
-					
-					
 				</div>
 			</div>
 		</div>
