@@ -16,14 +16,104 @@
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DropDownMenu.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
+	
 		<script type="text/javascript">
 			swfobject.embedSWF("../../swf/butterfly.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
 		</script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				new Adoro.DropDownMenu($("#dropDownMenu ul"));
+				var ulNode1 = $("#dropDownMenu ul")[0] || null;
+				new Adoro.DropDownMenu(ulNode1, {
+					offsetLeft: -1
+				});
+				
+				var ulNode2 = $("#alternativeMenu ul")[0] || null;
+				new Adoro.DropDownMenu(ulNode2, {
+					subMenuType: "div"
+				});
+				
 			});
-		</script>	
+		</script>
+		<style type="text/css">
+			div#alternativeMenu {
+				
+			}
+			
+			div#alternativeMenu ul:after {
+				clear:both;
+				content:".";
+				display:block;
+				height:0px;
+				visibility:hidden;
+			}
+			
+			div#alternativeMenu ul {
+				display:block;
+				zoom: 1;
+			}
+			
+			div#alternativeMenu ul {
+				position: relative;
+				list-style: none;
+			}
+			
+			div#alternativeMenu ul li {
+				float:left;
+				position:relative;
+			}
+			
+			div#alternativeMenu ul li a {
+				
+			}
+			
+			div#alternativeMenu ul li.buy a {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_bot_off.gif) left bottom no-repeat;
+				font-size: 1.5em;
+				color: #ffffff;
+				text-decoration: none;
+			}
+			
+			div#alternativeMenu ul li.buy a span {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_top_off.gif) left top no-repeat;
+				padding-left: 11px;
+				padding-right: 11px;
+				padding-top: 14px;
+				padding-bottom: 24px;
+				min-height: 36px;
+			}
+			
+			div#alternativeMenu ul li.finance a {
+				display: block;
+				background: url(../../img/dropdownmenu/orange_bot_off.gif) left bottom no-repeat;
+				font-size: 1.5em;
+				color: #ffffff;
+				text-decoration: none;
+			}
+			
+			div#alternativeMenu ul li.finance a span {
+				display: block;
+				background: url(../../img/dropdownmenu/orange_top_off.gif) left top no-repeat;
+				padding-left: 11px;
+				padding-right: 11px;
+				padding-top: 14px;
+				padding-bottom: 24px;
+				min-height: 36px;
+			}			
+			
+			div#alternativeMenu ul li div.subMenu {
+				position: absolute;
+				width: 200px;
+				left:-999999em;
+			}
+			
+			div#alternativeMenu ul li div.subMenu {
+				border: 1px solid #e9612b;
+				padding: 10px;
+				background-color: #ffffff;
+			}
+		</style>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -107,7 +197,22 @@
 					<div id="flash">
 						My flash here
 					</div>
-		
+					
+					<div id="alternativeMenu">
+						<ul>
+							<li class="buy"><a href="#"><span>Buy and sell<br/> investment property</span></a></li>
+							<li class="finance">
+								<a href="#FINANCE"><span>Finance</span></a>
+								<div class="subMenu">
+									hi there finance shizzle
+								</div>
+							</li>
+							<li><a href="#">Insurance</a></li>
+							<li><a href="#">Let and manage my property</a></li>
+							<li><a href="#">Tax and legal</a></li>
+						</ul>
+					</div>
+					
 				</div>
 			</div>
 		</div>
