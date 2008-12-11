@@ -46,7 +46,7 @@ Adoro.Accordion = function(anchors, options) {
 	var config = {
 		alwaysOneVisible: true, // TO DO
 		animate: true,
-		cssActiveClass: "selectedBlah",
+		cssActiveClass: "selected",
 		animationShowParams: {height: "show"},
 		animationHideParams: {height: "hide"},
 		animationShowSpeed: 300,
@@ -54,6 +54,11 @@ Adoro.Accordion = function(anchors, options) {
 	};
 	
 	var panels = [];
+	
+	if(typeof options === "object") {
+		
+	}
+	
 	
 	var anchor, section, panel, open = false;
 	for(var i = anchors.length-1; i>=0; i--) {
@@ -69,7 +74,9 @@ Adoro.Accordion = function(anchors, options) {
 		}
 	}
 	
-	// TO DO: make sure all are closed but 1
+	if(config.alwaysOneVisible) {
+		// if none visible set first one to "open";
+	}
 	
 	function Panel(anchor, section) {
 		var me = this;
