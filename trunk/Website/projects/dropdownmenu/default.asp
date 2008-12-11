@@ -328,6 +328,7 @@
 						<li>Drop downs work with JS only.</li>
 						<li>No css z-index issues.</li>
 						<li>Can navigate the links with the keyboard (focus/blur).</li>
+						<li>Can have any content as a sub menu - doesn't have to be a ul.</li>
 						<li>Uses the <a href="http://www.jquery.com">JQuery</a> JavaScript library.</li>
 					</ul>
 					
