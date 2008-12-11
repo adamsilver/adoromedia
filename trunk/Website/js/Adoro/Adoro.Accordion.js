@@ -45,7 +45,7 @@ Adoro.Accordion = function(anchors, options) {
 	var state = {animating: false};
 	var config = {
 		alwaysOneVisible: true, // TO DO
-		animate: true,
+		animate: false,
 		cssActiveClass: "selected",
 		animationShowParams: {height: "show"},
 		animationHideParams: {height: "hide"},
@@ -56,9 +56,9 @@ Adoro.Accordion = function(anchors, options) {
 	var panels = [];
 	
 	if(typeof options === "object") {
-		
+		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
+		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
 	}
-	
 	
 	var anchor, section, panel, open = false;
 	for(var i = anchors.length-1; i>=0; i--) {
@@ -84,15 +84,7 @@ Adoro.Accordion = function(anchors, options) {
 		this.section = section;
 		this.isOpen = $(this.anchor).hasClass(config.cssActiveClass);
 		
-		if(!config.animate){
-			if(this.isOpen) {
-				$(this.section).removeClass(config.cssHidePanelClass);
-			}
-			else {
-				$(this.section).addClass(config.cssHidePanelClass);
-			}
-		}
-		else {
+		if(config.animate){
 			$(me.section).css("width", $(me.section).innerWidth()+"px");
 			$(me.section).css("height", $(me.section).innerHeight()+"px");
 		}
@@ -147,16 +139,14 @@ Adoro.Accordion = function(anchors, options) {
 			}			
 		}
 		
-		// this can be better i am sure
-		if(currentlyOpened === this) {
-			return; // dont try and open what we just closed
-		}
-		
-		if(config.animate) {
-			this.openAnimate();
-		}
-		else {
-			this.open();
+		// don't open what we just closed
+		if(currentlyOpened !== this) {
+			if(config.animate) {
+				this.openAnimate();
+			}
+			else {
+				this.open();
+			}
 		}
 	}
 	

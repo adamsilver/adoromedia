@@ -11,11 +11,13 @@
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
+		<link rel="stylesheet" href="../../css/tabs.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-				new Adoro.Accordion($("a.accordian1"));
+				new Adoro.Accordion($("a.accordian1"), {animate: true});
+				new Adoro.Accordion($("a.tabActivator"), {animate: false});
 			});
 		</script>
 		<style type="text/css">
@@ -48,6 +50,7 @@
 				padding: 10px;
 				background: #F9F9F9;
 			}
+					
 		</style>
 	</head>
 	<body class="projects">
@@ -70,6 +73,8 @@
 					</ul>
 					
 					<h2>Demo</h2>
+					
+					<h3>Animated accordion</h3>
 					
 					<div id="myAccordion">
 						<a class="accordian1 selected" href="#accordion1_activator1">Activator 1</a>
@@ -124,7 +129,71 @@
 							</div>
 						</div>
 					</div>		
-			
+					
+					<h3>Non-animated accordion with a tab style</h3>
+					
+					<div class="tabset">
+						<ul class="tabNavigation">
+							<li><a class="tabActivator selected" href="#accordion2_activator1">Activator 1</a></li>
+							<li><a class="tabActivator" href="#accordion2_activator2">Activator 2</a></li>
+							<li><a class="tabActivator" href="#accordion2_activator3">Activator 3</a></li>
+						</ul>
+						
+						<div id="accordion2_activator1">
+							<div class="tab">
+								<h4>Yo 1</h4>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+
+								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+								pulvinar eu, arcu.</p>
+							</div>
+						</div>
+						
+						<div id="accordion2_activator2">
+							<div class="tab">
+								<h4>Yo 2</h4>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+
+								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+								pulvinar eu, arcu.</p>
+							</div>
+						</div>
+						
+						<div id="accordion2_activator3">
+							<div class="tab">
+								<h4>Yo 3</h4>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+
+								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+								pulvinar eu, arcu.</p>
+							</div>
+						</div>
+					</div>		
+					
 					<h2>Example setup</h2>
 					<!--#include file="../../inc/code/accordion.asp"-->
 				</div>
