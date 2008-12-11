@@ -66,10 +66,9 @@
 					<h2>About</h2>
 					<ul class="generic">
 						<li>Lightweight accordion using the JQuery library.</li>
-						<li>Takes one line of JS code to instatiate the accordion.</li>
 						<li>Can configure the animation and the event that triggers it i.e. mouseover, click etc.</li>
 						<li>Supports nested accordions.</li>
-						<!--<li>Accordians will work with dynamically added content i.e. flexible heights or widths.</li>-->
+						<li>Pass in an array of links. The href hash value should be the id of a div in the mark-up i.e. href="#myId".</li>
 					</ul>
 					
 					<h2>Demo</h2>
@@ -139,58 +138,52 @@
 							<li><a class="tabActivator" href="#accordion2_activator3">Activator 3</a></li>
 						</ul>
 						
-						<div id="accordion2_activator1">
-							<div class="tab">
-								<h4>Yo 1</h4>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+						<div id="accordion2_activator1" class="tab">
+							<h4>Yo 1</h4>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+							Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+							Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+							erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
 
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
+							<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+							elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+							aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+							Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+							Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+							ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+							pulvinar eu, arcu.</p>
 						</div>
 						
-						<div id="accordion2_activator2">
-							<div class="tab">
-								<h4>Yo 2</h4>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+						<div id="accordion2_activator2" class="tab">
+							<h4>Yo 2</h4>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+							Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+							Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+							erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
 
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
+							<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+							elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+							aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+							Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+							Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+							ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+							pulvinar eu, arcu.</p>
 						</div>
 						
-						<div id="accordion2_activator3">
-							<div class="tab">
-								<h4>Yo 3</h4>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+						<div id="accordion2_activator3" class="tab">
+							<h4>Yo 3</h4>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+							Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+							Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+							erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
 
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
+							<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+							elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+							aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+							Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+							Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+							ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+							pulvinar eu, arcu.</p>
 						</div>
 					</div>		
 					

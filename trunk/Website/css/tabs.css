@@ -36,9 +36,7 @@ div.tabset div.unselected {
 }
 
 div.tabset div.tab {
-	min-height: 200px;
 	background-color: #344148;
-	font-size: 1.6em;
 	color: #ffffff;
 	padding: 10px;
 }
