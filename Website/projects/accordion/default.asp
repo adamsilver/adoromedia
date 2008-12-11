@@ -19,22 +19,34 @@
 			});
 		</script>
 		<style type="text/css">
-			.selectedBlah {
-				border: 1px solid red;
-			}
-			
 			div#myAccordion {
 				margin-bottom: 20px;
 			}
 			
 			div#myAccordion a.accordian1 {
+				background-color:#F9F9F9;
+				border-bottom:4px solid #F3F3F3;
+				display:block;
+				font-weight:bold;
+				padding:4px 8px;
+				text-decoration:none;
 				font-size: 1.2em;
+				color: #4D595F;
+			}
+			
+			div#myAccordion a.selected {
+				background-color:#1D2B33;
+				border-bottom:4px solid #898F2C;
+				color:#FFFFFF;
+			}
+			
+			div#myAccordion div.accordionPanel {
+				margin-bottom: 1px;
 			}
 			
 			div#myAccordion div.accordionPanel div.inner {
 				padding: 10px;
 				background: #F9F9F9;
-				border: 2px solid #1D2B33;
 			}
 		</style>
 	</head>
@@ -60,22 +72,55 @@
 					<h2>Demo</h2>
 					
 					<div id="myAccordion">
-						<a class="accordian1" href="#accordion1_activator1">Activator 1</a>
-						<a class="accordian1" href="#accordion1_activator2">Activator 2</a>
-						<a class="accordian1" href="#accordion1_activator3">Activator 3</a>
+						<a class="accordian1 selected" href="#accordion1_activator1">Activator 1</a>
 						<div id="accordion1_activator1" class="accordionPanel">
 							<div class="inner">
-								<p>1</p>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+
+								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+								pulvinar eu, arcu.</p>
 							</div>
 						</div>
+						<a class="accordian1" href="#accordion1_activator2">Activator 2</a>
 						<div id="accordion1_activator2" class="accordionPanel">
 							<div class="inner">
-								<p>2</p>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+
+								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+								pulvinar eu, arcu.</p>
 							</div>
 						</div>
+						<a class="accordian1" href="#accordion1_activator3">Activator 3</a>
 						<div id="accordion1_activator3" class="accordionPanel">
 							<div class="inner">
-								<p>3</p>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+
+								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
+								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
+								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
+								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
+								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
+								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
+								pulvinar eu, arcu.</p>
 							</div>
 						</div>
 					</div>		
