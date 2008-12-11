@@ -29,7 +29,8 @@
 				
 				var ulNode2 = $("#alternativeMenu ul")[0] || null;
 				new Adoro.DropDownMenu(ulNode2, {
-					subMenuType: "div"
+					subMenuType: "div",
+					offsetTop: -1
 				});
 				
 			});
@@ -66,6 +67,7 @@
 				
 			}
 			
+			/*  */
 			div#alternativeMenu ul li.buy a {
 				display: block;
 				background: url(../../img/dropdownmenu/purple_bot_off.gif) left bottom no-repeat;
@@ -74,19 +76,34 @@
 				text-decoration: none;
 			}
 			
-			div#alternativeMenu ul li.buy a span {
+			div#alternativeMenu ul li.buy a span.tl {
 				display: block;
-				background: url(../../img/dropdownmenu/purple_top_off.gif) left top no-repeat;
+				background: url(../../img/dropdownmenu/purple_tl_off.gif) left top no-repeat;
+			}
+			
+			div#alternativeMenu ul li.buy a span.bl {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_bl_off.gif) bottom top no-repeat;
+			}
+			
+			div#alternativeMenu ul li.buy a span.br {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_br_off.gif) right bottom no-repeat;
+			}			
+			
+			div#alternativeMenu ul li.buy a span.tr {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_tr_off.gif) right top no-repeat;
 				padding-left: 11px;
 				padding-right: 11px;
 				padding-top: 14px;
 				padding-bottom: 24px;
-				min-height: 36px;
-			}
+				min-height: 39px;
+			}							
 			
 			div#alternativeMenu ul li.finance a {
 				display: block;
-				background: url(../../img/dropdownmenu/orange_bot_off.gif) left bottom no-repeat;
+				background: url(../../img/dropdownmenu/orange_bot_off.gif) right bottom no-repeat;
 				font-size: 1.5em;
 				color: #ffffff;
 				text-decoration: none;
@@ -94,13 +111,67 @@
 			
 			div#alternativeMenu ul li.finance a span {
 				display: block;
-				background: url(../../img/dropdownmenu/orange_top_off.gif) left top no-repeat;
+				background: url(../../img/dropdownmenu/orange_top_off.gif) right top no-repeat;
+				padding-left: 11px;
+				padding-right: 11px;
+				padding-top: 32px;
+				padding-bottom: 27px;
+				min-height: 18px;
+			}		
+			
+			div#alternativeMenu ul li.insurance a {
+				display: block;
+				background: url(../../img/dropdownmenu/blue_bot_off.gif) right bottom no-repeat;
+				font-size: 1.5em;
+				color: #ffffff;
+				text-decoration: none;
+			}
+			
+			div#alternativeMenu ul li.insurance a span {
+				display: block;
+				background: url(../../img/dropdownmenu/blue_top_off.gif) right top no-repeat;
+				padding-left: 11px;
+				padding-right: 11px;
+				padding-top: 32px;
+				padding-bottom: 27px;
+				min-height: 18px;
+			}	
+			
+			div#alternativeMenu ul li.let a {
+				display: block;
+				background: url(../../img/dropdownmenu/pink_bot_off.gif) right bottom no-repeat;
+				font-size: 1.5em;
+				color: #ffffff;
+				text-decoration: none;
+			}
+			
+			div#alternativeMenu ul li.let a span {
+				display: block;
+				background: url(../../img/dropdownmenu/pink_top_off.gif) right top no-repeat;
 				padding-left: 11px;
 				padding-right: 11px;
 				padding-top: 14px;
 				padding-bottom: 24px;
-				min-height: 36px;
-			}			
+				min-height: 39px;
+			}								
+			
+			div#alternativeMenu ul li.tax a {
+				display: block;
+				background: url(../../img/dropdownmenu/green_bot_off.gif) right bottom no-repeat;
+				font-size: 1.5em;
+				color: #ffffff;
+				text-decoration: none;
+			}
+			
+			div#alternativeMenu ul li.tax a span {
+				display: block;
+				background: url(../../img/dropdownmenu/green_top_off.gif) right top no-repeat;
+				padding-left: 11px;
+				padding-right: 11px;
+				padding-top: 32px;
+				padding-bottom: 27px;
+				min-height: 18px;
+			}				
 			
 			div#alternativeMenu ul li div.subMenu {
 				position: absolute;
@@ -200,16 +271,24 @@
 					
 					<div id="alternativeMenu">
 						<ul>
-							<li class="buy"><a href="#"><span>Buy and sell<br/> investment property</span></a></li>
+							<li class="buy">
+								<a href="#">
+									<span class="tl">
+										<span class="br">
+											<span class="tr">Buy and sell<br/> investment property</span>
+										</span>
+									</span>
+								</a>
+							</li>
 							<li class="finance">
 								<a href="#FINANCE"><span>Finance</span></a>
 								<div class="subMenu">
 									hi there finance shizzle
 								</div>
 							</li>
-							<li><a href="#">Insurance</a></li>
-							<li><a href="#">Let and manage my property</a></li>
-							<li><a href="#">Tax and legal</a></li>
+							<li class="insurance"><a href="#"><span>Insurance</span></a></li>
+							<li class="let"><a href="#"><span>Let and manage<br/> my property</span></a></li>
+							<li class="tax"><a href="#"><span>Tax and legal</span></a></li>
 						</ul>
 					</div>
 					
