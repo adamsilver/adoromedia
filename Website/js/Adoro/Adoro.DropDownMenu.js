@@ -30,7 +30,8 @@ Adoro.DropDownMenu = function(ul, options) {
 	var config = {
 		subMenuType: "ul",
 		offsetLeft: 0,
-		offsetTop: 0
+		offsetTop: 0,
+		cssActiveClass: "selected"
 	};
 	
 	if(typeof options === "object") {
@@ -39,46 +40,52 @@ Adoro.DropDownMenu = function(ul, options) {
 		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
 	}
 	
-	// TO DO
-		// set config to change events handling for onlick etc
-		// to handle finding a particular node for a submenu
-
-	var links = $(ul).find("a"), link, subMenu, parentLi, menuActivator, menuActivatorSubMenu;
+	var links = $(ul).find("a"), link, subMenu, subLinks, li;
 	for(var i=links.length-1; i>=0;i--) {
 		link = links[i];
-		subMenu = $(link).parent("li").find(config.subMenuType)[0] || null;
-		parentLi = $(link).parent("li")[0] || null;
-		menuActivator = $(link).parents("ul").parent("li").children("a")[0] || null;		
-		menuActivatorSubMenu = $(menuActivator).parent("li").find(config.subMenuType)[0] || null;
-
-		if(subMenu) {
-			link.subMenu = subMenu;
-			$(link.subMenu).bgiframe();
-			$(link).bind("mouseenter", showSubMenu);
-		}
 		
-		if(parentLi) {
-			parentLi.subMenu = subMenu;
-			$(parentLi).bind("mouseleave", hideSubMenu);
-		}
+		li = $(link).parent("li")[0] || null;
+		// if the link has an li as a parent
+		if(!li) continue;
 		
-		if(menuActivator && menuActivatorSubMenu) {
-			link.subMenu = menuActivatorSubMenu;
-			$(link).bind("focus", showSubMenu);
-			$(link).bind("blur", hideSubMenu);
+		// if the link has a sub menu
+		subMenu = $(li).find(config.subMenuType)[0] || null;
+		if(!subMenu) continue;
+		
+		new Anchor(link, li, subMenu);
+		
+		subLinks = $(subMenu).find("a");
+		for(var j = subLinks.length-1; j>=0;j-- ) {
+			new Anchor(subLinks[j], li, subMenu, link);
 		}
 	}
+	
+	function Anchor(link, li, subMenu, subMenuLink) {
+		var me = this;
+		this.link = link;
+		this.li = li;
+		this.subMenu = subMenu;
+		this.subMenuLink = subMenuLink || link;
+		
+		// sublinks do not need this bit - only focus and blur - so not sure best way to make efficient yet
+		$(link).bind("mouseenter", showSubMenu);
+		$(li).bind("mouseleave", hideSubMenu);
+		
+		$(link).bind("focus", showSubMenu);
+		$(link).bind("blur", hideSubMenu);
+		
+		function showSubMenu() {
+			$(me.subMenuLink).addClass(config.cssActiveClass);
+			$(me.subMenu).css({
+				left: config.offsetLeft+"px",
+				top: $(li).height()+config.offsetTop+"px",
+				zIndex: 10
+			});
+		}
 
-	
-	function showSubMenu() {
-		$(this.subMenu).css({
-			left: this.offsetLeft+config.offsetLeft+"px",
-			top: this.offsetTop+this.offsetHeight+config.offsetTop+"px",
-			zIndex: 10
-		});
+		function hideSubMenu() {
+			$(me.subMenu).css({"left": "-999999em"});
+			$(me.subMenuLink).removeClass(config.cssActiveClass);
+		}
 	}
-	
-	function hideSubMenu() {
-		$(this.subMenu).css({"left": "-999999em"});
-	}	
 }

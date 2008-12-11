@@ -67,10 +67,11 @@
 				
 			}
 			
-			/*  */
+			/* buy - off */
+			
 			div#alternativeMenu ul li.buy a {
 				display: block;
-				background: url(../../img/dropdownmenu/purple_bot_off.gif) left bottom no-repeat;
+				background: url(../../img/dropdownmenu/purple_bl_off.gif) left bottom no-repeat;
 				font-size: 1.5em;
 				color: #ffffff;
 				text-decoration: none;
@@ -99,7 +100,54 @@
 				padding-top: 14px;
 				padding-bottom: 24px;
 				min-height: 39px;
-			}							
+				cursor: pointer;
+			}	
+			
+			/* buy - on */
+			
+			div#alternativeMenu ul li.buy a:hover,
+			div#alternativeMenu ul li.buy a:active,
+			div#alternativeMenu ul li.buy a:focus,
+			div#alternativeMenu ul li.buy a.selected {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_bl_on.gif) left bottom no-repeat;
+				font-size: 1.5em;
+				color: #ffffff;
+				text-decoration: none;
+			}
+			
+			div#alternativeMenu ul li.buy a:hover span.tl,
+			div#alternativeMenu ul li.buy a:active span.tl,
+			div#alternativeMenu ul li.buy a:focus span.tl,
+			div#alternativeMenu ul li.buy a.selected span.tl {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_tl_on.gif) left top no-repeat;
+			}
+			
+			div#alternativeMenu ul li.buy a:hover span.bl,
+			div#alternativeMenu ul li.buy a:active span.bl,
+			div#alternativeMenu ul li.buy a:focus span.bl,
+			div#alternativeMenu ul li.buy a.selected span.bl {
+				display: block;
+				background: url(../../img/dropdownmenu/purple_bl_on.gif) bottom top no-repeat;
+			}
+			
+			div#alternativeMenu ul li.buy a:hover span.br,
+			div#alternativeMenu ul li.buy a:active span.br,
+			div#alternativeMenu ul li.buy a:focus span.br,
+			div#alternativeMenu ul li.buy a.selected span.br {
+
+				background: url(../../img/dropdownmenu/purple_br_on.gif) right bottom no-repeat;
+			}			
+			
+			div#alternativeMenu ul li.buy a:hover span.tr,
+			div#alternativeMenu ul li.buy a:active span.tr,
+			div#alternativeMenu ul li.buy a:focus span.tr,
+			div#alternativeMenu ul li.buy a.selected span.tr {
+				background: url(../../img/dropdownmenu/purple_tr_on.gif) right top no-repeat;
+			}										
+			
+			/* finance - off */
 			
 			div#alternativeMenu ul li.finance a {
 				display: block;
@@ -117,7 +165,26 @@
 				padding-top: 32px;
 				padding-bottom: 27px;
 				min-height: 18px;
+				cursor: pointer;
 			}		
+			
+			/* finance - on */
+			
+			div#alternativeMenu ul li.finance a:hover,
+			div#alternativeMenu ul li.finance a:active,
+			div#alternativeMenu ul li.finance a:focus,
+			div#alternativeMenu ul li.finance a.selected {
+				background: url(../../img/dropdownmenu/orange_bot_on.gif) right bottom no-repeat;
+			}
+			
+			div#alternativeMenu ul li.finance a:hover span,
+			div#alternativeMenu ul li.finance a:active span,
+			div#alternativeMenu ul li.finance a:focus span,
+			div#alternativeMenu ul li.finance a.selected span {
+				background: url(../../img/dropdownmenu/orange_top_on.gif) right top no-repeat;
+			}					
+			
+			/* insurance - off */
 			
 			div#alternativeMenu ul li.insurance a {
 				display: block;
@@ -135,7 +202,44 @@
 				padding-top: 32px;
 				padding-bottom: 27px;
 				min-height: 18px;
+				cursor: pointer;
 			}	
+			
+			/* insurance - off */
+			
+			div#alternativeMenu ul li.insurance a {
+				display: block;
+				background: url(../../img/dropdownmenu/blue_bot_off.gif) right bottom no-repeat;
+			}
+			
+			div#alternativeMenu ul li.insurance a span {
+				display: block;
+				background: url(../../img/dropdownmenu/blue_top_off.gif) right top no-repeat;
+				padding-left: 11px;
+				padding-right: 11px;
+				padding-top: 32px;
+				padding-bottom: 27px;
+				min-height: 18px;
+				cursor: pointer;
+			}	
+			
+			/* insurance - on */
+			
+			div#alternativeMenu ul li.insurance a:hover,
+			div#alternativeMenu ul li.insurance a:active,
+			div#alternativeMenu ul li.insurance a:focus,
+			div#alternativeMenu ul li.insurance a.selected {
+				background: url(../../img/dropdownmenu/blue_bot_on.gif) right bottom no-repeat;
+			}
+			
+			div#alternativeMenu ul li.insurance a:hover span,
+			div#alternativeMenu ul li.insurance a:active span,
+			div#alternativeMenu ul li.insurance a:focus span,
+			div#alternativeMenu ul li.insurance a.selected span {
+				background: url(../../img/dropdownmenu/blue_top_on.gif) right top no-repeat;
+			}	
+			
+			/* left - off */
 			
 			div#alternativeMenu ul li.let a {
 				display: block;
@@ -153,7 +257,26 @@
 				padding-top: 14px;
 				padding-bottom: 24px;
 				min-height: 39px;
-			}								
+				cursor: pointer;
+			}				
+			
+			/* left - on */
+			
+			/*div#alternativeMenu ul li.let a:focus,
+			div#alternativeMenu ul li.let a:active,
+			div#alternativeMenu ul li.let a:hover,
+			div#alternativeMenu ul li.let a.selected {
+				background: url(../../img/dropdownmenu/pink_bot_on.gif) right bottom no-repeat;
+			}
+			
+			div#alternativeMenu ul li.let a:hover span,
+			div#alternativeMenu ul li.let a:active span,
+			div#alternativeMenu ul li.let a:focus span,
+			div#alternativeMenu ul li.let a.selected span {
+				background: url(../../img/dropdownmenu/pink_top_on.gif) right top no-repeat;
+			}	*/					
+			
+			/* tax - off */
 			
 			div#alternativeMenu ul li.tax a {
 				display: block;
@@ -171,6 +294,7 @@
 				padding-top: 32px;
 				padding-bottom: 27px;
 				min-height: 18px;
+				cursor: pointer;
 			}				
 			
 			div#alternativeMenu ul li div.subMenu {
@@ -283,7 +407,7 @@
 							<li class="finance">
 								<a href="#FINANCE"><span>Finance</span></a>
 								<div class="subMenu">
-									hi there finance shizzle
+									<a href="#inner">hi there finance shizzle</a>
 								</div>
 							</li>
 							<li class="insurance"><a href="#"><span>Insurance</span></a></li>
