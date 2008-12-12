@@ -68,14 +68,25 @@
 					placement: "bottom"
 				});	
 				
-				// applying same contextual help to each checkbox input field
 				var checkboxes = $('[name="searchEngine"]');
-				for(var i=0; i<checkboxes.length; i++) {
-					new Adoro.FieldContextualHelp(checkboxes[i], contextualHelpNodes[5], {
-						offsetTop: 5,
-						placement: "bottom"
-					});
-				}					
+				new Adoro.FieldContextualHelp(checkboxes[0], contextualHelpNodes[5], {
+					offsetTop: 5,
+					offsetLeft: 70,
+					placement: "right"
+				});
+				
+				new Adoro.FieldContextualHelp(checkboxes[1], contextualHelpNodes[5], {
+					offsetTop: -14,
+					offsetLeft: 70,
+					placement: "right"
+				});	
+				
+				new Adoro.FieldContextualHelp(checkboxes[2], contextualHelpNodes[5], {
+					offsetTop: -33,
+					offsetLeft: 70,
+					placement: "right"
+				});								
+							
 				
 			});
 		</script>
@@ -237,7 +248,7 @@
 									</fieldset>
 									<div class="contextualHelp">
 										<div class="contextualHelpInner">
-											<p>Each checkbox uses same contextual help, but show contextually to the field you are focused on.</p>
+											<p>Each checkbox uses same contextual help, but the offsets are different due to it being positioned relative to its checkbox.</p>
 										</div>
 									</div>									
 								</div>
