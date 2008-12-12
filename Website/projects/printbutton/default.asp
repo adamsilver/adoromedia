@@ -16,7 +16,9 @@
 		<script type="text/javascript" src="../../js/Adoro/Adoro.PrintButton.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var myprint = new Adoro.PrintButton({appendTo: $("#content")[0], buttonHTML: "Print me now", buttonClass: "myPrintClass"});
+				var a = $('<a href="#" class="myPrintClass">Print page!</a>')
+				$("#content").append(a);
+				var myprint = new Adoro.PrintButton(a);
 			});
 		</script>			
 	</head>
@@ -31,15 +33,7 @@
 					<h1>Print button</h1>
 					<h2>About</h2>
 					<ul class="generic">
-						<li>Can convert an existing link or create a new link to be a print button.</li>
-						<li>Can have several print buttons per page or per site.</li>
-						<li>Can configure:
-							<ul>
-								<li>where to place the print button.</li>
-								<li>The text for the button</li>
-								<li>The class name for the button useful for complete custom styling.</li>
-							</ul>
-						</li>
+						<li>Make an anchor reference into a print button.</li>
 					</ul>		
 					<h2>Demo</h2>
 				</div>
