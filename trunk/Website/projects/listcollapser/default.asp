@@ -26,7 +26,7 @@
 					startOpen: false,
 					showHTML: "<span>+</span> please show me more",
 					hideHTML: "<span>-</span> please show me less"
-				});				
+				});
 			});
 		</script>		
 	</head>
