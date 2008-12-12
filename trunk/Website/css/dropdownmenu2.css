@@ -32,29 +32,29 @@ div#menu ul li a {
 
 div#menu ul li.buy a {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_bl_off.gif) left bottom no-repeat;
+	background: url(../img/dropdownmenu/purple_bl_off.gif) left bottom no-repeat;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 div#menu ul li.buy a span.tl {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_tl_off.gif) left top no-repeat;
+	background: url(../img/dropdownmenu/purple_tl_off.gif) left top no-repeat;
 }
 
 div#menu ul li.buy a span.bl {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_bl_off.gif) bottom top no-repeat;
+	background: url(../img/dropdownmenu/purple_bl_off.gif) bottom top no-repeat;
 }
 
 div#menu ul li.buy a span.br {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_br_off.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/purple_br_off.gif) right bottom no-repeat;
 }			
 
 div#menu ul li.buy a span.tr {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_tr_off.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/purple_tr_off.gif) right top no-repeat;
 	padding-left: 11px;
 	padding-right: 11px;
 	padding-top: 14px;
@@ -70,13 +70,13 @@ div#menu ul li.buy a:active,
 div#menu ul li.buy a:focus,
 div#menu ul li.buy a.selected {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_bl_on.gif) left bottom no-repeat;
+	background: url(../img/dropdownmenu/purple_bl_on.gif) left bottom no-repeat;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 div#menu ul li.buy a.hover {
-	background: url(../../img/dropdownmenu/purple_bl_hover.gif) left bottom no-repeat;
+	background: url(../img/dropdownmenu/purple_bl_hover.gif) left bottom no-repeat;
 }
 
 div#menu ul li.buy a:hover span.tl,
@@ -85,7 +85,7 @@ div#menu ul li.buy a:focus span.tl,
 div#menu ul li.buy a.selected span.tl,
 div#menu ul li.buy a.hover span.tl {
 	display: block;
-	background: url(../../img/dropdownmenu/purple_tl_on.gif) left top no-repeat;
+	background: url(../img/dropdownmenu/purple_tl_on.gif) left top no-repeat;
 }
 
 div#menu ul li.buy a:hover span.br,
@@ -93,7 +93,7 @@ div#menu ul li.buy a:active span.br,
 div#menu ul li.buy a:focus span.br,
 div#menu ul li.buy a.selected span.br,
 div#menu ul li.buy a.hover span.br {
-	background: url(../../img/dropdownmenu/purple_br_on.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/purple_br_on.gif) right bottom no-repeat;
 }			
 
 div#menu ul li.buy a:hover span.tr,
@@ -101,21 +101,21 @@ div#menu ul li.buy a:active span.tr,
 div#menu ul li.buy a:focus span.tr,
 div#menu ul li.buy a.selected span.tr,
 div#menu ul li.buy a.hover span.tr {
-	background: url(../../img/dropdownmenu/purple_tr_on.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/purple_tr_on.gif) right top no-repeat;
 }										
 
 /* finance - off */
 
 div#menu ul li.finance a {
 	display: block;
-	background: url(../../img/dropdownmenu/orange_bot_off.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/orange_bot_off.gif) right bottom no-repeat;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 div#menu ul li.finance a span {
 	display: block;
-	background: url(../../img/dropdownmenu/orange_top_off.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/orange_top_off.gif) right top no-repeat;
 	padding-left: 11px;
 	padding-right: 11px;
 	padding-top: 32px;
@@ -131,7 +131,7 @@ div#menu ul li.finance a:active,
 div#menu ul li.finance a:focus,
 div#menu ul li.finance a.selected,
 div#menu ul li.finance a.hover {
-	background: url(../../img/dropdownmenu/orange_bot_on.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/orange_bot_on.gif) right bottom no-repeat;
 }
 
 div#menu ul li.finance a:hover span,
@@ -139,21 +139,21 @@ div#menu ul li.finance a:active span,
 div#menu ul li.finance a:focus span,
 div#menu ul li.finance a.selected span,
 div#menu ul li.finance a.hover span {
-	background: url(../../img/dropdownmenu/orange_top_on.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/orange_top_on.gif) right top no-repeat;
 }					
 
 /* insurance - off */
 
 div#menu ul li.insurance a {
 	display: block;
-	background: url(../../img/dropdownmenu/blue_bot_off.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/blue_bot_off.gif) right bottom no-repeat;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 div#menu ul li.insurance a span {
 	display: block;
-	background: url(../../img/dropdownmenu/blue_top_off.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/blue_top_off.gif) right top no-repeat;
 	padding-left: 11px;
 	padding-right: 11px;
 	padding-top: 32px;
@@ -169,7 +169,7 @@ div#menu ul li.insurance a:active,
 div#menu ul li.insurance a:focus,
 div#menu ul li.insurance a.selected,
 div#menu ul li.insurance a.hover {
-	background: url(../../img/dropdownmenu/blue_bot_on.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/blue_bot_on.gif) right bottom no-repeat;
 }
 
 div#menu ul li.insurance a:hover span,
@@ -177,21 +177,21 @@ div#menu ul li.insurance a:active span,
 div#menu ul li.insurance a:focus span,
 div#menu ul li.insurance a.selected span,
 div#menu ul li.insurance a.hover span {
-	background: url(../../img/dropdownmenu/blue_top_on.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/blue_top_on.gif) right top no-repeat;
 }	
 
 /* left - off */
 
 div#menu ul li.let a {
 	display: block;
-	background: url(../../img/dropdownmenu/pink_bot_off.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/pink_bot_off.gif) right bottom no-repeat;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 div#menu ul li.let a span {
 	display: block;
-	background: url(../../img/dropdownmenu/pink_top_off.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/pink_top_off.gif) right top no-repeat;
 	padding-left: 11px;
 	padding-right: 11px;
 	padding-top: 14px;
@@ -207,7 +207,7 @@ div#menu ul li.let a:active,
 div#menu ul li.let a:hover,
 div#menu ul li.let a.selected,
 div#menu ul li.let a.hover {
-	background: url(../../img/dropdownmenu/pink_bot_on.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/pink_bot_on.gif) right bottom no-repeat;
 }
 
 div#menu ul li.let a:hover span,
@@ -215,21 +215,21 @@ div#menu ul li.let a:active span,
 div#menu ul li.let a:focus span,
 div#menu ul li.let a.selected span,
 div#menu ul li.let a.hover span {
-	background: url(../../img/dropdownmenu/pink_top_on.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/pink_top_on.gif) right top no-repeat;
 }					
 
 /* tax - off */
 
 div#menu ul li.tax a {
 	display: block;
-	background: url(../../img/dropdownmenu/green_bot_off.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/green_bot_off.gif) right bottom no-repeat;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 div#menu ul li.tax a span {
 	display: block;
-	background: url(../../img/dropdownmenu/green_top_off.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/green_top_off.gif) right top no-repeat;
 	padding-left: 11px;
 	padding-right: 11px;
 	padding-top: 32px;
@@ -245,7 +245,7 @@ div#menu ul li.tax a:active,
 div#menu ul li.tax a:hover,
 div#menu ul li.tax a.selected,
 div#menu ul li.tax a.hover {
-	background: url(../../img/dropdownmenu/green_bot_on.gif) right bottom no-repeat;
+	background: url(../img/dropdownmenu/green_bot_on.gif) right bottom no-repeat;
 }
 
 div#menu ul li.tax a:hover span,
@@ -253,7 +253,7 @@ div#menu ul li.tax a:active span,
 div#menu ul li.tax a:focus span,
 div#menu ul li.tax a.selected span,
 div#menu ul li.tax a.hover span {
-	background: url(../../img/dropdownmenu/green_top_on.gif) right top no-repeat;
+	background: url(../img/dropdownmenu/green_top_on.gif) right top no-repeat;
 }					
 
 /* generic sub menu */
@@ -344,11 +344,11 @@ div#menu ul li div.subMenu div.list3 {
 
 div#menu ul li.buy div.subMenu {
 	margin-left: 1px;
-	background: url(../../img/dropdownmenu/purple_dd_bot.gif) bottom left no-repeat;
+	background: url(../img/dropdownmenu/purple_dd_bot.gif) bottom left no-repeat;
 }
 
 div#menu ul li.buy div.subMenuInner {
-	background: url(../../img/dropdownmenu/purple_dd_top.gif) top left no-repeat;		
+	background: url(../img/dropdownmenu/purple_dd_top.gif) top left no-repeat;		
 }
 
 div#menu ul li.buy div.subMenu p.intro {
@@ -356,7 +356,7 @@ div#menu ul li.buy div.subMenu p.intro {
 }
 
 div#menu ul li.buy div.subMenu div.lists {
-	background: url(../../img/dropdownmenu/purple_faux.gif) top left repeat-y;
+	background: url(../img/dropdownmenu/purple_faux.gif) top left repeat-y;
 }
 
 div#menu ul li.buy div.subMenu div.lists h2 {
@@ -366,11 +366,11 @@ div#menu ul li.buy div.subMenu div.lists h2 {
 /* finance sub menu */
 
 div#menu ul li.finance div.subMenu {
-	background: url(../../img/dropdownmenu/orange_dd_bot.gif) bottom left no-repeat;
+	background: url(../img/dropdownmenu/orange_dd_bot.gif) bottom left no-repeat;
 }
 
 div#menu ul li.finance div.subMenuInner {
-	background: url(../../img/dropdownmenu/orange_dd_top.gif) top left no-repeat;		
+	background: url(../img/dropdownmenu/orange_dd_top.gif) top left no-repeat;		
 }
 
 div#menu ul li.finance div.subMenu p.intro {
@@ -378,7 +378,7 @@ div#menu ul li.finance div.subMenu p.intro {
 }
 
 div#menu ul li.finance div.subMenu div.lists {
-	background: url(../../img/dropdownmenu/orange_faux.gif) top left repeat-y;
+	background: url(../img/dropdownmenu/orange_faux.gif) top left repeat-y;
 }
 
 div#menu ul li.finance div.subMenu div.lists h2 {
@@ -388,11 +388,11 @@ div#menu ul li.finance div.subMenu div.lists h2 {
 /* insurance sub menu */
 
 div#menu ul li.insurance div.subMenu {
-	background: url(../../img/dropdownmenu/blue_dd_bot.gif) bottom left no-repeat;
+	background: url(../img/dropdownmenu/blue_dd_bot.gif) bottom left no-repeat;
 }
 
 div#menu ul li.insurance div.subMenuInner {
-	background: url(../../img/dropdownmenu/blue_dd_top.gif) top left no-repeat;		
+	background: url(../img/dropdownmenu/blue_dd_top.gif) top left no-repeat;		
 }
 
 div#menu ul li.insurance div.subMenu p.intro {
@@ -400,7 +400,7 @@ div#menu ul li.insurance div.subMenu p.intro {
 }
 
 div#menu ul li.insurance div.subMenu div.lists {
-	background: url(../../img/dropdownmenu/blue_faux.gif) top left repeat-y;
+	background: url(../img/dropdownmenu/blue_faux.gif) top left repeat-y;
 }
 
 div#menu ul li.insurance div.subMenu div.lists h2 {
@@ -410,11 +410,11 @@ div#menu ul li.insurance div.subMenu div.lists h2 {
 /* let sub menu */
 
 div#menu ul li.let div.subMenu {
-	background: url(../../img/dropdownmenu/pink_dd_bot.gif) bottom left no-repeat;
+	background: url(../img/dropdownmenu/pink_dd_bot.gif) bottom left no-repeat;
 }
 
 div#menu ul li.let div.subMenuInner {
-	background: url(../../img/dropdownmenu/pink_dd_top.gif) top left no-repeat;		
+	background: url(../img/dropdownmenu/pink_dd_top.gif) top left no-repeat;		
 }
 
 div#menu ul li.let div.subMenu p.intro {
@@ -422,7 +422,7 @@ div#menu ul li.let div.subMenu p.intro {
 }
 
 div#menu ul li.let div.subMenu div.lists {
-	background: url(../../img/dropdownmenu/pink_faux.gif) top left repeat-y;
+	background: url(../img/dropdownmenu/pink_faux.gif) top left repeat-y;
 }
 
 div#menu ul li.let div.subMenu div.lists h2 {
@@ -432,11 +432,11 @@ div#menu ul li.let div.subMenu div.lists h2 {
 /* tax sub menu */
 
 div#menu ul li.tax div.subMenu {
-	background: url(../../img/dropdownmenu/green_dd_bot.gif) bottom left no-repeat;
+	background: url(../img/dropdownmenu/green_dd_bot.gif) bottom left no-repeat;
 }
 
 div#menu ul li.tax div.subMenuInner {
-	background: url(../../img/dropdownmenu/green_dd_top.gif) top left no-repeat;		
+	background: url(../img/dropdownmenu/green_dd_top.gif) top left no-repeat;		
 }
 
 div#menu ul li.tax div.subMenu p.intro {
@@ -444,7 +444,7 @@ div#menu ul li.tax div.subMenu p.intro {
 }
 
 div#menu ul li.tax div.subMenu div.lists {
-	background: url(../../img/dropdownmenu/green_faux.gif) top left repeat-y;
+	background: url(../img/dropdownmenu/green_faux.gif) top left repeat-y;
 }
 
 div#menu ul li.tax div.subMenu div.lists h2 {
