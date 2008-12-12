@@ -27,48 +27,14 @@ if(typeof Adoro !== "object") var Adoro = {};
  * Create a print button
  * @class represents a print button
  * @constructor
- * @param {Object} options The options for the instance
- * @param {Node} options.button The DOM reference to the button
- * @param {String} options.buttonHTML The innerHTML for the button
- * @param {String} options.buttonClass The class name for the anchor for styling in CSS
- * @param {Node} options.appendTo The node in which to append the print button
- * @param {Node} options.prependTo The node in which to prepend the print button
+ * @param {Node} anchor The anchor DOM reference
  */
-Adoro.PrintButton = function(options) {
-	var config = {
-		button: null,
-		buttonHTML: "Print",
-		buttonClass: "print",
-		appendTo: null,
-		prependTo: null
-	};
-	
-	if(typeof options === "object") {
-		config.button = (typeof options.button === "object") ? options.button : $(Adoro.PrintButton.button).clone()[0];
-		config.buttonHTML = (typeof options.buttonHTML === "string") ? options.buttonHTML : config.buttonHTML;
-		config.buttonClass = (typeof options.buttonClass === "string") ? options.buttonClass : config.buttonClass;
-		config.appendTo = options.appendTo || null;
-		config.prependTo = options.prependTo || null;
-	}
-	
-	if(config.button === null) return;
-	
-	if(config.appendTo !== null || config.prependTo !== null) {
-		if(config.appendTo !== null) {
-			$(config.appendTo).append(config.button);
-		}
-		else {
-			$(config.prependTo).prepend(config.button);
-		}
-	}
-	
-	config.button.innerHTML = config.buttonHTML;
-	config.button.onclick = print;
-	$(config.button).addClass(config.buttonClass);
+Adoro.PrintButton = function(anchor) {
+	var anchor = anchor || null;
+	if(!anchor) return;
+	$(anchor).bind("click", print);
 	function print() {
 		window.print();
 		return false;
 	}
-	
 }
-Adoro.PrintButton.button = $('<a href="#"></a>')[0];
