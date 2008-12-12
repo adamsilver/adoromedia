@@ -77,7 +77,9 @@
 							<div class="yo"><p>This is a tooltip that follows the mouse, and has custom style</p></div>
 						</div>
 					</div>
-						
+					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/tooltip.asp"-->						
 				</div>
 			</div>
 		</div>

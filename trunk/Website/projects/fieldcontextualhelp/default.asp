@@ -108,7 +108,7 @@
 			}
 		</style>
 	</head>
-	<body class="library">
+	<body class="projects">
 		<div id="container">
 			<div class="faux">
 				<div id="controls">
