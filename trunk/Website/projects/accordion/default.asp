@@ -48,7 +48,9 @@
 			}
 			
 			div#myAccordion div.accordionPanel div.inner {
-
+				background-color:#1D2B33;
+				color:#FFFFFF;
+				padding:10px;
 			}
 			
 			div#myAccordion2 {
@@ -83,7 +85,8 @@
 			div#myAccordion2 div.accordionPanel div.inner {
 				width: 200px;
 				padding: 10px;
-				background: #F9F9F9;
+				background-color: #1D2B33;
+				color: #ffffff;
 			}
 		</style>
 	</head>
