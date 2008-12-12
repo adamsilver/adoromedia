@@ -94,8 +94,8 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var r = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$");
-		if (!r.test(field[0].value)) {
+		var regex = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$");
+		if (!regex.test(field[0].value)) {
 			valid = false;
 		}
 		return valid;
@@ -108,8 +108,8 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var r = new RegExp("^([a-zA-Z0-9- '`])+$");
-		if (!r.test(field[0].value)) {
+		var regex = new RegExp("^([a-zA-Z0-9- '`])+$");
+		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
 		return valid;
@@ -123,7 +123,7 @@ Adoro.FormRules = {
 		var field = this;
 		if (field.length > 1) return valid;
 		var regex = new RegExp("^[+]?[0-9 ]*\\({1}[0-9]+\\){1}[0-9 ]+$|^[+]?[0-9 ]+$");
-		if (!r.test(field[0].value)) {
+		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
 		return valid;		
@@ -137,7 +137,7 @@ Adoro.FormRules = {
 		var field = this;
 		if (field.length > 1) return valid;
 		var regex = new RegExp("(^[A-Za-z0-9]{6,12}$)");
-		if (!r.test(field[0].value)) {
+		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
 		return valid;		
@@ -165,7 +165,7 @@ Adoro.FormRules = {
 		var field = this;
 		if (field.length > 1) return valid;
 		var regex = new RegExp("^([a-zA-Z0-9- '`.])+$");
-		if (!r.test(field[0].value)) {
+		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
 		return valid;		
