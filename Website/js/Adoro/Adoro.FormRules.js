@@ -151,7 +151,7 @@ Adoro.FormRules = {
 		var field = this;
 		if (field.length > 1) return valid;
 		var regex = new RegExp("^([0-9])+$");
-		if (!r.test(field[0].value)) {
+		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
 		return valid;		

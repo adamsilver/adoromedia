@@ -46,12 +46,21 @@
 				}]).addValidator("day01",[{
 					method: Adoro.FormRules.notEmpty,
 					message: "Day 1 is required."
+				},{
+					method: Adoro.FormRules.number,
+					message: "Day 1 must be a number."
 				}]).addValidator("month01",[{
 					method: Adoro.FormRules.notEmpty,
 					message: "Month 1 is required."
+				},{
+					method: Adoro.FormRules.number,
+					message: "Month 1 must be a number."
 				}]).addValidator("year01",[{
 					method: Adoro.FormRules.notEmpty,
 					message: "Year 1 is required."
+				},{
+					method: Adoro.FormRules.number,
+					message: "Year 1 must be a number."
 				}]).addValidator("searchEngine",[{
 					method: Adoro.FormRules.minChecked,
 					params: {
