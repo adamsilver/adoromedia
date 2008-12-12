@@ -3,7 +3,6 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<!--#include file="../../inc/Adoro.CheckLogin.asp"-->
 <% Adoro.pageName = "autofade"; %>
 <% Adoro.siteSection = "library" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -18,61 +17,62 @@
 	</head>
 	<body class="library">
 		<div id="container">
-			<!--#include file="../../inc/header.asp"-->
-			<div id="subContent">
-				<!--#include file="../../inc/libraryNavigation.asp"-->
-			</div>
-			<div id="content">
-				<h1>Auto fade</h1>
-				<div class="devNotes">
-					<div class="heading">					
-						<h2>Development notes</h2>
+			<div class="faux">
+				<div id="controls">
+					<!--#include file="../../inc/logo.asp"-->
+					<!--#include file="../../inc/primaryNavigation.asp"-->
+				</div>
+				<div id="content">
+					<h1>Auto fade</h1>
+					<div class="devNotes">
+						<div class="heading">					
+							<h2>Development notes</h2>
+						</div>
+						<div class="collapseable">
+							<ul class="generic">
+								<li>A fading carousel effect.</li>
+								<li>Uses the <a href="http://www.jquery.com">JQuery</a> JavaScript library.</li>
+							</ul>
+						</div>
 					</div>
-					<div class="collapseable">
-						<ul class="generic">
-							<li>A fading carousel effect.</li>
-							<li>Uses the <a href="http://www.jquery.com">JQuery</a> JavaScript library.</li>
+	
+					<div class="promotions">
+						<ul>
+							<li class="promo">
+								<div class="promo1">Promotion 1</div>
+							</li>
+							<li class="promo">
+								<div class="promo2">Promotion 2</div>
+							</li>					
+							<li class="promo">
+								<div class="promo3">Promotion 3</div>
+							</li>
+							<li class="promo">
+								<div class="promo4">Promotion 4</div>
+							</li>									
 						</ul>
 					</div>
-				</div>
-	
-				<div class="promotions">
-					<ul>
-						<li class="promo">
-							<div class="promo1">Promotion 1</div>
-						</li>
-						<li class="promo">
-							<div class="promo2">Promotion 2</div>
-						</li>					
-						<li class="promo">
-							<div class="promo3">Promotion 3</div>
-						</li>
-						<li class="promo">
-							<div class="promo4">Promotion 4</div>
-						</li>									
-					</ul>
-				</div>
 
-				<div class="promotions">
-					<ul>
-						<li class="promo">
-							<div class="promo1">Promotion 1</div>
-						</li>
-						<li class="promo">
-							<div class="promo2">Promotion 2</div>
-						</li>					
-						<li class="promo">
-							<div class="promo3">Promotion 3</div>
-						</li>
-						<li class="promo">
-							<div class="promo4">Promotion 4</div>
-						</li>									
-					</ul>
-				</div>									
-				
+					<div class="promotions">
+						<ul>
+							<li class="promo">
+								<div class="promo1">Promotion 1</div>
+							</li>
+							<li class="promo">
+								<div class="promo2">Promotion 2</div>
+							</li>					
+							<li class="promo">
+								<div class="promo3">Promotion 3</div>
+							</li>
+							<li class="promo">
+								<div class="promo4">Promotion 4</div>
+							</li>									
+						</ul>
+					</div>									
+				</div>
 			</div>
-			<!--#include file="../../inc/footer.asp"-->
 		</div>
+		<!--#include file="../../inc/footer.asp"-->
 		<!--#include file="../../inc/ga.asp"-->
 	</body>
 </html>
