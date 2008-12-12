@@ -28,11 +28,12 @@
 					offsetLeft: -1
 				});
 				
-				var ulNode2 = $("#alternativeMenu ul")[0] || null;
+				var ulNode2 = $("#menu ul")[0] || null;
 				new Adoro.DropDownMenu(ulNode2, {
 					subMenuType: "div",
 					offsetTop: -1,
-					offsetLeft: -3
+					offsetLeft: -3,
+					cssActiveClass: "hover"
 				});
 				
 			});
@@ -122,7 +123,7 @@
 						My flash here
 					</div>
 					
-					<div id="alternativeMenu">
+					<div id="menu">
 						<ul>
 							<li class="buy">
 								<a href="#">
@@ -132,6 +133,57 @@
 										</span>
 									</span>
 								</a>
+								<div class="subMenu">
+									<div class="subMenuInner">
+										<p class="intro">Information and advice about the range of different financial products that are available</p>
+										<div class="lists">
+											<div class="list1">
+												<h2>Services</h2>
+												<ul>
+													<li><a href="#inner">Independent financial advice</a></li>
+													<li><a href="#inner">Mortgage advice</a></li>
+													<li><a href="#inner">Buy to let mortgage</a></li>
+													<li><a href="#inner">Investment planning</a></li>
+													<li><a href="#inner">Home Information Pack</a></li>
+													<li><a href="#inner">Investment</a></li>
+													<li><a href="#inner">Tax planning</a></li>
+												</ul>
+											</div>
+											<div class="list2">
+												<h2>Knowledge</h2>
+												<ul>
+													<li><a href="#inner">Remortgage</a></li>
+													<li><a href="#inner">Auction mortgage</a></li>
+													<li><a href="#inner">Birdging finance</a></li>
+													<li><a href="#inner">Development finance</a></li>
+													<li>
+														<a href="#inner">Portfolio finance</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>													
+													</li>
+													<li><a href="#inner">Commercial investments</a></li>
+													<li><a href="#inner">Mezzanine finance</a></li>
+													<li>
+														<a href="#inner">Secured loans</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+											<div class="list3">
+												<h2>Tools</h2>
+												<ul>
+													<li><a href="#inner">Mortgage calculator</a></li>
+													<li><a href="#inner">Mortgage finder</a></li>
+													<li><a href="#inner">Calculator rental yield</a></li>
+												</ul>
+											</div>	
+										</div>																
+									</div>
+								</div>								
 							</li>
 							<li class="finance">
 								<a href="#FINANCE"><span>Finance</span></a>
@@ -178,20 +230,178 @@
 											<div class="list3">
 												<h2>Tools</h2>
 												<ul>
-													<li><a href="#inner">Independent financial advice</a></li>
+													<li><a href="#inner">Mortgage calculator</a></li>
+													<li><a href="#inner">Mortgage finder</a></li>
+													<li><a href="#inner">Calculator rental yield</a></li>
 												</ul>
 											</div>	
 										</div>																
 									</div>
 								</div>
 							</li>
-							<li class="insurance"><a href="#"><span>Insurance</span></a></li>
-							<li class="let"><a href="#"><span>Let and manage<br/> my property</span></a></li>
-							<li class="tax"><a href="#"><span>Tax and legal</span></a></li>
+							<li class="insurance">
+								<a href="#"><span>Insurance</span></a>
+								<div class="subMenu">
+									<div class="subMenuInner">
+										<p class="intro">Information and advice about the range of different financial products that are available</p>
+										<div class="lists">
+											<div class="list1">
+												<h2>Services</h2>
+												<ul>
+													<li><a href="#inner">Independent financial advice</a></li>
+													<li><a href="#inner">Mortgage advice</a></li>
+													<li><a href="#inner">Buy to let mortgage</a></li>
+													<li><a href="#inner">Investment planning</a></li>
+													<li><a href="#inner">Home Information Pack</a></li>
+													<li><a href="#inner">Investment</a></li>
+													<li><a href="#inner">Tax planning</a></li>
+												</ul>
+											</div>
+											<div class="list2">
+												<h2>Knowledge</h2>
+												<ul>
+													<li><a href="#inner">Remortgage</a></li>
+													<li><a href="#inner">Auction mortgage</a></li>
+													<li><a href="#inner">Birdging finance</a></li>
+													<li><a href="#inner">Development finance</a></li>
+													<li>
+														<a href="#inner">Portfolio finance</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>													
+													</li>
+													<li><a href="#inner">Commercial investments</a></li>
+													<li><a href="#inner">Mezzanine finance</a></li>
+													<li>
+														<a href="#inner">Secured loans</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+											<div class="list3">
+												<h2>Tools</h2>
+												<ul>
+													<li><a href="#inner">Mortgage calculator</a></li>
+													<li><a href="#inner">Mortgage finder</a></li>
+													<li><a href="#inner">Calculator rental yield</a></li>
+												</ul>
+											</div>	
+										</div>																
+									</div>
+								</div>								
+							</li>
+							<li class="let">
+								<a href="#"><span>Let and manage<br/> my property</span></a>
+								<div class="subMenu">
+									<div class="subMenuInner">
+										<p class="intro">Information and advice about the range of different financial products that are available</p>
+										<div class="lists">
+											<div class="list1">
+												<h2>Services</h2>
+												<ul>
+													<li><a href="#inner">Independent financial advice</a></li>
+													<li><a href="#inner">Mortgage advice</a></li>
+													<li><a href="#inner">Buy to let mortgage</a></li>
+													<li><a href="#inner">Investment planning</a></li>
+													<li><a href="#inner">Home Information Pack</a></li>
+													<li><a href="#inner">Investment</a></li>
+													<li><a href="#inner">Tax planning</a></li>
+												</ul>
+											</div>
+											<div class="list2">
+												<h2>Knowledge</h2>
+												<ul>
+													<li><a href="#inner">Remortgage</a></li>
+													<li><a href="#inner">Auction mortgage</a></li>
+													<li><a href="#inner">Birdging finance</a></li>
+													<li><a href="#inner">Development finance</a></li>
+													<li>
+														<a href="#inner">Portfolio finance</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>													
+													</li>
+													<li><a href="#inner">Commercial investments</a></li>
+													<li><a href="#inner">Mezzanine finance</a></li>
+													<li>
+														<a href="#inner">Secured loans</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+											<div class="list3">
+												<h2>Tools</h2>
+												<ul>
+													<li><a href="#inner">Mortgage calculator</a></li>
+													<li><a href="#inner">Mortgage finder</a></li>
+													<li><a href="#inner">Calculator rental yield</a></li>
+												</ul>
+											</div>	
+										</div>																
+									</div>
+								</div>								
+							</li>
+							<li class="tax">
+								<a href="#"><span>Tax and legal</span></a>
+								<div class="subMenu">
+									<div class="subMenuInner">
+										<p class="intro">Information and advice about the range of different financial products that are available</p>
+										<div class="lists">
+											<div class="list1">
+												<h2>Services</h2>
+												<ul>
+													<li><a href="#inner">Independent financial advice</a></li>
+													<li><a href="#inner">Mortgage advice</a></li>
+													<li><a href="#inner">Buy to let mortgage</a></li>
+													<li><a href="#inner">Investment planning</a></li>
+													<li><a href="#inner">Home Information Pack</a></li>
+													<li><a href="#inner">Investment</a></li>
+													<li><a href="#inner">Tax planning</a></li>
+												</ul>
+											</div>
+											<div class="list2">
+												<h2>Knowledge</h2>
+												<ul>
+													<li><a href="#inner">Remortgage</a></li>
+													<li><a href="#inner">Auction mortgage</a></li>
+													<li><a href="#inner">Birdging finance</a></li>
+													<li><a href="#inner">Development finance</a></li>
+													<li>
+														<a href="#inner">Portfolio finance</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>													
+													</li>
+													<li><a href="#inner">Commercial investments</a></li>
+													<li><a href="#inner">Mezzanine finance</a></li>
+													<li>
+														<a href="#inner">Secured loans</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+											<div class="list3">
+												<h2>Tools</h2>
+												<ul>
+													<li><a href="#inner">Mortgage calculator</a></li>
+													<li><a href="#inner">Mortgage finder</a></li>
+													<li><a href="#inner">Calculator rental yield</a></li>
+												</ul>
+											</div>	
+										</div>																
+									</div>
+								</div>								
+							</li>
 						</ul>
-						<div class="something">
-							1
-						</div>
 					</div>
 					
 				</div>
