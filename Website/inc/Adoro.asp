@@ -1,9 +1,9 @@
 <%
 	if(typeof Adoro !== "object") var Adoro = {};
 	//Adoro.URL = "http://www.adoromedia.com/";
-	//Adoro.URL = "http://anakes/adoro/";
+	Adoro.URL = "http://anakes/adoro/";
 	Adoro.URL = "http://localhost/adoro/";
-	//Adoro.URL = "/";
+	Adoro.URL = "/";
 	
 	Adoro.getCurrentURL = function() {
 		var prot = "http";

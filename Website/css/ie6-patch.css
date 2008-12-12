@@ -79,3 +79,63 @@ div.code {
 * min height
 ********************************************************/
 
+
+
+
+
+
+
+
+
+/********************************************************
+* drop down menu - fixes for ie6
+********************************************************/
+
+div#menu ul li a {
+	float: left;
+}
+
+div#menu ul li a span {
+	float: left;
+}
+
+div#menu ul li.buy a span.tr {
+	height: 39px;
+}
+
+div#menu ul li.finance a span {
+	height: 18px;
+}
+
+div#menu ul li.insurance a span {
+	height: 18px;
+}
+
+div#menu ul li.let a span {
+	height: 39px;
+}	
+
+div#menu ul li.tax a span {
+	height: 18px;
+}	
+
+div#menu ul li ul li a {
+	float: none;
+}
+
+div#menu ul li div.subMenu div.lists ul {
+	margin-bottom: 3px;
+}
+
+div#menu ul li div.subMenu div.lists ul li {
+	margin-bottom: -3px;
+}
+
+div#menu ul li div.subMenu div.lists ul li ul {
+	margin-bottom: 0px;
+	padding-top: 2px;
+}
+
+div#menu ul li div.subMenu div.lists ul li ul li {
+	margin-bottom: -3px;
+}
