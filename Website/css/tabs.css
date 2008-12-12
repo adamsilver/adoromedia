@@ -21,14 +21,16 @@ div.tabset ul.tabNavigation li a:link {
 	display: block;
 	padding: 10px;
 	text-decoration: none;
-	background-color: #f5f5f5;
+	background-color:#F9F9F9;
+	border-top:4px solid #F3F3F3;
 }
 
 div.tabset ul.tabNavigation li a.selected,
 div.tabset ul.tabNavigation li a:hover,
 div.tabset ul.tabNavigation li a:active {
-	background-color: #344148;
+	background-color: #1D2B33;
 	color: #ffffff;
+	border-top:4px solid #898F2C;	
 }
 
 div.tabset div.unselected {
@@ -36,7 +38,7 @@ div.tabset div.unselected {
 }
 
 div.tabset div.tab {
-	background-color: #344148;
+	background-color: #1D2B33;
 	color: #ffffff;
 	padding: 10px;
 }
