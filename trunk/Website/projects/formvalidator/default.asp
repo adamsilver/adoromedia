@@ -79,7 +79,7 @@
 					offsetTop: -14,
 					offsetLeft: 70,
 					placement: "right"
-				});	
+				});	 
 				
 				new Adoro.FieldContextualHelp(checkboxes[2], contextualHelpNodes[5], {
 					offsetTop: -33,
