@@ -104,4 +104,3 @@ Adoro.ListCollapser = function(activator, ul, options) {
 	}
 	
 }
-
