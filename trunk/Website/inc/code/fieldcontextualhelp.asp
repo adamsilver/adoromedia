@@ -57,14 +57,24 @@
 			placement: &quot;bottom&quot;
 		});	
 		
-		// applying same contextual help to each checkbox input field
-		var checkboxes = $(&#39;[name=&quot;searchEngine&quot;]&#39;);
-		for(var i=0; i&lt;checkboxes.length; i  ) {
-			new Adoro.FieldContextualHelp(checkboxes[i], contextualHelpNodes[5], {
-				offsetTop: 5,
-				placement: &quot;bottom&quot;
-			});
-		}					
+		var checkboxes = $('[name="searchEngine"]');
+		new Adoro.FieldContextualHelp(checkboxes[0], contextualHelpNodes[5], {
+			offsetTop: 5,
+			offsetLeft: 70,
+			placement: "right"
+		});
+		
+		new Adoro.FieldContextualHelp(checkboxes[1], contextualHelpNodes[5], {
+			offsetTop: -14,
+			offsetLeft: 70,
+			placement: "right"
+		});	
+		
+		new Adoro.FieldContextualHelp(checkboxes[2], contextualHelpNodes[5], {
+			offsetTop: -33,
+			offsetLeft: 70,
+			placement: "right"
+		});						
 		
 	});
 &lt;/script&gt;
