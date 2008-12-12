@@ -132,10 +132,10 @@
 					<form action="default.asp" method="post">
 						<div class="form">
 							<!--Single input-->
-							<div class="field <%devForm.writeErrorClass(["fullName"])%>">
+							<div class="field">
 								
 								<div class="indicator">
-									<label for="fullName">Full name <%devForm.writeErrorSpan(["fullName"])%></label>
+									<label for="fullName">Full name</label>
 								</div>
 								<div class="singleInput">
 									<input type="text" class="text" name="fullName" id="fullName" value="<%=Request.Form("fullName")%>" />
@@ -148,23 +148,23 @@
 							</div>
 								
 							<!--Multiple input-->
-							<div class="field <%devForm.writeErrorClass(["day01", "month01", "year01"])%>">
+							<div class="field">
 								<div class="indicator">
 									<span class="label ">Date of birth</span>
 								</div>
 								<div class="multipleInput">
 									<div class="input">
-										<label for="day01">Day <%devForm.writeErrorSpan(["day01"])%></label>
+										<label for="day01">Day</label>
 										<input type="text" class="text" name="day01" id="day01" value="<%=Request.Form("day01")%>" />
 										
 									</div>
 									<div class="input">
-										<label for="month01">Month <%devForm.writeErrorSpan(["month01"])%></label>
+										<label for="month01">Month</label>
 										<input type="text" class="text" name="month01" id="month01" value="<%=Request.Form("month01")%>" />
 								
 									</div>
 									<div class="input">
-										<label for="year01">Year <%devForm.writeErrorSpan(["year01"])%></label>
+										<label for="year01">Year</label>
 										<input type="text" class="text" name="year01" id="year01" value="<%=Request.Form("year01")%>" />								
 									</div>
 								</div>
@@ -177,17 +177,17 @@
 							</div>
 							
 							<!--Multiple select-->
-							<div class="field <%devForm.writeErrorClass(["day02", "month02", "year02"])%>">
+							<div class="field">
 								<div class="indicator">
 									<span class="label">Date of birth</span>
 								</div>
 								<div class="multipleInput">
 									<div class="input">
-										<label for="day02">Day <%devForm.writeErrorSpan(["day02"])%></label>
+										<label for="day02">Day</label>
 										<select name="day02" id="day02">
-											<option value="" <%devForm.writeSelected(Request.Form("day02"), "")%>>Please select</option>
-											<option value="1" <%devForm.writeSelected(Request.Form("day02"), "1")%>>1</option>
-											<option value="2" <%devForm.writeSelected(Request.Form("day02"), "2")%>>2</option>
+											<option value="">Please select</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
 										</select>
 										<div class="contextualHelp">
 											<div class="contextualHelpInner">
@@ -196,11 +196,11 @@
 										</div>										
 									</div>
 									<div class="input">
-										<label for="month02">Month <%devForm.writeErrorSpan(["month02"])%></label>
+										<label for="month02">Month</label>
 										<select name="month02" id="month02">
-											<option value="" <%devForm.writeSelected(Request.Form("month02"), "")%>>Please select</option>
-											<option value="1" <%devForm.writeSelected(Request.Form("month02"), "1")%>>1</option>
-											<option value="2" <%devForm.writeSelected(Request.Form("month02"), "2")%>>2</option>
+											<option value="">Please select</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
 										</select>
 										<div class="contextualHelp">
 											<div class="contextualHelpInner">
@@ -209,11 +209,11 @@
 										</div>										
 									</div>
 									<div class="input">
-										<label for="year02">Year <%devForm.writeErrorSpan(["year02"])%></label>
+										<label for="year02">Year</label>
 										<select name="year02" id="year02">
-											<option value="" <%devForm.writeSelected(Request.Form("year02"), "")%>>Please select</option>
-											<option value="1" <%devForm.writeSelected(Request.Form("year02"), "1")%>>1</option>
-											<option value="2" <%devForm.writeSelected(Request.Form("year02"), "2")%>>2</option>
+											<option value="">Please select</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
 										</select>
 										<div class="contextualHelp">
 											<div class="contextualHelpInner">
@@ -226,23 +226,23 @@
 							
 							<!--Checkbox group-->
 							
-							<div class="field <%devForm.writeErrorClass(["searchEngine"])%>">
+							<div class="field">
 								<div class="indicator">
 									<span class="label">Favourite search engines</span>
 								</div>
 								<div class="checkboxes">
 									<fieldset>
-										<legend><span class="legend">Search engines</span><%devForm.writeErrorSpan(["searchEngine"])%></legend>
+										<legend><span class="legend">Search engines</span></legend>
 										<div class="input">
-											<input type="checkbox" name="searchEngine" id="searchEngine" value="Yahoo" <%devForm.writeChecked(Request.Form("searchEngine"), "Yahoo")%> />
+											<input type="checkbox" name="searchEngine" id="searchEngine" value="Yahoo" />
 											<label for="searchEngine">Yahoo</label>
 										</div>
 										<div class="input">
-											<input type="checkbox" name="searchEngine" id="searchEngine02" value="Live" <%devForm.writeChecked(Request.Form("searchEngine"), "Live")%> />
+											<input type="checkbox" name="searchEngine" id="searchEngine02" value="Live" />
 											<label for="searchEngine02">Live search</label>
 										</div>
 										<div class="input">
-											<input type="checkbox" name="searchEngine" id="searchEngine03" value="Google" <%devForm.writeChecked(Request.Form("searchEngine"), "Google")%> />
+											<input type="checkbox" name="searchEngine" id="searchEngine03" value="Google" />
 											<label for="searchEngine03">Google</label>
 										</div>
 									</fieldset>
