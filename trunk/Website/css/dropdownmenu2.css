@@ -12,7 +12,6 @@ div#menu ul:after {
 
 div#menu ul {
 	display:block;
-	zoom: 1;
 }
 
 div#menu ul {
@@ -300,9 +299,13 @@ div#menu ul li div.subMenu div.lists ul li {
 	float: none;
 }			
 
-div#menu ul li div.subMenu div.lists ul li a {
+div#menu ul li div.subMenu div.lists ul li a,
+div#menu ul li div.subMenu div.lists ul li a:link,
+div#menu ul li div.subMenu div.lists ul li a:visited,
+div#menu ul li div.subMenu div.lists ul li a:hover,
+div#menu ul li div.subMenu div.lists ul li a:active {
 	font-weight: normal;
-	background:none;
+	background:none !important;
 	color: #333333;
 }
 
@@ -317,7 +320,7 @@ div#menu ul li div.subMenu div.lists ul li ul li {
 
 div#menu ul li div.subMenu div.lists ul li ul li a {
 	color: #555555;
-}			
+}
 
 div#menu ul li div.subMenu div.list1 {
 	width: 156px;
