@@ -23,6 +23,12 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 
+/**
+ * @class Represents a drop down menu
+ * @constructor Create a drop down menu
+ * @param {Node} ul The root ul node for the drop down menu
+ * @param {Object} options The options for the instance
+ */
 Adoro.DropDownMenu = function(ul, options) {
 	var ul = ul || null;
 	if(!ul) return;
@@ -46,11 +52,11 @@ Adoro.DropDownMenu = function(ul, options) {
 		link = links[i];
 		
 		li = $(link).parent("li")[0] || null;
-		// if the link has an li as a parent
+		// if the link hasn't even got an li then don't handle it
 		if(!li) continue;
 		
-		// if the link has a sub menu
 		subMenu = $(li).find(config.subMenuType)[0] || null;
+		// if the link doesn't have a sub menu then don't handle it
 		if(!subMenu) continue;
 		
 		new AnchorHandler(link, li, subMenu);
@@ -70,10 +76,10 @@ Adoro.DropDownMenu = function(ul, options) {
 	 */
 	function AnchorHandler(link, li, subMenu, subMenuLink) {
 		var me = this;
-		this.link = link;
-		this.li = li;
-		this.subMenu = subMenu;
-		this.subMenuLink = subMenuLink || link;
+		link = link;
+		li = li;
+		subMenu = subMenu;
+		subMenuLink = subMenuLink || link; // subMenuLink only exists for links in the sub menu otherwise its the same as link.
 		
 		// sublinks do not need this bit - only focus and blur - so not sure best way to make efficient yet
 		$(link).bind("mouseenter", showSubMenu);
@@ -83,8 +89,8 @@ Adoro.DropDownMenu = function(ul, options) {
 		$(link).bind("blur", hideSubMenu);
 		
 		function showSubMenu() {
-			$(me.subMenuLink).addClass(config.cssActiveClass);
-			$(me.subMenu).css({
+			$(subMenuLink).addClass(config.cssActiveClass);
+			$(subMenu).css({
 				left: config.offsetLeft+"px",
 				top: $(li).height()+config.offsetTop+"px",
 				zIndex: 10
@@ -92,8 +98,8 @@ Adoro.DropDownMenu = function(ul, options) {
 		}
 
 		function hideSubMenu() {
-			$(me.subMenu).css({"left": "-999999em"});
-			$(me.subMenuLink).removeClass(config.cssActiveClass);
+			$(subMenu).css({"left": "-999999em"});
+			$(subMenuLink).removeClass(config.cssActiveClass);
 		}
 	}
 }
