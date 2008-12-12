@@ -12,6 +12,7 @@
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/dropdownmenu.css" type="text/css" />
+		<link rel="stylesheet" href="../../css/dropdownmenu2.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->		
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DropDownMenu.js"></script>
@@ -30,285 +31,12 @@
 				var ulNode2 = $("#alternativeMenu ul")[0] || null;
 				new Adoro.DropDownMenu(ulNode2, {
 					subMenuType: "div",
-					offsetTop: -1
+					offsetTop: -1,
+					offsetLeft: -3
 				});
 				
 			});
 		</script>
-		<style type="text/css">
-			div#alternativeMenu {
-				
-			}
-			
-			div#alternativeMenu ul:after {
-				clear:both;
-				content:".";
-				display:block;
-				height:0px;
-				visibility:hidden;
-			}
-			
-			div#alternativeMenu ul {
-				display:block;
-				zoom: 1;
-			}
-			
-			div#alternativeMenu ul {
-				position: relative;
-				list-style: none;
-			}
-			
-			div#alternativeMenu ul li {
-				float:left;
-				position:relative;
-			}
-			
-			div#alternativeMenu ul li a {
-				
-			}
-			
-			/* buy - off */
-			
-			div#alternativeMenu ul li.buy a {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_bl_off.gif) left bottom no-repeat;
-				font-size: 1.5em;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			
-			div#alternativeMenu ul li.buy a span.tl {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_tl_off.gif) left top no-repeat;
-			}
-			
-			div#alternativeMenu ul li.buy a span.bl {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_bl_off.gif) bottom top no-repeat;
-			}
-			
-			div#alternativeMenu ul li.buy a span.br {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_br_off.gif) right bottom no-repeat;
-			}			
-			
-			div#alternativeMenu ul li.buy a span.tr {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_tr_off.gif) right top no-repeat;
-				padding-left: 11px;
-				padding-right: 11px;
-				padding-top: 14px;
-				padding-bottom: 24px;
-				min-height: 39px;
-				cursor: pointer;
-			}	
-			
-			/* buy - on */
-			
-			div#alternativeMenu ul li.buy a:hover,
-			div#alternativeMenu ul li.buy a:active,
-			div#alternativeMenu ul li.buy a:focus,
-			div#alternativeMenu ul li.buy a.selected {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_bl_on.gif) left bottom no-repeat;
-				font-size: 1.5em;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			
-			div#alternativeMenu ul li.buy a:hover span.tl,
-			div#alternativeMenu ul li.buy a:active span.tl,
-			div#alternativeMenu ul li.buy a:focus span.tl,
-			div#alternativeMenu ul li.buy a.selected span.tl {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_tl_on.gif) left top no-repeat;
-			}
-			
-			div#alternativeMenu ul li.buy a:hover span.bl,
-			div#alternativeMenu ul li.buy a:active span.bl,
-			div#alternativeMenu ul li.buy a:focus span.bl,
-			div#alternativeMenu ul li.buy a.selected span.bl {
-				display: block;
-				background: url(../../img/dropdownmenu/purple_bl_on.gif) bottom top no-repeat;
-			}
-			
-			div#alternativeMenu ul li.buy a:hover span.br,
-			div#alternativeMenu ul li.buy a:active span.br,
-			div#alternativeMenu ul li.buy a:focus span.br,
-			div#alternativeMenu ul li.buy a.selected span.br {
-
-				background: url(../../img/dropdownmenu/purple_br_on.gif) right bottom no-repeat;
-			}			
-			
-			div#alternativeMenu ul li.buy a:hover span.tr,
-			div#alternativeMenu ul li.buy a:active span.tr,
-			div#alternativeMenu ul li.buy a:focus span.tr,
-			div#alternativeMenu ul li.buy a.selected span.tr {
-				background: url(../../img/dropdownmenu/purple_tr_on.gif) right top no-repeat;
-			}										
-			
-			/* finance - off */
-			
-			div#alternativeMenu ul li.finance a {
-				display: block;
-				background: url(../../img/dropdownmenu/orange_bot_off.gif) right bottom no-repeat;
-				font-size: 1.5em;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			
-			div#alternativeMenu ul li.finance a span {
-				display: block;
-				background: url(../../img/dropdownmenu/orange_top_off.gif) right top no-repeat;
-				padding-left: 11px;
-				padding-right: 11px;
-				padding-top: 32px;
-				padding-bottom: 27px;
-				min-height: 18px;
-				cursor: pointer;
-			}		
-			
-			/* finance - on */
-			
-			div#alternativeMenu ul li.finance a:hover,
-			div#alternativeMenu ul li.finance a:active,
-			div#alternativeMenu ul li.finance a:focus,
-			div#alternativeMenu ul li.finance a.selected {
-				background: url(../../img/dropdownmenu/orange_bot_on.gif) right bottom no-repeat;
-			}
-			
-			div#alternativeMenu ul li.finance a:hover span,
-			div#alternativeMenu ul li.finance a:active span,
-			div#alternativeMenu ul li.finance a:focus span,
-			div#alternativeMenu ul li.finance a.selected span {
-				background: url(../../img/dropdownmenu/orange_top_on.gif) right top no-repeat;
-			}					
-			
-			/* insurance - off */
-			
-			div#alternativeMenu ul li.insurance a {
-				display: block;
-				background: url(../../img/dropdownmenu/blue_bot_off.gif) right bottom no-repeat;
-				font-size: 1.5em;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			
-			div#alternativeMenu ul li.insurance a span {
-				display: block;
-				background: url(../../img/dropdownmenu/blue_top_off.gif) right top no-repeat;
-				padding-left: 11px;
-				padding-right: 11px;
-				padding-top: 32px;
-				padding-bottom: 27px;
-				min-height: 18px;
-				cursor: pointer;
-			}	
-			
-			/* insurance - off */
-			
-			div#alternativeMenu ul li.insurance a {
-				display: block;
-				background: url(../../img/dropdownmenu/blue_bot_off.gif) right bottom no-repeat;
-			}
-			
-			div#alternativeMenu ul li.insurance a span {
-				display: block;
-				background: url(../../img/dropdownmenu/blue_top_off.gif) right top no-repeat;
-				padding-left: 11px;
-				padding-right: 11px;
-				padding-top: 32px;
-				padding-bottom: 27px;
-				min-height: 18px;
-				cursor: pointer;
-			}	
-			
-			/* insurance - on */
-			
-			div#alternativeMenu ul li.insurance a:hover,
-			div#alternativeMenu ul li.insurance a:active,
-			div#alternativeMenu ul li.insurance a:focus,
-			div#alternativeMenu ul li.insurance a.selected {
-				background: url(../../img/dropdownmenu/blue_bot_on.gif) right bottom no-repeat;
-			}
-			
-			div#alternativeMenu ul li.insurance a:hover span,
-			div#alternativeMenu ul li.insurance a:active span,
-			div#alternativeMenu ul li.insurance a:focus span,
-			div#alternativeMenu ul li.insurance a.selected span {
-				background: url(../../img/dropdownmenu/blue_top_on.gif) right top no-repeat;
-			}	
-			
-			/* left - off */
-			
-			div#alternativeMenu ul li.let a {
-				display: block;
-				background: url(../../img/dropdownmenu/pink_bot_off.gif) right bottom no-repeat;
-				font-size: 1.5em;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			
-			div#alternativeMenu ul li.let a span {
-				display: block;
-				background: url(../../img/dropdownmenu/pink_top_off.gif) right top no-repeat;
-				padding-left: 11px;
-				padding-right: 11px;
-				padding-top: 14px;
-				padding-bottom: 24px;
-				min-height: 39px;
-				cursor: pointer;
-			}				
-			
-			/* left - on */
-			
-			/*div#alternativeMenu ul li.let a:focus,
-			div#alternativeMenu ul li.let a:active,
-			div#alternativeMenu ul li.let a:hover,
-			div#alternativeMenu ul li.let a.selected {
-				background: url(../../img/dropdownmenu/pink_bot_on.gif) right bottom no-repeat;
-			}
-			
-			div#alternativeMenu ul li.let a:hover span,
-			div#alternativeMenu ul li.let a:active span,
-			div#alternativeMenu ul li.let a:focus span,
-			div#alternativeMenu ul li.let a.selected span {
-				background: url(../../img/dropdownmenu/pink_top_on.gif) right top no-repeat;
-			}	*/					
-			
-			/* tax - off */
-			
-			div#alternativeMenu ul li.tax a {
-				display: block;
-				background: url(../../img/dropdownmenu/green_bot_off.gif) right bottom no-repeat;
-				font-size: 1.5em;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			
-			div#alternativeMenu ul li.tax a span {
-				display: block;
-				background: url(../../img/dropdownmenu/green_top_off.gif) right top no-repeat;
-				padding-left: 11px;
-				padding-right: 11px;
-				padding-top: 32px;
-				padding-bottom: 27px;
-				min-height: 18px;
-				cursor: pointer;
-			}				
-			
-			div#alternativeMenu ul li div.subMenu {
-				position: absolute;
-				width: 200px;
-				left:-999999em;
-			}
-			
-			div#alternativeMenu ul li div.subMenu {
-				border: 1px solid #e9612b;
-				padding: 10px;
-				background-color: #ffffff;
-			}
-		</style>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -408,13 +136,62 @@
 							<li class="finance">
 								<a href="#FINANCE"><span>Finance</span></a>
 								<div class="subMenu">
-									<a href="#inner">hi there finance shizzle</a>
+									<div class="subMenuInner">
+										<p class="intro">Information and advice about the range of different financial products that are available</p>
+										<div class="lists">
+											<div class="list1">
+												<h2>Services</h2>
+												<ul>
+													<li><a href="#inner">Independent financial advice</a></li>
+													<li><a href="#inner">Mortgage advice</a></li>
+													<li><a href="#inner">Buy to let mortgage</a></li>
+													<li><a href="#inner">Investment planning</a></li>
+													<li><a href="#inner">Home Information Pack</a></li>
+													<li><a href="#inner">Investment</a></li>
+													<li><a href="#inner">Tax planning</a></li>
+												</ul>
+											</div>
+											<div class="list2">
+												<h2>Knowledge</h2>
+												<ul>
+													<li><a href="#inner">Remortgage</a></li>
+													<li><a href="#inner">Auction mortgage</a></li>
+													<li><a href="#inner">Birdging finance</a></li>
+													<li><a href="#inner">Development finance</a></li>
+													<li>
+														<a href="#inner">Portfolio finance</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>													
+													</li>
+													<li><a href="#inner">Commercial investments</a></li>
+													<li><a href="#inner">Mezzanine finance</a></li>
+													<li>
+														<a href="#inner">Secured loans</a>
+														<ul>
+															<li><a href="#3rd">3rd level page</a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+											<div class="list3">
+												<h2>Tools</h2>
+												<ul>
+													<li><a href="#inner">Independent financial advice</a></li>
+												</ul>
+											</div>	
+										</div>																
+									</div>
 								</div>
 							</li>
 							<li class="insurance"><a href="#"><span>Insurance</span></a></li>
 							<li class="let"><a href="#"><span>Let and manage<br/> my property</span></a></li>
 							<li class="tax"><a href="#"><span>Tax and legal</span></a></li>
 						</ul>
+						<div class="something">
+							1
+						</div>
 					</div>
 					
 				</div>
