@@ -443,7 +443,9 @@ Adoro.FormValidator = function(form, options) {
 		html +=	'</ul>';
 		errorSummary.innerHTML = html;
 		$(errorSummary).removeClass(config.hideClass);
-		window.location.hash = config.errorSummaryID;
+		//window.location.hash = config.errorSummaryID; // doesnt work in safari
+		window.scrollTo(0, $(errorSummary).position().top);
+		
 		prepareErrors();
 	}
 	
