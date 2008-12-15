@@ -35,15 +35,11 @@ Adoro.DropDownMenu = function(ul, options) {
 	
 	var config = {
 		subMenuType: "ul",
-		offsetLeft: 0,
-		offsetTop: 0,
 		cssActiveClass: "selected"
 	};
 	
 	if(typeof options === "object") {
 		config.subMenuType = (typeof options.subMenuType === "string") ? options.subMenuType : config.subMenuType;
-		config.offsetLeft = (typeof options.offsetLeft === "number") ? options.offsetLeft : config.offsetLeft;
-		config.offsetTop = (typeof options.offsetTop === "number") ? options.offsetTop : config.offsetTop;
 		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
 	}
 	
@@ -90,16 +86,12 @@ Adoro.DropDownMenu = function(ul, options) {
 		
 		function showSubMenu() {
 			$(subMenuLink).addClass(config.cssActiveClass);
-			$(subMenu).css({
-				left: config.offsetLeft+"px",
-				top: $(li).height()+config.offsetTop+"px",
-				zIndex: 10
-			});
+			$(subMenu).css("display", "block"); // could probably add class instead?
 		}
 
 		function hideSubMenu() {
-			$(subMenu).css({"left": "-999999em"});
-			$(subMenuLink).removeClass(config.cssActiveClass);
+			$(subMenu).css("display", "none");
+			$(subMenuLink).removeClass(config.cssActiveClass); // could probably add class instead?
 		}
 	}
 }
