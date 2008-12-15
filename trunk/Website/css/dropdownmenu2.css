@@ -262,11 +262,7 @@ div#menu ul li div.subMenu {
 	position: absolute;
 	left:-0.3em;
 	top: 7.6em;
-	display: none;
-	z-index: 10
-}
-
-div#menu ul li div.subMenu {
+	z-index: 10;
 	width: 459px;
 }
 

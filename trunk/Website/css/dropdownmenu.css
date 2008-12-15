@@ -63,9 +63,10 @@ div#dropDownMenu ul li a:focus {
 
 div#dropDownMenu ul li ul {
 	position: absolute;
-	left: -999999em;
+	left: -0.1em;
 	overflow: visible;
 	width: 200px;
+	top: 34px;
 }
 
 div#dropDownMenu ul li ul li {

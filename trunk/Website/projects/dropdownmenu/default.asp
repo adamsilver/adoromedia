@@ -25,7 +25,8 @@
 			$(document).ready(function(){
 				var ulNode1 = $("#dropDownMenu ul")[0] || null;
 				new Adoro.DropDownMenu(ulNode1, {
-					offsetLeft: -1
+					offsetLeft: -1,
+					cssHideClass: "off"
 				});
 				
 				var ulNode2 = $("#menu ul")[0] || null;
@@ -33,7 +34,8 @@
 					subMenuType: "div",
 					offsetTop: -1,
 					offsetLeft: -3,
-					cssActiveClass: "hover"
+					cssActiveClass: "hover",
+					cssHideClass: "off"
 				});
 				
 			});
@@ -66,7 +68,7 @@
 						<ul>
 							<li class="first">
 								<a href="#1">Pharmacy &#038; Health</a>
-								<ul>
+								<ul class="off">
 									<li><a href="#2"><span>Electrical</span></a></li>
 									<li><a href="#3"><span>Offers</span></a></li>
 									<li><a href="#4"><span>Weight Loss</span></a></li>
@@ -76,7 +78,7 @@
 							<li><a href="#6"><span>Beauty</span></a></li>
 							<li>
 								<a href="#7"><span>Gift</span></a>
-								<ul>
+								<ul class="off">
 									<li><a href="#8"><span>Skincare</span></a></li>
 									<li><a href="#9"><span>Hair</span></a></li>
 									<li><a href="#10"><span>Offers</span></a></li>
@@ -86,7 +88,7 @@
 							</li>
 							<li class="selected">
 								<a href="#13"><span>Men</span></a>
-								<ul>
+								<ul class="off">
 									<li><a href="#14"><span>Skincare</span></a></li>
 									<li><a href="#15"><span>Hair</span></a></li>
 									<li><a href="#16"><span>Fragrance</span></a></li>
@@ -98,7 +100,7 @@
 							</li>
 							<li class="last">
 								<a href="#21"><span>Seasonal</span></a>
-								<ul>
+								<ul class="off">
 									<li><a href="#22"><span>Skincare</span></a></li>
 									<li><a href="#23"><span>Bath &#038; Body</span></a></li>
 									<li><a href="#24"><span>Dental</span></a></li>
@@ -133,7 +135,7 @@
 										</span>
 									</span>
 								</a>
-								<div class="subMenu">
+								<div class="subMenu off">
 									<div class="subMenuInner">
 										<p class="intro">Information and advice about the range of different financial products that are available</p>
 										<div class="lists">
@@ -187,7 +189,7 @@
 							</li>
 							<li class="finance">
 								<a href="#FINANCE"><span>Finance</span></a>
-								<div class="subMenu">
+								<div class="subMenu off">
 									<div class="subMenuInner">
 										<p class="intro">Information and advice about the range of different financial products that are available</p>
 										<div class="lists">
@@ -241,7 +243,7 @@
 							</li>
 							<li class="insurance">
 								<a href="#"><span>Insurance</span></a>
-								<div class="subMenu">
+								<div class="subMenu off">
 									<div class="subMenuInner">
 										<p class="intro">Information and advice about the range of different financial products that are available</p>
 										<div class="lists">
@@ -295,7 +297,7 @@
 							</li>
 							<li class="let">
 								<a href="#"><span>Let and manage<br/> my property</span></a>
-								<div class="subMenu">
+								<div class="subMenu off">
 									<div class="subMenuInner">
 										<p class="intro">Information and advice about the range of different financial products that are available</p>
 										<div class="lists">
@@ -349,7 +351,7 @@
 							</li>
 							<li class="tax">
 								<a href="#"><span>Tax and legal</span></a>
-								<div class="subMenu">
+								<div class="subMenu off">
 									<div class="subMenuInner">
 										<p class="intro">Information and advice about the range of different financial products that are available</p>
 										<div class="lists">
