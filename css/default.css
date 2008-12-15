@@ -1,0 +1,277 @@
+/*******************************************************************
+* Global
+*******************************************************************/
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+	font: inherit;
+}
+
+a,
+a:link,
+a:visited {
+	color: #1D2B33;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus
+a:active {
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+abbr {
+	
+}
+
+a abbr {
+	border: none;
+}
+
+.hide {
+	display: none;
+}
+
+/*******************************************************************
+* Clearfix
+*******************************************************************/
+
+.clearfix {
+	display:block;
+}
+
+.clearfix:after {
+	clear:both;
+	content:".";
+	display:block;
+	height:0px;
+	visibility:hidden;
+}
+
+/*******************************************************************
+* Main structure
+*******************************************************************/
+
+div#wrap {
+	width: 601px;
+	margin: 20px auto;
+}
+
+div#container {
+	background: url(../img/bg_bot.gif) bottom center no-repeat;
+}
+
+div.containerInner {
+	padding-top: 9px;
+	background: url(../img/bg_top.gif) top center no-repeat;
+	padding-bottom: 9px;
+}
+
+div#header {
+
+}
+
+a#logo {
+	display: block;
+	margin-left: 14px;
+}
+
+div#content {
+	margin: 10px;
+	background: url(../img/bg_content_bot.gif) bottom center no-repeat;
+}
+div.contentInner {
+	padding-top: 10px;
+	background: url(../img/bg_content_top.gif) top center no-repeat;
+	padding-bottom: 10px;
+}
+
+div#footer {
+	background: #000;
+	padding: 0px 10px 10px 10px;
+}
+
+div#footer p {
+	font-size: 1.1em;
+	color: #ffffff;
+	margin-bottom: 0px;
+}
+
+div#footer a {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/*******************************************************************
+* Primary navigation
+*******************************************************************/
+
+div#primaryNavigation {
+	padding-left: 20px;
+}
+
+div#primaryNavigation ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+div#primaryNavigation ul li {
+	font-size: 1.2em;
+	float: left;
+	margin-right: 2px;
+}
+
+div#primaryNavigation ul li.last {
+
+}
+
+div#primaryNavigation ul li a,
+div#primaryNavigation ul li a:link,
+div#primaryNavigation ul li a:visited {
+	display: block;
+	background: url(../img/bg_tab2_right.gif) top right no-repeat;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+div#primaryNavigation ul li a span,
+div#primaryNavigation ul li a:link span,
+div#primaryNavigation ul li a:visited span {
+	display: block;
+	background: url(../img/bg_tab2_left.gif) top left no-repeat;
+	width: 137px;
+	padding: 8px 0px;
+	text-align: center;
+}
+
+div#primaryNavigation ul li a:hover,
+div#primaryNavigation ul li a:focus,
+div#primaryNavigation ul li a:active,
+div#primaryNavigation ul li a.selected {
+	color: #ffffff;
+	background: url(../img/bg_tab_right.gif) top right no-repeat !important;
+}
+
+div#primaryNavigation ul li a:hover span,
+div#primaryNavigation ul li a:focus span,
+div#primaryNavigation ul li a:active span,
+div#primaryNavigation ul li a.selected span {
+	background: url(../img/bg_tab_left.gif) top left no-repeat;
+}
+
+/*******************************************************************
+* PText
+*******************************************************************/
+
+h1 {
+	color: #000000;
+	font-size: 2em;
+	margin-bottom: 17px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+h2 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+p {
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+p.address {
+	background: url(../img/home-icon3.gif) no-repeat;
+	padding-left: 20px;
+}
+
+p.email {
+	background: url(../img/email-contact-red.gif) no-repeat;
+	padding-left: 20px;
+}
+
+p.telephone {
+	background: url(../img/speaker-blue.gif) no-repeat;
+	padding-left: 20px;
+}
+
+ul.generic {
+	margin-bottom: 15px;
+	list-style: none;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+ul.generic li {
+	font-size: 1.2em;
+	margin-left: 5px;
+	background: url(../img/action_forward.gif) no-repeat;
+	padding-left: 24px;
+	margin-bottom: 5px;
+}
+
+ul.products {
+	list-style: none;
+	overflow: hidden;
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+div.accordian ul.products {
+	margin: 0px 0px 0px 7px;
+}
+
+ul.products li {
+	float: left;
+	border: 1px solid #f5f5f5;
+	padding: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+div#map {
+	width: 555px;
+	height: 300px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #999;
+}
+
+div.contactDetails {
+	overflow: hidden;
+}
+
+div.contactDetails div.address {
+	float: left;
+	width: 290px;
+}
+
+div.contactDetails div.telephone {
+	float: left;
+	width: 135px;
+}
+
+div.contactDetails div.email {
+	float: left;
+	width: 150px;
+}
