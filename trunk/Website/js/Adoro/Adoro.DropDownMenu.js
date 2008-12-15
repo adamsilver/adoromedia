@@ -79,6 +79,8 @@ Adoro.DropDownMenu = function(ul, options) {
 		subMenu = subMenu;
 		subMenuLink = subMenuLink || link; // subMenuLink only exists for links in the sub menu otherwise its the same as link.
 		
+		$(subMenu).bgiframe();
+		
 		// sublinks do not need this bit - only focus and blur - so not sure best way to make efficient yet
 		$(link).bind("mouseenter", showSubMenu);
 		$(li).bind("mouseleave", hideSubMenu);
