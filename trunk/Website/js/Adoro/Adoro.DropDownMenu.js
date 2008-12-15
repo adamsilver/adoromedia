@@ -28,6 +28,9 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
  * @constructor Create a drop down menu
  * @param {Node} ul The root ul node for the drop down menu
  * @param {Object} options The options for the instance
+ * @param {String} options.subMenuType The tag name type for the sub menu, default is "ul"
+ * @param {String} options.cssActiveClass The active class that is added to the sub menu activator anchor, default "selected".
+ * @param {String} options.cssHideClass The hide class for the menu when in off state (position off screen), default "hide".
  */
 Adoro.DropDownMenu = function(ul, options) {
 	var ul = ul || null;
