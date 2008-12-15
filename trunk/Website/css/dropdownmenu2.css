@@ -260,7 +260,10 @@ div#menu ul li.tax a.hover span {
 
 div#menu ul li div.subMenu {
 	position: absolute;
-	left:-999999em;
+	left:-0.3em;
+	top: 7.6em;
+	display: none;
+	z-index: 10
 }
 
 div#menu ul li div.subMenu {
