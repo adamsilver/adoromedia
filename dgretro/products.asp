@@ -4,6 +4,10 @@
 <%Response.Buffer=true%>
 <!--#include file="inc/Site.asp"-->
 <% Site.pageName = "products"; %>
+<%
+	var productID = Request.QueryString("productID") || "ceramics";
+	Response.Write("111"+productID);
+%>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Products, David Goodman Retro Collectables, Kensal Rise, London, England, UK</title>

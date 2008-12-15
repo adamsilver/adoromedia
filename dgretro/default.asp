@@ -39,12 +39,12 @@
 							<h2 class="dg">Our range of collectables</h2>
 							
 							<ul class="generic">
-								<li><a href="products.asp#ceramics">Ceramics</a></li>
-								<li><a href="products.asp#ceramics">Glass</a></li>
-								<li><a href="products.asp#ceramics">Costume jewellery</a></li>
-								<li><a href="products.asp#ceramics">Prints and paintings</a></li>
-								<li><a href="products.asp#ceramics">Tins</a></li>
-								<li><a href="products.asp#ceramics">Handbags (Currently getting new stock)</a></li>
+								<li><a href="products.asp?productID=ceramics">Ceramics</a></li>
+								<li><a href="products.asp?productID=glass">Glass</a></li>
+								<li><a href="products.asp?productID=jewellery">Costume jewellery</a></li>
+								<li><a href="products.asp?productID=prints">Prints and paintings</a></li>
+								<li><a href="products.asp?productID=tins">Tins</a></li>
+								<li><a href="products.asp?productID=handbags">Handbags (Currently getting new stock)</a></li>
 							</ul>
 							
 							<h2 class="dg">Dealers, collectors and buyers</h2>
