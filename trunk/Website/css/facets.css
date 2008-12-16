@@ -121,4 +121,35 @@ div#facetControlCarat {
 	border: 1px solid #EEE;
 	background: #f5f5f5;
 	padding: 15px;
+	overflow: hidden;
+}
+
+div#facetControlCarat div.labels {
+	float: left;
+	width: 100px;
+	margin-right: 25px;
+}
+
+div#facetControlCarat div.slider {
+	height: 250px;
+	float: left;
+	width: 19px;
+	position: relative;
+	background-color: #CCCCCC;
+}
+
+div#facetControlCarat div.sliderInner {
+	width: 19px;
+	height: 0px;
+	position: absolute;
+	background-color: #898F2C;
+}
+
+div#facetControlCarat div.sliderHandle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 19px;
+	height: 8px;
+	background: url(../img/facets/handle3.gif) no-repeat;	
 }
