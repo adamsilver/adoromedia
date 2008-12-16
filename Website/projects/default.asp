@@ -107,6 +107,8 @@
 						<!-- maps - gmap, mmap, ymap -->
 						<!-- indicator for lightbox images -->
 						<!-- tooltip - contextual help -->
+						<!-- wizard -->
+						<!-- reporting, page tracking - http://www.coverzones.com/#controlname_state -->
 					</ul>
 				</div>
 			</div>
