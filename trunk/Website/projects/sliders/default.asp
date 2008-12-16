@@ -22,6 +22,8 @@
 					var container = document.getElementById("facetControlMyStyle");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
+					$(container).append('<p class="indicator">Zoop</p>')
+					var indicator = $(container).find("p.indicator")[0] || null;						
 					
 					if(!container || !slider || !sliderInner) return;
 					
@@ -46,7 +48,7 @@
 							setBackgroundWidth();	
 						},
 						change: function(e, ui) {
-							//alert("fire request to server now");
+							indicator.innerHTML = ui.value;
 						}
 					});			
 					
@@ -70,6 +72,8 @@
 					var container = document.getElementById("facetControlPrice");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
+					$(container).append('<p class="indicator">Zoop</p>')
+					var indicator = $(container).find("p.indicator")[0] || null;					
 					
 					if(!container || !slider || !sliderInner) return;
 					
@@ -94,7 +98,7 @@
 							setBackgroundWidth();	
 						},
 						change: function(e, ui) {
-							//alert("fire request to server now");
+							indicator.innerHTML = ui.value;
 						}
 					});			
 					
@@ -114,17 +118,20 @@
 					var container = document.getElementById("facetControlCarat");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
+					$(container).append('<p class="indicator">Zoop</p>')
+					var indicator = $(container).find("p.indicator")[0] || null;
+					
 					
 					if(!container || !slider || !sliderInner) return;
 					
 					var config = {
 						sliderHandleClass: "sliderHandle",
-						sliderMaxValue: 2000,
+						sliderMaxValue: 6,
 						sliderMaxWidth: 250
 					}
 					
 					var state = {
-						currentValue: 0
+						currentValue: 6
 					}
 					
 					$(slider).slider( { 
@@ -132,17 +139,30 @@
 						min: 0, 
 						max: config.sliderMaxValue,
 						startValue: state.currentValue,
-						steps: 7,
+						steps: 6,
 						slide: function(e, ui){
-							setCurrentValue(ui.value);		
+							var val = config.sliderMaxValue - ui.value; // stupid hack
+							setCurrentValue(val);		
 							setBackgroundHeight();	
 						},
 						change: function(e, ui) {
+							indicator.innerHTML = config.sliderMaxValue - ui.value;
+							//console.log(config.sliderMaxValue - ui.value);
+							
 							//alert("fire request to server now");
 						}
-					});			
+					});
+					
+					$(slider).slider("moveTo", 7);
 					
 					setBackgroundHeight();
+					
+					$(container).find("div.labels a").bind("click",function(){
+						var num = parseInt($(this).find("span")[0].innerHTML);
+						$(slider).slider("moveTo", num);
+						return false;
+					});
+					
 					
 					function setCurrentValue(newValue) {
 						state.currentValue = newValue;
@@ -151,7 +171,7 @@
 					function setBackgroundHeight() {
 						var height = Math.ceil((config.sliderMaxWidth / config.sliderMaxValue) * state.currentValue) + "px";
 						$(sliderInner).css("height", height);
-					}					
+					}		
 				});				
 				
 				/*
@@ -376,9 +396,8 @@
 						</div>
 						
 						<div class="slider">
-							<div class="sliderInner">
-								<div class="sliderHandle"></div>
-							</div>
+							<div class="sliderInner"></div>
+							<div class="sliderHandle"></div>
 						</div>
 					</div>
 					
@@ -386,9 +405,8 @@
 						<h2>Price</h2>
 						
 						<div class="slider">
-							<div class="sliderInner">
-								<div class="sliderHandle"></div>
-							</div>
+							<div class="sliderInner"></div>
+							<div class="sliderHandle"></div>
 						</div>						
 						
 						<div class="labels">
@@ -401,13 +419,18 @@
 						<h2>Carat</h2>
 						
 						<div class="labels">
-							labels here
+							<p class="value"><a href="#">2<span>0</span></a></p>
+							<p class="value"><a href="#">1.5<span>1</span></a></p>
+							<p class="value"><a href="#">1<span>2</span></a></p>
+							<p class="value"><a href="#">0.75<span>3</span></a></p>
+							<p class="value"><a href="#">0.5<span>4</span></a></p>
+							<p class="value"><a href="#">0.3<span>5</span></a></p>
+							<p class="value"><a href="#">0.25<span>6</span></a></p>
 						</div>
 						
 						<div class="slider">
-							<div class="sliderInner">
-								<div class="sliderHandle"></div>
-							</div>
+							<div class="sliderInner"></div>
+							<div class="sliderHandle"></div>
 						</div>	
 					</div>
 					
