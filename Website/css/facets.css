@@ -7,6 +7,13 @@ div#facetControlMyStyle {
 	border: 1px solid #EEE;
 	background: #f5f5f5;
 	padding: 15px;
+	position: relative;
+}
+
+div#facetControlMyStyle p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 div#facetControlMyStyle div.labels {
@@ -64,6 +71,13 @@ div#facetControlPrice {
 	border: 1px solid #EEE;
 	background: #f5f5f5;
 	padding: 15px;
+	position: relative;
+}
+
+div#facetControlPrice p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 div#facetControlPrice div.slider {
@@ -122,12 +136,27 @@ div#facetControlCarat {
 	background: #f5f5f5;
 	padding: 15px;
 	overflow: hidden;
+	position: relative;
+}
+
+div#facetControlCarat p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 div#facetControlCarat div.labels {
 	float: left;
 	width: 100px;
 	margin-right: 25px;
+}
+
+div#facetControlCarat div.labels p {
+	margin-bottom: 24px;
+}
+
+div#facetControlCarat div.labels p span {
+	display: none;
 }
 
 div#facetControlCarat div.slider {
@@ -142,6 +171,8 @@ div#facetControlCarat div.sliderInner {
 	width: 19px;
 	height: 0px;
 	position: absolute;
+	bottom: 0px;
+	left: 0px;
 	background-color: #898F2C;
 }
 
