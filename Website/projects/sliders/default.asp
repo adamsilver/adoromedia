@@ -16,6 +16,9 @@
 		<script type="text/javascript" src="../../js/JQuery/jquery.ui.all.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
+				
+				console.log("hello");
+				
 				if(typeof EJ !== "object") EJ = {};
 				
 				EJ.FacetControlMyStyle = new (function(){
