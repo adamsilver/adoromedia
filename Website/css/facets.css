@@ -1,0 +1,124 @@
+/********************************************************
+ * Facet control 1: my style
+ */
+
+div#facetControlMyStyle {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+}
+
+div#facetControlMyStyle div.labels {
+	overflow: hidden;
+	width: 232px;
+}
+
+div#facetControlMyStyle div.labels p {
+	float: left;
+	width: 116px;
+}
+
+div#facetControlMyStyle div.labels p.sleek {
+
+}
+
+div#facetControlMyStyle div.labels p.dazzling {
+	text-align: right;
+}
+
+div#facetControlMyStyle div.labels p span {
+	display: block;
+}
+
+div#facetControlMyStyle div.slider {
+	width: 232px;
+	height: 28px;
+	position: relative;
+	background-color: #CCC;
+	margin-bottom: 5px;
+}		
+
+div#facetControlMyStyle div.sliderInner {
+	width: 0px;
+	height: 28px;
+	position: absolute;
+	background-color: #898F2C;
+}		
+
+div#facetControlMyStyle div.sliderHandle {
+	position: absolute;
+	top: -3px;
+	left: 0px;
+	width: 8px;
+	height: 36px;
+	background: url(../img/facets/handle1.gif) no-repeat;
+}
+
+/********************************************************
+ * Facet control 2: my style
+ */
+
+div#facetControlPrice {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+}
+
+div#facetControlPrice div.slider {
+	width: 176px;
+	height: 19px;
+	position: relative;
+	background-color: #CCCCCC;
+	margin-bottom: 5px;
+}		
+
+div#facetControlPrice div.sliderInner {
+	width: 0px;
+	height: 19px;
+	position: absolute;
+	background-color: #898F2C;
+}
+
+div#facetControlPrice div.sliderHandle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 8px;
+	height: 19px;
+	background: url(../img/facets/handle2.gif) no-repeat;	
+}
+
+div#facetControlPrice div.labels {
+	overflow: hidden;
+	width: 176px;
+}
+
+div#facetControlPrice div.labels p {
+	float: left;
+	width: 88px;
+}
+
+div#facetControlPrice div.labels p.less {
+
+}
+
+div#facetControlPrice div.labels p.more {
+	text-align: right;
+}
+
+div#facetControlPrice div.labels p span {
+	display: block;
+}
+
+/********************************************************
+ * Facet control 3: carat weight
+ */
+
+div#facetControlCarat {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+}
