@@ -109,6 +109,51 @@
 						$(sliderInner).css("width", width);
 					}					
 				});
+				
+				EJ.FacetControlCarat = new (function(){
+					var container = document.getElementById("facetControlCarat");
+					var slider = $(container).find("div.slider")[0] || null;
+					var sliderInner = $(container).find("div.sliderInner")[0] || null;
+					
+					if(!container || !slider || !sliderInner) return;
+					
+					var config = {
+						sliderHandleClass: "sliderHandle",
+						sliderMaxValue: 2000,
+						sliderMaxWidth: 250
+					}
+					
+					var state = {
+						currentValue: 0
+					}
+					
+					$(slider).slider( { 
+						handle: "."+config.sliderHandleClass,
+						min: 0, 
+						max: config.sliderMaxValue,
+						startValue: state.currentValue,
+						steps: 7,
+						slide: function(e, ui){
+							setCurrentValue(ui.value);		
+							setBackgroundHeight();	
+						},
+						change: function(e, ui) {
+							//alert("fire request to server now");
+						}
+					});			
+					
+					setBackgroundHeight();
+					
+					function setCurrentValue(newValue) {
+						state.currentValue = newValue;
+					}
+					
+					function setBackgroundHeight() {
+						var height = Math.ceil((config.sliderMaxWidth / config.sliderMaxValue) * state.currentValue) + "px";
+						$(sliderInner).css("height", height);
+					}					
+				});				
+				
 				/*
 				var HorizontalControl = new (function(){
 					var slider1Container = $("#sliderControl01");
@@ -138,7 +183,7 @@
 						return false;
 					});
 				});*/				
-				
+				/*
 				var VerticalControl = new (function(){
 					var slider2Container = $("#sliderControl02");
 					var slider2Slider = $(slider2Container).find("div.slider");
@@ -165,7 +210,7 @@
 						$(slider2Slider).slider("moveTo", num);
 						return false;
 					});					
-				});				
+				});*/				
 				
 				
 			});
@@ -260,7 +305,7 @@
 				margin-right: 6px;
 			}*/
 			
-			
+			/*
 			div#sliderControl02 {
 				overflow: hidden;
 			}
@@ -308,7 +353,7 @@
 			div#sliderControl02 div.values ul li {
 				margin-bottom: 6px;
 			}
-			
+			*/
 																			
 		</style>
 	</head>
@@ -394,6 +439,7 @@
 					</div>
 					-->
 					
+					<!--
 					<h2>Vertical control</h2>
 					
 					<div id="sliderControl02">
@@ -418,7 +464,7 @@
 							</ul>
 						</div>
 					</div>					
-					
+					-->
 					
 					
 				</div>
