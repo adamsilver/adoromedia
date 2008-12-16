@@ -136,6 +136,8 @@ Adoro.Carousel = function(container, options) {
 		$(ul).css({"width": getLisWidth(lis) + "px"});
 	}
 	
+	var indicators = [];
+	
 	// add indicator control
 	if(config.hasIndicator) {
 		var indicatorContainer = $('<div></div>')[0];
@@ -143,28 +145,59 @@ Adoro.Carousel = function(container, options) {
 		config.indicatorAppend.appendChild(indicatorContainer);
 		var indicatorLis = getLis().reverse();
 		var indicatorItem = null;
+		var indicator;
 		for(var i = 0; i<indicatorLis.length; i++) {
 			
 			// we only want to do this for each scrollCount ie 1,2,3 or 1,3,5 or 1,4,7,10
 			
-			//if(i % config.scrollCount > 0) continue;
+			if(i % config.scrollCount > 0) continue;
 			
+			// scrollCount = 3
+			
+			//0 // nan 	/ 0	// HERE
+			//1 // 0	/ 1
+			//2 // 1	/ 2
+			//3 // 0	/ 0 // HERE 
+			//4 // 3	/ 1	
+			//5 // 3	/ 2
+			//6 // 3	/ 0	// HERE 
+			
+			//console.log("-------");
+			//console.log(i)
+			//console.log(i % config.scrollCount);
 			
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
 			indicatorItem.innerHTML = config.indicatorItemHTML+i;
-			
-			(function(i){
-				$(indicatorItem).bind("click", function(){
-					var move = i - state.currentIndex;
-					moveBy(move);
-					return false;
-				});
-			})(i);
-
+			indicator = new Indicator(indicatorItem, i);
+			indicators.push(indicator);
 			indicatorContainer.appendChild(indicatorItem);
 		}
 	}
+	
+	
+	function Indicator(indicator, value){
+		this.value = value;
+		
+		$(indicator).bind("click", indicator_onClick)
+		function indicator_onClick(){
+			moveBy(value - state.currentIndex);
+			return false;
+		}
+		
+		this.setSelected = setSelected;
+		function setSelected() {
+			$(indicator).addClass(config.inicatorItemSelectedClass);
+		}
+		
+		this.setUnselected = setUnselected;
+		function setUnselected() {
+			$(indicator).removeClass(config.inicatorItemSelectedClass);
+		}
+	}
+	
+	//console.log(indicators);
+	
 	
 	// add previous button
 	if(config.hasPreviousButton) {
@@ -290,7 +323,8 @@ Adoro.Carousel = function(container, options) {
 	 * can be made more efficient
 	 * @param {Number} move Amount of list items to move backwards by
 	 */
-	function goBackwards(move) {
+	function goBackwards(move) {		
+		
 		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
 		
 		// at the beginning so don't go further back
@@ -338,6 +372,21 @@ Adoro.Carousel = function(container, options) {
 	 * @param {Number} move Amount of list items to move forwards by
 	 */
 	function goForwards(move) {
+		// lis.length = 7
+		// current = 6
+		// move +3
+		
+		//var testval =state.currentIndex + move - getLis().length-1;
+		//console.log(state.currentIndex + move);
+		//console.log(testval);
+		//console.log(testval % config.scrollCount);
+		
+		
+		// and indicators are showing????
+		//if(state.currentIndex + move > getLis().length) {
+		//	move = (state.currentIndex + move) - getLis().length-1;
+		//}		
+		
 		var	lisToManipulate = getLis(0, move).reverse();
 		
 		// we are at the end, so don't go further forward
@@ -378,12 +427,15 @@ Adoro.Carousel = function(container, options) {
 		}	
 	}
 	
-	function setIndicatorSelectedState() {
-		var anchors = $(indicatorContainer).find("a");
-		$(anchors).removeClass(config.inicatorItemSelectedClass);
-		var a = $(anchors).get(state.currentIndex);
-		$(a).addClass(config.inicatorItemSelectedClass);
-		
+	function setIndicatorSelectedState() {		
+		for(var i = 0; i < indicators.length; i++) {
+			if(indicators[i].value === state.currentIndex) {
+				indicators[i].setSelected();
+			}
+			else {
+				indicators[i].setUnselected();
+			}
+		}
 	}
 	
 }
