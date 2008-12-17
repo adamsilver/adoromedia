@@ -324,6 +324,10 @@ Adoro.Carousel = function(container, options) {
 	 * @param {Number} move Amount of list items to move backwards by
 	 */
 	function goBackwards(move) {		
+		if(state.currentIndex + move < 0) {
+			var newState = lis.length + move + state.currentIndex;
+			move = (lis.length-1)-newState + move;
+		}
 		
 		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
 		
@@ -372,20 +376,10 @@ Adoro.Carousel = function(container, options) {
 	 * @param {Number} move Amount of list items to move forwards by
 	 */
 	function goForwards(move) {
-		// lis.length = 7
-		// current = 6
-		// move +3
-		
-		//var testval =state.currentIndex + move - getLis().length-1;
-		//console.log(state.currentIndex + move);
-		//console.log(testval);
-		//console.log(testval % config.scrollCount);
-		
-		
-		// and indicators are showing????
-		//if(state.currentIndex + move > getLis().length) {
-		//	move = (state.currentIndex + move) - getLis().length-1;
-		//}		
+		if(state.currentIndex+move > lis.length-1) {
+			var newState = state.currentIndex - lis.length + move;
+			move = move - (newState % config.scrollCount);
+		}
 		
 		var	lisToManipulate = getLis(0, move).reverse();
 		
