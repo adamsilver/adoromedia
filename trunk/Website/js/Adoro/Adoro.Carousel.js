@@ -151,7 +151,7 @@ Adoro.Carousel = function(container, options) {
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
 			indicatorItem.innerHTML = config.indicatorItemHTML;
-			indicatorItem.title = i;
+			indicatorItem.title = i+1;
 			indicator = new Indicator(indicatorItem, i);
 			indicators.push(indicator);
 			indicatorContainer.appendChild(indicatorItem);
