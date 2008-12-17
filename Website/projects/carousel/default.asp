@@ -31,7 +31,7 @@
 				
 				var node2 = $("div.carousel")[1];
 				new Adoro.Carousel(node2, {
-					scrollCount: 4, 
+					scrollCount: 1, 
 					animationSpeed: 1100, 
 					animationEasing: "easeInBounce",
 					nextButtonHTML: "Forwards", 
