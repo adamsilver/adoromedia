@@ -18,8 +18,6 @@
 		<script type="text/javascript">
 			$(document).ready(function(){ 
 				
-				console.log(">>>1");
-				
 				var node1 = $("div.carousel")[0];
 				new Adoro.Carousel(node1, {
 					scrollCount: 1,
@@ -31,11 +29,9 @@
 					isCircular: false
 				});
 				
-				console.log(">>>2");
-				
 				var node2 = $("div.carousel")[1];
 				new Adoro.Carousel(node2, {
-					scrollCount: 1, 
+					scrollCount: 3, 
 					animationSpeed: 1100, 
 					animationEasing: "easeInBounce",
 					nextButtonHTML: "Forwards", 
@@ -48,8 +44,6 @@
 					
 				});
 				
-				console.log(">>>3");
-				
 				var node3 = $("div.carousel")[2];
 				new Adoro.Carousel(node3, {
 					scrollCount: 2,
@@ -57,8 +51,6 @@
 					hasStopButton: true,
 					automaticDelay: 1000
 				});
-				
-				console.log(">>>4");
 				
 				var node4 = $("div.carousel")[3];
 				new Adoro.Carousel(node4, {
