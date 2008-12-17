@@ -148,23 +148,8 @@ Adoro.Carousel = function(container, options) {
 		var indicator;
 		for(var i = 0; i<indicatorLis.length; i++) {
 			
-			// we only want to do this for each scrollCount ie 1,2,3 or 1,3,5 or 1,4,7,10
-			
 			if(i % config.scrollCount > 0) continue;
 			
-			// scrollCount = 3
-			
-			//0 // nan 	/ 0	// HERE
-			//1 // 0	/ 1
-			//2 // 1	/ 2
-			//3 // 0	/ 0 // HERE 
-			//4 // 3	/ 1	
-			//5 // 3	/ 2
-			//6 // 3	/ 0	// HERE 
-			
-			//console.log("-------");
-			//console.log(i)
-			//console.log(i % config.scrollCount);
 			
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
@@ -326,7 +311,11 @@ Adoro.Carousel = function(container, options) {
 	function goBackwards(move) {		
 		if(state.currentIndex + move < 0) {
 			var newState = lis.length + move + state.currentIndex;
-			move = (lis.length-1)-newState + move;
+			//console.log(newState);
+			//console.log(lis.length-1);
+			console.log(move);
+			move =  move + ((lis.length-1)-newState-1);
+			console.log(move);
 		}
 		
 		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
