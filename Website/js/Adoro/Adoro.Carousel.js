@@ -38,6 +38,8 @@ Adoro.Carousel = function(container, options) {
 	
 	var state = {animating: false, currentIndex: 0};
 	var config = {
+		
+		// general
 		animate: false,
 		animationSpeed: 300,
 		automatic: false,
@@ -45,13 +47,14 @@ Adoro.Carousel = function(container, options) {
 		animationEasing: "linear",
 		scrollCount: 3,
 		isCircular: true,
+		revealAmount: 0,
 		
-		automaticDirection: "forwards", // STILL TO DO
-		mouseWheel: true, // STILL TO DO
-		vertical: false, // STILL TO DO
-		revealAmount: 150, // STILL TO DO
-		beforeStartCallback: null, // STILL TO DO
-		afterEndCallback: null, // STILL TO DO
+		// general TO DO
+		automaticDirection: "forwards",
+		mouseWheel: true,
+		vertical: false,
+		beforeStartCallback: null,
+		afterEndCallback: null,
 		
 		// indicator - STILL TO DO
 		hasIndicator: false,
@@ -99,6 +102,8 @@ Adoro.Carousel = function(container, options) {
 		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
 		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
 		config.isCircular = (typeof options.isCircular === "boolean") ? options.isCircular : config.isCircular;
+		config.revealAmount = (typeof options.revealAmount === "number") ? options.revealAmount : config.revealAmount;
+		
 		
 		// indicator
 		config.hasIndicator = (typeof options.hasIndicator === "boolean") ? options.hasIndicator : config.hasIndicator;
@@ -142,6 +147,7 @@ Adoro.Carousel = function(container, options) {
 	else {
 		$(ul).find("li").css({"display": "inline","float": "left"});
 		$(ul).css({"width": getLisWidth(lis) + "px"});
+		$(ul).css({"left": config.revealAmount + "px"});
 	}
 	
 	var indicators = [];
@@ -330,7 +336,7 @@ Adoro.Carousel = function(container, options) {
 			$(ul).css("left", -getLisWidth(lisToManipulate));
 			$(ul).prepend(lisToManipulate);
 			state.animating = true;
-			$(ul).animate({"left": "0px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
+			$(ul).animate({"left": config.revealAmount+"px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
 				state.animating = false;
 							
 				if(state.currentIndex + move < 0) {
@@ -382,9 +388,11 @@ Adoro.Carousel = function(container, options) {
 		// animate
 		if(config.animate) {
 			state.animating = true;
-			$(ul).animate({left: -getLisWidth(lisToManipulate)}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
+			
+			
+			$(ul).animate({left: -getLisWidth(lisToManipulate)+config.revealAmount+"px"}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
 				$(ul).append(lisToManipulate);
-				$(ul).css({left: "0px"});
+				$(ul).css({left: config.revealAmount+"px"});
 				state.animating = false;
 				
 				if(state.currentIndex+move > lis.length-1) {
