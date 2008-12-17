@@ -66,7 +66,8 @@
 					scrollCount: 3,
 					animate: true,
 					animationEasing: "easeInOutQuad",
-					hasIndicator: true
+					hasIndicator: true,
+					revealAmount: -65
 				});
 			});
 		</script>
