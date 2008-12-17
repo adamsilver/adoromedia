@@ -23,7 +23,7 @@
 					var container = document.getElementById("facetControlMyStyle");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
-					$(container).append('<p class="indicator">Zoop</p>')
+					$(container).append('<p class="indicator"></p>')
 					var indicator = $(container).find("p.indicator")[0] || null;						
 					
 					if(!container || !slider || !sliderInner) return;
@@ -69,7 +69,7 @@
 					var container = document.getElementById("facetControlPrice");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
-					$(container).append('<p class="indicator">Zoop</p>')
+					$(container).append('<p class="indicator"></p>')
 					var indicator = $(container).find("p.indicator")[0] || null;					
 					
 					if(!container || !slider || !sliderInner) return;
@@ -115,7 +115,7 @@
 					var container = document.getElementById("facetControlCarat");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
-					$(container).append('<p class="indicator">Zoop</p>');
+					$(container).append('<p class="indicator"></p>');
 					var indicator = $(container).find("p.indicator")[0] || null;
 					
 					
@@ -173,7 +173,7 @@
 				
 				EJ.FacetControlMaterial = new (function(){
 					var container = document.getElementById("facetControlMaterial");
-					$(container).append('<p class="indicator">Zoop</p>');
+					$(container).append('<p class="indicator"></p>');
 					var indicator = $(container).find("p.indicator")[0] || null;
 					
 					var state = {currentSelection: null};
@@ -199,6 +199,8 @@
 					function updateStyling() {
 						$(container).find("a").removeClass("selected");
 					}
+					
+					updateIndicator();
 					
 				});					
 				
