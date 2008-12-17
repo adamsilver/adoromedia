@@ -29,22 +29,31 @@
 					isCircular: false
 				});
 				
-				var node2 = $("div.carousel")[1];
+				var node2 = document.getElementById("carousel02");
+				
+				$(node2).prepend('<div class="controls"></div>');
+				
+				var controls = $(node2).find("div.controls")[0];
+				$(controls).append('<p class="goTo">Go to...</p>');
 				new Adoro.Carousel(node2, {
-					scrollCount: 1, 
+					scrollCount: 3, 
 					animationSpeed: 1100, 
 					animationEasing: "easeInBounce",
-					nextButtonHTML: "Forwards", 
-					previousButtonHTML: "Backwards",
+					nextButtonHTML: "",
+					nextButtonAppend: controls,
+					previousButtonHTML: "",
+					previousButtonAppend: controls,
 					animate: true,
 					automatic: false,
 					automaticDelay: 100,
-					hasStartButton: true,
-					hasStopButton: true
-					
+					hasIndicator: true,
+					indicatorAppend: controls,
+					indicatorContainerClass: "myIndicators",
+					indicatorItemClass: "item",
+					indicatorItemHTML: ""
 				});
 				
-				var node3 = $("div.carousel")[2];
+				var node3 = $("div.carousel")[1];
 				new Adoro.Carousel(node3, {
 					scrollCount: 1,
 					hasStartButton: true,
@@ -52,11 +61,12 @@
 					automaticDelay: 1000
 				});
 				
-				var node4 = $("div.carousel")[3];
+				var node4 = $("div.carousel")[2];
 				new Adoro.Carousel(node4, {
 					scrollCount: 3,
 					animate: true,
-					animationEasing: "easeInOutQuad"
+					animationEasing: "easeInOutQuad",
+					hasIndicator: true
 				});
 			});
 		</script>
@@ -95,7 +105,7 @@
 					
 					<h3>Varying content, heights and widths with custom button html, with custom bounce animation</h3>
 					
-					<div class="carousel">
+					<div id="carousel02">
 						<ul>
 							<li><p>Varying content here 1</p></li>
 							<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>

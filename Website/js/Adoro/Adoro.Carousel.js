@@ -54,9 +54,9 @@ Adoro.Carousel = function(container, options) {
 		afterEndCallback: null, // STILL TO DO
 		
 		// indicator - STILL TO DO
-		hasIndicator: true,
+		hasIndicator: false,
 		indicatorContainerClass: "indicatorContainer",
-		indicatorItemHTML: '<span class="indicator">Go </span>',
+		indicatorItemHTML: '<span class="indicator">Go</span>',
 		indicatorItemClass: "go",
 		inicatorItemSelectedClass: "selected",
 		indicatorAppend: container,
@@ -99,6 +99,14 @@ Adoro.Carousel = function(container, options) {
 		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
 		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
 		config.isCircular = (typeof options.isCircular === "boolean") ? options.isCircular : config.isCircular;
+		
+		// indicator
+		config.hasIndicator = (typeof options.hasIndicator === "boolean") ? options.hasIndicator : config.hasIndicator;
+		config.indicatorContainerClass = (typeof options.indicatorContainerClass === "string") ? options.indicatorContainerClass : config.indicatorContainerClass;
+		config.indicatorItemHTML = (typeof options.indicatorItemHTML === "string") ? options.indicatorItemHTML : config.indicatorItemHTML;
+		config.indicatorItemClass = (typeof options.indicatorItemClass === "string") ? options.indicatorItemClass : config.indicatorItemClass;
+		config.inicatorItemSelectedClass = (typeof options.inicatorItemSelectedClass === "string") ? options.inicatorItemSelectedClass : config.inicatorItemSelectedClass;
+		config.indicatorAppend = options.indicatorAppend || config.indicatorAppend;	
 		
 		// previous button
 		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
