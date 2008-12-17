@@ -26,7 +26,8 @@
 					animate: true,
 					hasStartButton: true,
 					hasStopButton: true,
-					isCircular: false
+					isCircular: false,
+					revealAmount: -50
 				});
 				
 				var node2 = document.getElementById("carousel02");
