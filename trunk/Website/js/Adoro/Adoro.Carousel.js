@@ -150,7 +150,8 @@ Adoro.Carousel = function(container, options) {
 			if(i % config.scrollCount > 0) continue;
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
-			indicatorItem.innerHTML = config.indicatorItemHTML+i;
+			indicatorItem.innerHTML = config.indicatorItemHTML;
+			indicatorItem.title = i;
 			indicator = new Indicator(indicatorItem, i);
 			indicators.push(indicator);
 			indicatorContainer.appendChild(indicatorItem);
@@ -176,8 +177,6 @@ Adoro.Carousel = function(container, options) {
 			$(indicator).removeClass(config.inicatorItemSelectedClass);
 		}
 	}
-	
-	//console.log(indicators);
 	
 	
 	// add previous button
