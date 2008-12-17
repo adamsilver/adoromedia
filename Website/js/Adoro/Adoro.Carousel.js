@@ -87,7 +87,7 @@ Adoro.Carousel = function(container, options) {
 		nextButtonHTML: '<span>Next</span>',
 		nextButtonClass: "next",
 		nextButtonDisabledClass: "nextDisabled", // to do
-		nextButtonAppend: container		
+		nextButtonAppend: container
 	}
 	
 	if(typeof options === "object") {
