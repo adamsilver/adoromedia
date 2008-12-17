@@ -226,3 +226,46 @@ div#facetControlMaterial ul li a:hover {
 	border: 1px solid #333;
 	text-decoration: none;
 }
+
+/********************************************************
+ * Facet control 5: stone shape
+ */
+
+div#facetControlShape {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+	overflow: hidden;
+	position: relative;
+}
+
+div#facetControlShape p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div#facetControlShape ul {
+	list-style: none;
+}
+
+div#facetControlShape ul li {
+	font-size: 1.2em;
+	float: left;
+	margin-right: 5px;
+}
+
+div#facetControlShape ul li a {
+	border: 1px solid #f5f5f5;
+	background: transparent;
+	color: #4D595F;
+	display: block;
+	padding: 5px;
+}
+
+div#facetControlShape ul li a.selected,
+div#facetControlShape ul li a:hover {
+	border: 1px solid #333;
+	text-decoration: none;
+}

@@ -204,6 +204,38 @@
 					
 				});					
 				
+				EJ.FacetControlShape = new (function(){
+					var container = document.getElementById("facetControlShape");
+					$(container).append('<p class="indicator"></p>');
+					var indicator = $(container).find("p.indicator")[0] || null;
+					
+					var state = {currentSelection: null};
+					
+					$(container).find("a").bind("click", material_onClick);
+					
+					function material_onClick() {
+						setCurrentSelection(this.innerHTML);
+						updateIndicator();
+						updateStyling();
+						$(this).addClass("selected");
+						return false;
+					}
+					
+					function setCurrentSelection(value) {
+						state.currentSelection = value;
+					}
+					
+					function updateIndicator() {
+						indicator.innerHTML = state.currentSelection;
+					}
+					
+					function updateStyling() {
+						$(container).find("a").removeClass("selected");
+					}
+					
+					updateIndicator();
+					
+				});					
 						
 				
 				/*
@@ -474,6 +506,18 @@
 							<li><a href="#">Platinum</a></li>
 						</ul>
 					</div>
+					
+					<div id="facetControlShape">
+						<h2>Stone shape</h2>
+						<ul>
+							<li><a href="#">Brilliant</a></li>
+							<li><a href="#">Princess</a></li>
+							<li><a href="#">Oval</a></li>
+							<li><a href="#">Octagon</a></li>
+							<li><a href="#">Emerald</a></li>
+							<li><a href="#">Baguette</a></li>
+						</ul>
+					</div>					
 					
 					
 					
