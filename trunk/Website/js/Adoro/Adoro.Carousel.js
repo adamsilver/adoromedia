@@ -147,10 +147,7 @@ Adoro.Carousel = function(container, options) {
 		var indicatorItem = null;
 		var indicator;
 		for(var i = 0; i<indicatorLis.length; i++) {
-			
 			if(i % config.scrollCount > 0) continue;
-			
-			
 			indicatorItem = $(Adoro.Carousel.button).clone()[0];
 			indicatorItem.className = config.indicatorItemClass;
 			indicatorItem.innerHTML = config.indicatorItemHTML+i;
@@ -159,7 +156,6 @@ Adoro.Carousel = function(container, options) {
 			indicatorContainer.appendChild(indicatorItem);
 		}
 	}
-	
 	
 	function Indicator(indicator, value){
 		this.value = value;
@@ -311,11 +307,10 @@ Adoro.Carousel = function(container, options) {
 	function goBackwards(move) {		
 		if(state.currentIndex + move < 0) {
 			var newState = lis.length + move + state.currentIndex;
-			//console.log(newState);
-			//console.log(lis.length-1);
-			console.log(move);
-			move =  move + ((lis.length-1)-newState-1);
-			console.log(move);
+			var remainder = newState % config.scrollCount;
+			if (remainder !== 0) {
+				move = move + (config.scrollCount - remainder);
+			}
 		}
 		
 		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
@@ -367,7 +362,10 @@ Adoro.Carousel = function(container, options) {
 	function goForwards(move) {
 		if(state.currentIndex+move > lis.length-1) {
 			var newState = state.currentIndex - lis.length + move;
-			move = move - (newState % config.scrollCount);
+			var remainder = newState % config.scrollCount;
+			if (remainder !== 0) {
+				move = move - remainder;
+			}
 		}
 		
 		var	lisToManipulate = getLis(0, move).reverse();
