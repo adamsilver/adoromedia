@@ -16,9 +16,7 @@
 		<script type="text/javascript" src="../../js/JQuery/jquery.ui.all.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				
-				console.log("hello");
-				
+								
 				if(typeof EJ !== "object") EJ = {};
 				
 				EJ.FacetControlMyStyle = new (function(){
@@ -65,11 +63,7 @@
 						var width = Math.ceil((config.sliderMaxWidth / config.sliderMaxValue) * state.currentValue) + "px";
 						$(sliderInner).css("width", width);
 					}					
-				});
-				
-				
-				
-				
+				});			
 				
 				EJ.FacetControlPrice = new (function(){
 					var container = document.getElementById("facetControlPrice");
@@ -121,7 +115,7 @@
 					var container = document.getElementById("facetControlCarat");
 					var slider = $(container).find("div.slider")[0] || null;
 					var sliderInner = $(container).find("div.sliderInner")[0] || null;
-					$(container).append('<p class="indicator">Zoop</p>')
+					$(container).append('<p class="indicator">Zoop</p>');
 					var indicator = $(container).find("p.indicator")[0] || null;
 					
 					
@@ -175,7 +169,40 @@
 						var height = Math.ceil((config.sliderMaxWidth / config.sliderMaxValue) * state.currentValue) + "px";
 						$(sliderInner).css("height", height);
 					}		
-				});				
+				});		
+				
+				EJ.FacetControlMaterial = new (function(){
+					var container = document.getElementById("facetControlMaterial");
+					$(container).append('<p class="indicator">Zoop</p>');
+					var indicator = $(container).find("p.indicator")[0] || null;
+					
+					var state = {currentSelection: null};
+					
+					$(container).find("a").bind("click", material_onClick);
+					
+					function material_onClick() {
+						setCurrentSelection(this.innerHTML);
+						updateIndicator();
+						updateStyling();
+						$(this).addClass("selected");
+						return false;
+					}
+					
+					function setCurrentSelection(value) {
+						state.currentSelection = value;
+					}
+					
+					function updateIndicator() {
+						indicator.innerHTML = state.currentSelection;
+					}
+					
+					function updateStyling() {
+						$(container).find("a").removeClass("selected");
+					}
+					
+				});					
+				
+						
 				
 				/*
 				var HorizontalControl = new (function(){
@@ -436,6 +463,16 @@
 							<div class="sliderHandle"></div>
 						</div>	
 					</div>
+					
+					<div id="facetControlMaterial">
+						<h2>Ring material</h2>
+						<ul>
+							<li><a href="#">Gold</a></li>
+							<li><a href="#">White Gold</a></li>
+							<li><a href="#">Platinum</a></li>
+						</ul>
+					</div>
+					
 					
 					
 					<!--
