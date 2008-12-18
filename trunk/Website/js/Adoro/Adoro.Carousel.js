@@ -241,22 +241,27 @@ Adoro.Carousel = function(container, options) {
 		config.startButtonAppend.appendChild(startButton);
 	}
 	
+	var timer = null;
+		
 	function stop() {
 		config.automatic = false;
 		$(startButton).addClass(config.startButtonDisabledClass);
 		$(stopButton).addClass(config.stopButtonDisabledClass);
+		clearTimeout(timer);
 	}
 	
 	if(config.automatic) {
 		play();
 	}
 	
+
+	
 	function play() {
 		config.automatic = true;
 		$(startButton).removeClass(config.startButtonDisabledClass);
 		$(stopButton).removeClass(config.stopButtonDisabledClass);
 		
-		window.setTimeout(function(){
+		timer = window.setTimeout(function(){
 			moveBy(config.scrollCount);
 		},config.automaticDelay);
 	}
