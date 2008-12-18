@@ -268,23 +268,29 @@ div#carousel04 a.previous {
 }
 
 div#carousel04 a.stop {
-	background:transparent url(../img/action_stop.gif) no-repeat 0px 1px;
-	height:16px;
-	width:16px;
+	background:transparent url(../img/action_stop.gif) no-repeat 1px 1px;
+	height:17px;
+	width:17px;
 	float: left;
 	margin-right: 5px;
+	border: 1px solid #ffffff;
+}
+
+div#carousel04 a.stopDisabled {
+	border: 1px solid #FF0000;
 }
 
 div#carousel04 a.start {
-	background:transparent url(../img/action_go.gif) no-repeat 0px 1px;
-	height:16px;
-	width:16px;
+	background:transparent url(../img/action_go.gif) no-repeat 1px 1px;
+	height:17px;
+	width:17px;
 	float: left;
 	margin-right: 5px;
+	border: 1px solid #898F2C;
 }
 
-div#carousel04 a.startActive {
-	border: 1px solid #333;
+div#carousel04 a.startDisabled {
+	border: 1px solid #ffffff;
 }
 
 div#carousel04 div.myIndicators a.item {
