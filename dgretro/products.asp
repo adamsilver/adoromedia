@@ -14,7 +14,7 @@
 		<!--#include file="inc/HeadCSS.asp"-->
 		<!--#include file="inc/HeadCSSIE.asp"-->
 		<!--#include file="inc/HeadJS.asp"-->
-		<script type="text/javascript" src="<%=Site.URL%>/js/Adoro/Adoro.Accordian.js"></script>
+		<script type="text/javascript" src="<%=Site.URL%>/js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript" src="<%=Site.URL%>/js/DG/DG.Accordian.js"></script>
 		<script type="text/javascript" src="<%=Site.URL%>/js/DG/DG.LightBox.js"></script>
 	</head>
@@ -37,10 +37,10 @@
 							<p>Please click the headings below to view the products inside. Click the product photo to view a higher resolution.</p>
 							
 							<div class="accordian">
-								<div class="header <%=(productID == "ceramics")? "headerOn": ""%>">
-									<h2>Ceramics</h2>
+								<div class="header">
+									<h2><a href="#panel01" class="<%=(productID == "ceramics")? "selected": ""%>">Ceramics</a></h2>
 								</div>
-								<div class="panel">
+								<div class="panel" id="panel01">
 									<div class="inner">
 										<ul class="products">
 											<li><a class="lightbox" rel="ceramics" title="" href="img/products/ceramics/1.jpg"><img src="img/products/ceramics/1s.jpg" width="160" height="160" alt=" " /></a></li>
@@ -53,10 +53,10 @@
 									</div>
 								</div>
 			
-								<div class="header <%=(productID == "glass")? "headerOn": ""%>">
-									<h2>Glass</h2>
+								<div class="header">
+									<h2><a href="#panel02" class="<%=(productID == "glass")? "selected": ""%>">Glass</a></h2>
 								</div>
-								<div class="panel">
+								<div class="panel" id="panel02">
 									<div class="inner">
 										<ul class="products">
 											<li><a class="lightbox" rel="glass" title="" href="img/products/glass/1.jpg"><img src="img/products/glass/1s.jpg" width="160" height="160" alt=" " /></a></li>
@@ -69,10 +69,10 @@
 									</div>
 								</div>
 			
-								<div class="header <%=(productID == "jewellery")? "headerOn": ""%>">
-									<h2>Costume jewellery</h2>
+								<div class="header">
+									<h2><a href="#panel03" class="<%=(productID == "jewellery")? "selected": ""%>">Costume jewellery</a></h2>
 								</div>
-								<div class="panel">
+								<div class="panel" id="panel03">
 									<div class="inner">
 										<ul class="products">
 											<li><a class="lightbox" rel="jewellery" title="" href="img/products/jewellery/1.jpg"><img src="img/products/jewellery/1s.jpg" width="160" height="160" alt=" " /></a></li>
@@ -85,10 +85,10 @@
 									</div>
 								</div>
 								
-								<div class="header <%=(productID == "prints")? "headerOn": ""%>">
-									<h2>Prints and paintings</h2>
+								<div class="header">
+									<h2><a href="#panel04" class="<%=(productID == "prints")? "selected": ""%>">Prints and paintings</a></h2>
 								</div>
-								<div class="panel">
+								<div class="panel" id="panel04">
 									<div class="inner">
 										<ul class="products">
 											<li><a class="lightbox" rel="paintings" title="" href="img/products/paintings/1.jpg"><img src="img/products/paintings/1s.jpg" width="160" height="160" alt=" " /></a></li>
@@ -100,10 +100,10 @@
 									</div>
 								</div>
 								
-								<div class="header <%=(productID == "tins")? "headerOn": ""%>">
-									<h2>Tins</h2>
+								<div class="header">
+									<h2><a href="#panel05" class="<%=(productID == "tins")? "selected": ""%>">Tins</a></h2>
 								</div>
-								<div class="panel">
+								<div class="panel" id="panel05">
 									<div class="inner">
 										<ul class="products">
 											<li><a class="lightbox" rel="tins" title="" href="img/products/tins/1.jpg"><img src="img/products/tins/1s.jpg" width="160" height="160" alt=" " /></a></li>
@@ -116,10 +116,10 @@
 									</div>
 								</div>
 								
-								<div class="header <%=(productID == "handbags")? "headerOn": ""%>">
-									<h2>Handbags</h2>
+								<div class="header">
+									<h2><a href="#panel06" class="<%=(productID == "handbags")? "selected": ""%>">Handbags</a></h2>
 								</div>
-								<div class="panel">
+								<div class="panel" id="panel06">
 									<div class="inner">
 										<p>Currently getting new stock</p>
 									</div>

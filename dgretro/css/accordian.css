@@ -10,8 +10,6 @@ div.accordian {
 
 div.accordian div.header {
 	margin-bottom: 1px;
-	padding: 10px;
-	cursor: pointer;
 	background-color: #444;
 }
 
@@ -21,7 +19,13 @@ div.accordian div.header h2 {
 	color: #ffffff;
 }
 
-div.accordian div.headerOn {
+div.accordian div.header h2 a {
+	color: #ffffff;
+	display: block;
+	padding: 10px;
+}
+
+div.accordian div.header h2 a.selected {
 	background-color: #999;
 }
 
