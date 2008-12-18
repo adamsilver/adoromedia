@@ -37,7 +37,6 @@ Adoro.Carousel = function(container, options) {
 	var lis = getLis();
 	var state = {animating: false, currentIndex: 0};
 	var config = {
-		
 		// general
 		animate: false,
 		animationSpeed: 300,
@@ -55,7 +54,7 @@ Adoro.Carousel = function(container, options) {
 		beforeStartCallback: null,
 		afterEndCallback: null,
 		
-		// indicator - STILL TO DO
+		// indicator
 		hasIndicator: false,
 		indicatorContainerClass: "indicatorContainer",
 		indicatorItemHTML: '<span class="indicator">Go</span>',
@@ -67,14 +66,14 @@ Adoro.Carousel = function(container, options) {
 		hasStartButton: false,
 		startButtonHTML: '<span>Start</span>',
 		startButtonClass: "start",
-		startButtonDisabledClass: "startDisabled", // to do
+		startButtonDisabledClass: "startDisabled",
 		startButtonAppend: container,
 		
-		// stop/pause button
+		// stop button
 		hasStopButton: false,
 		stopButtonHTML: '<span>Stop</span>',
 		stopButtonClass: "stop",
-		stopButtonDisabledClass: "stopDisabled", // to do
+		stopButtonDisabledClass: "stopDisabled",
 		stopButtonAppend: container,
 		
 		// previous button
