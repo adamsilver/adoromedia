@@ -93,7 +93,7 @@
 							<p>Simple, customisable and accessible tab navigation using the jQuery library.</p>
 						</li>
 						<li>
-							<h2><a href="<%=Adoro.URL%>projects/tooltip" <%if(Adoro.pageName === "tooltip"){%>class="selected"<%}%>>Tool tip</a></h2>
+							<h2><a href="<%=Adoro.URL%>projects/tooltip" <%if(Adoro.pageName === "tooltip"){%>class="selected"<%}%>>Tooltip</a></h2>
 							<p>Lightweight, simple and customisable tooltip effects using the jQuery library.</p>
 						</li>
 						<!-- popup script -->
