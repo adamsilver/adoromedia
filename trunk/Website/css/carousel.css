@@ -283,6 +283,10 @@ div#carousel04 a.start {
 	margin-right: 5px;
 }
 
+div#carousel04 a.startActive {
+	border: 1px solid #333;
+}
+
 div#carousel04 div.myIndicators a.item {
 	float: left;
 	width: 10px;

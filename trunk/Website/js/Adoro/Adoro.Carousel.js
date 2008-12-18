@@ -68,6 +68,7 @@ Adoro.Carousel = function(container, options) {
 		startButtonHTML: '<span>Start</span>',
 		startButtonClass: "start",
 		startButtonDisabledClass: "startDisabled", // to do
+		startButtonActiveClass: "startActive",
 		startButtonAppend: container,
 		
 		// stop/pause button
@@ -222,7 +223,7 @@ Adoro.Carousel = function(container, options) {
 		stopButton.innerHTML = config.stopButtonHTML;
 		stopButton.className = config.stopButtonClass;
 		$(stopButton).bind("click", function(){
-			config.automatic = false;
+			stop();
 			return false;
 		});
 		config.stopButtonAppend.appendChild(stopButton);
@@ -234,11 +235,15 @@ Adoro.Carousel = function(container, options) {
 		startButton.innerHTML = config.startButtonHTML;
 		startButton.className = config.startButtonClass;
 		$(startButton).bind("click", function(){
-			config.automatic = true;
 			play();
 			return false;
 		});
 		config.startButtonAppend.appendChild(startButton);
+	}
+	
+	function stop() {
+		config.automatic = false;
+		$(startButton).removeClass(config.startButtonActiveClass);
 	}
 	
 	if(config.automatic) {
@@ -246,6 +251,9 @@ Adoro.Carousel = function(container, options) {
 	}
 	
 	function play() {
+		config.automatic = true;
+		$(startButton).addClass(config.startButtonActiveClass);
+		
 		window.setTimeout(function(){
 			moveBy(config.scrollCount);
 		},config.automaticDelay);
