@@ -36,9 +36,9 @@
 				var controls = $(node2).find("div.controls")[0];
 				$(controls).append('<p class="goTo">Go to...</p>');
 				new Adoro.Carousel(node2, {
-					scrollCount: 3, 
+					scrollCount: 2, 
 					animationSpeed: 1100, 
-					animationEasing: "easeInBounce",
+					animationEasing: "easeInQuint",
 					nextButtonHTML: "",
 					nextButtonAppend: controls,
 					previousButtonHTML: "",
@@ -53,12 +53,16 @@
 					indicatorItemHTML: ""
 				});
 				
-				var node3 = $("div.carousel")[1];
+				var node3 = document.getElementById("carousel03");
 				new Adoro.Carousel(node3, {
 					scrollCount: 1,
 					hasStartButton: true,
 					hasStopButton: true,
-					automaticDelay: 1000
+					automaticDelay: 1000,
+					nextButtonHTML: "",
+					previousButtonHTML: "",
+					startButtonHTML:"",
+					stopButtonHTML: ""
 				});
 				
 				var node4 = document.getElementById("carousel04");
@@ -75,7 +79,11 @@
 					indicatorItemClass: "item",
 					indicatorItemHTML: "",
 					nextButtonHTML: "",
-					previousButtonHTML: ""
+					previousButtonHTML: "",
+					hasStartButton: true,
+					hasStopButton: true,
+					startButtonHTML: "",
+					stopButtonHTML:""
 				});
 			});
 		</script>
@@ -99,7 +107,7 @@
 					
 					<h2>Demo</h2>
 					
-					<h3>Non-circular, animated carousel, that can be automatic via "start"</h3>
+					<h3>Example 1</h3>
 					
 					<div class="carousel">
 						<ul>
@@ -112,7 +120,7 @@
 						</ul>
 					</div>
 					
-					<h3>Varying content, heights and widths with custom button html, with custom bounce animation</h3>
+					<h3>Example 2</h3>
 					
 					<div id="carousel02">
 						<ul>
@@ -130,9 +138,9 @@
 						</ul>
 					</div>		
 					
-					<h3>Basic non-animated, circular, carousel with stop and start buttons</h3>
+					<h3>Example 3</h3>
 					
-					<div class="carousel">
+					<div id="carousel03">
 						<ul>
 							<li><div>1</div></li>
 							<li><div>2</div></li>
@@ -150,7 +158,7 @@
 						</ul>
 					</div>						
 					
-					<h3>Simple animated circular carousel</h3>
+					<h3>Example 4</h3>
 					
 					<div id="carousel04">
 						<ul>
