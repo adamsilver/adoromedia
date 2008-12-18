@@ -38,7 +38,7 @@
 				new Adoro.Carousel(node2, {
 					scrollCount: 2, 
 					animationSpeed: 1100, 
-					animationEasing: "easeInQuint",
+					animationEasing: "swing",
 					nextButtonHTML: "",
 					nextButtonAppend: controls,
 					previousButtonHTML: "",
@@ -62,7 +62,8 @@
 					nextButtonHTML: "",
 					previousButtonHTML: "",
 					startButtonHTML:"",
-					stopButtonHTML: ""
+					stopButtonHTML: "",
+					revealAmount: -50
 				});
 				
 				var node4 = document.getElementById("carousel04");

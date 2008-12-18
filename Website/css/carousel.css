@@ -108,8 +108,8 @@ div#carousel02 div.controls div.myIndicators {
 
 div#carousel02 div.controls a.next {
 	background:transparent url(../img/action_forward.gif) no-repeat 0px 1px;
-	height:19px;
-	width:40px;
+	height:16px;
+	width:16px;
 	float: left;
 }
 
