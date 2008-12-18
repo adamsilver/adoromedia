@@ -5,8 +5,7 @@
 <!--#include file="inc/Site.asp"-->
 <% Site.pageName = "products"; %>
 <%
-	var productID = Request.QueryString("productID") || "ceramics";
-	Response.Write("undefined"==productID);
+	var productID = Request.QueryString("productID");
 %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -38,7 +37,7 @@
 							<p>Please click the headings below to view the products inside. Click the product photo to view a higher resolution.</p>
 							
 							<div class="accordian">
-								<div class="header headerOn">
+								<div class="header <%=(productID == "ceramics")? "headerOn": ""%>">
 									<h2>Ceramics</h2>
 								</div>
 								<div class="panel">
@@ -54,7 +53,7 @@
 									</div>
 								</div>
 			
-								<div class="header">
+								<div class="header <%=(productID == "glass")? "headerOn": ""%>">
 									<h2>Glass</h2>
 								</div>
 								<div class="panel">
@@ -70,7 +69,7 @@
 									</div>
 								</div>
 			
-								<div class="header">
+								<div class="header <%=(productID == "jewellery")? "headerOn": ""%>">
 									<h2>Costume jewellery</h2>
 								</div>
 								<div class="panel">
@@ -86,7 +85,7 @@
 									</div>
 								</div>
 								
-								<div class="header">
+								<div class="header <%=(productID == "prints")? "headerOn": ""%>">
 									<h2>Prints and paintings</h2>
 								</div>
 								<div class="panel">
@@ -101,7 +100,7 @@
 									</div>
 								</div>
 								
-								<div class="header">
+								<div class="header <%=(productID == "tins")? "headerOn": ""%>">
 									<h2>Tins</h2>
 								</div>
 								<div class="panel">
@@ -117,7 +116,7 @@
 									</div>
 								</div>
 								
-								<div class="header">
+								<div class="header <%=(productID == "handbags")? "headerOn": ""%>">
 									<h2>Handbags</h2>
 								</div>
 								<div class="panel">
