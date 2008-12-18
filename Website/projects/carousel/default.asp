@@ -18,16 +18,18 @@
 		<script type="text/javascript">
 			$(document).ready(function(){ 
 				
-				var node1 = $("div.carousel")[0];
+				var node1 = document.getElementById("carousel01")
 				new Adoro.Carousel(node1, {
 					scrollCount: 1,
 					animationSpeed: 650,
-					animationEasing: "easeInOutQuad",
 					animate: true,
 					hasStartButton: true,
 					hasStopButton: true,
 					isCircular: false,
-					revealAmount: -50
+					nextButtonHTML: "",
+					previousButtonHTML: "",
+					stopButtonHTML: "",
+					startButtonHTML: ""
 				});
 				
 				// Carousel 2
@@ -110,7 +112,7 @@
 					
 					<h3>Example 1</h3>
 					
-					<div class="carousel">
+					<div id="carousel01">
 						<ul>
 							<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
 							<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
@@ -125,17 +127,17 @@
 					
 					<div id="carousel02">
 						<ul>
-							<li><p>Varying content here 1</p></li>
+							<li><p>Lorem</p></li>
 							<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Varying content here 2</p></li>
+							<li><p>Ipsum</p></li>
 							<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Varying content here 3</p></li>
+							<li><p>Sam</p></li>
 							<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Varying content here 4</p></li>
+							<li><p>Ite</p></li>
 							<li><img src="../../img/portfolio/gardeningdirect.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Varying content here 5</p></li>
+							<li><p>Delta</p></li>
 							<li><img src="../../img/portfolio/hamleys.jpg" width="500" height="167" alt="" /></li>		
-							<li><p>Varying content here 6</p></li>
+							<li><p>Max</p></li>
 						</ul>
 					</div>		
 					
