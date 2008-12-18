@@ -30,10 +30,9 @@
 					revealAmount: -50
 				});
 				
+				// Carousel 2
 				var node2 = document.getElementById("carousel02");
-				
 				$(node2).prepend('<div class="controls"></div>');
-				
 				var controls = $(node2).find("div.controls")[0];
 				$(controls).append('<p class="goTo">Go to...</p>');
 				new Adoro.Carousel(node2, {
@@ -62,13 +61,21 @@
 					automaticDelay: 1000
 				});
 				
-				var node4 = $("div.carousel")[2];
+				var node4 = document.getElementById("carousel04");
 				new Adoro.Carousel(node4, {
 					scrollCount: 3,
+					isCircular: true,
 					animate: true,
 					animationEasing: "easeInOutQuad",
 					hasIndicator: true,
-					revealAmount: -65
+					revealAmount: -65,
+					animationSpeed: 500,
+					hasIndicator: true,
+					indicatorContainerClass: "myIndicators",
+					indicatorItemClass: "item",
+					indicatorItemHTML: "",
+					nextButtonHTML: "",
+					previousButtonHTML: ""
 				});
 			});
 		</script>
@@ -145,7 +152,7 @@
 					
 					<h3>Simple animated circular carousel</h3>
 					
-					<div class="carousel">
+					<div id="carousel04">
 						<ul>
 							<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
 							<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>

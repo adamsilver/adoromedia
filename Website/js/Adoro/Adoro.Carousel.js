@@ -35,7 +35,6 @@ Adoro.Carousel = function(container, options) {
 	var ul = container.getElementsByTagName("ul")[0] || null;
 	if (!ul) return null;
 	var lis = getLis();
-	
 	var state = {animating: false, currentIndex: 0};
 	var config = {
 		
@@ -327,9 +326,9 @@ Adoro.Carousel = function(container, options) {
 		}
 		
 		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
-		
+			
 		// at the beginning so don't go further back
-		if(!config.isCircular && (state.currentIndex <= 0)) return;
+		if(!config.isCircular && (state.currentIndex + move < 0)) return;
 
 		// animate
 		if(config.animate) {
@@ -373,7 +372,7 @@ Adoro.Carousel = function(container, options) {
 	 * @param {Number} move Amount of list items to move forwards by
 	 */
 	function goForwards(move) {
-		if(state.currentIndex+move > lis.length-1) {
+		if(state.currentIndex+move > lis.length-1) { // may not need this check
 			var newState = state.currentIndex - lis.length + move;
 			var remainder = newState % config.scrollCount;
 			if (remainder !== 0) {
@@ -383,8 +382,8 @@ Adoro.Carousel = function(container, options) {
 		
 		var	lisToManipulate = getLis(0, move).reverse();
 		
-		// we are at the end, so don't go further forward
-		if(!config.isCircular && (state.currentIndex + config.scrollCount > lis.length - config.scrollCount)) return;
+		// we are at the end, so don't go further forward		
+		if(!config.isCircular && (state.currentIndex + move > lis.length-1)) return;
 		// animate
 		if(config.animate) {
 			state.animating = true;
