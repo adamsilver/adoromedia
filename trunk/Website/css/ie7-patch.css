@@ -12,7 +12,8 @@ div.action,
 div#lightBox div.header,
 div#myLightBox div.login,
 div#dropDownMenu,
-div#dropDownMenu ul li ul li {
+div#dropDownMenu ul li ul li,
+div#carousel02 div.controls {
 	zoom: 1;
 }
 
@@ -23,6 +24,10 @@ div#dropDownMenu ul li ul li {
 div.field div.checkboxes div.input label, 
 div.field div.radios div.input label {
 	margin-top: 3px;
+}
+
+div#carousel02 div.controls {
+	padding-bottom: 2px;
 }
 
 /********************************************************
