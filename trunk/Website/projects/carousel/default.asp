@@ -22,6 +22,7 @@
 				new Adoro.Carousel(node1, {
 					scrollCount: 1,
 					animationSpeed: 650,
+					animationEasing: "easeInOutQuad",
 					animate: true,
 					hasStartButton: true,
 					hasStopButton: true,
@@ -110,7 +111,7 @@
 					
 					<h2>Demo</h2>
 					
-					<h3>Example 1</h3>
+					<h3>Example 1 (Not circular, play/stop, scroll count 1)</h3>
 					
 					<div id="carousel01">
 						<ul>
@@ -123,7 +124,7 @@
 						</ul>
 					</div>
 					
-					<h3>Example 2</h3>
+					<h3>Example 2 (Item indicator, scroll count 2, is circular, custom easing)</h3>
 					
 					<div id="carousel02">
 						<ul>
@@ -141,7 +142,7 @@
 						</ul>
 					</div>		
 					
-					<h3>Example 3</h3>
+					<h3>Example 3 (Not animated, reveal amount -50, play/stop, scroll count 1, is circular)</h3>
 					
 					<div id="carousel03">
 						<ul>
@@ -161,7 +162,7 @@
 						</ul>
 					</div>						
 					
-					<h3>Example 4</h3>
+					<h3>Example 4 (scroll count 3, custom easing)</h3>
 					
 					<div id="carousel04">
 						<ul>
