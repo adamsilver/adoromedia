@@ -30,11 +30,13 @@ if(typeof Adoro !== "object") var Adoro = {};
 * @name Adoro.Accordian
 * @param {Nodes[]} anchors Array of anchor nodes
 * @param {Object} options The options for this accordion instance
-* @param {Object} options.animationShowParams Different animation styles when the element is shown
-* @param {Object} options.animationHideParams Different animation styles when the element is hidden
-* @param {Number} options.animationShowSpeed Number in milleseconds
-* @param {Number} options.animationHideSpeed Number in milleseconds
-* @example
+* @param {Boolean} options.alwaysOpen If true there will always be 1 panel showing, default is false
+* @param {Boolean} options.animate If true the accordion will animate, default is false
+* @param {String} options.cssActiveClass The name of the class added to the anchor when in selected mode, default "selected"
+* @param {Object} options.animationShowParams The animation properties when the accordion is shown, default is {height: "show"}
+* @param {Object} options.animationHideParams The animation properties when the accordion is shown, default is {height: "hide"}
+* @param {Number} options.animationShowSpeed Speed of the animation when showing in milleseconds, default is 300
+* @param {Number} options.animationHideSpeed Speed of the animation when hiding in milleseconds, default is 300
 */
 Adoro.Accordion = function(anchors, options) {
 	if(anchors.length === 0) return null;
@@ -57,6 +59,8 @@ Adoro.Accordion = function(anchors, options) {
 		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
 		config.animationShowParams = (typeof options.animationShowParams === "object") ? options.animationShowParams : config.animationShowParams;
 		config.animationHideParams = (typeof options.animationHideParams === "object") ? options.animationHideParams : config.animationHideParams;
+		config.animationShowSpeed = (typeof options.animationShowSpeed === "number") ? options.animationShowSpeed : config.animationShowSpeed;
+		config.animationHideSpeed = (typeof options.animationHideSpeed === "number") ? options.animationHideSpeed : config.animationHideSpeed;
 	}
 	
 	var anchor, section, panel, open = false;
