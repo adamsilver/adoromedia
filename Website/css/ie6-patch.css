@@ -15,7 +15,11 @@ div.field div.checkboxes div.input,
 div.field div.radios div.input,
 div.accordian1,
 div.accordian2,
-div.carousel,
+div#carousel01,
+div#carousel02,
+div#carousel03,
+div#carousel04,
+div#carousel02 div.controls,
 div#lightBox div.header,
 div#myLightBox div.login,
 ul.generic,
@@ -57,14 +61,18 @@ div.field div.checkboxes div.input label {
 	margin-top: 3px;
 }
 
-div.carousel {
-	width: 678px;
+div#carousel02, div#carousel03, div#carousel04{
+	width: 578px;
 }
 
 div#primaryNavigation ul li a.selected {
 	background-color: #1D2B33 !important;
 	color: #ffffff !important;
 	border-bottom: 4px solid #898F2C !important;	
+}
+
+div#carousel02 div.controls {
+	padding-bottom: 2px;
 }
 
 /********************************************************
@@ -78,13 +86,6 @@ div.code {
 /********************************************************
 * min height
 ********************************************************/
-
-
-
-
-
-
-
 
 
 /********************************************************
