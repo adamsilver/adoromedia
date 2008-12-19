@@ -13,8 +13,7 @@ div.action,
 div#content div.tabset ul.tabNavigation,
 div.field div.checkboxes div.input, 
 div.field div.radios div.input,
-div.accordian1,
-div.accordian2,
+div#myAccordion2,
 div#carousel01,
 div#carousel02,
 div#carousel03,
@@ -87,6 +86,9 @@ div.code {
 * min height
 ********************************************************/
 
+div#myAccordion2 a.accordion3 {
+	height:153px;
+}
 
 /********************************************************
 * drop down menu - fixes for ie6
