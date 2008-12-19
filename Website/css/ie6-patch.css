@@ -26,7 +26,8 @@ ul.projects,
 ul.generic li,
 div#dropDownMenu,
 div#dropDownMenu ul li ul li,
-div#dialogue div.header {
+div#dialogue div.header,
+div#carousel05 div.controls  {
 	height: 1%;
 }
 
