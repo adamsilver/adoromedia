@@ -13,14 +13,14 @@
 		<!--#include file="../../inc/head_css.asp"-->		
 		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->	
-		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldMaxLength.js"></script>
+		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldMaxLengthIndicator.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var el = $('<p class="remaining"></p>')[0];
 				var search = document.getElementById("search");
 				if(search === null) return;
 				search.parentNode.appendChild(el);
-				var myFieldMax = new Adoro.FieldMaxLength(search,{
+				var myFieldMax = new Adoro.FieldMaxLengthIndicator(search,{
 					statusIndicator: el,
 					max: 50,
 					beforeText: "Information: ",
@@ -33,7 +33,7 @@
 				var field = document.getElementById("different");
 				if(field === null) return;
 				field.parentNode.appendChild(el);
-				var myFieldMax = new Adoro.FieldMaxLength(field,{
+				var myFieldMax = new Adoro.FieldMaxLengthIndicator(field,{
 					statusIndicator: el,
 					max: 50,
 					beforeText: "Information: ",
@@ -80,7 +80,8 @@
 						</div>
 					</form>
 					
-									
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/fieldmaxlengthindicator.asp"-->				
 				</div>
 			</div>
 		</div>
