@@ -11,7 +11,30 @@
 		<!--#include file="../../inc/head_other.asp"-->	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->
-		<link rel="stylesheet" href="../../css/collapse.css" type="text/css" />
+		<style type="text/css">
+			div#collapseMe {
+				border: 1px solid #ffffff;
+				margin-bottom: 10px;
+			}
+			
+			div#collapseMe a.activator {
+				padding: 10px;
+				display: block;
+				font-size: 1.2em;
+				background-color: #989D44;
+				color: #ffffff;
+			}
+			
+			div#collapseMe div.panel div {
+				padding: 20px;
+				background-color:#EFF2E6;
+				font-size: 1.2em;
+			}
+			
+			div.hiddenView a.toggle {
+				background-color: #7B7F37 !important;
+			}
+		</style>		
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Collapser.js"></script>
 		<script type="text/javascript">
@@ -24,7 +47,7 @@
 					animate: true
 				});
 			});
-		</script>		
+		</script>
 	</head>
 	<body class="library">
 		<div id="container">
@@ -63,6 +86,8 @@
 						</div>
 					</div>
 					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/collapser.asp"-->					
 					
 				</div>
 			</div>
