@@ -405,7 +405,8 @@
 							</li>
 						</ul>
 					</div>
-					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/dropdownmenu.asp"-->
 				</div>
 			</div>
 		</div>
