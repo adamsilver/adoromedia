@@ -89,6 +89,18 @@
 					startButtonHTML: "",
 					stopButtonHTML:""
 				});
+				
+				
+			
+				var node5 = document.getElementById("carousel05");
+				$(node5).after('<div class="controls5"></div>');
+				var controls5 = $("div.controls5")[0];	
+				new Adoro.Carousel(node5, {
+					vertical: true,
+					animate: true,
+					previousButtonAppend: controls5,
+					nextButtonAppend: controls5
+				});
 			});
 		</script>
 	</head>
@@ -175,6 +187,20 @@
 							<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
 						</ul>
 					</div>
+					
+					<h3>Example 5</h3>
+					
+					<div id="carousel05">
+						<ul>
+							<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
+							<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
+						</ul>
+					</div>					
 					
 				</div>
 			</div>
