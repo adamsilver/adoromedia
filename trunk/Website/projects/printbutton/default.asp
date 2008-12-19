@@ -8,7 +8,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Print button, jQuery JavaScript library, Adoro Media Ltd</title>
-		<!--#include file="../../inc/head_other.asp"-->	
+		<!--#include file="../../inc/head_other.asp"-->
+		<meta name="keywords" content="print, button, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Print button, jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/printbutton.css" type="text/css" />

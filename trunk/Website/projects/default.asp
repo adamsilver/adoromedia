@@ -9,6 +9,8 @@
 	<head>
 		<title>Projects, Adoro Media Ltd</title>
 		<!--#include file="../inc/head_other.asp"-->
+		<meta name="keywords" content="adoro, media, open, source, projects, home page, jquery, javascript, library, website, development" />
+		<meta name="description" content="Adoro Media projects home page. Open source projects using jQuery JavaScript library." />		
 		<!--#include file="../inc/head_js.asp"-->
 		<!--#include file="../inc/head_css.asp"-->	
 		<!--#include file="../inc/head_cssie.asp"-->

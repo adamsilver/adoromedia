@@ -9,8 +9,10 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Form validator framework, jQuery JavaScript library, Adoro Media Ltd</title>
-		<!--#include file="../../inc/head_other.asp"-->	
+		<title>Accessible form validation framework, jQuery JavaScript library, Adoro Media Ltd</title>
+		<!--#include file="../../inc/head_other.asp"-->
+		<meta name="keywords" content="form, validator, framework, validation, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Accessible, form validator and validation framework,  jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<!--#include file="../../inc/head_cssie.asp"-->

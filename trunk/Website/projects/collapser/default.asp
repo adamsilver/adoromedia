@@ -8,7 +8,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Collapser, jQuery JavaScript library, Adoro Media Ltd</title>
-		<!--#include file="../../inc/head_other.asp"-->	
+		<!--#include file="../../inc/head_other.asp"-->
+		<meta name="keywords" content="element, collapser, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Element collapser jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->
 		<style type="text/css">

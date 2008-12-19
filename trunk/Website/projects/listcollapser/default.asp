@@ -3,12 +3,14 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<% Adoro.pageName = "listcollapse"; %>
+<% Adoro.pageName = "listcollapser"; %>
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>List collapser, jQuery JavaScript library, Adoro Media Ltd</title>
-		<!--#include file="../../inc/head_other.asp"-->	
+		<!--#include file="../../inc/head_other.asp"-->
+		<meta name="keywords" content="List collapser, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="List collapser for facet navigation, jQuery JavaScript component, by Adoro Media." />	
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->
 		<link rel="stylesheet" href="../../css/collapse.css" type="text/css" />

@@ -7,8 +7,10 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Tabset, jQuery JavaScript library, Adoro Media Ltd</title>
-		<!--#include file="../../inc/head_other.asp"-->	
+		<title>Tabs, jQuery JavaScript library, Adoro Media Ltd</title>
+		<!--#include file="../../inc/head_other.asp"-->
+		<meta name="keywords" content="Tab, tabs, tabset, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Tabset tab control, jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/tabs.css" type="text/css" />

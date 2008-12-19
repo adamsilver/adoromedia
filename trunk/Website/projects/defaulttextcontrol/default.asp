@@ -9,6 +9,8 @@
 	<head>
 		<title>Default text control, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
+		<meta name="keywords" content="default, text, input, text, fields, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Default text control jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->		
 		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
