@@ -23,7 +23,7 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 /**
- * To create a new FieldMaxLength object
+ * Create a new field max length indicator
  * @class Represents a FieldMaxLength
  * @constructor
  * @param {Node} field Reference to field element
@@ -33,7 +33,7 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
  * @param {String} options.beforeText The text for the status indicator before the number is displayed
  * @param {String} options.afterText The text for the status indicator after the number is displayed 
  */
-Adoro.FieldMaxLength = function(field, options) {
+Adoro.FieldMaxLengthIndicator = function(field, options) {
 	if(!field) return null;
 	field.onkeypress = checkLength;
 	field.onkeyup = checkLength;

@@ -61,7 +61,7 @@
 							<p>Add contextual help hints to form fields on focus using jQuery library.</p>
 						</li>																
 						<li>
-							<h2><a href="<%=Adoro.URL%>projects/fieldmaxlength" <%if(Adoro.pageName === "fieldmaxlength"){%>class="selected"<%}%>>Field max length</a></h2>
+							<h2><a href="<%=Adoro.URL%>projects/fieldmaxlengthindicator" <%if(Adoro.pageName === "fieldmaxlengthindicator"){%>class="selected"<%}%>>Field max length</a></h2>
 							<p>Max length indicator control for inputs &amp textareas using the jQuery library.</p>
 						</li>
 						<li>
