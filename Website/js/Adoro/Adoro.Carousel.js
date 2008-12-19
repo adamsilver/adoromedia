@@ -46,8 +46,7 @@ Adoro.Carousel = function(container, options) {
 		scrollCount: 3,
 		isCircular: true,
 		revealAmount: 0,
-		
-		vertical: false, // DOING
+		vertical: false,
 		
 		// general TO DO
 		automaticDirection: "forwards",
@@ -357,7 +356,7 @@ Adoro.Carousel = function(container, options) {
 
 		// animate
 		if(config.animate) {
-			$(ul).css( config.vertical ? "top":"left" , -getLisHeight(lisToManipulate));
+			$(ul).css( config.vertical ? "top":"left" , config.vertical ? -getLisHeight(lisToManipulate) : -getLisWidth(lisToManipulate));
 			$(ul).prepend(lisToManipulate);
 			state.animating = true;			
 			$(ul).animate(config.vertical ? {"top": config.revealAmount+"px"} : {"left": config.revealAmount+"px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
