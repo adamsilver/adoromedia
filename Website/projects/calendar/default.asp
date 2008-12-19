@@ -9,6 +9,8 @@
 	<head>
 		<title>Calendar, jQuery JavaScript library, Adoro Media Ltd</title>
 		<!--#include file="../../inc/head_other.asp"-->	
+		<meta name="keywords" content="calendar, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Calendar jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<link rel="stylesheet" href="../../css/calendar.css" type="text/css" />

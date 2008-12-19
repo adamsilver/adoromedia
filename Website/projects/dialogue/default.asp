@@ -3,22 +3,21 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<% Adoro.pageName = "lightbox"; %>
+<% Adoro.pageName = "dialogue"; %>
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Dialogue, jQuery JavaScript library, Adoro Media Ltd</title>
-		<!--#include file="../../inc/head_other.asp"-->	
+		<!--#include file="../../inc/head_other.asp"-->
+		<meta name="keywords" content="dialogue, JavaScript, jQuery, component, script, adoro, media" />
+		<meta name="description" content="Dialogue jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->
-		
 		<!--#include file="../../inc/head_css.asp"-->
 		<link rel="stylesheet" href="../../css/dialogue.css" type="text/css" />
-		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
-		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript">
 			swfobject.embedSWF("../../swf/butterfly.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
