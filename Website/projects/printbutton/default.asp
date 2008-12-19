@@ -17,7 +17,7 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var a = $('<a href="#" class="myPrintClass">Print page!</a>')
-				$("#content").append(a);
+				$("div.printPlaceHolder p").replaceWith(a);
 				var myprint = new Adoro.PrintButton(a);
 			});
 		</script>			
@@ -36,6 +36,14 @@
 						<li>Make an anchor reference into a print button.</li>
 					</ul>		
 					<h2>Demo</h2>
+					
+					<div class="printPlaceHolder"><p>
+						No JS running. You can still print this page by going to File, Print.
+					</p></div>
+					
+					<h2>Example setup</h2>
+					<!--#include file="../../inc/code/printbutton.asp"-->
+					
 				</div>
 			</div>
 		</div>
