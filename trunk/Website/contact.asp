@@ -10,7 +10,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Contact, Bespoke new media solutions, Adoro Media Ltd</title>
-		<!--#include file="inc/head_other.asp"-->	
+		<!--#include file="inc/head_other.asp"-->
+		<meta name="keywords" content="contact, adoro media, adoro, email, website design." />
+		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />			
 		<!--#include file="inc/head_js.asp"-->
 		<script type="text/javascript" src="js/Adoro/Adoro.FormValidator.js"></script>
 		<script type="text/javascript" src="js/Adoro/Adoro.FormRules.js"></script>

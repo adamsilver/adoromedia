@@ -9,6 +9,8 @@
 	<head>
 		<title>Portfolio, Bespoke new media solutions, Adoro Media Ltd</title>
 		<!--#include file="inc/head_other.asp"-->
+		<meta name="keywords" content="adoro, media, portfolio, websites" />
+		<meta name="description" content="Adoro Media website design and development portfolio." />			
 		<!--#include file="inc/head_js.asp"-->
 		<!--#include file="inc/head_css.asp"-->
 		<link rel="stylesheet" href="<%=Adoro.URL%>css/portfolio.css" type="text/css" />

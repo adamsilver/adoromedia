@@ -11,6 +11,8 @@
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
 		<title>Bespoke new media solutions, Adoro Media Ltd</title>
 		<!--#include file="inc/head_other.asp"-->
+		<meta name="keywords" content="adoro media, website, web, bespoke, new, media, solutions, london, UK" />
+		<meta name="description" content="Adoro Media is an agency dedicated to building new media solutions. Based in London, England." />		
 		<!--#include file="inc/head_css.asp"-->
 		<!--#include file="inc/head_js.asp"-->
 		<script type="text/javascript" src="<%=Adoro.URL%>js/Adoro/Adoro.ListAnimator.js"></script>
