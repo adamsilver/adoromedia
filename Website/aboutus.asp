@@ -11,6 +11,8 @@
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
 		<title>About us, Bespoke new media solutions, Adoro Media Ltd</title>
 		<!--#include file="inc/head_other.asp"-->
+		<meta name="keywords" content="adoro media, information, info, about, website, web, bespoke, new, media, solutions, london, UK" />
+		<meta name="description" content="Adoro Media about us information. Based in London, England, UK." />			
 		<!--#include file="inc/head_css.asp"-->
 		<!--#include file="inc/head_js.asp"-->
 		<!--#include file="inc/head_cssie.asp"-->
