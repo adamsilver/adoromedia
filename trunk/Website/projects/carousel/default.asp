@@ -99,7 +99,8 @@
 					vertical: true,
 					animate: true,
 					previousButtonAppend: controls5,
-					nextButtonAppend: controls5
+					nextButtonAppend: controls5,
+					revealAmount: -60
 				});
 			});
 		</script>
@@ -188,7 +189,7 @@
 						</ul>
 					</div>
 					
-					<h3>Example 5</h3>
+					<h3>Example 5 (Vertical)</h3>
 					
 					<div id="carousel05">
 						<ul>
