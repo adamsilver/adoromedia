@@ -3,7 +3,7 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<% Adoro.pageName = "dropdown"; %>
+<% Adoro.pageName = "dropdownmenu"; %>
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -26,20 +26,10 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var ulNode1 = $("#dropDownMenu ul")[0] || null;
-				new Adoro.DropDownMenu(ulNode1, {
-					offsetLeft: -1,
-					cssHideClass: "off"
-				});
+				new Adoro.DropDownMenu(ulNode1, { cssHideClass: "off" });
 				
 				var ulNode2 = $("#menu ul")[0] || null;
-				new Adoro.DropDownMenu(ulNode2, {
-					subMenuType: "div",
-					offsetTop: -1,
-					offsetLeft: -3,
-					cssActiveClass: "hover",
-					cssHideClass: "off"
-				});
-				
+				new Adoro.DropDownMenu(ulNode2, { subMenuType: "div", cssActiveClass: "hover", cssHideClass: "off" });	
 			});
 		</script>
 	</head>
