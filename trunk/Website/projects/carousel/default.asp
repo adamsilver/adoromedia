@@ -17,6 +17,7 @@
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel.js"></script>
+		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
 				

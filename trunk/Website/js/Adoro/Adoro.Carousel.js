@@ -141,7 +141,7 @@ Adoro.Carousel = function(container, options) {
 	// setting general styling
 	if(config.vertical) {
 		$(ul).find("li").css({"display": "block","float": "none"});
-		$(ul).css({"width": getLisHeight(lis) + "px"});
+		$(ul).css({"height": getLisHeight(lis) + "px"});
 		$(ul).css({"top": config.revealAmount + "px"});
 	}
 	else {
