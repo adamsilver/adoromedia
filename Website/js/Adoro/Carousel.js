@@ -1,12 +1,54 @@
-Adoro.Carousel = function(container, options) {
-	var state = { currentSlide: 0, animating: false };
+if(typeof Adoro !== "object") Adoro = {};
+Adoro.Carousel2 = function(container, options) {
+	var state = { 
+		currentSlide: 0, // starts from 0 as in 0, 1, 2, 3 etc
+		animating: false
+	};
 	var config = {
 		automaticDelay: 0,
 		automatic: false,
 		automaticDirectionBackwards: false,
 		scrollCount: 1,
 		clipType: "div",
-		clipClass: "clip"
+		clipClass: "clip",
+		vertical: false,
+		offsetReveal: 0,
+		isCircular: true,
+		animate: true,
+		animateEasing: "linear",
+		animateSpeed: 300,
+		
+		forwardButton: true,
+		forwardButtonHTML: "<span>Forward</span>",
+		forwardButtonClass: "forward",
+		forwardButtonClassDisabled: "forwardDisabled",
+		forwardButtonAppendTo: container,
+		
+		backButton: true,
+		backButtonHTML: "<span>Back</span>",
+		backButtonClass: "back",
+		backButtonClassDisabled: "backDisabled",
+		backButtonAppendTo: container,
+		
+		startButton: true,
+		startButtonHTML: "<span>Start</span>",
+		startButtonClass: "start",
+		startButtonClassDisabled: "startDisabled",
+		startButtonAppendTo: container,
+		
+		stopButton: true,
+		stopButtpnHTML: "<span>Stop</span>",
+		stopButtonClass: "stop",
+		stopButtonClassDisabled: "stopDisabled",
+		stopButtonAppendTo: container,
+		
+		indicators: true,
+		indicatorsContainerClass: "indicatorsContainer",
+		indicatorsContainerAppendTo: container,
+		indicatorHTML: "<span>Indicator</span>",
+		indicatorClass: "indicator",
+		indicatorClassSelected: "indicatorSelected"
+		
 	};
 	var container = container || null;
 	var clip = $(container).find(config.clipType+"."+config.clipClass)[0] || null;
@@ -16,6 +58,25 @@ Adoro.Carousel = function(container, options) {
 	
 	if(typeof options === "object") {
 		// set config
+	}
+	
+	setULStyle();
+	
+	function setULStyle() {
+		if(config.vertical) {
+			$(ul).find("li").css({"display": "block","float": "none"});
+			$(ul).css({
+				"height": getSlidesDimensions(getSlides()).height + "px",
+				"top": config.offsetReveal + "px"
+			});
+		}
+		else {
+			$(ul).find("li").css({"display": "inline","float": "left"});
+			$(ul).css({
+				"width": getSlidesDimensions(getSlides()).width + "px",
+				"left": config.offsetReveal + "px"
+			});
+		}
 	}
 	
 	/**
@@ -38,11 +99,21 @@ Adoro.Carousel = function(container, options) {
 	 * @param {Number} move the number of slides to move backwards by
 	 */
 	function moveBackwards(move) {
-		
+		// 1. adjustMove
+		// 2. get slides to move
+		// 3. prepend slides
+		// 4. set current slide
+		// 5. set indicator selected state
+		if(config.automatic) play();
 	}
 	
 	function moveForwards(move) {
-		
+		// 1. adjustMove
+		// 2. get slides to move
+		// 3. append slides
+		// 4. set current slide
+		// 5. set indicator selected state
+		if(config.automatic) play();
 	}
 	
 	function moveBackwardsAnimate(move) {
@@ -52,39 +123,30 @@ Adoro.Carousel = function(container, options) {
 	function moveForwardsAnimate(move) {
 		
 	}
-
-	function isAbleToGoBackwards() {
-		
-	}
-	
-	function isAbleToGoForwards() {
-		
-	}
 	
 	function getSlides(from, to) {
-		var lis = [];
-		var allLis = $(ul).find("li");
-		var li = null;
-		for(var i = allLis.length-1; i>=0; i--) {
-			li = allLis[i];
-			if(from !== undefined && i<from) continue;
-			if(to !== undefined && i>to-1) continue;
-			if (li.parentNode !== ul) continue;
-			lis.push(li);
+		var slides = [];
+		var allSlides = $(ul).find("li");
+		var slide = null;
+		for(var i = allSlides.length-1; i>=0; i--) {
+			slide = allSlides[i];
+			if(typeof from === "number" && i<from) continue;
+			if(typeof to === "number" && i>to-1) continue;
+			if (slide.parentNode !== ul) continue;
+			slides.push(li);
 		}
-		lis.reverse();
-		return lis;
+		slides = slides.reverse();
+		return slides;
 	}
 	
 	function getSlidesDimensions(slides) {
-		var lis = slides;
 		var dimensions = {width:0, height: 0};
-		var li;
-		for(var i = lis.length-1; i>=0; i--) {
-			li = lis[i];
-			if (li.parentNode !== ul) continue;
-			dimensions.height = dimensions.height + $(li).outerHeight({margin: true});
-			dimensions.width = dimensions.width + $(li).outerWidth({margin: true});
+		var slide;
+		for(var i = slides.length-1; i>=0; i--) {
+			slide = slides[i];
+			if (slide.parentNode !== ul) continue;
+			dimensions.height = dimensions.height + $(slide).outerHeight({margin: true});
+			dimensions.width = dimensions.width + $(slide).outerWidth({margin: true});
 		}
 		return dimensions;
 	}
@@ -110,11 +172,12 @@ Adoro.Carousel = function(container, options) {
 	}
 	
 	var indicators = [];
+	
 	var indicatorContainer = $('<div></div>')[0];
-	indicatorContainer.className = config.indicatorContainerClass;
-	config.indicatorAppend.appendChild(indicatorContainer);
+	indicatorContainer.className = config.indicatorsContainerClass;
+	config.indicatorsContainerAppendTo.appendChild(indicatorsContainer);
 	//for(var i = 0; i<indicatorLis.length; i++) {
-	//	if(i % config.scrollCount > 0) continue;	
+	//	if(i % config.scrollCount > 0) continue;
 	//}
 	
 	function Indicator(value) {
@@ -144,6 +207,7 @@ Adoro.Carousel = function(container, options) {
 		var el = $('<a href="#"></a>')[0];
 		el.className = config.backButtonClass;
 		el.innerHTML = config.backButtonHTML;
+		config.backButtonAppendTo.appendChild(el);
 		$(el).bind("click", fire);
 		function fire() {
 			move(-config.scrollCount);
@@ -165,6 +229,7 @@ Adoro.Carousel = function(container, options) {
 		var el = $('<a href="#"></a>')[0];
 		el.className = config.forwardButtonClass;
 		el.innerHTML = config.forwardButtonHTML;
+		config.forwardButtonAppendTo.appendChild(el);
 		$(el).bind("click", fire);
 		function fire() {
 			move(config.scrollCount);
@@ -186,6 +251,7 @@ Adoro.Carousel = function(container, options) {
 		var el = $('<a href="#"></a>')[0];
 		el.className = config.startButtonClass;
 		el.innerHTML = config.startButtonHTML;
+		config.startButtonAppendTo.appendChild(el);
 		$(el).bind("click", fire);
 		function fire() {
 			play();
@@ -207,6 +273,7 @@ Adoro.Carousel = function(container, options) {
 		var el = $('<a href="#"></a>')[0];
 		el.className = config.stopButtonClass;
 		el.innerHTML = config.stopButtonHTML;
+		config.stopButtonAppendTo.appendChild(el);
 		$(el).bind("click", fire);
 		function fire() {
 			stop();
