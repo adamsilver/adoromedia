@@ -290,7 +290,9 @@ Adoro.Carousel = function(container, options) {
 	}
 	
 	/**
-	 * TO DO
+	 * Get the total height in pixels of the list items
+	 * @param {Array} lis The array of list itesm to measure
+	 * @return {Number} height
 	 */
 	function getLisHeight(lis) {
 		var lis = lis;
