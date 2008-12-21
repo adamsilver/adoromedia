@@ -393,3 +393,15 @@ div#carousel05 a.previous {
 	float: left;
 	margin-right: 5px;
 }
+
+/**
+ * 
+ */
+
+div#carousel06 {
+ 	
+}
+
+div#carousel06 a.indicatorSelected {
+	color: red;
+}
