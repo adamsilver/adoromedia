@@ -128,7 +128,7 @@ Adoro.Carousel2 = function(container, options) {
 			else {
 				setState("currentSlideIndex", getState("currentSlideIndex") - move);
 			}
-			indicatorsCollection.setSelected();
+			onSlideChanged();
 			if(config.automatic) play();
 		}});
 	}
@@ -149,13 +149,13 @@ Adoro.Carousel2 = function(container, options) {
 			else {
 				setState("currentSlideIndex", getState("currentSlideIndex") + move);
 			}
-			indicatorsCollection.setSelected();
+			onSlideChanged();
 			if(config.automatic) play();
 		}});
 	}
 	
 	function onSlideChanged() {
-		// change state of indicator
+		indicators.setSelected();
 		// change state of back button
 		// change state of forward button
 	}
@@ -207,7 +207,7 @@ Adoro.Carousel2 = function(container, options) {
 		return state[key];
 	}
 	
-	var indicatorsCollection = new(function(){
+	var indicators = new (function(){
 		var indicators = [];
 		
 		var slides = getSlides(),
@@ -222,6 +222,7 @@ Adoro.Carousel2 = function(container, options) {
 			indicators.push(indicator);
 			indicatorsContainer.appendChild(indicator.el);
 		}
+		setSelected();
 		
 		this.setSelected = setSelected;
 		function setSelected() {
