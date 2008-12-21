@@ -37,7 +37,7 @@ Adoro.Carousel2 = function(container, options) {
 		startButtonAppendTo: container,
 		
 		stopButton: true,
-		stopButtpnHTML: "<span>Stop</span>",
+		stopButtonHTML: "<span>Stop</span>",
 		stopButtonClass: "stop",
 		stopButtonClassDisabled: "stopDisabled",
 		stopButtonAppendTo: container,
@@ -45,9 +45,9 @@ Adoro.Carousel2 = function(container, options) {
 		indicators: true,
 		indicatorsContainerClass: "indicatorsContainer",
 		indicatorsContainerAppendTo: container,
-		indicatorHTML: "<span>Indicator</span>",
-		indicatorClass: "indicator",
-		indicatorClassSelected: "indicatorSelected"
+		indicatorButtonHTML: "<span>Indicator</span>",
+		indicatorButtonClass: "indicator",
+		indicatorButtonClassSelected: "indicatorSelected"
 		
 	};
 	var container = container || null;
@@ -77,6 +77,12 @@ Adoro.Carousel2 = function(container, options) {
 				"left": config.offsetReveal + "px"
 			});
 		}
+	}
+	
+	setClipStyle();
+	
+	function setClipStyle() {
+		$(clip).css({"overflow": "hidden"});
 	}
 	
 	/**
@@ -133,7 +139,7 @@ Adoro.Carousel2 = function(container, options) {
 			if(typeof from === "number" && i<from) continue;
 			if(typeof to === "number" && i>to-1) continue;
 			if (slide.parentNode !== ul) continue;
-			slides.push(li);
+			slides.push(slide);
 		}
 		slides = slides.reverse();
 		return slides;
@@ -167,22 +173,30 @@ Adoro.Carousel2 = function(container, options) {
 	}
 	
 	this.getState = getState;
-	function getOption(key) {
+	function getState(key) {
 		return state[key];
 	}
 	
 	var indicators = [];
-	
-	var indicatorContainer = $('<div></div>')[0];
-	indicatorContainer.className = config.indicatorsContainerClass;
-	config.indicatorsContainerAppendTo.appendChild(indicatorsContainer);
-	//for(var i = 0; i<indicatorLis.length; i++) {
-	//	if(i % config.scrollCount > 0) continue;
-	//}
+	(function(){
+		var slides = getSlides(),
+			indicator,
+			indicatorsContainer = $('<div></div>')[0];
+			
+		indicatorsContainer.className = config.indicatorsContainerClass;
+		config.indicatorsContainerAppendTo.appendChild(indicatorsContainer);
+		for(var i = 0; i<slides.length; i++) {
+			if(i % config.scrollCount > 0) continue;
+			indicator = new Indicator(i);
+			indicators.push(indicator);
+			indicatorsContainer.appendChild(indicator.el);
+		}
+	}());
 	
 	function Indicator(value) {
-		this.el = el;
+		
 		var el = $('<a href="#"></a>')[0];
+		this.el = el;
 		el.innerHTML = config.indicatorButtonHTML;
 		el.className = config.indicatorButtonClass;
 		$(el).bind("click", fire);
