@@ -8,7 +8,7 @@ Adoro.Carousel2 = function(container, options) {
 		automaticDelay: 0,
 		automatic: false,
 		automaticDirectionBackwards: false,
-		scrollCount: 1,
+		scrollCount: 3,
 		clipType: "div",
 		clipClass: "clip",
 		vertical: false,
@@ -92,14 +92,32 @@ Adoro.Carousel2 = function(container, options) {
 	function move(move) {
 		if(state.animating || move === 0) return;
 		if(move < 0) {
+			// adjust
+			if(getState("currentSlideIndex") + move < 0) {
+				var newCurrentSlideIndex = getSlides().length + move + getState("currentSlideIndex");
+				var remainder = newCurrentSlideIndex % config.scrollCount;
+				if(remainder !== 0) {
+					move = move + (config.scrollCount - remainder);
+				}
+			}
+			
+			// if not circular and will be moving past 0 then return
+			if(!getOption("isCircular") && (getState("currentSlideIndex") + move < 0)) return;
+			
 			move = move * -1;
-			// adjust the move
-			// check isCircular
 			config.animate ? moveBackwardsAnimate(move) : moveBackwards(move);
 		}
 		else {
-			// adjust the move
-			// check isCircular
+			// adjust
+			if(getState("currentSlideIndex") + move > getSlides().length-1) {
+				var newCurrentSlideIndex = getState("currentSlideIndex") - getSlides().length + move;
+				var remainder = newCurrentSlideIndex % config.scrollCount;
+				if (remainder !== 0) {
+					move = move - remainder;
+				}
+			}
+			// if not circular and will be moving past the end then return
+			if(!getOption("isCircular") && (getState("currentSlideIndex") + move > getSlides().length-1)) return;
 			config.animate ? moveForwardsAnimate(move) : moveForwards(move);
 		}
 	}
