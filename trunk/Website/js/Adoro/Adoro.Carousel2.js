@@ -125,6 +125,7 @@ Adoro.Carousel2 = function(container, options) {
 	}
 	
 	function moveBackwardsAnimate(move) {
+		// need to check the move and adjust accordingly if we need to
 		var slides = getSlides();
 		var slidesFrom = slides.length-move;
 		var slidesTo = slides.length;
@@ -140,6 +141,7 @@ Adoro.Carousel2 = function(container, options) {
 	}
 	
 	function moveForwardsAnimate(move) {
+		// need to check the move and adjust accordingly if we need to
 		var slides = getSlides();
 		var slidesFrom = 0;
 		var slidesTo = move;
