@@ -13,19 +13,21 @@ Adoro.Carousel2 = function(container, options) {
 		clipClass: "clip",
 		vertical: false,
 		offsetReveal: 0,
-		isCircular: true,
+		isCircular: false,
 		animate: true,
 		animateEasing: "linear",
 		animateSpeed: 300,
 		
 		forwardButton: true,
 		forwardButtonHTML: "<span>Forward</span>",
+		forwardButtonDisabledHTML: "<span>Forward disabled</span>",
 		forwardButtonClass: "forward",
 		forwardButtonDisabledClass: "forwardDisabled",
 		forwardButtonAppendTo: container,
 		
 		backButton: true,
 		backButtonHTML: "<span>Back</span>",
+		backButtonDisabledHTML: "<span>Back disabled</span>",
 		backButtonClass: "back",
 		backButtonDisabledClass: "backDisabled",
 		backButtonAppendTo: container,
@@ -61,6 +63,8 @@ Adoro.Carousel2 = function(container, options) {
 	if(typeof options === "object") {
 		// set config
 	}
+	
+	
 	
 	setULStyle();
 	
@@ -146,7 +150,7 @@ Adoro.Carousel2 = function(container, options) {
 			else {
 				setState("currentSlideIndex", getState("currentSlideIndex") - move);
 			}
-			onSlideChanged();
+			setButtonStates();
 			if(config.automatic) play();
 		}});
 	}
@@ -167,15 +171,27 @@ Adoro.Carousel2 = function(container, options) {
 			else {
 				setState("currentSlideIndex", getState("currentSlideIndex") + move);
 			}
-			onSlideChanged();
+			setButtonStates();
 			if(config.automatic) play();
 		}});
 	}
 	
-	function onSlideChanged() {
+	function setButtonStates() {
 		indicators.setSelected();
-		// change state of back button
-		// change state of forward button
+		
+		if (!getOption("isCircular") && (getState("currentSlideIndex") - config.scrollCount < 0)) {
+			backButton.disable();
+		}
+		else {
+			backButton.enable();
+		}
+		
+		if(!getOption("isCircular") && (getState("currentSlideIndex") + config.scrollCount > getSlides().length-1)) {
+			forwardButton.disable();
+		}
+		else {
+			forwardButton.enable();
+		}
 	}
 	
 	function getSlides(from, to) {
@@ -294,11 +310,13 @@ Adoro.Carousel2 = function(container, options) {
 		this.enable = enable;
 		function enable() {
 			$(el).removeClass(config.backButtonDisabledClass);
+			el.innerHTML = config.backButtonHTML;
 		}
 		
 		this.disable = disable;
 		function disable() {
 			$(el).addClass(config.backButtonDisabledClass);
+			el.innerHTML = config.backButtonDisabledHTML;
 		}
 	});
 	
@@ -316,11 +334,13 @@ Adoro.Carousel2 = function(container, options) {
 		this.enable = enable;
 		function enable() {
 			$(el).removeClass(config.forwardButtonDisabledClass);
+			el.innerHTML = config.forwardButtonHTML;
 		}
 		
 		this.disable = disable;
 		function disable() {
 			$(el).addClass(config.forwardButtonDisabledClass);
+			el.innerHTML = config.forwardButtonDisabledHTML;
 		}
 	});
 	
@@ -384,4 +404,6 @@ Adoro.Carousel2 = function(container, options) {
 	}
 	
 	if(config.automatic) play();
+	
+	setButtonStates();
 }
