@@ -1,7 +1,7 @@
 if(typeof Adoro !== "object") Adoro = {};
 Adoro.Carousel2 = function(container, options) {
 	var state = { 
-		currentSlide: 0, // starts from 0 as in 0, 1, 2, 3 etc
+		currentSlideIndex: 0, // starts from 0 as in 0, 1, 2, 3 etc
 		animating: false
 	};
 	var config = {
@@ -126,32 +126,42 @@ Adoro.Carousel2 = function(container, options) {
 	
 	function moveBackwardsAnimate(move) {
 		// need to check the move and adjust accordingly if we need to
-		var slides = getSlides();
-		var slidesFrom = slides.length-move;
-		var slidesTo = slides.length;
-		slides = getSlides(slidesFrom, slidesTo);
+		var allSlides = getSlides();
+		var slidesFrom = allSlides.length-move;
+		var slidesTo = allSlides.length;
+		var slides = getSlides(slidesFrom, slidesTo);
 		$(ul).prepend(slides);
 		$(ul).css(config.vertical ? {"top": -getSlidesDimensions(slides).height } : { "left": -getSlidesDimensions(slides).width });
 		setState("animating", true);
 		$(ul).animate(config.vertical ? {"top": config.offsetReveal+"px"} : {"left": config.offsetReveal+"px"},{"duration": config.animateSpeed, "easing": config.animateEasing, "complete": function(){
 			setState("animating", false);
-			// need to set current in a clever way
+			if(state.currentSlideIndex - move < 0) {
+				state.currentSlideIndex = allSlides.length - move + state.currentSlideIndex;
+			}
+			else {
+				state.currentSlideIndex -= move;
+			}
 			if(config.automatic) play();
 		}});
 	}
 	
 	function moveForwardsAnimate(move) {
 		// need to check the move and adjust accordingly if we need to
-		var slides = getSlides();
+		var allSlides = getSlides();
 		var slidesFrom = 0;
 		var slidesTo = move;
-		slides = getSlides(slidesFrom, slidesTo);
+		var slides = getSlides(slidesFrom, slidesTo);
 		setState("animating", true);
 		$(ul).animate(config.vertical ? {"top": -getSlidesDimensions(slides).height+config.offsetReveal+"px"} : {"left": -getSlidesDimensions(slides).width+config.offsetReveal+"px"}, {"duration": config.animateSpeed,"easing": config.animateEasing,"complete": function(){
 			$(ul).append(slides);
 			$(ul).css(config.vertical ? "top":"left", config.offsetReveal+"px");
 			setState("animating", false);
-			// need to set current in a clever way
+			if(state.currentSlideIndex+move > allSlides.length-1) {
+				state.currentSlideIndex = state.currentSlideIndex - allSlides.length + move;
+			}
+			else {
+				state.currentSlideIndex += move;
+			}
 			if(config.automatic) play();
 		}});
 	}
