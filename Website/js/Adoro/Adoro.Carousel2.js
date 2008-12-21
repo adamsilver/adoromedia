@@ -67,14 +67,16 @@ Adoro.Carousel2 = function(container, options) {
 			$(ul).find("li").css({"display": "block","float": "none"});
 			$(ul).css({
 				"height": getSlidesDimensions(getSlides()).height + "px",
-				"top": config.offsetReveal + "px"
+				"top": config.offsetReveal + "px",
+				"position": "relative"
 			});
 		}
 		else {
 			$(ul).find("li").css({"display": "inline","float": "left"});
 			$(ul).css({
 				"width": getSlidesDimensions(getSlides()).width + "px",
-				"left": config.offsetReveal + "px"
+				"left": config.offsetReveal + "px",
+				"position": "relative"
 			});
 		}
 	}
@@ -82,7 +84,7 @@ Adoro.Carousel2 = function(container, options) {
 	setClipStyle();
 	
 	function setClipStyle() {
-		$(clip).css({"overflow": "hidden"});
+		$(clip).css({"overflow": "hidden", "position":"relative"});
 	}
 	
 	/**
@@ -92,7 +94,7 @@ Adoro.Carousel2 = function(container, options) {
 	function move(move) {
 		if(state.animating || move === 0) return;
 		if(move < 0) {
-			// may want to change -value  into positive and let the function handle it as it knows its backwards etc
+			move = move * -1;
 			config.animate ? moveBackwardsAnimate(move) : moveBackwards(move);
 		}
 		else {
@@ -109,7 +111,7 @@ Adoro.Carousel2 = function(container, options) {
 		// 2. get slides to move
 		// 3. prepend slides
 		// 4. set current slide
-		// 5. set indicator selected state
+		// 5. set indicator selected state	
 		if(config.automatic) play();
 	}
 	
@@ -123,11 +125,31 @@ Adoro.Carousel2 = function(container, options) {
 	}
 	
 	function moveBackwardsAnimate(move) {
-		
+		var slides = getSlides();
+		var slidesFrom = slides.length-move;
+		var slidesTo = slides.length;
+		slides = getSlides(slidesFrom, slidesTo);
+		$(ul).prepend(slides);
+		$(ul).css(config.vertical ? {"top": -getSlidesDimensions(slides).height } : { "left": -getSlidesDimensions(slides).width });
+		setState("animating", true);
+		$(ul).animate(config.vertical ? {"top": config.offsetReveal+"px"} : {"left": config.offsetReveal+"px"},{"duration": config.animateSpeed, "easing": config.animateEasing, "complete": function(){
+			setState("animating", false);
+			if(config.automatic) play();
+		}});
 	}
 	
 	function moveForwardsAnimate(move) {
-		
+		var slides = getSlides();
+		var slidesFrom = 0;
+		var slidesTo = move;
+		slides = getSlides(slidesFrom, slidesTo);
+		setState("animating", true);
+		$(ul).animate(config.vertical ? {"top": -getSlidesDimensions(slides).height+config.offsetReveal+"px"} : {"left": -getSlidesDimensions(slides).width+config.offsetReveal+"px"}, {"duration": config.animateSpeed,"easing": config.animateEasing,"complete": function(){
+			$(ul).append(slides);
+			$(ul).css(config.vertical ? "top":"left", config.offsetReveal+"px");
+			setState("animating", false);
+			if(config.automatic) play();
+		}});
 	}
 	
 	function getSlides(from, to) {
@@ -194,7 +216,6 @@ Adoro.Carousel2 = function(container, options) {
 	}());
 	
 	function Indicator(value) {
-		
 		var el = $('<a href="#"></a>')[0];
 		this.el = el;
 		el.innerHTML = config.indicatorButtonHTML;
