@@ -21,33 +21,35 @@ Adoro.Carousel2 = function(container, options) {
 		forwardButton: true,
 		forwardButtonHTML: "<span>Forward</span>",
 		forwardButtonClass: "forward",
-		forwardButtonClassDisabled: "forwardDisabled",
+		forwardButtonDisabledClass: "forwardDisabled",
 		forwardButtonAppendTo: container,
 		
 		backButton: true,
 		backButtonHTML: "<span>Back</span>",
 		backButtonClass: "back",
-		backButtonClassDisabled: "backDisabled",
+		backButtonDisabledClass: "backDisabled",
 		backButtonAppendTo: container,
 		
 		startButton: true,
 		startButtonHTML: "<span>Start</span>",
+		startButtonDisabledHTML: "<span>Start disabled</span>",
 		startButtonClass: "start",
-		startButtonClassDisabled: "startDisabled",
+		startButtonDisabledClass: "startDisabled",
 		startButtonAppendTo: container,
 		
 		stopButton: true,
 		stopButtonHTML: "<span>Stop</span>",
 		stopButtonClass: "stop",
-		stopButtonClassDisabled: "stopDisabled",
+		stopButtonDisabledClass: "stopDisabled",
 		stopButtonAppendTo: container,
 		
 		indicators: true,
 		indicatorsContainerClass: "indicatorsContainer",
 		indicatorsContainerAppendTo: container,
 		indicatorButtonHTML: "<span>Indicator</span>",
+		indicatorButtonSelectedHTML: "<span>Indicator selected</span>",
 		indicatorButtonClass: "indicator",
-		indicatorButtonClassSelected: "indicatorSelected"
+		indicatorButtonSelectedClass: "indicatorSelected"
 		
 	};
 	var container = container || null;
@@ -87,45 +89,30 @@ Adoro.Carousel2 = function(container, options) {
 		$(clip).css({"overflow": "hidden", "position":"relative"});
 	}
 	
-	/**
-	 * move the carousel left or right
-	 * @param {Number} move The number of slides to move the carousel by
-	 */
 	function move(move) {
 		if(state.animating || move === 0) return;
 		if(move < 0) {
 			move = move * -1;
+			// adjust the move
+			// check isCircular
 			config.animate ? moveBackwardsAnimate(move) : moveBackwards(move);
 		}
 		else {
+			// adjust the move
+			// check isCircular
 			config.animate ? moveForwardsAnimate(move) : moveForwards(move);
 		}
 	}
 	
-	/**
-	 * move the carousel backwards (non-animated)
-	 * @param {Number} move the number of slides to move backwards by
-	 */
 	function moveBackwards(move) {
-		// 1. adjustMove
-		// 2. get slides to move
-		// 3. prepend slides
-		// 4. set current slide
-		// 5. set indicator selected state	
 		if(config.automatic) play();
 	}
 	
 	function moveForwards(move) {
-		// 1. adjustMove
-		// 2. get slides to move
-		// 3. append slides
-		// 4. set current slide
-		// 5. set indicator selected state
 		if(config.automatic) play();
 	}
 	
 	function moveBackwardsAnimate(move) {
-		// need to check the move and adjust accordingly if we need to
 		var allSlides = getSlides();
 		var slidesFrom = allSlides.length-move;
 		var slidesTo = allSlides.length;
@@ -135,18 +122,18 @@ Adoro.Carousel2 = function(container, options) {
 		setState("animating", true);
 		$(ul).animate(config.vertical ? {"top": config.offsetReveal+"px"} : {"left": config.offsetReveal+"px"},{"duration": config.animateSpeed, "easing": config.animateEasing, "complete": function(){
 			setState("animating", false);
-			if(state.currentSlideIndex - move < 0) {
-				state.currentSlideIndex = allSlides.length - move + state.currentSlideIndex;
+			if(getState("currentSlideIndex") - move < 0) {
+				setState("currentSlideIndex", allSlides.length - move + getState("currentSlideIndex"))
 			}
 			else {
-				state.currentSlideIndex -= move;
+				setState("currentSlideIndex", getState("currentSlideIndex") - move);
 			}
+			indicatorsCollection.setSelected();
 			if(config.automatic) play();
 		}});
 	}
 	
 	function moveForwardsAnimate(move) {
-		// need to check the move and adjust accordingly if we need to
 		var allSlides = getSlides();
 		var slidesFrom = 0;
 		var slidesTo = move;
@@ -156,14 +143,21 @@ Adoro.Carousel2 = function(container, options) {
 			$(ul).append(slides);
 			$(ul).css(config.vertical ? "top":"left", config.offsetReveal+"px");
 			setState("animating", false);
-			if(state.currentSlideIndex+move > allSlides.length-1) {
-				state.currentSlideIndex = state.currentSlideIndex - allSlides.length + move;
+			if(getState("currentSlideIndex") + move > allSlides.length-1) {
+				setState("currentSlideIndex", getState("currentSlideIndex") - allSlides.length + move);
 			}
 			else {
-				state.currentSlideIndex += move;
+				setState("currentSlideIndex", getState("currentSlideIndex") + move);
 			}
+			indicatorsCollection.setSelected();
 			if(config.automatic) play();
 		}});
+	}
+	
+	function onSlideChanged() {
+		// change state of indicator
+		// change state of back button
+		// change state of forward button
 	}
 	
 	function getSlides(from, to) {
@@ -213,8 +207,9 @@ Adoro.Carousel2 = function(container, options) {
 		return state[key];
 	}
 	
-	var indicators = [];
-	(function(){
+	var indicatorsCollection = new(function(){
+		var indicators = [];
+		
 		var slides = getSlides(),
 			indicator,
 			indicatorsContainer = $('<div></div>')[0];
@@ -227,30 +222,44 @@ Adoro.Carousel2 = function(container, options) {
 			indicators.push(indicator);
 			indicatorsContainer.appendChild(indicator.el);
 		}
-	}());
-	
-	function Indicator(value) {
-		var el = $('<a href="#"></a>')[0];
-		this.el = el;
-		el.innerHTML = config.indicatorButtonHTML;
-		el.className = config.indicatorButtonClass;
-		$(el).bind("click", fire);
-		this.value = value;
-		function fire(){
-			move(value - state.currentSlideIndex);
-			return false;
-		}
 		
 		this.setSelected = setSelected;
 		function setSelected() {
-			$(el).addClass(config.inicatorButtonSelectedClass);
+			for(var i = 0; i < indicators.length; i++) {
+				if(indicators[i].value === getState("currentSlideIndex")) {
+					indicators[i].setSelected();
+				}
+				else {
+					indicators[i].setUnselected();
+				}
+			}
 		}
 		
-		this.setUnselected = setUnselected;
-		function setUnselected() {
-			$(el).removeClass(config.inicatorButtonSelectedClass);
+		function Indicator(value) {
+			var el = $('<a href="#"></a>')[0];
+			this.el = el;
+			el.innerHTML = config.indicatorButtonHTML;
+			el.className = config.indicatorButtonClass;
+			$(el).bind("click", fire);
+			this.value = value;
+			function fire(){
+				move(value - state.currentSlideIndex);
+				return false;
+			}
+			
+			this.setSelected = setSelected;
+			function setSelected() {
+				$(el).addClass(config.indicatorButtonSelectedClass);
+				el.innerHTML = config.indicatorButtonSelectedHTML;
+			}
+			
+			this.setUnselected = setUnselected;
+			function setUnselected() {
+				$(el).removeClass(config.indicatorButtonSelectedClass);
+				el.innerHTML = config.indicatorButtonHTML;
+			}
 		}
-	}
+	});
 
 	var backButton = new (function(){
 		var el = $('<a href="#"></a>')[0];
@@ -265,12 +274,12 @@ Adoro.Carousel2 = function(container, options) {
 		
 		this.enable = enable;
 		function enable() {
-			$(el).removeClass(config.backButtonClassDisabled);
+			$(el).removeClass(config.backButtonDisabledClass);
 		}
 		
 		this.disable = disable;
 		function disable() {
-			$(el).addClass(config.backButtonClassDisabled);
+			$(el).addClass(config.backButtonDisabledClass);
 		}
 	});
 	
@@ -287,12 +296,12 @@ Adoro.Carousel2 = function(container, options) {
 		
 		this.enable = enable;
 		function enable() {
-			$(el).removeClass(config.forwardButtonClassDisabled);
+			$(el).removeClass(config.forwardButtonDisabledClass);
 		}
 		
 		this.disable = disable;
 		function disable() {
-			$(el).addClass(config.forwardButtonClassDisabled);
+			$(el).addClass(config.forwardButtonDisabledClass);
 		}
 	});
 	
@@ -309,12 +318,12 @@ Adoro.Carousel2 = function(container, options) {
 		
 		this.enable = enable;
 		function enable() {
-			$(el).removeClass(config.startButtonClassDisabled);
+			$(el).removeClass(config.startButtonDisabledClass);
 		}
 		
 		this.disable = disable;
 		function disable() {
-			$(el).addClass(config.startButtonClassDisabled);
+			$(el).addClass(config.startButtonDisabledClass);
 		}
 	});
 
@@ -330,11 +339,11 @@ Adoro.Carousel2 = function(container, options) {
 		}
 		this.enable = enable;
 		function enable() {
-			$(el).removeClass(config.stopButtonClassDisabled);
+			$(el).removeClass(config.stopButtonDisabledClass);
 		}
 		this.disable = disable;
 		function disable() {
-			$(el).addClass(config.stopButtonClassDisabled);
+			$(el).addClass(config.stopButtonDisabledClass);
 		}
 	});
 	
