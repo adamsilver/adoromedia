@@ -134,6 +134,7 @@ Adoro.Carousel2 = function(container, options) {
 		setState("animating", true);
 		$(ul).animate(config.vertical ? {"top": config.offsetReveal+"px"} : {"left": config.offsetReveal+"px"},{"duration": config.animateSpeed, "easing": config.animateEasing, "complete": function(){
 			setState("animating", false);
+			// need to set current in a clever way
 			if(config.automatic) play();
 		}});
 	}
@@ -148,6 +149,7 @@ Adoro.Carousel2 = function(container, options) {
 			$(ul).append(slides);
 			$(ul).css(config.vertical ? "top":"left", config.offsetReveal+"px");
 			setState("animating", false);
+			// need to set current in a clever way
 			if(config.automatic) play();
 		}});
 	}
@@ -157,10 +159,10 @@ Adoro.Carousel2 = function(container, options) {
 		var allSlides = $(ul).find("li");
 		var slide = null;
 		for(var i = allSlides.length-1; i>=0; i--) {
-			slide = allSlides[i];
-			if(typeof from === "number" && i<from) continue;
-			if(typeof to === "number" && i>to-1) continue;
-			if (slide.parentNode !== ul) continue;
+			slide = allSlides[i];			
+			if(	(typeof from === "number" && i < from) ||
+				(typeof to === "number" && i>to-1) ||
+				(slide.parentNode !== ul) ) continue;
 			slides.push(slide);
 		}
 		slides = slides.reverse();
