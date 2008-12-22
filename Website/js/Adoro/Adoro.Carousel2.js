@@ -61,7 +61,9 @@ Adoro.Carousel2 = function(container, options) {
 	if(!ul) return;
 	
 	if(typeof options === "object") {
-		// set config
+		config.scrollCount = typeof options.scrollCount === "number" ? options.scrollCount : config.scrollCount;
+		config.vertical = typeof options.vertical === "boolean" ? options.vertical : config.vertical;
+		config.isCircular = typeof options.isCircular === "boolean" ? options.isCircular : config.isCircular;
 	}
 	
 	
@@ -405,5 +407,5 @@ Adoro.Carousel2 = function(container, options) {
 	
 	if(config.automatic) play();
 	
-	setButtonStates();
+	setButtonStates();	
 }

@@ -106,8 +106,11 @@
 					revealAmount: -60
 				});
 				
-				new Adoro.Carousel2(document.getElementById("carousel06"),{
-					
+				var carouselNew1 = new Adoro.Carousel2(document.getElementById("carousel06"));
+				var carouselNew2 = new Adoro.Carousel2(document.getElementById("carousel07"), {
+					scrollCount: 2,
+					vertical: true,
+					isCircular: true
 				});
 				
 			});
@@ -225,7 +228,22 @@
 							</ul>
 						</div>
 					</div>
-				
+
+					<h3>New 2</h3>
+					<div id="carousel07">
+						<div class="clip">
+							<ul>
+								<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
+							</ul>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
