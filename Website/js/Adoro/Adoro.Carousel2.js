@@ -141,8 +141,8 @@ Adoro.Carousel2 = function(container, options) {
 	function move(move) {
 		if(state.animating || move === 0) return;
 		if(move < 0) {
-			// adjust
-			if(getState("currentSlideIndex") + move < 0) {
+			// adjust, but only when not indicators are showing and isCircular
+			if(config.indicators && config.isCircular && getState("currentSlideIndex") + move < 0) {
 				var newCurrentSlideIndex = getSlides().length + move + getState("currentSlideIndex");
 				var remainder = newCurrentSlideIndex % config.scrollCount;
 				if(remainder !== 0) {
@@ -158,7 +158,7 @@ Adoro.Carousel2 = function(container, options) {
 		}
 		else {
 			// adjust
-			if(getState("currentSlideIndex") + move > getSlides().length-1) {
+			if(config.indicators && config.isCircular && getState("currentSlideIndex") + move > getSlides().length-1) {
 				var newCurrentSlideIndex = getState("currentSlideIndex") - getSlides().length + move;
 				var remainder = newCurrentSlideIndex % config.scrollCount;
 				if (remainder !== 0) {
@@ -222,21 +222,9 @@ Adoro.Carousel2 = function(container, options) {
 	}
 	
 	function setButtonStates() {
-		indicators.setSelected();
-		
-		if (!getOption("isCircular") && (getState("currentSlideIndex") - config.scrollCount < 0)) {
-			backButton.disable();
-		}
-		else {
-			backButton.enable();
-		}
-		
-		if(!getOption("isCircular") && (getState("currentSlideIndex") + config.scrollCount > getSlides().length-1)) {
-			forwardButton.disable();
-		}
-		else {
-			forwardButton.enable();
-		}
+		if(config.indicators) indicators.setSelected();
+		if(config.backButton) backButton.setState();
+		if(config.forwardButton) forwardButton.setState();
 	}
 	
 	function getSlides(from, to) {
@@ -286,150 +274,183 @@ Adoro.Carousel2 = function(container, options) {
 		return state[key];
 	}
 	
-	var indicators = new (function(){
-		var indicators = [];
-		
-		var slides = getSlides(),
-			indicator,
-			indicatorsContainer = $('<div></div>')[0];
+	
+	if (config.indicators) {
+		var indicators = new (function(){
+			var indicators = [];
 			
-		indicatorsContainer.className = config.indicatorsContainerClass;
-		config.indicatorsContainerAppendTo.appendChild(indicatorsContainer);
-		for(var i = 0; i<slides.length; i++) {
-			if(i % config.scrollCount > 0) continue;
-			indicator = new Indicator(i);
-			indicators.push(indicator);
-			indicatorsContainer.appendChild(indicator.el);
-		}
-		setSelected();
-		
-		this.setSelected = setSelected;
-		function setSelected() {
-			for(var i = 0; i < indicators.length; i++) {
-				if(indicators[i].value === getState("currentSlideIndex")) {
-					indicators[i].setSelected();
-				}
-				else {
-					indicators[i].setUnselected();
-				}
+			var slides = getSlides(),
+				indicator,
+				indicatorsContainer = $('<div></div>')[0];
+				
+			indicatorsContainer.className = config.indicatorsContainerClass;
+			config.indicatorsContainerAppendTo.appendChild(indicatorsContainer);
+			for(var i = 0; i<slides.length; i++) {
+				if(i % config.scrollCount > 0) continue;
+				indicator = new Indicator(i);
+				indicators.push(indicator);
+				indicatorsContainer.appendChild(indicator.el);
 			}
-		}
-		
-		function Indicator(value) {
-			var el = $('<a href="#"></a>')[0];
-			this.el = el;
-			el.innerHTML = config.indicatorButtonHTML;
-			el.className = config.indicatorButtonClass;
-			$(el).bind("click", fire);
-			this.value = value;
-			function fire(){
-				move(value - state.currentSlideIndex);
-				return false;
-			}
+			setSelected();
 			
 			this.setSelected = setSelected;
 			function setSelected() {
-				$(el).addClass(config.indicatorButtonSelectedClass);
-				el.innerHTML = config.indicatorButtonSelectedHTML;
+				for(var i = 0; i < indicators.length; i++) {
+					if(indicators[i].value === getState("currentSlideIndex")) {
+						indicators[i].setSelected();
+					}
+					else {
+						indicators[i].setUnselected();
+					}
+				}
 			}
 			
-			this.setUnselected = setUnselected;
-			function setUnselected() {
-				$(el).removeClass(config.indicatorButtonSelectedClass);
+			function Indicator(value) {
+				var el = $('<a href="#"></a>')[0];
+				this.el = el;
 				el.innerHTML = config.indicatorButtonHTML;
+				el.className = config.indicatorButtonClass;
+				$(el).bind("click", fire);
+				this.value = value;
+				function fire(){
+					move(value - state.currentSlideIndex);
+					return false;
+				}
+				
+				this.setSelected = setSelected;
+				function setSelected() {
+					$(el).addClass(config.indicatorButtonSelectedClass);
+					el.innerHTML = config.indicatorButtonSelectedHTML;
+				}
+				
+				this.setUnselected = setUnselected;
+				function setUnselected() {
+					$(el).removeClass(config.indicatorButtonSelectedClass);
+					el.innerHTML = config.indicatorButtonHTML;
+				}
 			}
-		}
-	});
+		});
+	}
 
-	var backButton = new (function(){
-		var el = $('<a href="#"></a>')[0];
-		el.className = config.backButtonClass;
-		el.innerHTML = config.backButtonHTML;
-		config.backButtonAppendTo.appendChild(el);
-		$(el).bind("click", fire);
-		function fire() {
-			move(-config.scrollCount);
-			return false;
-		}
-		
-		this.enable = enable;
-		function enable() {
-			$(el).removeClass(config.backButtonDisabledClass);
+	if (config.backButton) {
+		var backButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.backButtonClass;
 			el.innerHTML = config.backButtonHTML;
-		}
-		
-		this.disable = disable;
-		function disable() {
-			$(el).addClass(config.backButtonDisabledClass);
-			el.innerHTML = config.backButtonDisabledHTML;
-		}
-	});
+			config.backButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				move(-config.scrollCount);
+				return false;
+			}
+			
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.backButtonDisabledClass);
+				el.innerHTML = config.backButtonHTML;
+			}
+			
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.backButtonDisabledClass);
+				el.innerHTML = config.backButtonDisabledHTML;
+			}
+			
+			this.setState = setState;
+			function setState() {
+				if (!getOption("isCircular") && (getState("currentSlideIndex") - config.scrollCount < 0)) {
+					disable();
+				}
+				else {
+					enable();
+				}
+			}
+			
+		});
+	}
 	
-	var forwardButton = new (function(){
-		var el = $('<a href="#"></a>')[0];
-		el.className = config.forwardButtonClass;
-		el.innerHTML = config.forwardButtonHTML;
-		config.forwardButtonAppendTo.appendChild(el);
-		$(el).bind("click", fire);
-		function fire() {
-			move(config.scrollCount);
-			return false;
-		}
-		
-		this.enable = enable;
-		function enable() {
-			$(el).removeClass(config.forwardButtonDisabledClass);
+	if (config.forwardButton) {
+		var forwardButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.forwardButtonClass;
 			el.innerHTML = config.forwardButtonHTML;
-		}
-		
-		this.disable = disable;
-		function disable() {
-			$(el).addClass(config.forwardButtonDisabledClass);
-			el.innerHTML = config.forwardButtonDisabledHTML;
-		}
-	});
+			config.forwardButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				move(config.scrollCount);
+				return false;
+			}
+			
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.forwardButtonDisabledClass);
+				el.innerHTML = config.forwardButtonHTML;
+			}
+			
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.forwardButtonDisabledClass);
+				el.innerHTML = config.forwardButtonDisabledHTML;
+			}
+			
+			this.setState = setState;
+			function setState() {
+				if(!getOption("isCircular") && (getState("currentSlideIndex") + config.scrollCount > getSlides().length-1)) {
+					disable();
+				}
+				else {
+					enable();
+				}
+			}
+			
+		});
+	}
 	
-	var startButton = new (function() {
-		var el = $('<a href="#"></a>')[0];
-		el.className = config.startButtonClass;
-		el.innerHTML = config.startButtonHTML;
-		config.startButtonAppendTo.appendChild(el);
-		$(el).bind("click", fire);
-		function fire() {
-			play();
-			return false;
-		}
-		
-		this.enable = enable;
-		function enable() {
-			$(el).removeClass(config.startButtonDisabledClass);
-		}
-		
-		this.disable = disable;
-		function disable() {
-			$(el).addClass(config.startButtonDisabledClass);
-		}
-	});
-
-	var stopButton = new (function() {
-		var el = $('<a href="#"></a>')[0];
-		el.className = config.stopButtonClass;
-		el.innerHTML = config.stopButtonHTML;
-		config.stopButtonAppendTo.appendChild(el);
-		$(el).bind("click", fire);
-		function fire() {
-			stop();
-			return false;
-		}
-		this.enable = enable;
-		function enable() {
-			$(el).removeClass(config.stopButtonDisabledClass);
-		}
-		this.disable = disable;
-		function disable() {
-			$(el).addClass(config.stopButtonDisabledClass);
-		}
-	});
+	if (config.startButton) {
+		var startButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.startButtonClass;
+			el.innerHTML = config.startButtonHTML;
+			config.startButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				play();
+				return false;
+			}
+			
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.startButtonDisabledClass);
+			}
+			
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.startButtonDisabledClass);
+			}
+		});
+	}
+	
+	if (config.stopButton) {
+		var stopButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.stopButtonClass;
+			el.innerHTML = config.stopButtonHTML;
+			config.stopButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				stop();
+				return false;
+			}
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.stopButtonDisabledClass);
+			}
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.stopButtonDisabledClass);
+			}
+		});
+	}
 	
 	var timer = null;
 	function play() {
@@ -437,18 +458,17 @@ Adoro.Carousel2 = function(container, options) {
 		timer = window.setTimeout(function(){
 			move(config.automaticDirectionBackwards ? -config.scrollCount : config.scrollCount);
 		}, config.automaticDelay);
-		startButton.disable();
-		stopButton.enable();
+		if(config.startButton) startButton.disable();
+		if(config.stopButton) stopButton.enable();
 	}
 	
 	function stop() {
 		setOption("automatic", false);
 		clearTimeout(timer);
-		startButton.enable();
-		stopButton.disable();
+		if(config.startButton) startButton.enable();
+		if(config.stopButton) stopButton.disable();
 	}
 	
 	if(config.automatic) play();
-	
 	setButtonStates();	
 }
