@@ -63,6 +63,7 @@ Adoro.Carousel2 = function(container, options) {
 		config.clipType = typeof options.clipType === "string" ? options.clipType : config.clipType;
 		config.clipClass = typeof options.clipClass === "string" ? options.clipClass : config.clipClass;
 		config.vertical = typeof options.vertical === "boolean" ? options.vertical : config.vertical;
+		config.offsetReveal = typeof options.offsetReveal === "number" ? options.offsetReveal : config.offsetReveal;
 		config.isCircular = typeof options.isCircular === "boolean" ? options.isCircular : config.isCircular;
 		config.animate = typeof options.animate === "boolean" ? options.animate : config.animate;
 		config.animateEasing = typeof options.animateEasing === "string" ? options.animateEasing : config.animateEasing;

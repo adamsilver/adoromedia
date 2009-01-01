@@ -106,7 +106,9 @@
 					revealAmount: -60
 				});
 				
-				var carouselNew1 = new Adoro.Carousel2(document.getElementById("carousel06"));
+				var carouselNew1 = new Adoro.Carousel2(document.getElementById("carousel06"),{
+					offsetReveal: -30
+				});
 				var carouselNew2 = new Adoro.Carousel2(document.getElementById("carousel07"), {
 					scrollCount: 2,
 					vertical: true,

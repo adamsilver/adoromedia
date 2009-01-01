@@ -399,7 +399,71 @@ div#carousel05 a.previous {
  */
 
 div#carousel06 {
- 	
+ 	overflow: hidden;
+}
+
+div#carousel06 div.clip ul {
+	list-style: none;	
+}
+
+div#carousel06 div.clip ul li {
+	margin-right: 15px;
+}
+
+div#carousel06 a.back {
+	background:transparent url(../img/action_back.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.back span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 a.forward {
+	background:transparent url(../img/action_forward.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.forward span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 a.stop {
+	background:transparent url(../img/action_stop.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.stop span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 a.start {
+	background:transparent url(../img/action_go.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.start span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
 }
 
 div#carousel06 div.indicatorsContainer {
