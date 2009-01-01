@@ -110,7 +110,12 @@
 				var carouselNew2 = new Adoro.Carousel2(document.getElementById("carousel07"), {
 					scrollCount: 2,
 					vertical: true,
-					isCircular: true
+					isCircular: false,
+					indicators: true,
+					stopButton: true,
+					forwardButton: true,
+					backButton: true,
+					automaticDirectionBackwards: false
 				});
 				
 			});
