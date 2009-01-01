@@ -402,9 +402,35 @@ div#carousel06 {
  	
 }
 
-div#carousel06 a.indicatorSelected {
-	color: red;
+div#carousel06 div.indicatorsContainer {
+	overflow: hidden;
 }
+
+div#carousel06 div.indicatorsContainer a.indicator {
+	float: left;
+	width: 10px;
+	height: 10px;
+	background: url(../img/carousel/indicator.gif) no-repeat 0px -10px;
+	margin-right: 5px;
+}
+
+div#carousel06 div.indicatorsContainer a.indicator span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 div.indicatorsContainer a.indicatorSelected {
+	background: url(../img/carousel/indicator.gif) no-repeat 0px 0px;
+}
+
+
+
+
+
+
+
+
 
 div#carousel07 {
 	

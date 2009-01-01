@@ -274,7 +274,6 @@ Adoro.Carousel2 = function(container, options) {
 		return state[key];
 	}
 	
-	
 	if (config.indicators) {
 		var indicators = new (function(){
 			var indicators = [];
