@@ -81,6 +81,28 @@ Adoro.Carousel2 = function(container, options) {
 		config.backButtonClass = typeof options.backButtonClass === "string" ? options.backButtonClass : config.backButtonClass;
 		config.backButtonDisabledClass = typeof options.backButtonDisabledClass === "string" ? options.backButtonDisabledClass : config.backButtonDisabledClass;
 		config.backButtonAppendTo = options.backButtonAppendTo || config.backButtonAppendTo;
+		
+		config.startButton = typeof options.startButton === "boolean" ? options.startButton : config.startButton;
+		config.startButtonHTML = typeof options.startButtonHTML === "string" ? options.startButtonHTML : config.startButtonHTML;
+		config.startButtonDisabledHTML = typeof options.startButtonDisabledHTML === "string" ? options.startButtonDisabledHTML : config.startButtonDisabledHTML;
+		config.startButtonClass = typeof options.startButtonClass === "string" ? options.startButtonClass : config.startButtonClass;
+		config.startButtonDisabledClass = typeof options.startButtonDisabledClass === "string" ? options.startButtonDisabledClass : config.startButtonDisabledClass;
+		config.startButtonAppendTo = options.startButtonAppendTo || config.startButtonAppendTo;
+		
+		config.stopButton = typeof options.stopButton === "boolean" ? options.stopButton : config.stopButton;
+		config.stopButtonHTML = typeof options.stopButtonHTML === "string" ? options.stopButtonHTML : config.stopButtonHTML;
+		config.stopButtonDisabledHTML = typeof options.stopButtonDisabledHTML === "string" ? options.stopButtonDisabledHTML : config.stopButtonDisabledHTML;
+		config.stopButtonClass = typeof options.stopButtonClass === "string" ? options.stopButtonClass : config.stopButtonClass;
+		config.stopButtonDisabledClass = typeof options.stopButtonDisabledClass === "string" ? options.stopButtonDisabledClass : config.stopButtonDisabledClass;
+		config.stopButtonAppendTo = options.stopButtonAppendTo || config.stopButtonAppendTo;
+		
+		config.indicators = typeof options.indicators === "boolean" ? options.indicators : config.indicators;
+		config.indicatorsContainerClass = typeof options.indicators === "string" ? options.indicatorsContainerClass : config.indicatorsContainerClass;
+		config.indicatorsContainerAppendTo =  options.indicatorsContainerAppendTo || config.indicatorsContainerAppendTo;
+		config.indicatorButtonHTML = typeof options.indicatorButtonHTML === "string" ? options.indicatorButtonHTML : config.indicatorButtonHTML;
+		config.indicatorButtonSelectedHTML = typeof options.indicatorButtonSelectedHTML === "string" ? options.indicatorButtonSelectedHTML : config.indicatorButtonSelectedHTML;
+		config.indicatorButtonClass = typeof options.indicatorButtonClass === "string" ? options.indicatorButtonClass : config.indicatorButtonClass;
+		config.indicatorButtonSelectedClass = typeof options.indicatorButtonSelectedClass === "string" ? options.indicatorButtonSelectedClass : config.indicatorButtonSelectedClass;
 	}
 	
 	var container = container || null;
