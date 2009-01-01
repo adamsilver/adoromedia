@@ -54,19 +54,40 @@ Adoro.Carousel2 = function(container, options) {
 		indicatorButtonSelectedClass: "indicatorSelected"
 		
 	};
+	
+	if(typeof options === "object") {
+		config.automaticDelay = typeof options.automaticDelay === "number" ? options.automaticDelay : config.automaticDelay;
+		config.automatic = typeof options.automatic === "boolean" ? options.automatic : config.automatic;
+		config.automaticDirectionBackwards = typeof options.automaticDirectionBackwards === "boolean" ? options.automaticDirectionBackwards : config.automaticDirectionBackwards;
+		config.scrollCount = typeof options.scrollCount === "number" ? options.scrollCount : config.scrollCount;
+		config.clipType = typeof options.clipType === "string" ? options.clipType : config.clipType;
+		config.clipClass = typeof options.clipClass === "string" ? options.clipClass : config.clipClass;
+		config.vertical = typeof options.vertical === "boolean" ? options.vertical : config.vertical;
+		config.isCircular = typeof options.isCircular === "boolean" ? options.isCircular : config.isCircular;
+		config.animate = typeof options.animate === "boolean" ? options.animate : config.animate;
+		config.animateEasing = typeof options.animateEasing === "string" ? options.animateEasing : config.animateEasing;
+		config.animateSpeed = typeof options.animateSpeed === "number" ? options.animateSpeed : config.animateSpeed;
+		
+		config.forwardButton = typeof options.forwardButton === "boolean" ? options.forwardButton : config.forwardButton;
+		config.forwardButtonHTML = typeof options.forwardButtonHTML === "string" ? options.forwardButtonHTML : config.forwardButtonHTML;
+		config.forwardButtonDisabledHTML = typeof options.forwardButtonDisabledHTML === "string" ? options.forwardButtonDisabledHTML : config.forwardButtonDisabledHTML;
+		config.forwardButtonClass = typeof options.forwardButtonClass === "string" ? options.forwardButtonClass : config.forwardButtonClass;
+		config.forwardButtonDisabledClass = typeof options.forwardButtonDisabledClass === "string" ? options.forwardButtonDisabledClass : config.forwardButtonDisabledClass;
+		config.forwardButtonAppendTo = options.forwardButtonAppendTo || config.forwardButtonAppendTo;
+		
+		config.backButton = typeof options.backButton === "boolean" ? options.backButton : config.backButton;
+		config.backButtonHTML = typeof options.backButtonHTML === "string" ? options.backButtonHTML : config.backButtonHTML;
+		config.backButtonDisabledHTML = typeof options.backButtonDisabledHTML === "string" ? options.backButtonDisabledHTML : config.backButtonDisabledHTML;
+		config.backButtonClass = typeof options.backButtonClass === "string" ? options.backButtonClass : config.backButtonClass;
+		config.backButtonDisabledClass = typeof options.backButtonDisabledClass === "string" ? options.backButtonDisabledClass : config.backButtonDisabledClass;
+		config.backButtonAppendTo = options.backButtonAppendTo || config.backButtonAppendTo;
+	}
+	
 	var container = container || null;
 	var clip = $(container).find(config.clipType+"."+config.clipClass)[0] || null;
 	var ul = $(clip).find("ul")[0] || null;
 	
 	if(!ul) return;
-	
-	if(typeof options === "object") {
-		config.scrollCount = typeof options.scrollCount === "number" ? options.scrollCount : config.scrollCount;
-		config.vertical = typeof options.vertical === "boolean" ? options.vertical : config.vertical;
-		config.isCircular = typeof options.isCircular === "boolean" ? options.isCircular : config.isCircular;
-	}
-	
-	
 	
 	setULStyle();
 	
