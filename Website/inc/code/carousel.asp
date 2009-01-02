@@ -8,7 +8,7 @@
 <div class="code"><pre>
 &lt;script type=&quot;text/javascript&quot;&gt;
 	$(document).ready(function(){ 						
-		new Adoro.Carousel2(document.getElementById(&quot;carousel06&quot;),{
+		new Adoro.Carousel(document.getElementById(&quot;carousel06&quot;),{
 			offsetReveal: -35,
 			isCircular: true,
 			indicators: false,
@@ -16,7 +16,7 @@
 			animateSpeed: 500
 		});
 
-		new Adoro.Carousel2(document.getElementById(&quot;carousel02&quot;), {
+		new Adoro.Carousel(document.getElementById(&quot;carousel02&quot;), {
 			scrollCount: 2,
 			isCircular: true,
 			indicators: true,
@@ -29,7 +29,7 @@
 			automaticDelay: 500
 		});
 		
-		new Adoro.Carousel2(document.getElementById(&quot;carousel07&quot;), {
+		new Adoro.Carousel(document.getElementById(&quot;carousel07&quot;), {
 			scrollCount: 2,
 			vertical: true,
 			isCircular: true,
