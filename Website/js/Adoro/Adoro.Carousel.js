@@ -1,463 +1,473 @@
-//  ---------------------------------------------------------------------------------------------------------
-//  --- license header; ---
-//  ---------------------------------------------------------------------------------------------------------
-/* Copyright (c) 2008 - 2009 by Adoro Media
-	info@adoromedia.com
-  	
-  	This file is part of Adoro Media open source projects
-  	
-    Adoro Media projects are free software: you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
- 
-    The projects are distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
- 
-    See <http://www.gnu.org/licenses/> for information on the GNU Lesser General Public License.
-*/
-//  ---------------------------------------------------------------------------------------------------------
-//  ---------------------------------------------------------------------------------------------------------
-
-if (typeof Adoro !== "object") var Adoro = {};
-
-/**
- * Create a carousel
- * @constructor
- * @class Represents a Carousel
- * @param {Node} container DOM reference to container element
- */
+if(typeof Adoro !== "object") Adoro = {};
 Adoro.Carousel = function(container, options) {
-	var container = container || null;
-	if(!container) return;
-	var ul = container.getElementsByTagName("ul")[0] || null;
-	if (!ul) return null;
-	var lis = getLis();
-	var state = {animating: false, currentIndex: 0};
+	var state = { 
+		currentSlideIndex: 0, // starts from 0 as in 0, 1, 2, 3 etc
+		animating: false
+	};
 	var config = {
-		// general
-		animate: false,
-		animationSpeed: 300,
+		automaticDelay: 0,
 		automatic: false,
-		automaticDelay: 300,
-		animationEasing: "linear",
+		automaticDirectionBackwards: false,
 		scrollCount: 3,
-		isCircular: true,
-		revealAmount: 0,
+		clipType: "div",
+		clipClass: "clip",
 		vertical: false,
+		offsetReveal: 0,
+		isCircular: false,
+		animate: true,
+		animateEasing: "linear",
+		animateSpeed: 300,
 		
-		// general TO DO
-		automaticDirection: "forwards",
-		mouseWheel: true,
+		forwardButton: true,
+		forwardButtonHTML: "<span>Forward</span>",
+		forwardButtonDisabledHTML: "<span>Forward disabled</span>",
+		forwardButtonClass: "forward",
+		forwardButtonDisabledClass: "forwardDisabled",
+		forwardButtonAppendTo: container,
 		
-		beforeStartCallback: null,
-		afterEndCallback: null,
+		backButton: true,
+		backButtonHTML: "<span>Back</span>",
+		backButtonDisabledHTML: "<span>Back disabled</span>",
+		backButtonClass: "back",
+		backButtonDisabledClass: "backDisabled",
+		backButtonAppendTo: container,
 		
-		// indicator
-		hasIndicator: false,
-		indicatorContainerClass: "indicatorContainer",
-		indicatorItemHTML: '<span class="indicator">Go</span>',
-		indicatorItemClass: "go",
-		inicatorItemSelectedClass: "selected",
-		indicatorAppend: container,
-		
-		// start button
-		hasStartButton: false,
-		startButtonHTML: '<span>Start</span>',
+		startButton: true,
+		startButtonHTML: "<span>Start</span>",
+		startButtonDisabledHTML: "<span>Start disabled</span>",
 		startButtonClass: "start",
 		startButtonDisabledClass: "startDisabled",
-		startButtonAppend: container,
+		startButtonAppendTo: container,
 		
-		// stop button
-		hasStopButton: false,
-		stopButtonHTML: '<span>Stop</span>',
+		stopButton: true,
+		stopButtonHTML: "<span>Stop</span>",
 		stopButtonClass: "stop",
 		stopButtonDisabledClass: "stopDisabled",
-		stopButtonAppend: container,
+		stopButtonAppendTo: container,
 		
-		// previous button
-		hasPreviousButton: true,
-		previousButtonHTML: '<span>Previous</span>',
-		previousButtonClass: "previous",
-		previousButtonDisabledClass: "previousDisabled", // to do
-		previousButtonAppend: container,
-		
-		// next button
-		hasNextButton: true,
-		nextButtonHTML: '<span>Next</span>',
-		nextButtonClass: "next",
-		nextButtonDisabledClass: "nextDisabled", // to do
-		nextButtonAppend: container
-	}
+		indicators: true,
+		indicatorsContainerClass: "indicatorsContainer",
+		indicatorsContainerAppendTo: container,
+		indicatorButtonHTML: "<span>Indicator</span>",
+		indicatorButtonSelectedHTML: "<span>Indicator selected</span>",
+		indicatorButtonClass: "indicator",
+		indicatorButtonSelectedClass: "indicatorSelected"
+	};
 	
 	if(typeof options === "object") {
-		// general
-		config.animate = (typeof options.animate === "boolean") ? options.animate : config.animate;
-		config.animationSpeed = (typeof options.animationSpeed === "number") ? options.animationSpeed : config.animationSpeed;
-		config.automatic = (typeof options.automatic === "boolean") ? options.automatic : config.automatic;
-		config.automaticDelay = (typeof options.automaticDelay === "number") ? options.automaticDelay : config.automaticDelay;
-		config.scrollCount = (typeof options.scrollCount === "number") ? options.scrollCount : config.scrollCount;
-		config.animationEasing = (typeof options.animationEasing === "string") ? options.animationEasing : config.animationEasing;
-		config.isCircular = (typeof options.isCircular === "boolean") ? options.isCircular : config.isCircular;
-		config.revealAmount = (typeof options.revealAmount === "number") ? options.revealAmount : config.revealAmount;
-		config.vertical = (typeof options.vertical === "boolean") ? options.vertical : config.vertical;
+		config.automaticDelay = typeof options.automaticDelay === "number" ? options.automaticDelay : config.automaticDelay;
+		config.automatic = typeof options.automatic === "boolean" ? options.automatic : config.automatic;
+		config.automaticDirectionBackwards = typeof options.automaticDirectionBackwards === "boolean" ? options.automaticDirectionBackwards : config.automaticDirectionBackwards;
+		config.scrollCount = typeof options.scrollCount === "number" ? options.scrollCount : config.scrollCount;
+		config.clipType = typeof options.clipType === "string" ? options.clipType : config.clipType;
+		config.clipClass = typeof options.clipClass === "string" ? options.clipClass : config.clipClass;
+		config.vertical = typeof options.vertical === "boolean" ? options.vertical : config.vertical;
+		config.offsetReveal = typeof options.offsetReveal === "number" ? options.offsetReveal : config.offsetReveal;
+		config.isCircular = typeof options.isCircular === "boolean" ? options.isCircular : config.isCircular;
+		config.animate = typeof options.animate === "boolean" ? options.animate : config.animate;
+		config.animateEasing = typeof options.animateEasing === "string" ? options.animateEasing : config.animateEasing;
+		config.animateSpeed = typeof options.animateSpeed === "number" ? options.animateSpeed : config.animateSpeed;
 		
-		// indicator
-		config.hasIndicator = (typeof options.hasIndicator === "boolean") ? options.hasIndicator : config.hasIndicator;
-		config.indicatorContainerClass = (typeof options.indicatorContainerClass === "string") ? options.indicatorContainerClass : config.indicatorContainerClass;
-		config.indicatorItemHTML = (typeof options.indicatorItemHTML === "string") ? options.indicatorItemHTML : config.indicatorItemHTML;
-		config.indicatorItemClass = (typeof options.indicatorItemClass === "string") ? options.indicatorItemClass : config.indicatorItemClass;
-		config.inicatorItemSelectedClass = (typeof options.inicatorItemSelectedClass === "string") ? options.inicatorItemSelectedClass : config.inicatorItemSelectedClass;
-		config.indicatorAppend = options.indicatorAppend || config.indicatorAppend;	
+		config.forwardButton = typeof options.forwardButton === "boolean" ? options.forwardButton : config.forwardButton;
+		config.forwardButtonHTML = typeof options.forwardButtonHTML === "string" ? options.forwardButtonHTML : config.forwardButtonHTML;
+		config.forwardButtonDisabledHTML = typeof options.forwardButtonDisabledHTML === "string" ? options.forwardButtonDisabledHTML : config.forwardButtonDisabledHTML;
+		config.forwardButtonClass = typeof options.forwardButtonClass === "string" ? options.forwardButtonClass : config.forwardButtonClass;
+		config.forwardButtonDisabledClass = typeof options.forwardButtonDisabledClass === "string" ? options.forwardButtonDisabledClass : config.forwardButtonDisabledClass;
+		config.forwardButtonAppendTo = options.forwardButtonAppendTo || config.forwardButtonAppendTo;
 		
-		// previous button
-		config.hasPreviousButton = (typeof options.hasPreviousButton === "boolean") ? options.hasPreviousButton : config.hasPreviousButton;
-		config.previousButtonHTML = (typeof options.previousButtonHTML === "string") ? options.previousButtonHTML : config.previousButtonHTML;
-		config.previousButtonClass = (typeof options.previousButtonClass === "string") ? options.previousButtonClass : config.previousButtonClass;
-		config.previousButtonDisabledClass = (typeof options.previousButtonDisabledClass === "string") ? options.previousButtonDisabledClass : config.previousButtonDisabledClass;		
-		config.previousButtonAppend = options.previousButtonAppend || config.previousButtonAppend;	
+		config.backButton = typeof options.backButton === "boolean" ? options.backButton : config.backButton;
+		config.backButtonHTML = typeof options.backButtonHTML === "string" ? options.backButtonHTML : config.backButtonHTML;
+		config.backButtonDisabledHTML = typeof options.backButtonDisabledHTML === "string" ? options.backButtonDisabledHTML : config.backButtonDisabledHTML;
+		config.backButtonClass = typeof options.backButtonClass === "string" ? options.backButtonClass : config.backButtonClass;
+		config.backButtonDisabledClass = typeof options.backButtonDisabledClass === "string" ? options.backButtonDisabledClass : config.backButtonDisabledClass;
+		config.backButtonAppendTo = options.backButtonAppendTo || config.backButtonAppendTo;
 		
-		// next button		
-		config.hasNextButton = (typeof options.hasNextButton === "boolean") ? options.hasNextButton : config.hasNextButton;
-		config.nextButtonHTML = (typeof options.nextButtonHTML === "string") ? options.nextButtonHTML : config.nextButtonHTML;
-		config.nextButtonClass = (typeof options.nextButtonClass === "string") ? options.nextButtonClass : config.nextButtonClass;
-		config.nextButtonAppend = options.nextButtonAppend || config.nextButtonAppend;
+		config.startButton = typeof options.startButton === "boolean" ? options.startButton : config.startButton;
+		config.startButtonHTML = typeof options.startButtonHTML === "string" ? options.startButtonHTML : config.startButtonHTML;
+		config.startButtonDisabledHTML = typeof options.startButtonDisabledHTML === "string" ? options.startButtonDisabledHTML : config.startButtonDisabledHTML;
+		config.startButtonClass = typeof options.startButtonClass === "string" ? options.startButtonClass : config.startButtonClass;
+		config.startButtonDisabledClass = typeof options.startButtonDisabledClass === "string" ? options.startButtonDisabledClass : config.startButtonDisabledClass;
+		config.startButtonAppendTo = options.startButtonAppendTo || config.startButtonAppendTo;
 		
-		// start button		
-		config.hasStartButton = (typeof options.hasStartButton === "boolean") ? options.hasStartButton : config.hasStartButton;
-		config.startButtonHTML = (typeof options.startButtonHTML === "string") ? options.startButtonHTML : config.startButtonHTML;
-		config.startButtonClass = (typeof options.startButtonClass === "string") ? options.startButtonClass : config.startButtonClass;
-		config.startButtonAppend = options.startButtonAppend || config.startButtonAppend;
+		config.stopButton = typeof options.stopButton === "boolean" ? options.stopButton : config.stopButton;
+		config.stopButtonHTML = typeof options.stopButtonHTML === "string" ? options.stopButtonHTML : config.stopButtonHTML;
+		config.stopButtonDisabledHTML = typeof options.stopButtonDisabledHTML === "string" ? options.stopButtonDisabledHTML : config.stopButtonDisabledHTML;
+		config.stopButtonClass = typeof options.stopButtonClass === "string" ? options.stopButtonClass : config.stopButtonClass;
+		config.stopButtonDisabledClass = typeof options.stopButtonDisabledClass === "string" ? options.stopButtonDisabledClass : config.stopButtonDisabledClass;
+		config.stopButtonAppendTo = options.stopButtonAppendTo || config.stopButtonAppendTo;
 		
-		// stop button		
-		config.hasStopButton = (typeof options.hasStopButton === "boolean") ? options.hasStopButton : config.hasStopButton;
-		config.stopButtonHTML = (typeof options.stopButtonHTML === "string") ? options.stopButtonHTML : config.stopButtonHTML;
-		config.stopButtonClass = (typeof options.stopButtonClass === "string") ? options.stopButtonClass : config.stopButtonClass;
-		config.stopButtonAppend = options.stopButtonAppend || config.stopButtonAppend;
+		config.indicators = typeof options.indicators === "boolean" ? options.indicators : config.indicators;
+		config.indicatorsContainerClass = typeof options.indicators === "string" ? options.indicatorsContainerClass : config.indicatorsContainerClass;
+		config.indicatorsContainerAppendTo =  options.indicatorsContainerAppendTo || config.indicatorsContainerAppendTo;
+		config.indicatorButtonHTML = typeof options.indicatorButtonHTML === "string" ? options.indicatorButtonHTML : config.indicatorButtonHTML;
+		config.indicatorButtonSelectedHTML = typeof options.indicatorButtonSelectedHTML === "string" ? options.indicatorButtonSelectedHTML : config.indicatorButtonSelectedHTML;
+		config.indicatorButtonClass = typeof options.indicatorButtonClass === "string" ? options.indicatorButtonClass : config.indicatorButtonClass;
+		config.indicatorButtonSelectedClass = typeof options.indicatorButtonSelectedClass === "string" ? options.indicatorButtonSelectedClass : config.indicatorButtonSelectedClass;
 	}
 	
-	// setting general styling
-	if(config.vertical) {
-		$(ul).find("li").css({"display": "block","float": "none"});
-		$(ul).css({"height": getLisHeight(lis) + "px"});
-		$(ul).css({"top": config.revealAmount + "px"});
-	}
-	else {
-		$(ul).find("li").css({"display": "inline","float": "left"});
-		$(ul).css({"width": getLisWidth(lis) + "px"});
-		$(ul).css({"left": config.revealAmount + "px"});
-	}
+	var container = container || null;
+	var clip = $(container).find(config.clipType+"."+config.clipClass)[0] || null;
+	var ul = $(clip).find("ul")[0] || null;
 	
-	var indicators = [];
+	if(!ul) return;
 	
-	// add indicator control
-	if(config.hasIndicator) {
-		var indicatorContainer = $('<div></div>')[0];
-		indicatorContainer.className = config.indicatorContainerClass;
-		config.indicatorAppend.appendChild(indicatorContainer);
-		var indicatorLis = getLis().reverse();
-		var indicatorItem = null;
-		var indicator;
-		for(var i = 0; i<indicatorLis.length; i++) {
-			if(i % config.scrollCount > 0) continue;
-			indicatorItem = $(Adoro.Carousel.button).clone()[0];
-			indicatorItem.className = config.indicatorItemClass;
-			indicatorItem.innerHTML = config.indicatorItemHTML;
-			indicatorItem.title = i+1;
-			indicator = new Indicator(indicatorItem, i);
-			indicators.push(indicator);
-			indicatorContainer.appendChild(indicatorItem);
+	setULStyle();
+	
+	function setULStyle() {
+		if(config.vertical) {
+			$(ul).find("li").css({"display": "block","float": "none"});
+			$(ul).css({
+				"height": getSlidesDimensions(getSlides()).height + "px",
+				"top": config.offsetReveal + "px",
+				"position": "relative"
+			});
+		}
+		else {
+			$(ul).find("li").css({"display": "inline","float": "left"});
+			$(ul).css({
+				"width": getSlidesDimensions(getSlides()).width + "px",
+				"left": config.offsetReveal + "px",
+				"position": "relative"
+			});
 		}
 	}
 	
-	function Indicator(indicator, value){
-		this.value = value;
-		
-		$(indicator).bind("click", indicator_onClick)
-		function indicator_onClick(){
-			moveBy(value - state.currentIndex);
-			return false;
+	setClipStyle();
+	
+	function setClipStyle() {
+		$(clip).css({"overflow": "hidden", "position":"relative"});
+	}
+	
+	function move(move) {
+		if(state.animating || move === 0) return;
+		if(move < 0) {
+			// adjust, but only when not indicators are showing and isCircular
+			if(config.indicators && config.isCircular && getState("currentSlideIndex") + move < 0) {
+				var newCurrentSlideIndex = getSlides().length + move + getState("currentSlideIndex");
+				var remainder = newCurrentSlideIndex % config.scrollCount;
+				if(remainder !== 0) {
+					move = move + (config.scrollCount - remainder);
+				}
+			}
+			
+			// if not circular and will be moving past 0 then return
+			if(!getOption("isCircular") && (getState("currentSlideIndex") + move < 0)) return;
+			
+			move = move * -1;
+			config.animate ? moveBackwardsAnimate(move) : moveBackwards(move);
 		}
-		
-		this.setSelected = setSelected;
-		function setSelected() {
-			$(indicator).addClass(config.inicatorItemSelectedClass);
-		}
-		
-		this.setUnselected = setUnselected;
-		function setUnselected() {
-			$(indicator).removeClass(config.inicatorItemSelectedClass);
+		else {
+			// adjust
+			if(config.indicators && config.isCircular && getState("currentSlideIndex") + move > getSlides().length-1) {
+				var newCurrentSlideIndex = getState("currentSlideIndex") - getSlides().length + move;
+				var remainder = newCurrentSlideIndex % config.scrollCount;
+				if (remainder !== 0) {
+					move = move - remainder;
+				}
+			}
+			// if not circular and will be moving past the end then return
+			if(!getOption("isCircular") && (getState("currentSlideIndex") + move > getSlides().length-1)) return;
+			config.animate ? moveForwardsAnimate(move) : moveForwards(move);
 		}
 	}
 	
-	
-	// add previous button
-	if(config.hasPreviousButton) {
-		var previousButton = $(Adoro.Carousel.button).clone()[0];
-		previousButton.innerHTML = config.previousButtonHTML;
-		previousButton.className = config.previousButtonClass;
-		$(previousButton).bind("click", function(){
-			moveBy(-config.scrollCount);
-			return false;
-		});
-		config.previousButtonAppend.appendChild(previousButton);
-	}	
-	
-	// add next button
-	if(config.hasNextButton) {
-		var nextButton = $(Adoro.Carousel.button).clone()[0];
-		nextButton.innerHTML = config.nextButtonHTML;
-		nextButton.className = config.nextButtonClass;
-		$(nextButton).bind("click", function(){
-			moveBy(config.scrollCount);
-			return false;
-		});
-		config.nextButtonAppend.appendChild(nextButton);
+	function moveBackwards(move) {
+		if(config.automatic) play();
 	}
 	
-	// add stop button
-	if(config.hasStopButton) {
-		var stopButton = $(Adoro.Carousel.button).clone()[0];
-		stopButton.innerHTML = config.stopButtonHTML;
-		stopButton.className = config.stopButtonClass;
-		$(stopButton).bind("click", function(){
-			stop();
-			return false;
-		});
-		config.stopButtonAppend.appendChild(stopButton);
+	function moveForwards(move) {
+		if(config.automatic) play();
 	}
 	
-	// add start button
-	if(config.hasStartButton) {
-		var startButton = $(Adoro.Carousel.button).clone()[0];
-		startButton.innerHTML = config.startButtonHTML;
-		startButton.className = config.startButtonClass;
-		stop();
-		$(startButton).bind("click", function(){
-			play();
-			return false;
+	function moveBackwardsAnimate(move) {
+		var allSlides = getSlides();
+		var slidesFrom = allSlides.length-move;
+		var slidesTo = allSlides.length;
+		var slides = getSlides(slidesFrom, slidesTo);
+		$(ul).prepend(slides);
+		$(ul).css(config.vertical ? {"top": -getSlidesDimensions(slides).height } : { "left": -getSlidesDimensions(slides).width });
+		setState("animating", true);
+		$(ul).animate(config.vertical ? {"top": config.offsetReveal+"px"} : {"left": config.offsetReveal+"px"},{"duration": config.animateSpeed, "easing": config.animateEasing, "complete": function(){
+			setState("animating", false);
+			if(getState("currentSlideIndex") - move < 0) {
+				setState("currentSlideIndex", allSlides.length - move + getState("currentSlideIndex"))
+			}
+			else {
+				setState("currentSlideIndex", getState("currentSlideIndex") - move);
+			}
+			setButtonStates();
+			if(config.automatic) play();
+		}});
+	}
+	
+	function moveForwardsAnimate(move) {
+		var allSlides = getSlides();
+		var slidesFrom = 0;
+		var slidesTo = move;
+		var slides = getSlides(slidesFrom, slidesTo);
+		setState("animating", true);
+		$(ul).animate(config.vertical ? {"top": -getSlidesDimensions(slides).height+config.offsetReveal+"px"} : {"left": -getSlidesDimensions(slides).width+config.offsetReveal+"px"}, {"duration": config.animateSpeed,"easing": config.animateEasing,"complete": function(){
+			$(ul).append(slides);
+			$(ul).css(config.vertical ? "top":"left", config.offsetReveal+"px");
+			setState("animating", false);
+			if(getState("currentSlideIndex") + move > allSlides.length-1) {
+				setState("currentSlideIndex", getState("currentSlideIndex") - allSlides.length + move);
+			}
+			else {
+				setState("currentSlideIndex", getState("currentSlideIndex") + move);
+			}
+			setButtonStates();
+			if(config.automatic) play();
+		}});
+	}
+	
+	function setButtonStates() {
+		if(config.indicators) indicators.setSelected();
+		if(config.backButton) backButton.setState();
+		if(config.forwardButton) forwardButton.setState();
+	}
+	
+	function getSlides(from, to) {
+		var slides = [];
+		var allSlides = $(ul).find("li");
+		var slide = null;
+		for(var i = allSlides.length-1; i>=0; i--) {
+			slide = allSlides[i];			
+			if(	(typeof from === "number" && i < from) ||
+				(typeof to === "number" && i>to-1) ||
+				(slide.parentNode !== ul) ) continue;
+			slides.push(slide);
+		}
+		slides = slides.reverse();
+		return slides;
+	}
+	
+	function getSlidesDimensions(slides) {
+		var dimensions = {width:0, height: 0};
+		var slide;
+		for(var i = slides.length-1; i>=0; i--) {
+			slide = slides[i];
+			if (slide.parentNode !== ul) continue;
+			dimensions.height = dimensions.height + $(slide).outerHeight({margin: true});
+			dimensions.width = dimensions.width + $(slide).outerWidth({margin: true});
+		}
+		return dimensions;
+	}
+	
+	this.setOption = setOption;
+	function setOption(key, value) {
+		config[key] = value;
+	}
+	
+	this.getOption = getOption;
+	function getOption(key) {
+		return config[key];
+	}
+	
+	this.setState = setState;
+	function setState(key, value) {
+		state[key] = value;
+	}
+	
+	this.getState = getState;
+	function getState(key) {
+		return state[key];
+	}
+	
+	if (config.indicators) {
+		var indicators = new (function(){
+			var indicators = [];
+			
+			var slides = getSlides(),
+				indicator,
+				indicatorsContainer = $('<div></div>')[0];
+				
+			indicatorsContainer.className = config.indicatorsContainerClass;
+			config.indicatorsContainerAppendTo.appendChild(indicatorsContainer);
+			for(var i = 0; i<slides.length; i++) {
+				if(i % config.scrollCount > 0) continue;
+				indicator = new Indicator(i);
+				indicators.push(indicator);
+				indicatorsContainer.appendChild(indicator.el);
+			}
+			setSelected();
+			
+			this.setSelected = setSelected;
+			function setSelected() {
+				for(var i = 0; i < indicators.length; i++) {
+					if(indicators[i].value === getState("currentSlideIndex")) {
+						indicators[i].setSelected();
+					}
+					else {
+						indicators[i].setUnselected();
+					}
+				}
+			}
+			
+			function Indicator(value) {
+				var el = $('<a href="#"></a>')[0];
+				this.el = el;
+				el.innerHTML = config.indicatorButtonHTML;
+				el.className = config.indicatorButtonClass;
+				$(el).bind("click", fire);
+				this.value = value;
+				function fire(){
+					move(value - state.currentSlideIndex);
+					return false;
+				}
+				
+				this.setSelected = setSelected;
+				function setSelected() {
+					$(el).addClass(config.indicatorButtonSelectedClass);
+					el.innerHTML = config.indicatorButtonSelectedHTML;
+				}
+				
+				this.setUnselected = setUnselected;
+				function setUnselected() {
+					$(el).removeClass(config.indicatorButtonSelectedClass);
+					el.innerHTML = config.indicatorButtonHTML;
+				}
+			}
 		});
-		config.startButtonAppend.appendChild(startButton);
+	}
+
+	if (config.backButton) {
+		var backButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.backButtonClass;
+			el.innerHTML = config.backButtonHTML;
+			config.backButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				move(-config.scrollCount);
+				return false;
+			}
+			
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.backButtonDisabledClass);
+				el.innerHTML = config.backButtonHTML;
+			}
+			
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.backButtonDisabledClass);
+				el.innerHTML = config.backButtonDisabledHTML;
+			}
+			
+			this.setState = setState;
+			function setState() {
+				if (!getOption("isCircular") && (getState("currentSlideIndex") - config.scrollCount < 0)) {
+					disable();
+				}
+				else {
+					enable();
+				}
+			}
+			
+		});
+	}
+	
+	if (config.forwardButton) {
+		var forwardButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.forwardButtonClass;
+			el.innerHTML = config.forwardButtonHTML;
+			config.forwardButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				move(config.scrollCount);
+				return false;
+			}
+			
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.forwardButtonDisabledClass);
+				el.innerHTML = config.forwardButtonHTML;
+			}
+			
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.forwardButtonDisabledClass);
+				el.innerHTML = config.forwardButtonDisabledHTML;
+			}
+			
+			this.setState = setState;
+			function setState() {
+				if(!getOption("isCircular") && (getState("currentSlideIndex") + config.scrollCount > getSlides().length-1)) {
+					disable();
+				}
+				else {
+					enable();
+				}
+			}
+			
+		});
+	}
+	
+	if (config.startButton) {
+		var startButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.startButtonClass;
+			el.innerHTML = config.startButtonHTML;
+			config.startButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				play();
+				return false;
+			}
+			
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.startButtonDisabledClass);
+			}
+			
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.startButtonDisabledClass);
+			}
+		});
+	}
+	
+	if (config.stopButton) {
+		var stopButton = new (function(){
+			var el = $('<a href="#"></a>')[0];
+			el.className = config.stopButtonClass;
+			el.innerHTML = config.stopButtonHTML;
+			config.stopButtonAppendTo.appendChild(el);
+			$(el).bind("click", fire);
+			function fire(){
+				stop();
+				return false;
+			}
+			this.enable = enable;
+			function enable(){
+				$(el).removeClass(config.stopButtonDisabledClass);
+			}
+			this.disable = disable;
+			function disable(){
+				$(el).addClass(config.stopButtonDisabledClass);
+			}
+		});
 	}
 	
 	var timer = null;
-		
-	function stop() {
-		config.automatic = false;
-		$(startButton).addClass(config.startButtonDisabledClass);
-		$(stopButton).addClass(config.stopButtonDisabledClass);
-		clearTimeout(timer);
-	}
-	
-	if(config.automatic) {
-		play();
-	}
-	
-
-	
 	function play() {
-		config.automatic = true;
-		$(startButton).removeClass(config.startButtonDisabledClass);
-		$(stopButton).removeClass(config.stopButtonDisabledClass);
-		
+		setOption("automatic", true);
 		timer = window.setTimeout(function(){
-			moveBy(config.scrollCount);
-		},config.automaticDelay);
+			move(config.automaticDirectionBackwards ? -config.scrollCount : config.scrollCount);
+		}, config.automaticDelay);
+		if(config.startButton) startButton.disable();
+		if(config.stopButton) stopButton.enable();
 	}
 	
-	setIndicatorSelectedState();
-	
-	/**
-	 * get list items
-	 * @param {Number} from The from index of the lis to return
-	 * @param {Number} to The to index of the lis to return
-	 * @return {Array} lis The list items
-	 */
-	function getLis(from, to) {
-		var lis = [];
-		var allLis = $(ul).find("li");
-		var li = null;
-		for(var i = allLis.length-1; i>=0; i--) {
-			li = allLis[i];
-			if(from !== undefined && i<from) continue;
-			if(to !== undefined && i>to-1) continue;
-			if (li.parentNode !== ul) continue;
-			lis.push(li);
-		}
-		return lis;
+	function stop() {
+		setOption("automatic", false);
+		clearTimeout(timer);
+		if(config.startButton) startButton.enable();
+		if(config.stopButton) stopButton.disable();
 	}
 	
-	/**
-	 * Get the total height in pixels of the list items
-	 * @param {Array} lis The array of list itesm to measure
-	 * @return {Number} height
-	 */
-	function getLisHeight(lis) {
-		var lis = lis;
-		var height = 0;
-		var li;
-		for(var i = lis.length-1; i>=0; i--) {
-			li = lis[i];
-			if (li.parentNode !== ul) continue;
-			height = height + $(li).outerHeight({margin: true});
-		}
-		return height;
-	}
-	
-	/**
-	 * Get the total width in pixels of the list items
-	 * @param {Array} lis The array of list items to measure
-	 * @return {Number} width
-	 */
-	function getLisWidth(lis) {
-		var lis = lis;
-		var width = 0;
-		var li;
-		for(var i = lis.length-1; i>=0; i--) {
-			li = lis[i];
-			if (li.parentNode !== ul) continue;
-			width = width + $(li).outerWidth({margin: true});
-		}
-		return width;
-	}
-	
-	/**
-	 * move list items
-	 * @param {Number} move The amount of list items to move +1 goes forward 1, -1 goes back 1
-	 */
-	function moveBy(move) {
-		if(state.animating || move === 0) return;
-		if(move < 0) {
-			goBackwards(move);
-		}
-		else {
-			goForwards(move);
-		}
-	}
-	
-	/**
-	 * move backwards
-	 * can be made more efficient
-	 * @param {Number} move Amount of list items to move backwards by
-	 */
-	function goBackwards(move) {		
-		if(state.currentIndex + move < 0) {
-			var newState = lis.length + move + state.currentIndex;
-			var remainder = newState % config.scrollCount;
-			if (remainder !== 0) {
-				move = move + (config.scrollCount - remainder);
-			}
-		}
-		
-		var lisToManipulate = getLis(lis.length+move, lis.length).reverse();
-			
-		// at the beginning so don't go further back
-		if(!config.isCircular && (state.currentIndex + move < 0)) return;
-
-		// animate
-		if(config.animate) {
-			$(ul).css( config.vertical ? "top":"left" , config.vertical ? -getLisHeight(lisToManipulate) : -getLisWidth(lisToManipulate));
-			$(ul).prepend(lisToManipulate);
-			state.animating = true;			
-			$(ul).animate(config.vertical ? {"top": config.revealAmount+"px"} : {"left": config.revealAmount+"px"}, {"duration": config.animationSpeed, "easing": config.animationEasing, "complete": function(){
-				state.animating = false;
-							
-				if(state.currentIndex + move < 0) {
-					state.currentIndex = lis.length + move + state.currentIndex;
-				}
-				else {
-					state.currentIndex += move;
-				}
-				setIndicatorSelectedState();
-				if(config.automatic) {
-					play();
-				}
-			}});
-		}
-		// non-animate
-		else {
-			$(ul).prepend(lisToManipulate);
-			if(state.currentIndex + move < 0) {
-				state.currentIndex = lis.length + move + state.currentIndex;
-			}
-			else {
-				state.currentIndex += move;
-			}
-			setIndicatorSelectedState();
-			if(config.automatic) {
-				play();
-			}
-		}
-	}
-	
-	/**
-	 * move forwards
-	 * can be made more efficient
-	 * @param {Number} move Amount of list items to move forwards by
-	 */
-	function goForwards(move) {
-		if(state.currentIndex+move > lis.length-1) { // may not need this check
-			var newState = state.currentIndex - lis.length + move;
-			var remainder = newState % config.scrollCount;
-			if (remainder !== 0) {
-				move = move - remainder;
-			}
-		}
-		
-		var	lisToManipulate = getLis(0, move).reverse();
-		
-		// we are at the end, so don't go further forward		
-		if(!config.isCircular && (state.currentIndex + move > lis.length-1)) return;
-		// animate
-		if(config.animate) {
-			state.animating = true;
-			
-			$(ul).animate(config.vertical ? {"top": -getLisHeight(lisToManipulate)+config.revealAmount+"px"} : {"left": -getLisWidth(lisToManipulate)+config.revealAmount+"px"}, {"duration": config.animationSpeed,"easing": config.animationEasing,"complete": function(){
-				$(ul).append(lisToManipulate);
-				$(ul).css(config.vertical ? "top":"left", config.revealAmount+"px");
-				state.animating = false;
-				
-				if(state.currentIndex+move > lis.length-1) {
-					state.currentIndex = state.currentIndex - lis.length + move;
-				}
-				else {
-					state.currentIndex += move;
-				}
-				setIndicatorSelectedState();
-				if (config.automatic) {
-					play();
-				}
-			}});
-		}
-		// no animate
-		else {
-			$(ul).append(lisToManipulate);
-			if(state.currentIndex+move > lis.length-1) {
-				state.currentIndex = state.currentIndex - lis.length + move;
-			}
-			else {
-				state.currentIndex += move;
-			}
-			setIndicatorSelectedState();
-			if(config.automatic) {
-				play();
-			}
-		}	
-	}
-	
-	function setIndicatorSelectedState() {		
-		for(var i = 0; i < indicators.length; i++) {
-			if(indicators[i].value === state.currentIndex) {
-				indicators[i].setSelected();
-			}
-			else {
-				indicators[i].setUnselected();
-			}
-		}
-	}
-	
+	if(config.automatic) play();
+	setButtonStates();	
 }
-
-Adoro.Carousel.button = $('<a href="#"></a>');
