@@ -238,9 +238,12 @@ Adoro.Calendar = function() {
 	function getCalendarTableRows( month, year ) {
 		var html = "<tr>";
 		var d = new Date();
-		d.setMonth(month);
-		d.setYear(year);
-		d.setDate(1);
+		//d.setMonth(month);
+		//d.setYear(year);
+		//d.setDate(1);
+		
+		d.setFullYear(year,month,1,0);
+		
 		d.setHours(0,0,0,0);
 		var firstDay = d.getDay();
 		var i = 0;
