@@ -11,6 +11,9 @@ Adoro.siteSection = "blog";
 	<head>
 		<title><$BlogPageTitle$>, Adoro Media Ltd</title>
 		<$BlogMetaData$>
+		<script type="text/javascript" src="<%=Adoro.URL%>js/JQuery/jquery-1.2.6.js"></script>
+		<script type="text/javascript" src="<%=Adoro.URL%>js/Adoro/Adoro.js"></script>
+		<script type="text/javascript" src="<%=Adoro.URL%>js/Adoro/Adoro.Logo.js"></script>
 		<link rel="stylesheet" href="<%=Adoro.URL%>css/default.css" type="text/css" />
 		<link rel="stylesheet" href="<%=Adoro.URL%>css/blog.css" type="text/css" />
 		<link rel="shortcut icon" href="<%=Adoro.URL%>img/favicon.ico" type="image/x-icon" />
@@ -21,7 +24,7 @@ Adoro.siteSection = "blog";
 		<div id="container">
 			<div class="faux">
 				<div id="controls">
-					<a id="logo" href="<%=Adoro.URL%>default.asp"><img src="<%=Adoro.URL%>img/logo_new.gif" alt="Home page"/></a>
+					<a id="logo" href="<%=Adoro.URL%>default.asp"><img src="<%=Adoro.URL%>img/logo.gif" alt="Home page"/></a>
 					
 					<div id="primaryNavigation">
 						<ul>
@@ -29,37 +32,43 @@ Adoro.siteSection = "blog";
 							<li><a href="<%=Adoro.URL%>aboutus.asp" <%if(Adoro.pageName === "aboutus"){%>class="selected"<%}%>>About us</a></li>
 							<li><a href="<%=Adoro.URL%>portfolio.asp" <%if(Adoro.pageName === "portfolio"){%>class="selected"<%}%>>Portfolio</a></li>
 							<li><a href="<%=Adoro.URL%>projects/" <%if(Adoro.siteSection === "projects"){%>class="selected"<%}%>>Projects</a></li>
-							<li><a href="<%=Adoro.URL%>blog" <%if(Adoro.pageName === "blog"){%>class="selected"<%}%>>Blog</a></li>
+							<li><a href="<%=Adoro.URL%>blog" <%if(Adoro.siteSection === "blog"){%>class="selected"<%}%>>Blog</a></li>
 							<li><a href="<%=Adoro.URL%>contact.asp" <%if(Adoro.pageName === "contact"){%>class="selected"<%}%>>Contact</a></li>
 						</ul>
 					</div>
 					
-					<div id="blogSidePanel">
+					<div id="blogSidePanel">						
 						<!-- Begin #profile-container -->
 						<$BlogMemberProfile$>
 						<!-- End #profile -->
-	
-						<h2 class="sidebar-title"><$I18NPreviousPosts$></h2>
-						<ul id="recently" class="generic">
-							<BloggerPreviousItems>
-								<li><a href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a></li>
-							</BloggerPreviousItems>
-						</ul>
+						
+						<div class="previousPosts">
+							<h2 class="sidebar-title"><$I18NPreviousPosts$></h2>
+							<ul class="generic">
+								<BloggerPreviousItems>
+									<li><a href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a></li>
+								</BloggerPreviousItems>
+							</ul>
+						</div>
 					
 						<MainOrArchivePage>
-							<h2 class="sidebar-title"><$I18NArchives$></h2>
-							<ul class="archive-list generic">
-								<BloggerArchives>
-									<li><a href="<$BlogArchiveURL$>"><$BlogArchiveName$></a></li>
-								</BloggerArchives>
-							</ul>
+							<div class="archives">
+								<h2 class="sidebar-title"><$I18NArchives$></h2>
+								<ul class="archive-list generic">
+									<BloggerArchives>
+										<li><a href="<$BlogArchiveURL$>"><$BlogArchiveName$></a></li>
+									</BloggerArchives>
+								</ul>
+							</div>
 						</MainOrArchivePage>
 						
-						<h2>Blog information</h2>
-						<ul class="generic">
-							<li><a href="http://www.blogger.com">Powered by Blogger</a></li>
-							<li><$BlogFeedsVertical$></li>
-						</ul>
+						<div class="information">
+							<h2>Blog information</h2>
+							<ul class="generic">
+								<li><a href="http://www.blogger.com">Powered by Blogger</a></li>
+								<li><$BlogFeedsVertical$></li>
+							</ul>							
+						</div>
 					</div>
 				</div>
 				<div id="content">
