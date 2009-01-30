@@ -272,6 +272,7 @@ ul.projects li {
 	margin-right: 15px;
 	margin-bottom: 5px;
 	font-size: 1.2em;
+	min-height: 84px;
 }
 
 ul.projects li a,

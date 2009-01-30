@@ -91,6 +91,10 @@ div#myAccordion2 a.accordion3 {
 	height:153px;
 }
 
+ul.projects li {
+	height: 84px;
+}
+
 /********************************************************
 * drop down menu - fixes for ie6
 ********************************************************/
