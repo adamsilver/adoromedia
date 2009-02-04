@@ -213,8 +213,9 @@ h2 {
 h3 {
 	font-size: 1.3em;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	color: #67777F;
+	text-transform: uppercase;
 }
 
 h4 {

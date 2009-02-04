@@ -26,8 +26,6 @@
 				</div>
 				<div id="content">
 					<h1>Website design &amp; development</h1>
-					
-					<h2>Brief</h2>
 					<p>We specialise in user friendly, accessible website 
 					design for various media including personal computers, PDAs, screen readers and mobile phones.</p>
 					<p>We organically develop your website which results in fast loading, search engine 
