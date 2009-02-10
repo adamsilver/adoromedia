@@ -1,0 +1,15 @@
+/*************************************************************
+* IE Layout
+*************************************************************/
+
+div#content {
+	height: 1%;
+}
+
+ul#subnav li a.selected {
+	background-color: #2371AD !important;
+}
+
+blockquote.quote p {
+	font-style: normal;
+}
