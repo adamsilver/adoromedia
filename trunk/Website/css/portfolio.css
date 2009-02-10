@@ -11,3 +11,7 @@ div#content ul.portfolio li div.image {
 	padding: 5px;
 	width: 500px;
 }
+
+div#content ul.portfolio li div.image a{
+	display: block;
+}
