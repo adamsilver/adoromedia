@@ -29,6 +29,17 @@
 				<div id="content">
 					<h1>Portfolio</h1>
 					<p>Here is a selection of recent work. Just click the images to view the sites.</p>
+					
+					<!--
+						Jazz swing band
+						JSquared JavaScript Library
+						CP Plus FM Services
+						PnP Decorations
+						Ad Lib Print
+						Rent review services
+					-->
+					
+					
 					<ul class="portfolio">
 						<li class="work">
 							<h2>DG Retro Collectables</h2>
