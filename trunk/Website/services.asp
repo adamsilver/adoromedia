@@ -37,7 +37,7 @@
 				</div>
 				<div id="content">
 					<h1>Full list of website design services</h1>
-					
+					<p>We provide quite a wide spread of services in website design and development.</p>
 					<ul class="generic">
 						<li>Start-up sites and business site solutions</li>
 						<li>Hand coded <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> / <abbr title="Cascading Style Sheets">CSS</abbr> bespoke design</li>

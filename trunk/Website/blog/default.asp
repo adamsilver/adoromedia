@@ -37,39 +37,6 @@ Adoro.siteSection = "blog";
 						</ul>
 					</div>
 					
-					<div id="blogSidePanel">						
-						<!-- Begin #profile-container -->
-						<$BlogMemberProfile$>
-						<!-- End #profile -->
-						
-						<div class="previousPosts">
-							<h2 class="sidebar-title"><$I18NPreviousPosts$></h2>
-							<ul class="generic">
-								<BloggerPreviousItems>
-									<li><a href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a></li>
-								</BloggerPreviousItems>
-							</ul>
-						</div>
-					
-						<MainOrArchivePage>
-							<div class="archives">
-								<h2 class="sidebar-title"><$I18NArchives$></h2>
-								<ul class="archive-list generic">
-									<BloggerArchives>
-										<li><a href="<$BlogArchiveURL$>"><$BlogArchiveName$></a></li>
-									</BloggerArchives>
-								</ul>
-							</div>
-						</MainOrArchivePage>
-						
-						<div class="information">
-							<h2>Blog information</h2>
-							<ul class="generic">
-								<li><a href="http://www.blogger.com">Powered by Blogger</a></li>
-								<li><$BlogFeedsVertical$></li>
-							</ul>							
-						</div>
-					</div>
 				</div>
 				<div id="content">
 					<div id="blogPrimaryPanel">
@@ -155,6 +122,42 @@ Adoro.siteSection = "blog";
 							</ItemPage>
 						</Blogger>
 					</div>
+					
+					<div id="blogSidePanel">						
+						<!-- Begin #profile-container -->
+						<$BlogMemberProfile$>
+						<!-- End #profile -->
+						
+						<div class="previousPosts">
+							<h2 class="sidebar-title"><$I18NPreviousPosts$></h2>
+							<ul class="generic">
+								<BloggerPreviousItems>
+									<li><a href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a></li>
+								</BloggerPreviousItems>
+							</ul>
+						</div>
+					
+						<MainOrArchivePage>
+							<div class="archives">
+								<h2 class="sidebar-title"><$I18NArchives$></h2>
+								<ul class="archive-list generic">
+									<BloggerArchives>
+										<li><a href="<$BlogArchiveURL$>"><$BlogArchiveName$></a></li>
+									</BloggerArchives>
+								</ul>
+							</div>
+						</MainOrArchivePage>
+						
+						<div class="information">
+							<h2>Blog information</h2>
+							<ul class="generic">
+								<li><a href="http://www.blogger.com">Powered by Blogger</a></li>
+								<li><$BlogFeedsVertical$></li>
+							</ul>							
+						</div>
+					</div>					
+					
+					
 				</div>
 			</div>
 		</div>

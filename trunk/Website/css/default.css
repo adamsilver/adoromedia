@@ -10,7 +10,7 @@
 body {
 	font-size: 62.5%;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #4D595F;
+	color: #090D0F;
 }
 
 textarea {
@@ -32,8 +32,8 @@ div.code pre {
 a,
 a:link,
 a:visited {
-	color: #4D595F;
-	font-weight: bold;
+	color: #1D2B33;
+	color: #005BD8;
 	text-decoration: underline;
 }
 
@@ -41,8 +41,6 @@ a:hover,
 a:focus
 a:active {
 	text-decoration: none;
-	background-color: #4D595F;
-	color: #ffffff;
 }
 
 a img {
@@ -170,6 +168,7 @@ div#primaryNavigation ul li a:visited {
 	text-decoration: none;
 	border-bottom: 4px solid #f3f3f3;
 	font-weight: bold;
+	color: #1D2B33;
 }
 
 div#primaryNavigation ul li a:hover,
@@ -186,48 +185,49 @@ div#primaryNavigation ul li a.selected {
 *******************************************************************/
 
 h1 {
-	font-size: 3em;
+	font-size: 2.5em;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	margin-bottom: 0px;
-	color: #898F2C;
+	color: #1D2B33;
 	text-transform: uppercase;
 	padding-bottom: 4px;
 }
 
 h1 a, 
 h1 a:link, 
-h1 a:visited {	
-	color: #898F2C;
+h1 a:visited {
 	text-decoration: none;
 }
 
 h2 {
-	font-size: 1.8em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.3em;
+	font-family: Arial, Helvetica, sans-serif;
 	margin-bottom: 5px;
-	color: #67777F;
-	text-transform: uppercase;
-	letter-spacing: -1px;
+	color: #1D2B33;
+}
+
+h2 a,
+h2 a:link, 
+h2 a:visited {
+	color: #1D2B33;
 }
 
 h3 {
 	font-size: 1.3em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	margin-bottom: 5px;
-	color: #67777F;
-	text-transform: uppercase;
+	color: #1D2B33;
 }
 
-h4 {
-	font-size: 1.2em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	margin-bottom: 10px;
-	color: #67777F;
+h3 a, h3 a:link, h3 a:visited {
+	text-decoration: none;
+	color: #1D2B33;
 }
 
 p {
 	font-size: 1.2em;
 	margin-bottom: 10px;
+	line-height: 1.3em;
 }
 
 ul.generic {
@@ -237,6 +237,7 @@ ul.generic {
 
 ul.generic li {
 	margin-left: 30px;
+	margin-bottom: 1px;
 	font-size: 1.2em;
 }
 
