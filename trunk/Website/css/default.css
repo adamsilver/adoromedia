@@ -100,7 +100,7 @@ a#logo img {
 
 div#container {
 	border-top: 10px solid #898F2C;
-	padding-left: 40px;
+	padding-left: 20px;
 
 }
 
@@ -119,13 +119,13 @@ div#controls {
 
 div#content {
 	float: left;
-	width: 600px;
+	width: 650px;
 	padding-top: 26px;
 }
 
 div#footer {
 	background-color: #1D2B33;
-	padding: 20px 40px 15px 40px;
+	padding: 20px 40px 15px 20px;
 }
 
 div#footer p {
@@ -231,14 +231,15 @@ p {
 }
 
 ul.generic {
-	list-style: square;
+	list-style: none;
 	margin-bottom: 10px;
 }
 
 ul.generic li {
-	margin-left: 30px;
-	margin-bottom: 1px;
+	margin-bottom: 2px;
 	font-size: 1.2em;
+	background: url(../img/arrow_right.gif) no-repeat;
+	padding-left: 17px;
 }
 
 ul.generic li ul {
