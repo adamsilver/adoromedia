@@ -31,11 +31,7 @@
 					<p>We organically develop your website which results in fast loading, search engine 
 					friendly sites, that are accessible to the widest possible audience.</p> 
 					
-					<h2>Who for</h2>
-					<p>Lorem ipsum...</p>
-					
-					<h2>Latest work</h2>
-					<p>Latest work</p>
+					<p>We build websites for personal, charity and business organisations, both big and small.</p>
 				</div>
 			</div>
 		</div>

@@ -28,18 +28,15 @@
 					<h1>About us</h1>
 					<p>Adoro Media is a website design and development agency, based in London, England, UK.</p>
 					
-					<h2>Three pronged attack</h2>
+					<h2>Accessibility, Usability, Findability</h2>
 					<p>We care about three things; accessibilty, usability and findability.</p>
 					
-					<h3>Accessibility</h3>
 					<p>Web Accessibility is building web pages that can be navigated and read by everyone, regardless of disability, 
 					location, 	experience or technology.</p>
-					
-					<h3>Usability</h3>
+
 					<p>User friendly graphical user interfaces, that are easy to use, intuitive and innovative ensure
 					there users experience of a website is efficient, useful and fun.</p>
 					
-					<h3>Findability</h3>
 					<p>If your website is great, there is no use if it cannot be found, search engine optimisation and marketing
 					are 2 imperative ways of ensuring your website is found.</p>
 					
