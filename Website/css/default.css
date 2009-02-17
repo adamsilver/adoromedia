@@ -221,8 +221,7 @@ h3 {
 }
 
 h3 a, h3 a:link, h3 a:visited {
-	text-decoration: none;
-	color: #1D2B33;
+	/*color: #1D2B33;*/
 }
 
 p {
