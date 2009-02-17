@@ -198,7 +198,7 @@
 									<p>This is contextual help before the form element(s).</p>
 								</div>
 								<div class="indicator">
-									<label for="fullName">Full name <%devForm.writeErrorSpan(["fullName"])%></label>
+									<label for="fullName">Full name *<%devForm.writeErrorSpan(["fullName"])%></label>
 								</div>
 								<div class="singleInput">
 									<input type="text" class="text" name="fullName" id="fullName" value="<%=Request.Form("fullName")%>" />
@@ -208,7 +208,7 @@
 							<!--Single select-->
 							<div class="field <%devForm.writeErrorClass(["age"])%>">
 								<div class="indicator">
-									<label for="age">Age <%devForm.writeErrorSpan(["age"])%></label>
+									<label for="age">Age *<%devForm.writeErrorSpan(["age"])%></label>
 								</div>
 								<div class="singleInput">
 									<select name="age" id="age">
@@ -223,7 +223,7 @@
 							<!--Single checkbox-->
 							<div class="field <%devForm.writeErrorClass(["terms"])%>">
 								<div class="indicator">
-									<span class="label">Terms</span>
+									<span class="label">Terms *</span>
 								</div>
 								<div class="checkboxes">
 									<div class="input">
@@ -236,7 +236,7 @@
 							<!--Multiple input-->
 							<div class="field <%devForm.writeErrorClass(["day01", "month01", "year01"])%>">
 								<div class="indicator">
-									<span class="label ">Date of birth</span>
+									<span class="label ">Date of birth *</span>
 								</div>
 								<div class="multipleInput">
 									<div class="input">
@@ -261,7 +261,7 @@
 							<!--Multiple select-->
 							<div class="field <%devForm.writeErrorClass(["day02", "month02", "year02"])%>">
 								<div class="indicator">
-									<span class="label">Date of birth</span>
+									<span class="label">Date of birth *</span>
 								</div>
 								<div class="multipleInput">
 									<div class="input">
@@ -295,7 +295,7 @@
 							
 							<div class="field <%devForm.writeErrorClass(["searchEngine"])%>">
 								<div class="indicator">
-									<span class="label">Favourite search engines</span>
+									<span class="label">Search engines *</span>
 								</div>
 								<div class="checkboxes">
 									<fieldset>
@@ -320,7 +320,7 @@
 							
 							<div class="field <%devForm.writeErrorClass(["gender"])%>">
 								<div class="indicator">
-									<span class="label">Gender</span>
+									<span class="label">Gender *</span>
 								</div>
 								<div class="radios">
 									<fieldset>
@@ -372,7 +372,7 @@
 							
 							<div class="field <%devForm.writeErrorClass(["friends"])%>">
 								<div class="indicator">
-									<label for="friends">Friends <%devForm.writeErrorSpan(["friends"])%></label>
+									<label for="friends">Friends *<%devForm.writeErrorSpan(["friends"])%></label>
 								</div>
 								<div class="singleInput">
 									<select name="friends" id="friends" size="3" multiple="multiple">

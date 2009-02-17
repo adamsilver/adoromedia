@@ -52,8 +52,9 @@ div.field:after {
 }
 
 div.field div.indicator {
-	display: block;
-	margin-bottom: 3px;
+	float: left;
+	width: 115px;
+	margin-top: 3px;
 }
 
 div.field div.indicator label,
@@ -83,6 +84,8 @@ div.field div.singleInput,
 div.field div.multipleInput,
 div.field div.checkboxes,
 div.field div.radios {
+	float: left;
+	width: 500px;
 }
 
 div.field div.multipleInput div.input {
@@ -139,7 +142,7 @@ div.field input.submit {
 
 div.field div.singleInput input.text, 
 div.field div.singleInput textarea {
-	width: 550px;
+	width: 500px;
 }
 
 div.field div.multipleInput div.input input.text {
@@ -183,7 +186,7 @@ div.field div.radios div.input input {
 **************************************************************/
 
 div.action {
-	padding: 10px 10px 0px 10px;
+	padding: 10px 19px 0px 19px;
 }
 
 div.action:after {
@@ -314,4 +317,16 @@ div.field div.contextualHelpType2 {
 div.field div.contextualHelpType2 p {
 	color: #999;
 	font-style: italic;
+}
+
+/**************************************************************
+* specific
+**************************************************************/
+
+select#age {
+	width: 500px;
+}
+
+select#friends {
+	width: 500px;
 }

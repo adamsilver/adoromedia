@@ -31,7 +31,9 @@ div#blogSidePanel {
 }
 
 div#blogSidePanel h2 {
-
+	font-size: 1.2em;
+	margin-bottom: 0px;
+	text-transform: none;
 }
 
 div#blogSidePanel ul.generic {
