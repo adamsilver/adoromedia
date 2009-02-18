@@ -3,7 +3,13 @@ div#content ul.portfolio {
 }
 
 div#content ul.portfolio li {
-	margin-bottom: 15px;
+	margin-bottom: 25px;
+}
+
+div#content ul.portfolio li h2 {
+	font-size: 1.2em;
+	text-transform: none;
+	margin-bottom: 0px;
 }
 
 div#content ul.portfolio li div.image {
