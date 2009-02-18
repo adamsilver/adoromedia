@@ -42,7 +42,7 @@
 					
 					<ul class="portfolio">
 						<li class="work">
-							<h2>DG Retro Collectables</h2>
+							<h2><a href="http://www.dgretro.com">DG Retro Collectables</a></h2>
 							<p>Responsible for complete design and build of user interface.</p>
 							<div class="image">
 								<a href="http://www.dgretro.com">
@@ -51,7 +51,7 @@
 							</div>
 						</li>						
 						<li class="work">
-							<h2>CP Plus Car Park Management</h2>
+							<h2><a href="http://www.cp-plus.co.uk">CP Plus Car Park Management</a></h2>
 							<p>Responsible for complete design and build of user interface.</p>
 							<div class="image">
 								<a href="http://www.cp-plus.co.uk">
@@ -59,6 +59,7 @@
 								</a>
 							</div>
 						</li>
+						<!--
 						<li class="work">
 							<h2>House of Fraser</h2>
 							<p>Responsible for user interface in collaboration with LBi.</p>
@@ -122,6 +123,7 @@
 								</a>
 							</div>								
 						</li>
+						-->
 						<!--
 						
 						<li>UBS</li>
