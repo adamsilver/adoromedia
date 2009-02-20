@@ -56,6 +56,24 @@
 								</a>
 							</div>
 						</li>
+						<li class="work">
+							<h2><a href="http://www.jazzswingband.co.uk">The Mike Ellis Jazz &amp; Swing band</a></h2>
+							<p>Responsible for complete design and build of user interface.</p>
+							<div class="image">
+								<a href="http://www.jazzswingband.co.uk">
+									<img src="img/portfolio/jazzswingband.jpg" alt="Jazz Swing Band" />
+								</a>
+							</div>
+						</li>
+						<li class="work">
+							<h2><a href="http://www.pnp-decorations.co.uk">PnP Painters &amp; Decorators</a></h2>
+							<p>Responsible for complete design and build of user interface.</p>
+							<div class="image">
+								<a href="http://www.pnp-decorations.co.uk">
+									<img src="img/portfolio/pnp.jpg" alt="PnP Decorations" />
+								</a>
+							</div>
+						</li>
 						<!--
 						<li class="work">
 							<h2>House of Fraser</h2>
