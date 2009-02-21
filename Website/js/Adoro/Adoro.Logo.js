@@ -1,23 +1,16 @@
 if(typeof Adoro !== "object") var Adoro = {};
-$(document).ready(function(){
-	Adoro.Logo = new (function() {
+Adoro.Logo = new (function() {
+	addDOMReadyEvent(function(){
 		var logo = document.getElementById("logo");
-		if(logo===null) return;
-		$(logo).bind("mouseenter", fadeOut);
-		$(logo).bind("mouseleave", fadeIn);
-		
+		logo.addEvent("mouseenter", fadeOut);
+		logo.addEvent("mouseleave", fadeIn);
 		function fadeOut() {
-			$(logo).animate({"opacity":"0.7"});
+			this.animate( {	opacity: 0.4}, 500);
 		}
 		
 		function fadeIn() {
-			$(logo).animate({"opacity":"1"});
+			this.animate( {	opacity: 1}, 500);
 		}
+	
 	});
 });
-			
-
-
-					
-					
-					
