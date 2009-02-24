@@ -248,6 +248,34 @@ ul.generic li ol li {
 	font-size: 1em;
 }
 
+ol.generic {
+	margin-bottom: 10px;
+}
+
+ol.generic li {
+	margin-bottom: 2px;
+	font-size: 1.2em;
+	margin-left: 30px;
+}
+
+ol.generic li ul {
+	list-style: none;
+	margin-left: 10px;
+}
+
+ol.generic li ul li {
+	font-size: 1em;
+}
+
+ol.generic li ol {
+	list-style: none;
+	margin-left: 10px;
+}
+
+ol.generic li ol li {
+	font-size: 1em;
+}
+
 /*******************************************************************
 * Projects
 *******************************************************************/
