@@ -9,7 +9,7 @@
 	<head>
 		<!-- google site map -->
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
-		<title>Accessible website design and development, Adoro Media Ltd, London</title>
+		<title>Accessible website design, Adoro Media Ltd, London</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="adoro media, website, web, bespoke, new, media, solutions, london, UK" />
 		<meta name="description" content="Adoro Media is an agency dedicated to building new media solutions. Based in London, England." />		
@@ -25,7 +25,7 @@
 					<!--#include file="inc/primaryNavigation.asp"-->	
 				</div>
 				<div id="content">
-					<h1>Website design &amp; development</h1>
+					<h1>Accessible website design</h1>
 					<p>We specialise in user friendly, accessible website 
 					design for various media including personal computers, PDAs, screen readers and mobile phones.</p>
 					<p>We organically develop your website which results in fast loading, search engine 
