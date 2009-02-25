@@ -40,19 +40,48 @@ Adoro.siteSection = "blog";
 				</div>
 				<div id="content">
 					<div id="blogPrimaryPanel">
-						<h1><ItemPage><a href="<$BlogURL$>"></ItemPage><$BlogTitle$><ItemPage></a></ItemPage></h1>
-						<p class="description"><$BlogDescription$></p>
+						
+						<MainPage>
+							<p class="latest">Latest post</p>
+							<!--<h1><a href="<$BlogURL$>"><$BlogTitle$></a></h1>-->
+							<!--<p class="description"><$BlogDescription$></p>-->
+						</MainPage>
+					
+						<ArchivePage>
+							<h1>Archive</h1>
+						</ArchivePage>
+										
 						<Blogger>
-							<BlogDateHeader><h2 class="date-header"><$BlogDateHeaderDate$></h2></BlogDateHeader>
+							<BlogDateHeader><p class="date-header"><$BlogDateHeaderDate$></p></BlogDateHeader>
 							<div class="post">
 								<a name="<$BlogItemNumber$>"></a>
 								<BlogItemTitle>
-									<h3 class="post-title">
-										<BlogItemUrl><a href="<$BlogItemUrl$>" title="external link"></BlogItemUrl>
+									<MainPage>
+										<h1>
+											<BlogItemUrl>
+												<a href="<$BlogItemUrl$>" title="external link">
+											</BlogItemUrl>
+											
 											<a href="<$BlogItemPermalinkURL$>"><$BlogItemTitle$></a>
-										<BlogItemUrl></a></BlogItemUrl>
-									</h3>
+											
+											<BlogItemUrl>
+												</a>
+											</BlogItemUrl>
+										</h1>
+									</MainPage>
+									
+									<ArchivePage>
+										<h2><$BlogItemTitle$></h2>
+									</ArchivePage>
+									<ItemPage>
+										<h1><$BlogItemTitle$></h1>
+									</ItemPage>
 								</BlogItemTitle>
+								
+								
+								
+								
+								
 								<div class="post-body">
 									<$BlogItemBody$>
 								</div>
