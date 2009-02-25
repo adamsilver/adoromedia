@@ -9,18 +9,34 @@ div#blogPrimaryPanel {
 	margin-right: 45px;
 }
 
-div#blogPrimaryPanel h2.date-header {
+div#blogPrimaryPanel p.latest {
+	margin-bottom: 0px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #898F2C;
+}
+
+div#blogPrimaryPanel p.date-header {
 	font-size: 1.1em;
 	margin-bottom: 3px;
 	color: #777777;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
-div#blogPrimaryPanel h3.post-title {
+div#blogPrimaryPanel h2.post-title {
 	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+div#blogPrimaryPanel h3.post-title a,
+div#blogPrimaryPanel h3.post-title a:link,
+div#blogPrimaryPanel h3.post-title a:visited {
+	color: #1D2B33;
 }
 
 div#blogPrimaryPanel h4 {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	margin-bottom: 12px;
 }
 
