@@ -111,19 +111,25 @@ Adoro.QuickLook = new (function(){
 		
 		function quickLookPanelLoaded(data) {
 			Adoro.Dialogue.hideDialogue({showOverlay: false});
-			// this will be the data.html etc
+			// this will be the data.html from the server
 			Adoro.Dialogue.setHTML('<div id="quickLookPanel">Quick look panel etc from server html</div>'); 
 			addQuickLookEventHandlers();			
 			
 			// 1. get anchor coordinates
-			var anchorPosition = $(anchor).position();
+			var anchorPosition = $(anchor).offset();
 			console.log(anchorPosition);
 			
 			// 2. get viewport height and width
 			var viewportDimensions = {width: $(window).width(),height: $(window).height()};
 			console.log(viewportDimensions);
 			
-			// 3. decide where to position the quick look - top, bottom, left or right
+			// 3. decide where to position the quick look - top, bottom, left or right			
+			// primarily we are trying to put to the right of the image
+			// if it fails to go to the right then we will move it to the left
+			// if it cant fit to the side, then it will go to the bottom
+			// if it cant fit to the bottom, then it will try the top
+			// if it cant fit to the top, then it will go to side
+			
 			// 4. add a class to tell the panel how to style itself
 			// 5. position it.
 			// 6. show it.
@@ -135,7 +141,7 @@ Adoro.QuickLook = new (function(){
 		function addQuickLookEventHandlers() {
 			var quickLookPanel = $("div#quickLookPanel")[0] || null;
 			if(!quickLookPanel) return false;
-			var close = $(quickLookpanel).find(".closeDialogue") [0] || null;
+			var close = $(quickLookPanel).find(".closeDialogue") [0] || null;
 			$(close).bind("click", hideQuickLookPanel);
 			var priceNode = $(quickLookPanel).find("p.price")[0] || null;
 			var colourSelectorNode = $(quickLookPanel).find("div.colour")[0] || null;
@@ -154,5 +160,3 @@ Adoro.QuickLook = new (function(){
 	}
 	
 });
-
-
