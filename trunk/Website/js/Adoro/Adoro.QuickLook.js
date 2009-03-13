@@ -61,25 +61,29 @@ var loadingHTML = '<div id="loading">Loading...</div>';
 
 Adoro.QuickLook = new (function(){
 	var panels = [];
-	var anchorClass = "quicklook";
+	var containerClass = "quicklook";
 	$(document).ready(function(){
-		var anchors = $("a."+anchorClass);
+		var containers = $("div."+containerClass);
 		var panel = null;
-		for(var i = anchors.length-1; i>=0; i--) {
-			panel = new QuickLookPanel(anchors[i]);
+		for(var i = containers.length-1; i>=0; i--) {
+			panel = new QuickLookPanel(containers[i]);
 			panels.push(panel);
 		}
 	});
 	
-	function QuickLookPanel(anchor) {
+	function QuickLookPanel(container) {
+		var anchor = $(container).find("a")[0] || null;
+		var product = null;
+		var open = false;
 		var hideClass = "hide";
 		var quickLookButton = document.createElement("a");
 		quickLookButton.href="#";
 		quickLookButton.className = "quickLookButton";		
 		quickLookButton.innerHTML = "Quick look";
-		$(anchor).append(quickLookButton);
+		$(container).append(quickLookButton);
 		hideQuickLookButton();
 		$(anchor).bind("mouseover", showQuickLookButton);
+		$(quickLookButton).bind("mouseover", showQuickLookButton)
 		$(anchor).bind("mouseout", hideQuickLookButton);
 		$(quickLookButton).bind("click", showQuickLookPanel);
 		function showQuickLookButton() {
@@ -98,9 +102,10 @@ Adoro.QuickLook = new (function(){
 			var URL = ""; //may get this from page....probs a good idea
 			Adoro.Dialogue.setHTML(loadingHTML);
 			Adoro.Dialogue.showDialogue({showOverlay: false});
-			var data = "productID="+productID+"&"+"size="+sizeID;
+			//var data = "productID="+productID+"&"+"size="+sizeID;
 			//$.ajax({type: "POST",url: URL,data: data,complete: quickLookPanelLoaded});
 			//window.setTimeout(quickLookPanelLoaded, 1000); // will be replaced by AJAX call.
+			quickLookPanelLoaded();
 			return false;
 		}
 		
@@ -111,23 +116,39 @@ Adoro.QuickLook = new (function(){
 			addQuickLookEventHandlers();			
 			
 			// 1. get anchor coordinates
+			var anchorPosition = $(anchor).position();
+			console.log(anchorPosition);
+			
 			// 2. get viewport height and width
+			var viewportDimensions = {width: $(window).width(),height: $(window).height()};
+			console.log(viewportDimensions);
+			
 			// 3. decide where to position the quick look - top, bottom, left or right
 			// 4. add a class to tell the panel how to style itself
 			// 5. position it.
 			// 6. show it.
 			
 			Adoro.Dialogue.showDialogue({showOverlay: false});
+			open = true;
 		}
 		
 		function addQuickLookEventHandlers() {
 			var quickLookPanel = $("div#quickLookPanel")[0] || null;
+			if(!quickLookPanel) return false;
+			var close = $(quickLookpanel).find(".closeDialogue") [0] || null;
+			$(close).bind("click", hideQuickLookPanel);
 			var priceNode = $(quickLookPanel).find("p.price")[0] || null;
 			var colourSelectorNode = $(quickLookPanel).find("div.colour")[0] || null;
 			var sizeSelectorNode = $(quickLookPanel).find("div.size")[0] || null;
 			var stockAvailabilityNode = $(quickLookPanel).find("div.size")[0] || null;
 			var productID = $(quickLookPanel).find("input.productID")[0] || null;
-			// var product = new SF.ProductDetails(id, {priceNode:priceNode, ) ;
+			// product = new SF.ProductDetails(id, {priceNode:priceNode, ) ;
+		}
+		
+		function hideQuickLookPanel() {
+			open = false;
+			//product.destroy();
+			//product = null;
 		}
 		
 	}
