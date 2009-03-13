@@ -24,11 +24,11 @@
 		</script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.QuickLook.js"></script>
 		<style type="text/css">
-			a.quicklook {
+			div.quicklook {
 				position: relative;
 			}
 			
-			a.quicklook a.quickLookButton {
+			div.quicklook a.quickLookButton {
 				position: absolute;
 				background: #ffffff;
 				border: 2px solid #333333;
@@ -50,10 +50,9 @@
 					<h1>Quick look</h1>
 					
 					<ul>
-						<li><a class="quicklook" href="theurl?val1=1&val2=2&productID=1010101"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
-						<li><a class="quicklook" href="theurlblah?productID=1293871"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
-						<li><a class="quicklook" href="askdjhaasd?productID=11231"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
-						<li><a class="quicklook" href="productDetails.jsp?productID=2313"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
+						<li><div class="quicklook"><a href="theurl?val1=1&val2=2&productID=1010101"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></div></li>
+						<li><div class="quicklook"><a href="theurl?val1=1&val2=2&productID=1010101"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></div></li>
+						<li><div class="quicklook"><a href="theurl?val1=1&val2=2&productID=1010101"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></div></li>
 					</ul>					
 						
 				</div>
