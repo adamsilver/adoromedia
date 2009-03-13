@@ -19,6 +19,9 @@
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
+		<script type="text/javascript">
+		
+		</script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.QuickLook.js"></script>
 		<style type="text/css">
 			a.quicklook {
@@ -47,7 +50,10 @@
 					<h1>Quick look</h1>
 					
 					<ul>
-						<li><a class="quicklook" href="#"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
+						<li><a class="quicklook" href="theurl?val1=1&val2=2&productID=1010101"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
+						<li><a class="quicklook" href="theurlblah?productID=1293871"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
+						<li><a class="quicklook" href="askdjhaasd?productID=11231"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
+						<li><a class="quicklook" href="productDetails.jsp?productID=2313"><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></a></li>
 					</ul>					
 						
 				</div>
