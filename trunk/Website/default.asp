@@ -9,33 +9,50 @@
 	<head>
 		<!-- google site map -->
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
-		<title>Accessible website design, Adoro Media Ltd, London</title>
+		<title>Making websites adorable</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="adoro media, website, web, bespoke, new, media, solutions, london, UK" />
 		<meta name="description" content="Adoro Media is an agency dedicated to building new media solutions. Based in London, England." />		
-		<!--#include file="inc/head_css.asp"-->
-		<!--#include file="inc/head_js.asp"-->
-		<!--#include file="inc/head_cssie.asp"-->
+		
+		<script type="text/javascript" src="<%=Adoro.URL%>js/JQuery/jquery-1.2.6.js"></script>
+		<script type="text/javascript" src="<%=Adoro.URL%>js/Adoro/Adoro.Carousel.js"></script>
+		<script type="text/javascript" src="<%=Adoro.URL%>js/Site/Site.SampleWork.js"></script>
+		<link rel="stylesheet" href="<%=Adoro.URL%>css/site.css" type="text/css" />
+		
 	</head>
-	<body>
+	<body id="pg<%=Adoro.pageName%>">
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
-					<!--#include file="inc/logo.asp"-->	
-					<!--#include file="inc/primaryNavigation.asp"-->	
+			<div id="header">
+				<div id="headerInner">
+					<!--#include file="inc/logo.asp"-->
+					<!--#include file="inc/primaryNavigation.asp"-->
 				</div>
-				<div id="content">
-					<h1>Accessible website design</h1>
-					<p>We specialise in user friendly, accessible website 
-					design for various media including personal computers, PDAs, screen readers and mobile phones.</p>
-					<p>We organically develop your website which results in fast loading, search engine 
-					friendly sites, that are accessible to the widest possible audience.</p> 
-					
-					<p>We build websites for personal, charity and business organisations, both big and small.</p>
+			</div>
+			<div id="content">
+				<div id="contentInner">
+					<div id="primary">
+						<h1>Making <strong>better</strong> websites</h1>
+					</div>
+					<div id="secondary">
+						<div id="sampleWork">
+							<div class="clip">
+								<ul>
+									<li>
+										<div class="image"><img src="<%=Adoro.URL%>img/work/cpplus.png" /></div>										
+									</li>
+									<li>
+										<div class="image"><img src="<%=Adoro.URL%>img/work/jazzswingband.png" /></div>										
+									</li>
+									<li>
+										<div class="image"><img src="<%=Adoro.URL%>img/work/jazzswingband.png" /></div>											
+									</li>																	
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<!--#include file="inc/footer.asp"-->
 		<!--#include file="inc/ga.asp"-->
 	</body>
 </html>

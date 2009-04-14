@@ -73,14 +73,15 @@
 		}
 		
 		this.showErrors = showErrors;
-		function showErrors() {
+		function showErrors(heading) {
+			var heading = "h2";
 			var message = "";
 			var errorText = "errors";
 			if(errors.length > 0) {
 				if(errors.length == 1) {
 					errorText = "error";
 				}
-				message += '<div id="errorMessage"><h3>The form has '+ errors.length + ' ' + errorText + '. Please check.</h3><ul>';
+				message += '<div id="errorMessage"><'+heading+'>The form has '+ errors.length + ' ' + errorText + '. Please check.</'+heading+'><ul>';
 				for ( var i = 0; i<errors.length; i++ ) {
 					message += '<li><a href="#'+errors[i].id+'">'+errors[i].message+'</a></li>';
 				}

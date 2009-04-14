@@ -1,0 +1,255 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 62.5%;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica";
+	background-color:#e0e3af;
+}
+
+a img {
+	border: none;
+}
+
+.hide {
+	display: none;
+}
+
+/******************************************************************
+* something
+******************************************************************/
+
+div#container {
+}
+
+div#header {
+	background-color: #fff;
+}
+
+div#headerInner {
+	padding-top: 30px;
+	overflow: hidden;
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+
+#logo {
+	float: left;
+	margin-top: 10px;
+}
+
+
+#contentInner {
+	padding-top: 60px;
+	overflow: hidden;
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 60px;
+}
+
+#primaryNavigation {
+	margin-top: 2px;
+	float: right;
+}
+#primaryNavigation ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+#primaryNavigation ul li {
+	float: left;
+	font-size: 3.5em;
+	letter-spacing:-1px;
+	text-transform: lowercase;
+	margin-left: 20px;
+}
+
+#primaryNavigation ul li a {
+	color: #959EA1;
+	padding: 30px 45px;
+	text-decoration: none;
+}
+
+#primaryNavigation ul li.last a {
+	padding-right: 0px;
+}
+
+#primaryNavigation ul li a.selected,
+#primaryNavigation ul li a:hover {
+	color:#1d2b33;
+	
+}
+
+
+
+h1 {
+	color: #fff;
+	font-size:6em;
+	letter-spacing:-3px;
+	margin-bottom: 30px;
+}
+
+h1 strong {
+	color:#1D2B33;
+}
+
+#content {
+	background-color:#898F2C;
+}
+
+#content #primary {
+	float: left;
+	width: 320px;
+	padding-right: 30px;
+}
+
+#content #secondary {
+	float: right;
+	width: 630px;
+}
+
+#sampleWork {
+	width: 620px;
+	position: relative;
+}
+
+#sampleWork div.image {
+	
+}
+
+#sampleWork div.clip ul {
+	list-style: none;
+}
+
+#sampleWork div.clip ul li {
+	margin: 10px;
+}
+
+#sampleWork a span {
+	position: absolute;
+	left: -999em;
+}
+
+#sampleWork a.back,
+#sampleWork a.forward {
+	position: absolute;
+	outline: none;
+}
+
+#sampleWork a.back {
+	background: url(../img/arrow_small_left.gif) no-repeat;
+	height: 31px;
+	width: 31px;
+	left: 0px;
+	top: 125px;
+}
+
+#sampleWork a.backDisabled,
+#sampleWork a.forwardDisabled {
+	display: none;
+}
+
+#sampleWork a.forward {
+	background: url(../img/arrow_small_right.gif) no-repeat;
+	height: 31px;
+	width: 31px;
+	right: 0px;
+	top: 125px;
+}
+
+div.field {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+div.field div.indicator {
+	float: left;
+	width: 160px;
+	margin-top: 10px;
+}
+
+div.field div.indicator label {
+	font-size: 2.2em;
+}
+
+div.field div.indicator label  span.errorText {
+	position: absolute;
+	left: -9999em;
+	top: 0;
+}
+
+div.field div.singleInput {
+	float: left;
+	width: 380px;
+}
+
+div.field div.singleInput input.text {
+	padding: 10px 6px;
+	font-size: 2.2em;
+	width: 440px;
+	border: 1px solid #E4E4E4;
+}
+
+div.field div.singleInput textarea {
+	width: 440px;
+	font-family: inherit;
+	padding: 10px 6px;
+	font-size: 2.2em;
+	border: 1px solid #E4E4E4;
+	height: 150px;
+}
+
+div.highlight div.singleInput input.text,
+div.highlight div.singleInput textarea {
+	background-color: #f9f9f9;
+}
+
+div.error div.indicator label {
+	color: #B62F2F;
+}
+
+div.action {
+	margin-left: 160px;
+}
+
+div.action input.submit {
+	border: 1px solid #E4E4E4;
+	background-color: #898F2C;
+	width: 460px;
+	color: #fff;
+	font-size: 2.2em;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+	
+#errorMessage {
+	margin-bottom: 10px;
+	background-color: #B62F2F;
+	padding: 10px;
+}
+
+#errorMessage h2 {
+	color: #fff;
+	font-size: 2.2em;
+	margin-bottom: 10px;
+}
+
+#errorMessage ul {
+
+}
+
+#errorMessage ul li {
+	font-size: 2.2em;
+	margin-left: 30px;
+	color: #fff;
+}
+
+#errorMessage ul li a {
+	color: #fff;
+	text-decoration: none;
+}
