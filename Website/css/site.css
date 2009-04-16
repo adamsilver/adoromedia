@@ -7,6 +7,7 @@ body {
 	font-size: 62.5%;
 	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica";
 	background: #1d2b33 url(../img/bg_body.gif) repeat-x;
+	color: #1d2b33;
 }
 
 a img {
@@ -17,24 +18,38 @@ a img {
 	display: none;
 }
 
+h1 {
+	font-size: 3em;
+	color: #ffffff;
+}
+h2 {
+	font-size: 2em;
+	color: #ffffff;
+	margin-bottom: 12px;
+}
+p {
+	font-size: 1.2em;
+	margin-bottom: 12px;
+	color: #ffffff;
+}
+
+
 /******************************************************************
 * something
 ******************************************************************/
 
 div#container {
-	width: 960px;
+	width: 980px;
 	background: url(../img/bg_container.gif) no-repeat top center;
 	min-height: 500px;
 	margin: 11px auto 0px;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 
 div#header {
-	padding: 0px 20px;
+	padding: 0px 30px;
 	overflow: hidden;
-	margin-bottom: 15px;
+	margin-bottom: 12px;
 }
 
 
@@ -78,12 +93,81 @@ div#header {
 	color: #ffffff;
 }
 
+#content {
+	width: 962px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 #featuredWork {
-	background: url(../img/bg_featuredwork.gif) no-repeat top left;
-	min-height: 267px;
+	background: url(../img/bg_featuredwork_bot.gif) no-repeat bottom left;
 	margin-left: auto;
 	margin-right: auto;
-	width: 940px;
+	margin-bottom: 20px;
 }
+
+#featuredWorkInner {
+	background: url(../img/bg_featuredwork_top.gif) no-repeat top left;
+	overflow: hidden;
+	min-height: 250px;
+}
+
+#featuredWork div.information {
+	float: left;
+	width: 280px;
+	padding: 20px;
+}
+
+#featuredWork div.information h2 {
+	font-size: 2em;
+	color: #1d2b33;
+}
+
+#featuredWork div.information p {
+	color: #1d2b33;
+}
+
+#featuredWork div.carousel {
+	float: left;
+	padding: 20px;
+	width: 602px;
+}
+
+#sections {
+	overflow: hidden;
+	background: url(../img/bg_fauxborders.gif) repeat-y top left;
+	margin-bottom: 20px;
+}
+
+body#pgHomePage #primary,
+body#pgHomePage #secondary,
+body#pgHomePage #tertiary {
+	float: left;
+	width: 280px;
+	padding: 10px 20px;
+}
+
+body#pgHomePage h1 {
+	position: absolute;
+	left: -9999em;
+	top: 0;
+}
+
+body#pgHomePage #primary h2,
+body#pgHomePage #secondary h2,
+body#pgHomePage #tertiary h2{
+	font-size: 1.8em;
+}
+
+#footer {
+	background: url(../img/bg_border01.gif) repeat-x top left;
+	padding: 20px;
+}
+
+#footer p {
+	font-size: 1.1em;
+	color: #C8C8C8;
+}
+
+
