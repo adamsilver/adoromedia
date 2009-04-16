@@ -25,7 +25,7 @@
 			</div>
 			<div id="content">
 				<h1>Full list of website design services</h1>
-				<p>We provide quite a wide spread of services in website design and development.</p>
+				<p>We provide a wide range of services in website design and development.</p>
 				<ul class="generic">
 					<li>Start-up sites and business site solutions</li>
 					<li>Hand coded <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> / <abbr title="Cascading Style Sheets">CSS</abbr> bespoke design</li>
@@ -39,7 +39,7 @@
 					<li>Flash animation</li>
 					<li>Search-engine optimisation and promotion</li>
 					<li>Ongoing support and maintenance</li>
-					<li>Accessbility</li>
+					<li>Accessibility</li>
 					<li>Branding and logo design</li>
 					<li>Marketing</li>
 					<li>Advertising and email campaigns</li>
