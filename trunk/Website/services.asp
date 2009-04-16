@@ -9,7 +9,7 @@
 	<head>
 		<!-- google site map -->
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
-		<title>Services, Website design and development, Adoro Media Ltd</title>
+		<title>Services, Specialist website designers, Adoro Media, London, UK</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="adoro media, website, web, bespoke, new, media, solutions, london, UK" />
 		<meta name="description" content="Adoro Media is an agency dedicated to building new media solutions, including internet and mobile website applications. Based in London, England." />		
