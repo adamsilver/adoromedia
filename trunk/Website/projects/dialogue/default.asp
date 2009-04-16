@@ -128,67 +128,62 @@
 			});
 		</script>		
 	</head>
-	<body class="library">
+	<body class="projects">
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
-					<!--#include file="../../inc/logo.asp"-->
-					<!--#include file="../../inc/primaryNavigation.asp"-->
-				</div>
-				<div id="content">
-					<h1>Dialogue</h1>
-					<h2>About</h2>
-					<ul class="generic">
-						<li>The most lightweight and powerful LightBox (popup, dialogue, window, 
-						(non)modal box) on the internet.</li>
-						<li>Page is always scrollable with main scroll bar if neccessary.</li>
-						<li>All HTML content is completely customisable
-							<ul>
-								<li>There is no set in stone close button.</li>
-								<li>You can have flexible heights or widths - all depends on how you use CSS to style the html that sits inside the LightBox.</li>
-							</ul>
-						</li>
-						<li>Works with any content from any HTML (images or forms etc), that is in the page or 
-						called from an AJAX request. Not limited to the URLs in an HREF attribute.</li>
-						<li>Fixed the FireFox 2 and below bug where there is no flashing cursor inside an input 
-						field that is inside the LightBox.</li>
-						<li>Can position in the center vertically and or horizontally, or position at specific 
-						coordinates.</li>
-						<li>By design you cannot spawn a new LightBox out of a LightBox, but you can replace the LightBox with new html mimicking
-						the functionality.</li>
-						<li>Can configure the LightBox to:
-							<ul>
-								<li>be modal or non-modal.</li>
-								<li>close when overlay is clicked.</li>
-								<li>fade-in/out when opened or closed.</li>
-								<li>be a certain opacity.</li>
-							</ul>
-						</li>
-						<li>If there are any links or form fields (i.e. focusable elements) inside the dialogue then the first 1 will be automatically focused.</li>
-					</ul>
-					
-					<h2>Demo</h2>
-					<p class="lightBoxActivator"><a href="#">Show a dialogue</a></p>
-					
-					<div class="form">
-						<div class="field">
-							<div class="indicator"><label for="iframedd">Ifame drop down test</label></div>
-							<div class="singleInput">
-								<select id="iframedd"><option value="1">Iframe zIndex issue fixed longer select</option></select>		
-							</div>
+			<div id="header">
+				<!--#include file="../../inc/logo.asp"-->
+				<!--#include file="../../inc/primaryNavigation.asp"-->
+			</div>
+			<div id="content">
+				<h1>Dialogue</h1>
+				<h2>About</h2>
+				<ul class="generic">
+					<li>The most lightweight and powerful LightBox (popup, dialogue, window, 
+					(non)modal box) on the internet.</li>
+					<li>Page is always scrollable with main scroll bar if neccessary.</li>
+					<li>All HTML content is completely customisable
+						<ul>
+							<li>There is no set in stone close button.</li>
+							<li>You can have flexible heights or widths - all depends on how you use CSS to style the html that sits inside the LightBox.</li>
+						</ul>
+					</li>
+					<li>Works with any content from any HTML (images or forms etc), that is in the page or 
+					called from an AJAX request. Not limited to the URLs in an HREF attribute.</li>
+					<li>Fixed the FireFox 2 and below bug where there is no flashing cursor inside an input 
+					field that is inside the LightBox.</li>
+					<li>Can position in the center vertically and or horizontally, or position at specific 
+					coordinates.</li>
+					<li>By design you cannot spawn a new LightBox out of a LightBox, but you can replace the LightBox with new html mimicking
+					the functionality.</li>
+					<li>Can configure the LightBox to:
+						<ul>
+							<li>be modal or non-modal.</li>
+							<li>close when overlay is clicked.</li>
+							<li>fade-in/out when opened or closed.</li>
+							<li>be a certain opacity.</li>
+						</ul>
+					</li>
+					<li>If there are any links or form fields (i.e. focusable elements) inside the dialogue then the first 1 will be automatically focused.</li>
+				</ul>
+				
+				<h2>Demo</h2>
+				<p class="lightBoxActivator"><a href="#">Show a dialogue</a></p>
+				
+				<div class="form">
+					<div class="field">
+						<div class="indicator"><label for="iframedd">Ifame drop down test</label></div>
+						<div class="singleInput">
+							<select id="iframedd"><option value="1">Iframe zIndex issue fixed longer select</option></select>		
 						</div>
 					</div>
-					<div id="flash">
-						My flash here
-					</div>							
-											
-					<h2>Example setup</h2>
-					<!--#include file="../../inc/code/dialogue.asp"-->						
-						
 				</div>
+				<div id="flash">
+					My flash here
+				</div>							
+										
 			</div>
+			<!--#include file="../../inc/footer.asp"-->
 		</div>
-		<!--#include file="../../inc/footer.asp"-->
 		<!--#include file="../../inc/ga.asp"-->
 	</body>
 </html>

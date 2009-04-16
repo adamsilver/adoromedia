@@ -44,6 +44,7 @@ p {
 	font-size: 1.2em;
 	margin-bottom: 12px;
 	color: #ffffff;
+	line-height: 1.4em;
 }
 
 ul {
@@ -58,6 +59,9 @@ ul li {
 	margin-bottom: 3px;
 }
 
+ul li ul li {
+	font-size: 1em;
+}
 
 /******************************************************************
 * something
@@ -104,8 +108,9 @@ body#pgHomePage div#header {
 #primaryNavigation ul li {
 	float: left;
 	margin-right: 5px;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	margin-left: 0px;
+	text-transform: uppercase;
 }
 
 #primaryNavigation ul li.last {
