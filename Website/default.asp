@@ -13,7 +13,9 @@
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="adoro media, website, web, bespoke, new, media, solutions, london, UK" />
 		<meta name="description" content="Adoro Media is an agency dedicated to building new media solutions. Based in London, England." />		
-		<link rel="stylesheet" href="<%=Adoro.URL%>css/site.css" type="text/css" />
+		<!--#include file="inc/head_css.asp"-->
+		<!--#include file="inc/head_js.asp"-->
+		<!--#include file="inc/head_cssie.asp"-->
 		
 	</head>
 	<body id="pgHomePage">
@@ -28,7 +30,8 @@
 					<div id="featuredWorkInner">
 						<div class="information">
 							<h2>Featured work</h2>
-							<p>Lorem ipsum</p>
+							<p>Donec sollicitudin augue vitae libero. Etiam cursus eros ut turpis. 
+							Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
 						</div>
 						<div class="carousel">
 							Stuff here
