@@ -34,7 +34,11 @@
 							Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
 						</div>
 						<div class="carousel">
-							Stuff here
+							<div class="clip">
+								<ul>
+									<li>page 1</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
