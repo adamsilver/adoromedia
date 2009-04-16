@@ -15,68 +15,63 @@
 		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />			
 		<link rel="stylesheet" href="<%=Adoro.URL%>css/site.css" type="text/css" />
 		<!--#include file="inc/head_js.asp"-->
-		<script type="text/javascript" src="js/Adoro/Adoro.FieldHighlight.js"></script>
+		<!--#include file="inc/head_css.asp"-->	
+		<!--#include file="inc/head_cssie.asp"-->
 	</head>
-	<body id="pg<%=Adoro.pageName%>">
+	<body id="pgContact">
 		<div id="container">
 			<div id="header">
-				<div id="headerInner">
-					<!--#include file="inc/logo.asp"-->
-					<!--#include file="inc/primaryNavigation.asp"-->
-				</div>
+				<!--#include file="inc/logo.asp"-->
+				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<div id="contentInner">
-					<div id="primary">
-						<h1>We want <br/>to work <br/><strong>with you</strong></h1>
-					</div>
-					<div id="secondary">
-						
-						<% contactForm.showErrors(); %>
-						<%if(messageSent == true) {%>
-							<div id="successMessage">
-								<h2>You have successfully sent a message to Adoro Media. Thank you.</h2>
+				<div id="primary">
+					<h1>We want to work with you</h1>
+				</div>
+				<div id="secondary">
+					
+					<% contactForm.showErrors(); %>
+					<%if(messageSent == true) {%>
+						<div id="successMessage">
+							<h2>You have successfully sent a message to Adoro Media. Thank you.</h2>
+						</div>
+					<%}else { %>
+						<%// contactForm.showErrors(); %>
+						<form method="post" action="contact.asp" id="contactForm">
+							
+							<div class="field <%contactForm.writeErrorClass(["fullName"])%>">
+								<div class="indicator">
+									<label for="fullName"><span class="required">*</span> Full name <%contactForm.writeErrorSpan(["fullName"])%></label>
+								</div>
+								<div class="singleInput">
+									<input type="text" id="fullName" name="fullName" value="<%=Request.Form("fullName")%>" class="text" />
+								</div>
 							</div>
-						<%}else { %>
-							<%// contactForm.showErrors(); %>
-							<form method="post" action="contact.asp" id="contactForm">
-								<div class="col1">
-									<div class="field <%contactForm.writeErrorClass(["fullName"])%>">
-										<div class="indicator">
-											<label for="fullName"><span class="required">*</span> Full name <%contactForm.writeErrorSpan(["fullName"])%></label>
-										</div>
-										<div class="singleInput">
-											<input type="text" id="fullName" name="fullName" value="<%=Request.Form("fullName")%>" class="text" />
-										</div>
-									</div>
-									<div class="field <%contactForm.writeErrorClass(["email"])%>">
-										<div class="indicator">
-											<label for="email"><span class="required">*</span> Email <%contactForm.writeErrorSpan(["email"])%></label>
-										</div>
-										<div class="singleInput">
-											<input type="text" id="email" name="email" value="<%=Request.Form("email")%>" class="text" />
-										</div>
-									</div>
+							<div class="field <%contactForm.writeErrorClass(["email"])%>">
+								<div class="indicator">
+									<label for="email"><span class="required">*</span> Email <%contactForm.writeErrorSpan(["email"])%></label>
 								</div>
-								<div class="col2">
-									<div class="field <%contactForm.writeErrorClass(["message"])%>">
-										<div class="indicator">
-											<label for="message"><span class="required">*</span> Message <%contactForm.writeErrorSpan(["message"])%></label>
-										</div>
-										<div class="singleInput">
-											<textarea id="message" name="message" cols="40" rows="8"><%=Request.Form("message")%></textarea>
-										</div>
-									</div>
+								<div class="singleInput">
+									<input type="text" id="email" name="email" value="<%=Request.Form("email")%>" class="text" />
 								</div>
-								
-								<div class="action">
-									<input class="submit" type="submit" name="sendMessage" id="sendMessage" value="Send" />
+							</div>
+						
+							<div class="field <%contactForm.writeErrorClass(["message"])%>">
+								<div class="indicator">
+									<label for="message"><span class="required">*</span> Message <%contactForm.writeErrorSpan(["message"])%></label>
 								</div>
-							</form>
-						<%}%>
-					</div>
+								<div class="singleInput">
+									<textarea id="message" name="message" cols="40" rows="8"><%=Request.Form("message")%></textarea>
+								</div>
+							</div>
+							<div class="action">
+								<input class="submit" type="submit" name="sendMessage" id="sendMessage" value="Send" />
+							</div>
+						</form>
+					<%}%>
 				</div>
 			</div>
+			<!--#include file="inc/footer.asp"-->
 		</div>
 		<!--#include file="inc/ga.asp"-->
 	</body>

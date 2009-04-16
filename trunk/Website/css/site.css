@@ -73,7 +73,7 @@ div#container {
 }
 
 body#pgHomePage div#container {
-	background: url(../img/bg_container_small.gif) no-repeat top center;
+	background: url(../img/bg_container.gif) no-repeat top center;
 }
 
 div#header {
@@ -116,7 +116,7 @@ body#pgHomePage div#header {
 #primaryNavigation ul li a:link,
 #primaryNavigation ul li a:visited {
 	font-weight: bold;
-	padding: 5px 7px;
+	padding: 5px 8px;
 	display: block;
 	color: #1d2b33;
 	text-decoration: none;
@@ -133,6 +133,7 @@ body#pgHomePage div#header {
 
 #content {
 	padding: 0px 20px;
+	margin-bottom: 20px;
 }
 
 body#pgHomePage #content {
@@ -154,7 +155,7 @@ body#pgHomePage #content {
 
 #featuredWork div.information {
 	float: left;
-	width: 280px;
+	width: 420px;
 	padding: 20px;
 }
 
@@ -169,14 +170,24 @@ body#pgHomePage #content {
 
 #featuredWork div.carousel {
 	float: left;
-	padding: 20px;
-	width: 600px;
+	padding: 20px 20px 20px 0px;
+	width: 480px;
+}
+
+#featuredWork div.carousel div.clip ul {
+	list-style: none;
+}
+
+#featuredWork div.carousel div.clip ul li{
+	border: 1px solid #A8B4BB;
+	background: #ffffff;
+	padding: 10px;
+	min-height: 170px;
 }
 
 #sections {
 	overflow: hidden;
 	background: url(../img/bg_fauxborders.gif) repeat-y top left;
-	margin-bottom: 20px;
 }
 
 body#pgHomePage #primary,
@@ -201,9 +212,7 @@ body#pgHomePage #tertiary h2{
 
 #footer {
 	background: url(../img/bg_border01.gif) repeat-x top left;
-	padding: 20px 30px;
-	margin-left: auto;
-	margin-right: auto;
+	padding: 20px;
 }
 
 #footer p {
@@ -211,4 +220,46 @@ body#pgHomePage #tertiary h2{
 	color: #C8C8C8;
 }
 
+/******************************************************************
+* form
+******************************************************************/
+
+div.field {
+	overflow: hidden;
+}
+
+div.field div.indicator {
+	float: left;
+	width: 200px;
+}
+
+div.field div.singleInput {
+	float: left;
+}
+
+/******************************************************************
+* projects list
+******************************************************************/
+
+ul.projects {
+	overflow: hidden;
+	list-style: none;
+	
+}
+
+ul.projects li {
+	margin-left: 0px;
+	float: left;
+	width: 290px;
+	padding-right: 10px;
+	min-height: 90px;
+}
+
+ul.projects li h2 {
+	font-size: 1.6em;
+}
+
+ul.projects li p {
+	font-size: 1em;
+}
 
