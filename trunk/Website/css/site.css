@@ -220,6 +220,20 @@ body#pgHomePage #tertiary h2{
 	font-size: 1.8em;
 }
 
+body.projects div#content {
+	overflow: hidden;
+}
+
+body.projects div#content #primary {
+	float: left;
+	width: 620px;
+}
+
+body.projects div#content #secondary {
+	float: left;
+	width: 300px;
+}
+
 #footer {
 	background: url(../img/bg_border01.gif) repeat-x top left;
 	padding: 20px;
@@ -278,13 +292,12 @@ div.action input.submit {
 * projects list
 ******************************************************************/
 
-ul.projects {
+body#pgProjectsHome div#projectNavigation ul {
 	overflow: hidden;
 	list-style: none;
-	
 }
 
-ul.projects li {
+body#pgProjectsHome div#projectNavigation ul li {
 	margin-left: 0px;
 	float: left;
 	width: 290px;
@@ -292,11 +305,10 @@ ul.projects li {
 	min-height: 90px;
 }
 
-ul.projects li h2 {
+body#pgProjectsHome div#projectNavigation ul li h2 {
 	font-size: 1.6em;
 }
 
-ul.projects li p {
+body#pgProjectsHome div#projectNavigation ul li p {
 	font-size: 1em;
 }
-
