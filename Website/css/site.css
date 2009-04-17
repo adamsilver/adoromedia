@@ -40,6 +40,11 @@ h2 {
 	color: #ffffff;
 	margin-bottom: 12px;
 }
+h3 {
+	font-size: 1.5em;
+	color: #ffffff;
+	margin-bottom: 12px;
+}
 p {
 	font-size: 1.2em;
 	margin-bottom: 12px;
@@ -231,15 +236,42 @@ body#pgHomePage #tertiary h2{
 
 div.field {
 	overflow: hidden;
+	margin-bottom: 10px;
 }
 
 div.field div.indicator {
 	float: left;
-	width: 200px;
+	width: 100px;
 }
 
-div.field div.singleInput {
+div.field div.indicator label,
+div.field div.indicator span.label {
+	font-size: 1.2em;
+	color: #fff;
+}
+
+div.field div.singleInput,
+div.field div.checkboxes {
 	float: left;
+	width: 400px;
+}
+
+
+div.field div.singleInput input.text,
+div.field div.singleInput textarea {
+	font-size: 1.2em;
+	width: 400px;
+	padding: 2px;
+	font-family: inherit;
+}
+
+div.action {
+	padding-left: 100px;
+}
+
+div.action input.submit {
+	width: 200px;
+	padding: 5px;
 }
 
 /******************************************************************
