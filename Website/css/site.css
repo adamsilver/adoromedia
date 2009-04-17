@@ -30,6 +30,12 @@ a, a:hover, a:focus, a:active {
 	display: none;
 }
 
+.off {
+	position: absolute !important;
+	left: -999em !important;
+	top: 0 !important;
+}
+
 h1 {
 	font-size: 3em;
 	color: #ffffff;
