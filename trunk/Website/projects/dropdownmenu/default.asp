@@ -32,14 +32,14 @@
 			});
 		</script>
 	</head>
-	<body class="library">
+	<body class="projects">
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
-					<!--#include file="../../inc/logo.asp"-->
-					<!--#include file="../../inc/primaryNavigation.asp"-->
-				</div>
-				<div id="content">
+			<div id="header">
+				<!--#include file="../../inc/logo.asp"-->
+				<!--#include file="../../inc/primaryNavigation.asp"-->
+			</div>
+			<div id="content">
+				<div id="primary">
 					<h1>Drop down menu</h1>
 					
 					<h2>About</h2>
@@ -396,12 +396,14 @@
 							</li>
 						</ul>
 					</div>
-					<h2>Example setup</h2>
-					<!--#include file="../../inc/code/dropdownmenu.asp"-->
 				</div>
+				<div id="secondary">
+					<% var projectsShowDescription = false; var wrapTag = false;%>
+					<!--#include file="../../inc/projectsNavigation.asp"-->
+				</div>	
 			</div>
+			<!--#include file="../../inc/footer.asp"-->
 		</div>
-		<!--#include file="../../inc/footer.asp"-->
 		<!--#include file="../../inc/ga.asp"-->
 	</body>
 </html>

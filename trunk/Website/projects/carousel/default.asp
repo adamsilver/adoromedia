@@ -64,65 +64,70 @@
 				<!--#include file="../../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<h1>Carousel</h1>
-				<h2>About</h2>
-				<ul class="generic">
-					<li>Uses the YUI Carousel design pattern</li>
-					<li>Very highly configurable</li>
-				</ul>
-				
-				<h2>Demo</h2>
-				
-				<h3>Horizontal carousel</h3>
-				<div id="carousel06">
-					<div class="clip">
-						<ul>
-							<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
-						</ul>
+				<div id="primary">
+					<h1>Carousel</h1>
+					<h2>About</h2>
+					<ul>
+						<li>Uses the YUI Carousel design pattern</li>
+						<li>Very highly configurable</li>
+					</ul>
+					
+					<h2>Demo</h2>
+					
+					<h3>Horizontal carousel</h3>
+					<div id="carousel06">
+						<div class="clip">
+							<ul>
+								<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				
-				<h3>Horizontal carousel with mixed content</h3>
-				
-				<div id="carousel02">
-					<div class="clip">
-						<ul>
-							<li><p>Lorem</p></li>
-							<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Ipsum</p></li>
-							<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Sam</p></li>
-							<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Ite</p></li>
-							<li><img src="../../img/portfolio/gardeningdirect.jpg" width="500" height="167" alt="" /></li>
-							<li><p>Delta</p></li>
-							<li><img src="../../img/portfolio/hamleys.jpg" width="500" height="167" alt="" /></li>		
-							<li><p>Max</p></li>
-						</ul>
-					</div>
-				</div>							
+					
+					<h3>Horizontal carousel with mixed content</h3>
+					
+					<div id="carousel02">
+						<div class="clip">
+							<ul>
+								<li><p>Lorem</p></li>
+								<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>
+								<li><p>Ipsum</p></li>
+								<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
+								<li><p>Sam</p></li>
+								<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
+								<li><p>Ite</p></li>
+								<li><img src="../../img/portfolio/gardeningdirect.jpg" width="500" height="167" alt="" /></li>
+								<li><p>Delta</p></li>
+								<li><img src="../../img/portfolio/hamleys.jpg" width="500" height="167" alt="" /></li>		
+								<li><p>Max</p></li>
+							</ul>
+						</div>
+					</div>							
 
-				<h3>Vertical carousel</h3>
-				<div id="carousel07">
-					<div class="clip">
-						<ul>
-							<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
-							<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
-						</ul>
+					<h3>Vertical carousel</h3>
+					<div id="carousel07">
+						<div class="clip">
+							<ul>
+								<li><img src="../../img/carousel/1.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/2.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/3.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/4.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/5.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/6.jpg" width="150" height="118" alt=""/></li>
+								<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				
+				<div id="secondary">
+					<% var projectsShowDescription = false; var wrapTag = false;%>
+					<!--#include file="../../inc/projectsNavigation.asp"-->
+				</div>	
 			</div>
 			<!--#include file="../../inc/footer.asp"-->
 		</div>
