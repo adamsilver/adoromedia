@@ -203,7 +203,7 @@ body#pgHomePage #content {
 
 #sections {
 	overflow: hidden;
-	background: url(../img/bg_fauxborders.gif) repeat-y top left;
+	background: url(../img/bg_fauxorders.gif) repeat-y top left;
 }
 
 body#pgHomePage #primary,
@@ -224,6 +224,8 @@ body#pgHomePage #primary h2,
 body#pgHomePage #secondary h2,
 body#pgHomePage #tertiary h2{
 	font-size: 1.8em;
+	padding-bottom: 12px;
+	background: url(../img/bg_border01.gif) repeat-x bottom left;
 }
 
 body.projects div#content {
