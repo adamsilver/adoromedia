@@ -320,3 +320,27 @@ body#pgProjectsHome div#projectNavigation ul li h2 {
 body#pgProjectsHome div#projectNavigation ul li p {
 	font-size: 1em;
 }
+
+/******************************************************************
+* accordion
+******************************************************************/
+
+#nestedAccordion {
+	background-color: #fff;
+	padding: 10px;
+	color: #333;
+	border: 10px solid #EEE;
+}
+
+#nestedAccordion p , #nestedAccordion a{
+	color: #333;
+}
+
+#innerAccordion div.panel div.inner {
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+#innerAccordion div.panel div.inner  p {
+	padding: 5px 10px 25px 35px;
+}
