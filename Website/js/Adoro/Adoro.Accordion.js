@@ -30,11 +30,13 @@ if(typeof Adoro !== "object") var Adoro = {};
 * @name Adoro.Accordian
 * @param {Nodes[]} anchors Array of anchor nodes
 * @param {Object} options The options for this accordion instance
-* @param {Object} options.animationShowParams Different animation styles when the element is shown
-* @param {Object} options.animationHideParams Different animation styles when the element is hidden
-* @param {Number} options.animationShowSpeed Number in milleseconds
-* @param {Number} options.animationHideSpeed Number in milleseconds
-* @example
+* @param {Boolean} options.alwaysOpen If true there will always be 1 panel showing, default is false
+* @param {Boolean} options.animate If true the accordion will animate, default is false
+* @param {String} options.cssActiveClass The name of the class added to the anchor when in selected mode, default "selected"
+* @param {Object} options.animationShowParams The animation properties when the accordion is shown, default is {height: "show"}
+* @param {Object} options.animationHideParams The animation properties when the accordion is shown, default is {height: "hide"}
+* @param {Number} options.animationShowSpeed Speed of the animation when showing in milleseconds, default is 300
+* @param {Number} options.animationHideSpeed Speed of the animation when hiding in milleseconds, default is 300
 */
 Adoro.Accordion = function(anchors, options) {
 	if(anchors.length === 0) return null;
@@ -57,6 +59,8 @@ Adoro.Accordion = function(anchors, options) {
 		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
 		config.animationShowParams = (typeof options.animationShowParams === "object") ? options.animationShowParams : config.animationShowParams;
 		config.animationHideParams = (typeof options.animationHideParams === "object") ? options.animationHideParams : config.animationHideParams;
+		config.animationShowSpeed = (typeof options.animationShowSpeed === "number") ? options.animationShowSpeed : config.animationShowSpeed;
+		config.animationHideSpeed = (typeof options.animationHideSpeed === "number") ? options.animationHideSpeed : config.animationHideSpeed;
 	}
 	
 	var anchor, section, panel, open = false;
@@ -82,19 +86,15 @@ Adoro.Accordion = function(anchors, options) {
 		}
 	}
 	
-	
 	function Panel(anchor, section) {
 		var me = this;
 		this.anchor = anchor;
 		this.section = section;
 		this.isOpen = $(this.anchor).hasClass(config.cssActiveClass);
 		
-		//var width = $(section).innerWidth()+"px";
-		var height = $(section).innerHeight()+"px";
-		
 		if(config.animate){
-			//$(me.section).css("width", width);
-			//$(me.section).css("height", "auto");
+			$(me.section).css("width", $(me.section).innerWidth()+"px");
+			$(me.section).css("height", $(me.section).innerHeight()+"px");
 		}
 		
 		$(anchor).bind("click", function(){
@@ -118,30 +118,19 @@ Adoro.Accordion = function(anchors, options) {
 		
 		this.closeAnimate = closeAnimate;
 		function closeAnimate() {
-			alert("close");
 			$(me.anchor).removeClass(config.cssActiveClass);
-			$(section).css("height", height);
-			$(section).css("overflow", "hidden");
-			$(me.section).animate({"height": "0px"}, {duration: config.animationHideSpeed, complete: function(){
+			$(me.section).animate(config.animationHideParams, {duration: config.animationHideSpeed, complete: function(){
 				me.isOpen = false;
-				$(section).css("display", "none");
-				$(section).css("overflow", "auto");
 			}});
 		}
 		
 		this.openAnimate = openAnimate;
 		function openAnimate() {
-			alert("open");
 			state.animating = true;
 			$(me.anchor).addClass(config.cssActiveClass);
-			$(section).css("height", height);
-			$(section).css("display", "block");
-			$(section).css("overflow", "hidden");
-			$(me.section).animate({"height": height}, {duration: config.animationShowSpeed, complete: function(){
+			$(me.section).animate(config.animationShowParams, {duration: config.animationShowSpeed, complete: function(){
 				state.animating = false;
 				me.isOpen = true;
-				$(section).css("height", "auto");
-				$(section).css("overflow", "auto");
 			}});
 		}
 	}
