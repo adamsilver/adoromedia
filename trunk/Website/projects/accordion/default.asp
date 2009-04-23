@@ -13,14 +13,12 @@
 		<meta name="description" content="Accordion jQuery JavaScript component, by Adoro Media." />		
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
-		<link rel="stylesheet" href="../../css/tabs.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-				new Adoro.Accordion($("a.accordion1"), {animate: true});
-				new Adoro.Accordion($("a.tabActivator"), {animate: false, alwaysOpen: true});
-				new Adoro.Accordion($("a.accordion3"), {animationShowParams: {"width": "show"}, animationHideParams: {"width": "hide"}, animate: true, alwaysOpen: false});
+				new Adoro.Accordion($("a.ina"), {animate: true});
+				//new Adoro.Accordion($("a.na"), {animate: true});
 			});
 		</script>
 	</head>
@@ -44,150 +42,53 @@
 					
 					<h2>Demo</h2>
 					
-					<h3>Animated accordion, can all be closed, second panel starts open</h3>
+					<div id="nestedAccordion">
+						<div class="header"><a class="na selected" href="#na_01">Outer 1</a></div>
+						<div id="na_01" class="panel">
+							<div class="inner">
+								<div id="innerAccordion">
+									<div class="header"><a class="ina selected" href="#ina_01">Inner 1</a></div>
+									<div id="ina_01" class="panel">
+										<div class="inner">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+											Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+											Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+											erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+										</div>
+									</div>
+									<div class="header"><a class="ina" href="#ina_02">Inner 2</a></div>
+									<div id="ina_02" class="panel">
+										<div class="inner">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+											Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+											Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+											erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+										</div>
+									</div>									
+								</div>
+							</div>
+						</div>
+						<div class="header"><a class="na" href="#na_02">Outer 2</a></div>
+						<div id="na_02" class="panel">
+							<div class="inner">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+							</div>
+						</div>
+						<div class="header"><a class="na" href="#na_03">Outer 3</a></div>
+						<div id="na_03" class="panel">
+							<div class="inner">
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
+								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
+								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
+								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
+							</div>
+						</div>
+					</div>
 					
-					<div id="myAccordion">
-						<a class="accordion1" href="#accordion1_activator1">Activator 1</a>
-						<div id="accordion1_activator1" class="accordionPanel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>
-						<a class="accordion1 selected" href="#accordion1_activator2">Activator 2</a>
-						<div id="accordion1_activator2" class="accordionPanel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>
-						<a class="accordion1" href="#accordion1_activator3">Activator 3</a>
-						<div id="accordion1_activator3" class="accordionPanel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-								<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-								elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-								aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-								Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-								Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-								ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-								pulvinar eu, arcu.</p>
-							</div>
-						</div>
-					</div>		
 					
-					<h3>Non-animated accordion with a tab style, 1 must always be open.</h3>
-					
-					<div class="tabset">
-						<ul class="tabNavigation">
-							<li><a class="tabActivator" href="#accordion2_activator1">Activator 1</a></li>
-							<li><a class="tabActivator" href="#accordion2_activator2">Activator 2</a></li>
-							<li><a class="tabActivator" href="#accordion2_activator3">Activator 3</a></li>
-						</ul>
-						
-						<div id="accordion2_activator1" class="tab">
-							<h4>Yo 1</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-							Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-							Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-							erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-							<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-							elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-							aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-							Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-							Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-							ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-							pulvinar eu, arcu.</p>
-						</div>
-						
-						<div id="accordion2_activator2" class="tab">
-							<h4>Yo 2</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-							Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-							Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-							erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-							<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-							elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-							aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-							Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-							Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-							ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-							pulvinar eu, arcu.</p>
-						</div>
-						
-						<div id="accordion2_activator3" class="tab">
-							<h4>Yo 3</h4>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-							Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-							Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-							erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-							<p>Auris eget mi eget nulla imperdiet aliquet. Praesent justo. Etiam ultrices 
-							elit. Vestibulum pretium, lorem vel aliquam placerat, tortor lorem mollis tellus, 
-							aliquet lacinia arcu urna et ante. Mauris in urna eget turpis vestibulum semper. 
-							Vivamus pellentesque convallis quam. Phasellus a felis a nunc eleifend mattis. 
-							Pellentesque vestibulum laoreet est. Morbi tellus nibh, hendrerit et, fermentum 
-							ut, accumsan nec, mauris. Quisque sapien lacus, ultricies eu, imperdiet et, 
-							pulvinar eu, arcu.</p>
-						</div>
-					</div>		
-					<h3>Horizontal animated accordion</h3>
-					<div id="myAccordion2">
-						<a class="accordion3" href="#accordion3_activator1">Activator 1</a>
-						<div id="accordion3_activator1" class="accordionPanel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-							</div>
-						</div>
-						<a class="accordion3 selected" href="#accordion3_activator2">Activator 2</a>
-						<div id="accordion3_activator2" class="accordionPanel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-
-							</div>
-						</div>
-						<a class="accordion3" href="#accordion3_activator3">Activator 3</a>
-						<div id="accordion3_activator3" class="accordionPanel">
-							<div class="inner">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut facilisis. 
-								Ut tincidunt posuere sem. Vivamus et est in dolor bibendum scelerisque. 
-								Fusce posuere tempus turpis. Pellentesque convallis pretium est. Aliquam 
-								erat volutpat. Sed nunc. Vivamus mi orci, luctus sed, faucibus at.</p>
-							</div>
-						</div>
-					</div>	
 				</div>
 				<div id="secondary">
 					<% var projectsShowDescription = false; var wrapTag = false;%>
