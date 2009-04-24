@@ -14,13 +14,34 @@
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->	
 		<!--#include file="../../inc/head_cssie.asp"-->
-		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
+		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){ 
-				new Adoro.Accordion($("a.ina"), {animate: true});
+				new Adoro.Accordion2($("a.ina"), {animate: true});
 				//new Adoro.Accordion($("a.na"), {animate: true});
+				
+				new Adoro.Accordion2($("#horizontalAccordion div.header a"), {animate: true, horizontal: true});
 			});
 		</script>
+		<style>
+			#horizontalAccordion {
+				overflow: hidden;
+				padding: 15px;
+				border: 10px solid #333;
+				background-color: #fff;
+			}
+			
+			#horizontalAccordion div.header {
+				float: left;
+				border: 1px solid #333;
+				background-color: #eee;
+			}
+			#horizontalAccordion div.panel {
+				float: left;
+				border: 1px solid #333;
+				background-color: #eee;
+			}			
+		</style>
 	</head>
 	<body class="projects">
 		<div id="container">
@@ -41,6 +62,21 @@
 					</ul>
 					
 					<h2>Demo</h2>
+					
+					<div id="horizontalAccordion">
+						<div class="header"><a class="selected" href="#hz01">Link 1</a></div>
+						<div id="hz01" class="panel">
+							<div class="inner">stuff inside 1</div>
+						</div>
+						<div class="header"><a class="selected" href="#hz02">Link 2</a></div>
+						<div id="hz02" class="panel">
+							<div class="inner">stuff inside 2</div>
+						</div>						
+						<div class="header"><a class="selected" href="#hz03">Link 3</a></div>
+						<div id="hz03" class="panel">
+							<div class="inner">stuff inside 3</div>
+						</div>									
+					</div>
 					
 					<div id="nestedAccordion">
 						<div class="header"><a class="na selected" href="#na_01">Outer 1</a></div>
