@@ -9,7 +9,7 @@
 	<head>
 		<!-- google site map -->
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
-		<title>Services, Specialist website designers, Adoro Media, London, UK</title>
+		<title>Services, Expert website designers, Adoro Media, London, UK</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="adoro media, website, web, bespoke, new, media, solutions, london, UK" />
 		<meta name="description" content="Adoro Media is an agency dedicated to building new media solutions, including internet and mobile website applications. Based in London, England." />		
@@ -24,30 +24,35 @@
 				<!--#include file="inc/primaryNavigation.asp"-->	
 			</div>
 			<div id="content">
-				<h1>Full list of website design services</h1>
-				<p>We provide a wide range of services in website design and development.</p>
-				<ul class="generic">
-					<li>Start-up sites and business site solutions</li>
-					<li>Hand coded <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> / <abbr title="Cascading Style Sheets">CSS</abbr> bespoke design</li>
-					<li>Easy to use content management systems</li>
-					<li>Database driven facilities</li>
-					<li>E-commerce, shopping cart applications</li>
-					<li>Information guidance and structure</li>
-					<li>Website usability advice and consultation</li>
-					<li>Domain name registration, hosting and support</li>
-					<li>Audio/Video: <abbr title="Moving Picture Experts Group 3">MP3</abbr>, Real Audio, <abbr title="Moving Picture Experts Group">MPEG</abbr> etc</li>
-					<li>Flash animation</li>
-					<li>Search-engine optimisation and promotion</li>
-					<li>Ongoing support and maintenance</li>
-					<li>Accessibility</li>
-					<li>Branding and logo design</li>
-					<li>Marketing</li>
-					<li>Advertising and email campaigns</li>
-					<li>Online innovations</li>
-					<li><abbr title="Compact Disk">CD</abbr>/<abbr title="Digital Video Disc">DVD</abbr> authoring</li>
-					<li>Presentations</li>
-					<li>Print</li>
-				</ul>
+				<div id="breadcrumb">
+					<p><a href="">Home</a> / <strong>Page title</strong></p>
+				</div>
+				<div id="sections">
+					<h1>Full list of website design services</h1>
+					<p>We provide a wide range of services in website design and development.</p>
+					<ul class="generic">
+						<li>Start-up sites and business site solutions</li>
+						<li>Hand coded <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> / <abbr title="Cascading Style Sheets">CSS</abbr> bespoke design</li>
+						<li>Easy to use content management systems</li>
+						<li>Database driven facilities</li>
+						<li>E-commerce, shopping cart applications</li>
+						<li>Information guidance and structure</li>
+						<li>Website usability advice and consultation</li>
+						<li>Domain name registration, hosting and support</li>
+						<li>Audio/Video: <abbr title="Moving Picture Experts Group 3">MP3</abbr>, Real Audio, <abbr title="Moving Picture Experts Group">MPEG</abbr> etc</li>
+						<li>Flash animation</li>
+						<li>Search-engine optimisation and promotion</li>
+						<li>Ongoing support and maintenance</li>
+						<li>Accessibility</li>
+						<li>Branding and logo design</li>
+						<li>Marketing</li>
+						<li>Advertising and email campaigns</li>
+						<li>Online innovations</li>
+						<li><abbr title="Compact Disk">CD</abbr>/<abbr title="Digital Video Disc">DVD</abbr> authoring</li>
+						<li>Presentations</li>
+						<li>Print</li>
+					</ul>
+				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->
 		</div>

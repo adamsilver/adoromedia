@@ -6,8 +6,9 @@
 body {
 	font-size: 62.5%;
 	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica";
-	background: #1d2b33 url(../img/bg_body_small.gif) repeat-x;
+	background: url(../img/bg_body.jpg) repeat-x;
 	color: #1d2b33;
+	border-top: 10px solid #6CA714;
 }
 
 body#pgHomePage {
@@ -19,7 +20,7 @@ a img {
 }
 
 a, a:link, a:visited {
-	color: #ffffff;
+	color: #666666;
 }
 
 a, a:hover, a:focus, a:active {
@@ -38,23 +39,19 @@ a, a:hover, a:focus, a:active {
 
 h1 {
 	font-size: 3em;
-	color: #ffffff;
 	margin-bottom: 12px;
 }
 h2 {
 	font-size: 2em;
-	color: #ffffff;
 	margin-bottom: 12px;
 }
 h3 {
 	font-size: 1.5em;
-	color: #ffffff;
 	margin-bottom: 12px;
 }
 p {
 	font-size: 1.2em;
 	margin-bottom: 12px;
-	color: #ffffff;
 	line-height: 1.4em;
 }
 
@@ -65,7 +62,6 @@ ul {
 
 ul li {
 	font-size: 1.2em;
-	color: #ffffff;
 	margin-left: 25px;
 	margin-bottom: 3px;
 }
@@ -75,26 +71,37 @@ ul li ul li {
 }
 
 /******************************************************************
+* breadcrumb
+******************************************************************/
+
+#breadcrumb {
+	padding: 10px;
+	border-bottom: 1px solid #E4E4E4;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#breadcrumb p {
+	font-size: 1.1em;
+	color: #666;
+	margin-bottom: 0px;
+}
+
+/******************************************************************
 * something
 ******************************************************************/
 
 div#container {
 	width: 960px;
-	background: url(../img/bg_container_small.gif) no-repeat top center;
-	min-height: 500px;
-	padding-left:10px;
-	padding-right: 10px;
-	margin: 11px auto 0px;
+	margin: 0px auto;
 }
 
 body#pgHomePage div#container {
-	background: url(../img/bg_container.gif) no-repeat top center;
 }
 
 div#header {
 	padding: 0px 20px;
 	overflow: hidden;
-	margin-bottom: 30px;
 }
 
 body#pgHomePage div#header {
@@ -104,12 +111,13 @@ body#pgHomePage div#header {
 
 #logo {
 	float: left;
-	margin-top: 26px;
+	margin-top: 24px;
+	margin-bottom: 22px;
 }
 
 #primaryNavigation {
-	margin-top: 40px;
 	float: right;
+	margin-top: 29px;
 }
 #primaryNavigation ul {
 	list-style: none;
@@ -134,22 +142,18 @@ body#pgHomePage div#header {
 	font-weight: bold;
 	padding: 5px 8px;
 	display: block;
-	color: #1d2b33;
+	color: #fff;
 	text-decoration: none;
 }
 
 #primaryNavigation ul li a.selected,
 #primaryNavigation ul li a:hover,
 #primaryNavigation ul li a :focus {
-	background-color: #1d2b33;
-	color: #ffffff;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
+
 }
 
 #content {
-	padding: 0px 20px;
-	margin-bottom: 20px;
+	background-color: #fff;
 }
 
 body#pgHomePage #content {
@@ -243,13 +247,13 @@ body.projects div#content #secondary {
 }
 
 #footer {
-	background: url(../img/bg_border01.gif) repeat-x top left;
-	padding: 20px;
+	border-top: 1px solid #E4E4E4;
+	padding: 10px 20px;
 }
 
 #footer p {
 	font-size: 1.1em;
-	color: #C8C8C8;
+	color: #666666;
 }
 
 /******************************************************************
