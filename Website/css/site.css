@@ -347,7 +347,7 @@ body#pgHome #tertiary {
 #featuredWork {
 	margin-bottom: 10px;
 	background-color: #1D2B33;
-	padding: 10px;
+	padding: 10px 0px;
 }
 
 #featuredWork div.information {
