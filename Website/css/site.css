@@ -40,6 +40,7 @@ a:hover, a:focus, a:active {
 body#pgHomePage h1,
 #breadcrumb p,
 div.field fieldset legend,
+div.field fieldset legend span,
 div.field div.multipleInput div.input label {
 	position: absolute !important;
 	left: -999em !important;
@@ -56,7 +57,9 @@ div#content:after,
 #breadcrumb ul:after,
 div.action:after,
 #featuredWork:after,
-#sections:after {
+#sections:after,
+div.field:after,
+div.field div.checkboxes div.input:after {
 	clear:both;
 	content:".";
 	display:block;
@@ -217,7 +220,6 @@ body.projects div#content #secondary {
 ******************************************************************/
 
 div.field {
-	overflow: hidden;
 	border-bottom: 1px solid #ccc;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -246,6 +248,17 @@ div.field div.multipleInput {
 	width: 400px;
 }
 
+div.field div.checkboxes div.input label {
+	float: left;
+	font-size: 1.2em;
+	width: 200px;
+}
+
+div.field div.checkboxes div.input input {
+	float: left;
+	margin-right: 5px;
+}
+
 div.field div.multipleInput div.input {
 	float: left;
 	margin-right: 10px;
@@ -265,6 +278,17 @@ div.action {
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 10px;
+}
+
+div.action input.reset {
+	background-color: #888;
+	font-size: 1.1em;
+	border: 1px solid #eee;
+	color: #fff;
+	padding: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	float: left;
 }
 
 div.action input.submit {
