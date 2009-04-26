@@ -412,27 +412,35 @@ body#pgProjectsHome div#projectNavigation ul li p {
 
 body#pgHome #primary {
 	float: left;
-	width: 320px;
+	width: 300px;
+	border-top: 4px solid #6CA714;
+	padding-top: 20px;
+	margin-right: 20px;
 }
 
 body#pgHome #secondary {
 	float: left;
 	width: 320px;
+	border-top: 4px solid #0099FF;
+	padding-top: 20px;
 }
 
 body#pgHome #tertiary {
 	float: left;
-	width: 320px;
+	width: 300px;
+	border-top: 4px solid #FFFF33;
+	padding-top: 20px;
+	margin-left:20px;
 }
 
 #featuredWork {
 	margin-bottom: 30px;
-	background: #1D2B33 url(../img/border01.gif) repeat-y 480px 0px;
+	background: #1D2B33 url(../img/border01.gif) repeat-y 460px 0px;
 }
 
 #featuredWork div.information {
 	float: left;
-	width: 480px;
+	width: 460px;
 	padding-top: 20px;
 }
 #featuredWork div.information p.featured {
@@ -449,15 +457,24 @@ body#pgHome #tertiary {
 
 #featuredWork div.carousel {
 	float: left;
-	width: 480px;
+	width: 500px;
 	padding-top: 20px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
-#featuredWork div.carousel li {
-	border: 1px solid #6CA714;
+#featuredWork div.carousel ul {
+	margin: 0px 20px;
+	list-style: none;
+}
+
+#featuredWork div.carousel ul li {
+	margin: 0px;
+	background-color: #ffffff;
 	padding: 10px;
-	background-color: #000;
+}
+
+#featuredWork div.carousel ul li img {
+	display: block;
 }
 
 /******************************************************************
