@@ -157,6 +157,7 @@ div#header {
 #primaryNavigation ul {
 	list-style: none;
 	overflow: hidden;
+	margin-right: 0px;
 }
 
 #primaryNavigation ul li {
