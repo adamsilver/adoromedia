@@ -16,4 +16,9 @@
 		var querystring = Request.ServerVariables("QUERY_STRING");
 		return protocol + "://" + domainname + filename + "?" + querystring;
 	}
+	
+	Adoro.Breadcrumb = {};
+	Adoro.Breadcrumb.home = {	href:Adoro.URL+"/default.asp", text: "home"}
+	Adoro.Breadcrumb.projects = {	href:Adoro.URL+"/projects",	text: "Projects"};
+	
 %>
