@@ -30,6 +30,12 @@
 				<!--#include file="../../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
+						text: "Default text control"
+					}];
+				%>
+				<!--#include file="../../inc/breadcrumb.asp"-->							
 				<div id="primary">
 					<h1>Default text control</h1>
 					<h2>About</h2>

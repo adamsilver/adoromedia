@@ -47,6 +47,12 @@
 					<!--#include file="../../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
+						text: "Calendar"
+					}];
+				%>
+				<!--#include file="../../inc/breadcrumb.asp"-->							
 				<div id="primary">
 					<h1>Calendar</h1>
 					<h2>About</h2>
