@@ -426,14 +426,14 @@ body#pgHome #tertiary {
 }
 
 #featuredWork {
-	margin-bottom: 10px;
-	background-color: #1D2B33;
-	padding: 10px 0px;
+	margin-bottom: 30px;
+	background: #1D2B33 url(../img/border01.gif) repeat-y 480px 0px;
 }
 
 #featuredWork div.information {
 	float: left;
-	width: 470px;
+	width: 480px;
+	padding-top: 20px;
 }
 #featuredWork div.information p.featured {
 	margin-bottom: 0px;
@@ -449,7 +449,15 @@ body#pgHome #tertiary {
 
 #featuredWork div.carousel {
 	float: left;
-	width: 470px;
+	width: 480px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+#featuredWork div.carousel li {
+	border: 1px solid #6CA714;
+	padding: 10px;
+	background-color: #000;
 }
 
 /******************************************************************

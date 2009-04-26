@@ -37,7 +37,7 @@
 					<div class="carousel">
 						<div class="clip">
 							<ul>
-								<li><a href="http://www.dgretro.com"><img width="433" height="200" src="img/work/dgretro.jpg" alt="David Goodman Retro Collectables" /></a></li>
+								<li><a href="http://www.dgretro.com"><img src="img/featured/dgretro01.jpg" alt="David Goodman Retro Collectables" /></a></li>
 							</ul>
 						</div>
 					</div>
