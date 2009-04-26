@@ -24,11 +24,11 @@
 			<div id="content">
 				<%
 					var breadCrumbParts = [Adoro.Breadcrumb.home, {
-						text: "Work"
+						text: "Portfolio"
 					}];
 				%>
 				<!--#include file="inc/breadcrumb.asp"-->				
-					<h1>Our recent work</h1>
+					<h1>Portfolio</h1>
 					<p>Here is a selection of recent work. Just click the images to view the sites.</p>
 					
 					<!--

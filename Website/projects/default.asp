@@ -7,7 +7,7 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Projects, Specialist website designers, Adoro Media, London, UK</title>
+		<title>Projects, Expert website designers, Adoro Media</title>
 		<!--#include file="../inc/head_other.asp"-->
 		<meta name="keywords" content="adoro, media, open, source, projects, home page, jquery, javascript, library, website, development" />
 		<meta name="description" content="Adoro Media projects home page. Open source projects using jQuery JavaScript library." />		

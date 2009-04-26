@@ -7,7 +7,7 @@
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>List collapser, jQuery JavaScript library, Adoro Media Ltd</title>
+		<title>List collapser, jQuery JavaScript library, Adoro Media</title>
 		<!--#include file="../../inc/head_other.asp"-->
 		<meta name="keywords" content="List collapser, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="List collapser for facet navigation, jQuery JavaScript component, by Adoro Media." />	

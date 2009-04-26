@@ -9,7 +9,7 @@
 <% Adoro.siteSection = "adoro" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Contact Adoro, making websites adorable</title>
+		<title>Contact details, Adoro Media</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="contact, adoro media, adoro, email, website design." />
 		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />			
@@ -32,7 +32,7 @@
 			<div id="content">
 				<%
 					var breadCrumbParts = [Adoro.Breadcrumb.home,{
-						text: "Contact"
+						text: "Contact details"
 					}];
 				%>
 				<!--#include file="inc/breadcrumb.asp"-->

@@ -31,7 +31,7 @@
 				%>
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="sections">
-					<h1>Full list of website design services</h1>
+					<h1>Website design services</h1>
 					<p>We provide a wide range of services in website design and development.</p>
 					<ul class="generic">
 						<li>Start-up sites and business site solutions</li>

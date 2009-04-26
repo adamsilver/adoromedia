@@ -9,7 +9,7 @@
 	<head>
 		<!-- google site map -->
 		<meta name="verify-v1" content="bGLYYM+pPuoZqafHVEOR+Nrjr6S9I03SPJX5xOSnoqU=" />
-		<title>Frequently asked questions, Website design and development, Adoro Media Ltd</title>
+		<title>Frequently asked questions, Expert website designers, Adoro Media</title>
 		<meta name="keywords" content="List collapser, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="List collapser for facet navigation, jQuery JavaScript component, by Adoro Media." />	
 		<!--#include file="inc/head_js.asp"-->	
