@@ -25,11 +25,15 @@
 				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<div id="primary">
-					<h1>We want to work with you</h1>
-				</div>
-				<div id="secondary">
+					<%
+						var breadCrumbParts = [Adoro.Breadcrumb.home,{
+							text: "Contact"
+						}];
+					%>
+					<!--#include file="inc/breadcrumb.asp"-->
+
 					
+					<h1>We want to work with you</h1>
 					<% contactForm.showErrors(); %>
 					<%if(messageSent == true) {%>
 						<div id="successMessage">
@@ -69,7 +73,6 @@
 							</div>
 						</form>
 					<%}%>
-				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->
 		</div>
