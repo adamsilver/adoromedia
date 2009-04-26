@@ -46,14 +46,20 @@
 			}
 		</style>
 	</head>
-	<body class="library">
+	<body class="projects">
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
-					<!--#include file="../../inc/logo.asp"-->
-					<!--#include file="../../inc/primaryNavigation.asp"-->
-				</div>
-				<div id="content">
+			<div id="header">
+				<!--#include file="../../inc/logo.asp"-->
+				<!--#include file="../../inc/primaryNavigation.asp"-->
+			</div>
+			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
+						text: "Tooltip"
+					}];
+				%>
+				<!--#include file="../../inc/breadcrumb.asp"-->	
+				<div id="primary">
 					<h1>Tooltip</h1>
 					<h2>About</h2>
 					<ul class="generic">
@@ -79,13 +85,14 @@
 							<div class="yo"><p>This is a tooltip that follows the mouse, and has custom style</p></div>
 						</div>
 					</div>
-					
-					<h2>Example setup</h2>
-					<!--#include file="../../inc/code/tooltip.asp"-->						
 				</div>
+				<div id="secondary">
+					<% var projectsShowDescription = false; var wrapTag = false;%>
+					<!--#include file="../../inc/projectsNavigation.asp"-->
+				</div>	
 			</div>
+			<!--#include file="../../inc/footer.asp"-->
 		</div>
-		<!--#include file="../../inc/footer.asp"-->
 		<!--#include file="../../inc/ga.asp"-->
 	</body>
-</html>
+</html>				

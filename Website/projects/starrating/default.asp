@@ -22,14 +22,20 @@
 			});
 		</script>
 	</head>
-	<body class="library">
+	<body class="projects">
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
-					<!--#include file="../../inc/logo.asp"-->
-					<!--#include file="../../inc/primaryNavigation.asp"-->
-				</div>
-				<div id="content">
+			<div id="header">
+				<!--#include file="../../inc/logo.asp"-->
+				<!--#include file="../../inc/primaryNavigation.asp"-->
+			</div>
+			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
+						text: "Star rating"
+					}];
+				%>
+				<!--#include file="../../inc/breadcrumb.asp"-->		
+				<div id="primary">
 					<h1>Star rating</h1>
 					<h2>About</h2>
 					<ul class="generic">
@@ -38,54 +44,54 @@
 						<li>Each label related to the radio become clickable.</li>
 					</ul>
 					<h2>Demo</h2>
-					<div class="form">
-					
-						<div class="field">
-							<div class="indicator">
-								<span class="label">Star rating</span>
-							</div>
-							<div class="radios starRating">
-								<fieldset>
-									<legend><span class="legend">Start rating</span></legend>
-									<div class="input">
-										<input type="radio" name="starRating" id="starRating" value="1" />
-										<label for="starRating">
-											<span>1</span>
-										</label>
-									</div>
-									<div class="input">
-										<input type="radio" name="starRating" id="starRating2" value="2" />
-										<label for="starRating2">
-											<span>2</span>
-										</label>
-									</div>		
-									<div class="input">
-										<input type="radio" name="starRating" id="starRating3" value="3" />
-										<label for="starRating3">
-											<span>3</span>
-										</label>
-									</div>	
-									<div class="input">
-										<input type="radio" name="starRating" id="starRating4" value="4" />
-										<label for="starRating4">
-											<span>4</span>
-										</label>
-									</div>	
-									<div class="input">
-										<input type="radio" name="starRating" id="starRating5" value="5" />
-										<label for="starRating5">
-											<span>5</span>
-										</label>
-									</div>
-								</fieldset>																							
-							</div>
-						</div>			
-					</div>	
-					
-				</div>
+					<div class="field">
+						<div class="indicator">
+							<span class="label">Star rating</span>
+						</div>
+						<div class="radios starRating">
+							<fieldset>
+								<legend><span class="legend">Start rating</span></legend>
+								<div class="input">
+									<input type="radio" name="starRating" id="starRating" value="1" />
+									<label for="starRating">
+										<span>1</span>
+									</label>
+								</div>
+								<div class="input">
+									<input type="radio" name="starRating" id="starRating2" value="2" />
+									<label for="starRating2">
+										<span>2</span>
+									</label>
+								</div>		
+								<div class="input">
+									<input type="radio" name="starRating" id="starRating3" value="3" />
+									<label for="starRating3">
+										<span>3</span>
+									</label>
+								</div>	
+								<div class="input">
+									<input type="radio" name="starRating" id="starRating4" value="4" />
+									<label for="starRating4">
+										<span>4</span>
+									</label>
+								</div>	
+								<div class="input">
+									<input type="radio" name="starRating" id="starRating5" value="5" />
+									<label for="starRating5">
+										<span>5</span>
+									</label>
+								</div>
+							</fieldset>																							
+						</div>
+					</div>
+				</div>					
+				<div id="secondary">
+					<% var projectsShowDescription = false; var wrapTag = false;%>
+					<!--#include file="../../inc/projectsNavigation.asp"-->
+				</div>	
 			</div>
+			<!--#include file="../../inc/footer.asp"-->
 		</div>
-		<!--#include file="../../inc/footer.asp"-->
 		<!--#include file="../../inc/ga.asp"-->
 	</body>
-</html>
+</html>				
