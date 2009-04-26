@@ -17,13 +17,18 @@
 	</head>
 	<body>
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
+			<div id="header">
 					<!--#include file="inc/logo.asp"-->
 					<!--#include file="inc/primaryNavigation.asp"-->
-				</div>
-				<div id="content">
-					<h1>Portfolio</h1>
+			</div>
+			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home, {
+						text: "Work"
+					}];
+				%>
+				<!--#include file="inc/breadcrumb.asp"-->				
+					<h1>Our recent work</h1>
 					<p>Here is a selection of recent work. Just click the images to view the sites.</p>
 					
 					<!--
@@ -144,10 +149,9 @@
 						<li>Motorcycle News</li>
 						<li>Today's Golfer</li>-->
 					</ul>
-				</div>
-			</div>		
+			</div>
+			<!--#include file="inc/footer.asp"-->
 		</div>
-		<!--#include file="inc/footer.asp"-->
 		<!--#include file="inc/ga.asp"-->
 	</body>
 </html>
