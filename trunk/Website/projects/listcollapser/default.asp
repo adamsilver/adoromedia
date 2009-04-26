@@ -16,21 +16,7 @@
 		<link rel="stylesheet" href="../../css/collapse.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.ListCollapser.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){ 
-				new Adoro.ListCollapser($("div.mySpecialList a")[0], $("div.mySpecialList ul")[0], {
-					limit: 3,
-					startOpen: false
-				});
-				
-				new Adoro.ListCollapser($("div.mySpecialList a")[1], $("div.mySpecialList ul")[1], {
-					limit: 1,
-					startOpen: false,
-					showHTML: "<span>+</span> please show me more",
-					hideHTML: "<span>-</span> please show me less"
-				});
-			});
-		</script>		
+		<script type="text/javascript" src="../../js/Site/Site.Projects.ListCollapser.js"></script>	
 	</head>
 	<body class="projects">
 		<div id="container">
@@ -39,11 +25,7 @@
 				<!--#include file="../../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<%
-					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
-						text: "List collapser"
-					}];
-				%>
+				<%var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{text: "List collapser"}];%>
 				<!--#include file="../../inc/breadcrumb.asp"-->	
 				<div id="primary">
 					<h1>List collapser</h1>
