@@ -23,9 +23,12 @@
 				<!--#include file="../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<div id="breadcrumb">
-					<p><a href="">Home</a> / <strong>Page title</strong></p>
-				</div>
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home, {
+						text: "Projects"
+					}];
+				%>
+				<!--#include file="../inc/breadcrumb.asp"-->
 				<h1>Projects</h1>
 				<p>Open source projects for the world.</p>
 				
