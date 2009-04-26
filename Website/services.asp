@@ -24,9 +24,12 @@
 				<!--#include file="inc/primaryNavigation.asp"-->	
 			</div>
 			<div id="content">
-				<div id="breadcrumb">
-					<p><a href="">Home</a> / <strong>Page title</strong></p>
-				</div>
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home, {
+						text: "Services"
+					}];
+				%>
+				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="sections">
 					<h1>Full list of website design services</h1>
 					<p>We provide a wide range of services in website design and development.</p>
@@ -52,6 +55,11 @@
 						<li>Presentations</li>
 						<li>Print</li>
 					</ul>
+					
+					<h2>User friendly interface and interaction design</h2>
+					<p>Lorem ipsum</p>
+					<h2>Search engine optimisation</h2>
+					<p>Lorem ipsum</p>
 				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->

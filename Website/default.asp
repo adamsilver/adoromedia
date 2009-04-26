@@ -18,14 +18,14 @@
 		<!--#include file="inc/head_cssie.asp"-->
 		
 	</head>
-	<body id="pgHomePage">
+	<body>
 		<div id="container">
 			<div id="header">
 				<!--#include file="inc/logo.asp"-->
 				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<h1>Website design specialists</h1>
+				<h1 class="off">Website design specialists</h1>
 				<div id="featuredWork">
 					<div id="featuredWorkInner">
 						<div class="information">
