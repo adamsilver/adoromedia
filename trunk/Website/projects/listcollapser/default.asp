@@ -32,14 +32,20 @@
 			});
 		</script>		
 	</head>
-	<body class="library">
+	<body class="projects">
 		<div id="container">
-			<div class="faux">
-				<div id="controls">
-					<!--#include file="../../inc/logo.asp"-->
-					<!--#include file="../../inc/primaryNavigation.asp"-->
-				</div>
-				<div id="content">
+			<div id="header">
+				<!--#include file="../../inc/logo.asp"-->
+				<!--#include file="../../inc/primaryNavigation.asp"-->
+			</div>
+			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
+						text: "Lightbox"
+					}];
+				%>
+				<!--#include file="../../inc/breadcrumb.asp"-->	
+				<div id="primary">
 					<h1>List collapser</h1>
 					<h2>About</h2>
 					<ul class="generic">
@@ -76,11 +82,14 @@
 						</ul>
 						<p><a href="#">activator</a></p>
 					</div>				
-					
 				</div>
+				<div id="secondary">
+					<% var projectsShowDescription = false; var wrapTag = false;%>
+					<!--#include file="../../inc/projectsNavigation.asp"-->
+				</div>	
 			</div>
+			<!--#include file="../../inc/footer.asp"-->
 		</div>
-		<!--#include file="../../inc/footer.asp"-->
 		<!--#include file="../../inc/ga.asp"-->
 	</body>
-</html>
+</html>				
