@@ -186,42 +186,49 @@ div#header {
 #primaryNavigation ul li a:focus {
 	color: #6CA714;
 	background-color:#1D2B33;
+	border-bottom: 2px solid #1D2B33;
 }
 
 #primaryNavigation ul li#pnHome a,
 #primaryNavigation ul li#pnHome a:link,
 #primaryNavigation ul li#pnHome a:visited{
 	color: #6CA714;
+	border-color: #6CA714;
 }
 
 #primaryNavigation ul li#pnServices a,
 #primaryNavigation ul li#pnServices a:link,
 #primaryNavigation ul li#pnServices a:visited{
 	color: #0099FF;
+	border-color: #0099FF;
 }
 
 #primaryNavigation ul li#pnPortfolio a,
 #primaryNavigation ul li#pnPortfolio a:link,
 #primaryNavigation ul li#pnPortfolio a:visited {
 	color: #FF6600;
+	border-color: #FF6600
 }
 
 #primaryNavigation ul li#pnProjects a,
 #primaryNavigation ul li#pnProjects a:link,
 #primaryNavigation ul li#pnProjects a:visited {
 	color: #FF0099;
+	border-color: #FF0099;
 }
 
 #primaryNavigation ul li#pnFaq a,
 #primaryNavigation ul li#pnFaq a:link,
 #primaryNavigation ul li#pnFaq a:visited {
 	color: #CCCCCC;
+	border-color: #CCCCCC;
 }
 
 #primaryNavigation ul li#pnContact a,
 #primaryNavigation ul li#pnContact a:link,
 #primaryNavigation ul li#pnContact a:visited {
 	color: #FFFF33;
+	border-color: #FFFF33;
 }
 
 #content {
@@ -428,6 +435,12 @@ body#pgHome #tertiary {
 	float: left;
 	width: 470px;
 }
+#featuredWork div.information p.featured {
+	margin-bottom: 0px;
+	font-size: 1.1em;
+	text-transform: uppercase;
+}
+
 
 #featuredWork div.information h2,
 #featuredWork div.information p {

@@ -26,6 +26,7 @@
 				<%var breadCrumbParts = [Adoro.Breadcrumb.home,{text: "FAQ"}];%>
 				<!--#include file="inc/breadcrumb.asp"-->				
 				<h1>Frequently asked questions</h1>
+				<p>Coming to a screen near you, very soon</p>
 			</div>
 			<!--#include file="inc/footer.asp"-->
 		</div>
