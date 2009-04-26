@@ -18,7 +18,7 @@
 		<!--#include file="inc/head_cssie.asp"-->
 		
 	</head>
-	<body>
+	<body id="pgHome">
 		<div id="container">
 			<div id="header">
 				<!--#include file="inc/logo.asp"-->
@@ -27,18 +27,16 @@
 			<div id="content">
 				<h1 class="off">Website design specialists</h1>
 				<div id="featuredWork">
-					<div id="featuredWorkInner">
-						<div class="information">
-							<h2>Featured work</h2>
-							<p>Donec sollicitudin augue vitae libero. Etiam cursus eros ut turpis. 
-							Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
-						</div>
-						<div class="carousel">
-							<div class="clip">
-								<ul>
-									<li>page 1</li>
-								</ul>
-							</div>
+					<div class="information">
+						<h2>Featured work</h2>
+						<p>Donec sollicitudin augue vitae libero. Etiam cursus eros ut turpis. 
+						Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
+					</div>
+					<div class="carousel">
+						<div class="clip">
+							<ul>
+								<li>page 1</li>
+							</ul>
 						</div>
 					</div>
 				</div>

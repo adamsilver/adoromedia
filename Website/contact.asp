@@ -32,8 +32,8 @@
 					%>
 					<!--#include file="inc/breadcrumb.asp"-->
 
-					
-					<h1>We want to work with you</h1>
+					<div id="contactFormPanel">
+					<h1>Contact details</h1>
 					<% contactForm.showErrors(); %>
 					<%if(messageSent == true) {%>
 						<div id="successMessage">
