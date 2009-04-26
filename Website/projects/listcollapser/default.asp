@@ -41,7 +41,7 @@
 			<div id="content">
 				<%
 					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
-						text: "Lightbox"
+						text: "List collapser"
 					}];
 				%>
 				<!--#include file="../../inc/breadcrumb.asp"-->	
