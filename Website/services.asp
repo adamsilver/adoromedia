@@ -17,7 +17,7 @@
 		<!--#include file="inc/head_js.asp"-->
 		<!--#include file="inc/head_cssie.asp"-->
 	</head>
-	<body>
+	<body id="pgServices" class="services">
 		<div id="container">
 			<div id="header">
 				<!--#include file="inc/logo.asp"-->	
