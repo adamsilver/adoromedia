@@ -121,7 +121,9 @@ ul li ul li,ol li ol li {
 #breadcrumb ul li {
 	float: left;
 	font-size: 1.1em;
-	margin: 0px 10px 0px 0px;
+	margin: 0px 4px 0px 0px;
+	background: url(../img/arrow01.gif) no-repeat 0px 2px;
+	padding-left: 13px;
 }
 
 /******************************************************************
