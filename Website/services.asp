@@ -55,11 +55,12 @@
 						<li>Presentations</li>
 						<li>Print</li>
 					</ul>
-					
+					<!--
 					<h2>User friendly interface and interaction design</h2>
 					<p>Lorem ipsum</p>
 					<h2>Search engine optimisation</h2>
 					<p>Lorem ipsum</p>
+					-->
 				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->

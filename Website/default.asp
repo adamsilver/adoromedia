@@ -28,38 +28,44 @@
 				<h1 class="off">Website design specialists</h1>
 				<div id="featuredWork">
 					<div class="information">
-						<h2>Featured work</h2>
-						<p>Donec sollicitudin augue vitae libero. Etiam cursus eros ut turpis. 
-						Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
+						<p class="featured">Featured</p>
+						<h2>David Goodman Retro Collectables</h2>
+						<p>Launched in spring 2009, this website application 
+						was built using Wordpress 2.7.1 for complete content management
+						and the functionality to blog.</p>
 					</div>
 					<div class="carousel">
 						<div class="clip">
 							<ul>
-								<li>page 1</li>
+								<li><a href="http://www.dgretro.com"><img width="433" height="200" src="img/work/dgretro.jpg" alt="David Goodman Retro Collectables" /></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div id="sections">
 					<div id="primary">
-						<h2>Services</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Donec sit amet nunc at neque lacinia congue. Sed porta. 
-						Curabitur tristique. Fusce eleifend egestas dui. Nulla facilisi. 
-						Donec sollicitudin augue vitae libero. Etiam cursus eros ut turpis. 
-						Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
+						<h2>About</h2>
+						<p>Established in the industry for 10 years, 
+						has given us a credible amount of experience.</p>
+						<p>We are very passionate about websites and want
+						to create the best online presence for you and
+						your business, charity or personal website.</p>
 					</div>
 					<div id="secondary">
-						<h2>Latest work</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Donec sit amet nunc at neque lacinia congue. Sed porta. 
-						Curabitur tristique. Fusce eleifend egestas dui. Nulla facilisi.</p>
-						<p>Donec sollicitudin augue vitae libero. Etiam cursus eros ut turpis. 
-						Curabitur sapien ipsum, sagittis sed, volutpat eu, laoreet pretium.</p>
+						<h2>Services</h2>
+						<p>We have gained a lot of expertise across several
+						disciplines in website design and development:</p>
+						<ul>
+							<li>User friendly website design</li>
+							<li>High-end user interaction design</li>
+							<li>Natural search engine optimisation</li>
+						</ul>
 					</div>
 					<div id="tertiary">
 						<h2>Contact us</h2>
-						<p>Lorem ipsum</p>
+						<p>We can be contacted in several ways. Visit the 
+						<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
+						for further information.</p>
 					</div>
 				</div>
 			</div>
