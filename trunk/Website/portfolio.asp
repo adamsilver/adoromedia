@@ -15,7 +15,7 @@
 		<!--#include file="inc/head_css.asp"-->
 		<!--#include file="inc/head_cssie.asp"-->		
 	</head>
-	<body>
+	<body id="pgPortfolio" class="portfolio">
 		<div id="container">
 			<div id="header">
 					<!--#include file="inc/logo.asp"-->

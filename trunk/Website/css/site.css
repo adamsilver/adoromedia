@@ -183,8 +183,45 @@ div#header {
 
 #primaryNavigation ul li a.selected,
 #primaryNavigation ul li a:hover,
-#primaryNavigation ul li a :focus {
+#primaryNavigation ul li a:focus {
 	color: #6CA714;
+	background-color:#1D2B33;
+}
+
+#primaryNavigation ul li#pnHome a,
+#primaryNavigation ul li#pnHome a:link,
+#primaryNavigation ul li#pnHome a:visited{
+	color: #6CA714;
+}
+
+#primaryNavigation ul li#pnServices a,
+#primaryNavigation ul li#pnServices a:link,
+#primaryNavigation ul li#pnServices a:visited{
+	color: #0099FF;
+}
+
+#primaryNavigation ul li#pnPortfolio a,
+#primaryNavigation ul li#pnPortfolio a:link,
+#primaryNavigation ul li#pnPortfolio a:visited {
+	color: #FF6600;
+}
+
+#primaryNavigation ul li#pnProjects a,
+#primaryNavigation ul li#pnProjects a:link,
+#primaryNavigation ul li#pnProjects a:visited {
+	color: #FF0099;
+}
+
+#primaryNavigation ul li#pnFaq a,
+#primaryNavigation ul li#pnFaq a:link,
+#primaryNavigation ul li#pnFaq a:visited {
+	color: #CCCCCC;
+}
+
+#primaryNavigation ul li#pnContact a,
+#primaryNavigation ul li#pnContact a:link,
+#primaryNavigation ul li#pnContact a:visited {
+	color: #FFFF33;
 }
 
 #content {
@@ -403,10 +440,34 @@ body#pgHome #tertiary {
 }
 
 /******************************************************************
-* Contact page
+* Contact form panel
 ******************************************************************/
 
 #contactFormPanel {
 	width: 600px;
 	margin-bottom: 10px;
+}
+
+/******************************************************************
+* body
+******************************************************************/
+
+body.services {
+	border-color: #0099FF;
+}
+
+body.projects {
+	border-color: #FF0099;
+}
+
+body.portfolio {
+	border-color: #FF6600;
+}
+
+body.faq {
+	border-color: #CCCCCC;
+}
+
+body.contact {
+	border-color: #FFFF33;
 }

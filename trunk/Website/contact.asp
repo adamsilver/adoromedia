@@ -23,7 +23,7 @@
 		<!--#include file="inc/head_css.asp"-->	
 		<!--#include file="inc/head_cssie.asp"-->
 	</head>
-	<body id="pgContact">
+	<body id="pgContact" class="contact">
 		<div id="container">
 			<div id="header">
 				<!--#include file="inc/logo.asp"-->
