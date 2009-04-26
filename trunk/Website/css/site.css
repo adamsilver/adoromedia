@@ -24,11 +24,12 @@ a img {
 }
 
 a, a:link, a:visited {
-	color: #666666;
+	color: #1D2B33;
 }
 
-a, a:hover, a:focus, a:active {
-	color: #6CA714;
+a:hover, a:focus, a:active {
+	color: #ffffff;
+	background-color: #1D2B33;
 }
 
 .hide {
@@ -263,6 +264,7 @@ div.action {
 	padding: 10px;
 	margin-left: 20px;
 	margin-right: 20px;
+	margin-bottom: 10px;
 }
 
 div.action input.submit {
@@ -277,6 +279,39 @@ div.action input.submit {
 }
 
 /******************************************************************
+* Error messages
+******************************************************************/
+
+#errorMessage {
+	margin: 0px 20px;
+	padding: 10px;
+	background-color: #ff0000;
+}
+
+#errorMessage h1, 
+#errorMessage h2, 
+#errorMessage h3, 
+#errorMessage p, 
+#errorMessage ul, 
+#errorMessage ul li,
+#errorMessage a {
+	color: #fff;
+}
+
+#errorMessage h2,
+#errorMessage h3 {
+	margin: 0px;
+}
+
+#errorMessage ul {
+	margin: 0px;
+}
+
+#errorMessage a {
+	font-weight: bold;
+}
+
+/******************************************************************
 * projects list
 ******************************************************************/
 
@@ -286,43 +321,21 @@ body#pgProjectsHome div#projectNavigation ul {
 }
 
 body#pgProjectsHome div#projectNavigation ul li {
-	margin-left: 0px;
+	margin: 0px;
 	float: left;
-	width: 290px;
-	padding-right: 10px;
-	min-height: 100px;
+	width: 280px;
+	padding-right: 20px;
+	min-height: 80px;
 }
 
 body#pgProjectsHome div#projectNavigation ul li h2 {
-	font-size: 1.6em;
+	font-size: 1.4em;
+	margin: 0px;
 }
 
 body#pgProjectsHome div#projectNavigation ul li p {
 	font-size: 1em;
-}
-
-/******************************************************************
-* accordion
-******************************************************************/
-
-#nestedAccordion {
-	background-color: #fff;
-	padding: 10px;
-	color: #333;
-	border: 10px solid #EEE;
-}
-
-#nestedAccordion p , #nestedAccordion a{
-	color: #333;
-}
-
-#innerAccordion div.panel div.inner {
-	margin-left: 10px;
-	margin-bottom: 10px;
-}
-
-#innerAccordion div.panel div.inner  p {
-	padding: 5px 10px 25px 35px;
+	margin: 0px;
 }
 
 /******************************************************************
