@@ -215,9 +215,11 @@ body.projects div#content #secondary {
 
 div.field {
 	overflow: hidden;
-	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
 	margin-left: 20px;
 	margin-right: 20px;
+	background-color: #E4E4E4;
+	padding: 10px;
 }
 
 div.field fieldset {
@@ -255,6 +257,10 @@ div.field div.singleInput textarea {
 }
 
 div.action {
+	background-color: #E4E4E4;
+	padding: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 div.action input.submit {
