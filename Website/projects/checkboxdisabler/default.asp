@@ -30,6 +30,12 @@
 				<!--#include file="../../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
+						text: "Checkbox disabler"
+					}];
+				%>
+				<!--#include file="../../inc/breadcrumb.asp"-->							
 				<div id="primary">
 					<h1>Checkbox disabler</h1>
 					<h2>About</h2>
