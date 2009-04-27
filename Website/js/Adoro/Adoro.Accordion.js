@@ -10,6 +10,7 @@ Adoro.Accordion = function(anchors, options) {
 	var animateTime = options.animateTime || 300;
 	var sets = extraSets;
 	sets.push(anchors);
+	sets.reverse();
 	var anchorsSets = [];
 	var panelHandlers = [], handler;
 
@@ -38,6 +39,7 @@ Adoro.Accordion = function(anchors, options) {
 		
 		for(var i = 0; i<anchors.length;i++) {
 			$(anchors[i]).hasClass(cssActiveClass);
+			if(!anchors[i]) continue;
 			singlePanels.push(new SinglePanel(anchors[i], this));
 		};
 		
