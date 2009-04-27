@@ -6,19 +6,13 @@ Adoro.Accordion = function(anchors, options) {
 	var cssActiveClass = options.cssActiveClass || "selected";
 	var alwaysOpen = options.alwaysOpen || false;
 	var animate = options.animate || false;
-	//var animateShowParams = options.animateShowParams || {height: "show"};
-	//var animateHideParams = options.animateHideParams || {height: "hide"};
-	
 	var horizontal = options.horizontal || false;
-	
-	
-	var animateTime = options.animateTime || 300;	
+	var animateTime = options.animateTime || 300;
 	var sets = extraSets;
 	sets.push(anchors);
-
 	var anchorsSets = [];
 	var panelHandlers = [], handler;
-	
+
 	for(var i = 0; i<sets[0].length; i++) {
 		anchorsSets=[];
 		for(var j = 0; j < sets.length; j++) {
@@ -34,15 +28,11 @@ Adoro.Accordion = function(anchors, options) {
 				panelHandlers[0].expand();
 			}
 		}
-	}	
-	
+	};	
 	
 	function PanelHandler(anchors) {
 		var me = this;
 		var singlePanels = [];
-		
-		
-		
 		var isOpen = false;
 		this.isOpen = isOpen;
 		
