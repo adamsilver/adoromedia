@@ -70,8 +70,7 @@
 						<div class="panel" id="va_ok">
 							<p>Ok times</p>
 						</div>	
-					</div>					
-
+					</div>
 					
 				</div>
 				<div id="secondary">
