@@ -49,8 +49,30 @@
 						<div class="header"><a href="#ha_sad">Sad</a></div>
 						<div class="panel" id="ha_sad">
 							<p>Sad times</p>
-						</div>						
+						</div>
+						<div class="header"><a href="#ha_ok">Ok</a></div>
+						<div class="panel" id="ha_ok">
+							<p>Ok times</p>
+						</div>	
+					</div>
+					
+					<h3>Vertical accordion</h3>
+					<div id="verticalAccordion">
+						<div class="header"><a href="#va_happy">Happy</a></div>
+						<div class="panel" id="va_happy">
+							<p>Happy times</p>
+						</div>
+						<div class="header"><a href="#va_sad">Sad</a></div>
+						<div class="panel" id="va_sad">
+							<p>Sad times</p>
+						</div>
+						<div class="header"><a href="#va_ok">Ok</a></div>
+						<div class="panel" id="va_ok">
+							<p>Ok times</p>
+						</div>	
 					</div>					
+
+					
 				</div>
 				<div id="secondary">
 					<% var projectsShowDescription = false; var wrapTag = false;%>
