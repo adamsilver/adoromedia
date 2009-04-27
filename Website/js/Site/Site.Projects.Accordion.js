@@ -1,5 +1,3 @@
 $(document).ready(function(){ 
-	new Adoro.Accordion($("a.accordion1"), {animate: true});
-	new Adoro.Accordion($("a.tabActivator"), {animate: false, alwaysOpen: true});
-	new Adoro.Accordion($("a.accordion3"), {animationShowParams: {"width": "show"}, animationHideParams: {"width": "hide"}, animate: true, alwaysOpen: false});
+	new Adoro.Accordion2($("#horizontalAccordion div.header a"), {animate: true, horizontal: true, alwaysOpen: true});
 });

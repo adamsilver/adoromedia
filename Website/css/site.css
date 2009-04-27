@@ -59,7 +59,8 @@ div.action:after,
 #featuredWork:after,
 #sections:after,
 div.field:after,
-div.field div.checkboxes div.input:after {
+div.field div.checkboxes div.input:after,
+#horizontalAccordion:after {
 	clear:both;
 	content:".";
 	display:block;
@@ -509,4 +510,27 @@ body.faq {
 
 body.contact {
 	border-color: #FFFF33;
+}
+
+/******************************************************************
+* Projects - accordion
+******************************************************************/
+
+#horizontalAccordion {
+	margin: 0px 20px 20px;
+}
+
+#horizontalAccordion div.header {
+	float: left;
+	min-height: 100px;
+	background-color: #eee;
+	border-right: 2px solid #333;
+	padding: 0px 10px;
+}
+
+#horizontalAccordion div.panel {
+	float: left;
+	background-color: #ddd;
+	min-height: 100px;
+	padding: 0px 10px;
 }
