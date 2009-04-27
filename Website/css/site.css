@@ -532,8 +532,9 @@ body.contact {
 	float: left;
 	background-color: #ddd;
 	min-height: 100px;
-	padding: 0px 10px;
 }
+
+/*  vertical accordion */
 
 #verticalAccordion {
 	margin: 0px 20px 20px;
@@ -552,4 +553,6 @@ body.contact {
 #verticalAccordion div.panel p {
 	padding-top: 10px;
 }
+
+/*  nested accordion */
 

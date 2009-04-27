@@ -26,7 +26,16 @@ Adoro.Accordion2 = function(anchors, options) {
 		}
 		handler = new PanelHandler(anchorsSets);
 		panelHandlers.push(handler);
-	}
+	};
+	
+	if(alwaysOpen) {		
+		if(getCurrentlyOpened()===null) {
+			if(panelHandlers.length > 0) {
+				panelHandlers[0].expand();
+			}
+		}
+	}	
+	
 	
 	function PanelHandler(anchors) {
 		var me = this;
@@ -96,6 +105,7 @@ Adoro.Accordion2 = function(anchors, options) {
 				$(anchor).addClass(cssActiveClass);
 				panelHandler.isOpen = true;
 				$(section).css("display", "block");
+				$(section).css(dimension, "auto");
 			};
 			
 			this.collapseAnimate = function() {
