@@ -1,5 +1,5 @@
 var Adoro = Adoro || {};
-Adoro.Accordion2 = function(anchors, options) {
+Adoro.Accordion = function(anchors, options) {
 	var animating = false;
 	var options = options || {};
 	var extraSets = options.extraSets || [];
