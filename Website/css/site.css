@@ -534,3 +534,22 @@ body.contact {
 	min-height: 100px;
 	padding: 0px 10px;
 }
+
+#verticalAccordion {
+	margin: 0px 20px 20px;
+}
+
+#verticalAccordion div.header {
+	background-color: #eee;
+	border-bottom: 2px solid #333;
+	padding:10px;
+}
+
+#verticalAccordion div.panel {
+	background-color: #ddd;
+}
+
+#verticalAccordion div.panel p {
+	padding-top: 10px;
+}
+
