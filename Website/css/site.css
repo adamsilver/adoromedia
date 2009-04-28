@@ -241,12 +241,12 @@ div#header {
 
 body.projects div#content #primary {
 	float: left;
-	width: 620px;
+	width: 640px;
 }
 
 body.projects div#content #secondary {
 	float: left;
-	width: 300px;
+	width: 320px;
 }
 
 #footer {
@@ -259,6 +259,36 @@ body.projects div#content #secondary {
 	font-size: 1.1em;
 	color: #666666;
 	margin: 0px;
+}
+
+/******************************************************************
+* project navigation
+******************************************************************/
+
+#projectNavigation {
+	margin-right: 20px;
+}
+
+
+#projectNavigation ul {
+	list-style: none;
+	margin: 0px;
+}
+
+#projectNavigation ul li {
+	background: url(../img/arrow01.gif) no-repeat 0px 11px;
+	border-bottom: 1px solid #E4E4E4;
+	display: block;
+	margin: 0px;
+}
+
+#projectNavigation ul li  a {
+	display: block;
+	padding: 10px 10px 10px 14px;
+}
+
+#projectNavigation ul li  a.selected {
+	background-color: #eee;
 }
 
 /******************************************************************

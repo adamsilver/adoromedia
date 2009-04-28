@@ -3,7 +3,7 @@
 	<ul>
 		<li>
 			<% if(wrapTag){%><h2><%}%>
-				<a href="<%=Adoro.URL%>/projects/accordion" <%if(Adoro.pageName === "accordion"){%>class="selected"<%}%>>Accordion</a>
+				<a href="<%=Adoro.URL%>/projects/accordion" <%if(Adoro.pageName == "accordion"){%>class="selected"<%}%>>Accordion</a>
 			<% if(wrapTag){%></h2><%}%>
 			<% if(projectsShowDescription){%><p>Lightweight JavaScript accordion using the jQuery JavaScript library.</p><%}%>
 		</li>
