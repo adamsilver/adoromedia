@@ -73,7 +73,7 @@ div.field div.checkboxes div.input:after,
 ******************************************************************/
 
 h1, h2, h3, h4, h5, h6, p {
-	margin: 0px 20px 10px;
+	margin: 0px 25px 25px;
 }
 
 h1 {
@@ -90,7 +90,7 @@ h3 {
 
 p {
 	font-size: 1.2em;
-	line-height: 1.4em;
+	line-height: 1.5em;
 }
 
 ul, ol {
@@ -100,8 +100,8 @@ ul, ol {
 
 ul li, ol li {
 	font-size: 1.2em;
-	margin-left: 15px;
-	margin-bottom: 3px;
+	margin-left: 25px;
+	margin-bottom: 5px;
 }
 
 ul li ul li,ol li ol li {
@@ -115,7 +115,7 @@ ul li ul li,ol li ol li {
 #breadcrumb {
 	padding: 10px;
 	border-bottom: 1px solid #E4E4E4;
-	margin: 0px 10px 10px;
+	margin: 0px 10px 20px;
 }
 
 #breadcrumb ul {
@@ -448,6 +448,8 @@ body#pgHome #primary {
 	border-top: 4px solid #6CA714;
 	padding-top: 20px;
 	margin-right: 20px;
+	background-color: #f5f5f5;
+	min-height: 220px;
 }
 
 body#pgHome #secondary {
@@ -455,6 +457,8 @@ body#pgHome #secondary {
 	width: 320px;
 	border-top: 4px solid #0099FF;
 	padding-top: 20px;
+	background-color: #f5f5f5;
+	min-height: 220px;
 }
 
 body#pgHome #tertiary {
@@ -463,6 +467,8 @@ body#pgHome #tertiary {
 	border-top: 4px solid #FFFF33;
 	padding-top: 20px;
 	margin-left:20px;
+	background-color: #f5f5f5;
+	min-height: 220px;
 }
 
 #featuredWork {
