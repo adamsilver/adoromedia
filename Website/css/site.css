@@ -444,11 +444,11 @@ body#pgProjectsHome div#projectNavigation ul li p {
 
 body#pgHome #primary {
 	float: left;
-	width: 300px;
+	width: 320px;
 	border-top: 4px solid #6CA714;
 	padding-top: 20px;
-	margin-right: 20px;
-	background-color: #f5f5f5;
+	margin-right: 0px;
+	background-color: #6CA714;
 	min-height: 220px;
 }
 
@@ -457,22 +457,24 @@ body#pgHome #secondary {
 	width: 320px;
 	border-top: 4px solid #0099FF;
 	padding-top: 20px;
-	background-color: #f5f5f5;
+	background-color: #0099FF;
 	min-height: 220px;
 }
 
 body#pgHome #tertiary {
 	float: left;
-	width: 300px;
+	width: 320px;
 	border-top: 4px solid #FFFF33;
 	padding-top: 20px;
-	margin-left:20px;
-	background-color: #f5f5f5;
+	margin-left:0px;
+	background-color: #FFFF33;
 	min-height: 220px;
+	margin-bottom: 20px;
 }
 
 #featuredWork {
 	margin-bottom: 30px;
+	margin-top: 20px;
 	background: #1D2B33 url(../img/border01.gif) repeat-y 460px 0px;
 }
 
@@ -513,6 +515,27 @@ body#pgHome #tertiary {
 
 #featuredWork div.carousel ul li img {
 	display: block;
+}
+
+/******************************************************************
+* Portfolio
+******************************************************************/
+
+ul.portfolio {
+    list-style: none;
+    margin: 0px;
+}
+
+ul.portfolio li {
+    margin: 0px 25px 25px;
+}
+
+ul.portfolio li h2 {
+    margin: 0px;
+}
+
+ul.portfolio li p {
+    margin: 0px;
 }
 
 /******************************************************************
