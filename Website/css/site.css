@@ -416,33 +416,39 @@ div.action input.submit {
 
 body#pgHome #primary {
 	float: left;
-	width: 320px;
-	border-top: 4px solid #6CA714;
+	width: 298px;
 	padding-top: 20px;
-	margin-right: 0px;
+	margin-left: 20px;
+	margin-right: 10px;
 	background-color: #6CA714;
-	min-height: 220px;display:none;
+	min-height: 200px;
+	border:1px solid #E4E4E4;
+	margin-bottom: 20px;
+	background: #fff url(../img/bg_gradient01.jpg) repeat-x bottom left;
 }
 
 body#pgHome #secondary {
 	float: left;
-	width: 320px;
-	border-top: 4px solid #0099FF;
+	width: 298px;
 	padding-top: 20px;
 	background-color: #0099FF;
-	min-height: 220px;
-	display:none;
+	min-height: 200px;
+	border:1px solid #E4E4E4;
+	margin-bottom: 20px;
+	background: #fff url(../img/bg_gradient01.jpg) repeat-x bottom left;
 }
 
 body#pgHome #tertiary {
 	float: left;
-	width: 320px;
-	border-top: 4px solid #FFFF33;
+	width: 298px;
 	padding-top: 20px;
-	margin-left:0px;
-	background-color: #FFFF33;
-	min-height: 220px;
-	margin-bottom: 20px;display:none;
+	margin-left:10px;
+	min-height: 200px;
+	margin-bottom: 20px;
+	border:1px solid #E4E4E4;
+	margin-bottom: 20px;
+	background: #fff url(../img/bg_gradient01.jpg) repeat-x bottom left;
+	margin-right: 20px;
 }
 
 body#pgHome div#content {

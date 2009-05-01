@@ -12,6 +12,7 @@ div#menu ul:after {
 
 div#menu ul {
 	display:block;
+	margin: 0px;
 }
 
 div#menu ul {
@@ -22,6 +23,7 @@ div#menu ul {
 div#menu ul li {
 	float:left;
 	position:relative;
+	margin: 0px;
 }
 
 div#menu ul li a {
