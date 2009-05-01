@@ -451,9 +451,10 @@ body#pgHome div#content {
 
 #featuredWork {
 	margin-bottom: 30px;
-	margin-top: 0px;
+	margin-top: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
+	border: 3px solid #1D2C33;
 	background: #1D2B33 url(../img/bg_featuredwork.gif) repeat-x bottom left;
 }
 
@@ -531,7 +532,8 @@ ul.projects li {
 }
 
 ul.projects li h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    text-transform: uppercase;
     margin: 0px;
 }
 
@@ -578,7 +580,8 @@ ul.portfolio li {
 
 ul.portfolio li h2 {
     margin: 0px 0px 10px 0px;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    text-transform: uppercase;
 }
 
 ul.portfolio li h2 a {
