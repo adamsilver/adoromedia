@@ -421,7 +421,7 @@ body#pgHome #primary {
 	padding-top: 20px;
 	margin-right: 0px;
 	background-color: #6CA714;
-	min-height: 220px;
+	min-height: 220px;display:none;
 }
 
 body#pgHome #secondary {
@@ -431,6 +431,7 @@ body#pgHome #secondary {
 	padding-top: 20px;
 	background-color: #0099FF;
 	min-height: 220px;
+	display:none;
 }
 
 body#pgHome #tertiary {
@@ -441,13 +442,19 @@ body#pgHome #tertiary {
 	margin-left:0px;
 	background-color: #FFFF33;
 	min-height: 220px;
-	margin-bottom: 20px;
+	margin-bottom: 20px;display:none;
+}
+
+body#pgHome div#content {
+    background: none;
 }
 
 #featuredWork {
 	margin-bottom: 30px;
-	margin-top: 20px;
-	background: #1D2B33 url(../img/border01.gif) repeat-y 460px 0px;
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background: #1D2B33 url(../img/bg_featuredwork.gif) repeat-x bottom left;
 }
 
 #featuredWork div.information {
@@ -469,20 +476,20 @@ body#pgHome #tertiary {
 
 #featuredWork div.carousel {
 	float: left;
-	width: 500px;
+	width: 442px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
 #featuredWork div.carousel ul {
-	margin: 0px 20px;
+	margin: 0px;
 	list-style: none;
 }
 
 #featuredWork div.carousel ul li {
 	margin: 0px;
 	background-color: #ffffff;
-	padding: 10px;
+	padding: 1px;
 }
 
 #featuredWork div.carousel ul li img {
