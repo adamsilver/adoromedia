@@ -39,6 +39,8 @@
 				<div id="primary">
 					<div id="contactFormPanel">
 						<h1>Contact details</h1>
+						<p>We want to work with you to produce a better website.</p>
+						
 						<% contactForm.showErrors(); %>
 						<%if(messageSent == true) {%>
 							<div id="successMessage">

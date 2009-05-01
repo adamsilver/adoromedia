@@ -177,7 +177,7 @@ div#header {
 
 #primaryNavigation {
 	float: right;
-	margin-top: 25px;
+	margin-top: 31px;
 	margin-bottom: 27px;
 }
 
@@ -206,7 +206,7 @@ div#header {
 #primaryNavigation ul li a:link,
 #primaryNavigation ul li a:visited {
 	font-weight: bold;
-	padding: 15px 15px 15px 15px;
+	padding: 12px 15px 12px 15px;
 	display: block;
 	color: #fff;
 	text-decoration: none;
