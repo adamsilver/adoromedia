@@ -26,30 +26,39 @@
 			</div>
 			<div id="content">
 				<h1 class="off">Website design specialists</h1>
-				<div id="featuredWork">
-					<div class="information">
-						<p class="featured">Featured</p>
-						<h2>David Goodman Retro Collectables</h2>
-						<p>Launched in spring 2009, this website application 
-						was built using Wordpress 2.7.1 for complete content management
-						and the functionality to blog.</p>
-					</div>
-					<div class="carousel">
-						<div class="clip">
-							<ul>
-								<li><a href="http://www.dgretro.com"><img src="img/featured/dgretro01.jpg" alt="David Goodman Retro Collectables" /></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="sections">
-					<div id="primary">
-						<h2>About</h2>
+				<div id="hero">
+					<div class="about">
+					
+					    <h2>About</h2>
 						<p>Established in the industry for 10 years, 
 						has given us a credible amount of experience.</p>
 						<p>We are very passionate about websites and want
 						to create the best online presence for you and
 						your business, charity or personal website.</p>
+					
+						
+					</div>
+					<div class="featured">
+					    
+					    <div class="carousel">
+						    <div class="clip">
+							    <ul>
+								    <li>
+    								    
+								        <a href="http://www.dgretro.com"><img src="img/featured/dgretro01.jpg" alt="David Goodman Retro Collectables" /></a>
+								    </li>
+							    </ul>
+						    </div>
+					    </div>
+					    <p class="featured">Featured: <strong>David Goodman Retro Collectables</strong></p>
+						<!--<p>Launched in spring 2009, this website application 
+						was built using Wordpress 2.7.1 for complete content management
+						and the functionality to blog.</p>-->
+					</div>
+				</div>
+				<div id="sections">
+					<div id="primary">
+						<h2>Testimonials</h2>
 					</div>
 					<div id="secondary">
 						<h2>Services</h2>

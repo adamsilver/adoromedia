@@ -80,7 +80,7 @@ div#header:after,
 div#content:after,
 #breadcrumb ul:after,
 div.action:after,
-#featuredWork:after,
+#hero:after,
 #sections:after,
 div.field:after,
 div.field div.checkboxes div.input:after,
@@ -455,51 +455,67 @@ body#pgHome div#content {
     background: none;
 }
 
-#featuredWork {
+#hero {
 	margin-bottom: 30px;
 	margin-top: 20px;
 	margin-left: 20px;
 	margin-right: 20px;
 	border: 3px solid #1D2C33;
-	background: #1D2B33 url(../img/bg_featuredwork.gif) repeat-x bottom left;
+	background: #778085 url(../img/bg_featuredwork.gif) repeat-x bottom left;
 }
 
-#featuredWork div.information {
+#hero div.about {
 	float: left;
 	width: 460px;
 	padding-top: 20px;
 }
-#featuredWork div.information p.featured {
+#here div.about {}
+
+select {
 	margin-bottom: 0px;
 	font-size: 1.1em;
 	text-transform: uppercase;
 }
 
 
-#featuredWork div.information h2,
-#featuredWork div.information p {
+#hero div.about h2,
+#hero div.about p {
 	color: #fff;
 }
 
-#featuredWork div.carousel {
+#hero div.featured {
 	float: left;
 	width: 442px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+#hero div.featured h2 {
+    color: #ffffff;
+    font-size: 1.3em;
+    margin:0px;
+}
 
-#featuredWork div.carousel ul {
+#hero div.featured p {
+    color: #fff;
+    margin: 0px;
+}
+
+#hero div.featured div.carousel {
+    margin-bottom: 10px;
+}
+
+#hero div.featured div.carousel ul {
 	margin: 0px;
 	list-style: none;
 }
 
-#featuredWork div.carousel ul li {
+#hero div.featured div.carousel ul li {
 	margin: 0px;
 	background-color: #ffffff;
 	padding: 1px;
 }
 
-#featuredWork div.carousel ul li img {
+#hero div.featured div.carousel ul li img {
 	display: block;
 }
 
@@ -548,16 +564,16 @@ ul.projects li p {
 
 }
 
-ul.projects li a {
+ul.projects li h2 a {
 	display: block;
-	background: url(../img/arrow01.gif) no-repeat 10px 16px;
+	background: url(../img/arrow01.gif) no-repeat 10px 13px;
 	padding: 10px 10px 10px 28px;
 	border-bottom: 1px solid #E4E4E4;
 }
 
-ul.projects li a:hover,
-ul.projects li a:active,
-ul.projects li a:focus {
+ul.projects li h2 a:hover,
+ul.projects li h2 a:active,
+ul.projects li h2 a:focus {
     background-color: #1D2C33;
 }
 
@@ -592,7 +608,7 @@ ul.portfolio li h2 {
 
 ul.portfolio li h2 a {
 	display: block;
-	background: url(../img/arrow01.gif) no-repeat 10px 16px;
+	background: url(../img/arrow01.gif) no-repeat 10px 13px;
 	padding: 10px 10px 10px 28px;
 	border-bottom: 1px solid #E4E4E4;
 }
