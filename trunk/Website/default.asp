@@ -45,7 +45,7 @@
 							    <ul>
 								    <li>
     								    
-								        <a href="http://www.dgretro.com"><img src="img/featured/dgretro01.jpg" alt="David Goodman Retro Collectables" /></a>
+								        <a href="http://www.dgretro.com"><img src="img/portfolio/dgretro.jpg" alt="David Goodman Retro Collectables" /></a>
 								    </li>
 							    </ul>
 						    </div>
@@ -58,7 +58,12 @@
 				</div>
 				<div id="sections">
 					<div id="primary">
-						<h2>Testimonials</h2>
+						<h2>Want a website?</h2>
+						<p>Whether you need a brochure site, a CMS, or an e-commerce web shop, 
+						we can help you.</p>
+						<p>If your website is not performing in the search engines, or it 
+						needs a fresh design or new content then we would love to make a 
+						better site for you.</p>
 					</div>
 					<div id="secondary">
 						<h2>Services</h2>

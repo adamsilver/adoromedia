@@ -82,6 +82,13 @@
 						<%}%>
 					</div>
 				</div>
+				<div id="secondary">
+					<h2>Or also</h2>
+					<h3>Telephone</h3>
+					<p>07713490316</p>
+					<h3>Email address</h3>
+					<p>info@adoromedia.com</p>
+				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->
 		</div>
