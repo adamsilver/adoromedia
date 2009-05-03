@@ -484,7 +484,7 @@ body#pgHome div#content {
 
 #hero div.about {
 	float: left;
-	width: 460px;
+	width: 310px;
 	padding-top: 20px;
 }
 #here div.about {}
@@ -503,7 +503,7 @@ select {
 
 #hero div.featured {
 	float: left;
-	width: 442px;
+	width: 583px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -619,7 +619,7 @@ ul.portfolio li {
 	background: url(../img/bg_gradient01.jpg) repeat-x bottom left;}
 
 ul.portfolio li h2 {
-    margin: 0px 0px 10px 0px;
+    margin: 0px;
     font-size: 1.2em;
     text-transform: uppercase;
 }

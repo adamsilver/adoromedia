@@ -32,8 +32,7 @@
 					
 				    <ul class="portfolio">
 					    <li class="work">
-						    <h2><a href="http://www.jsquaredjavascript.com">JSquared JavaScript Library</a></h2>
-						    <p>Responsible for complete design and build of user interface.</p>
+						    <h2><a href="http://www.jsquaredjavascript.com">JSquared JavaScript Library</a></h2>		
 						    <div class="image">
 							    <a href="http://www.jsquaredjavascript.com">
 								    <img src="img/portfolio/jsquared.jpg" alt="JSquared JavaScript Library" />
@@ -42,7 +41,6 @@
 					    </li>	
 					    <li class="work">
 						    <h2><a href="http://www.dgretro.com">DG Retro Collectables</a></h2>
-						    <p>Responsible for complete design and build of user interface.</p>
 						    <div class="image">
 							    <a href="http://www.dgretro.com">
 								    <img src="img/portfolio/dgretro.jpg" alt="DG Retro collectables" />
@@ -51,7 +49,6 @@
 					    </li>						
 					    <li class="work">
 						    <h2><a href="http://www.cp-plus.co.uk">CP Plus Car Park Management</a></h2>
-						    <p>Responsible for complete design and build of user interface.</p>
 						    <div class="image">
 							    <a href="http://www.cp-plus.co.uk">
 								    <img src="img/portfolio/cpplus.jpg" alt="CP Plus" />
@@ -60,7 +57,6 @@
 					    </li>
 					    <li class="work">
 						    <h2><a href="http://www.jazzswingband.co.uk">The Mike Ellis Jazz &amp; Swing band</a></h2>
-						    <p>Responsible for complete design and build of user interface.</p>
 						    <div class="image">
 							    <a href="http://www.jazzswingband.co.uk">
 								    <img src="img/portfolio/jazzswingband.jpg" alt="Jazz Swing Band" />
@@ -69,7 +65,6 @@
 					    </li>
 					    <li class="work">
 						    <h2><a href="http://www.pnp-decorations.co.uk">PnP Painters &amp; Decorators</a></h2>
-						    <p>Responsible for complete design and build of user interface.</p>
 						    <div class="image">
 							    <a href="http://www.pnp-decorations.co.uk">
 								    <img src="img/portfolio/pnp.jpg" alt="PnP Decorations" />

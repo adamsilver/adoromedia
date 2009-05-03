@@ -29,7 +29,7 @@
 				<div id="hero">
 					<div class="about">
 					
-					    <h2>About</h2>
+					    <h2>A bit about us</h2>
 						<p>Established in the industry for 10 years, 
 						has given us a credible amount of experience.</p>
 						<p>We are very passionate about websites and want
