@@ -1,5 +1,6 @@
 var Adoro = Adoro || {};
 Adoro.Accordion = function(anchors, options) {
+	var anchors = jQuery.makeArray(anchors);
 	var animating = false;
 	var options = options || {};
 	var extraSets = options.extraSets || [];
@@ -13,7 +14,7 @@ Adoro.Accordion = function(anchors, options) {
 	sets.reverse();
 	var anchorsSets = [];
 	var panelHandlers = [], handler;
-
+	
 	for(var i = 0; i<sets[0].length; i++) {
 		anchorsSets=[];
 		for(var j = 0; j < sets.length; j++) {
@@ -32,18 +33,24 @@ Adoro.Accordion = function(anchors, options) {
 	};	
 	
 	function PanelHandler(anchors) {
+		
 		var me = this;
 		var singlePanels = [];
-		var isOpen = false;
-		this.isOpen = isOpen;
+		this.isOpen = false;
+		
+		// find out if any of the anchors have a class of cssActiveClass (then we know to collapse)
+		for(var i = 0; i<anchors.length;i++) {
+			me.isOpen = $(anchors[i]).hasClass(cssActiveClass);
+			break;
+		};
 		
 		for(var i = 0; i<anchors.length;i++) {
-			$(anchors[i]).hasClass(cssActiveClass);
 			if(!anchors[i]) continue;
 			singlePanels.push(new SinglePanel(anchors[i], this));
 		};
 		
-		if(!isOpen) {
+		
+		if(!me.isOpen) {
 			collapse();
 		};
 		
