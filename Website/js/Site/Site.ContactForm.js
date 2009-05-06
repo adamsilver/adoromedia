@@ -1,8 +1,9 @@
-if(typeof Adoro !== "object") var Adoro = {};
-$(document).ready(function(){ 
-	Adoro.ContactForm = new(function(){
+var Site = Site || {};
+Site.ContactForm = new (function() {
+	addDOMReadyEvent(init);
+	function init() {
 		var contactForm = document.getElementById("contactForm");
-		if(contactForm === null) return;
+		if(!contactForm) return;
 		var form = new Adoro.FormValidator(contactForm);
 		form.addValidator("fullName",[{
 			method: Adoro.FormRules.notEmpty,
@@ -18,6 +19,6 @@ $(document).ready(function(){
 		form.addValidator("message",[{
 			method: Adoro.FormRules.notEmpty,
 			message: "Message is required."
-		}]);					
-	});
+		}]);			
+	};
 });
