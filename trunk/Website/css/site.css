@@ -339,8 +339,8 @@ body.projects div#content #secondary {
 #projectNavigation ul li a:active,
 #projectNavigation ul li a:focus,
 #projectNavigation ul li a.selected {
-	background-color: #1D2B33;
-	color: #fff;
+	background-color: #EEE;
+	color:#1D2B33;
 }
 
 /******************************************************************
@@ -627,7 +627,8 @@ ul.projects li h2 a {
 ul.projects li h2 a:hover,
 ul.projects li h2 a:active,
 ul.projects li h2 a:focus {
-    background-color: #1D2C33;
+    background-color: #EEE;
+	color:#1D2B33;
 }
 
 ul.projects li a.selected {
@@ -669,7 +670,8 @@ ul.portfolio li h2 a {
 ul.portfolio li h2 a:hover,
 ul.portfolio li h2 a:active,
 ul.portfolio li h2 a:focus {
-    background-color: #1D2C33;
+    background-color: #EEE;
+	color:#1D2B33;
 }
 
 ul.portfolio li div.image {
