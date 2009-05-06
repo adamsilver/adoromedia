@@ -309,6 +309,41 @@ body.projects div#content #secondary {
 }
 
 /******************************************************************
+* project navigation
+******************************************************************/
+
+#projectNavigation {
+	
+}
+
+#projectNavigation ul {
+	list-style: none;
+	border: 1px solid #E4E4E4;
+	border-bottom: none;
+}
+
+#projectNavigation ul li {
+	margin: 0px;
+}
+
+#projectNavigation ul li a,
+#projectNavigation ul li a:link,
+#projectNavigation ul li a:visited {
+	display: block;
+	padding: 10px 10px 10px 28px;
+	border-bottom: 1px solid #E4E4E4;
+	background: url(../img/arrow01.gif) 10px 13px no-repeat;
+}
+
+#projectNavigation ul li a:hover,
+#projectNavigation ul li a:active,
+#projectNavigation ul li a:focus,
+#projectNavigation ul li a.selected {
+	background-color: #1D2B33;
+	color: #fff;
+}
+
+/******************************************************************
 * forms
 ******************************************************************/
 
