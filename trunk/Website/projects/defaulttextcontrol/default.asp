@@ -3,7 +3,7 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<% Adoro.pageName = "inputdefault"; %>
+<% Adoro.pageName = "defaulttextcontrol"; %>
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>

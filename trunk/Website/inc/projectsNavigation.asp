@@ -46,7 +46,7 @@
 			
 		</li>
 		<li>
-			<a href="<%=Adoro.URL%>/projects/googlemap" <%if(Adoro.pageName === "gmap"){%>class="selected"<%}%>>Google map</a>
+			<a href="<%=Adoro.URL%>/projects/googlemap" <%if(Adoro.pageName === "googlemap"){%>class="selected"<%}%>>Google map</a>
 			
 		</li>
 		<li>
@@ -54,7 +54,7 @@
 			
 		</li>						
 		<li>
-			<a href="<%=Adoro.URL%>/projects/listcollapser" <%if(Adoro.pageName === "listcollapse"){%>class="selected"<%}%>>List collapser</a>
+			<a href="<%=Adoro.URL%>/projects/listcollapser" <%if(Adoro.pageName === "listcollapser"){%>class="selected"<%}%>>List collapser</a>
 			
 		</li>
 		<li>
@@ -66,7 +66,7 @@
 			
 		</li>
 		<li>
-			<a href="<%=Adoro.URL%>/projects/tabset" <%if(Adoro.pageName === "tabs"){%>class="selected"<%}%>>Tabset</a>
+			<a href="<%=Adoro.URL%>/projects/tabset" <%if(Adoro.pageName === "tabset"){%>class="selected"<%}%>>Tabset</a>
 			
 		</li>
 		<li>
