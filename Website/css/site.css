@@ -1021,7 +1021,6 @@ div.calendar div.actions2 a {
 *  Projects - print button
 *************************************************************************/
 
-
 div.printPlaceHolder {
 	margin: 0px 20px 20px 20px;
 }
@@ -1034,3 +1033,13 @@ a.myPrintClass {
 	width: 63px;
 	display: block;
 }
+/*************************************************************************
+*  Projects - map
+*************************************************************************/
+
+div.map {
+	width: 400px;
+	height: 300px;
+	margin: 0px 20px 20px;
+}
+

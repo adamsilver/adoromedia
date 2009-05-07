@@ -13,8 +13,7 @@
 		<meta name="keywords" content="Google, map, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="Google map, jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
-		<!--#include file="../../inc/head_css.asp"-->	
-		<link rel="stylesheet" href="../../css/maps.css" type="text/css" />
+		<!--#include file="../../inc/head_css.asp"-->
 		<!--#include file="../../inc/head_cssie.asp"-->	
 		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhTJZH0KQb7xxghXEcd9uA8ad5kyphRToxU0pQytWuskeRVROag3aZv_kw" type="text/javascript"></script><script type="text/javascript" src="js/J2/J2.js"></script>			
 		<script type="text/javascript" src="../../js/Adoro/Adoro.GoogleMap.js"></script>
