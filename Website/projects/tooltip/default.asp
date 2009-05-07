@@ -34,7 +34,7 @@
 				<div id="primary">
 					<h1>Tooltip</h1>
 					<h2>About</h2>
-					<ul">
+					<ul>
 						<li>Create a tooltip by specifying an activator and some HTML to show inside a tooltip.</li>
 						<li>The HTML for the tooltip can come from the DOM or inserted on the fly.</li>
 						<li>Will check that it doesn't fall off-screen.</li>
