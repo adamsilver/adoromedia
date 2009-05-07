@@ -970,3 +970,21 @@ div.calendar div.actions2 a {
 	border-bottom:1px solid #333333;
 	text-align: center;
 }
+
+
+#collapseMe {
+	border: 1px solid #e4e4e4;
+	margin: 0px 20px;
+}
+
+#collapseMe a.toggle {
+	display: block;
+	padding: 10px;
+	font-size: 1.2em;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+#collapseMe div.panel {
+	padding: 10px;
+	font-size: 1.2em;
+}
