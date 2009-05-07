@@ -830,3 +830,143 @@ label.starRatingEnhanced {
 label.starOn {
 	background-position: 0px -15px;
 }
+
+/*************************************************************************
+*  Projects - calendar
+*************************************************************************/
+
+div.field div.calendarControl {
+	float: left;
+	margin-left: 10px;
+} 
+
+div.calendarHasLink {
+	position: relative;
+}
+
+div.field div.calendarControl a.activateCalendar {
+	font-size: 12px;
+	margin-top: 3px;
+	display: block;
+	color:#738075;
+}
+
+div.cc div.multipleInput div.input label {
+	position:absolute;
+	left: -99999em;
+	top: 0;
+}
+
+div.calendarHasLink div.calendar {
+	position: absolute;
+	z-index: 99;
+	left: 0px;
+	top: 0px;
+}
+
+div.calendar {
+	font-size: 12px;
+	margin-bottom: 10px;
+	width: 200px;
+	background: #ffffff;
+}
+
+div.calendar div.title {
+	text-align: center;
+	background: #898F2C;
+	color: #ffffff;
+	padding: 3px;
+	border: 1px solid #333;
+}
+
+div.calendar div.actions {
+}
+
+div.calendar div.actions  ul {
+	list-style:none;
+	overflow: hidden;
+	margin: 0px;
+}
+
+div.calendar div.actions ul li {
+	float: left;
+	width: 99px;
+	border-left: 1px solid #333;
+	margin: 0px;
+}
+
+div.calendar div.actions ul li.forward {
+	width: 98px;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+}
+
+div.calendar div.actions ul li a {
+	background: #eee;
+	display: block;
+	font-size: 11px;
+	padding: 4px;
+	text-decoration: none;
+	color: #000;
+}
+
+div.calendar div.actions ul li a.next {
+	text-align: right;
+}
+
+
+div.calendar div.month {
+
+}
+
+div.calendar div.month div.title {
+	border-bottom: none;
+}
+
+div.calendar div.month table {
+	width: 100%;
+}
+
+div.calendar div.month table td.dayActivator {
+	text-align: center;
+	cursor: pointer;
+}
+
+div.calendar div.month table td.currentDate {
+	border: 1px solid #ff0000;
+}
+
+div.calendar div.month table td.selectedDate {
+	background-color: #ff0000;
+}
+
+div.calendar div.month table td.selected {
+	background-color: #aaa;
+	color: #fff;
+}
+
+div.calendar div.month table {
+	border: 1px solid #333;
+}
+
+div.calendar div.month table td{
+	background-color: #f5f5f5;
+	padding: 2px;
+}
+
+div.calendar div.actions2 {
+
+}
+
+div.calendar div.actions2 a {
+	background:#EEEEEE none repeat scroll 0%;
+	color:#000000;
+	display:block;
+	font-size:11px;
+	padding:4px;
+	text-decoration:none;
+	border-right:1px solid #333333;
+	border-left:1px solid #333333;
+	border-bottom:1px solid #333333;
+	text-align: center;
+}
