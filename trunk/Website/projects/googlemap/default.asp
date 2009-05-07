@@ -18,12 +18,7 @@
 		<!--#include file="../../inc/head_cssie.asp"-->	
 		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhTJZH0KQb7xxghXEcd9uA8ad5kyphRToxU0pQytWuskeRVROag3aZv_kw" type="text/javascript"></script><script type="text/javascript" src="js/J2/J2.js"></script>			
 		<script type="text/javascript" src="../../js/Adoro/Adoro.GoogleMap.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var myMap1 = new Adoro.GoogleMap(document.getElementById("map1"), "9 The Rose Walk, Radlett, WD7 7JS");
-				var myMap2 = new Adoro.GoogleMap(document.getElementById("map2"), "Selfridges, London");
-			});
-		</script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.GoogleMap.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">

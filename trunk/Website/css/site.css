@@ -752,4 +752,24 @@ ul.portfolio li p {
 	margin: 0;
 }
 
+/******************************************************************
+* Projects - tooltip
+******************************************************************/
 
+div.myTooltip {
+	border: 1px solid #404040;
+	padding: 2px 6px;
+	background-color: #FFFFE1;
+	font-size: 11px;
+}
+
+div.yo {
+	width: 500px;
+	border: 2px solid #898F2C;
+	background: #ffffff;
+	padding: 10px;
+}
+
+div.yo p {
+	margin: 0px;
+}
