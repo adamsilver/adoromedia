@@ -12,8 +12,7 @@
 		<meta name="keywords" content="tooltip, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="Tooltip jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
-		<!--#include file="../../inc/head_css.asp"-->		
-		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
+		<!--#include file="../../inc/head_css.asp"-->	
 		<!--#include file="../../inc/head_cssie.asp"-->			
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>

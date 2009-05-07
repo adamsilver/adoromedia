@@ -773,3 +773,60 @@ div.yo {
 div.yo p {
 	margin: 0px;
 }
+
+/******************************************************************
+* Projects - star rating
+******************************************************************/
+
+div.radioFocus {
+	border: 1px solid #F8AF40;
+}
+
+div.starRating {
+	overflow: hidden;
+	padding-top: 3px;
+}
+
+div.field div.starRating div.input {
+	float: left;
+}
+
+div.field div.starRatingEnhanced div.input input {
+	position:absolute;
+	left: -999999em;
+}
+
+div.field div.starRatingEnhanced div.input label {
+	width: 15px;
+	height: 15px;
+	padding: 0px;
+	background: url(../img/starrating/bg_starrating.gif);
+	cursor: pointer;
+}
+
+div.field div.starRatingEnhanced div.input label.starOn {
+	background-position: 0px -15px;
+}
+
+div.field div.starRatingEnhanced div.input label span {
+	position:absolute;
+	left: -999999em;
+}
+
+input.starRatingEnhanced {
+	position:absolute;
+	left: -999999em;
+}
+
+label.starRatingEnhanced {
+	width: 15px;
+	height: 15px;
+	padding: 0px;
+	background: url(../img/starrating/bg_starrating.gif);
+	cursor: pointer;
+	text-indent: -9999999em;
+}
+
+label.starOn {
+	background-position: 0px -15px;
+}
