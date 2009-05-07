@@ -17,45 +17,7 @@
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){ 						
-
-				new Adoro.Carousel(document.getElementById("carousel06"),{
-					offsetReveal: -35,
-					isCircular: true,
-					indicators: false,
-					automaticDelay: 500,
-					animateSpeed: 500
-				});
-
-				new Adoro.Carousel(document.getElementById("carousel02"), {
-					scrollCount: 2,
-					isCircular: true,
-					indicators: true,
-					stopButton: true,
-					startButton: true,
-					forwardButton: true,
-					backButton: true,
-					automaticDirectionBackwards: false,
-					animateSpeed: 1000,
-					automaticDelay: 500
-				});
-				
-				new Adoro.Carousel(document.getElementById("carousel07"), {
-					scrollCount: 2,
-					vertical: true,
-					isCircular: true,
-					indicators: true,
-					stopButton: true,
-					startButton: true,
-					forwardButton: true,
-					backButton: true,
-					automaticDirectionBackwards: false,
-					animateSpeed: 300,
-					automaticDelay: 500
-				});
-			});
-		</script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Carousel.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">
