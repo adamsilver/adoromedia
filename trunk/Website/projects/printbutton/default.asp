@@ -12,12 +12,10 @@
 		<meta name="keywords" content="print, button, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="Print button, jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
-		<!--#include file="../../inc/head_css.asp"-->	
-		<link rel="stylesheet" href="../../css/printbutton.css" type="text/css" />
+		<!--#include file="../../inc/head_css.asp"-->
 		<!--#include file="../../inc/head_cssie.asp"-->			
 		<script type="text/javascript" src="../../js/Adoro/Adoro.PrintButton.js"></script>
 		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.PrintButton.js"></script>
-					
 	</head>
 	<body class="projects">
 		<div id="container">

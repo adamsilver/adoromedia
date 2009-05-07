@@ -1016,3 +1016,21 @@ div.calendar div.actions2 a {
 	font-size: 1.2em;
 	text-align: center;
 }
+
+/*************************************************************************
+*  Projects - print button
+*************************************************************************/
+
+
+div.printPlaceHolder {
+	margin: 0px 20px 20px 20px;
+}
+
+a.myPrintClass {
+	border: 2px solid #ffffff;
+	background-color:#989D44;
+	font-size: 1.2em;
+	padding: 10px;
+	width: 63px;
+	display: block;
+}
