@@ -12,9 +12,7 @@
 		<meta name="keywords" content="drop, down, menu, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="Drop down menu, jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
-		<!--#include file="../../inc/head_css.asp"-->	
-		<link rel="stylesheet" href="../../css/dropdownmenu.css" type="text/css" />
-		<link rel="stylesheet" href="../../css/dropdownmenu2.css" type="text/css" />
+		<!--#include file="../../inc/head_css.asp"-->
 		<!--#include file="../../inc/head_cssie.asp"-->		
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DropDownMenu.js"></script>

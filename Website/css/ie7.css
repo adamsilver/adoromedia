@@ -13,7 +13,8 @@ div#lightBox div.header,
 div#myLightBox div.login,
 div#dropDownMenu,
 div#dropDownMenu ul li ul li,
-div#carousel02 div.controls {
+div#carousel02 div.controls,
+div#dropDownMenu ul {
 	zoom: 1;
 }
 
