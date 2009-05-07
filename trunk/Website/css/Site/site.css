@@ -1553,5 +1553,218 @@ div#menu ul li.tax div.subMenu div.lists {
 
 div#menu ul li.tax div.subMenu div.lists h2 {
 	color: #5d8303;
-}	
+}
+
+/***********************************************************************
+* Projects - Carousel 06
+***********************************************************************/
+
+div#carousel06 {
+ 	overflow: hidden;
+	border: 3px solid #f5f5f5;
+	padding: 10px;
+	margin: 0px 20px 20px;
+}
+
+div#carousel06 div.clip {
+	margin-bottom: 10px;
+}
+
+div#carousel06 div.clip ul {
+	list-style: none;	
+}
+
+div#carousel06 div.clip ul li {
+	margin-right: 15px;
+}
+
+div#carousel06 a.back {
+	background:transparent url(../../img/action_back.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+	margin-left: 245px;
+}
+
+div#carousel06 a.back span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 a.forward {
+	background:transparent url(../../img/action_forward.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.forward span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 a.stop {
+	background:transparent url(../../img/action_stop.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.stop span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 a.start {
+	background:transparent url(../../img/action_go.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel06 a.start span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 div.indicatorsContainer {
+	overflow: hidden;
+	border: 1px solid #f5f5f5;
+	padding: 10px 62px;
+	margin-bottom: 10px;
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+div#carousel06 div.indicatorsContainer a.indicator {
+	float: left;
+	width: 10px;
+	height: 10px;
+	background: url(../../img/carousel/indicator.gif) no-repeat 0px -10px;
+	margin-right: 5px;
+}
+
+div#carousel06 div.indicatorsContainer a.indicator span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel06 div.indicatorsContainer a.indicatorSelected {
+	background: url(../../img/carousel/indicator.gif) no-repeat 0px 0px;
+}
+
+/***********************************************************************
+* Carousel 07
+***********************************************************************/
+
+div#carousel07 {
+	overflow: hidden;
+	border: 3px solid #f5f5f5;
+	padding: 10px;	
+	width: 160px;
+	margin: 0px 20px 20px;
+}
+
+div#carousel07 div.clip {
+	height: 240px;
+	margin-bottom: 10px;
+}
+
+div#carousel07 div.clip ul {
+	margin: 0px;
+}
+
+div#carousel07 div.clip ul li {
+	margin: 0px;
+}
+
+div#carousel07 div.indicatorsContainer {
+	overflow: hidden;
+	border: 1px solid #f5f5f5;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+div#carousel07 div.indicatorsContainer a.indicator {
+	float: left;
+	width: 10px;
+	height: 10px;
+	background: url(../../img/carousel/indicator.gif) no-repeat 0px -10px;
+	margin-right: 5px;
+}
+
+div#carousel07 div.indicatorsContainer a.indicator span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel07 div.indicatorsContainer a.indicatorSelected {
+	background: url(../../img/carousel/indicator.gif) no-repeat 0px 0px;
+}
+
+div#carousel07 a.back {
+	background:transparent url(../../img/action_back.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel07 a.back span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel07 a.forward {
+	background:transparent url(../../img/action_forward.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel07 a.forward span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel07 a.stop {
+	background:transparent url(../../img/action_stop.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel07 a.stop span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
+
+div#carousel07 a.start {
+	background:transparent url(../../img/action_go.gif) no-repeat scroll 0 0;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+div#carousel07 a.start span {
+	position: absolute;
+	top: 0;
+	left: -999999em;
+}
 			
