@@ -1,5 +1,6 @@
 var Site = Site || {};
-Site.Logo = new (function() {
+Site.Global = Site.Global || {};
+Site.Global.Logo = new (function() {
 	addDOMReadyEvent(function(){
 		var logo = document.getElementById("logo");
 		logo.addEvent("mouseenter", fadeOut);

@@ -1,5 +1,6 @@
 var Site = Site || {};
-Site.ContactForm = new (function() {
+Site.Contact = Site.Contact || {};
+Site.Contact.ContactForm = new (function() {
 	addDOMReadyEvent(init);
 	function init() {
 		var contactForm = document.getElementById("contactForm");

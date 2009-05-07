@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="js/Adoro/Adoro.FormValidator.js"></script>
 		<script type="text/javascript" src="js/Adoro/Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="js/Adoro/Adoro.FieldHighlight.js"></script>		
-		<script type="text/javascript" src="js/Site/Site.ContactForm.js"></script>
+		<script type="text/javascript" src="js/Site/Contact/Site.Contact.ContactForm.js"></script>
 		
 		<!--#include file="inc/head_css.asp"-->	
 		<!--#include file="inc/head_cssie.asp"-->
