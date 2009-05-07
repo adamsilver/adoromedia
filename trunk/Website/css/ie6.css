@@ -27,8 +27,9 @@ ul.generic li,
 div#dropDownMenu,
 div#dropDownMenu ul li ul li,
 div#dialogue div.header,
-div#carousel05 div.controls  {
-	height: 1%;
+div#carousel05 div.controls ,
+div#dropDownMenu ul {
+	zoom: 1;
 }
 
 /********************************************************
