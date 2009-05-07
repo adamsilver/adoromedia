@@ -14,7 +14,6 @@
 		<!--#include file="../../inc/head_js.asp"-->
 		<!--#include file="../../inc/head_css.asp"-->
 		<link rel="stylesheet" href="../../css/dialogue.css" type="text/css" />
-		<link rel="stylesheet" href="../../css/lightbox.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.browser.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
@@ -29,16 +28,12 @@
 				<!--#include file="../../inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<%
-					var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{
-						text: "Lightbox"
-					}];
-				%>
+				<%	var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{text:"Lightbox"}]; %>
 				<!--#include file="../../inc/breadcrumb.asp"-->				
 				<div id="primary">
 					<h1>Lightbox</h1>
 					<h2>About</h2>
-					<ul class="generic">
+					<ul>
 						<li>Built on top of the very lightweight <a href="../dialogue">Dialogue (Adoro.Dialogue)</a> plugin .</li>
 						<li>Accessible via keyboard navigation</li>
 						<li>Very flexible - customisable IDs, HTML and CSS to create custom look and feel.</li>
@@ -64,7 +59,6 @@
 					</div>
 				</div>
 				<div id="secondary">
-					<% var projectsShowDescription = false; var wrapTag = false;%>
 					<!--#include file="../../inc/projectsNavigation.asp"-->
 				</div>	
 			</div>
