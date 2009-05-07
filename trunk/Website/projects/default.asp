@@ -93,10 +93,6 @@
 						<p>Accessible star rating control using the jQuery library, degrades to radio list.</p>
 					</li>
 					<li>
-						<h2><a href="<%=Adoro.URL%>/projects/tabset" <%if(Adoro.pageName === "tabs"){%>class="selected"<%}%>>Tabset</a></h2>
-						<p>Simple, customisable and accessible tab navigation using the jQuery library.</p>
-					</li>
-					<li>
 						<h2><a href="<%=Adoro.URL%>/projects/tooltip" <%if(Adoro.pageName === "tooltip"){%>class="selected"<%}%>>Tooltip</a></h2>
 						<p>Lightweight, simple and customisable tooltip effects using the jQuery library.</p>
 					</li>

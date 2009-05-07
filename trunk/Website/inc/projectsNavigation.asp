@@ -66,10 +66,6 @@
 			
 		</li>
 		<li>
-			<a href="<%=Adoro.URL%>/projects/tabset" <%if(Adoro.pageName === "tabset"){%>class="selected"<%}%>>Tabset</a>
-			
-		</li>
-		<li>
 			<a href="<%=Adoro.URL%>/projects/tooltip" <%if(Adoro.pageName === "tooltip"){%>class="selected"<%}%>>Tooltip</a>
 		</li>
 		<!-- popup script -->
