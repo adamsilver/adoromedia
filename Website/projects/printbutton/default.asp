@@ -16,13 +16,8 @@
 		<link rel="stylesheet" href="../../css/printbutton.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->			
 		<script type="text/javascript" src="../../js/Adoro/Adoro.PrintButton.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var a = $('<a href="#" class="myPrintClass">Print page!</a>')
-				$("div.printPlaceHolder p").replaceWith(a);
-				var myprint = new Adoro.PrintButton(a);
-			});
-		</script>			
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.PrintButton.js"></script>
+					
 	</head>
 	<body class="projects">
 		<div id="container">

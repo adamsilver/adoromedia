@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="../../css/collapse.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.ListCollapser.js"></script>
-		<script type="text/javascript" src="../../js/Site/Site.Projects.ListCollapser.js"></script>	
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.ListCollapser.js"></script>	
 	</head>
 	<body class="projects">
 		<div id="container">

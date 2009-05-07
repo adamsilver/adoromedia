@@ -17,34 +17,7 @@
 		<!--#include file="../../inc/head_cssie.asp"-->			
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tooltip.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var myTip1 = new Adoro.Tooltip($("a.tooltipAnchor")[0], '<div class="myTooltip">This is my default tooltip with a delay</div>');
-				
-				$("div.tooltipContainer div.tooltip").hide();
-				var myTip2 = new Adoro.Tooltip($("div.tooltipContainer a.tooltipAnchor")[0], $("div.tooltipContainer div.tooltip")[0].innerHTML, {delay: 0,followMouse: true});
-				
-			});
-		</script>
-		<style type="text/css">
-			div.myTooltip {
-				border: 1px solid #404040;
-				padding: 2px 6px;
-				background-color: #FFFFE1;
-				font-size: 11px;
-			}
-			
-			div.yo {
-				width: 500px;
-				border: 2px solid #898F2C;
-				background: #ffffff;
-				padding: 10px;
-			}
-			
-			div.yo p {
-				margin: 0px;
-			}
-		</style>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Tooltip.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">
@@ -62,7 +35,7 @@
 				<div id="primary">
 					<h1>Tooltip</h1>
 					<h2>About</h2>
-					<ul class="generic">
+					<ul">
 						<li>Create a tooltip by specifying an activator and some HTML to show inside a tooltip.</li>
 						<li>The HTML for the tooltip can come from the DOM or inserted on the fly.</li>
 						<li>Will check that it doesn't fall off-screen.</li>

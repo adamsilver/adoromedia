@@ -19,9 +19,7 @@
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
-		<script type="text/javascript" src="../../js/Adoro/Adoro.Butterfly.js"></script>
 		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Dialogue.js"></script>	
-		
 	</head>
 	<body class="projects">
 		<div id="container">
@@ -39,7 +37,7 @@
 				<div id="primary">
 					<h1>Dialogue</h1>
 					<h2>About</h2>
-					<ul class="generic">
+					<ul>
 						<li>The most lightweight and powerful LightBox (popup, dialogue, window, 
 						(non)modal box) on the internet.</li>
 						<li>Page is always scrollable with main scroll bar if neccessary.</li>

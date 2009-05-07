@@ -20,78 +20,7 @@
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Dialogue.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Lightbox.js"></script>
-		<script type="text/javascript">
-			swfobject.embedSWF("../../swf/butterfly.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
-		</script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				// create a lightbox effect by finding all anchors with a class of lightbox
-				new Adoro.Lightbox($("a.lightbox"), {
-					htmlBefore: '<div class="beforeShizzle"><a class="closeDialogue" href="#">Close the lightbox</a></div>',
-					htmlAfter: '<div class="afterShizzle">Could put something after like this if you want</div>',
-					htmlBack: '<a class="back" href="#">Previous gallery image</a>',
-					htmlNext: '<a class="next" href="#">Next gallery image</a>',
-					htmlLoading: '<div id="lightboxLoading"><img src="../../img/loading.gif" alt="Loading image"/></div>',
-					overlayOpacity: "0.78"
-				});
-			});
-		</script>		
-		<style type="text/css">
-			/* custom lightbox styling - style how you wish */
-			
-			div#lightboxLoading {
-				width: 200px;
-				height: 120px;
-				background-color: #ffffff;
-				padding-top: 80px;
-				text-align: center;
-			}
-			
-			div#lightbox {
-				background: #ffffff;
-				border: 1px solid #333333;
-				overflow: hidden;
-			}
-			
-			div#lightbox div.beforeShizzle {
-				padding: 10px;
-				border-bottom: 1px solid #333333;
-				overflow: hidden;
-				background: #898F2C;
-				color: #ffffff;
-			}
-			
-			div#lightbox div.beforeShizzle a.closeDialogue {
-				display: block;
-				text-align: center;
-				color: #ffffff;
-				font-size: 1.1em;
-			}
-			
-			div#lightbox div.afterShizzle {
-				padding: 10px;
-				border-top: 1px solid #333333;
-				overflow: hidden;
-				background: #898F2C;
-				color: #ffffff;	
-				font-size: 1.1em;
-				text-align: center;
-			}
-			
-			div#lightbox a.back {
-				float: left;
-				padding: 10px;
-				font-size: 1.1em;
-				border-right: 1px solid #333333;
-			}
-			
-			div#lightbox a.next {
-				float: right;
-				padding: 10px;
-				font-size: 1.1em;
-				border-left: 1px solid #333333;
-			}		
-		</style>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Lightbox.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">

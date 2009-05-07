@@ -16,14 +16,7 @@
 		<link rel="stylesheet" href="../../css/tabs.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Tabset.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				// grab all nodes with a tabset 
-				var tabsets = $(".tabset").each(function(i) {
-					new Adoro.Tabset(this);
-				});
-			});
-		</script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Tabset.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">

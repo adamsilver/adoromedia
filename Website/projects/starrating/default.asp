@@ -16,11 +16,7 @@
 		<link rel="stylesheet" href="../../css/starrating.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->				
 		<script type="text/javascript" src="../../js/Adoro/Adoro.StarRating.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var myStarRating = new Adoro.StarRating($("input[name='starRating']"));
-			});
-		</script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.StarRating.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">
