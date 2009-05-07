@@ -18,24 +18,7 @@
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldContextualHelp.js"></script>
-		<script type="text/javascript" src="../../js/Site/Site.Projects.FieldContextualHelp.js"></script>
-		<style type="text/css">
-			.contextualHelp {
-				background:transparent url(../../img/bubble_bot.gif) no-repeat left bottom;
-				width:337px;
-				z-index: 100;
-				clear: both;
-			}
-			
-			.contextualHelpInner {
-				background:transparent url(../../img/bubble_top.gif) no-repeat left top;
-				padding:10px;
-			}
-			
-			.contextualHelp p {
-				margin: 0;
-			}
-		</style>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.FieldContextualHelp.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">

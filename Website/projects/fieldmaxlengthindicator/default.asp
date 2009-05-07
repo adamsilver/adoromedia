@@ -3,7 +3,7 @@
 <%Response.Expires=-1441%>
 <%Response.Buffer=true%>
 <!--#include file="../../inc/Adoro.asp"-->
-<% Adoro.pageName = "fieldmaxlength"; %>
+<% Adoro.pageName = "fieldmaxlengthindicator"; %>
 <% Adoro.siteSection = "projects" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->	
 		<script type="text/javascript" src="../../js/Adoro/Adoro.FieldMaxLengthIndicator.js"></script>
-		<script type="text/javascript" src="../../js/Site/Site.Projects.FieldMaxLengthIndicator.js"></script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.FieldMaxLengthIndicator.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">
