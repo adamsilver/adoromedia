@@ -13,7 +13,6 @@
 		<meta name="description" content="Carousel jQuery JavaScript component, by Adoro Media." />
 		<!--#include file="../../inc/head_js.asp"-->	
 		<!--#include file="../../inc/head_css.asp"-->
-		<link rel="stylesheet" href="../../css/carousel.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/JQuery/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Carousel.js"></script>
@@ -55,27 +54,7 @@
 								<li><img src="../../img/carousel/7.jpg" width="150" height="118" alt=""/></li>
 							</ul>
 						</div>
-					</div>
-					
-					<h3>Horizontal carousel with mixed content</h3>
-					
-					<div id="carousel02">
-						<div class="clip">
-							<ul>
-								<li><p>Lorem</p></li>
-								<li><img src="../../img/portfolio/houseoffraser.jpg" width="500" height="167" alt="" /></li>
-								<li><p>Ipsum</p></li>
-								<li><img src="../../img/portfolio/cpplus.jpg" width="500" height="167" alt="" /></li>
-								<li><p>Sam</p></li>
-								<li><img src="../../img/portfolio/flyingflowers.jpg" width="500" height="167" alt="" /></li>
-								<li><p>Ite</p></li>
-								<li><img src="../../img/portfolio/gardeningdirect.jpg" width="500" height="167" alt="" /></li>
-								<li><p>Delta</p></li>
-								<li><img src="../../img/portfolio/hamleys.jpg" width="500" height="167" alt="" /></li>		
-								<li><p>Max</p></li>
-							</ul>
-						</div>
-					</div>							
+					</div>						
 
 					<h3>Vertical carousel</h3>
 					<div id="carousel07">
