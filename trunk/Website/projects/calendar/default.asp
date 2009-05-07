@@ -16,29 +16,7 @@
 		<link rel="stylesheet" href="../../css/calendar.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Calendar.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){ 
-				var myCalendar = new Adoro.Calendar({
-					selectDay: document.getElementById("day"),
-					selectMonth: document.getElementById("month"),
-					selectYear: document.getElementById("year"),
-					startHidden: true,
-					closeOnDateSelection: false,
-					appendCalendarTo: $(".cc div.multipleInput")[0],
-					hasLinkActivator: true
-				});
-				
-				var myCalendar2 = new Adoro.Calendar({
-					selectDay: document.getElementById("day2"),
-					selectMonth: document.getElementById("month2"),
-					selectYear: document.getElementById("year2"),
-					startHidden: true,
-					closeOnDateSelection: false,
-					appendCalendarTo: $(".cc div.multipleInput")[1],
-					hasLinkActivator: true
-				});
-			});
-		</script>		
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Calendar.js"></script>	
 	</head>
 	<body class="projects">
 		<div id="container">
