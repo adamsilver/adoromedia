@@ -732,3 +732,24 @@ ul.portfolio li p {
 
 /*  nested accordion */
 
+/******************************************************************
+* Projects - contextual help
+******************************************************************/
+
+.contextualHelp {
+	background:transparent url(../../img/bubble_bot.gif) no-repeat left bottom;
+	width:337px;
+	z-index: 100;
+	clear: both;
+}
+
+.contextualHelpInner {
+	background:transparent url(../../img/bubble_top.gif) no-repeat left top;
+	padding:10px;
+}
+
+.contextualHelp p {
+	margin: 0;
+}
+
+

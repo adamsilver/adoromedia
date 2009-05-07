@@ -15,17 +15,7 @@
 		<!--#include file="../../inc/head_css.asp"-->
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Collapser.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){ 
-				var myCollapse = new Adoro.Collapser($("div#collapseMe div.panel")[0], $("div#collapseMe a.activator")[0], {
-					startOpen: true,
-					nodesToAddHideClassTo: [document.getElementById("collapseMe")],
-					activatorInactiveHTML: "Show demo",
-					activatorActiveHTML: "Hide demo",
-					animate: true
-				});
-			});
-		</script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Collapser.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">

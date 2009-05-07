@@ -19,18 +19,7 @@
 		<script type="text/javascript" src="../../js/JQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DropDownMenu.js"></script>
 		<script type="text/javascript" src="../../js/SWFObject/swfobject.js"></script>
-		<script type="text/javascript">
-			swfobject.embedSWF("../../swf/butterfly.swf", "flash", "300", "120", "9.0.0", "../../swf/expressInstall.swf", {}, {wmode: "opaque"});
-		</script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var ulNode1 = $("#dropDownMenu ul")[0] || null;
-				new Adoro.DropDownMenu(ulNode1, { cssHideClass: "off" });
-				
-				var ulNode2 = $("#menu ul")[0] || null;
-				new Adoro.DropDownMenu(ulNode2, { subMenuType: "div", cssActiveClass: "hover", cssHideClass: "off" });	
-			});
-		</script>
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.DropDownMenu.js"></script>	
 	</head>
 	<body class="projects">
 		<div id="container">

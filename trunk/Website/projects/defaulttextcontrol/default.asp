@@ -16,12 +16,7 @@
 		<link rel="stylesheet" href="../../css/tooltip.css" type="text/css" />
 		<!--#include file="../../inc/head_cssie.asp"-->		
 		<script type="text/javascript" src="../../js/Adoro/Adoro.DefaultTextControl.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var myInputDefault1 = new Adoro.DefaultTextControl(document.getElementById("search"));
-				var myInputDefault2 = new Adoro.DefaultTextControl(document.getElementById("different"));
-			});
-		</script>	
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.DefaultTextControl.js"></script>	
 	</head>
 	<body class="projects">
 		<div id="container">

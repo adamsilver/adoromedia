@@ -15,12 +15,7 @@
 		<!--#include file="../../inc/head_css.asp"-->	
 		<!--#include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.CheckboxDisabler.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				var group01 = new Adoro.CheckboxDisabler($("input[name='searchEngine']"),2);
-				var group02 = new Adoro.CheckboxDisabler($("input[name='secondGroup']"),1);
-			});
-		</script>	
+		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.CheckboxDisabler.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">
