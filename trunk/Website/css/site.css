@@ -971,6 +971,9 @@ div.calendar div.actions2 a {
 	text-align: center;
 }
 
+/*************************************************************************
+*  Projects - collapser
+*************************************************************************/
 
 #collapseMe {
 	border: 1px solid #e4e4e4;
@@ -987,4 +990,29 @@ div.calendar div.actions2 a {
 #collapseMe div.panel {
 	padding: 10px;
 	font-size: 1.2em;
+}
+
+/*************************************************************************
+*  Projects - dialogue
+*************************************************************************/
+
+#dialogue01,
+#dialogue02 {
+	background-color: #ffffff;
+	border: 1px solid #e4e4e4;
+	width: 500px;
+}
+
+#dialogue01 h2,
+#dialogue02 h2 {
+	margin: 0px;
+}
+
+#dialogue01 a.closeDialogue,
+#dialogue01 a.new,
+#dialogue02 a.closeDialogue,
+#dialogue02 a.new  {
+	display: block;
+	font-size: 1.2em;
+	text-align: center;
 }
