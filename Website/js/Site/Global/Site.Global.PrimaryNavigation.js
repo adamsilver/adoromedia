@@ -16,38 +16,41 @@ Site.Global.PrimaryNavigation = new (function() {
 	};
 	
 	function NavItem(item) {
-		var a = item.getElementsByTagName("a")[0];
+		var cssHoverClass = "hover";
+		var animationTime = 300;
 		
 		item.addEvent("mouseenter", itemMouseEnter);
 		item.addEvent("mouseleave", itemMouseLeave);
-		
-		a.setStyle("position", "relative");
 		item.setStyle("overflow", "hidden");
 		item.setStyle("position", "relative");		
 		
-		var a2 = a.cloneNode(true);
+		var height = item.offsetHeight;
+		item.setStyle("height", height+"px");
+				
+		var a = item.getElementsByTagName("a")[0];
+		a.setStyle("position", "relative");
 		
-		item.setStyle("height", a.offsetHeight+"px");
+		var a2 = a.cloneNode(true);
 		item.insertBefore(a2, a);
 		
-		a2.setStyle("top", -a.offsetHeight+"px");
-		a.setStyle("top", -a.offsetHeight+"px");
+		a2.setStyle("top", -height+"px");
+		a.setStyle("top", -height+"px");
 		
-		var originalTop = -a.offsetHeight;
+		var originalTop = -height;
 		
 		function itemMouseEnter(e) {
-			a.animate({top: 0}, 300 );
-			a2.animate({top: 0}, 300);
-			a.addCssClass("selected");
-			a2.addCssClass("selected");
-		}
+			a.animate({top: 0}, animationTime);
+			a2.animate({top: 0}, animationTime);
+			a.addCssClass(cssHoverClass);
+			a2.addCssClass(cssHoverClass);
+		};
 		
 		function itemMouseLeave(e) {
-			a.animate({top: originalTop}, 300 );
-			a2.animate({top: originalTop}, 300);
-			a.removeCssClass("selected");
-			a2.removeCssClass("selected");
-		}
-	}	
+			a.animate({top: originalTop}, animationTime);
+			a2.animate({top: originalTop}, animationTime);
+			a.removeCssClass(cssHoverClass);
+			a2.removeCssClass(cssHoverClass);
+		};
+	};	
 	
 });

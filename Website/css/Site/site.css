@@ -232,6 +232,7 @@ div#header {
 	text-decoration: none;
 }
 
+#primaryNavigation ul li a.hover,
 #primaryNavigation ul li a.selected,
 #primaryNavigation ul li a:hover,
 #primaryNavigation ul li a:focus {
