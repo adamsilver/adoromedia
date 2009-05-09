@@ -2,7 +2,10 @@
 * hasLayout
 ********************************************************/
 
+
 div#container,
+#hero,
+#breadcrumb,
 #header,
 #content,
 div.faux,
