@@ -237,7 +237,7 @@ div#header {
 #primaryNavigation ul li a:focus {
 	color: #6CA714;
 	background-color:#1D2B33;
-	border-bottom: 2px solid #1D2B33;
+	border-bottom: 0px solid #1D2B33;
 }
 
 #primaryNavigation ul li#pnHome a,
