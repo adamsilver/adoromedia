@@ -665,7 +665,7 @@ ul.portfolio li h2 {
 
 ul.portfolio li h2 a {
 	display: block;
-	background: url(../img/arrow01.gif) no-repeat 10px 13px;
+	background: url(../../img/arrow01.gif) no-repeat 10px 13px;
 	padding: 10px 10px 10px 28px;
 	border-bottom: 1px solid #E4E4E4;
 }

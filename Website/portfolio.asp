@@ -157,7 +157,13 @@
 						would highly recommend Adoro's services to any business looking to maximise their presence on the web with a 
 						modern, web standards compliant best-of-breed website.</p>
 						<p>Website:  http://www.cp-plus.co.uk </p>
-						
+						<h3>Peter Perry:  PnP Decorations</h3>
+						<p>We contacted Adoro media to work on our website because we liked their designs and they came highly recommended. 
+						We were looking for something different, stylish and clean. Adam helped us understand our business from a clients 
+						point of view which enabled us to create an easy to use holistic website. We are very happy with the design but 
+						also very happy with our index in Google search engine.  Highly recommended to any business looking to gain that 
+						special edge via their website.</p>
+						<p>Website:  http://www.pnp-decorations.co.uk</p>
 			        </div>							      
 			    </div>    
 			</div>
