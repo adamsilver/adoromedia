@@ -71,99 +71,34 @@
 							    </a>
 						    </div>
 					    </li>
-					    <!--
-					    <li class="work">
-						    <h2>House of Fraser</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://www.houseoffraser.co.uk">
-								    <img src="img/portfolio/houseoffraser.jpg" alt="House of Fraser" />
-							    </a>
-						    </div>
-					    </li>
-					    <li class="work">
-						    <h2>Hamleys</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://www.hamleys.co.uk">
-								    <img src="img/portfolio/hamleys.jpg" alt="Hamleys" />
-							    </a>
-						    </div>
-					    </li>
-					    <li class="work">
-						    <h2>USC</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://www.usc.co.uk">
-								    <img src="img/portfolio/usc.jpg" alt="USC" />
-							    </a>
-						    </div>
-					    </li>
-					    <li class="work">
-						    <h2>Wyevale</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://www.wyevale.co.uk">
-								    <img src="img/portfolio/wyevale.jpg" alt="Wyevale" />
-							    </a>
-						    </div>							
-					    </li>
-					    <li class="work">
-						    <h2>Flying Flowers</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://www.flyingflowers.com">
-								    <img src="img/portfolio/flyingflowers.jpg" alt="Flying Flowers" />
-							    </a>
-						    </div>		
-					    </li>
-					    <li class="work">
-						    <h2>Gardening Direct</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://www.gardeningdirect.com">
-								    <img src="img/portfolio/gardeningdirect.jpg" alt="Gardening Direct" />
-							    </a>
-						    </div>	
-					    </li>
-					    <li class="work">
-						    <h2>PlayStation III</h2>
-						    <p>Responsible for user interface in collaboration with LBi.</p>
-						    <div class="image">
-							    <a href="http://uk.playstation.com/ps3/">
-								    <img src="img/portfolio/ps3.jpg" alt="PlayStation 3" />
-							    </a>
-						    </div>								
-					    </li>
-					    -->
-					    <!--
-						
-					    <li>UBS</li>
-					    <li>Motorcycle News</li>
-					    <li>Today's Golfer</li>-->
+					    
 				    </ul>
 		        </div>
 			    <div id="secondary">
 			        <div class="testimonials">
 						<h2>Testimonials</h2>
 						
-						<h3>Grahame Rose:  CP Plus</h3>
-						<p>As  Business Development Director for CP Plus it was my responsibility to redevelop the existing website 
-						for search visibility, and user-friendly design purposes. After looking at a wide range of designers, we decided 
-						to go with Adoro Media because they really seemed to understand the brief and what we were looking for;  we have 
-						not been disappointed. Working with Adoro Media has been  speedy and efficient and altogether a great experience. 
-						Adam Silver has made the process very easy and I continue to liase with Adoro Media for updates and website 
-						maintenance.  The website was delivered on schedule and within an extremely cost effective budget. In short, I 
-						would highly recommend Adoro's services to any business looking to maximise their presence on the web with a 
-						modern, web standards compliant best-of-breed website.</p>
-						<p>Website:  http://www.cp-plus.co.uk </p>
-						<h3>Peter Perry:  PnP Decorations</h3>
-						<p>We contacted Adoro media to work on our website because we liked their designs and they came highly recommended. 
-						We were looking for something different, stylish and clean. Adam helped us understand our business from a clients 
-						point of view which enabled us to create an easy to use holistic website. We are very happy with the design but 
-						also very happy with our index in Google search engine.  Highly recommended to any business looking to gain that 
-						special edge via their website.</p>
-						<p>Website:  http://www.pnp-decorations.co.uk</p>
+						<div class="testimonial">
+							<h3>Grahame Rose:  CP Plus</h3>
+							<p>As  Business Development Director for CP Plus it was my responsibility to redevelop the existing website 
+							for search visibility, and user-friendly design purposes. After looking at a wide range of designers, we decided 
+							to go with Adoro Media because they really seemed to understand the brief and what we were looking for;  we have 
+							not been disappointed. Working with Adoro Media has been  speedy and efficient and altogether a great experience. 
+							Adam Silver has made the process very easy and I continue to liase with Adoro Media for updates and website 
+							maintenance.  The website was delivered on schedule and within an extremely cost effective budget. In short, I 
+							would highly recommend Adoro's services to any business looking to maximise their presence on the web with a 
+							modern, web standards compliant best-of-breed website.</p>
+							<p>Website:  <a href="http://www.cp-plus.co.uk">http://www.cp-plus.co.uk</a> </p>
+						</div>
+						<div class="testimonial">
+							<h3>Peter Perry:  PnP Decorations</h3>
+							<p>We contacted Adoro media to work on our website because we liked their designs and they came highly recommended. 
+							We were looking for something different, stylish and clean. Adam helped us understand our business from a clients 
+							point of view which enabled us to create an easy to use holistic website. We are very happy with the design but 
+							also very happy with our index in Google search engine.  Highly recommended to any business looking to gain that 
+							special edge via their website.</p>
+							<p>Website:  http://www.pnp-decorations.co.uk</p>
+						</div>
 			        </div>							      
 			    </div>    
 			</div>

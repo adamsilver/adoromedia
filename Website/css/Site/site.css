@@ -642,6 +642,33 @@ ul.projects li p {
     font-size: 1em;
 }
 
+/***********************************************************************
+* Testimonial
+***********************************************************************/
+
+div.testimonials {}
+
+div.testimonials h2 {
+	margin: 0px 0px 0px;
+}
+
+div.testimonials div.testimonial {
+	border-bottom: 1px solid #e4e4e4;
+	padding-top: 20px;
+	margin-right: 20px;
+}
+
+div.testimonials div.testimonial h3 {
+	background: url(../../img/comment.gif) 0px 2px no-repeat;
+	padding-left: 20px;
+	margin: 0px 0px 3px 0px;
+	font-size: 1.3em;
+}
+
+div.testimonials div.testimonial p {
+	margin: 0px 0px 10px;
+}
+
 /******************************************************************
 * Portfolio
 ******************************************************************/
