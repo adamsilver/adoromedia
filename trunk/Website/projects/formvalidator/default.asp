@@ -117,9 +117,6 @@
 						<div class="form">
 							<!--Single input-->
 							<div class="field <%devForm.writeErrorClass(["fullName"])%>">
-								<div class="contextualHelpType1">
-									<p>This is contextual help before the form element(s).</p>
-								</div>
 								<div class="indicator">
 									<label for="fullName">Full name *<%devForm.writeErrorSpan(["fullName"])%></label>
 								</div>
@@ -175,10 +172,7 @@
 										<input type="text" class="text" name="year01" id="year01" value="<%=Request.Form("year01")%>" />
 									</div>
 									<input class="submit" type="submit" name="contextualSubmitButton" id="contextualSubmitButton" value="Validate dates only" />
-								</div>
-								<div class="contextualHelpType2">
-									<p>This is contextual help after the form element(s).</p>
-								</div>						
+								</div>												
 							</div>
 							
 							<!--Multiple select-->
@@ -317,9 +311,6 @@
 						</div>												
 					</form>
 
-					
-					<h2>Creating a custom validator</h2>						
-					<p>Coming soon</p>
 				</div>
 				<div id="secondary">
 					<% var projectsShowDescription = false; var wrapTag = false;%>
