@@ -32,7 +32,7 @@
 					    <h2>A bit about us</h2>
 						<p>Established in the industry for 10 years, 
 						has given us a credible amount of experience.</p>
-						<p>We are very passionate about websites and want
+						<p>We're very passionate about websites and want
 						to create the best online presence for you and
 						your business, charity or personal website.</p>
 					
@@ -61,8 +61,8 @@
 						<h2>Want a website?</h2>
 						<p>Whether you need a brochure site, a CMS, or an e-commerce web shop, 
 						we can help you.</p>
-						<p>If your website is not performing in the search engines, or it 
-						needs a fresh design or new content then we would love to make a 
+						<p>If your site is not being found by Google or it 
+						needs a fresh design then we would love to make a 
 						better site for you.</p>
 					</div>
 					<div id="secondary">

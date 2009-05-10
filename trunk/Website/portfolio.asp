@@ -97,7 +97,7 @@
 							point of view which enabled us to create an easy to use holistic website. We are very happy with the design but 
 							also very happy with our index in Google search engine.  Highly recommended to any business looking to gain that 
 							special edge via their website.</p>
-							<p>Website:  http://www.pnp-decorations.co.uk</p>
+							<p>Website:  <a href="http://www.pnp-decorations.co.uk">http://www.pnp-decorations.co.uk</a></p>
 						</div>
 			        </div>							      
 			    </div>    
