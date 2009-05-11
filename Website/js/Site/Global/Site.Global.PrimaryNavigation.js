@@ -3,6 +3,8 @@ Site.Global = Site.Global || {};
 Site.Global.PrimaryNavigation = new (function() {
 	addDOMReadyEvent(init);
 	
+	//window.onload = init;
+	
 	function init() {
 		var nav = document.getElementById("primaryNavigation");
 		if(!nav) return;
@@ -28,6 +30,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		item.setStyle("position", "relative");		
 		
 		var height = item.offsetHeight;
+		
 		item.setStyle("height", height+"px");
 				
 		var a = item.getElementsByTagName("a")[0];
