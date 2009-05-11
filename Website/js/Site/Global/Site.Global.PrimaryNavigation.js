@@ -10,7 +10,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		if(!nav) return;
 		nav.setStyle("overflow", "hidden");
 		
-		var navItems = nav.getElementsByTagName("li");
+		var navItems = nav.getElementsByTagName("li")[0];
 		var a = null;
 		for(var i = navItems.length-1; i>=0; i--) {
 			a = navItems[i].getElementsByTagName("a")[0];
@@ -30,7 +30,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		item.setStyle("position", "relative");		
 		
 		var height = item.offsetHeight;
-		
+	
 		item.setStyle("height", height+"px");
 				
 		var a = item.getElementsByTagName("a")[0];
