@@ -1,9 +1,9 @@
 var Site = Site || {};
 Site.Global = Site.Global || {};
 Site.Global.PrimaryNavigation = new (function() {
-	addDOMReadyEvent(init);
+	//addDOMReadyEvent(init);
 	
-	//window.onload = init;
+	window.addEvent("load", init);
 	
 	function init() {
 		var nav = document.getElementById("primaryNavigation");
@@ -26,6 +26,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		
 		item.addEvent("mouseenter", itemMouseEnter);
 		item.addEvent("mouseleave", itemMouseLeave);
+		
 		item.setStyle("overflow", "hidden");
 		item.setStyle("position", "relative");		
 		
@@ -43,6 +44,8 @@ Site.Global.PrimaryNavigation = new (function() {
 		a.setStyle("top", -height+"px");
 		
 		var originalTop = -height;
+		
+		//a2.addEvent("focus", itemMouseEnter);
 		
 		function itemMouseEnter(e) {
 			a.animate({top: 0}, animationTime);
