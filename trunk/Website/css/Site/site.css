@@ -102,6 +102,7 @@ div.action:after,
 #sections:after,
 div.field:after,
 div.field div.checkboxes div.input:after,
+div.field div.radios div.input:after,
 #horizontalAccordion:after,
 ul.projects:after,
 div#dropDownMenu ul:after,
@@ -374,18 +375,21 @@ div.field div.indicator span.label {
 
 div.field div.singleInput,
 div.field div.checkboxes,
+div.field div.radios,
 div.field div.multipleInput {
 	float: left;
 	width: 400px;
 }
 
-div.field div.checkboxes div.input label {
+div.field div.checkboxes div.input label,
+div.field div.radios div.input label {
 	float: left;
 	font-size: 1.2em;
 	width: 200px;
 }
 
-div.field div.checkboxes div.input input {
+div.field div.checkboxes div.input input,
+div.field div.radios div.input input {
 	float: left;
 	margin-right: 5px;
 }
@@ -530,7 +534,6 @@ body#pgHome div#content {
 select {
 	margin-bottom: 0px;
 	font-size: 1.1em;
-	text-transform: uppercase;
 }
 
 

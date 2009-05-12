@@ -10,7 +10,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		if(!nav) return;
 		nav.setStyle("overflow", "hidden");
 		
-		var navItems = nav.getElementsByTagName("li")[0];
+		var navItems = nav.getElementsByTagName("li");
 		var a = null;
 		for(var i = navItems.length-1; i>=0; i--) {
 			a = navItems[i].getElementsByTagName("a")[0];
