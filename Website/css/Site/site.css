@@ -191,8 +191,19 @@ div#header {
 
 #logo {
 	float: left;
-	margin-top: 24px;
-	margin-bottom: 27px;
+	margin-top: 31px;
+}
+
+#logo p {
+	color: #fff;
+	font-size: 1.1em;
+	margin: 0px 0px 0px 1px;
+	text-align: right;
+	display: none;
+}
+
+#logo a {
+	display:block;
 	background-color: #6CA714;
 }
 
@@ -200,23 +211,23 @@ div#header {
 	display: block;
 }
 
-body.services #logo{
+body.services #logo a {
 	background-color: #0099FF;
 }
 
-body.projects #logo{
+body.projects #logo a{
 	background-color: #FF0099;
 }
 
-body.portfolio #logo{
+body.portfolio #logo a{
 	background-color: #FF6600;
 }
 
-body.faq #logo{
+body.faq #logo a{
 	background-color: #CCCCCC;
 }
 
-body.contact #logo{
+body.contact #logo a{
 	background-color: #FFFF33;
 }
 
