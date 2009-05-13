@@ -2,7 +2,7 @@ var Site = Site || {};
 Site.Global = Site.Global || {};
 Site.Global.PrimaryNavigation = new (function() {
 	//addDOMReadyEvent(init);
-	
+
 	window.addEvent("load", init);
 	
 	function init() {
