@@ -188,12 +188,14 @@ div#container {
 
 div#header {
 	padding: 0px 20px;
+	background: #000;
 }
 
 #logo {
 	float: left;
 	margin-top: 24px;
 	margin-bottom: 29px;
+	background-color: #6CA714;
 }
 
 #primaryNavigation {
