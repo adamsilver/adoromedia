@@ -220,7 +220,7 @@ J2.Core = new (function() {
 	* @return {Function} The function subscribed to the event handler
 	* @see J2.Core.Event
 	*/
-	window.addLoadEvent = loadEventHandler.listen;
+	addLoadEvent = loadEventHandler.listen;
 	/**
 	* Contains the first and last methods of J2.Core.Event.eventIndexes.  
 	* Specific to the load event handler
@@ -228,7 +228,7 @@ J2.Core = new (function() {
 	* @static
 	* @see J2.Core.Event.eventIndexes
 	*/
-	window.loadEventIndexes = loadEventHandler.eventIndexes;
+	loadEventIndexes = loadEventHandler.eventIndexes;
 	if (typeof window.onload === "function")
 		loadEventHandler.listen(window.onload, null, loadEventHandler.eventIndexes.first());
 	window.onload = loadEventHandler.fire;
@@ -244,7 +244,7 @@ J2.Core = new (function() {
 	* @return {Function} The function subscribed to the event handler
 	* @see J2.Core.Event
 	*/
-	window.addDOMReadyEvent = domReadyEventHandler.listen;
+	addDOMReadyEvent = domReadyEventHandler.listen;
 	/**
 	* Contains the first and last methods of J2.Core.Event.eventIndexes.  
 	* Specific to the DOMContentReady event handler
@@ -252,12 +252,11 @@ J2.Core = new (function() {
 	* @static
 	* @see J2.Core.Event.eventIndexes
 	*/
-	window.DOMReadyEventIndexes = loadEventHandler.eventIndexes;
+	DOMReadyEventIndexes = loadEventHandler.eventIndexes;
 	
 	//add tidy up listeners
-	loadEventHandler.listen( function() { delete loadEventIndexes; delete addLoadEvent; delete onload; }, window, -Infinity );
-	domReadyEventHandler.listen( function() { delete DOMReadyEventIndexes; 
-	delete addDOMReadyEvent; }, window, -Infinity );
+	loadEventHandler.listen( function() { delete loadEventIndexes; delete addLoadEvent; }, window, -Infinity );
+	domReadyEventHandler.listen( function() { delete DOMReadyEventIndexes; delete addDOMReadyEvent; }, window, -Infinity );
 	
 		/* Internet Explorer */
 	if (J2.isIE6) {
