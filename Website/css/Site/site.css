@@ -11,7 +11,6 @@ body {
 	font-size: 62.5%;
 	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica", arial;
 	background: url(../../img/bg_body.jpg) repeat-x;
-	color: #1d2b33;
 	border-top: 2px solid #6CA714;
 }
 
@@ -66,12 +65,12 @@ a img {
 }
 
 a, a:link, a:visited {
-	color: #1D2B33;
+	color: #000000;
 }
 
 a:hover, a:focus, a:active {
 	color: #ffffff;
-	background-color: #1D2B33;
+	background-color: #000000;
 }
 
 .hide {
@@ -188,20 +187,43 @@ div#container {
 
 div#header {
 	padding: 0px 20px;
-	background: #000;
 }
 
 #logo {
 	float: left;
 	margin-top: 24px;
-	margin-bottom: 29px;
+	margin-bottom: 27px;
 	background-color: #6CA714;
+}
+
+#logo img {
+	display: block;
+}
+
+body.services #logo{
+	background-color: #0099FF;
+}
+
+body.projects #logo{
+	background-color: #FF0099;
+}
+
+body.portfolio #logo{
+	background-color: #FF6600;
+}
+
+body.faq #logo{
+	background-color: #CCCCCC;
+}
+
+body.contact #logo{
+	background-color: #FFFF33;
 }
 
 #primaryNavigation {
 	float: right;
 	margin-top: 31px;
-	margin-bottom: 29px;
+	margin-bottom: 27px;
 }
 
 #primaryNavigation ul {
@@ -209,13 +231,13 @@ div#header {
 	overflow: hidden;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	border-left: 1px solid #27414F;
+	border-left: 1px solid #0c0c0c;
 	
 }
 
 #primaryNavigation ul li {
 	float: left;
-	border-right: 1px solid #27414F;
+	border-right: 1px solid #0c0c0c;
 	font-size: 1.1em;
 	text-transform: uppercase;
 	margin: 0px;
@@ -240,8 +262,8 @@ div#header {
 #primaryNavigation ul li a:hover,
 #primaryNavigation ul li a:focus {
 	color: #6CA714;
-	background-color:#1D2B33;
-	border-bottom: 0px solid #1D2B33;
+	background-color:#000000;
+	border-bottom: 0px solid #000000;
 }
 
 #primaryNavigation ul li#pnHome a,
@@ -522,8 +544,7 @@ body#pgHome div#content {
 	margin-bottom: 30px;
 	margin-left: 20px;
 	margin-right: 20px;
-	border: 2px solid #1D2C33;
-	background: #778085 url(../../img/bg_featuredwork.gif) repeat-x bottom left;
+	background-color: #000;
 }
 
 #hero div.about {
