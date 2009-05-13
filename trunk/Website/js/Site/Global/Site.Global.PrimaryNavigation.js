@@ -46,7 +46,8 @@ Site.Global.PrimaryNavigation = new (function() {
 		var originalTop = -height;
 		
 		function itemMouseEnter(e) {
-			Site.Global.CustomEvents.navItemMouseEntered.fire(a.getStyle("color"));
+			var colour = a.getStyle("color");
+			Site.Global.CustomEvents.navItemMouseEntered.fire(colour);
 			a.animate({top: {to: 0, time: animationTime}});
 			a2.animate({top: {to: 0, time: animationTime}});
 			a.addCssClass(cssHoverClass);

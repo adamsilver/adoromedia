@@ -2,7 +2,9 @@ var Site = Site || {};
 Site.Global = Site.Global || {};
 Site.Global.Logo = new (function() {
 	addDOMReadyEvent(function(){
+		var animationTime = 100;
 		var logo = document.getElementById("logo");
+		var a = logo.getElementsByTagName("a")[0];
 		logo.addEvent("mouseenter", fadeOut);
 		logo.addEvent("mouseleave", fadeIn);
 		function fadeOut() {
@@ -15,16 +17,22 @@ Site.Global.Logo = new (function() {
 		
 		Site.Global.CustomEvents.navItemMouseEntered.listen(fadeInToColour)
 		
-		var originalBackgroundColour = logo.getStyle("background-color");
-		
+		var originalBackgroundColour = a.getStyle("background-color");
+			
 		function fadeInToColour(colour){
-			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(colour.getHex()), time: 200 } );
+			a.animate({"backgroundColor": {
+				to: J2.Core.CSSColor.prototype.create(colour.getHex()),
+				time: animationTime
+			}});
 		}
 		
 		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal)
 		
 		function fadeInToOriginal(){
-			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()), time: 200 } );
+			a.animate({"backgroundColor": {
+				to: J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()),
+				time: animationTime
+			}});
 		};
 	});
 });
