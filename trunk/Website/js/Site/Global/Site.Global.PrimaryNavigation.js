@@ -48,7 +48,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		//a2.addEvent("focus", itemMouseEnter);
 		
 		function itemMouseEnter(e) {
-			Site.Global.CustomEvents.navItemMouseEntered.fire();
+			//Site.Global.CustomEvents.navItemMouseEntered.fire();
 			a.animate({top: 0}, animationTime);
 			a2.animate({top: 0}, animationTime);
 			a.addCssClass(cssHoverClass);
@@ -56,7 +56,7 @@ Site.Global.PrimaryNavigation = new (function() {
 		};
 		
 		function itemMouseLeave(e) {
-			Site.Global.CustomEvents.navItemMouseLeft.fire();
+			//Site.Global.CustomEvents.navItemMouseLeft.fire();
 			a.animate({top: originalTop}, animationTime);
 			a2.animate({top: originalTop}, animationTime);
 			a.removeCssClass(cssHoverClass);
