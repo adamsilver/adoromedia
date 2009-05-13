@@ -15,16 +15,16 @@ Site.Global.Logo = new (function() {
 		
 		Site.Global.CustomEvents.navItemMouseEntered.listen(fadeInToColour)
 		
+		var originalBackgroundColour = logo.getStyle("background-color");
+		
 		function fadeInToColour(colour){
-			alert("fadeInToColour");
-			// fade  logo  into colour
-		};
+			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(colour.getHex()) } );
+		}
 		
 		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal)
 		
 		function fadeInToOriginal(){
-			alert("fadeInToOriginal");
-			// fade  logo  into colour
+			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()) } );
 		};
 	});
 });
