@@ -18,13 +18,13 @@ Site.Global.Logo = new (function() {
 		var originalBackgroundColour = logo.getStyle("background-color");
 		
 		function fadeInToColour(colour){
-			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(colour.getHex()) } );
+			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(colour.getHex()), time: 200 } );
 		}
 		
 		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal)
 		
 		function fadeInToOriginal(){
-			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()) } );
+			logo.animate( { "background-color": J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()), time: 200 } );
 		};
 	});
 });
