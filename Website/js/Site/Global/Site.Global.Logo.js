@@ -12,6 +12,19 @@ Site.Global.Logo = new (function() {
 		function fadeIn() {
 			this.animate( {	opacity: 1}, 500);
 		};
-	
+		
+		Site.Global.CustomEvents.navItemMouseEntered.listen(fadeInToColour)
+		
+		function fadeInToColour(colour){
+			alert("fadeInToColour");
+			// fade  logo  into colour
+		};
+		
+		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal)
+		
+		function fadeInToOriginal(){
+			alert("fadeInToOriginal");
+			// fade  logo  into colour
+		};
 	});
 });
