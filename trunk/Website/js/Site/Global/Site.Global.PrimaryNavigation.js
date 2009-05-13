@@ -22,7 +22,7 @@ Site.Global.PrimaryNavigation = new (function() {
 	
 	function NavItem(item) {
 		var cssHoverClass = "hover";
-		var animationTime = 300;
+		var animationTime = 200;
 		
 		item.addEvent("mouseenter", itemMouseEnter);
 		item.addEvent("mouseleave", itemMouseLeave);
@@ -47,16 +47,16 @@ Site.Global.PrimaryNavigation = new (function() {
 		
 		function itemMouseEnter(e) {
 			Site.Global.CustomEvents.navItemMouseEntered.fire(a.getStyle("color"));
-			a.animate({top: 0}, animationTime);
-			a2.animate({top: 0}, animationTime);
+			a.animate({top: {to: 0, time: animationTime}});
+			a2.animate({top: {to: 0, time: animationTime}});
 			a.addCssClass(cssHoverClass);
 			a2.addCssClass(cssHoverClass);
 		};
 		
 		function itemMouseLeave(e) {
 			Site.Global.CustomEvents.navItemMouseLeft.fire();
-			a.animate({top: originalTop}, animationTime);
-			a2.animate({top: originalTop}, animationTime);
+			a.animate({top: {to: originalTop, time: animationTime}});
+			a2.animate({top: {to: originalTop, time: animationTime}});
 			a.removeCssClass(cssHoverClass);
 			a2.removeCssClass(cssHoverClass);
 		};
