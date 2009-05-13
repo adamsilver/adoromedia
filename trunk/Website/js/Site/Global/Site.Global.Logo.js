@@ -26,7 +26,7 @@ Site.Global.Logo = new (function() {
 			}});
 		}
 		
-		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal)
+		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal);
 		
 		function fadeInToOriginal(){
 			a.animate({"backgroundColor": {
@@ -34,5 +34,25 @@ Site.Global.Logo = new (function() {
 				time: animationTime
 			}});
 		};
+		
+		Site.Global.CustomEvents.navItemMouseEntered.listen(fadeHeaderTo);
+		
+		function fadeHeaderTo(colour) {
+			document.body.animate({"border-color": {
+				to: J2.Core.CSSColor.prototype.create(colour.getHex()),
+				time: animationTime
+			}});
+		};
+		
+		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeHeaderToOriginal);
+		
+		function fadeHeaderToOriginal() {
+			document.body.animate({"border-color": {
+				to: J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()),
+				time: animationTime
+			}});
+		};
+		
+		
 	});
 });
