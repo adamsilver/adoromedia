@@ -255,9 +255,9 @@ J2.Core = new (function() {
 	window.DOMReadyEventIndexes = loadEventHandler.eventIndexes;
 	
 	//add tidy up listeners
-	//loadEventHandler.listen( function() { delete loadEventIndexes; delete addLoadEvent; delete onload; }, window, -Infinity );
-	//domReadyEventHandler.listen( function() { delete DOMReadyEventIndexes; 
-	//delete addDOMReadyEvent; }, window, -Infinity );
+	loadEventHandler.listen( function() { delete loadEventIndexes; delete addLoadEvent; delete onload; }, window, -Infinity );
+	domReadyEventHandler.listen( function() { delete DOMReadyEventIndexes; 
+	delete addDOMReadyEvent; }, window, -Infinity );
 	
 		/* Internet Explorer */
 	if (J2.isIE6) {
