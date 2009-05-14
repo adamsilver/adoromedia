@@ -154,9 +154,9 @@ ul li ul li,ol li ol li {
 ******************************************************************/
 
 #breadcrumb {
-	padding: 12px 10px;
+	padding: 12px 0px;
 	border-bottom: 1px solid #E4E4E4;
-	margin: 0px 10px 20px;
+	margin: 0px 20px 20px;
 }
 
 #breadcrumb ul {
@@ -226,7 +226,7 @@ body.contact #logo a{
 #primaryNavigation {
 	float: right;
 	margin-top: 31px;
-	margin-bottom: 27px;
+	margin-bottom: 25px;
 }
 
 #primaryNavigation ul {
@@ -529,54 +529,42 @@ body#pgHome #tertiary {
 	margin-left:10px;
 	min-height: 200px;
 	margin-bottom: 20px;
-	border:1px solid #E4E4E4;
+	border:0px solid #E4E4E4;
+	border-width: 0px 0px 1px 1px;
 	margin-bottom: 20px;
 	background: #fff url(../../img/bg_gradient01.jpg) repeat-x bottom left;
 	margin-right: 20px;
 }
 
-body#pgHome div#content {
-    background: none;
-    padding-top: 20px;
-}
 
 #hero {
-	margin-bottom: 30px;
-	background-color: #000;
+	margin: 0px 20px 20px;
+	border-bottom: 1px solid #E4E4E4;
 }
 
 #hero div.about {
 	float: left;
 	width: 310px;
-	padding-top: 20px;
 }
 #here div.about {}
 
-select {
-	margin-bottom: 0px;
-	font-size: 1.1em;
-}
-
-
 #hero div.about h2,
 #hero div.about p {
-	color: #fff;
+	margin-left: 0px;
 }
 
 #hero div.featured {
 	float: left;
-	width: 583px;
-	padding-top: 20px;
+	width: 593px;
 	padding-bottom: 20px;
 }
 #hero div.featured h2 {
-    color: #ffffff;
+   
     font-size: 1.3em;
     margin:0px;
 }
 
 #hero div.featured p {
-    color: #fff;
     margin: 0px;
 }
 
@@ -591,8 +579,8 @@ select {
 
 #hero div.featured div.carousel ul li {
 	margin: 0px;
-	background-color: #ffffff;
-	padding: 1px;
+	border: 1px solid #e4e4e4;
+	padding: 5px;
 }
 
 #hero div.featured div.carousel ul li img {

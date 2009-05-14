@@ -27,7 +27,7 @@
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="primary">
 					<h1>Heading 1</h1>
-					<h2>Heading 2</h1>
+					<h2>Heading 2</h2>
 					<p>Paragraph</p>
 				</div>
 			</div>

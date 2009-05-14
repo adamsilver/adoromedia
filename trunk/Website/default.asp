@@ -25,11 +25,16 @@
 				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
+				<%
+					var breadCrumbParts = [Adoro.Breadcrumb.home];
+				%>
+				<!--#include file="inc/breadcrumb.asp"-->
+				
 				<h1 class="off">Website design specialists</h1>
 				<div id="hero">
 					<div class="about">
 					
-					    <h2>A bit about us</h2>
+					    <h2>Expert website designers</h2>
 						<p>Established in the industry for 10 years, 
 						has given us a credible amount of experience.</p>
 						<p>We're very passionate about websites and want
@@ -66,7 +71,7 @@
 						better site for you.</p>
 					</div>
 					<div id="secondary">
-						<h2>Services</h2>
+						<h2><a href="services.asp">Services</a></h2>
 						<p>We have gained a lot of expertise across several
 						disciplines in website design and development:</p>
 						<ul>
