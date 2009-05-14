@@ -12,14 +12,8 @@
 		<title>Contact details, Adoro Media</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="contact, adoro media, adoro, email, website design." />
-		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />			
-		<link rel="stylesheet" href="<%=Adoro.URL%>css/site.css" type="text/css" />
+		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />
 		<!--#include file="inc/head_js.asp"-->
-		<script type="text/javascript" src="js/Adoro/Adoro.FormValidator.js"></script>
-		<script type="text/javascript" src="js/Adoro/Adoro.FormRules.js"></script>
-		<script type="text/javascript" src="js/Adoro/Adoro.FieldHighlight.js"></script>		
-		<script type="text/javascript" src="js/Site/Contact/Site.Contact.ContactForm.js"></script>
-		
 		<!--#include file="inc/head_css.asp"-->	
 		<!--#include file="inc/head_cssie.asp"-->
 	</head>

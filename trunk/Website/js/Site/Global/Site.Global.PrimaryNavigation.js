@@ -22,7 +22,7 @@ Site.Global.PrimaryNavigation = new (function() {
 	
 	function NavItem(item) {
 		var cssHoverClass = "hover";
-		var animationTime = 200;
+		var animationTime = 230;
 		
 		item.addEvent("mouseenter", itemMouseEnter);
 		item.addEvent("mouseleave", itemMouseLeave);
