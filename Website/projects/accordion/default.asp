@@ -12,17 +12,13 @@
 		<meta name="keywords" content="accordion, JavaScript, jQuery, component, script, adoro, media" />
 		<meta name="description" content="Accordion jQuery JavaScript component, by Adoro Media." />		
 		<!--#include file="../../inc/head_js.asp"-->	
-		<!--#include file="../../inc/head_css.asp"-->	
-		<!--#include file="../../inc/head_cssie.asp"-->
+		<!--include file="../../inc/head_css.asp"-->	
+		<!--include file="../../inc/head_cssie.asp"-->
 		<script type="text/javascript" src="../../js/Adoro/Adoro.Accordion.js"></script>
 		<script type="text/javascript" src="../../js/Site/Projects/Site.Projects.Accordion.js"></script>
 	</head>
 	<body class="projects">
 		<div id="container">
-			<div id="header">
-				<!--#include file="../../inc/logo.asp"-->
-				<!--#include file="../../inc/primaryNavigation.asp"-->
-			</div>
 			<div id="content">
 				<%var breadCrumbParts = [Adoro.Breadcrumb.home,Adoro.Breadcrumb.projects,	{text: "Accordion"}];%>
 				<!--#include file="../../inc/breadcrumb.asp"-->					

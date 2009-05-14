@@ -11,21 +11,14 @@
 		<!--#include file="../inc/head_other.asp"-->
 		<meta name="keywords" content="adoro, media, open, source, projects, home page, jquery, javascript, library, website, development" />
 		<meta name="description" content="Adoro Media projects home page. Open source projects using jQuery JavaScript library." />		
-		<!--#include file="../inc/head_js.asp"-->
+		<!--include file="../inc/projects/head_js.asp"-->
 		<script type="text/javascript" src="../js/Site/Projects/Site.Projects.Home.js"></script>
-		<!--#include file="../inc/head_css.asp"-->	
-		<!--#include file="../inc/head_cssie.asp"-->
+		<!--include file="../inc/projects/head_css.asp"-->	
+		<!--include file="../inc/projects/head_cssie.asp"-->
 	</head>
 	<body class="projects" id="pgProjectsHome">
 		<div id="container">
-			<div id="header">
-
-				<!--#include file="../inc/logo.asp"-->
-				<!--#include file="../inc/primaryNavigation.asp"-->
-			</div>
 			<div id="content">
-				<% var breadCrumbParts = [Adoro.Breadcrumb.home, {"text": "Projects"}]; %>
-				<!--#include file="../inc/breadcrumb.asp"-->
 				<h1>Projects</h1>
 				<p>Open source projects for the world.</p>
 	            <ul class="projects">

@@ -2,7 +2,7 @@ var Site = Site || {};
 Site.Global = Site.Global || {};
 Site.Global.Logo = new (function() {
 	addDOMReadyEvent(function(){
-		var animationTime = 100;
+		var animationTime = 150;
 		var logo = document.getElementById("logo");
 		var a = logo.getElementsByTagName("a")[0];
 		logo.addEvent("mouseenter", fadeOut);
