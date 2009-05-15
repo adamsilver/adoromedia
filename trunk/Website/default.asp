@@ -33,7 +33,10 @@
 						<div id="homePanels01">
 							<div id="homeAbout">
 								<h1>Expert website designers</h1>
-								<p><a class="action" href="#">Read more</a></p>
+								<p>We are a small digital consultancy specialising in delivering powerful results online.</p>
+								<p>We are passionate about improving user experiences.  Delivering beautifully designed, branded, 
+								accessible websites is our primary goal in any project.</p>
+								<p><a class="ation" href="#">Read more</a></p>
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
@@ -45,28 +48,28 @@
 					<div id="secondary">
 						<div id="homePanels02">
 							<div id="homeWant">
-								<h2>Want a website?</h2>
-								<p>Whether you need a brochure site, a CMS, or an e-commerce web shop, 
-								we can help you.</p>
-								<p>If your site is not being found by Google or it 
-								needs a fresh design then we would love to make a 
-								better site for you.</p>
+								<h2>Website?</h2>
+								<p>We research, design and implement your website from the ground, up.</p>
+								<p>We have built varying websites from online e-commerce websites,
+								to small brochure websites. All websites we have built are completely bespoke
+								to mee the client's specification.</p>
 							</div>
 							<div id="homeServices">
 								<h2><a href="services.asp">Services</a></h2>
-								<p>We have gained a lot of expertise across several
-								disciplines in website design and development:</p>
+								<p>We have lots of mini experts in website design, but here is a small list.</p>
 								<ul>
 									<li>User friendly website design</li>
-									<li>High-end user interaction design</li>
+									<li>High-quality user interaction design</li>
 									<li>Natural search engine optimisation</li>
 								</ul>
 							</div>
 							<div id="homeContact">
-								<h2>Contact us</h2>
+								<h2>Get in touch</h2>
 								<p>We can be contacted in several ways. Visit the 
 								<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
 								for further information.</p>
+								<p>Tel: +44 (0) 771 349 0316</p>
+								<p>Email: info@adoromedia.com</p>
 							</div>
 						</div>
 					</div>
