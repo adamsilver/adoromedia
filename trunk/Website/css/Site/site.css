@@ -584,6 +584,10 @@ div#homeServices p {
 	margin: 0px 0px 20px;
 }
 
+div#homeServices ul {
+	margin: 0px;
+}
+
 div#homeContact {
 	float: left;
 	width: 280px;
