@@ -7,7 +7,7 @@
 <% Adoro.siteSection = "adoro" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Our work, Expert website designers, Adoro Media Ltd</title>
+		<title>Portfolio, Expert website designers, Adoro Media, London, UK</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="adoro, media, portfolio, websites" />
 		<meta name="description" content="Adoro Media website design and development portfolio." />			

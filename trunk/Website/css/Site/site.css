@@ -464,9 +464,9 @@ div.action input.reset {
 }
 
 div.action input.submit {
-	background-color: #1D2B33;
+	background-color: #000;
 	font-size: 1.1em;
-	border: 1px solid #eee;
+	border: 1px solid #000;
 	color: #fff;
 	padding: 5px;
 	font-weight: bold;
