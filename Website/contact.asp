@@ -9,7 +9,7 @@
 <% Adoro.siteSection = "adoro" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>Contact details, Adoro Media</title>
+		<title>Contact, Expert website designers, Adoro Media, London, UK</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="contact, adoro media, adoro, email, website design." />
 		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />
@@ -77,11 +77,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					<h2>Or also</h2>
-					<h3>Telephone</h3>
-					<p>07713490316</p>
-					<h3>Email address</h3>
-					<p>info@adoromedia.com</p>
+					<h2>Alternatively</h2>
+					<p>Tel: +44 (0) 771 349 0316</p>
+					<p>Email: info@adoromedia.com</p>
 				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->

@@ -7,7 +7,7 @@
 <% Adoro.siteSection = "about" %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<title>About, Adoro Media</title>
+		<title>About, Expert website designers, Adoro Media, London, UK</title>
 		<!--#include file="inc/head_other.asp"-->
 		<meta name="keywords" content="contact, adoro media, adoro, email, website design." />
 		<meta name="description" content="Adoro Media contact details. Email, phone or send a message." />			
@@ -28,8 +28,16 @@
 				<div id="primary">
 					<h1>About us</h1>
 					<h2>Coming up to 10 years</h2>
-					<p>Paragraph</p>
+					<p>Not to gloat or anything but we have been in the business for almost a decade. This shows
+					that we have a great deal of passion for building websites. We have a very close relationship
+					with each of our clients, and this really shows in the end. </p>
+					<p>When a website is launched we are always happy with the job, 
+					and more importantly, so are our clients.</p>
 					<h2>Affordable, high quality website design</h2>
+					<p>Whilst we deliver affordable websites, we also deliver high quality websites. We manage to do 
+					this because we keep costs down by being a small agency and we don't advertise. Most of the projects 
+					we have worked on have come to us by word of mouth recommendation.</p>
+					<p>Read our <a href="portfolio.asp">testimonials</a> for further information.</p>
 				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->
