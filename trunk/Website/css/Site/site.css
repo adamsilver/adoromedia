@@ -69,6 +69,17 @@ a:hover, a:focus, a:active {
 	background-color: #000000;
 }
 
+a.action, a.action:link, a.action:visited {
+	background-color: #6CA714;
+	color: #fff;
+	padding: 10px;
+}
+
+a:hover, a:focus, a:active {
+	color: #ffffff;
+	background-color: #000000;
+}
+
 .hide {
 	display: none;
 }
@@ -93,15 +104,17 @@ div#header:after,
 div#content:after,
 #breadcrumb ul:after,
 div.action:after,
-#hero:after,
 #sections:after,
+div#homePanels01:after,
+div#homePanels02:after,
 div.field:after,
 div.field div.checkboxes div.input:after,
 div.field div.radios div.input:after,
 #horizontalAccordion:after,
 ul.projects:after,
 div#dropDownMenu ul:after,
-div#menu ul:after  {
+div#menu ul:after,
+div#homePanels02:after  {
 	clear:both;
 	content:".";
 	display:block;
@@ -326,8 +339,8 @@ body.projects div#content #secondary {
 
 #footer {
 	border-top: 1px solid #E4E4E4;
-	padding: 10px;
-	margin: 0px 10px;
+	padding: 10px 0px;
+	margin: 0px 20px;
 }
 
 #footer p {
@@ -495,96 +508,89 @@ div.action input.submit {
 }
 
 /******************************************************************
-* Home page
+* Home page panels 1
 ******************************************************************/
 
-body#pgHome #primary {
+div#homePanels01 {
+	margin-bottom: 20px;
+}
+
+div#homeAbout {
+	border-bottom: 1px solid #e4e4e4;
 	float: left;
-	width: 298px;
-	padding-top: 20px;
+	margin-left: 20px;
+	width: 300px;
+	min-height: 220px;
+}
+
+div#homeAbout h1 {
+	margin: 0px 0px 20px 0px;
+	font-size: 2.4em;
+}
+
+div#homeAbout p {
+	margin: 0px;
+}
+
+div#homeFeatured {
+	float: left;
+	margin-right: 20px;
+	border-bottom: 1px solid #e4e4e4;
+	margin-left: 20px;
+	width: 600px;
+	min-height: 220px;
+}
+
+/******************************************************************
+* Home page panels 1
+******************************************************************/
+
+div#homePanels02 {
+	
+}
+
+div#homeWant {
+	float: left;
+	width: 300px;
 	margin-left: 20px;
 	margin-right: 10px;
-	background-color: #6CA714;
-	min-height: 200px;
-	border:1px solid #E4E4E4;
-	margin-bottom: 20px;
-	background: #fff url(../../img/bg_gradient01.jpg) repeat-x bottom left;
 }
 
-body#pgHome #secondary {
+div#homeWant h2 {
+	margin: 0px 0px 20px 0px;
+}
+
+div#homeWant p {
+	margin: 0px 0px 20px;
+}
+
+div#homeServices {
 	float: left;
-	width: 298px;
-	padding-top: 20px;
-	background-color: #0099FF;
-	min-height: 200px;
-	border:1px solid #E4E4E4;
-	margin-bottom: 20px;
-	background: #fff url(../../img/bg_gradient01.jpg) repeat-x bottom left;
+	width: 300px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-body#pgHome #tertiary {
+div#homeServices h2 {
+	margin: 0px 0px 20px 0px;
+}
+
+div#homeServices p {
+	margin: 0px 0px 20px;
+}
+
+div#homeContact {
 	float: left;
-	width: 298px;
-	padding-top: 20px;
-	margin-left:10px;
-	min-height: 200px;
-	margin-bottom: 20px;
-	border:0px solid #E4E4E4;
-	border-width: 0px 0px 1px 1px;
-	margin-bottom: 20px;
-	background: #fff url(../../img/bg_gradient01.jpg) repeat-x bottom left;
-	margin-right: 20px;
+	width: 280px;
+	margin-left: 10px;
 }
 
-
-#hero {
-	margin: 0px 20px 20px;
-	border-bottom: 1px solid #E4E4E4;
+div#homeContact h2 {
+	margin: 0px 0px 20px 0px;
 }
 
-#hero div.about {
-	float: left;
-	width: 310px;
-}
-#here div.about {}
-
-#hero div.about h2,
-#hero div.about p {
-	margin-left: 0px;
-}
-
-#hero div.featured {
-	float: left;
-	width: 593px;
-	padding-bottom: 20px;
-}
-#hero div.featured h2 {
-   
-    font-size: 1.3em;
-    margin:0px;
-}
-
-#hero div.featured p {
-    margin: 0px;
-}
-
-#hero div.featured div.carousel {
-    margin-bottom: 10px;
-}
-
-#hero div.featured div.carousel ul {
-	margin: 0px;
-	list-style: none;
-}
-
-#hero div.featured div.carousel ul li {
-	margin: 0px;
-	border: 1px solid #e4e4e4;
-	padding: 5px;
-}
-
-#hero div.featured div.carousel ul li img {
-	display: block;
+div#homeContact p {
+	margin: 0px 0px 20px;
 }
 
 /******************************************************************
