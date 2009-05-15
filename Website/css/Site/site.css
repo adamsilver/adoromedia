@@ -520,7 +520,7 @@ div#homeAbout {
 	float: left;
 	margin-left: 20px;
 	width: 300px;
-	min-height: 220px;
+	min-height: 230px;
 }
 
 div#homeAbout h1 {
@@ -529,7 +529,7 @@ div#homeAbout h1 {
 }
 
 div#homeAbout p {
-	margin: 0px;
+	margin: 0px 0px 20px 0px;
 }
 
 div#homeFeatured {
@@ -538,7 +538,11 @@ div#homeFeatured {
 	border-bottom: 1px solid #e4e4e4;
 	margin-left: 20px;
 	width: 600px;
-	min-height: 220px;
+	min-height: 230px;
+}
+div#homeFeatured div.image {
+	border:1px solid #e4e4e4;
+	padding: 4px;
 }
 
 /******************************************************************

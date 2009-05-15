@@ -29,6 +29,7 @@
 					<h1>About us</h1>
 					<h2>Coming up to 10 years</h2>
 					<p>Paragraph</p>
+					<h2>Affordable, high quality website design</h2>
 				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->
