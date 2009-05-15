@@ -326,13 +326,14 @@ body.contact #logo a{
 	padding-bottom: 10px;
 }
 
-
-body.projects div#content #primary {
+body.about div#content #primary,
+body.services div#content #primary {
 	float: left;
 	width: 640px;
 }
 
-body.projects div#content #secondary {
+body.about div#content #secondary,
+body.services div#content #secondary {
 	float: left;
 	width: 320px;
 }
