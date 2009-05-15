@@ -25,66 +25,50 @@
 				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<%
-					var breadCrumbParts = [Adoro.Breadcrumb.home];
-				%>
+				<% var breadCrumbParts = [Adoro.Breadcrumb.home]; %>
 				<!--#include file="inc/breadcrumb.asp"-->
-				
-				<h1 class="off">Website design specialists</h1>
-				<div id="hero">
-					<div class="about">
-					
-					    <h2>Expert website designers</h2>
-						<p>Established in the industry for 10 years, 
-						has given us a credible amount of experience.</p>
-						<p>We're very passionate about websites and want
-						to create the best online presence for you and
-						your business, charity or personal website.</p>
-					
-						
-					</div>
-					<div class="featured">
-					    
-					    <div class="carousel">
-						    <div class="clip">
-							    <ul>
-								    <li>
-    								    
-								        <a href="http://www.dgretro.com"><img src="img/portfolio/dgretro.jpg" alt="David Goodman Retro Collectables" /></a>
-								    </li>
-							    </ul>
-						    </div>
-					    </div>
-					    <p class="featured">Featured: <strong>David Goodman Retro Collectables</strong></p>
-						<!--<p>Launched in spring 2009, this website application 
-						was built using Wordpress 2.7.1 for complete content management
-						and the functionality to blog.</p>-->
-					</div>
-				</div>
+			
 				<div id="sections">
 					<div id="primary">
-						<h2>Want a website?</h2>
-						<p>Whether you need a brochure site, a CMS, or an e-commerce web shop, 
-						we can help you.</p>
-						<p>If your site is not being found by Google or it 
-						needs a fresh design then we would love to make a 
-						better site for you.</p>
+						<div id="homePanels01">
+							<div id="homeAbout">
+								<h1>Expert website designers</h1>
+								<p><a class="action" href="#">Read more</a></p>
+							</div>
+							<div id="homeFeatured">
+								<div class="image">
+									<a href="http://www.dgretro.com"><img src="img/portfolio/dgretro.jpg" alt="David Goodman Retro Collectables" /></a>
+								</div>	
+							</div>
+						</div>
 					</div>
 					<div id="secondary">
-						<h2><a href="services.asp">Services</a></h2>
-						<p>We have gained a lot of expertise across several
-						disciplines in website design and development:</p>
-						<ul>
-							<li>User friendly website design</li>
-							<li>High-end user interaction design</li>
-							<li>Natural search engine optimisation</li>
-						</ul>
-					</div>
-					<div id="tertiary">
-						<h2>Contact us</h2>
-						<p>We can be contacted in several ways. Visit the 
-						<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
-						for further information.</p>
+						<div id="homePanels02">
+							<div id="homeWant">
+								<h2>Want a website?</h2>
+								<p>Whether you need a brochure site, a CMS, or an e-commerce web shop, 
+								we can help you.</p>
+								<p>If your site is not being found by Google or it 
+								needs a fresh design then we would love to make a 
+								better site for you.</p>
+							</div>
+							<div id="homeServices">
+								<h2><a href="services.asp">Services</a></h2>
+								<p>We have gained a lot of expertise across several
+								disciplines in website design and development:</p>
+								<ul>
+									<li>User friendly website design</li>
+									<li>High-end user interaction design</li>
+									<li>Natural search engine optimisation</li>
+								</ul>
+							</div>
+							<div id="homeContact">
+								<h2>Contact us</h2>
+								<p>We can be contacted in several ways. Visit the 
+								<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
+								for further information.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

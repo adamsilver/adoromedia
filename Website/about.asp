@@ -26,8 +26,8 @@
 				<% var breadCrumbParts = [Adoro.Breadcrumb.home,{text: "About"}]; %>
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="primary">
-					<h1>Heading 1</h1>
-					<h2>Heading 2</h2>
+					<h1>About us</h1>
+					<h2>Coming up to 10 years</h2>
 					<p>Paragraph</p>
 				</div>
 			</div>
