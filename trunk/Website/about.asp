@@ -27,17 +27,28 @@
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="primary">
 					<h1>About us</h1>
-					<h2>Coming up to 10 years</h2>
-					<p>Not to gloat or anything but we have been in the business for almost a decade. This shows
-					that we have a great deal of passion for building websites. We have a very close relationship
-					with each of our clients, and this really shows in the end. </p>
-					<p>When a website is launched we are always happy with the job, 
-					and more importantly, so are our clients.</p>
-					<h2>Affordable, high quality website design</h2>
-					<p>Whilst we deliver affordable websites, we also deliver high quality websites. We manage to do 
-					this because we keep costs down by being a small agency and we don't advertise. Most of the projects 
-					we have worked on have come to us by word of mouth recommendation.</p>
-					<p>Read our <a href="portfolio.asp">testimonials</a> for further information.</p>
+					
+					<h2>Introducing Adoro Media</h2>
+					
+					<p>Adoro Media are a collective of expert website designers and developers. We
+					are a fresh thinking, highly energetic, digital agency, based in London. We are
+					committed to reaching new heights, in the digital arena, by providing creative
+					and innovative solutions that work.</p>
+										
+					<p>We have been established in the business for almost a decade and our passion
+					for bespoke website design speaks for itself.</p>
+					
+					
+					<h2>Our team, our approach</h2>
+					<p>Our dynamic, engaging and vastly experienced team thrive on building strong
+					client relationships, paying a very high level of attention to detail in each
+					and every project. We go out of our way to deliver quality results but at a
+					very affordable value. We are flexible in our approach so we can adapt to your
+					unique requirements.</p>
+							
+				
+				</div>
+				<div id="secondary">
 				</div>
 			</div>
 			<!--#include file="inc/footer.asp"-->

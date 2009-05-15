@@ -33,10 +33,11 @@
 						<div id="homePanels01">
 							<div id="homeAbout">
 								<h1>Expert website designers</h1>
-								<p>We are a small digital consultancy specialising in delivering powerful results online.</p>
-								<p>We are passionate about improving user experiences.  Delivering beautifully designed, branded, 
-								accessible websites is our primary goal in any project.</p>
-								<p><a class="ation" href="#">Read more</a></p>
+								<p>We are a collective of expert website designers and developers. We are a 
+								fresh thinking, highly energetic, digital agency, based in London. We are committed to 
+								reaching new heights, in the digital arena, by providing creative and innovative solutions 
+								that work.</p>
+								<p><a class="ation" href="about.asp">Read more</a></p>
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
@@ -56,7 +57,7 @@
 							</div>
 							<div id="homeServices">
 								<h2><a href="services.asp">Services</a></h2>
-								<p>We have lots of mini experts in website design, but here is a small list.</p>
+								<p>Some our expertise in summary:</p>
 								<ul>
 									<li>User friendly website design</li>
 									<li>High-quality user interaction design</li>
