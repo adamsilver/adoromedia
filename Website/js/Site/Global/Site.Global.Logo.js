@@ -29,7 +29,8 @@ Site.Global.Logo = new (function() {
 		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeInToOriginal);
 		
 		function fadeInToOriginal(){
-			
+			a.setStyle("backgroundColor", originalBackgroundColour);
+			return;
 			a.animate({"backgroundColor": {
 				to: J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()),
 				time: animationTime
@@ -51,6 +52,8 @@ Site.Global.Logo = new (function() {
 		Site.Global.CustomEvents.navItemMouseLeft.listen(fadeHeaderToOriginal);
 		
 		function fadeHeaderToOriginal() {
+			document.body.setStyle("border-top-color", originalBackgroundColour);
+			return;
 			document.body.animate({"border-top-color": {
 				to: J2.Core.CSSColor.prototype.create(originalBackgroundColour.getHex()),
 				time: animationTime
