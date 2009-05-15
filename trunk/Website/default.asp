@@ -51,8 +51,8 @@
 								<h2>Website?</h2>
 								<p>We research, design and implement your website from the ground, up.</p>
 								<p>We have built varying websites from online e-commerce websites,
-								to small brochure websites. All websites we have built are completely bespoke
-								to mee the client's specification.</p>
+								to small brochure websites. All websites we have created are completely bespoke
+								to meet the client's specification.</p>
 							</div>
 							<div id="homeServices">
 								<h2><a href="services.asp">Services</a></h2>
