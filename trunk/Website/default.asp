@@ -42,7 +42,8 @@
 							<div id="homeFeatured">
 								<div class="image">
 									<a href="http://www.dgretro.com"><img src="img/portfolio/dgretro.jpg" alt="David Goodman Retro Collectables" /></a>
-								</div>	
+								</div>
+								<p>Featured work: <a href="http://www.dgretro.com">DG Retro Collectables</a> </p>
 							</div>
 						</div>
 					</div>
