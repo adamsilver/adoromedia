@@ -57,7 +57,7 @@
 									to small brochure websites. All websites we have created are completely bespoke
 									to meet the client's specification.</p>
 								</div>
-								<p class="action"><a href="about.asp">Find out more</a></p>
+								<p class="action"><a href="portfolio.asp">View recent work</a></p>
 							</div>
 							<div id="homeServices">
 								<h2>Services</h2>
@@ -69,7 +69,7 @@
 										<li>Natural search engine optimisation</li>
 									</ul>
 								</div>
-								<p class="action"><a href="about.asp">In detail</a></p>
+								<p class="action"><a href="services.asp">In detail</a></p>
 							</div>
 							<div id="homeContact">
 								<h2>Get in touch</h2>
@@ -80,7 +80,7 @@
 									<p>Tel: +44 (0) 771 349 0316</p>
 									<p>Email: info@adoromedia.com</p>
 								</div>
-								<p class="action"><a href="about.asp">Contact form</a></p>
+								<p class="action"><a href="contact.asp">Contact form</a></p>
 							</div>
 						</div>
 					</div>
