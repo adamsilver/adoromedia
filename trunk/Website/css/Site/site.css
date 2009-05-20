@@ -172,7 +172,7 @@ ul li ul li,ol li ol li {
 	margin: 0px 20px 20px;
 }
 
-#pnHome #breadcrumb {
+#pgHome #breadcrumb {
 	margin-bottom: 0px;
 }
 
@@ -526,6 +526,7 @@ div#homePanels01 {
 div#homeAbout {
 	float: left;
 	width: 300px;
+	padding-top: 20px;
 }
 
 div#homeAbout h1 {
@@ -548,8 +549,9 @@ div#homeFeatured {
 }
 div#homeFeatured div.image {
 	border:0px solid #e4e4e4;
-	padding: 4px;
+	padding: 0px 4px;
 	margin-bottom: 10px;
+	text-align: right;
 }
 
 div#homeFeatured p {
@@ -564,6 +566,10 @@ div#homeFeatured p {
 
 div#homePanels02 {
 	
+}
+
+div#homePanels02 div.content {
+	min-height: 140px;
 }
 
 div#homeWant {
