@@ -148,7 +148,7 @@ p {
 }
 
 ul, ol {
-	margin: 0px 20px 10px;
+	margin: 0px 20px 20px;
 	list-style: square;
 }
 
@@ -170,6 +170,10 @@ ul li ul li,ol li ol li {
 	padding: 12px 0px;
 	border-bottom: 1px solid #E4E4E4;
 	margin: 0px 20px 20px;
+}
+
+#pnHome #breadcrumb {
+	margin-bottom: 0px;
 }
 
 #breadcrumb ul {
@@ -514,13 +518,13 @@ div.action input.submit {
 
 div#homePanels01 {
 	padding-bottom: 10px;
-	margin-bottom: 20px;
 	border-bottom: 1px solid #e4e4e4;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 div#homeAbout {
 	float: left;
-	margin-left: 20px;
 	width: 300px;
 }
 
@@ -533,9 +537,12 @@ div#homeAbout p {
 	margin: 0px 0px 20px 0px;
 }
 
+div#homeAbout p.action a {
+	color: #FF0099;
+}
+
 div#homeFeatured {
 	float: left;
-	margin-right: 20px;
 	margin-left: 20px;
 	width: 600px;
 }
@@ -562,8 +569,10 @@ div#homePanels02 {
 div#homeWant {
 	float: left;
 	width: 300px;
+	padding-top: 20px;
 	margin-left: 20px;
 	margin-right: 10px;
+	background: url(../../img/bg_test1.gif) top right no-repeat;
 }
 
 div#homeWant h2 {
@@ -574,10 +583,16 @@ div#homeWant p {
 	margin: 0px 0px 20px;
 }
 
+div#homeWant p.action a {
+	color: #FF6600;
+}
+
 div#homeServices {
 	float: left;
+	padding-top: 20px;
 	width: 300px;
 	margin-left: 10px;
+	background: url(../../img/bg_test1.gif) top right no-repeat;
 	margin-right: 10px;
 }
 
@@ -590,11 +605,17 @@ div#homeServices p {
 }
 
 div#homeServices ul {
-	margin: 0px;
+	margin: 0px 0px 20px;
+}
+
+div#homeServices p.action a {
+	color: #0099FF;
 }
 
 div#homeContact {
 	float: left;
+	background: url(../../img/bg_test1.gif) top right no-repeat;
+	padding-top: 20px;
 	width: 280px;
 	margin-left: 10px;
 }
@@ -605,6 +626,10 @@ div#homeContact h2 {
 
 div#homeContact p {
 	margin: 0px 0px 20px;
+}
+
+div#homeContact p.action a {
+	color: #FFFF33;
 }
 
 /******************************************************************
@@ -692,3 +717,15 @@ ul.portfolio li p {
     font-size: 1em;
 }
 
+p.action {
+	overflow: hidden;
+	font-size: 1.1em;
+}
+
+p.action a {
+	float: left;
+	padding: 3px 5px;
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+}

@@ -37,7 +37,7 @@
 								fresh thinking, highly energetic, digital agency, based in London. We are committed to 
 								reaching new heights, in the digital arena, by providing creative and innovative solutions 
 								that work.</p>
-								<p><a class="ation" href="about.asp">Read more</a></p>
+								<p class="action"><a href="about.asp">Read more</a></p>
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
@@ -55,15 +55,17 @@
 								<p>We have built varying websites from online e-commerce websites,
 								to small brochure websites. All websites we have created are completely bespoke
 								to meet the client's specification.</p>
+								<p class="action"><a href="about.asp">Read more</a></p>
 							</div>
 							<div id="homeServices">
-								<h2><a href="services.asp">Services</a></h2>
+								<h2>Services</h2>
 								<p>Some our expertise in summary:</p>
 								<ul>
 									<li>User friendly website design</li>
 									<li>High-quality user interaction design</li>
 									<li>Natural search engine optimisation</li>
 								</ul>
+								<p class="action"><a href="about.asp">Read more</a></p>
 							</div>
 							<div id="homeContact">
 								<h2>Get in touch</h2>
@@ -72,6 +74,7 @@
 								for further information.</p>
 								<p>Tel: +44 (0) 771 349 0316</p>
 								<p>Email: info@adoromedia.com</p>
+								<p class="action"><a href="about.asp">Read more</a></p>
 							</div>
 						</div>
 					</div>
