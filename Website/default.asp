@@ -37,7 +37,7 @@
 								fresh thinking, highly energetic, digital agency, based in London. We are committed to 
 								reaching new heights, in the digital arena, by providing creative and innovative solutions 
 								that work.</p>
-								<p class="action"><a href="about.asp">Read more</a></p>
+								<p class="action"><a href="about.asp">Find out more</a></p>
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
@@ -51,30 +51,36 @@
 						<div id="homePanels02">
 							<div id="homeWant">
 								<h2>Website?</h2>
-								<p>We research, design and implement your website from the ground, up.</p>
-								<p>We have built varying websites from online e-commerce websites,
-								to small brochure websites. All websites we have created are completely bespoke
-								to meet the client's specification.</p>
-								<p class="action"><a href="about.asp">Read more</a></p>
+								<div class="content">
+									<p>We research, design and implement your website from the ground, up.</p>
+									<p>We have built varying websites from online e-commerce websites,
+									to small brochure websites. All websites we have created are completely bespoke
+									to meet the client's specification.</p>
+								</div>
+								<p class="action"><a href="about.asp">Find out more</a></p>
 							</div>
 							<div id="homeServices">
 								<h2>Services</h2>
-								<p>Some our expertise in summary:</p>
-								<ul>
-									<li>User friendly website design</li>
-									<li>High-quality user interaction design</li>
-									<li>Natural search engine optimisation</li>
-								</ul>
-								<p class="action"><a href="about.asp">Read more</a></p>
+								<div class="content">
+									<p>Some our expertise in summary:</p>
+									<ul>
+										<li>User friendly website design</li>
+										<li>High-quality user interaction design</li>
+										<li>Natural search engine optimisation</li>
+									</ul>
+								</div>
+								<p class="action"><a href="about.asp">In detail</a></p>
 							</div>
 							<div id="homeContact">
 								<h2>Get in touch</h2>
-								<p>We can be contacted in several ways. Visit the 
-								<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
-								for further information.</p>
-								<p>Tel: +44 (0) 771 349 0316</p>
-								<p>Email: info@adoromedia.com</p>
-								<p class="action"><a href="about.asp">Read more</a></p>
+								<div class="content">
+									<p>We can be contacted in several ways. Visit the 
+									<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
+									for further information.</p>
+									<p>Tel: +44 (0) 771 349 0316</p>
+									<p>Email: info@adoromedia.com</p>
+								</div>
+								<p class="action"><a href="about.asp">Contact form</a></p>
 							</div>
 						</div>
 					</div>
