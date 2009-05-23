@@ -102,7 +102,7 @@
 						</div>
 						<div id="lightbox-loading">
 							<a href="#" id="lightbox-loading-link">
-								<img src="../img/lightbox/lightbox-ico-loading.gif">
+								<img src="../images/lightbox-ico-loading.gif">
 							</a>
 						</div>
 					</div>
@@ -115,7 +115,7 @@
 						</div>
 						<div id="lightbox-secNav">
 							<a href="#" id="lightbox-secNav-btnClose">
-								<img src="../img/lightbox/lightbox-btn-close.gif">
+								<img src="../images/lightbox-btn-close.gif">
 							</a>
 						</div>
 					</div>
