@@ -64,6 +64,8 @@ p {
 
 #footer {
 	clear: both;
+	padding-top: 20px;
+	margin-right: 80px;
 }
 
 #footer p {
