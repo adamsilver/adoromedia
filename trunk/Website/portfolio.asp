@@ -32,10 +32,10 @@
 					
 				    <ul class="portfolio">
 					    <li class="work">
-						    <h2><a href="http://www.lawrencecodling.com">Lawrence Codling, Graffitti artist</a></h2>		
+						    <h2><a href="http://www.lawrencecodling.com">Lawrence Codling, Graffiti Artist</a></h2>		
 						    <div class="image">
 							    <a href="http://www.lawrencecodling.com">
-								    <img src="img/portfolio/lcodling.jpg" alt="Lawrence Codling, Graffitti artist" />
+								    <img src="img/portfolio/lcodling.jpg" alt="Lawrence Codling, Graffiti Artist" />
 							    </a>
 						    </div>
 					    </li>					

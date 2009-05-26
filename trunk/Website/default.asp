@@ -41,9 +41,9 @@
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
-									<a href="http://www.dgretro.com"><img src="img/portfolio/dgretro.jpg" alt="David Goodman Retro Collectables" /></a>
+									<a href="http://www.lawrencecodling.com"><img src="img/portfolio/lcodling.jpg" alt="Lawrence Codling, Graffiti Artist" /></a>
 								</div>
-								<p>Featured work: <a href="http://www.dgretro.com">DG Retro Collectables</a> </p>
+								<p>Featured work: <a href="http://www.lawrencecodling.com">Lawrence Codling, Graffiti Artist</a> </p>
 							</div>
 						</div>
 					</div>
