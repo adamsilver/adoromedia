@@ -544,3 +544,32 @@ Adoro.Calendar = function() {
 		return false;
 	}
 }
+
+
+
+
+
+
+
+/*
+
+var options = {
+appendTo: domNode,
+calendarCssClass: 'string',
+selectDay: domNode,
+selectMonth: domNode,
+selectYear: domNode,
+textInput: domNode
+}
+
+var cal = new Adoro.Calendar(options);
+
+cal.getDate();
+
+cal.setDate(dateObject);
+
+cal.show();
+
+cal.hide();
+
+*/
