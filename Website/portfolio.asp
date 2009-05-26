@@ -32,6 +32,14 @@
 					
 				    <ul class="portfolio">
 					    <li class="work">
+						    <h2><a href="http://www.lawrencecodling.com">Lawrence Codling, Graffitti artist</a></h2>		
+						    <div class="image">
+							    <a href="http://www.lawrencecodling.com">
+								    <img src="img/portfolio/lcodling.jpg" alt="Lawrence Codling, Graffitti artist" />
+							    </a>
+						    </div>
+					    </li>					
+					    <li class="work">
 						    <h2><a href="http://www.jsquaredjavascript.com">JSquared JavaScript Library</a></h2>		
 						    <div class="image">
 							    <a href="http://www.jsquaredjavascript.com">
