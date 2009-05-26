@@ -5,6 +5,7 @@
 <!--#include file="inc/Adoro.asp"-->
 <% Adoro.pageName = "services"; %>
 <% Adoro.siteSection = "services" %>
+<% Adoro.breadCrumbParts = [Adoro.Breadcrumb.home, {text: "Services"}];%>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<!-- google site map -->
@@ -24,7 +25,6 @@
 				<!--#include file="inc/primaryNavigation.asp"-->	
 			</div>
 			<div id="content">
-				<% var breadCrumbParts = [Adoro.Breadcrumb.home, {text: "Services"}];%>
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="sections">
 					<div id="primary">
