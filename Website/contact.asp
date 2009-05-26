@@ -7,6 +7,7 @@
 <!--#include file="inc/Adoro.Contact.asp"-->
 <% Adoro.pageName = "contact"; %>
 <% Adoro.siteSection = "adoro" %>
+<% Adoro.breadCrumbParts = [Adoro.Breadcrumb.home,{text: "Contact details"}];%>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>Contact, Expert website designers, Adoro Media, London, UK</title>
@@ -24,11 +25,7 @@
 				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<%
-					var breadCrumbParts = [Adoro.Breadcrumb.home,{
-						text: "Contact details"
-					}];
-				%>
+				
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="primary">
 					<div id="contactFormPanel">

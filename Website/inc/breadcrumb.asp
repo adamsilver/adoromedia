@@ -2,15 +2,15 @@
 	<p>You are here:</p>
 	<ul>
 		<%
-			for(var i = 0; i < breadCrumbParts.length; i++) {
-				if(breadCrumbParts[i].href && breadCrumbParts[i].href !=="") {
+			for(var i = 0; i < Adoro.breadCrumbParts.length; i++) {
+				if(Adoro.breadCrumbParts[i].href && Adoro.breadCrumbParts[i].href !=="") {
 					%>
-						<li><a href="<%= breadCrumbParts[i].href %>"><%=breadCrumbParts[i].text%></a></li>
+						<li><a href="<%= Adoro.breadCrumbParts[i].href %>"><%=Adoro.breadCrumbParts[i].text%></a></li>
 					<%
 				}
 				else {
 					%>
-						<li><strong><%=breadCrumbParts[i].text%></strong></li>
+						<li><strong><%=Adoro.breadCrumbParts[i].text%></strong></li>
 					<%
 				}
 			}

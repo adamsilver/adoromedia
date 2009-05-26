@@ -4,7 +4,8 @@
 <%Response.Buffer=true%>
 <!--#include file="inc/Adoro.asp"-->
 <% Adoro.pageName = "home"; %>
-<% Adoro.siteSection = "adoro" %>
+<% Adoro.siteSection = "home" %>
+<% Adoro.breadCrumbParts = [Adoro.Breadcrumb.home]; %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<!-- google site map -->
@@ -18,14 +19,14 @@
 		<!--#include file="inc/head_cssie.asp"-->
 		
 	</head>
-	<body id="pgHome">
+	<body id="pgHome" class="home">
 		<div id="container">
 			<div id="header">
 				<!--#include file="inc/logo.asp"-->
 				<!--#include file="inc/primaryNavigation.asp"-->
 			</div>
 			<div id="content">
-				<% var breadCrumbParts = [Adoro.Breadcrumb.home]; %>
+				
 				<!--#include file="inc/breadcrumb.asp"-->
 			
 				<div id="sections">

@@ -5,7 +5,7 @@
 <!--#include file="inc/Adoro.asp"-->
 <% Adoro.pageName = "about"; %>
 <% Adoro.siteSection = "about" %>
-<% var breadCrumbParts = [Adoro.Breadcrumb.home,{text: "About"}]; %>
+<% Adoro.breadCrumbParts = [Adoro.Breadcrumb.home,{text: "About"}]; %>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>About, Expert website designers, Adoro Media, London, UK</title>
