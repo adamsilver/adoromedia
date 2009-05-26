@@ -61,3 +61,11 @@ p {
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
+
+#footer {
+	clear: both;
+}
+
+#footer p {
+	text-align: right;
+}
