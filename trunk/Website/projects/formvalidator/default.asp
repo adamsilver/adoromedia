@@ -19,7 +19,7 @@
 		<script type="text/javascript" src="<%=Adoro.URL%>/js/Adoro/Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="<%=Adoro.URL%>/js/Adoro/Adoro.FormValidator.js"></script>
 		<script type="text/javascript" src="<%=Adoro.URL%>/js/Site/Projects/Site.Projects.FormValidator.js"></script>
-		<link rel="stylesheet" href="<%=Adoro.URL%>/css/Site/projects.css" type="text/css" />	
+		<link rel="stylesheet" href="<%=Adoro.URL%>/css/Site/Projects/formvalidator.css" type="text/css" />	
 	</head>
 	<body class="projects">
 		<div id="container">
