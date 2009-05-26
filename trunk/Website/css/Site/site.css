@@ -592,7 +592,7 @@ div#homeFeatured {
 }
 div#homeFeatured div.image {
 	border:0px solid #e4e4e4;
-	padding: 0px 4px;
+	padding: 0px;
 	margin-bottom: 10px;
 	text-align: right;
 }
