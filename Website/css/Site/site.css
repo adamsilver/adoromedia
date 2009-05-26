@@ -240,6 +240,10 @@ body.contact #logo a{
 	background-color: #FFFF33;
 }
 
+/******************************************************************
+* Primary navigation
+******************************************************************/
+
 #primaryNavigation {
 	float: right;
 	margin-top: 31px;
@@ -324,6 +328,45 @@ body.contact #logo a{
 	color: #FFFF33;
 }
 #primaryNavigation ul li#pnContact a.selected {border-color: #FFFF33;}
+
+/******************************************************************
+* Secondary navigation
+******************************************************************/
+
+#secondaryNavigation {}
+
+#secondaryNavigation ul {
+	list-style: none;
+	border-top: 1px solid #E4E4E4;
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+}
+
+#secondaryNavigation ul li {
+	margin: 0px;
+}
+
+#secondaryNavigation ul li a,
+#secondaryNavigation ul li a:link,
+#secondaryNavigation ul li a:visited {
+	display: block;
+	padding: 10px 10px 10px 28px;
+	border-bottom: 1px solid #E4E4E4;
+	background: url(../../img/arrow01.gif) 10px 13px no-repeat;
+}
+
+#secondaryNavigation ul li a:hover,
+#secondaryNavigation ul li a:active,
+#secondaryNavigation ul li a:focus,
+#secondaryNavigation ul li a.selected {
+	background-color: #EEE;
+	color:#1D2B33;
+}
+
+
+/******************************************************************
+* Content
+******************************************************************/
 
 #content {
 	background-color: #fff;
