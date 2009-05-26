@@ -107,7 +107,12 @@
 							special edge via their website.</p>
 							<p>Website:  <a href="http://www.pnp-decorations.co.uk">http://www.pnp-decorations.co.uk</a></p>
 						</div>
-			        </div>							      
+						<div class="testimonial">
+							<h3>Lawrence Codling: Artist</h3>
+							<p>Something here</p>
+							<p>Website:  <a href="http://www.lawrencecodling.co.uk">http://www.lawrencecodling.co.uk</a></p>
+						</div>			       
+					</div>							      
 			    </div>    
 			</div>
 			<!--#include file="inc/footer.asp"-->
