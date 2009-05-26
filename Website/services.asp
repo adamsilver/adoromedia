@@ -57,7 +57,7 @@
 						<div id="secondaryNavigation">
 							<ul>
 								<li><a class="selected" href="services.asp">Services</a></li>
-								<li><a href="user-experience.asp">User experience</a></li>
+								<li><a href="user-interface-design.asp">User interface design</a></li>
 								<li><a href="organic-seo.asp">Organic SEO</a></li>
 							</ul>
 						</div>					
