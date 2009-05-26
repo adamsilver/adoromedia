@@ -13,6 +13,14 @@ a img {
 	border: none;
 }
 
+a:link, a:visited {
+	color: #F61499;
+}
+
+a:hover, a:active, a:focus {
+	color: #AEFF00;
+}
+
 h1 {
 	color: #ffffff;
 	font-size: 2em;
