@@ -24,14 +24,13 @@ a:hover, a:active, a:focus {
 h1 {
 	color: #ffffff;
 	font-size: 2em;
-	margin-bottom: 25px;
+	margin-bottom: 12px;
 }
 
 p {
 	color: #ffffff;
-	font-size: 1.6em;
-	margin-bottom: 25px;
-	line-height: 1.6em;
+	font-size: 1.5em;
+	margin-bottom:12px;
 }
 
 #container {
