@@ -28,7 +28,26 @@
 				<div id="sections">
 					<div id="primary">
 						<h1>Frequently asked questions</h1>
-						<p>Coming to a screen near you, very soon</p>
+						
+						<h2>How much will a website cost me?</h2>
+						<h2>Do you realise I can get a 5 page site for £299?</h2>
+						<h2>XHTML? CSS? Standards? Accessibility?</h2>
+						<h2>Top spot in google?</h2>
+						<p>Nobody in the world knows exactly how the Google algorythm works (apart from Google),
+						but we know a lot about it.  We have managed to get several websites to first page and 
+						even the first result for several of our clients in Google.</p>
+						
+						<h2>What is site maintenance?</H2>
+						<p>Site maintenance is a fee paid monthly to keep your site updated with 
+						new content that you provide. Most good web sites have new content updated 
+						regularly. Fresh content is what will keep your visitors coming back. This 
+						is an optional service that we provide for our customers. If you want to 
+						maintain your website yourself you can do so.</p>
+						
+						<h2>Do you offer any type of discounts?</h2>
+						<p>Yes, we offer discounts for schools and non profit organisations.</p>
+						
+						
 					</div>
 					<div id="secondary">
 						<div id="secondaryNavigation">
