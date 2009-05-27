@@ -30,7 +30,11 @@
 						<h1>Frequently asked questions</h1>
 						
 						<h2>How much will a website cost me?</h2>
-						<h2>Do you realise I can get a 5 page site for £299?</h2>
+						<p>Websites we build cost in the region of £500.00 to £3000.00 but can go up to
+						£10,000 plus. If you pay peanuts you generally get a monkeys. Whilst we know other
+						companies offer sites for a very cheap price, we also realise that a lot of these
+						businesses come to us in order to improve their site. Money could have been saved by
+						coming directly to us.</p>
 						<h2>XHTML? CSS? Standards? Accessibility?</h2>
 						<h2>Top spot in google?</h2>
 						<p>Nobody in the world knows exactly how the Google algorythm works (apart from Google),
