@@ -36,6 +36,8 @@
 						businesses come to us in order to improve their site. Money could have been saved by
 						coming directly to us.</p>
 						<h2>XHTML? CSS? Standards? Accessibility?</h2>
+						<p>Sometimes you may hear these words flying about.  Why are they important to you?
+						</p>
 						<h2>Top spot in google?</h2>
 						<p>Nobody in the world knows exactly how the Google algorythm works (apart from Google),
 						but we know a lot about it.  We have managed to get several websites to first page and 
