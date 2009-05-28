@@ -59,7 +59,7 @@
 						<div id="secondaryNavigation">
 							<ul>
 								<li><a href="about.asp">About us</a></li>
-								<li><a href="logoconcept.asp">Logo concept</a></li>
+								<li><a href="branding-statement.asp">Branding statement</a></li>
 								<li><a class="selected" href="faq.asp">FAQ</a></li>
 							</ul>
 						</div>

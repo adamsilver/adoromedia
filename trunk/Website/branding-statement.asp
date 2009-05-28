@@ -26,7 +26,7 @@
 			<div id="content">
 				<!--#include file="inc/breadcrumb.asp"-->
 				<div id="primary">
-					<h1>Logo concept</h1>
+					<h1>Branding statement</h1>
 					
 					<p>The Arial font was used to create the Adoro brand as a celebration of its cross 
 					browser compatibility. In this industry we rely heavily on things being able to work 
@@ -48,7 +48,7 @@
 					<div id="secondaryNavigation">
 						<ul>
 							<li><a href="about.asp">About us</a></li>
-							<li><a class="selected" href="logoconcept.asp">Logo concept</a></li>
+							<li><a class="selected" href="branding-statement.asp">Branding statement</a></li>
 							<li><a href="faq.asp">FAQ</a></li>
 						</ul>
 					</div>
