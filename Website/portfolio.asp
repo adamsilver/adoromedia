@@ -115,8 +115,8 @@
 							<p>Although the site is relatively small I was still extremely impressed with the turnaround time of the work undertaken by Adoro. 
 							The site boasts full cross-browser compatibility and has been built to my exact specifications. I have even been set up with a Google 
 							Analytics account which helps me monitor traffic to my site and study current trends. Adoro Media have helped me realise my media potential 
-							and have done it all in a thoroughly professional matter without losing site of what it actually was that I wanted. Very well done.</p>
-							<p>Website:  <a href="http://www.lawrencecodling.com">http://www.lawrencecodling.co.uk</a></p>
+							and have done it all in a thoroughly professional matter, without losing sight of what it actually was that I wanted. Very well done.</p>
+							<p>Website:  <a href="http://www.lawrencecodling.com">http://www.lawrencecodling.com</a></p>
 						</div>			       
 					</div>							      
 			    </div>    
