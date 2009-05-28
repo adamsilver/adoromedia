@@ -53,7 +53,7 @@
 						<ul>
 							<li><a class="selected" href="about.asp">About us</a></li>
 							<li><a href="branding-statement.asp">Branding statement</a></li>
-							<li><a href="faq.asp">FAQ</a></li>
+							<!--<li><a href="faq.asp">FAQ</a></li>-->
 						</ul>
 					</div>
 				</div>
