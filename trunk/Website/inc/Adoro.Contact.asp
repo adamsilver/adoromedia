@@ -28,8 +28,33 @@
 			email.HTMLBody += "<p>Full Name: " + Request.Form("fullName") +"</p>";
 			email.HTMLBody += "<p>Email: " + Request.Form("email") +"</p>";
 			email.HTMLBody += "<p>Message: " + Request.Form("message") +"</p>";
+			//email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/sendusing")=2;
+			//email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/smtpserver")="localhost";
+			//email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/smtpserverport")=25;
+			//email.Configuration.Fields.Update();
 			email.Send();
 			var messageSent = true;
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 	}
 %>
