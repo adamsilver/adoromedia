@@ -79,7 +79,14 @@
 							    </a>
 						    </div>
 					    </li>
-					    
+					    <li class="work">
+						    <h2><a href="http://www.adlibprint.co.uk">Ad Lib Print and Design</a></h2>
+						    <div class="image">
+							    <a href="http://www.adlibprint.co.uk">
+								    <img src="img/portfolio/adlib.jpg" alt="Ad Lib Print and Design" />
+							    </a>
+						    </div>
+					    </li>					    
 				    </ul>
 		        </div>
 			    <div id="secondary">
