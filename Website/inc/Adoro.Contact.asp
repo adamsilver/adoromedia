@@ -34,27 +34,6 @@
 			//email.Configuration.Fields.Update();
 			email.Send();
 			var messageSent = true;
-			
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		}
 	}
 %>
