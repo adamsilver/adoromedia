@@ -578,7 +578,14 @@ div#homeAbout {
 
 div#homeAbout h1 {
 	margin: 0px 0px 20px 0px;
-	font-size: 2.4em;
+	font-size: 2.2em;
+	background: url(../../img/icon_arrow_pink.gif) 0px 3px no-repeat;
+	padding-left: 33px;
+	padding-bottom: 4px;
+}
+
+div#homeAbout h1 a:hover {
+	background-color: #ff0099;
 }
 
 div#homeAbout p {
@@ -630,6 +637,13 @@ div#homeWant {
 
 div#homeWant h2 {
 	margin: 0px 0px 20px 0px;
+	background: url(../../img/icon_arrow_orange.gif) 0px 0px no-repeat;
+	padding-left: 33px;
+	padding-bottom: 4px;
+}
+
+div#homeWant h2 a:hover {
+	color: #ff6600;
 }
 
 div#homeWant p {
@@ -651,6 +665,13 @@ div#homeServices {
 
 div#homeServices h2 {
 	margin: 0px 0px 20px 0px;
+	background: url(../../img/icon_arrow_blue.gif) 0px 0px no-repeat;
+	padding-left: 33px;
+	padding-bottom: 4px;
+}
+
+div#homeServices h2 a:hover {
+	color: #0099FF;
 }
 
 div#homeServices p {
@@ -675,6 +696,13 @@ div#homeContact {
 
 div#homeContact h2 {
 	margin: 0px 0px 20px 0px;
+	background: url(../../img/icon_arrow_yellow.gif) 0px 0px no-repeat;
+	padding-left: 33px;
+	padding-bottom: 4px;
+}
+
+div#homeContact h2 a:hover {
+	color: #FFFF33;
 }
 
 div#homeContact p {
@@ -770,15 +798,3 @@ ul.portfolio li p {
     font-size: 1em;
 }
 
-p.action {
-	overflow: hidden;
-	font-size: 1.1em;
-}
-
-p.action a {
-	float: left;
-	padding: 3px 5px;
-	background: #000;
-	color: #fff;
-	text-decoration: none;
-}
