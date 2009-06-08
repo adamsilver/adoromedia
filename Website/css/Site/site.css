@@ -623,7 +623,7 @@ div#homePanels02 {
 }
 
 div#homePanels02 div.content {
-	min-height: 140px;
+	
 }
 
 div#homeWant {
@@ -637,9 +637,13 @@ div#homeWant {
 
 div#homeWant h2 {
 	margin: 0px 0px 20px 0px;
-	background: url(../../img/icon_arrow_orange.gif) 0px 0px no-repeat;
+	background: url(../../img/icon_arrow_orange.gif) 0px -1px no-repeat;
 	padding-left: 33px;
 	padding-bottom: 4px;
+}
+
+div#homeWant h2 a {
+	text-decoration: none;
 }
 
 div#homeWant h2 a:hover {
@@ -665,9 +669,13 @@ div#homeServices {
 
 div#homeServices h2 {
 	margin: 0px 0px 20px 0px;
-	background: url(../../img/icon_arrow_blue.gif) 0px 0px no-repeat;
+	background: url(../../img/icon_arrow_blue.gif) 0px -1px no-repeat;
 	padding-left: 33px;
 	padding-bottom: 4px;
+}
+
+div#homeServices h2 a {
+	text-decoration: none;
 }
 
 div#homeServices h2 a:hover {
@@ -701,12 +709,33 @@ div#homeContact h2 {
 	padding-bottom: 4px;
 }
 
+div#homeContact h2 a {
+	text-decoration: none;
+}
+
 div#homeContact h2 a:hover {
 	color: #FFFF33;
 }
 
 div#homeContact p {
 	margin: 0px 0px 20px;
+}
+
+
+div#homeContact p.tel,
+div#homeContact p.email {
+	margin-bottom: 0px;
+	padding-left: 22px;
+}
+
+div#homeContact p.tel {
+	background: url(../../img/icon_tel.gif) 0px 0px no-repeat;
+	margin-bottom: 2px;
+}
+
+div#homeContact p.email {
+	background: url(../../img/icon_email.gif) 0px 0px no-repeat;
+	
 }
 
 div#homeContact p.action a {

@@ -38,7 +38,7 @@
 								fresh thinking, highly energetic, digital agency, based in London. We are committed to 
 								reaching new heights, in the digital arena, by providing creative and innovative solutions 
 								that work.</p>
-								<p class="action"><a href="about.asp"><img src="img/buttons/btn_more_pink.jpg" alt="More" /></a></p>
+								<!--<p class="action"><a href="about.asp"><img src="img/buttons/btn_more_pink.jpg" alt="More" /></a></p>-->
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
@@ -53,10 +53,10 @@
 							<div id="homeWant">
 								<h2><a href="portfolio.asp">Website?</a></h2>
 								<div class="content">
-									<p>We research, design and implement your website from the ground, up.</p>
-									<p>We have built varying websites from online e-commerce websites,
+									<p>We have built varying websites, from e-commerce websites,
 									to small brochure websites. All websites we have created are completely bespoke
-									to meet the client's specification.</p>
+									to meet the client's specification. We want to work with you to produce a great 
+									online experience for your audience.</p>
 								</div>
 								<!--<p class="action"><a href="portfolio.asp"><img src="img/buttons/btn_more_orange.jpg" alt="More" /></a></p>-->
 							</div>
@@ -78,8 +78,8 @@
 									<p>We can be contacted in several ways. Visit the 
 									<a href="<%=Adoro.URL%>/contact.asp">contact details</a> page
 									for further information.</p>
-									<p>Tel: +44 (0) 771 349 0316</p>
-									<p>Email: info@adoromedia.com</p>
+									<p class="tel">Tel: +44 (0) 771 349 0316</p>
+									<p class="email">Email: info@adoromedia.com</p>
 								</div>
 								<!--<p class="action"><a href="contact.asp"><img src="img/buttons/btn_more_yellow.jpg" alt="More" /></a></p>-->
 							</div>
