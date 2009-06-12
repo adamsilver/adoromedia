@@ -1,6 +1,7 @@
 * {
 	margin: 0px;
 	padding: 0px;
+	color: red;
 }
 
 body {
@@ -32,6 +33,7 @@ h2 {
 	text-transform: uppercase;
 	color: #e1ded2;
 	margin-bottom: 2px;
+	color: red;
 }
 
 p {
@@ -71,27 +73,26 @@ p {
 }
 
 #work {
-	zoom: 1;
+	width: 700px;
 }
 
 #work div.inner {
 	padding-bottom: 25px;
-	zoom: 1;
+	width: 700px;
 }
 
 #work .showreel .clip {
+	overflow: hidden;
+	width: 700px;
 	position:relative;
-	zoom: 1;
 }
 
 #work div.showreel div.clip ul.pages {
-	list-style: none;
-	width: 700px;
-	overflow: hidden;
 	position:relative;
+	overflow: hidden;
+	width: 700px;
 }
 
 #work div.showreel div.clip ul.pages li.page {
 	width: 700px;
-	height: 200px;
 }
