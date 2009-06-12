@@ -11,11 +11,13 @@ body {
 
 #logo {
 	margin-bottom: 25px;
+	zoom: 1;
 }
 
 #content {
 	background: #0A0B10 url(../img/bg.gif);
 	padding: 25px 25px 25px 25px;
+	zoom: 1;
 }
 
 h1 {
@@ -45,6 +47,7 @@ p {
 
 #primaryNavigation {
 	padding: 25px;
+	zoom: 1;
 }
 
 #primaryNavigation ul {
@@ -68,25 +71,27 @@ p {
 }
 
 #work {
-	margin-bottom: 25px;
+	zoom: 1;
+}
+
+#work div.inner {
+	padding-bottom: 25px;
+	zoom: 1;
 }
 
 #work .showreel .clip {
-	overflow: hidden;
 	position:relative;
+	zoom: 1;
 }
 
-#work .showreel .clip .pages {
+#work div.showreel div.clip ul.pages {
 	list-style: none;
+	width: 700px;
 	overflow: hidden;
 	position:relative;
 }
 
-#work .showreel .clip .pages .page {
-	float: left;
-	padding: 100px 25px;
-	color:#e1ded2;
-	border: 1px solid #e1ded2;
-	margin-right: 10px;
+#work div.showreel div.clip ul.pages li.page {
 	width: 700px;
+	height: 200px;
 }
