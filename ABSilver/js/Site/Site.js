@@ -37,11 +37,26 @@ Site.Test = new (function() {
 		panel.setStyle("overflow","hidden");
 		panel.setStyle("position","relative");
 		
+		var link = button.getElementsByTagName("a")[0];
+		
 		button.addEvent("click",buttonClick);
 		
 		var me = this;
 		
+		var originalColor = link.getStyle("color");
+		
 		function buttonClick(e) {
+		
+			link.animate({
+				"color": {
+					to: J2.Core.CSSColor.prototype.create("#f678dd"),
+					time: 500,
+					transition: J2.Transitions.Exp.easeOut
+				}
+			});
+			
+			
+			
 			this.animate({
 				"fontSize": {
 					to: 80,
@@ -53,7 +68,7 @@ Site.Test = new (function() {
 				openPanel();
 			});
 			closeOtherPanels();
-			
+
 			
 			return false;
 		};
@@ -74,18 +89,31 @@ Site.Test = new (function() {
 		};
 		
 		function closePanel() {
-			panel.animate({"height":{
-				to: 0,
-				time: 500,
-				transition: J2.Transitions.Exp.easeOut
-			}
+			panel.animate({
+				"height":{
+					to: 0,
+					time: 500,
+					transition: J2.Transitions.Exp.easeOut
+				}				
 			});
 			
-			button.animate({"fontSize": {
-				to: 20,
-				time: 500,
-				transition: J2.Transitions.Exp.easeOut
-			}})
+			button.animate({
+				"fontSize": {
+					to: 20,
+					time: 500,
+					transition: J2.Transitions.Exp.easeOut
+				}
+			})
+			
+			link.animate({
+				"color": {
+					to: J2.Core.CSSColor.prototype.create(originalColor.getHex()),
+					time: 500,
+					transition: J2.Transitions.Exp.easeOut
+				}
+			});
+			
+			
 		};
 		
 		this.closePanel = closePanel;
