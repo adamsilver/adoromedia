@@ -4,15 +4,27 @@ Site.Test = new (function() {
 	
 	var panels = [];
 	
+	var started = false;
+	var originalLogoPaddingTop = null;
+	var logo = null;
+	var originalContentBgColor = null;
+	var content = null;
+	var originalContentBgImage = null;
+	
+	
 	function init() {
-		/*(var el = document.getElementById("content");
-		var colour = "#36373C";
 		
-		el.animate({"backgroundColor": {
-			to: J2.Core.CSSColor.prototype.create(colour),
-			time: 500,
-			transition: J2.Transitions.linear
-		}});*/
+		logo = document.getElementById("logo");
+		originalLogoPaddingTop = logo.getStyle("padding-top");
+		logo.setStyle("padding-top", "300px");
+		
+		content = document.getElementById("content");
+		originalContentBgImage = content.getStyle("background-image");
+		originalContentBgColor = content.getStyle("background-color");
+		var bodyBgColor = document.body.getStyle("background-color");
+		
+		content.setStyle("background-image", "none");
+		content.setStyle("background-color", bodyBgColor);
 		
 		
 		var contactZone = document.getElementById("contact");
@@ -31,6 +43,25 @@ Site.Test = new (function() {
 		
 	};
 	
+	function start() {
+		logo.animate({
+			"padding-top": {
+				to: parseInt(originalLogoPaddingTop),
+				time: 500
+			}
+		});
+		
+		content.animate({
+			"background-color": {
+				to: J2.Core.CSSColor.prototype.create(originalContentBgColor.getHex())
+			}
+		},
+		function(){
+			content.setStyle("background-image", originalContentBgImage);
+		});
+		started = true;
+	}
+	
 	function Panel(button, panel) {
 		var panelHeight = panel.offsetHeight;
 		panel.setStyle("height",0);
@@ -39,17 +70,19 @@ Site.Test = new (function() {
 		
 		var link = button.getElementsByTagName("a")[0];
 		
-		button.addEvent("click",buttonClick);
+		link.addEvent("click",buttonClick);
 		
 		var me = this;
 		
 		var originalColor = link.getStyle("color");
 		
 		function buttonClick(e) {
-		
+			if(!started) {
+				start();
+			};
 			link.animate({
 				"color": {
-					to: J2.Core.CSSColor.prototype.create("#f678dd"),
+					to: J2.Core.CSSColor.prototype.create("#0A0B10"),
 					time: 500,
 					transition: J2.Transitions.Exp.easeOut
 				}
@@ -57,7 +90,7 @@ Site.Test = new (function() {
 			
 			
 			
-			this.animate({
+			button.animate({
 				"fontSize": {
 					to: 80,
 					time: 500,
@@ -82,9 +115,11 @@ Site.Test = new (function() {
 		};
 		
 		function openPanel() {
-			panel.animate({"height":{
-				to: panelHeight,
-				time: 200}
+			panel.animate({
+				"height":{
+					to: panelHeight,
+					time: 200
+				}
 			});
 		};
 		
@@ -119,7 +154,4 @@ Site.Test = new (function() {
 		this.closePanel = closePanel;
 		
 	};
-	
-	
-	
 });
