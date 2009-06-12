@@ -1,0 +1,92 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #ECECEC;
+	font-size: 62.5%;
+	font-family: Helvetica;
+}
+
+#logo {
+	margin-bottom: 25px;
+}
+
+#content {
+	background: #0A0B10 url(../img/bg.gif);
+	padding: 25px 25px 25px 25px;
+}
+
+h1 {
+	position: absolute;
+	left: -99999em;
+}
+
+
+h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #e1ded2;
+	margin-bottom: 2px;
+}
+
+p {
+	color: #e1ded2;
+	font-size: 1.1em;
+	margin-bottom: 10px;
+}
+
+#about {
+	width: 40%;
+	margin-bottom: 25px;
+}
+
+#primaryNavigation {
+	padding: 25px;
+}
+
+#primaryNavigation ul {
+	list-style: none;
+}
+
+#primaryNavigation ul li {
+	font-size: 2.7em;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+#primaryNavigation ul li a {
+	color: #74747e;
+	text-decoration: none;
+}
+
+#primaryNavigation ul li a:hover {
+	color: #0A0B10;
+}
+
+#work {
+	margin-bottom: 25px;
+}
+
+#work .showreel .clip {
+	overflow: hidden;
+	position:relative;
+}
+
+#work .showreel .clip .pages {
+	list-style: none;
+	overflow: hidden;
+	position:relative;
+}
+
+#work .showreel .clip .pages .page {
+	float: left;
+	padding: 100px 25px;
+	color:#e1ded2;
+	border: 1px solid #e1ded2;
+	margin-right: 10px;
+	width: 700px;
+}
