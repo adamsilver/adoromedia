@@ -90,17 +90,20 @@ p {
 }
 
 #work div.showreel div.clip ul.pages {
-	width: 1550px;
 	position:relative;
 	overflow: hidden;
 	list-style: none;
 }
 
 #work div.showreel div.clip ul.pages li.page {
-	width: 300px;
+	width: 370px;
 	color: #fff;
-	height: 300px;
 	float: left;
 	margin-right: 8px;
 	border: 1px solid #ffffff;
+	margin-bottom: 8px;
+}
+
+#work div.showreel div.clip ul.pages li.page img {
+	display: block;
 }
