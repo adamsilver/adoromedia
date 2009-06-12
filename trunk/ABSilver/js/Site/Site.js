@@ -10,8 +10,7 @@ Site.Test = new (function() {
 	var originalContentBgColor = null;
 	var content = null;
 	var originalContentBgImage = null;
-	
-	
+		
 	function init() {
 		
 		logo = document.getElementById("logo");
