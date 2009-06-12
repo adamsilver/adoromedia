@@ -1,7 +1,6 @@
 * {
 	margin: 0px;
 	padding: 0px;
-	color: red;
 }
 
 body {
@@ -12,13 +11,11 @@ body {
 
 #logo {
 	margin-bottom: 25px;
-	zoom: 1;
 }
 
 #content {
 	background: #0A0B10 url(../img/bg.gif);
 	padding: 25px 25px 25px 25px;
-	zoom: 1;
 }
 
 h1 {
@@ -33,7 +30,6 @@ h2 {
 	text-transform: uppercase;
 	color: #e1ded2;
 	margin-bottom: 2px;
-	color: red;
 }
 
 p {
@@ -44,7 +40,10 @@ p {
 
 #about {
 	width: 40%;
-	margin-bottom: 25px;
+}
+
+#about div.inner {
+	padding-bottom: 25px;
 }
 
 #primaryNavigation {
@@ -61,11 +60,13 @@ p {
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	font-weight: bold;
+	margin-bottom: -8px;
 }
 
 #primaryNavigation ul li a {
 	color: #74747e;
 	text-decoration: none;
+	outline: none;
 }
 
 #primaryNavigation ul li a:hover {
@@ -73,8 +74,7 @@ p {
 }
 
 #work {
-	width: 700px;
-	
+	width: 100%;	
 }
 
 #work div.inner {
@@ -85,12 +85,20 @@ p {
 #work .showreel .clip {
 	position:relative;
 	overflow: hidden;
+	width: 100%;
 }
 
 #work div.showreel div.clip ul.pages {
-
+	width: 1540px;
+	position:relative;
+	overflow: hidden;
 }
 
 #work div.showreel div.clip ul.pages li.page {
-
+	width: 300px;
+	color: #fff;
+	height: 300px;
+	float: left;
+	background-color: #eee;
+	margin-right: 8px;
 }
