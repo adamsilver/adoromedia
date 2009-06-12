@@ -36,19 +36,25 @@ Site.Test = new (function() {
 		var panelHeight = panel.offsetHeight;
 		panel.setStyle("height",0);
 		panel.setStyle("overflow","hidden");
+		panel.setStyle("position","relative");
 		
 		button.addEvent("click",buttonClick);
 		
 		var me = this;
 		
 		function buttonClick(e) {
-			this.animate({"fontSize": {
-				to: 80,
-				time: 500,
-				transition: J2.Transitions.Exp.easeOut
-			}});
+			this.animate({
+				"fontSize": {
+					to: 80,
+					time: 500,
+					transition: J2.Transitions.Exp.easeOut
+				}
+			},
+			function() {
+				openPanel();
+			});
 			closeOtherPanels();
-			openPanel();
+			
 			
 			return false;
 		};
@@ -64,7 +70,7 @@ Site.Test = new (function() {
 		function openPanel() {
 			panel.animate({"height":{
 				to: panelHeight,
-				time: 500}
+				time: 200}
 			});
 		};
 		

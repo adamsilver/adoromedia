@@ -74,25 +74,23 @@ p {
 
 #work {
 	width: 700px;
+	
 }
 
 #work div.inner {
 	padding-bottom: 25px;
-	width: 700px;
+
 }
 
 #work .showreel .clip {
-	overflow: hidden;
-	width: 700px;
 	position:relative;
+	overflow: hidden;
 }
 
 #work div.showreel div.clip ul.pages {
-	position:relative;
-	overflow: hidden;
-	width: 700px;
+
 }
 
 #work div.showreel div.clip ul.pages li.page {
-	width: 700px;
+
 }
