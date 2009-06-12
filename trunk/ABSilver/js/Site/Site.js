@@ -22,7 +22,6 @@ Site.Test = new (function() {
 		var workZone = document.getElementById("work");
 		var workButton = document.getElementById("btnWork");
 		
-		
 		var c = new Panel(contactButton, contactZone);
 		panels.push(c);
 		var a = new Panel(aboutButton, aboutZone);
