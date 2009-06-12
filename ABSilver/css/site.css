@@ -14,8 +14,9 @@ body {
 }
 
 #content {
-	background: #0A0B10 url(../img/bg.gif);
+	background-image: url(../img/bg.gif);
 	padding: 25px 25px 25px 25px;
+	background-color: #0A0B10;
 }
 
 h1 {

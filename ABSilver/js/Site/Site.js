@@ -20,7 +20,7 @@ Site.Test = new (function() {
 		content = document.getElementById("content");
 		originalContentBgImage = content.getStyle("background-image");
 		originalContentBgColor = content.getStyle("background-color");
-		var bodyBgColor = document.body.getStyle("background-color");
+		var bodyBgColor = document.getElementsByTagName("body")[0].getStyle("background-color");
 		
 		content.setStyle("background-image", "none");
 		content.setStyle("background-color", bodyBgColor);
@@ -87,8 +87,8 @@ Site.Test = new (function() {
 				}
 			});
 			
-			
-			
+			link.blur();
+						
 			button.animate({
 				"fontSize": {
 					to: 80,
@@ -153,4 +153,24 @@ Site.Test = new (function() {
 		this.closePanel = closePanel;
 		
 	};
+});
+
+Site.ShowReel = new (function() {
+	addDOMReadyEvent(init);
+	
+	var showreel = null;
+	var clip = null;
+	var ul = null;
+	
+	function init() {
+		showreel = document.getElementById("work").getElementsByClassName({ cssClass: "showreel", tags: "div" })[0] || null;
+		clip = showreel.getElementsByClassName({ cssClass: "clip", tags: "div" })[0] || null;
+		ul = clip.getElementsByClassName({cssClass: "pages", tags:"div"})[0] || null;
+	};
+	
+	function getTotalWidthOfListItems() {
+		var listItems = ul.getElementsByTagName("li");
+			
+	};
+	
 });
