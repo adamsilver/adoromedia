@@ -93,6 +93,7 @@ p {
 	position:relative;
 	overflow: hidden;
 	list-style: none;
+	width: 3000px;
 }
 
 #work div.showreel div.clip ul.pages li.page {
