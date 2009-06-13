@@ -195,8 +195,8 @@ Site.Panel = new (function(){
 	function closePanels(panelToIgnore) {
 		for(var i = 0; i<panels.length;i++) {
 			if(panelToIgnore===panels[i]) continue;
-			panels[i].closePanel();
 			panels[i].collapseButton();
+			panels[i].closePanel();
 		};
 	};
 	
@@ -207,142 +207,6 @@ Site.Panel = new (function(){
 	};
 
 	return Panel;
-});
-
-Site.Test = new (function() {
-	return;
-	addDOMReadyEvent(init);
-	
-	var panels = [];
-	
-	var started = false;
-
-		
-	function init() {
-		var contactZone = document.getElementById("contact");
-		var aboutZone = document.getElementById("about");
-		var contactButton = document.getElementById("btnContact");
-		var aboutButton = document.getElementById("btnAbout");
-		var workZone = document.getElementById("work");
-		var workButton = document.getElementById("btnWork");
-
-		var c = new Panel(contactButton, contactZone);
-		panels.push(c);
-		var a = new Panel(aboutButton, aboutZone);
-		panels.push(a);
-		var w = new Panel(workButton, workZone);
-		panels.push(w);
-		
-	};
-	
-	function start(link) {
-		buttonsStart();
-
-		started = true;
-	};
-	
-	function buttonsStart() {
-		for(var i = panels.length-1; i>=0; i--) {
-			panels[i].button.animate({
-				"margin-bottom": {
-					to: -8,
-					time: 500
-				}
-			})
-		};
-	};
-	
-	
-	function Panel(button, panel) {
-		this.button = button;
-		var panelHeight = panel.offsetHeight;
-		
-		var link = button.getElementsByTagName("a")[0];
-		
-		link.addEvent("click",buttonClick);
-		
-		var me = this;
-		
-		var originalColor = link.getStyle("color");
-		
-		function buttonClick(e) {
-			if(!started) {
-				start();
-			};
-			link.animate({
-				"color": {
-					to: J2.Core.CSSColor.prototype.create("#0A0B10"),
-					time: 500,
-					transition: J2.Transitions.Exp.easeOut
-				}
-			});
-			
-			link.blur();
-						
-			button.animate({
-				"fontSize": {
-					to: 80,
-					time: 500,
-					transition: J2.Transitions.Exp.easeOut
-				}
-			},
-			function() {
-				openPanel();
-			});
-			closeOtherPanels();
-
-			
-			return false;
-		};
-		
-		function closeOtherPanels() {
-			for(var i = 0; i<panels.length;i++) {
-			
-				if( me===panels[i]) continue;
-				panels[i].closePanel();
-			}
-		};
-		
-		function openPanel() {
-			panel.animate({
-				"height":{
-					to: panelHeight,
-					time: 200
-				}
-			});
-		};
-		
-		function closePanel() {
-			panel.animate({
-				"height":{
-					to: 0,
-					time: 500,
-					transition: J2.Transitions.Exp.easeOut
-				}				
-			});
-			
-			button.animate({
-				"fontSize": {
-					to: 20,
-					time: 500,
-					transition: J2.Transitions.Exp.easeOut
-				}
-			})
-			
-			link.animate({
-				"color": {
-					to: J2.Core.CSSColor.prototype.create(originalColor.getHex()),
-					time: 500,
-					transition: J2.Transitions.Exp.easeOut
-				}
-			});
-			
-			
-		};
-		
-		this.closePanel = closePanel;
-		
-	};
 });
 
 Site.ShowReel = new (function() {
