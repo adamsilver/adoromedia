@@ -110,9 +110,10 @@ Site.Panel = new (function(){
 				Site.Content.activate();
 				listItemsActivate();
 				panelActivated = true;
+				
 			};
-			closePanels(this.panel);
 			expandButton();
+			this.blur();
 			return false;
 		};
 		
@@ -123,7 +124,6 @@ Site.Panel = new (function(){
 					time: time
 				}
 			});
-			
 			li.animate({
 				"fontSize": {
 					to: 80,
@@ -132,6 +132,7 @@ Site.Panel = new (function(){
 				}
 			},
 			function(){
+				closePanels(this.panel);
 				openPanel();
 			});	
 		};
@@ -144,10 +145,10 @@ Site.Panel = new (function(){
 				}
 			});
 		
-		
+			
 			li.animate({
 				"fontSize": {
-					to: parseInt(defaultValues.fontSize),
+					to: 20,
 					time: time,
 					transition: J2.Transitions.Exp.easeOut
 				}
@@ -175,7 +176,7 @@ Site.Panel = new (function(){
 		function activate() {
 			li.animate({
 				"margin-bottom":{
-					to: -10,
+					to: -8,
 					time: panelTime
 				}
 			})
@@ -204,6 +205,12 @@ Site.Panel = new (function(){
 		for(var i = 0; i<panels.length;i++) {
 			panels[i].activate();
 		};
+	};
+	
+	function getActivePanel() {
+	};
+	
+	function closeActivePanel() {
 	};
 
 	return Panel;
