@@ -33,6 +33,15 @@ Site.Test = new (function() {
 		var workZone = document.getElementById("work");
 		var workButton = document.getElementById("btnWork");
 		
+		aboutButton.setStyle("font-size", "1.3em");
+		workButton.setStyle("font-size", "1.3em");
+		contactButton.setStyle("font-size", "1.3em");
+		
+		aboutButton.setStyle("margin-bottom", "0px");
+		workButton.setStyle("margin-bottom", "0px");
+		contactButton.setStyle("margin-bottom", "0px");
+		
+		
 		var c = new Panel(contactButton, contactZone);
 		panels.push(c);
 		var a = new Panel(aboutButton, aboutZone);
@@ -42,7 +51,8 @@ Site.Test = new (function() {
 		
 	};
 	
-	function start() {
+	function start(link) {
+		buttonsStart();
 		logo.animate({
 			"padding-top": {
 				to: parseInt(originalLogoPaddingTop),
@@ -59,9 +69,22 @@ Site.Test = new (function() {
 			content.setStyle("background-image", originalContentBgImage);
 		});
 		started = true;
-	}
+	};
+	
+	function buttonsStart() {
+		for(var i = panels.length-1; i>=0; i--) {
+			panels[i].button.animate({
+				"margin-bottom": {
+					to: -8,
+					time: 500
+				}
+			})
+		};
+	};
+	
 	
 	function Panel(button, panel) {
+		this.button = button;
 		var panelHeight = panel.offsetHeight;
 		panel.setStyle("height",0);
 		panel.setStyle("overflow","hidden");
