@@ -78,28 +78,23 @@ Site.Panel = new (function(){
 	
 	function init() {
 		var anchors = document.getElementsByClassName({cssClass:"panelActivator", tags:"a", callback: function(){
-			
 			var panel = new Panel(this);
 			panels.push(panel);
 		}})
 	};
 	
 	function Panel(anchor) {
+		anchor.panel = this;
 		this.anchor = anchor;
 		this.li = anchor.getParent();
-		
 		this.container = document.getElementById(anchor.hash.split("#")[1]);
-		
+		this.containerHeight = this.container.offsetHeight;
 		this.container.setStyle("height",0);
 		this.container.setStyle("overflow","hidden");
 		this.container.setStyle("position","relative");
-		
 		this.li.setStyle("font-size", "1.3em");
 		this.li.setStyle("margin-bottom", "0px");
-		
 		anchor.addEvent("click", panelClick);
-		
-		
 	};
 	
 	function panelClick() {
@@ -107,17 +102,44 @@ Site.Panel = new (function(){
 			Site.Logo.activate();
 			Site.Content.activate();
 		};
-		closePanels();
+		//closePanels();
+		animateButton(this);
+	};
+	
+	function animateButton(el) {
+		var time = 500;
+		el.panel.li.animate({
+			"fontSize": {
+				to: 80,
+				time: time,
+				transition: J2.Transitions.Exp.easeOut
+			}
+		},
+		function(){
+			openPanel(el.panel);
+		});	
 	};
 	
 	function isPanelActivated() {
 		return panelActivated;
 	}
 	
-	function closePanels() {
+	function closePanels(el) {
+		el.panel.container.animate({
+			"height":{
+					to: el.panel.containerHeight,
+					time: 200
+				}
+		});
 	};
 	
-	function openPanel() {
+	function openPanel(panel) {
+		panel.container.animate({
+			"height":{
+					to: panel.containerHeight,
+					time: 200
+				}
+		});
 	};
 	
 	function closePanel(panel) {
@@ -128,7 +150,7 @@ Site.Panel = new (function(){
 });
 
 Site.Test = new (function() {
-
+	return;
 	addDOMReadyEvent(init);
 	
 	var panels = [];
@@ -137,18 +159,13 @@ Site.Test = new (function() {
 
 		
 	function init() {
-		
-
-		
 		var contactZone = document.getElementById("contact");
 		var aboutZone = document.getElementById("about");
 		var contactButton = document.getElementById("btnContact");
 		var aboutButton = document.getElementById("btnAbout");
 		var workZone = document.getElementById("work");
 		var workButton = document.getElementById("btnWork");
-		
-		
-		
+
 		var c = new Panel(contactButton, contactZone);
 		panels.push(c);
 		var a = new Panel(aboutButton, aboutZone);
