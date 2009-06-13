@@ -1,0 +1,11 @@
+/* hasLayout */
+
+div.inner,
+#logo,
+#content,
+#primaryNavigation,
+#primaryNavigation ul,
+#primaryNavigation ul li,
+#primaryNavigation ul li a {
+	zoom: 1;
+}

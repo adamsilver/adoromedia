@@ -57,7 +57,6 @@ p {
 
 #primaryNavigation {
 	padding: 25px;
-	zoom: 1;
 }
 
 #primaryNavigation ul {
@@ -65,11 +64,10 @@ p {
 }
 
 #primaryNavigation ul li {
-	font-size: 2.7em;
+	font-size: 27px;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	font-weight: bold;
-	margin-bottom: -8px;
 }
 
 #primaryNavigation ul li a {
@@ -88,7 +86,6 @@ p {
 
 #work div.inner {
 	padding-bottom: 25px;
-
 }
 
 #work .showreel .clip {
