@@ -1,30 +1,144 @@
 var Site = Site || {};
+
+Site.Logo = new (function(){
+	addDOMReadyEvent(init);
+	var defaultValues = {
+		paddingTop: null,
+		paddingBottom: null
+	};
+	
+	var logo = null;
+	
+	function init() {
+		logo = document.getElementById("logo");
+		defaultValues.paddingTop = parseInt(logo.getStyle("padding-top"));
+		defaultValues.paddingBottom = parseInt(logo.getStyle("padding-bottom"));
+		logo.setStyle("padding-top", J2.Window.height()/3+"px");
+		logo.setStyle("padding-bottom", "0px");
+	};
+	
+	function activate() {
+		var time = 500;
+		logo.animate({
+			"padding-top": { to: defaultValues.paddingTop, time: time },
+			"padding-bottom": {	to: defaultValues.paddingBottom, time: time	}
+		});
+	};
+	
+	this.activate = activate;
+});
+
+Site.Content = new (function(){
+	addDOMReadyEvent(init);
+	
+	var defaultValues = {
+		bgImage: null,
+		bgColor: null
+	};
+	
+	var content = null;
+	
+	function init() {
+		content = document.getElementById("content");
+		defaultValues.bgImage = content.getStyle("background-image");
+		defaultValues.bgColor = content.getStyle("background-color");
+		content.setStyle("background-image", "none");
+		content.setStyle("background-color", getBodyBgColor());
+	};
+	
+	function activate() {
+		var time = 500;
+		content.animate({
+			"background-color": { to: J2.Core.CSSColor.prototype.create(defaultValues.bgColor.getHex()), time: time }
+		},
+		activateComplete);
+	};
+	
+	function activateComplete() {
+		content.setStyle("background-image", defaultValues.bgImage);
+	};
+	
+	function getBodyBgColor() {
+		return document.getElementsByTagName("body")[0].getStyle("background-color");
+	};
+	
+	this.activate = activate;
+});
+
+
+Site.Panel = new (function(){
+	var panels = [];
+	var panelActivated = false;
+	var defaultValues = {
+		marginBottom: null,
+		fontSize: null
+	};
+	
+	addDOMReadyEvent(init);
+	
+	function init() {
+		var anchors = document.getElementsByClassName({cssClass:"panelActivator", tags:"a", callback: function(){
+			
+			var panel = new Panel(this);
+			panels.push(panel);
+		}})
+	};
+	
+	function Panel(anchor) {
+		this.anchor = anchor;
+		this.li = anchor.getParent();
+		
+		this.container = document.getElementById(anchor.hash.split("#")[1]);
+		
+		this.container.setStyle("height",0);
+		this.container.setStyle("overflow","hidden");
+		this.container.setStyle("position","relative");
+		
+		this.li.setStyle("font-size", "1.3em");
+		this.li.setStyle("margin-bottom", "0px");
+		
+		anchor.addEvent("click", panelClick);
+		
+		
+	};
+	
+	function panelClick() {
+		if(!isPanelActivated()) {
+			Site.Logo.activate();
+			Site.Content.activate();
+		};
+		closePanels();
+	};
+	
+	function isPanelActivated() {
+		return panelActivated;
+	}
+	
+	function closePanels() {
+	};
+	
+	function openPanel() {
+	};
+	
+	function closePanel(panel) {
+		
+	};
+	
+	return Panel;
+});
+
 Site.Test = new (function() {
+
 	addDOMReadyEvent(init);
 	
 	var panels = [];
 	
 	var started = false;
-	var originalLogoPaddingTop = null;
-	var logo = null;
-	var originalContentBgColor = null;
-	var content = null;
-	var originalContentBgImage = null;
+
 		
 	function init() {
 		
-		logo = document.getElementById("logo");
-		originalLogoPaddingTop = logo.getStyle("padding-top");
-		logo.setStyle("padding-top", "300px");
-		
-		content = document.getElementById("content");
-		originalContentBgImage = content.getStyle("background-image");
-		originalContentBgColor = content.getStyle("background-color");
-		var bodyBgColor = document.getElementsByTagName("body")[0].getStyle("background-color");
-		
-		content.setStyle("background-image", "none");
-		content.setStyle("background-color", bodyBgColor);
-		
+
 		
 		var contactZone = document.getElementById("contact");
 		var aboutZone = document.getElementById("about");
@@ -33,13 +147,6 @@ Site.Test = new (function() {
 		var workZone = document.getElementById("work");
 		var workButton = document.getElementById("btnWork");
 		
-		aboutButton.setStyle("font-size", "1.3em");
-		workButton.setStyle("font-size", "1.3em");
-		contactButton.setStyle("font-size", "1.3em");
-		
-		aboutButton.setStyle("margin-bottom", "0px");
-		workButton.setStyle("margin-bottom", "0px");
-		contactButton.setStyle("margin-bottom", "0px");
 		
 		
 		var c = new Panel(contactButton, contactZone);
@@ -53,21 +160,7 @@ Site.Test = new (function() {
 	
 	function start(link) {
 		buttonsStart();
-		logo.animate({
-			"padding-top": {
-				to: parseInt(originalLogoPaddingTop),
-				time: 500
-			}
-		});
-		
-		content.animate({
-			"background-color": {
-				to: J2.Core.CSSColor.prototype.create(originalContentBgColor.getHex())
-			}
-		},
-		function(){
-			content.setStyle("background-image", originalContentBgImage);
-		});
+
 		started = true;
 	};
 	
@@ -86,9 +179,6 @@ Site.Test = new (function() {
 	function Panel(button, panel) {
 		this.button = button;
 		var panelHeight = panel.offsetHeight;
-		panel.setStyle("height",0);
-		panel.setStyle("overflow","hidden");
-		panel.setStyle("position","relative");
 		
 		var link = button.getElementsByTagName("a")[0];
 		
