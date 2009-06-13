@@ -44,6 +44,7 @@ Site.Content = new (function(){
 		defaultValues.bgColor = content.getStyle("background-color");
 		content.setStyle("background-image", "none");
 		content.setStyle("background-color", getBodyBgColor());
+		content.setStyle("padding-bottom", "0px");
 	};
 	
 	function activate() {
@@ -69,10 +70,7 @@ Site.Content = new (function(){
 Site.Panel = new (function(){
 	var panels = [];
 	var panelActivated = false;
-	var defaultValues = {
-		marginBottom: null,
-		fontSize: null
-	};
+	var panelTime = 200;
 	
 	addDOMReadyEvent(init);
 	
@@ -80,72 +78,134 @@ Site.Panel = new (function(){
 		var anchors = document.getElementsByClassName({cssClass:"panelActivator", tags:"a", callback: function(){
 			var panel = new Panel(this);
 			panels.push(panel);
-		}})
+		}});
 	};
 	
 	function Panel(anchor) {
-		anchor.panel = this;
-		this.anchor = anchor;
-		this.li = anchor.getParent();
-		this.container = document.getElementById(anchor.hash.split("#")[1]);
-		this.containerHeight = this.container.offsetHeight;
-		this.container.setStyle("height",0);
-		this.container.setStyle("overflow","hidden");
-		this.container.setStyle("position","relative");
-		this.li.setStyle("font-size", "1.3em");
-		this.li.setStyle("margin-bottom", "0px");
-		anchor.addEvent("click", panelClick);
-	};
-	
-	function panelClick() {
-		if(!isPanelActivated()) {
-			Site.Logo.activate();
-			Site.Content.activate();
+		var defaultValues = {
+			marginBottom: null,
+			fontSize: null,
+			color: "#0A0B10"
 		};
-		//closePanels();
-		animateButton(this);
-	};
-	
-	function animateButton(el) {
 		var time = 500;
-		el.panel.li.animate({
-			"fontSize": {
-				to: 80,
-				time: time,
-				transition: J2.Transitions.Exp.easeOut
-			}
-		},
-		function(){
-			openPanel(el.panel);
-		});	
+		var li = anchor.getParent();
+		var container = document.getElementById(anchor.hash.split("#")[1]);
+		var containerHeight = container.offsetHeight;
+		
+		container.setStyle("height",0);
+		container.setStyle("overflow","hidden");
+		container.setStyle("position","relative");
+		
+		defaultValues.marginBottom = li.getStyle("margin-bottom");
+		defaultValues.fontSize = li.getStyle("font-size");
+		defaultValues.color = anchor.getStyle("color");
+		
+		li.setStyle("font-size", "1.3em");
+		li.setStyle("margin-bottom", "0px");
+		anchor.addEvent("click", panelClick);
+		
+		function panelClick() {
+			if(!isPanelActivated()) {
+				Site.Logo.activate();
+				Site.Content.activate();
+				listItemsActivate();
+				panelActivated = true;
+			};
+			closePanels(this.panel);
+			expandButton();
+			return false;
+		};
+		
+		function expandButton() {
+			anchor.animate({
+				"color": {
+					to: J2.Core.CSSColor.prototype.create("#0A0B10"),
+					time: time
+				}
+			});
+			
+			li.animate({
+				"fontSize": {
+					to: 80,
+					time: time,
+					transition: J2.Transitions.Exp.easeOut
+				}
+			},
+			function(){
+				openPanel();
+			});	
+		};
+		
+		function collapseButton() {
+			anchor.animate({
+				"color": {
+					to: J2.Core.CSSColor.prototype.create(defaultValues.color.getHex()),
+					time: time
+				}
+			});
+		
+		
+			li.animate({
+				"fontSize": {
+					to: parseInt(defaultValues.fontSize),
+					time: time,
+					transition: J2.Transitions.Exp.easeOut
+				}
+			});
+		};
+		
+		function openPanel() {
+			container.animate({
+				"height":{
+						to: containerHeight,
+						time: panelTime
+					}
+			});
+		};
+		
+		function closePanel() {
+			container.animate({
+				"height":{
+						to: 0,
+						time: panelTime
+					}
+			});
+		};
+		
+		function activate() {
+			li.animate({
+				"margin-bottom":{
+					to: -10,
+					time: panelTime
+				}
+			})
+		};
+		
+		this.closePanel = closePanel;
+		this.openPanel = openPanel;
+		this.expandButton = expandButton;
+		this.collapseButton = collapseButton;
+		this.activate = activate;
 	};
 	
 	function isPanelActivated() {
 		return panelActivated;
 	}
 	
-	function closePanels(el) {
-		el.panel.container.animate({
-			"height":{
-					to: el.panel.containerHeight,
-					time: 200
-				}
-		});
+	function closePanels(panelToIgnore) {
+		for(var i = 0; i<panels.length;i++) {
+			if(panelToIgnore===panels[i]) continue;
+			panels[i].closePanel();
+			panels[i].collapseButton();
+		};
 	};
 	
-	function openPanel(panel) {
-		panel.container.animate({
-			"height":{
-					to: panel.containerHeight,
-					time: 200
-				}
-		});
+	function listItemsActivate() {
+		for(var i = 0; i<panels.length;i++) {
+			panels[i].activate();
+		};
 	};
-	
-	function closePanel(panel) {
-		
-	};
-	
+
 	return Panel;
 });
 
