@@ -47,6 +47,14 @@ p {
 	padding-bottom: 25px;
 }
 
+#contact {
+	width: 40%;
+}
+
+#contact div.inner {
+	padding-bottom: 25px;
+}
+
 #primaryNavigation {
 	padding: 25px;
 	zoom: 1;
