@@ -4,7 +4,10 @@
 }
 
 body {
-	background-color: #ECECEC;
+	background-color: #d7d7de;
+	background-image: url(../img/bg_body.gif);
+	background-repeat: repeat-x;
+	background-position: top left;
 	font-size: 62.5%;
 	font-family: Helvetica;
 }
@@ -71,7 +74,7 @@ p {
 }
 
 #primaryNavigation ul li a {
-	color: #74747e;
+	color: #ffffff;
 	text-decoration: none;
 	outline: none;
 }
