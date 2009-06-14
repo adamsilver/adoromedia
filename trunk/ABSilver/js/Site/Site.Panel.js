@@ -1,72 +1,4 @@
 var Site = Site || {};
-
-Site.Logo = new (function(){
-	addDOMReadyEvent(init);
-	var defaultValues = {
-		paddingTop: null,
-		paddingBottom: null
-	};
-	
-	var logo = null;
-	
-	function init() {
-		logo = document.getElementById("logo");
-		defaultValues.paddingTop = parseInt(logo.getStyle("padding-top"));
-		defaultValues.paddingBottom = parseInt(logo.getStyle("padding-bottom"));
-		logo.setStyle("padding-top", J2.Window.height()/3+"px");
-		logo.setStyle("padding-bottom", "0px");
-	};
-	
-	function activate() {
-		var time = 500;
-		logo.animate({
-			"padding-top": { to: defaultValues.paddingTop, time: time },
-			"padding-bottom": {	to: defaultValues.paddingBottom, time: time	}
-		});
-	};
-	
-	this.activate = activate;
-});
-
-Site.Content = new (function(){
-	addDOMReadyEvent(init);
-	
-	var defaultValues = {
-		bgImage: null,
-		bgColor: null
-	};
-	
-	var content = null;
-	
-	function init() {
-		content = document.getElementById("content");
-		defaultValues.bgImage = content.getStyle("background-image");
-		defaultValues.bgColor = content.getStyle("background-color");
-		content.setStyle("background-image", "none");
-		content.setStyle("background-color", getBodyBgColor());
-		content.setStyle("padding-bottom", "0px");
-	};
-	
-	function activate() {
-		var time = 500;
-		content.animate({
-			"background-color": { to: J2.Core.CSSColor.prototype.create(defaultValues.bgColor.getHex()), time: time }
-		},
-		activateComplete);
-	};
-	
-	function activateComplete() {
-		content.setStyle("background-image", defaultValues.bgImage);
-	};
-	
-	function getBodyBgColor() {
-		return document.getElementsByTagName("body")[0].getStyle("background-color");
-	};
-	
-	this.activate = activate;
-});
-
-
 Site.Panel = new (function(){
 	var panels = [];
 	var panelActivated = false;
@@ -214,24 +146,4 @@ Site.Panel = new (function(){
 	};
 
 	return Panel;
-});
-
-Site.ShowReel = new (function() {
-	addDOMReadyEvent(init);
-	
-	var showreel = null;
-	var clip = null;
-	var ul = null;
-	
-	function init() {
-		showreel = document.getElementById("work").getElementsByClassName({ cssClass: "showreel", tags: "div" })[0] || null;
-		clip = showreel.getElementsByClassName({ cssClass: "clip", tags: "div" })[0] || null;
-		ul = clip.getElementsByClassName({cssClass: "pages", tags:"div"})[0] || null;
-	};
-	
-	function getTotalWidthOfListItems() {
-		var listItems = ul.getElementsByTagName("li");
-			
-	};
-	
 });
