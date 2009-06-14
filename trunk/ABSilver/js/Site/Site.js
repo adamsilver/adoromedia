@@ -82,6 +82,7 @@ Site.Panel = new (function(){
 	};
 	
 	function Panel(anchor) {
+		var me = this;
 		var defaultValues = {
 			marginBottom: null,
 			fontSize: null,
@@ -110,8 +111,8 @@ Site.Panel = new (function(){
 				Site.Content.activate();
 				listItemsActivate();
 				panelActivated = true;
-				
 			};
+			closePanels(me)
 			expandButton();
 			this.blur();
 			return false;
@@ -132,7 +133,6 @@ Site.Panel = new (function(){
 				}
 			},
 			function(){
-				closePanels(this.panel);
 				openPanel();
 			});	
 		};
