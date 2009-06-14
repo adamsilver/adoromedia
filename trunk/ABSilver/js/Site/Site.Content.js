@@ -31,6 +31,7 @@ Site.Content = new (function(){
 	
 	function activateComplete() {
 		content.setStyle("background-image", defaultValues.bgImage);
+		content.setStyle("background-repeat", "repeat");
 	};
 	
 	function getBodyBgColor() {
