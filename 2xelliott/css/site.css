@@ -1,0 +1,13 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #d7d7de;
+	background-image: url(../img/bg_body.gif);
+	background-repeat: repeat-x;
+	background-position: top left;
+	font-size: 62.5%;
+	font-family: Helvetica;
+}
