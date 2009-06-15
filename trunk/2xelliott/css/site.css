@@ -4,10 +4,23 @@
 }
 
 body {
-	background-color: #d7d7de;
-	background-image: url(../img/bg_body.gif);
-	background-repeat: repeat-x;
-	background-position: top left;
 	font-size: 62.5%;
-	font-family: Helvetica;
+	font-family: Helvetica, Arial, Times New Roman;
+}
+
+#logo {
+	position: relative;
+	height: 100px;
+	width: 600px;
+	margin: 0px auto;
+	border-bottom: 1px solid #eee;
+}
+
+#logo a {
+	position: absolute;
+	bottom: -10px;
+	right: 0;
+	z-index: 3;
+	display: block;
+	border: 1px solid #333;
 }
