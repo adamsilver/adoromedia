@@ -333,7 +333,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #directors div.deborah {
 	padding-top: 139px;
-	background: url(../img/contact/logo_purple.gif) no-repeat;
+	background: url(../img/contact/logo_purple.gif) no-repeat 24px 0px;
 	float: left;
 	width: 227px;
 }
@@ -349,7 +349,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #directors div.david {
 	padding-top: 139px;
-	background: url(../img/contact/logo_red.gif) no-repeat;
+	background: url(../img/contact/logo_red.gif) no-repeat 8px 0px;
 	float: left;
 	width: 188px;
 }
