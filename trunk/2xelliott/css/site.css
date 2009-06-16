@@ -15,6 +15,10 @@ a {
 	text-decoration: none;
 }
 
+h1 span, h2 span, h3 span {
+	color: #e7176f;
+}
+
 h1 {
 	margin-bottom: 16px;
 	font-size: 1.7em;
@@ -72,7 +76,7 @@ p {
 
 #primaryNavigation ul li {
 	float: left;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	text-transform: lowercase;
 	font-weight: bold;
 }
@@ -94,6 +98,30 @@ p {
 	color: #ffffff;
 }
 
+#primaryNavigation ul li a.home:hover {
+	color: #e71672;
+}
+
+#primaryNavigation ul li a.team:hover {
+	color: #ffcc00;
+}
+
+#primaryNavigation ul li a.projects:hover {
+	color: #01d4ff;
+}
+
+#primaryNavigation ul li a.services:hover {
+	color: #5aff00;
+}
+
+#primaryNavigation ul li a.about:hover {
+	color: #a500ff;
+}
+
+#primaryNavigation ul li a.contact:hover {
+	color: #ff8201;
+}
+
 #content {
 	width: 644px;
 	margin: 0 auto;
@@ -107,6 +135,7 @@ p {
 
 #footer {
 	background-color: #000;
+	height: 42px;
 }
 
 #homeIntroduction {
@@ -118,13 +147,19 @@ p {
 	padding-bottom: 15px;
 	border-bottom: 1px solid #171717;
 	margin-bottom: 5px;
+	overflow: hidden;
 }
 
 #homeIntroduction p.showreel {
 	font-size: 1.7em;
 	font-weight: bold;
 	margin-bottom: 0px;
+	float: left;
+	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
+	padding-right: 44px;
 }
+
+
 
 #homeFeaturedWork {
 	margin-right: 14px;
@@ -142,10 +177,6 @@ p {
 	padding-bottom: 12px;
 }
 
-#homeFeaturedWork h2 span {
-	color: #e7176f;
-}
-
 #homeFeaturedWork div.image {
 	margin-bottom: 9px;
 }
@@ -159,15 +190,11 @@ p {
 	margin-bottom: 7px;
 }
 
-#homeFeaturedWork h3 span {
-	color: #e7176f;
-}
-
 #homeFeaturedWork p.readMore {
 	text-align: right;
 	font-size: 1.5em;
 	font-weight: bold;
-	background: url(../img/bg/ink_drops01.gif) no-repeat top right;
+	background: url(../img/bg/ink_drops01.gif) no-repeat 100% 2px;
 	padding-right: 37px;
 }
 
@@ -191,10 +218,6 @@ p {
 	margin-bottom: 12px;
 }
 
-#homeWorks div.work h2 span {
-	color: #e7176f;
-}
-
 #homeWorks div.work div.image {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -209,5 +232,33 @@ p {
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 15px;
-	
+}
+
+#homeNews {
+	float: left;
+	width: 236px;
+}
+
+#homeNews h2 {
+	background: #000 url(../img/bg/gradient01.gif) repeat-x;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 10px;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+}
+
+#homeNews div.newsItem {
+	padding-bottom: 16px;
+}
+
+#homeNews div.newsItem p.description {
+
+}
+
+#homeNews div.newsItem p.readMore {
+	text-align: right;
+	background: url(../img/bg/ink_drops02.gif) no-repeat 100% 2px ;
+	padding-right: 30px;
+	padding-bottom: 3px;
 }
