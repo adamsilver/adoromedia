@@ -127,6 +127,7 @@ body#pgHome #primaryNavigation ul li a.home,
 	color: #01d4ff;
 }
 
+body#pgServices ul li a.services,
 #primaryNavigation ul li a.services:hover {
 	color: #5aff00;
 }
@@ -305,6 +306,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 #services  h2 {
 	color: #5aff00;
 	margin-bottom: 10px;
+	font-size: 1.6em;
 }
 
 #services ul {
@@ -317,7 +319,17 @@ body#pgContact #primaryNavigation ul li a.contact,
 	padding-top: 17px;
 	padding-bottom: 12px;
 	margin-bottom: 10px;
+	font-size: 1.2em;
 	background: url(../img/bg/ink_drop_green.gif) no-repeat;
+}
+
+#services p.call {
+	text-align: right;	
+	font-size: 1.6em;
+	font-weight: bold;
+	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
+	padding-right: 40px;
+	color: #5aff00;
 }
 
 /******************************************************************************
