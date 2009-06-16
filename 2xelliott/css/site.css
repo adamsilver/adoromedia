@@ -190,6 +190,10 @@ p {
 	margin-bottom: 7px;
 }
 
+#homeFeaturedWork p {
+	margin-left: 3px;
+}
+
 #homeFeaturedWork p.readMore {
 	text-align: right;
 	font-size: 1.5em;
