@@ -31,6 +31,20 @@ body {
 	margin: 0 auto;
 }
 
+#primaryNavigation ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+#primaryNavigation ul li {
+	float: left;
+	font-size: 1.4em;
+}
+
+#primaryNavigation ul li a {
+	color: #ffffff;
+}
+
 #content {
 	width: 600px;
 	margin: 0 auto;
