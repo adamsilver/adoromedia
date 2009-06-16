@@ -23,6 +23,9 @@ body#pgContact a {
 	color: #ff8201;
 }
 
+body#pgServices a {
+	color: #5aff00;
+}
 
 h1 span, h2 span, h3 span {
 	color: #e7176f;
@@ -32,10 +35,13 @@ body#pgContact h1 span, body#pgContact h2 span, body#pgContact h3 span {
 	color: #ff8201;
 }
 
+body#pgServices h1 span, body#pgServices h2 span, body#pgServices h3 span {
+	color: #5aff00;
+}
+
 h1 {
 	margin-bottom: 16px;
 	font-size: 1.7em;
-	text-transform: uppercase;
 }
 
 h2 {
@@ -169,6 +175,9 @@ body#pgContact #primaryNavigation ul li a.contact,
 	overflow: hidden;
 }
 
+#homeIntroduction h1 {
+}
+
 #homeIntroduction p.showreel {
 	font-size: 1.7em;
 	font-weight: bold;
@@ -177,8 +186,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
 	padding-right: 44px;
 }
-
-
 
 #homeFeaturedWork {
 	margin-right: 14px;
@@ -287,7 +294,34 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 /******************************************************************************
-* Contact page
+* Services
+******************************************************************************/
+
+#services {
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+#services  h2 {
+	color: #5aff00;
+	margin-bottom: 10px;
+}
+
+#services ul {
+	list-style: none;
+	margin-left: 15px;
+}
+
+#services ul li {
+	padding-left: 40px;
+	padding-top: 17px;
+	padding-bottom: 12px;
+	margin-bottom: 10px;
+	background: url(../img/bg/ink_drop_green.gif) no-repeat;
+}
+
+/******************************************************************************
+* Contact
 ******************************************************************************/
 
 #contactIntroduction {
