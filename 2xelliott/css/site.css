@@ -51,7 +51,7 @@ body#pgServices h1 span, body#pgServices h2 span, body#pgServices h3 span {
 	color: #5aff00;
 }
 
-body#pgProjects h1 span, body#pgProjects h2 span, body#pgProjects h3 span {
+body.projects h1 span, body.projects h2 span, body.projects h3 span {
 	color: #01d4ff;
 }
 
@@ -79,6 +79,7 @@ h3 {
 p {
 	font-size: 1.1em;
 	margin-bottom: 15px;
+	text-align: justify;
 }
 
 #logo {
@@ -149,7 +150,7 @@ body#pgTeam ul li a.team,
 	color: #ffcc00;
 }
 
-body#pgProjects #primaryNavigation ul li a.projects,
+body.projects #primaryNavigation ul li a.projects,
 #primaryNavigation ul li a.projects:hover {
 	color: #01d4ff;
 }
@@ -229,7 +230,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: #000 url(../img/bg/gradient01.gif) repeat-x;
 	padding-left: 8px;
 	padding-right: 8px;
-	padding-top: 10px;
+	padding-top: 7px;
 	padding-bottom: 12px;
 }
 
@@ -273,7 +274,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: #000 url(../img/bg/gradient01.gif) repeat-x;
 	padding-left: 8px;
 	padding-right: 8px;
-	padding-top: 10px;
+	padding-top: 7px;
 	padding-bottom: 12px;
 	margin-bottom: 12px;
 }
@@ -303,7 +304,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: #000 url(../img/bg/gradient01.gif) repeat-x;
 	padding-left: 8px;
 	padding-right: 8px;
-	padding-top: 10px;
+	padding-top: 7px;
 	padding-bottom: 12px;
 	margin-bottom: 12px;
 }
@@ -390,6 +391,24 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: url(../img/bg/ink_drop_pink.gif) no-repeat;
 	padding-left: 42px;
 	color: #a500ff;
+}
+
+/******************************************************************************
+* Project
+******************************************************************************/
+
+#project {
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+#project div.image {
+	border: 6px solid #2e2e2e;
+	margin-bottom: 18px;
+}
+
+#project div.image img {
+	display: block;
 }
 
 /******************************************************************************
