@@ -191,6 +191,9 @@ p {
 	margin-bottom: 12px;
 }
 
+#homeWorks div.work h2 span {
+	color: #e7176f;
+}
 
 #homeWorks div.work div.image {
 	padding-left: 10px;
