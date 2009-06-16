@@ -31,6 +31,14 @@ body#pgAbout a {
 	color: #a500ff;
 }
 
+body#pgProjects a {
+	color: #01d4ff;
+}
+
+body#pgTeam a {
+	color: #ffcc00;
+}
+
 h1 span, h2 span, h3 span {
 	color: #e7176f;
 }
@@ -43,8 +51,16 @@ body#pgServices h1 span, body#pgServices h2 span, body#pgServices h3 span {
 	color: #5aff00;
 }
 
+body#pgProjects h1 span, body#pgProjects h2 span, body#pgProjects h3 span {
+	color: #01d4ff;
+}
+
 body#pgAbout h1 span, body#pgAbout h2 span, body#pgAbout h3 span {
 	color: #a500ff;
+}
+
+body#pgTeam h1 span, body#pgTeam h2 span, body#pgTeam h3 span {
+	color: #ffcc00;
 }
 
 h1 {
@@ -128,10 +144,12 @@ body#pgHome #primaryNavigation ul li a.home,
 	color: #e71672;
 }
 
+body#pgTeam ul li a.team,
 #primaryNavigation ul li a.team:hover {
 	color: #ffcc00;
 }
 
+body#pgProjects #primaryNavigation ul li a.projects,
 #primaryNavigation ul li a.projects:hover {
 	color: #01d4ff;
 }
