@@ -85,3 +85,11 @@ h1 span {
 #footer {
 	background-color: #000;
 }
+
+#homeIntroduction {
+	background: url(../img/bg/home_intro.gif) no-repeat top right;
+	padding-right: 180px;
+	min-height: 237px;
+}
+
+
