@@ -35,7 +35,7 @@ body.projects a {
 	color: #01d4ff;
 }
 
-body#pgTeam a {
+body.team a {
 	color: #ffcc00;
 }
 
@@ -59,7 +59,7 @@ body#pgAbout h1 span, body#pgAbout h2 span, body#pgAbout h3 span {
 	color: #a500ff;
 }
 
-body#pgTeam h1 span, body#pgTeam h2 span, body#pgTeam h3 span {
+body.team h1 span, body.team h2 span, body.team h3 span {
 	color: #ffcc00;
 }
 
@@ -124,7 +124,7 @@ p {
 }
 
 #primaryNavigation ul li a {
-	padding: 12px 0px 17px 0px;
+	padding: 12px 0px 15px 0px;
 	display: block;
 	text-decoration: none;
 }
@@ -145,7 +145,7 @@ body#pgHome #primaryNavigation ul li a.home,
 	color: #e71672;
 }
 
-body#pgTeam ul li a.team,
+body.team #primaryNavigation ul li a.team,
 #primaryNavigation ul li a.team:hover {
 	color: #ffcc00;
 }
@@ -394,6 +394,25 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 /******************************************************************************
+* Team
+******************************************************************************/
+
+#teamMember {
+	margin-left: 14px;
+	margin-right: 14px;
+	overflow: hidden;
+}
+
+#teamMember div.image {
+	border: 6px solid #2e2e2e;
+	margin-bottom: 18px;
+}
+
+#teamMember div.image img {
+	display: block;
+}
+
+/******************************************************************************
 * Project
 ******************************************************************************/
 
@@ -440,7 +459,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 	padding-right: 40px;
 	padding-bottom: 3px;
 }
-
 
 #project div.subSection02 {
 	float: left;
