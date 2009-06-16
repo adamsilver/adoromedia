@@ -31,7 +31,7 @@ body#pgAbout a {
 	color: #a500ff;
 }
 
-body#pgProjects a {
+body.projects a {
 	color: #01d4ff;
 }
 
@@ -400,6 +400,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 #project {
 	margin-left: 14px;
 	margin-right: 14px;
+	overflow: hidden;
 }
 
 #project div.image {
@@ -409,6 +410,51 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #project div.image img {
 	display: block;
+}
+
+#project div.subSection01 {
+	float: left;
+	width: 423px;
+	padding-left: 2px;
+	padding-right: 13px;
+}
+
+#project div.subSection01 ul {
+	list-style: none;
+	margin-left: 15px;
+}
+
+#project div.subSection01 ul li {
+	padding-left: 40px;
+	padding-bottom: 12px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	background: url(../img/bg/ink_drop_blue.gif) no-repeat;
+	color: #01d4ff;
+}
+
+#project div.subSection01 p.viewGallery {
+	font-size: 1.5em;
+	float: left;
+	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
+	padding-right: 40px;
+	padding-bottom: 3px;
+}
+
+
+#project div.subSection02 {
+	float: left;
+	width: 178px;
+}
+
+#project div.subSection02 a {
+	display:block;
+	margin-bottom: 13px;
+}
+
+#project div.subSection02 a img {
+	display: block;
+	border: 2px solid #2e2e2e;
 }
 
 /******************************************************************************
