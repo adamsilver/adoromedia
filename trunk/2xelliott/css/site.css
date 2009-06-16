@@ -102,6 +102,7 @@ p {
 	border-top: 1px solid #171717;
 	border-bottom: 1px solid #171717;
 	padding-top: 17px;
+	overflow: hidden;
 }
 
 #footer {
@@ -128,6 +129,9 @@ p {
 #homeFeaturedWork {
 	margin-right: 14px;
 	margin-left: 14px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #171717;
+	margin-bottom: 5px;
 }
 
 #homeFeaturedWork h2 {
@@ -168,6 +172,39 @@ p {
 }
 
 #homeWorks {
+	margin-left: 14px;
+	float: left;
+	width: 364px;
+	margin-right: 16px;
 }
 
-#homeWorks
+#homeWorks div.work {
+	padding-bottom: 20px;
+}
+
+#homeWorks div.work h2 {
+	background: #000 url(../img/bg/gradient01.gif) repeat-x;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 10px;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+}
+
+
+#homeWorks div.work div.image {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 9px;
+}
+
+#homeWorks div.work div.image img {
+	display: block;
+}
+
+#homeWorks div.work p.description {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+	
+}
