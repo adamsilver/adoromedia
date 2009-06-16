@@ -1,3 +1,7 @@
+/******************************************************************************
+* General
+******************************************************************************/
+
 * { 	margin: 0px; padding: 0px; }
 
 body {
@@ -15,18 +19,23 @@ a {
 	text-decoration: none;
 }
 
+body#pgContact a {
+	color: #ff8201;
+}
+
+
 h1 span, h2 span, h3 span {
 	color: #e7176f;
+}
+
+body#pgContact h1 span, body#pgContact h2 span, body#pgContact h3 span {
+	color: #ff8201;
 }
 
 h1 {
 	margin-bottom: 16px;
 	font-size: 1.7em;
 	text-transform: uppercase;
-}
-
-h1 span {
-	color: #e71672;
 }
 
 h2 {
@@ -41,8 +50,6 @@ p {
 	font-size: 1.1em;
 	margin-bottom: 15px;
 }
-
-
 
 #logo {
 	position: relative;
@@ -59,6 +66,10 @@ p {
 	display: block;
 	border: 1px solid #333;
 }
+
+/******************************************************************************
+* Primary navigation
+******************************************************************************/
 
 #primaryNavigation {
 	background-color: #000;
@@ -97,7 +108,7 @@ p {
 #primaryNavigation ul li a {
 	color: #ffffff;
 }
-
+body#pgHome #primaryNavigation ul li a.home,
 #primaryNavigation ul li a.home:hover {
 	color: #e71672;
 }
@@ -117,10 +128,14 @@ p {
 #primaryNavigation ul li a.about:hover {
 	color: #a500ff;
 }
-
+body#pgContact #primaryNavigation ul li a.contact,
 #primaryNavigation ul li a.contact:hover {
 	color: #ff8201;
 }
+
+/******************************************************************************
+* Layout
+******************************************************************************/
 
 #content {
 	width: 644px;
@@ -137,6 +152,10 @@ p {
 	background-color: #000;
 	height: 42px;
 }
+
+/******************************************************************************
+* Home page
+******************************************************************************/
 
 #homeIntroduction {
 	background: url(../img/bg/home_intro.gif) no-repeat top right;
@@ -266,3 +285,79 @@ p {
 	padding-right: 30px;
 	padding-bottom: 3px;
 }
+
+/******************************************************************************
+* Contact page
+******************************************************************************/
+
+#contactIntroduction {
+	margin-right: 14px;
+	margin-left: 14px;
+	margin-bottom: 20px;
+}
+
+#directors {
+	overflow: hidden;
+	margin-right: 14px;
+	margin-left: 14px;
+	padding-bottom: 25px;
+}
+
+#directors  h2 {
+	font-size: 1.4em;
+}
+
+#directors p.email,
+#directors p.tel,
+#directors p.mob {
+	margin-bottom: 0px;
+}
+
+/* james */
+
+#directors div.james {
+	padding-top: 139px;
+	background: url(../img/contact/logo_blue.gif) no-repeat;
+	float: left;
+	width: 198px;
+}
+
+#directors div.james a ,
+#directors div.james p.title,
+#directors div.james p.tel span,
+#directors div.james p.mob span{
+	color: #4fcbff;
+}
+
+/* debbie */
+
+#directors div.deborah {
+	padding-top: 139px;
+	background: url(../img/contact/logo_purple.gif) no-repeat;
+	float: left;
+	width: 227px;
+}
+
+#directors div.deborah a ,
+#directors div.deborah p.title,
+#directors div.deborah p.tel span,
+#directors div.deborah p.mob span{
+	color: #822269;
+}
+
+/* david */
+
+#directors div.david {
+	padding-top: 139px;
+	background: url(../img/contact/logo_red.gif) no-repeat;
+	float: left;
+	width: 188px;
+}
+
+#directors div.david a ,
+#directors div.david p.title,
+#directors div.david p.tel span,
+#directors div.david p.mob span{
+	color: #ed1e24;
+}
+
