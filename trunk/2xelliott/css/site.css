@@ -1,11 +1,9 @@
-* {
-	margin: 0px;
-	padding: 0px;
-}
+* { 	margin: 0px; padding: 0px; }
 
 body {
 	font-size: 62.5%;
-	font-family: Helvetica, Arial, Times New Roman;
+	font-family: Rockwell, Helvetica, Arial, Times New Roman;
+	background: url(../img/bg/body.jpg);
 }
 
 #logo {
@@ -13,7 +11,6 @@ body {
 	height: 100px;
 	width: 600px;
 	margin: 0px auto;
-	border-bottom: 1px solid #eee;
 }
 
 #logo a {
@@ -23,4 +20,26 @@ body {
 	z-index: 3;
 	display: block;
 	border: 1px solid #333;
+}
+
+#primaryNavigation {
+	background-color: #000;
+}
+
+#primaryNavigationInner {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#content {
+	width: 600px;
+	margin: 0 auto;
+	background-color: #000;
+	color: #fff;
+	border-top: 1px solid #171717;
+	border-bottom: 1px solid #171717;
+}
+
+#footer {
+	background-color: #000;
 }
