@@ -6,6 +6,16 @@ body {
 	background: url(../img/bg/body.jpg);
 }
 
+h1 {
+	margin-bottom: 16px;
+	font-size: 1.7em;
+	text-transform: uppercase;
+}
+
+h1 span {
+	color: #e71672;
+}
+
 #logo {
 	position: relative;
 	height: 100px;
@@ -38,7 +48,22 @@ body {
 
 #primaryNavigation ul li {
 	float: left;
-	font-size: 1.4em;
+	font-size: 1.1em;
+	text-transform: lowercase;
+	font-weight: bold;
+}
+
+#primaryNavigation ul li a {
+	padding: 12px 0px 17px 0px;
+	display: block;
+	text-decoration: none;
+}
+
+#primaryNavigation ul li a span {
+	padding-left: 13px;
+	padding-right: 12px;
+	border-right: 1px solid #313131;
+	display: block;
 }
 
 #primaryNavigation ul li a {
@@ -46,12 +71,15 @@ body {
 }
 
 #content {
-	width: 600px;
+	width: 564px;
 	margin: 0 auto;
 	background-color: #000;
 	color: #fff;
 	border-top: 1px solid #171717;
 	border-bottom: 1px solid #171717;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 17px;
 }
 
 #footer {
