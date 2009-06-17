@@ -412,6 +412,26 @@ body#pgContact #primaryNavigation ul li a.contact,
 	display: block;
 }
 
+#teamMember div.gallery {
+}
+
+#teamMember div.gallery ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+#teamMember div.gallery ul li {
+	float: left;
+}
+
+#teamMember p.viewGallery {
+	font-size: 1.5em;
+	float: left;
+	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
+	padding-right: 40px;
+	padding-bottom: 3px;
+}
+
 /******************************************************************************
 * Project
 ******************************************************************************/
