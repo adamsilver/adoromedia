@@ -129,10 +129,14 @@ p {
 	text-decoration: none;
 }
 
-#primaryNavigation ul li a span {
+#primaryNavigation ul li a span.wrap {
 	padding-left: 13px;
 	padding-right: 12px;
 	border-right: 1px solid #313131;
+	display: block;
+}
+
+#primaryNavigation ul li a span {
 	display: block;
 }
 
@@ -413,18 +417,26 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 #teamMember div.gallery {
+	
 }
 
 #teamMember div.gallery ul {
 	list-style: none;
 	overflow: hidden;
+	margin-bottom: 15px;
 }
 
 #teamMember div.gallery ul li {
 	float: left;
+	margin-right: 5px;
 }
 
-#teamMember p.viewGallery {
+#teamMember div.gallery ul li a {
+	display: block;
+	border: 3px solid #2e2e2e;
+}
+
+#teamMember div.gallery p.viewGallery {
 	font-size: 1.5em;
 	float: left;
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
