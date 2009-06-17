@@ -3,8 +3,7 @@ Site.Global = Site.Global || {};
 Site.Global.PrimaryNavigation = new (function(){
 	$(document).ready(init);
 	
-	var cssHoverClass,
-		animationTime = 250;
+	var animationTime = 250;
 	
 	function init() {
 		var nav = document.getElementById("primaryNavigation");
