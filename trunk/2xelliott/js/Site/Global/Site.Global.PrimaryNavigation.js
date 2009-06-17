@@ -16,31 +16,32 @@ Site.Global.PrimaryNavigation = new (function(){
 		}
 	};
 	
-	function NavItem(listItem) {
-		var newAnchor = null;
-		var height = listItem.offsetHeight;
+	function NavItem(li) {
+		var item = $(li).find("a span.wrap")[0] || null;
+		var newSpan = null;
+		var height = item.offsetHeight;
 		setupItem();
 		
 		function setupItem() {
-			$(listItem).css("overflow", "hidden");
-			$(listItem).css("position", "relative");	
-			$(listItem).css("height", getListItemHeight()+"px");
-			$(listItem).bind("mouseenter", listItem_mouseEnter);
-			$(listItem).bind("mouseleave", listItem_mouseLeave);
-			$(getAnchor()).css("position", "relative");
-			$(getAnchor()).css("top", -height+"px");
-			createClonedAnchor();
+			$(item).css("overflow", "hidden");
+			$(item).css("position", "relative");	
+			$(item).css("height", getItemHeight()+"px");
+			$(li).bind("mouseenter", item_mouseEnter);
+			$(li).bind("mouseleave", item_mouseLeave);
+			$(getSpan()).css("position", "relative");
+			$(getSpan()).css("top", -height+"px");
+			createClonedSpan();
 		};
 		
-		function listItem_mouseEnter(e) {
-			$(getAnchor()).animate({
+		function item_mouseEnter(e) {
+			$(getSpan()).animate({
 					"top": "0"
 				}, 
 				{ 
 					duration: animationTime
 				}
 			);
-			$(getClonedAnchor()).animate({
+			$(getClonedSpan()).animate({
 					"top": "0"
 				}, 
 				{ 
@@ -49,16 +50,16 @@ Site.Global.PrimaryNavigation = new (function(){
 			);
 		};
 		
-		function listItem_mouseLeave(e) {
-			$(getAnchor()).animate({
-					"top": -getListItemHeight()
+		function item_mouseLeave(e) {
+			$(getSpan()).animate({
+					"top": -getItemHeight()
 				}, 
 				{ 
 					duration: animationTime
 				}
 			);
-			$(getClonedAnchor()).animate({
-					"top": -getListItemHeight()
+			$(getClonedSpan()).animate({
+					"top": -getItemHeight()
 				}, 
 				{ 
 					duration: animationTime
@@ -66,21 +67,21 @@ Site.Global.PrimaryNavigation = new (function(){
 			);
 		};
 		
-		function getAnchor() {
-			return $(listItem).find("a")[0] || null;
+		function getSpan() {
+			return $(item).find("span")[0] || null;
 		};
 		
-		function getListItemHeight() {
+		function getItemHeight() {
 			return height;
 		};
 		
-		function getClonedAnchor() {
-			return newAnchor;
+		function getClonedSpan() {
+			return newSpan;
 		};
 		
-		function createClonedAnchor() {
-			newAnchor = getAnchor().cloneNode(true);
-			listItem.appendChild(newAnchor);
+		function createClonedSpan() {
+			newSpan = getSpan().cloneNode(true);
+			item.appendChild(newSpan);
 		};
 	};
 	
