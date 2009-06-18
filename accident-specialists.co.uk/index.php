@@ -1,25 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php include("inc/doctype.php"); ?>
+<?php include("inc/site.php"); ?>
+<?php
+	$metaKeywords = "hello there cowboy keywords";
+	$metaDescription = "hello there cowboy";
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	    <title>The Accident Specialists, North West London</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="imagetoolbar" content="no" />
-		<meta name="language" content="en" />
-		<meta name="author" content="Adoro Media" />
-		<meta name="copyright" content="The Accident Specialists" />
-		<meta name="robots" content="all,index,follow" />
-		<meta name="keywords" content="" />
-		<meta name="description" content="" />
-		<!--<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />-->
-		<link rel="stylesheet" href="css/site.css" type="text/css" media="screen" />
-		<!--[if IE 7]><link rel="stylesheet" href="css/ie7.css" type="text/css" /><![endif]-->
-		<!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" /><![endif]-->
-		<script src="js/JQuery/jquery-1.3.2.min.js" type="text/javascript"></script>
+		<?php include("inc/headGlobal.php"); ?>
+		<?php include("inc/headCSS.php"); ?>
+		<?php include("inc/headCSSIE.php"); ?>
+		<?php include("inc/headJS.php"); ?>
 	</head>
-	<body>
+	<body id="pgHomePage" class="home">
 		<div id="container">
-			<? include("inc/header.php"); ?>
-			<? include("inc/footer.php"); ?>
+			<?php include("inc/header.php"); ?>
+			<?php include("inc/primaryNavigation.php"); ?>
+			<div id="content">
+				<div id="primary">
+					<h1>Injury lawyers, accident claims, North West London, UK</h1>
+				</div>
+				<div id="secondary">
+					<h2>Claim now</h2>
+
+					<?php 
+						foreach($_POST as $key => $data) {
+							echo $data . "<br/>";
+						};
+					?>
+
+					<form method="post" action="index.php">
+						<div class="field">
+							<div class="indicator">
+								<label for="fullName">Full name</label>
+							</div>
+							<div class="singleInput">
+								<input class="text" type="text" name="fullName" id="fullName" />
+							</div>
+						</div>
+						<div class="field">
+							<div class="indicator">
+								<label for="age">Age</label>
+							</div>
+							<div class="singleInput">
+								<input class="text" type="text" name="age" id="age" />
+							</div>
+						</div>
+						<input type="submit" name="send" value="Claim" /> 
+					</form>
+				</div>
+			</div>
+			<?php include("inc/footer.php"); ?>
 		</div>
 	</body>
 </html>
