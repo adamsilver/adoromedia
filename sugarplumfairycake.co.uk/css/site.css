@@ -1,0 +1,17 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../img/bg_body.gif);
+	border-top: 7px solid #48083c;
+	font-family: georgia, arial, helvetica;
+}
+
+p.email,
+p.tel,
+p.mob {
+	font-size: 1.3em;
+	text-transform: uppercase;
+	margin: 16px 32px;
+	color: #48083c;
+}
