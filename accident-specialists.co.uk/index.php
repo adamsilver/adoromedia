@@ -3,6 +3,7 @@
 <?php
 	$metaKeywords = "hello there cowboy keywords";
 	$metaDescription = "hello there cowboy";
+	$siteSection = "home";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
