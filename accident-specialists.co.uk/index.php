@@ -18,15 +18,23 @@
 			<?php include("inc/header.php"); ?>
 			<?php include("inc/primaryNavigation.php"); ?>
 			<div id="banner">
-					stuff
-				</div>
+				<p>Had an accident...? Not your fault? The Accident Specialist can help you!</p>
+			</div>
 			<div id="content">
 				
 				<div id="breadcrumb">sad</div>
 				<div id="primary">
-					<h1>Injury lawyers, accident claims, North West London, UK</h1>
-				</div>
-				<div id="secondary">
+					<h1>Specialising in compensation for injury, vehicle replacement and protected no claims, in the North West London area.</h1>
+					
+					<h2>Stuff to do</h2>
+					
+					<ul>
+						<li>google map</li>
+						<li>Carousel - quotes - fading effect?</li>
+						<li>Imagery</li>
+						<li></li>
+					</ul>
+					
 					<h2>Claim now</h2>
 
 					<?php 
