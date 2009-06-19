@@ -8,9 +8,12 @@
 }
 
 body {
-	background-color: #f5f5f5;
+	background-color: #E7ECF2;
+	background-image: url(../img/bg/body.jpg);
+	background-repeat: repeat-x;
 	font-size: 62.5%;
 	font-family: arial, helvetica;
+	margin-top: 5px;
 }
 
 /********************************************************************************
@@ -45,17 +48,86 @@ p {
 ********************************************************************************/
 
 #container {
-	width: 960px;
+	width: 928px;
 	background-color: #fff;
 	margin: 0 auto;
+	border:1px solid #C7D4E4;
+	background-image: url(../img/bg/container.jpg);
+	background-repeat: repeat-x;
+	padding: 16px;
 }
 
 #header {
-	border-bottom: 1px solid #d9d9d9;
 	margin-bottom: 16px;
+	height: 80px;
 }
 
 #footer {
-	border-top: 1px solid #d9d9d9;
-	padding-top: 16px;
+	background-color:#3671AB;
+	color:#ECEFF6;
+	padding:16px;
+}
+
+#banner {
+	background:#3470AC;
+	
+	height: 100px;
+}
+
+#breadcrumb {
+	height: 39px;
+	background-image: url(../img/bg/trans.jpg);
+	border-color:#9AAAC4;
+	border-style:solid;
+	border-width:1px 0 0 1px;
+}
+
+#primaryNavigation {
+	background-color:#FFFFFF;
+	border-right:1px solid #A8C6E4;
+	border-top:1px solid #91B8DD;
+	border-bottom: 1px solid #fff;
+}
+
+#primaryNavigation ul {
+	overflow: hidden;
+	list-style: none;
+	background:#F0F4F8 url(../img/bg/nav.jpg) top left repeat-x;
+}
+
+#primaryNavigation ul li {
+	float: left;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#primaryNavigation ul li.contact a {
+	width: 186px;
+}
+
+#primaryNavigation ul li a {
+	background:#F0F4F8 url(../img/bg/nav.jpg) repeat-x;
+	border-left:1px solid #91B8DD;
+	color:#3570AA;
+	display: block;
+	width: 184px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-decoration:none;
+}
+#primaryNavigation ul li.selected a,
+#primaryNavigation ul li a:hover {
+	background:#789ec7 url(../img/bg/nav_on.jpg);
+	color:#ffffff;
+	border-left:1px solid #91b8dd;
+}
+
+#content {
+	margin-top: -40px;
+	margin-left: 16px;
+	margin-right: 16px;
+	background: url(../img/bg/content.jpg) repeat-x 0px 40px;
+	padding-bottom: 16px;
 }

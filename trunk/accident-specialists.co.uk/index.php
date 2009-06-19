@@ -17,7 +17,12 @@
 		<div id="container">
 			<?php include("inc/header.php"); ?>
 			<?php include("inc/primaryNavigation.php"); ?>
+			<div id="banner">
+					stuff
+				</div>
 			<div id="content">
+				
+				<div id="breadcrumb">sad</div>
 				<div id="primary">
 					<h1>Injury lawyers, accident claims, North West London, UK</h1>
 				</div>
