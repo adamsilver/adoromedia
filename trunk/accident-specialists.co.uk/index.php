@@ -32,7 +32,10 @@
 						<li>google map</li>
 						<li>Carousel - quotes - fading effect?</li>
 						<li>Imagery</li>
-						<li></li>
+						<li>back to top linsk</li>
+						<li>skip links - animate to content</li>
+						<li>Look at apple design structure with red and blue</li>
+						<li>Calendar pickers?</li>
 					</ul>
 					
 					<h2>Claim now</h2>
