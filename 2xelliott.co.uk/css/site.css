@@ -84,17 +84,52 @@ p {
 
 #logo {
 	position: relative;
-	height: 138px;
+	height: 110px;
 	width: 760px;
 	margin: 0px auto;
 }
 
 #logo a {
 	position: absolute;
-	bottom: -60px;
+	bottom: -88px;
 	right: -18px;
 	z-index: 3;
 	display: block;
+}
+
+/******************************************************************************
+* Glow
+******************************************************************************/
+
+#glow {
+	background: url(../img/glow/top_pink.png) repeat-x;
+	height: 28px;
+}
+
+.team #glow {
+	background: url(../img/glow/top_yellow.png) repeat-x;
+	height: 28px;
+}
+
+.projects #glow {
+	background: url(../img/glow/top_blue.png) repeat-x;
+	height: 28px;
+}
+
+#pgServices #glow {
+	background: url(../img/glow/top_green.png) repeat-x;
+	height: 28px;
+}
+
+
+#pgAbout #glow {
+	background: url(../img/glow/top_purple.png) repeat-x;
+	height: 28px;
+}
+
+#pgContact #glow {
+	background: url(../img/glow/top_orange.png) repeat-x;
+	height: 28px;
 }
 
 /******************************************************************************
