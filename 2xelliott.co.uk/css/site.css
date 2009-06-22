@@ -133,6 +133,41 @@ p {
 }
 
 /******************************************************************************
+* Glow 2
+******************************************************************************/
+
+#glow2 {
+	background: url(../img/glow/bot_pink.png) repeat-x;
+	height: 28px;
+}
+
+.team #glow2 {
+	background: url(../img/glow/bot_yellow.png) repeat-x;
+	height: 28px;
+}
+
+.projects #glow2 {
+	background: url(../img/glow/bot_blue.png) repeat-x;
+	height: 28px;
+}
+
+#pgServices #glow2 {
+	background: url(../img/glow/bot_green.png) repeat-x;
+	height: 28px;
+}
+
+
+#pgAbout #glow2 {
+	background: url(../img/glow/bot_purple.png) repeat-x;
+	height: 28px;
+}
+
+#pgContact #glow2 {
+	background: url(../img/glow/bot_orange.png) repeat-x;
+	height: 28px;
+}
+
+/******************************************************************************
 * Primary navigation
 ******************************************************************************/
 
