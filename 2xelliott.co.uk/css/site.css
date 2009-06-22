@@ -148,6 +148,7 @@ p {
 #primaryNavigation ul {
 	list-style: none;
 	overflow: hidden;
+	padding-left: 7px;
 }
 
 #primaryNavigation ul li {
@@ -213,14 +214,14 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #content {
-	width: 760px;
+	width: 720px;
 	margin: 0 auto;
 	background-color: #000;
 	color: #fff;
 	border-top: 1px solid #171717;
 	border-bottom: 1px solid #171717;
-	padding-top: 17px;
 	overflow: hidden;
+	padding: 20px;
 }
 
 #footer {
@@ -236,8 +237,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: url(../img/bg/home_intro.gif) no-repeat top right;
 	padding-right: 180px;
 	min-height: 241px;
-	margin-right: 14px;
-	margin-left: 14px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #171717;
 	margin-bottom: 5px;
@@ -257,8 +256,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 #homeFeaturedWork {
-	margin-right: 14px;
-	margin-left: 14px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #171717;
 	margin-bottom: 5px;
@@ -298,7 +295,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 #homeWorks {
-	margin-left: 14px;
 	float: left;
 	width: 364px;
 	margin-right: 16px;
@@ -367,8 +363,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #services {
-	margin-left: 14px;
-	margin-right: 14px;
+
 }
 
 #services  h2 {
@@ -405,8 +400,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #about {
-	margin-left: 14px;
-	margin-right: 14px;
 }
 
 #about h2 {
@@ -436,8 +429,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #teamMember {
-	margin-left: 14px;
-	margin-right: 14px;
 	overflow: hidden;
 }
 
@@ -483,8 +474,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #project {
-	margin-left: 14px;
-	margin-right: 14px;
 	overflow: hidden;
 }
 
@@ -546,8 +535,6 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #contactIntroduction {
-	margin-right: 14px;
-	margin-left: 14px;
 	margin-bottom: 20px;
 }
 
