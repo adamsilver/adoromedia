@@ -6,7 +6,7 @@
 
 body {
 	font-size: 62.5%;
-	font-family: Rockwell, Helvetica, Arial, Times New Roman;
+	font-family: Georgia, Helvetica, Arial, Times New Roman;
 	background: url(../img/bg/body.jpg);
 }
 
@@ -65,7 +65,7 @@ body.team h1 span, body.team h2 span, body.team h3 span {
 
 h1 {
 	margin-bottom: 16px;
-	font-size: 1.7em;
+	font-size: 2.2em;
 }
 
 h2 {
@@ -84,18 +84,17 @@ p {
 
 #logo {
 	position: relative;
-	height: 140px;
-	width: 600px;
+	height: 138px;
+	width: 760px;
 	margin: 0px auto;
 }
 
 #logo a {
 	position: absolute;
-	bottom: -10px;
-	right: 0;
+	bottom: -60px;
+	right: -18px;
 	z-index: 3;
 	display: block;
-	border: 1px solid #333;
 }
 
 /******************************************************************************
@@ -107,7 +106,7 @@ p {
 }
 
 #primaryNavigationInner {
-	width: 644px;
+	width: 760px;
 	margin: 0 auto;
 }
 
@@ -179,7 +178,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #content {
-	width: 644px;
+	width: 760px;
 	margin: 0 auto;
 	background-color: #000;
 	color: #fff;
