@@ -258,7 +258,8 @@ body#pgContact #primaryNavigation ul li a.contact,
 	border-top: 1px solid #171717;
 	border-bottom: 1px solid #171717;
 	overflow: hidden;
-	padding: 20px;
+	padding: 20px 55px;
+	background: url(../img/bg/content.png) repeat-y top center;
 }
 
 #footer {
