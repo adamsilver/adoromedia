@@ -34,7 +34,7 @@ Site.Global.PrimaryNavigation = new (function(){
 			createClonedSpan();
 		};
 		
-		function item_mouseEnter(e) {
+		function item_mouseEnter(e) {		
 			$.publish(Site.Global.CustomEvents.navMouseover, getText(getSpan()));
 			$(getSpan()).animate({
 					"top": "0"
