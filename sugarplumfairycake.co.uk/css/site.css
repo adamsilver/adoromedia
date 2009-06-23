@@ -15,7 +15,6 @@ a:link, a:visited {
 }
 
 a:hover, a:focus {
-	
 	text-decoration: underline;
 }
 
@@ -47,12 +46,12 @@ p.mob {
 	color: #48083c;
 }
 
-
 #logo {
-	margin: 0px 32px 100px;
+	margin: 0px 32px 140px;
 	height: 250px;
 	background:#48083c;
 	color: #ffffff;
+	opacity: 0.2;
 }
 
 div#column01 {
