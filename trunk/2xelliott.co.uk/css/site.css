@@ -564,6 +564,18 @@ body#pgContact #primaryNavigation ul li a.contact,
 #projects ul.pieces li {
 	float: left;
 	width: 154px;
+	margin-right: 30px;
+	margin-bottom: 18px;
+}
+
+#projects ul.pieces li.last {
+	margin-right: 0px;
+}
+
+#projects ul.pieces li div.image {
+	border: 3px solid #2e2e2e;
+	height: 30px;
+	margin-bottom: 7px;
 }
 
 #projects ul.pieces li h2 {
@@ -575,6 +587,14 @@ body#pgContact #primaryNavigation ul li a.contact,
 	color: #01D4FF;
 	font-size: 2.3em;
 	margin-bottom: 7px;
+}
+
+#projects ul.pieces li p {
+	background:transparent url(../img/bg/ink_drops02.gif) no-repeat 100% 2px;
+	margin-bottom:0;
+	padding:0 30px 3px 8px;
+	text-align:right;
+	font-weight: bold;
 }
 
 /******************************************************************************
