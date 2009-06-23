@@ -444,6 +444,37 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 /******************************************************************************
+* Team
+******************************************************************************/
+
+#team {
+	
+}
+
+#team ul.members {
+	list-style: none;	
+	overflow: hidden;
+}
+
+#team ul.members li {
+	float: left;
+	background: url(../img/bg/ink_drop_yellow_small.gif) no-repeat 0% 50%;
+	padding-left: 11px;
+	width: 229px;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#team ul.members li a {
+	
+}
+
+#team ul.members li a span {
+	color: #ffffff;
+}
+
+/******************************************************************************
 * About
 ******************************************************************************/
 
@@ -473,7 +504,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 }
 
 /******************************************************************************
-* Team
+* Team member
 ******************************************************************************/
 
 #teamMember {
@@ -515,6 +546,35 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
 	padding-right: 40px;
 	padding-bottom: 3px;
+}
+
+/******************************************************************************
+* Projects landing
+******************************************************************************/
+
+#projects {
+	
+}
+
+#projects ul.pieces {
+	list-style: none;
+	overflow: hidden;
+}
+
+#projects ul.pieces li {
+	float: left;
+	width: 154px;
+}
+
+#projects ul.pieces li h2 {
+	color: #ffffff;
+	font-size: 1.3em;
+}
+
+#projects ul.pieces li h3 {
+	color: #01D4FF;
+	font-size: 2.3em;
+	margin-bottom: 7px;
 }
 
 /******************************************************************************
