@@ -348,6 +348,12 @@ body#pgContact #primaryNavigation ul li a.contact,
 	margin-bottom: 12px;
 }
 
+#homeWorks div.work h3 {
+	color:#E7176F;
+	margin: 0px 10px 3px 10px;
+	font-size: 1.6em;
+}
+
 #homeWorks div.work div.image {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -382,15 +388,20 @@ body#pgContact #primaryNavigation ul li a.contact,
 	padding-bottom: 16px;
 }
 
-#homeNews div.newsItem p.description {
+#homeNews div.newsItem h3 {
+	margin: 0px 8px;
+	font-size: 1.6em;
+}
 
+#homeNews div.newsItem p.description {
+	padding: 0px 8px;
 }
 
 #homeNews div.newsItem p.readMore {
 	text-align: right;
 	background: url(../img/bg/ink_drops02.gif) no-repeat 100% 2px ;
-	padding-right: 30px;
-	padding-bottom: 3px;
+	padding: 0px 30px 3px 8px;
+	margin-bottom: 0px;
 }
 
 /******************************************************************************
