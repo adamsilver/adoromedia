@@ -7,12 +7,13 @@
 body {
 	font-size: 62.5%;
 	font-family: Georgia, Helvetica, Arial, Times New Roman;
-	background: url(../img/bg/body.jpg);
+	background-image: url(../img/bg/body.jpg);
 }
 
 img {
 	border: none;
 }
+
 
 a {
 	color: #ff017b;
@@ -208,6 +209,7 @@ p {
 
 #primaryNavigation ul li a span {
 	display: block;
+	cursor: pointer;
 }
 
 #primaryNavigation ul li a {
