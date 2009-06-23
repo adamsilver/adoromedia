@@ -40,6 +40,7 @@ Site.Global.PrimaryNavigation = new (function(){
 					"top": "0"
 				}, 
 				{ 
+					queue: false,
 					duration: animationTime
 				}
 			);
@@ -47,6 +48,7 @@ Site.Global.PrimaryNavigation = new (function(){
 					"top": "0"
 				}, 
 				{ 
+					queue: false,
 					duration: animationTime
 				}
 			);
@@ -58,6 +60,7 @@ Site.Global.PrimaryNavigation = new (function(){
 					"top": -getItemHeight()
 				}, 
 				{ 
+					queue: false,
 					duration: animationTime
 				}
 			);
@@ -65,6 +68,7 @@ Site.Global.PrimaryNavigation = new (function(){
 					"top": -getItemHeight()
 				}, 
 				{ 
+					queue: false,
 					duration: animationTime
 				}
 			);
