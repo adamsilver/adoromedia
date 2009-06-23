@@ -12,6 +12,7 @@ Site.Global.PrimaryNavigation = new (function(){
 		var navItems = $(nav).find("li");
 		
 		for(var i = navItems.length-1; i>=0; i--) {
+			if($(navItems[i]).hasClass("selected")) continue;
 			new NavItem(navItems[i]);
 		}
 	};
@@ -34,7 +35,7 @@ Site.Global.PrimaryNavigation = new (function(){
 		};
 		
 		function item_mouseEnter(e) {
-			$.publish(Site.Global.CustomEvents.navMouseover, "the colour to change to");
+			$.publish(Site.Global.CustomEvents.navMouseover, getText(getSpan()));
 			$(getSpan()).animate({
 					"top": "0"
 				}, 
@@ -86,5 +87,13 @@ Site.Global.PrimaryNavigation = new (function(){
 			item.appendChild(newSpan);
 		};
 	};
+	
+	function getColour(node) {
+		return $(node).css("colour");
+	};
+	
+	function getText(node) {
+		return node.innerHTML;
+	}
 	
 });
