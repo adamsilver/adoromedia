@@ -19,16 +19,16 @@ Site.Global.HeaderGlow = new (function(){
 	};
 	
 	function changeGlow(e) {
-		$(glow).animate({opacity: 0}, {duration: 125, complete: function(){
+		$(glow).animate({opacity: 0}, {queue: false,duration: 125, complete: function(){
 			$(glow).css("background-image",imgUrlPre+getColourFromText(e.data[0])+imgUrlAft);
-			$(glow).animate({opacity: 1}, {duration: 125});
+			$(glow).animate({opacity: 1}, {queue: false, duration: 125});
 		}});
 	};
 	
 	function changeGlowBack(e) {
-		$(glow).animate({opacity: 0}, {duration: 125, complete: function(){
+		$(glow).animate({opacity: 0}, {queue: false, duration: 125, complete: function(){
 			$(glow).css("background-image",defaultBackgroundUrl);
-			$(glow).animate({opacity: 1}, {duration: 125});
+			$(glow).animate({opacity: 1}, {queue: false,duration: 125});
 		}});
 	};
 	
