@@ -4,6 +4,8 @@ Site.Global.HeaderGlow = new (function(){
 	$(document).ready(init);
 	
 	var glow,
+		imgUrlPre= "url(img/glow/top_",
+		imgUrlAft= ".png)",
 		defaultBackgroundUrl;
 	
 	function init() {
@@ -13,17 +15,34 @@ Site.Global.HeaderGlow = new (function(){
 		defaultBackgroundUrl = $(glow).css("background-image");
 		
 		$.subscribe(Site.Global.CustomEvents.navMouseover, changeGlow);
-		
+		$.subscribe(Site.Global.CustomEvents.navMouseout, changeGlowBack);
 	};
 	
 	function changeGlow(e) {
 		$(glow).animate({opacity: 0}, {duration: 125, complete: function(){
-			$(glow).css("background-image","url(img/glow/top_blue.png)");
+			$(glow).css("background-image",imgUrlPre+getColourFromText(e.data[0])+imgUrlAft);
 			$(glow).animate({opacity: 1}, {duration: 125});
 		}});
 	};
 	
-	function getBgUrl(e) {
+	function changeGlowBack(e) {
+		$(glow).animate({opacity: 0}, {duration: 125, complete: function(){
+			$(glow).css("background-image",defaultBackgroundUrl);
+			$(glow).animate({opacity: 1}, {duration: 125});
+		}});
+	};
+	
+	function getColourFromText(text) {
+		return colours[text];
+	};
+	
+	var colours = {
+		"Home": "pink",
+		"Team": "yellow",
+		"Projects": "blue",
+		"Services": "green",
+		"About": "purple",
+		"Contact":"orange"
 	};
 	
 });
