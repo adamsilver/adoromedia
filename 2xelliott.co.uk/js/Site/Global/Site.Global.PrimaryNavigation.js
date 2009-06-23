@@ -34,6 +34,7 @@ Site.Global.PrimaryNavigation = new (function(){
 		};
 		
 		function item_mouseEnter(e) {
+			$.publish(Site.Global.CustomEvents.navMouseover, "the colour to change to");
 			$(getSpan()).animate({
 					"top": "0"
 				}, 
@@ -51,6 +52,7 @@ Site.Global.PrimaryNavigation = new (function(){
 		};
 		
 		function item_mouseLeave(e) {
+			$.publish(Site.Global.CustomEvents.navMouseout);
 			$(getSpan()).animate({
 					"top": -getItemHeight()
 				}, 
