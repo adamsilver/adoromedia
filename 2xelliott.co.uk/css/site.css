@@ -488,7 +488,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #teamMember div.gallery ul li {
 	float: left;
-	margin-right: 5px;
+	margin-right: 6px;
 }
 
 #teamMember div.gallery ul li a {
@@ -498,7 +498,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #teamMember div.gallery p.viewGallery {
 	font-size: 1.5em;
-	float: left;
+	float: right;
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
 	padding-right: 40px;
 	padding-bottom: 3px;
@@ -523,8 +523,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #project div.subSection01 {
 	float: left;
-	width: 423px;
-	padding-left: 2px;
+	width: 529px;
 	padding-right: 13px;
 }
 
@@ -544,7 +543,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #project div.subSection01 p.viewGallery {
 	font-size: 1.5em;
-	float: left;
+	float: right;
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
 	padding-right: 40px;
 	padding-bottom: 3px;
@@ -575,13 +574,11 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #directors {
 	overflow: hidden;
-	margin-right: 14px;
-	margin-left: 14px;
 	padding-bottom: 25px;
 }
 
 #directors  h2 {
-	font-size: 1.4em;
+	font-size: 1.3em;
 }
 
 #directors p.email,
@@ -593,10 +590,12 @@ body#pgContact #primaryNavigation ul li a.contact,
 /* james */
 
 #directors div.james {
-	padding-top: 139px;
 	background: url(../img/contact/logo_blue.gif) no-repeat;
 	float: left;
-	width: 198px;
+	width: 190px;
+	padding-left: 170px;
+	min-height: 92px;
+	padding-top: 30px;
 }
 
 #directors div.james a ,
@@ -606,29 +605,17 @@ body#pgContact #primaryNavigation ul li a.contact,
 	color: #4fcbff;
 }
 
-/* debbie */
-
-#directors div.deborah {
-	padding-top: 139px;
-	background: url(../img/contact/logo_purple.gif) no-repeat 24px 0px;
-	float: left;
-	width: 227px;
-}
-
-#directors div.deborah a ,
-#directors div.deborah p.title,
-#directors div.deborah p.tel span,
-#directors div.deborah p.mob span{
-	color: #822269;
-}
-
 /* david */
 
 #directors div.david {
-	padding-top: 139px;
-	background: url(../img/contact/logo_red.gif) no-repeat 8px 0px;
+
+	
+	background: url(../img/contact/logo_red.gif) no-repeat;
 	float: left;
-	width: 188px;
+	width: 190px;
+	padding-left: 170px;
+	min-height: 92px;
+	padding-top: 30px;
 }
 
 #directors div.david a ,
