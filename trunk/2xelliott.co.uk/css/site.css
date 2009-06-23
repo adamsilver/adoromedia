@@ -331,8 +331,8 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #homeWorks {
 	float: left;
-	width: 364px;
-	margin-right: 16px;
+	width: 405px;
+	padding-right: 15px;
 }
 
 #homeWorks div.work {
@@ -366,7 +366,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #homeNews {
 	float: left;
-	width: 236px;
+	width: 300px;
 }
 
 #homeNews h2 {
