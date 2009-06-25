@@ -35,7 +35,7 @@ Site.Global.PrimaryNavigation = new (function(){
 		};
 		
 		function item_mouseEnter(e) {		
-			$.publish(Site.Global.CustomEvents.navMouseover, getText(getSpan()));
+			$.publish(Site.Global.CustomEvents.navMouseover, getClass(getSpan()));
 			$(getSpan()).animate({
 					"top": "0"
 				}, 
@@ -96,8 +96,8 @@ Site.Global.PrimaryNavigation = new (function(){
 		return $(node).css("colour");
 	};
 	
-	function getText(node) {
-		return node.innerHTML;
+	function getClass(node) {
+		return $(node).parents("a")[0].className || null;
 	}
 	
 });
