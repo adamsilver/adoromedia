@@ -56,12 +56,12 @@ Site.Global.HeaderGlow = new (function(){
 	};
 	
 	var colours = {
-		"Home": "pink",
-		"Team": "yellow",
-		"Projects": "blue",
-		"Services": "green",
-		"About": "purple",
-		"Contact":"orange"
+		"home": "pink",
+		"heam": "yellow",
+		"projects": "blue",
+		"services": "green",
+		"about": "purple",
+		"contact":"orange"
 	};
 	
 });
