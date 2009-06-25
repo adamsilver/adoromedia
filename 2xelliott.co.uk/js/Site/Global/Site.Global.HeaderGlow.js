@@ -57,7 +57,7 @@ Site.Global.HeaderGlow = new (function(){
 	
 	var colours = {
 		"home": "pink",
-		"heam": "yellow",
+		"team": "yellow",
 		"projects": "blue",
 		"services": "green",
 		"about": "purple",
