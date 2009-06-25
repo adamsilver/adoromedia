@@ -304,6 +304,11 @@ body#pgContact #primaryNavigation ul li a.contact,
 	padding-right: 44px;
 }
 
+#homeIntroduction #showreel {
+	clear: both;
+	padding-top: 16px;
+}
+
 #homeFeaturedWork {
 	padding-bottom: 15px;
 	border-bottom: 1px solid #171717;
