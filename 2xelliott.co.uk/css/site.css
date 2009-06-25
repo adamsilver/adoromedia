@@ -457,6 +457,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 	font-weight: bold;
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
 	padding-right: 40px;
+	padding-bottom: 5px;
 	color: #5aff00;
 }
 

@@ -6,7 +6,7 @@ Site.Global.Cufon = new (function(){
 	
 	
 	function init() {
-		Cufon.replace("h1, h2")
+		Cufon.replace("h1, h2, h3, #services p.call")
 	};
 	
 	
