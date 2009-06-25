@@ -6,7 +6,7 @@
 
 body {
 	font-size: 62.5%;
-	font-family: Georgia, Helvetica, Arial, Times New Roman;
+	font-family: Helvetica, Arial, Times New Roman;
 	background-image: url(../img/bg/body.jpg);
 }
 
@@ -251,6 +251,13 @@ body#pgContact #primaryNavigation ul li a.contact,
 ******************************************************************************/
 
 #content {
+	width: 830px;
+	padding: 0px 35px; /* allow shadow */
+	margin: 0 auto;
+	background: url(../img/bg/content.png) repeat-y top center;
+}
+
+#contentInner {
 	width: 720px;
 	margin: 0 auto;
 	background-color: #000;
@@ -258,9 +265,13 @@ body#pgContact #primaryNavigation ul li a.contact,
 	border-top: 1px solid #171717;
 	border-bottom: 1px solid #171717;
 	overflow: hidden;
-	padding: 20px 55px;
-	background: url(../img/bg/content.png) repeat-y top center;
+	padding: 20px;
+	
 }
+
+/******************************************************************************
+* Footer
+******************************************************************************/
 
 #footer {
 	background-color: #000;
@@ -491,17 +502,20 @@ body#pgContact #primaryNavigation ul li a.contact,
 	background: url(../img/bg/ink_drop_blue.gif) no-repeat;
 	padding-left: 42px;
 	color: #a500ff;
+	padding-bottom: 6px;
 }
 
 #about p.bit02 {
 	background: url(../img/bg/ink_drop_yellow.gif) no-repeat;
 	padding-left: 42px;
+	padding-bottom: 6px;
 }
 
 #about p.bit03 {
 	background: url(../img/bg/ink_drop_pink.gif) no-repeat;
 	padding-left: 42px;
 	color: #a500ff;
+	padding-bottom: 6px;
 }
 
 /******************************************************************************
