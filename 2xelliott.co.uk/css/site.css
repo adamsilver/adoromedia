@@ -389,6 +389,13 @@ body#pgContact #primaryNavigation ul li a.contact,
 	margin-bottom: 15px;
 }
 
+#homeWorks div.work p.readMore {
+	text-align: right;
+	background: url(../img/bg/ink_drops02.gif) no-repeat 100% 1px ;
+	padding: 0px 30px 3px 8px;
+	margin-bottom: 0px;
+}
+
 #homeNews {
 	float: left;
 	width: 300px;
@@ -418,7 +425,7 @@ body#pgContact #primaryNavigation ul li a.contact,
 
 #homeNews div.newsItem p.readMore {
 	text-align: right;
-	background: url(../img/bg/ink_drops02.gif) no-repeat 100% 2px ;
+	background: url(../img/bg/ink_drops02.gif) no-repeat 100% 1px ;
 	padding: 0px 30px 3px 8px;
 	margin-bottom: 0px;
 }
