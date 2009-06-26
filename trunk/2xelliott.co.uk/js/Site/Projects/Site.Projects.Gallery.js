@@ -7,7 +7,7 @@ Site.Projects.Gallery = new (function(){
 		$(galleryItems).lightBox();
 		
 		var viewGalleryLink = $("#project p.viewGallery a")[0] || null;
-		
+		if(!viewGalleryLink) return;
 		$(viewGalleryLink).bind("click", function(e){
 			$(galleryItems[0]).trigger("click");
 			return false;

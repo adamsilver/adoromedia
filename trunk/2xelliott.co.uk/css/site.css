@@ -654,7 +654,8 @@ body#pgContact #primaryNavigation ul li a.contact,
 	color: #01d4ff;
 }
 
-#project div.subSection01 p.viewGallery {
+#project div.subSection01 p.viewGallery,
+#project div.subSection01 p.viewWebsite {
 	font-size: 1.5em;
 	float: right;
 	background: url(../img/bg/ink_drops00.gif) no-repeat 100% 2px;
