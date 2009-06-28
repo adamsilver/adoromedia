@@ -91,132 +91,136 @@
 							};
 						?>
 
-						<form method="post" action="index.php">
-							<div class="field">
-								<div class="indicator">
-									<label for="accidentType">Accident type</label>
-								</div>
-								<div class="singleInput">
-									<select id="accidentType" name="accidentType">
-										<option value="1">1</option>
-									</select>
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="incidentDate">Incident date</label>
-								</div>
-								<div class="singleInput">
-									<select id="incidentDate" name="incidentDate">
-										<option value="1">Last 6 months</option>
-									</select>
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="basicDescription">Basic description</label>
-								</div>
-								<div class="singleInput">
-									<textarea id="basicDescription" name="basicDescription"></textarea>
-								</div>
-							</div>						
-							<div class="field">
-								<div class="indicator">
-									<label for="title">Title</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="title" id="title" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="firstName">First name</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="firstName" id="firstName" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="lastName">Last name</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="lastName" id="lastName" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="dob">Date of birth</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="dob" id="dob" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="dayTimePhone">Daytime phone</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="alternativePhone">Alternative phone</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="alternativePhone" id="alternativePhone" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="emailAddress">Email address</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="emailAddress" id="emailAddress" />
-								</div>
-							</div>	
-							<div class="field">
-								<div class="indicator">
-									<label for="addressLine1">Address line 1</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="addressLine1" id="addressLine1" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="addressLine2">Address line 2</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="addressLine2" id="addressLine2" />
-								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="town">Town/City</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="town" id="town" />
-								</div>
-							</div>
-													<div class="field">
-								<div class="indicator">
-									<label for="postCode">Post code</label>
-								</div>
-								<div class="singleInput">
-									<input class="text" type="text" name="postCode" id="postCode" />
-								</div>
-							</div>
-							<div class="actions">						
-								<input type="submit" name="send" value="Claim" />
-							</div>
-						</form>
+						
 						-->
 					</div>
 					<div id="secondary">
 						<div id="claimForm">
-							<h2>This is the claim form</h2>
+							<h2>Online claim form</h2>
+							<p>It only takes 2 minutes to complete.</p>
+							
+							<form method="post" action="index.php">
+								<div class="field">
+									<div class="indicator">
+										<label for="accidentType">Accident type</label>
+									</div>
+									<div class="singleInput">
+										<select id="accidentType" name="accidentType">
+											<option value="1">1</option>
+										</select>
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="incidentDate">Incident date</label>
+									</div>
+									<div class="singleInput">
+										<select id="incidentDate" name="incidentDate">
+											<option value="1">Last 6 months</option>
+										</select>
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="basicDescription">Basic description</label>
+									</div>
+									<div class="singleInput">
+										<textarea id="basicDescription" name="basicDescription"></textarea>
+									</div>
+								</div>						
+								<div class="field">
+									<div class="indicator">
+										<label for="title">Title</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="title" id="title" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="firstName">First name</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="firstName" id="firstName" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="lastName">Last name</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="lastName" id="lastName" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="dob">Date of birth</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="dob" id="dob" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="dayTimePhone">Daytime phone</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="alternativePhone">Alternative phone</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="alternativePhone" id="alternativePhone" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="emailAddress">Email address</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="emailAddress" id="emailAddress" />
+									</div>
+								</div>	
+								<div class="field">
+									<div class="indicator">
+										<label for="addressLine1">Address line 1</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="addressLine1" id="addressLine1" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="addressLine2">Address line 2</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="addressLine2" id="addressLine2" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="town">Town/City</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="town" id="town" />
+									</div>
+								</div>
+														<div class="field">
+									<div class="indicator">
+										<label for="postCode">Post code</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="postCode" id="postCode" />
+									</div>
+								</div>
+								<div class="actions">						
+									<input class="submit" type="submit" name="send" value="Submit online claim" />
+								</div>
+							</form>
+							
 						</div>
 					</div>
 				</div>
