@@ -18,11 +18,22 @@
 			<?php include("inc/header.php"); ?>
 			<?php include("inc/primaryNavigation.php"); ?>
 			<div id="banner">
-				<p>Had an accident...? Not your fault? The Accident Specialist can help you!</p>
+				<div id="bannerInner">
+					<p>Had an accident...? Not your fault? The Accident Specialist can help you!</p>
+				</div>
 			</div>
 			<div id="content">
 				
-				<div id="breadcrumb">sad</div>
+				<div id="breadcrumb">
+					<div id="breadcrumbInner">
+						<p>You are here: </p>
+						<ul>
+							<li><a href="#"><img src="icon_home.jpg" /></a></li>
+							<li class="on">Inner page</li>
+						</ul>
+					</div>
+				</div
+				
 				<div id="primary">
 					<h1>Specialising in compensation for injury, vehicle replacement and protected no claims, in the North West London area.</h1>
 					
@@ -169,7 +180,7 @@
 					</form>
 				</div>
 			</div>
-			<?php include("inc/footer.php"); ?>
+			<?//php include("inc/footer.php"); ?>
 		</div>
 	</body>
 </html>
