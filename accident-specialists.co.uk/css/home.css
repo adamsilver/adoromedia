@@ -7,14 +7,18 @@
 }
 
 #sections #primary {
-	width: 424px;
+	width: 400px;
 	float: left;
+	padding-top: 12px;
+	padding-right: 24px;
 }
 
 #sections #secondary {
-	width: 408px;
+	width: 392px;
 	float: left;
-	margin-left: 16px;
+	padding-left: 32px;
+	padding-top: 12px;
+	background: url(../img/bg/sections.jpg) no-repeat top left;
 }
 
 /********************************************************************************
