@@ -85,10 +85,22 @@ ul li {
 	padding-left: 36px;
 	padding-right: 36px;
 	margin-bottom: 3px;
+	overflow: hidden;
 }
 
 #logo {
+	float: left;	
+}
+
+#tel {
+	float: right;
+	padding-top: 20px;
 	
+}
+
+#tel p {
+	color: #104781;
+	font-size: 2.2em;
 }
 
 /********************************************************************************
