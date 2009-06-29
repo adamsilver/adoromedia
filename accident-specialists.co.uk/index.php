@@ -69,9 +69,7 @@
 						
 						<h2>London based</h2>
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
+						<p>Lorem ipsum fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
 						
 						<!--
 						<h2>Stuff to do</h2>
@@ -105,7 +103,7 @@
 							<form method="post" action="index.php">
 								<div class="field">
 									<div class="indicator">
-										<label for="accidentType">Accident type</label>
+										<label for="accidentType">Accident type: </label>
 									</div>
 									<div class="singleInput">
 										<select id="accidentType" name="accidentType">
@@ -115,7 +113,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="incidentDate">Incident date</label>
+										<label for="incidentDate">Incident date: </label>
 									</div>
 									<div class="singleInput">
 										<select id="incidentDate" name="incidentDate">
@@ -125,7 +123,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="basicDescription">Basic description</label>
+										<label for="basicDescription">Basic description: </label>
 									</div>
 									<div class="singleInput">
 										<textarea id="basicDescription" name="basicDescription"></textarea>
@@ -133,7 +131,7 @@
 								</div>						
 								<div class="field">
 									<div class="indicator">
-										<label for="title">Title</label>
+										<label for="title">Title: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="title" id="title" />
@@ -141,7 +139,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="firstName">First name</label>
+										<label for="firstName">First name: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="firstName" id="firstName" />
@@ -149,7 +147,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="lastName">Last name</label>
+										<label for="lastName">Last name: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="lastName" id="lastName" />
@@ -157,7 +155,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="dob">Date of birth</label>
+										<label for="dob">Date of birth: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="dob" id="dob" />
@@ -165,7 +163,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="dayTimePhone">Daytime phone</label>
+										<label for="dayTimePhone">Daytime phone:</label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
@@ -173,7 +171,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="alternativePhone">Alternative phone</label>
+										<label for="alternativePhone">Alternative phone: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="alternativePhone" id="alternativePhone" />
@@ -181,7 +179,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="emailAddress">Email address</label>
+										<label for="emailAddress">Email address: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="emailAddress" id="emailAddress" />
@@ -189,7 +187,7 @@
 								</div>	
 								<div class="field">
 									<div class="indicator">
-										<label for="addressLine1">Address line 1</label>
+										<label for="addressLine1">Address line 1: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="addressLine1" id="addressLine1" />
@@ -197,7 +195,7 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="addressLine2">Address line 2</label>
+										<label for="addressLine2">Address line 2: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="addressLine2" id="addressLine2" />
@@ -205,15 +203,15 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="town">Town/City</label>
+										<label for="town">Town/City: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="town" id="town" />
 									</div>
 								</div>
-														<div class="field">
+								<div class="field">
 									<div class="indicator">
-										<label for="postCode">Post code</label>
+										<label for="postCode">Post code:</label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="postCode" id="postCode" />
