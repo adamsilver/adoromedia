@@ -20,7 +20,10 @@
 			<?php include("inc/primaryNavigation.php"); ?>
 			<div id="banner">
 				<div id="bannerInner">
-					<!--<p>Had an accident...? Not your fault? The Accident Specialist can help you!</p>-->
+					<img src="img/banners/face.jpg" alt="" />
+					<img src="img/banners/hands.jpg" alt="" />
+					<img src="img/banners/road.jpg" alt="" />
+					<img src="img/banners/fax.jpg" alt="" />
 				</div>
 			</div>
 			<div id="content">

@@ -135,6 +135,7 @@ ul li {
 #bannerInner {
 	background: url(../img/banners/face.jpg) no-repeat;
 	height: 115px;
+	z-index: 1;
 }
 
 #banner p {
@@ -208,6 +209,7 @@ ul li {
 	position: relative;
 	top: -44px;
 	margin-bottom:-44px;
+	z-index: 2;
 }
 
 #sections {
