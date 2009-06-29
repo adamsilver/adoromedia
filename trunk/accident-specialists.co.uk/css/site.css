@@ -109,10 +109,9 @@ ul li {
 ********************************************************************************/
 
 #footer {
-	border-top: 1px solid #95959F;
 	padding:16px 8px;
 	margin-left: 39px;
-	background-color: #f2f2f2;
+	background-color: #DFDFDF;
 	margin-right: 39px;
 }
 
@@ -296,11 +295,17 @@ div.field div.singleInput {
 
 div.field div.singleInput input.text,
 div.field div.singleInput textarea  {
-	border: 1px solid #95959F;
+	border: 1px solid #d5d5d5;
 	font-size: 1.2em;
 	padding: 2px;
-	background-color: #f5f5f5;
+	background-color: #f9f9f9;
 	width: 260px;
+	border-right-color: #f1f1f1;
+	border-bottom-color: #f1f1f1;
+}
+
+div.field div.singleInput select {
+	width: 264px;
 }
 
 div.field div.singleInput textarea {
