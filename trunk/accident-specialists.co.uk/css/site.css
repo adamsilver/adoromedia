@@ -287,7 +287,10 @@ div.field div.indicator {
 
 div.field div.indicator label,
 div.field div.indicator span.label {
-	font-size: 1.2em;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #999;
 }
 
 div.field div.singleInput {
@@ -315,6 +318,13 @@ div.field div.singleInput textarea {
 }
 
 div.actions {
+	padding-top: 4px;
+	padding-right: 16px;
+	overflow: hidden;
+}
+
+div.actions input.image {
+	float: right;
 }
 
 div.actions input.submit {
