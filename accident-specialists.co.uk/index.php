@@ -217,8 +217,8 @@
 										<input class="text" type="text" name="postCode" id="postCode" />
 									</div>
 								</div>
-								<div class="actions">						
-									<input class="submit" type="submit" name="send" value="Submit online claim" />
+								<div class="actions">	
+									<input type="image" class="image" name="send" src="img/buttons/submit_claim.jpg" alt="Submit claim" />					
 								</div>
 							</form>
 							
