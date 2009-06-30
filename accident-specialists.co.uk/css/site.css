@@ -109,10 +109,11 @@ ul li {
 ********************************************************************************/
 
 #footer {
-	padding:16px 8px;
+	padding:8px;
 	margin-left: 39px;
-	background-color: #DFDFDF;
+	border-top: 1px solid #DFDFDF;
 	margin-right: 39px;
+	background: url(../img/bg/footer.jpg) no-repeat top right;
 }
 
 #footer p {
@@ -290,7 +291,7 @@ div.field div.indicator span.label {
 	font-size: 1.1em;
 	text-transform: uppercase;
 	font-weight: bold;
-	color: #999;
+	color: #31323D;
 }
 
 div.field div.singleInput {
