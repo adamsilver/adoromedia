@@ -15,6 +15,9 @@
 		<?php include("inc/headJS.php"); ?>
 	</head>
 	<body id="pgHomePage" class="home">
+		<div id="shortcuts">
+			<a href="#content">Scroll down page to main content</a>
+		</div>
 		<div id="container">
 			<?php include("inc/header.php"); ?>
 			<?php include("inc/primaryNavigation.php"); ?>
