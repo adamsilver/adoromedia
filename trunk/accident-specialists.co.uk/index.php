@@ -1,6 +1,8 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
+<?php include("inc/Classes/Rules.php"); ?>
 <?php include("inc/Classes/FormValidator.php"); ?>
+<?php include("inc/QuoteForm.php"); ?>
 <?php
 	$metaKeywords = "hello there cowboy keywords";
 	$metaDescription = "hello there cowboy";
