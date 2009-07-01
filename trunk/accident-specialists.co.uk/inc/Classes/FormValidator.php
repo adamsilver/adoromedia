@@ -1,17 +1,24 @@
 <?php
 
 class FormValidator {
-	var $validators;
-	var $errors;
+	var $validators = array();
+	var $errors = array();
 	
-	public function addValidator() {
+	public function addValidator($name, $rules) {
+		$this->validators[] = new Validator($name, $rules);
 	}
 	
 	function validate() {
 		// this will loop through all the $validators collection
 		// if an error is found then it will push a new error instance
 		
-		return $errors.length;
+		foreach ($this->validators as $validator) {
+			echo $validator->name;
+		}
+		
+		echo "validate";
+		
+		//return $errors.length;
 	}
 	
 	function isNameInRequest() {
@@ -22,14 +29,26 @@ class FormValidator {
 
 class Validator {
 	var $name;
-	var $rule;
+	var $rules;
 	
-	function __construct($name, $rule) {
-		$name = $name;
-		$rule = $rule;
+	function __construct($name, $rules) {
+		$this->name = $name;
+		$this->rules = $rules;
 	}
 	
 };
+
+class Rule {
+	var $method;
+	var $message;
+	
+	function __construct($name, $message) {
+		//$method = $method;
+		//$message = $message;
+	}
+	
+};
+
 
 class Error {
 	var $id;
@@ -62,6 +81,6 @@ class Rules {
 <?php
 	// test code
 	$quoteForm = new FormValidator();
-	$quoteForm->addValidator();
-
+	$quoteForm->addValidator("username", array(new Rule(null, null), new Rule(null, null)));
+	$quoteForm->validate();
 ?>
