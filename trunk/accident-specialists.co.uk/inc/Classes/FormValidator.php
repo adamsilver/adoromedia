@@ -42,45 +42,40 @@ class Rule {
 	var $method;
 	var $message;
 	
-	function __construct($name, $message) {
-		//$method = $method;
-		//$message = $message;
+	function __construct($method, $message) {
+		$this->method = $method;
+		$this->$message = $message;
 	}
 	
 };
-
 
 class Error {
 	var $id;
 	var $message;
 	
 	function __construct($id, $message) {
-		$id = $id;
-		$message = $message;
+		$this->id = $id;
+		$this->message = $message;
 	}
 };
 
 class Rules {
 
-	static public function isEmpty() {
+	static public function isNotEmpty() {
+		var valid = false;
+		return valid;
 	}
 	
 	static public function isNumber() {
+		var valid = false;
+		return valid;
 	}
 	
 	static public function isEmailAddress() {
+		var valid = false;
+		return valid;
 	}
 	
 };
 
-// access 
-//Rules::isEmpty();
-
-?>
-
-<?php
-	// test code
-	$quoteForm = new FormValidator();
-	$quoteForm->addValidator("username", array(new Rule(null, null), new Rule(null, null)));
-	$quoteForm->validate();
 ?>
