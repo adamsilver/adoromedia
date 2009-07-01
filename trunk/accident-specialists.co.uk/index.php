@@ -1,5 +1,6 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
+<?php include("inc/Classes/FormValidator.php"); ?>
 <?php
 	$metaKeywords = "hello there cowboy keywords";
 	$metaDescription = "hello there cowboy";
