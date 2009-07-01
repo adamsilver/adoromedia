@@ -60,11 +60,11 @@ p {
 
 ul {
 	margin-bottom: 16px;
-	margin-left: 35px;
 }
 
 ul li {
 	font-size: 1.2em;
+	margin-left: 35px;
 }
 
 /********************************************************************************
@@ -169,6 +169,7 @@ ul li {
 	text-transform: uppercase;
 	font-weight: bold;
 	margin-right: 6px;
+	margin-left: 0px;
 }
 
 #primaryNavigation ul li a {
@@ -253,6 +254,7 @@ ul li {
 	font-size: 1.1em;
 	min-height: 8px;
 	color: #d0d0d0;
+	margin-left: 0px;
 }
 
 #breadcrumb ul li.home {
@@ -269,6 +271,22 @@ ul li {
 
 #breadcrumb ul li a {
 	color: #d0d0d0;
+}
+
+/********************************************************************************
+* Error message
+********************************************************************************/
+
+#errorMessage {
+}
+
+#errorMessage ul {
+	margin-left: 0px;
+	color: #ff0000;
+}
+
+#errorMessage ul li {
+	margin-left: 30px;
 }
 
 /********************************************************************************
