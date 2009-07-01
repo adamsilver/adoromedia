@@ -106,6 +106,8 @@
 							<h2>Online claim form</h2>
 							<p>It only takes 2 minutes to complete.</p>
 							
+							<?php $quoteForm->displayErrors();?>
+							
 							<form method="post" action="index.php">
 								<div class="field">
 									<div class="indicator">
@@ -132,7 +134,7 @@
 										<label for="basicDescription">Basic description: </label>
 									</div>
 									<div class="singleInput">
-										<textarea id="basicDescription" name="basicDescription"></textarea>
+										<textarea id="basicDescription" name="basicDescription"><?php echo isset($_POST["basicDescription"]) ? $_POST["basicDescription"] : "" ?></textarea>
 									</div>
 								</div>						
 								<div class="field">
@@ -148,7 +150,7 @@
 										<label for="firstName">First name: </label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="firstName" id="firstName" />
+										<input class="text" type="text" name="firstName" id="firstName" value="<?php echo isset($_POST["firstName"]) ? $_POST["firstName"] : "" ?>" />
 									</div>
 								</div>
 								<div class="field">
@@ -156,7 +158,7 @@
 										<label for="lastName">Last name: </label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="lastName" id="lastName" />
+										<input class="text" type="text" name="lastName" id="lastName" value="<?php echo isset($_POST["lastName"]) ? $_POST["lastName"] : "" ?>" />
 									</div>
 								</div>
 								<div class="field">
