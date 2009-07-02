@@ -40,6 +40,14 @@ class FormValidator {
 		return isset($_POST[$name]);
 	}
 	
+	public function getErrors() {
+		return $this->errors;
+	}
+	
+	public function getErrorCount() {
+		return count($this->errors);
+	}
+	
 };
 
 class Validator {

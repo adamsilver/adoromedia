@@ -105,10 +105,25 @@
 						<div id="claimForm">
 							<h2>Online claim form</h2>
 							<p>It only takes 2 minutes to complete.</p>
+
+							<?php 
+								$showForm = true;
+								if(isset($_POST["actionSubmit"])) {
+									$quoteForm->validate();
+									if($quoteForm->getErrorCount() > 0) {
+										$commonErrors = $quoteForm->getErrors();
+										include("inc/errorMessageDisplay.php");
+									}
+									else {
+										include("inc/successMessageDisplay.php");
+										$showForm = false;
+									}
+								}
+							?>
 							
-							<?php $quoteForm->displayErrors();?>
 							
 							<form method="post" action="index.php">
+								<input type="hidden" name="actionSubmit" value="true" />
 								<div class="field">
 									<div class="indicator">
 										<label for="accidentType">Accident type: </label>
