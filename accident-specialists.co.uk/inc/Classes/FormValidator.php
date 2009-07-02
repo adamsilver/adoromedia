@@ -22,20 +22,6 @@ class FormValidator {
 		return count($this->errors) == 0;
 	}
 	
-	public function displayErrors() {
-		$html = '';
-			
-		if(count($this->errors)==0) return;
-		
-		$html .='<div id="errorMessage">';
-		$html .='<h2>The form has ' . count($this->errors) . ' error(s). Please check.</h2><ul>';
-		foreach($this->errors as $error) {
-			$html .= '<li>'.$error->message.'</li>';
-		}
-		$html .='</ul></div>';
-		echo $html;
-	}
-	
 	private function isNameInRequest($name) {
 		return isset($_POST[$name]);
 	}
