@@ -280,6 +280,13 @@ ul li {
 #errorMessage {
 }
 
+#errorMessage h3 {
+	font-size: 1.2em;
+	color: #ff0000;
+	font-family: arial;
+	text-transform: uppercase;
+}
+
 #errorMessage ul {
 	margin-left: 0px;
 	color: #ff0000;
@@ -287,6 +294,10 @@ ul li {
 
 #errorMessage ul li {
 	margin-left: 30px;
+}
+
+#errorMessage ul li a {
+	color: #ff0000;
 }
 
 /********************************************************************************

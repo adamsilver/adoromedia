@@ -1,14 +1,8 @@
-<?php
-	
-		
-		//if(count($this->errors)==0) return;
-		
-		//$html .='<div id="errorMessage">';
-		//$html .='<h2>The form has ' . count($this->errors) . ' error(s). Please check.</h2><ul>';
-		//foreach($this->errors as $error) {
-		//	$html .= '<li>'.$error->message.'</li>';
-		//}
-		//$html .='</ul></div>';
-?>
-
-ERROR INCLUDE
+<div id="errorMessage">
+	<h3>The form has <?php echo count($commonErrors)?>. Please check form below:</h3>
+	<ul>
+		<?php foreach($commonErrors as $error) { ?>
+			<li><a href="#<?php echo $error->id?>"><?php echo $error->message; ?></a></li>
+		<?php } ?>
+	</ul>
+</div>
