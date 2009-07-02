@@ -8,7 +8,7 @@ class FormValidator {
 		$this->validators[] = new Validator($name, $rules);
 	}
 	
-	function validate() {
+	public function validate() {
 		foreach ($this->validators as $validator) {
 			foreach($validator->rules as $rule) {
 				if(!$this->isNameInRequest($validator->name)) continue;
@@ -36,7 +36,7 @@ class FormValidator {
 		echo $html;
 	}
 	
-	function isNameInRequest($name) {
+	private function isNameInRequest($name) {
 		return isset($_POST[$name]);
 	}
 	
