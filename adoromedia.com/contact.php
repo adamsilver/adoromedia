@@ -9,6 +9,14 @@
 	$siteSection = "contact";
 	$breadcrumb = array(new BreadCrumbItem("index.php", "Home"), new BreadCrumbItem(null, "Contact"));
 ?>
+
+<?php 
+	$contactForm = new FormValidator();
+	$contactForm->addValidator("fullName", array(new Rule("isNotEmpty", "Full name cannot be empty")));
+	$contactForm->addValidator("email", array(new Rule("isNotEmpty", "Email cannot be empty")));
+	$contactForm->addValidator("message", array(new Rule("isNotEmpty", "Message cannot be empty")));
+?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	    <title>Contact, Expert website designers, Adoro Media, London, UK</title>
@@ -34,45 +42,57 @@
 							<h1>Contact details</h1>
 							<p>We want to work with you to produce a better website.</p>
 							
-							<% contactForm.showErrors(); %>
-							<%if(messageSent == true) {%>
-								<div id="successMessage">
-									<h2>You have successfully sent a message to Adoro Media. Thank you.</h2>
-								</div>
-							<%}else { %>
-								<%// contactForm.showErrors(); %>
-								<form method="post" action="contact.asp" id="contactForm">
-									
-									<div class="field <%contactForm.writeErrorClass(["fullName"])%>">
+							<?php 
+								$showForm = true;
+								if(isset($_POST["actionSubmit"])) {
+									$contactForm->validate();
+									if($contactForm->getErrorCount() > 0) {
+										$commonErrors = $contactForm->getErrors();
+										include("inc/errorMessageDisplay.php");
+									}
+									else {
+										include("inc/successMessageDisplay.php");
+										$showForm = false;
+									}
+								}
+							?>
+							
+							<?php if($showForm) { ?>
+							
+								
+								<form method="post" action="contact.php" id="contactForm">
+									<input type="hidden" name="actionSubmit" value="1" />
+									<div class="field">
 										<div class="indicator">
-											<label for="fullName"><span class="required">*</span> Full name <%contactForm.writeErrorSpan(["fullName"])%></label>
+											<label for="fullName"><span class="required">*</span> Full name</label>
 										</div>
 										<div class="singleInput">
-											<input type="text" id="fullName" name="fullName" value="<%=Request.Form("fullName")%>" class="text" />
+											<input type="text" id="fullName" name="fullName" value="" class="text" />
 										</div>
 									</div>
-									<div class="field <%contactForm.writeErrorClass(["email"])%>">
+									<div class="field">
 										<div class="indicator">
-											<label for="email"><span class="required">*</span> Email <%contactForm.writeErrorSpan(["email"])%></label>
+											<label for="email"><span class="required">*</span> Email</label>
 										</div>
 										<div class="singleInput">
-											<input type="text" id="email" name="email" value="<%=Request.Form("email")%>" class="text" />
+											<input type="text" id="email" name="email" value="" class="text" />
 										</div>
 									</div>
 								
-									<div class="field <%contactForm.writeErrorClass(["message"])%>">
+									<div class="field">
 										<div class="indicator">
-											<label for="message"><span class="required">*</span> Message <%contactForm.writeErrorSpan(["message"])%></label>
+											<label for="message"><span class="required">*</span> Message</label>
 										</div>
 										<div class="singleInput">
-											<textarea id="message" name="message" cols="40" rows="8"><%=Request.Form("message")%></textarea>
+											<textarea id="message" name="message" cols="40" rows="8"></textarea>
 										</div>
 									</div>
 									<div class="action">
 										<input class="submit" type="submit" name="sendMessage" id="sendMessage" value="Send" />
 									</div>
 								</form>
-							<%}%>
+								
+							<?php } ?>
 						</div>
 					</div>
 					<div id="secondary">
