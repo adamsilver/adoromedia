@@ -41,7 +41,7 @@
 						<div id="contactFormPanel">
 							<h1>Contact details</h1>
 							<p>We want to work with you to produce a better website.</p>
-							
+							<!--
 							<?php 
 								$showForm = true;
 								if(isset($_POST["actionSubmit"])) {
@@ -52,6 +52,13 @@
 									}
 									else {
 										include("inc/successMessageDisplay.php");
+										
+										
+										//$to = "adam@adoromedia.com";
+										//$subject = "Hi!";
+										//$body = "Hi,\n\nHow are you?";
+										//mail($to, $subject, $body);
+																			
 										$showForm = false;
 									}
 								}
@@ -93,6 +100,7 @@
 								</form>
 								
 							<?php } ?>
+							-->
 						</div>
 					</div>
 					<div id="secondary">
