@@ -82,7 +82,7 @@
 											<label for="fullName"><span class="required">*</span> Full name</label>
 										</div>
 										<div class="singleInput">
-											<input type="text" id="fullName" name="fullName" value="" class="text" />
+											<input type="text" id="fullName" name="fullName" value="<?php echo formValue("fullName")?>" class="text" />
 										</div>
 									</div>
 									<div class="field">
@@ -90,7 +90,7 @@
 											<label for="email"><span class="required">*</span> Email</label>
 										</div>
 										<div class="singleInput">
-											<input type="text" id="email" name="email" value="" class="text" />
+											<input type="text" id="email" name="email" value="<?php echo formValue("email")?>" class="text" />
 										</div>
 									</div>
 								
@@ -99,7 +99,7 @@
 											<label for="message"><span class="required">*</span> Message</label>
 										</div>
 										<div class="singleInput">
-											<textarea id="message" name="message" cols="40" rows="8"></textarea>
+											<textarea id="message" name="message" cols="40" rows="8"><?php echo formValue("message")?></textarea>
 										</div>
 									</div>
 									<div class="action">
