@@ -3,148 +3,28 @@
 ********************************************************/
 
 div#container,
-div.faux,
+#homePanels01,
+#homePanels02,
+#hero,
+#breadcrumb,
+#header,
+#content,
 div#primaryNavigation,
 div#primaryNavigation ul,
-div#primaryNavigation ul li,
 div#footer,
 div.field,
-div.action,
-div#content div.tabset ul.tabNavigation,
-div.field div.checkboxes div.input, 
-div.field div.radios div.input,
-div#myAccordion2,
-div#carousel01,
-div#carousel02,
-div#carousel03,
-div#carousel04,
-div#carousel02 div.controls,
-div#lightBox div.header,
-div#myLightBox div.login,
-ul.generic,
-ul.projects,
-ul.generic li,
-div#dropDownMenu,
-div#dropDownMenu ul li ul li,
-div#dialogue div.header,
-div#carousel05 div.controls ,
-div#dropDownMenu ul {
+div.action {
 	zoom: 1;
 }
 
 /********************************************************
-* Double margin
+* double margin
 ********************************************************/
 
-div#controls {
+#breadcrumb ul li {
 	display: inline;
 }
 
-/********************************************************
-* Misc
-********************************************************/
-
-div#primaryNavigation ul li a {
-	float: left;
-	width: 199px;
-}
-
-div.tabset ul.tabNavigation li a {
-	float: left;
-}
-
-div.tabset ul.tabNavigation li a.selected {
-	background-color: #344148 !important;
-}
-
-div.field div.radios div.input label,
-div.field div.checkboxes div.input label {
-	margin-top: 3px;
-}
-
-div#carousel02, div#carousel03, div#carousel04{
-	width: 578px;
-}
-
-div#primaryNavigation ul li a.selected {
-	background-color: #1D2B33 !important;
-	color: #ffffff !important;
-	border-bottom: 4px solid #898F2C !important;	
-}
-
-div#carousel02 div.controls {
-	padding-bottom: 2px;
-}
-
-/********************************************************
-* break word
-********************************************************/
-
-div.code {
-	word-wrap: break-word;
-}
-
-/********************************************************
-* min height
-********************************************************/
-
-div#myAccordion2 a.accordion3 {
-	height:153px;
-}
-
-ul.projects li {
-	height: 84px;
-}
-
-/********************************************************
-* drop down menu - fixes for ie6
-********************************************************/
-
-div#menu ul li a {
-	float: left;
-}
-
-div#menu ul li a span {
-	float: left;
-}
-
-div#menu ul li.buy a span.tr {
-	height: 39px;
-}
-
-div#menu ul li.finance a span {
-	height: 18px;
-}
-
-div#menu ul li.insurance a span {
-	height: 18px;
-}
-
-div#menu ul li.let a span {
-	height: 39px;
-}	
-
-div#menu ul li.tax a span {
-	height: 18px;
-}	
-
-div#menu ul li ul li a {
-	float: none;
-}
-
-div#menu ul li div.subMenu div.lists ul {
-	margin-bottom: 3px;
-}
-
-div#menu ul li div.subMenu div.lists ul li {
-	margin-bottom: -3px;
-}
-
-div#menu ul li div.subMenu div.lists ul li ul {
-	margin-bottom: 0px;
-	padding-top: 2px;
-}
-
-div#menu ul li div.subMenu div.lists ul li ul li {
-	margin-bottom: -3px;
+#primaryNavigation ul {
+	float: right;
 }
