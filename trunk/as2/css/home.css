@@ -34,10 +34,8 @@
 }
 
 #callMeBack h2 {
-	font-family: Georgia;
 	font-size: 2.3em;
 	text-transform: none;
-	font-weight:lighter;
 	color: #31323D;
 }
 
@@ -55,20 +53,22 @@
 ********************************************************************************/
 
 #hero {
-	border: 1px solid #31323D;
+	border: 1px solid #ddd;
 	padding: 8px;
-	background: url(../img/women.jpg) 97% 7px no-repeat;
+	background: url(../img/women.jpg) 100% 0 no-repeat;
 	margin-bottom: 16px;
 }
 
 #hero h2 {
-	font-size: 2em;
+	font-size: 2.3em;
+	text-transform: none;
+	color: #EC0704;
 }
 
 #hero  li {
 	font-size: 1.6em;
 	margin-bottom: 4px;
-	color: #043f69;
+	color: #120473;
 	text-transform: uppercase;
 	font-weight: bold;
 }
