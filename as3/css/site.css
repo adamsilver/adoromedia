@@ -1,0 +1,377 @@
+/********************************************************************************
+* Reset
+********************************************************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: arial, helvetica;
+	background: url(../img/body.jpg) repeat-x;
+}
+
+img {
+	border: none;
+}
+
+/********************************************************************************
+* Links
+********************************************************************************/
+
+
+/********************************************************************************
+* Text
+********************************************************************************/
+
+h1, h2, h3, h4, h5, h6, p {
+}
+
+h1 {
+	font-size: 2.3em;
+	margin-bottom: 16px;
+	color: #16029F;
+}
+
+h2 {
+	font-size: 1.4em;
+	margin-bottom: 16px;
+	color: #16029F;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 1.8em;
+	margin-bottom: 16px;
+	color: #16029F;
+}
+
+p {
+	font-size: 1.2em;
+	margin-bottom: 16px;
+	line-height: 1.5em;
+}
+
+ul {
+	margin-bottom: 16px;
+}
+
+ul li {
+	font-size: 1.2em;
+	margin-left: 35px;
+}
+
+/********************************************************************************
+* Layout
+********************************************************************************/
+
+#container {
+	
+}
+
+#header {
+	overflow: hidden;
+	width: 920px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#logo {
+	float: left;
+	display: none;
+}
+
+#tel {
+	float: right;
+	padding-top: 25px;
+}
+
+#tel p {
+}
+
+/********************************************************************************
+* Footer
+********************************************************************************/
+
+#footer {
+	padding: 10px;
+	background-color: #16029F;
+}
+
+#footer p {
+	margin: 0px auto;;
+	width: 960px;
+	padding: 0 0px;
+	font-size: 1.1em;
+	color:#fff;
+}
+
+/********************************************************************************
+* primary navigation
+********************************************************************************/
+
+#primaryNavigation {
+	border-bottom: 7px solid #16029F;
+}
+
+#primaryNavigation ul {
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+	list-style: none;
+	background: #16029F url(../img/nav.jpg) repeat-x;
+}
+
+#primaryNavigation ul li {
+	float: left;
+	font-size: 1.4em;
+	font-weight: bold;
+	margin-left: 0px;
+	border-right: 1px solid #3b2da2;
+	border-bottom: 1px solid #3b2da2;
+}
+
+#primaryNavigation ul li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	background-color: #16029F;
+	background: #16029F url(../img/nav.jpg) repeat-x;
+	padding: 10px 24px;
+}
+
+#primaryNavigation ul li.selected {
+	border-bottom: 1px solid #16029F;
+}
+
+#primaryNavigation ul li.selected a,
+#primaryNavigation ul li a:hover {
+	color: #fff;
+	background-color: #16029F;
+	background-image: none;
+}
+
+/********************************************************************************
+* Content
+********************************************************************************/
+
+#content {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#sections {
+	overflow: hidden;
+	padding-top: 20px;
+}
+
+#sections #primary {
+	float: left;
+	width: 720px;
+}
+
+#sections #secondary {
+	float: left;
+	width: 240px;
+}
+
+/********************************************************************************
+* Breadcrumb
+********************************************************************************/
+
+#breadcrumb {
+	overflow: hidden;
+	padding: 10px 30px;
+}
+
+#breadcrumb p {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+#breadcrumb ul {
+	float: left;
+	list-style: none;
+	margin: 0;
+}
+
+#breadcrumb ul li {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+
+/********************************************************************************
+* Forms
+********************************************************************************/
+
+div.field {
+	overflow: hidden;
+	margin-bottom: 12px;
+}
+
+div.field div.indicator {
+	float: left;
+	width: 120px;
+	padding-top: 2px;
+}
+
+div.field div.indicator label,
+div.field div.indicator span.label {
+	font-size: 1.4em;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #31323D;
+}
+
+div.field div.singleInput {
+	float: left;
+	width: 230px;
+}
+
+div.field div.singleInput input.text,
+div.field div.singleInput textarea  {
+	font-size: 1.3em;
+	padding: 2px;
+	width: 180px;
+	border: 2px solid #CCCCCC;
+	background-color: #EEE;
+}
+
+div.field div.singleInput select {
+	width: 264px;
+}
+
+div.field div.singleInput textarea {
+	height: 100px;
+}
+
+div.field div.singleInput input.text:focus,
+div.field div.singleInput select:focus,
+div.field div.singleInput textarea:focus {
+}
+
+div.actions {
+	padding-top: 4px;
+	overflow: hidden;
+}
+
+div.actions input.image {
+	float: right;
+}
+
+div.actions input.submit {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #31323D;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	width: 100%;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#shortcuts {
+	font-size:1.2em;
+	font-weight:bold;
+	left:0;
+	line-height:20px;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:0;
+	width:100%;
+	z-index:25;
+}
+
+#shortcuts a {
+	color:#333;
+	display:block;
+	text-decoration:none;
+	text-indent:-9999px;
+	width:100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+#shortcuts a:hover, #shortcuts :focus {
+	background-color:#eee;
+	text-align:center;
+	text-indent:0;
+}
+
+
+
+
+
+
+#splash {
+	margin: 0 20px 20px 0px;
+	border: 2px solid #ccc;
+	padding: 20px;
+	background: url(../img/women.jpg) top right no-repeat;
+}
+
+#splash h2 {
+	font-size: 2.3em;
+}
+
+#splash ul li {
+	font-size: 1.7em;
+	font-weight: bold;
+	margin-bottom: 5px;
+	list-style: none;
+	background: url(../img/tick.jpg) no-repeat 0px 0px;
+	padding-top: 6px;
+	padding-left: 35px;
+	margin-left: 0px;
+	padding-bottom: 5px;
+	color: #ED0503;
+}
+
+#splash p {
+	margin-bottom: 0px;
+}
+
+
+
+
+#callMeBack {
+	border:2px solid #ccc;
+	margin:0 0 20px 0;
+	padding:20px;
+	/*background: #6282ae url(../img/callmeback.jpg) repeat-x;*/
+}
+
+#callMeBack h2 {
+	font-size: 2.2em;
+}
+
+#callMeBack div.indicator {
+	margin-bottom: 10px;
+}
+
+#callMeBack div.singleInput {
+	width: 190px;
+}
+
+#callMeBack input.text {
+	width: 180px;
+	border-color: #16029F;
+}
+
+#callMeBack select {
+	width: 180px;
+}
+
+#callMeBack input.submit {
+	background-color: #ED0503;
+	border:1px solid #070B40;
+	color: #fff;
+	width: 190px;
+}
