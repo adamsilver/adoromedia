@@ -144,7 +144,7 @@
 									</div>	
 									
 									<div class="actions">	
-										<input type="image" class="image rollover" name="send" src="img/buttons/submit_claim.jpg" alt="Submit claim" />					
+										<input type="image" class="image rollover" name="send" src="img/buttons/submit.jpg" alt="Submit claim" />					
 									</div>
 								</form>
 							<?php } ?>
