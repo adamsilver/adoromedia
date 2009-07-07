@@ -93,7 +93,8 @@ ul li {
 }
 
 #logo {
-	float: left;	
+	float: left;
+	display: none;
 }
 
 #tel {
@@ -180,14 +181,14 @@ ul li {
 #primaryNavigation ul li a {
 	display: block;
 	background: url(../img/bg/nav_item_right.jpg) bottom right no-repeat;
-	color: #d0d0d0;
+	color: #fff;
 	text-decoration: none;
 }
 
 #primaryNavigation ul li a span {
 	display: block;
 	background: url(../img/bg/nav_item_left.jpg) bottom left no-repeat;
-	padding: 16px 12px 12px;
+	padding: 17px 12px 11px;
 }
 
 #primaryNavigation ul li a:hover {
