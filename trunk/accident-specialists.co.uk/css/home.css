@@ -7,7 +7,7 @@
 }
 
 #sections #primary {
-	width: 400px;
+	width: 600px;
 	float: left;
 	padding-top: 12px;
 	padding-right: 24px;
@@ -15,7 +15,7 @@
 }
 
 #sections #secondary {
-	width: 422px;
+	width: 226px;
 	float: left;
 	padding-left: 6px;
 	background: url(../img/bg/sections.jpg) no-repeat 0px -300px;
@@ -25,7 +25,7 @@
 * Claim form
 ********************************************************************************/
 
-#claimForm {
+#callMeBack {
 	padding-top: 12px;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -33,10 +33,19 @@
 	padding-bottom: 12px;
 }
 
-#claimForm h2 {
+#callMeBack h2 {
 	font-family: Georgia;
 	font-size: 2.3em;
 	text-transform: none;
 	font-weight:lighter;
 	color: #31323D;
+}
+
+#callMeBack div.indicator {
+	float: none;
+	margin-bottom: 8px;
+}
+
+#callMeBack div.singleInput {
+	float: none;
 }
