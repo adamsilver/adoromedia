@@ -82,7 +82,7 @@ ul li {
 }
 
 #header {
-	padding-top: 22px;
+	padding-top: 36px;
 	padding-bottom: 8px;
 	padding-left: 36px;
 	padding-right: 36px;
@@ -92,12 +92,11 @@ ul li {
 
 #logo {
 	float: left;
-	display: none;
 }
 
 #tel {
 	float: right;
-	padding-top: 20px;
+	padding-top: 3px;
 	
 }
 
