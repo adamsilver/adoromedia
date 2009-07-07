@@ -80,7 +80,7 @@ ul li {
 
 #logo {
 	float: left;
-	display: none;
+	padding-top: 25px;
 }
 
 #tel {
@@ -362,7 +362,6 @@ div.actions input.submit {
 
 #callMeBack input.text {
 	width: 180px;
-	border-color: #16029F;
 }
 
 #callMeBack select {
