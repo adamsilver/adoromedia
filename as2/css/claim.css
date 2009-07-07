@@ -15,10 +15,11 @@
 }
 
 #sections #secondary {
-	width: 226px;
+	width: 210px;
 	float: left;
-	padding-left: 6px;
 	background: url(../img/bg/sections.jpg) no-repeat 0px -300px;
+	min-height: 300px;
+	padding: 12px 6px 0px 16px;
 }
 
 /********************************************************************************
@@ -32,3 +33,4 @@
 	background-color: #f5f5f5;
 	padding-bottom: 12px;
 }
+
