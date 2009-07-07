@@ -12,6 +12,7 @@
 	    <title>Claim, The Accident Specialists, North West London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
+		<link rel="stylesheet" href="css/claim.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 	</head>
@@ -24,13 +25,137 @@
 				<div id="sections">
 				
 					<div id="primary">
-						<h1>Online claim form</h1>
 						
-					
-
+						<div id="claimForm">
+						
+							<h1>Online claim form</h1>
+							<form method="post" action="index.php">
+								<input type="hidden" name="actionSubmit" value="true" />
+								<div class="field">
+									<div class="indicator">
+										<label for="accidentType">Accident type: </label>
+									</div>
+									<div class="singleInput">
+										<select id="accidentType" name="accidentType">
+											<option value="1">1</option>
+										</select>
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="incidentDate">Incident date: </label>
+									</div>
+									<div class="singleInput">
+										<select id="incidentDate" name="incidentDate">
+											<option value="1">Last 6 months</option>
+										</select>
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="basicDescription">Basic description: </label>
+									</div>
+									<div class="singleInput">
+										<textarea id="basicDescription" name="basicDescription"><?php echo isset($_POST["basicDescription"]) ? $_POST["basicDescription"] : "" ?></textarea>
+									</div>
+								</div>						
+								<div class="field">
+									<div class="indicator">
+										<label for="title">Title: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="title" id="title" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="firstName">First name: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="firstName" id="firstName" value="<?php echo isset($_POST["firstName"]) ? $_POST["firstName"] : "" ?>" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="lastName">Last name: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="lastName" id="lastName" value="<?php echo isset($_POST["lastName"]) ? $_POST["lastName"] : "" ?>" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="dob">Date of birth: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="dob" id="dob" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="dayTimePhone">Daytime phone:</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="alternativePhone">Alternative phone: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="alternativePhone" id="alternativePhone" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="emailAddress">Email address: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="emailAddress" id="emailAddress" />
+									</div>
+								</div>	
+								<div class="field">
+									<div class="indicator">
+										<label for="addressLine1">Address line 1: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="addressLine1" id="addressLine1" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="addressLine2">Address line 2: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="addressLine2" id="addressLine2" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="town">Town/City: </label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="town" id="town" />
+									</div>
+								</div>
+								<div class="field">
+									<div class="indicator">
+										<label for="postCode">Post code:</label>
+									</div>
+									<div class="singleInput">
+										<input class="text" type="text" name="postCode" id="postCode" />
+									</div>
+								</div>
+								<div class="actions">	
+									<input type="image" class="image rollover" name="send" src="img/btn_claim_now.jpg" alt="Submit claim" />					
+								</div>
+							</form>
+						</div>
 						
 					</div>
 					<div id="secondary">
+						<h2>Also in this section</h2>
 					</div>
 				</div>
 			</div>
