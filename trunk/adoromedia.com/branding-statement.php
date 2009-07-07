@@ -4,8 +4,8 @@
 <?php include("inc/Classes/Rules.php"); ?>
 <?php include("inc/Classes/FormValidator.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "adoro media, website, web, bespoke, new, media, solutions, london, UK";
+	$metaDescription = "Adoro Media is an agency dedicated to building new media solutions. Based in London, England.";
 	$siteSection = "about";
 	$breadcrumb = array(new BreadCrumbItem("index.php", "Home"), new BreadCrumbItem("about.php", "About"), new BreadCrumbItem(null, "Branding Statement"));
 ?>
@@ -55,8 +55,8 @@
 					<div id="secondary">
 						<div id="secondaryNavigation">
 							<ul>
-								<li><a href="about.asp">About us</a></li>
-								<li><a class="selected" href="branding-statement.asp">Branding statement</a></li>
+								<li><a href="about.php">About us</a></li>
+								<li><a class="selected" href="branding-statement.php">Branding statement</a></li>
 								<!--<li><a href="faq.asp">FAQ</a></li>-->
 							</ul>
 						</div>
@@ -65,6 +65,6 @@
 			</div>
 			<?php include("inc/footer.php"); ?>
 		</div>
-		<!--#include file="inc/ga.asp"-->
+		<?php include("inc/ga.php"); ?>
 	</body>
 </html>
