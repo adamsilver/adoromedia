@@ -148,7 +148,7 @@
 									</div>
 								</div>
 								<div class="actions">	
-									<input type="image" class="image rollover" name="send" src="img/btn_claim_now.jpg" alt="Submit claim" />					
+									<input type="image" class="image" name="send" src="img/btn_claim_now.jpg" alt="Submit claim" />					
 								</div>
 							</form>
 						</div>
