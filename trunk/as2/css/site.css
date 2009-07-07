@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
 	font-size: 2.3em;
 	margin-bottom: 16px;
-	color: #31323d;
+	color: #120473;
 	font-family: Georgia, Arial;
 	font-weight: lighter;
 }
@@ -42,14 +42,14 @@ h1 {
 h2 {
 	font-size: 1.4em;
 	margin-bottom: 16px;
-	color: #104781;
+	color: #120473;
 	text-transform: uppercase;
 }
 
 h3 {
 	font-size: 1.8em;
 	margin-bottom: 16px;
-	color: #31323d;
+	color: #120473;
 }
 
 p {
