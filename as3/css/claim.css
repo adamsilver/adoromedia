@@ -12,5 +12,18 @@
 
 #claimForm {
 	padding: 0px 16px;
-	margin-bottoM: 16px;
+	margin-bottom: 16px;
+}
+
+#claimForm div.indicator {
+	width: 200px;
+}
+
+#claimForm div.singleInput {
+	width: 400px;
+}
+
+#claimForm div.singleInput textarea,
+#claimForm div.singleInput input.text {
+	width: 350px;
 }
