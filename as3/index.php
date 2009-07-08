@@ -63,14 +63,14 @@
 							<h2>London based</h2>
 							
 							<p>Lorem ipsum fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-							
-							<h2>Claim now</h2>
+
 						</div>
 						
 					</div>
 					<div id="secondary">
 						<div id="callMeBack">
 							<h2>Call me back</h2>
+							<p>An Accident Specialist, will call you back within minutes to help you with your claim.</p>
 							<form method="post" action="index.php">
 								<input type="hidden" name="actionSubmit" value="true" />
 								<div class="field">

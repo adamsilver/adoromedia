@@ -28,7 +28,7 @@
 						
 						<div id="claimForm">
 						
-							<h1>Online claim form</h1>
+							<h1>Online claim form - we can help you within minutes</h1>
 							<form method="post" action="index.php">
 								<input type="hidden" name="actionSubmit" value="true" />
 								<div class="field">
@@ -155,7 +155,14 @@
 						
 					</div>
 					<div id="secondary">
-						<h2>Also in this section</h2>
+						<div id="also">
+							<h2>Also in this section</h2>
+							<ul>
+								<li>Claims process</li>
+								<li>Lorem ipsum</li>
+								<li>Lorem ipsum</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
