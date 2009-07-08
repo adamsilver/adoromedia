@@ -27,3 +27,13 @@
 #claimForm div.singleInput input.text {
 	width: 350px;
 }
+
+#also {
+	border:2px solid #ccc;
+	margin:0 0 20px 0;
+	padding-top: 12px;
+	padding-left: 16px;
+	padding-right: 16px;
+	background-color: #f5f5f5;
+	padding-bottom: 12px;
+}
