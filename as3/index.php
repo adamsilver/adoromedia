@@ -36,7 +36,7 @@
 						</div>
 					
 						<div id="homeInfo">
-							<h1>The accident specialists</h1>
+							<h1>The Accident Specialists</h1>
 							
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
 							Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
