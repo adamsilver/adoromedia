@@ -372,7 +372,7 @@ body.contact #logo a{
 ******************************************************************/
 
 #content {
-	background-color: #fff;
+	background: url(../../img/bg_content.png) top left no-repeat;
 	padding-bottom: 10px;
 }
 
