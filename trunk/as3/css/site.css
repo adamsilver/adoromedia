@@ -117,8 +117,8 @@ ul li {
 ********************************************************************************/
 
 #primaryNavigation {
-	padding-bottom: 25px;
-	background: url(../img/navbottom.jpg) repeat-x bottom left;
+	/*padding-bottom: 25px;
+	background: url(../img/navbottom.jpg) repeat-x bottom left;*/
 }
 
 #primaryNavigationInner {
@@ -172,18 +172,20 @@ ul li {
 ********************************************************************************/
 
 #content {
-	width: 960px;
+	width: 928px;
 	margin: 0 auto;
+	border-right: 8px solid #13007D;
+	border-left: 8px solid #13007D;
+	padding: 8px 8px;
 }
 
 #sections {
 	overflow: hidden;
-	padding-top: 20px;
 }
 
 #sections #primary {
 	float: left;
-	width: 720px;
+	width: 688px;
 }
 
 #sections #secondary {
@@ -323,34 +325,6 @@ div.actions input.submit {
 
 
 
-
-#splash {
-	margin: 0 20px 20px 0px;
-	border: 2px solid #13007D;
-	padding: 20px;
-	background: url(../img/women.jpg) top right no-repeat;
-}
-
-#splash h2 {
-	font-size: 2.3em;
-}
-
-#splash ul li {
-	font-size: 1.7em;
-	font-weight: bold;
-	margin-bottom: 5px;
-	list-style: none;
-	background: url(../img/tick.jpg) no-repeat 0px 0px;
-	padding-top: 6px;
-	padding-left: 35px;
-	margin-left: 0px;
-	padding-bottom: 5px;
-	color: #ED0503;
-}
-
-#splash p {
-	margin-bottom: 0px;
-}
 
 
 

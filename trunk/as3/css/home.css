@@ -11,7 +11,7 @@
 ********************************************************************************/
 
 #callMeBack {
-	border:2px solid #13007D;
+	border:1px solid #aaa;
 	margin:0 0 20px 0;
 	padding-top: 20px;
 	padding-left: 16px;
@@ -37,31 +37,37 @@
 	width: 198px;
 }
 
-/********************************************************************************
-* Hero
-********************************************************************************/
-
-#hero {
-	border: 1px solid #ddd;
-	padding: 8px;
-	background: url(../img/women.jpg) 100% 0 no-repeat;
-	margin-bottom: 16px;
-}
-
-#hero h2 {
-	font-size: 2.3em;
-	text-transform: none;
-	color: #EC0704;
-}
-
-#hero  li {
-	font-size: 1.6em;
-	margin-bottom: 4px;
-	color: #120473;
-	text-transform: uppercase;
-	font-weight: bold;
-}
 
 #homeInfo {
-	padding: 0px 16px;
+	padding: 0px 8px;
+}
+
+
+
+#splash {
+	margin: 0 8px 20px 0px;
+	border: 1px solid #aaa;
+	padding: 20px;
+	background: url(../img/women.jpg) top right no-repeat;
+}
+
+#splash h2 {
+	font-size: 2.3em;
+}
+
+#splash ul li {
+	font-size: 1.7em;
+	font-weight: bold;
+	margin-bottom: 5px;
+	list-style: none;
+	background: url(../img/tick.jpg) no-repeat 0px 0px;
+	padding-top: 6px;
+	padding-left: 35px;
+	margin-left: 0px;
+	padding-bottom: 5px;
+	color: #ED0503;
+}
+
+#splash p {
+	margin-bottom: 0px;
 }
