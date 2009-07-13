@@ -32,20 +32,20 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
 	font-size: 2.3em;
 	margin-bottom: 16px;
-	color: #16029F;
+	color: #13007D;
 }
 
 h2 {
 	font-size: 1.4em;
 	margin-bottom: 16px;
-	color: #16029F;
+	color: #13007D;
 	text-transform: uppercase;
 }
 
 h3 {
 	font-size: 1.8em;
 	margin-bottom: 16px;
-	color: #16029F;
+	color: #13007D;
 }
 
 p {
@@ -76,19 +76,19 @@ ul li {
 
 #header {
 	overflow: hidden;
-	width: 920px;
+	width: 960px;
 	margin: 0 auto;
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 #logo {
 	float: left;
-	padding-top: 25px;
 }
 
 #tel {
 	float: right;
-	padding-top: 25px;
+	padding-top: 87px;
 }
 
 #tel p {
@@ -100,7 +100,7 @@ ul li {
 
 #footer {
 	padding: 10px;
-	background-color: #16029F;
+	background-color: #13007D;
 }
 
 #footer p {
@@ -116,7 +116,12 @@ ul li {
 ********************************************************************************/
 
 #primaryNavigation {
-	border-bottom: 7px solid #16029F;
+	padding-bottom: 25px;
+	background: url(../img/navbottom.jpg) repeat-x bottom left;
+}
+
+#primaryNavigationInner {
+	border-bottom: 7px solid #13007D;
 }
 
 #primaryNavigation ul {
@@ -124,37 +129,40 @@ ul li {
 	margin: 0 auto;
 	overflow: hidden;
 	list-style: none;
-	background: #16029F url(../img/nav.jpg) repeat-x;
+	background: #221089;
 }
 
 #primaryNavigation ul li {
 	float: left;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-weight: bold;
 	margin-left: 0px;
 	border-right: 1px solid #3b2da2;
 	border-bottom: 1px solid #3b2da2;
 	background: none;
 	padding: 0px;
+	text-transform: uppercase;
 }
 
 #primaryNavigation ul li a {
 	display: block;
 	color: #fff;
 	text-decoration: none;
-	background-color: #16029F;
-	background: #16029F url(../img/nav.jpg) repeat-x;
-	padding: 10px 24px;
+	background-color: #13007D;
+	background: #221089;
+	padding: 10px 0px;
+	width: 158px;
+	text-align: center;
 }
 
 #primaryNavigation ul li.selected {
-	border-bottom: 1px solid #16029F;
+	border-bottom: 1px solid #13007D;
 }
 
 #primaryNavigation ul li.selected a,
 #primaryNavigation ul li a:hover {
 	color: #fff;
-	background-color: #16029F;
+	background-color: #13007D;
 	background-image: none;
 }
 
