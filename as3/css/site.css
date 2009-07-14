@@ -225,7 +225,7 @@ ul li {
 
 div.field {
 	overflow: hidden;
-	padding: 8px 0px;
+	padding: 8px;
 	background-color: #eee;
 	border-bottom: 1px solid #ddd;
 }
@@ -238,7 +238,7 @@ div.field div.indicator {
 
 div.field div.indicator label,
 div.field div.indicator span.label {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	text-transform: uppercase;
 	font-weight: bold;
 	color: #221089;
