@@ -28,7 +28,7 @@
 						
 						<div id="claimForm">
 						
-							<h1>Online claim form</h1>
+							<h1>Claim form</h1>
 							<p>Lorem ipsum dollar</p>
 							<form method="post" action="index.php">
 								<input type="hidden" name="actionSubmit" value="true" />
