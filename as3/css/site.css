@@ -156,6 +156,14 @@ ul li {
 	text-align: center;
 }
 
+#primaryNavigation ul li.contact {
+	border-right: 0px;
+}
+
+#primaryNavigation ul li.contact a {
+	width: 165px;
+}
+
 #primaryNavigation ul li.selected {
 	border-bottom: 1px solid #13007D;
 }
