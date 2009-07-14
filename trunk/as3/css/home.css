@@ -17,10 +17,17 @@
 	padding-left: 16px;
 	padding-right: 16px;
 	padding-bottom: 12px;
+	background-color: #EEEEEE
 }
 
 #callMeBack h2 {
 	font-size: 2em;
+}
+
+#callMeBack div.field {
+	border-bottom: 0px;
+	padding: 0px;
+	margin-bottom: 4px;
 }
 
 #callMeBack div.indicator {
@@ -34,7 +41,7 @@
 }
 
 #callMeBack div.singleInput input.text {
-	width: 198px;
+	width: 184px;
 }
 
 
