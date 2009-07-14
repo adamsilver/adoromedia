@@ -28,7 +28,8 @@
 						
 						<div id="claimForm">
 						
-							<h1>Online claim form - we can help you within minutes</h1>
+							<h1>Online claim form</h1>
+							<p>Lorem ipsum dollar</p>
 							<form method="post" action="index.php">
 								<input type="hidden" name="actionSubmit" value="true" />
 								<div class="field">
@@ -148,7 +149,9 @@
 									</div>
 								</div>
 								<div class="actions">	
-									<input type="image" class="image" name="send" src="img/btn_claim_now.jpg" alt="Submit claim" />					
+									<!--<input type="image" class="image" name="send" src="img/btn_claim_now.jpg" alt="Submit claim" />					-->
+									
+									<input type="submit" class="submit" name="send" value="Submit claim" />
 								</div>
 							</form>
 						</div>
@@ -156,11 +159,11 @@
 					</div>
 					<div id="secondary">
 						<div id="also">
-							<h2>Also in this section</h2>
+							<h2>Further information</h2>
 							<ul>
-								<li>Claims process</li>
-								<li>Lorem ipsum</li>
-								<li>Lorem ipsum</li>
+								<li><a href="#">Claims process</a></li>
+								<li><a href="#">Lorem ipsum</a></li>
+								<li><a href="#">Lorem ipsum</a></li>
 							</ul>
 						</div>
 					</div>
