@@ -13,10 +13,12 @@
 #claimForm {
 	padding: 8px 16px;
 	margin-bottom: 16px;
+	margin-right: 8px;
+	background: #eee;
 }
 
 #claimForm div.indicator {
-	width: 200px;
+	width: 170px;
 }
 
 #claimForm div.singleInput {
@@ -29,12 +31,14 @@
 }
 
 #also {
-	padding-top: 16px;
+	border:1px solid #aaa;
+	margin:0 0 20px 0;
+	background-color: #fff;
 }
 
 #also h2 {
-	background-color: #BD0209;
-	color: #fff;
+	background-color: #ddd;
+	color: #13007D;
 	padding: 8px 10px;
 	margin: 0px;
 	font-size: 1.6em;
@@ -42,6 +46,7 @@
 
 #also ul {
 	border-top: 1px solid #eee;
+	margin-bottom: 0px;
 }
 
 #also li {
@@ -52,7 +57,7 @@
 }
 
 #also li a {
-	color: #BD0209;
+	color: #13007D;
 	text-decoration: none;
 	padding: 8px 8px 8px 28px;
 	display: block;
