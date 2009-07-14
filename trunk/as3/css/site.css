@@ -177,6 +177,7 @@ ul li {
 	border-right: 8px solid #13007D;
 	border-left: 8px solid #13007D;
 	padding: 8px 8px;
+	background: url(../img/bglogo.jpg) bottom right no-repeat;
 }
 
 #sections {
@@ -279,14 +280,16 @@ div.actions input.image {
 }
 
 div.actions input.submit {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: #31323D;
+	padding: 8px;
+	background-color: #BD0209;
+	color: #fff;
 	font-size: 1.1em;
 	text-transform: uppercase;
-	width: 100%;
 	font-weight: bold;
 	cursor: pointer;
+	border: none;
+	border: 3px solid #ddd;
+	float: right;
 }
 
 #shortcuts {
