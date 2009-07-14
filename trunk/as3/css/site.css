@@ -225,7 +225,9 @@ ul li {
 
 div.field {
 	overflow: hidden;
-	margin-bottom: 12px;
+	padding: 8px 0px;
+	background-color: #eee;
+	border-bottom: 1px solid #ddd;
 }
 
 div.field div.indicator {
@@ -252,8 +254,6 @@ div.field div.singleInput textarea  {
 	font-size: 1.3em;
 	padding: 2px;
 	width: 180px;
-	background-color: #f9f9f9;
-	border: 1px solid #221089;
 }
 
 div.field div.singleInput select {
