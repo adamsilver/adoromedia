@@ -117,20 +117,21 @@ ul li {
 ********************************************************************************/
 
 #primaryNavigation {
-	/*padding-bottom: 25px;
-	background: url(../img/navbottom.jpg) repeat-x bottom left;*/
-}
-
-#primaryNavigationInner {
 	border-bottom: 7px solid #13007D;
 }
 
-#primaryNavigation ul {
-	width: 960px;
+#primaryNavigationInner {
+	background: url(../img/navshade.gif) no-repeat;
+	width: 944px;
+	padding: 0px 8px;
 	margin: 0 auto;
+}
+
+#primaryNavigation ul {
 	overflow: hidden;
 	list-style: none;
 	background: #221089;
+	margin-bottom: 0px;
 }
 
 #primaryNavigation ul li {
@@ -138,8 +139,7 @@ ul li {
 	font-size: 1.2em;
 	font-weight: bold;
 	margin-left: 0px;
-	border-right: 1px solid #3b2da2;
-	border-bottom: 1px solid #3b2da2;
+	border-right: 1px solid #666;
 	background: none;
 	padding: 0px;
 	text-transform: uppercase;
@@ -149,10 +149,9 @@ ul li {
 	display: block;
 	color: #fff;
 	text-decoration: none;
-	background-color: #13007D;
-	background: #221089;
+	background: #555;
 	padding: 10px 0px;
-	width: 158px;
+	width: 156px;
 	text-align: center;
 }
 
@@ -161,11 +160,10 @@ ul li {
 }
 
 #primaryNavigation ul li.contact a {
-	width: 165px;
+	width: 158px;
 }
 
 #primaryNavigation ul li.selected {
-	border-bottom: 1px solid #13007D;
 }
 
 #primaryNavigation ul li.selected a,
@@ -182,13 +180,13 @@ ul li {
 #content {
 	width: 944px;
 	margin: 0 auto;
-	border-right: 8px solid #13007D;
-	border-left: 8px solid #13007D;
-	background: url(../img/bglogo.jpg) bottom right no-repeat;
+	background: url(../img/content.gif) repeat-y;
+	padding: 0px 8px;
 }
 
 #sections {
 	overflow: hidden;
+	background: url(../img/bglogo.jpg) bottom right no-repeat;
 }
 
 #sections #primary {
