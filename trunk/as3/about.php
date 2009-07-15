@@ -52,7 +52,14 @@
 					
 					</div>
 					<div id="secondary">
-						
+						<div id="secondaryNavigation">
+							<h2>Further information</h2>
+							<ul>
+								<li><a href="#">Accreditations</a></li>
+								<li><a href="#">Testimonials</a></li>
+								<li><a href="#">Meet the specialists</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
