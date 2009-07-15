@@ -12,9 +12,12 @@
 	    <title>Contact details, The Accident Specialists, North West London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
-		<link rel="stylesheet" href="css/claim.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/contact.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAnfs7bKE82qgb3Zc2YyS-oBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSySz_REpPq-4WZA27OwgbtyR3VcA" type="text/javascript"></script><script type="text/javascript" src="js/J2/J2.js"></script>			
+		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
+		<script type="text/javascript" src="js/Site/Contact/Site.Contact.GoogleMap.js"></script>
 	</head>
 	<body id="pgContact" class="contact">
 		<div id="container">
@@ -32,7 +35,9 @@
 						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
 						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
 						
-						
+						<div id="map">
+							You must have JavaScript enabled to use Google Maps.
+						</div>
 						
 					</div>
 					<div id="secondary">

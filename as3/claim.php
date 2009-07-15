@@ -159,12 +159,21 @@
 						
 					</div>
 					<div id="secondary">
-						<div id="also">
+						<div id="secondaryNavigation">
 							<h2>Further information</h2>
 							<ul>
-								<li><a href="#">Claims process</a></li>
-								<li><a href="#">Lorem ipsum</a></li>
-								<li><a href="#">Lorem ipsum</a></li>
+								<li><a href="#">No win, no fee claim</a></li>
+								<li><a href="#">Claim form</a></li>
+								<li><a href="#">Claim process</a></li>
+								<li><a href="#">What can I claim?</a></li>
+							</ul>
+						</div>
+						<div class="faqPanel">
+							<h2>Questions and answers</h2>
+							<ul>
+								<li>Why choose Accidents Direct?</li>
+								<li>What does the claim process involve?</li>
+								<li>How much will it cost me?</li>
 							</ul>
 						</div>
 					</div>
