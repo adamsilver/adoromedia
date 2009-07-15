@@ -25,12 +25,13 @@
 				<div id="sections">
 				
 					<div id="primary">
+						<h1>Claim form</h1>
+						<p>Lorem ipsum dollar</p>
 						
 						<div id="claimForm">
 						
-							<h1>Claim form</h1>
-							<p>Lorem ipsum dollar</p>
-							<form method="post" action="index.php">
+							
+							<form method="post" action="claim.php">
 								<input type="hidden" name="actionSubmit" value="true" />
 								<div class="field">
 									<div class="indicator">

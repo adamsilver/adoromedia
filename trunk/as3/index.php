@@ -110,6 +110,19 @@
 								</div>
 							</form>
 						</div>
+						
+						<div class="testimonial">
+							<h2>What our clients say</h2>
+							
+							<p>"Lorem ipsum provided an excellent service. I was extremely well informed and the 
+							solicitor was very professional. My claim ran smoothly with no problem at all and I 
+							was fully compensated for all that was spent. I would give them 10 out of 10 and 
+							would recommend their great service."</p>
+							
+							<p class="clientName">Richard Neale, Kent</p>
+
+						</div>
+						
 					</div>
 				</div>
 			</div>

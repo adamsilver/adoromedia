@@ -1,68 +1,9 @@
 /********************************************************************************
-* Layout
+* Splash
 ********************************************************************************/
-
-#sections {
-	overflow: hidden;
-}
-
-/********************************************************************************
-* Call me back
-********************************************************************************/
-
-#callMeBack {
-	border:1px solid #aaa;
-	margin:0 0 20px 0;
-	background-color: #fff;
-
-}
-
-#callMeBack h2 {
-	background-color: #ddd;
-	color: #13007D;
-	padding: 8px 10px;
-	margin: 0px 0px 8px;
-	font-size: 1.6em;
-}
-
-#callMeBack p {
-	margin: 0px 8px 8px;
-}
-
-#callMeBack div.field {
-	background: none;
-	border-bottom: 0px;
-	padding: 0px;
-	margin-bottom: 4px;
-	margin: 0px 8px;
-}
-
-#callMeBack div.indicator {
-	float: none;
-	margin-bottom: 8px;
-}
-
-#callMeBack div.singleInput {
-	float: none;
-	width: 198px;
-}
-
-#callMeBack div.singleInput input.text {
-	width: 184px;
-}
-
-#callMeBack div.actions {
-	padding: 8px;
-}
-
-#homeInfo {
-	padding: 0px 8px;
-}
-
-
 
 #splash {
-	margin: 0 8px 20px 0px;
+	margin-bottom: 16px;
 	border: 1px solid #aaa;
 	padding: 20px;
 	background: url(../img/women.jpg) top right no-repeat;
@@ -88,3 +29,52 @@
 #splash p {
 	margin-bottom: 0px;
 }
+
+/********************************************************************************
+* Call me back
+********************************************************************************/
+
+#callMeBack {
+	border:1px solid #aaa;
+	margin-bottom: 16px;
+	background-color: #fff;
+}
+
+#callMeBack h2 {
+	background-color: #ddd;
+	color: #13007D;
+	padding: 8px;
+	margin: 0px 0px 8px;
+	font-size: 1.6em;
+}
+
+#callMeBack p {
+	margin: 0px 8px 8px;
+}
+
+#callMeBack div.field {
+	margin: 0px 8px 8px 8px;
+}
+
+#callMeBack div.indicator {
+	float: none;
+	margin-bottom: 3px;
+}
+
+#callMeBack div.singleInput {
+	float: none;
+	width: 222px;
+}
+
+#callMeBack div.singleInput input.text {
+	width: 216px;
+}
+
+#callMeBack div.actions {
+	padding: 8px;
+}
+
+#homeInfo {
+	padding: 0px 8px;
+}
+

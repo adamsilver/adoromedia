@@ -1,5 +1,5 @@
 <div id="tel">
 	<p>
-		<img src="img/tel.jpg" alt="the number" />
+		<a href="contact.php"><img src="img/tel.jpg" alt="020 8455 4199" /></a>
 	</p>
 </div>
