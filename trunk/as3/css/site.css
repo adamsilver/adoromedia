@@ -121,7 +121,7 @@ ul li {
 }
 
 #primaryNavigationInner {
-	background: url(../img/navshade.gif) no-repeat;
+	background: url(../img/navshade.jpg) no-repeat;
 	width: 944px;
 	padding: 0px 8px;
 	margin: 0 auto;
@@ -180,7 +180,7 @@ ul li {
 #content {
 	width: 944px;
 	margin: 0 auto;
-	background: url(../img/content.gif) repeat-y;
+	background: url(../img/content.jpg) repeat-y;
 	padding: 0px 8px;
 }
 
