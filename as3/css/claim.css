@@ -6,15 +6,18 @@
 	overflow: hidden;
 }
 
+#sections #primary {
+	
+}
+
 /********************************************************************************
 * Claim form
 ********************************************************************************/
 
 #claimForm {
-	padding: 8px 16px;
-	margin-bottom: 16px;
-	margin-right: 8px;
-	background: #eee;
+	background: #f5f5f5;
+	border: 1px solid #AAAAAA;
+	padding: 16px;
 }
 
 #claimForm div.indicator {
@@ -28,6 +31,10 @@
 #claimForm div.singleInput textarea,
 #claimForm div.singleInput input.text {
 	width: 350px;
+}
+
+#claimForm div.actions {
+	padding-right: 95px;
 }
 
 #also {
