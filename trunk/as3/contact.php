@@ -15,7 +15,9 @@
 		<link rel="stylesheet" href="css/contact.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAnfs7bKE82qgb3Zc2YyS-oBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSySz_REpPq-4WZA27OwgbtyR3VcA" type="text/javascript"></script>		
+		<!--<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAnfs7bKE82qgb3Zc2YyS-oBT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSySz_REpPq-4WZA27OwgbtyR3VcA" type="text/javascript"></script>-->
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhQI_FobhqIvTy25MxX7jU__QO27GRRGc7BHV1em9YpTvVi-L8cZrwxg9g" type="text/javascript"></script>		
+		
 		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
 		<script type="text/javascript" src="js/Site/Contact/Site.Contact.GoogleMap.js"></script>
 	</head>
