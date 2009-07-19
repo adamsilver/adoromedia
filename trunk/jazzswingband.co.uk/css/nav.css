@@ -1,0 +1,40 @@
+/*************************************************
+* Primary navigation
+*************************************************/
+
+div#container ul#nav {
+	border: 1px solid #666666;
+	background-color: #f9f9f9;
+	margin-bottom: 8px;
+}
+
+div#container ul#nav li {
+	float: left;
+	display: inline;
+	width: auto;
+	border-right: 1px solid #eeeeee;
+	font-size: 1.2em;
+	text-transform: capitalize;
+}
+
+div#container ul#nav li a, div#container ul#nav li a:link,div#container ul#nav li a:visited {
+	display: block;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 22px;
+	padding-right: 22px;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+	background-color: #f9f9f9;
+	font-weight: bold;
+}
+
+div#container ul#nav li a:hover,div#container ul#nav li a:active {
+	background-color: #B3B364;
+}
+
+div#container ul#nav li a.on {
+	background: #B3B364 url(../img/button_bg.gif) repeat-x;
+	color: #fff;
+}
