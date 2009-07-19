@@ -1,0 +1,30 @@
+/*************************************************
+* Clearfix
+*************************************************/
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+ 
+.clearfix { 
+	display: inline-block; 
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+
+div.clear {
+	clear: both;
+	font-size: 0em;
+	line-height: 0em;
+}

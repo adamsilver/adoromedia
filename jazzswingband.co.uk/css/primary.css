@@ -1,0 +1,233 @@
+/*************************************************
+* Generic
+*************************************************/
+
+* {
+	margin:0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial,Arial, Helvetica, sans-serif;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #ffffff url(../img/body_bg.jpg) repeat-x;	
+}
+
+span {
+	font-weight: bold;
+	color: #C20000;
+}
+
+/*************************************************
+* Layout
+*************************************************/
+
+div#container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 739px;
+	background-color: #ffffff;
+	padding-top: 8px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+div#header {
+	height: 111px;
+	background-color: #A50000;
+	background: url(../img/header_bg.jpg);
+	border-bottom: 8px solid #A8A851;
+	position:relative;
+}
+
+div#header h1 {
+	position:absolute;
+	height: 111px;
+	width:273px;
+	text-indent: -99999999em;
+	font-size: 1px;
+	overflow: hidden;
+	left: 235px;
+}
+
+div#header h1 a {
+	display: block;
+	height: 111px;
+	width:273px;
+}
+
+div#page {
+	background: url(../img/page_bg.jpg) repeat-y;
+	border-top: 1px solid #F5F5F5;
+}
+
+div#page a:link, div#page a:visited {
+	color: #A50000;
+}
+	
+div#page a:hover, div#page a:active {
+	text-decoration: none;
+}
+
+div#page h2 {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	font-size: 2em;
+	color: #333333;
+	text-transform: capitalize;
+}
+
+div#page h3 {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	font-size: 1.5em;
+	color: #C20000;
+	text-transform: capitalize;
+}
+
+div#page h4 {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 1.2em;
+	color: #000;
+	text-transform: uppercase;
+}
+
+div#page p {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+}
+
+div#page p.flash {
+	background: url(../img/icon_flash.gif) no-repeat;
+	padding-left: 22px;
+}
+
+div#page ul {
+	margin-left: 25px;
+	margin-right: 20px;
+	font-size: 1.3em;
+	margin-bottom: 10px;
+}
+
+div#page ul li {
+	/*background: url(../img/icon_note.gif) no-repeat;
+	padding-left: 22px;*/
+	margin-bottom: 4px;
+}
+
+div#page ol {
+	margin-left: 45px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+}
+
+div#page ol li h4 {
+	font-size: 1em;
+	margin: 0px;
+}
+
+div#page ol li p {
+	font-size: 1em;
+	margin: 0px;
+}
+
+div#content {
+	float: left;
+	width: 493px;
+	display: inline;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	background: #FBFBFB url(../img/content_bg.jpg) repeat-x;
+}
+
+div#content01 {
+	background: #FBFBFB url(../img/content_bg.jpg) repeat-x;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+div#subContent {
+	float: left;
+	width: 245px;
+	padding-top: 20px;
+	display: inline;
+	margin-left: 1px;
+}
+
+/*************************************************
+* Footer
+*************************************************/
+
+div#footer {
+	padding: 10px;
+	background: #C20000;
+	min-height: 15px;
+}
+
+div#footer p {
+	color: #fff;
+	font-size: 1.1em;
+	margin: 0px;
+	text-align: center;
+}
+
+div#footer a:link,div#footer a:visited {
+	color: #fff;
+	font-weight: bold;
+} 
+
+div#footer a:hover,div#footer a:active {
+	background-color: #fff;
+	color: #000000;
+	text-decoration: none;
+} 
+
+/*************************************************
+* Other bits
+*************************************************/
+
+img.photo {
+	border: 1px solid #A8A851;
+	padding: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fbfbfb;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+div#music {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px solid #A8A851;
+}
+
+div#music p {
+	margin-bottom: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+ol.trackListing strong{
+	color: #C20000;
+}
+
+div#page p.quote {
+	text-align: center;
+	font-size: 1.4em;
+	font-style: italic;
+}
