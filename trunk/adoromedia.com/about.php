@@ -67,3 +67,20 @@
 		<?php include("inc/ga.php"); ?>
 	</body>
 </html>
+
+<!--
+Project process
+
+1.  Initial meeting
+2.  Project proposal with pricing
+3.  Kick off meeting
+4.  Design phase with iterations
+5.  Application build
+6.  Design integration
+7.  Testing
+8.  Launch
+9.  Training
+
+* need to add where we remove other hosting if needed and email setup etc
+* in each stage go into detail of being provided copy etc etc
+-->
