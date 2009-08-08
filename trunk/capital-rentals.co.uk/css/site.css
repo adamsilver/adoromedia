@@ -1,0 +1,129 @@
+/******************************************************************
+* Generic
+******************************************************************/
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 62.5%;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica", arial;
+	background: url(../../img/bg_body.jpg) repeat-x;
+	border-top: 4px solid #6CAF45;
+}
+
+/******************************************************************
+* Link styles
+******************************************************************/
+
+a img {
+	border: none;
+}
+
+a, a:link, a:visited {
+	color: #000000;
+}
+
+a:hover, a:focus, a:active {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+a.action, a.action:link, a.action:visited {
+	background-color: #6CA714;
+	color: #fff;
+	padding: 10px;
+}
+
+a:hover, a:focus, a:active {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+.hide {
+	display: none;
+}
+
+.off {
+	position: absolute !important;
+	left: -999em !important;
+	top: 0 !important;
+}
+
+/******************************************************************
+* Clearfix
+******************************************************************/
+
+selector:after  {
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+
+/******************************************************************
+* Text styles
+******************************************************************/
+
+h1, h2, h3, h4, h5, h6, p {
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: normal;
+	color: #4E7F2F;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 1.8em;
+	font-weight: normal;
+	color: #4E7F2F;
+	margin-bottom: 5px;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin-bottom: 5px;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.5em;
+	color: #8c8c8c;
+	margin-bottom: 15px;
+}
+
+ul, ol {
+	margin: 0px 20px 20px;
+	list-style: square;
+}
+
+ ol {
+	list-style: decimal;
+ }
+
+ul li, ol li {
+	font-size: 1.2em;
+	margin-left: 25px;
+	margin-bottom: 5px;
+	color: #CCCCCC;
+}
+
+ul li ul li,ol li ol li {
+	font-size: 1em;
+}
+
+#logo {
+	float: left;
+}
+
+#content {
+	float: left;
+	padding-top: 25px;
+	width: 35%;
+}
+
