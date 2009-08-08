@@ -1,0 +1,11 @@
+#header,#content {
+	height: 1%;
+}
+
+body {
+	margin: 0px;
+}
+
+div#shading {
+	margin-top: 10px;
+}
