@@ -74,7 +74,7 @@ h1 {
 	font-size: 3em;
 	font-weight: normal;
 	color: #4E7F2F;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -160,12 +160,12 @@ ul li ul li,ol li ol li {
 
 #primary {
 	float: left;
-	width: 700px;
+	width: 600px;
 }
 
 #secondary {
 	float: left;
-	width: 258px;
+	width: 358px;
 }
 
 #footer {
@@ -199,3 +199,125 @@ ul li ul li,ol li ol li {
 #welcome {
 	padding: 16px;
 }
+
+#welcome h1 {
+	display: none;
+}
+
+#welcome h2 {
+	margin-bottom: 20px;
+	font-size: 3em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#welcome h3 {
+
+}
+
+#welcome ul {
+	margin-left: 0px;
+}
+
+#welcome ul li {
+	font-size: 1.7em;
+	color: #333;
+	margin-bottom: 12px;
+}
+
+#welcome p {
+	font-size: 1.8em;
+	margin-bottom: 11px;
+}
+
+#welcome p.question {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 2.2em;
+}
+
+#welcome p.last {
+	margin-bottom: 20px;
+}
+
+#licensed {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+}
+
+#licensed p {
+	margin: 0px;
+
+}
+
+#contact {
+	margin-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+#contact  h2 {
+	margin-bottom: 10px;
+}
+
+#contact p {
+	margin-bottom: 0px;
+}
+
+#contactForm {
+	margin-right: 16px;
+	padding-left: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+#contactForm  h2 {
+	margin-bottom: 10px;
+}
+
+
+div.field {
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+
+div.field div.indicator {
+	float: left;
+	width: 100px;
+}
+
+div.field div.indicator label {
+	font-size: 1.5em;
+}
+
+div.field div.singleInput {
+	float: left;
+	width: 200px;
+}
+
+div.field div.singleInput input.text {
+	width: 200px;
+	border: 1px solid #d9d9d9;
+	padding: 3px;
+	font-size: 1.5em;
+}
+
+div.actions {
+}
+
+div.actions input {
+	width: 308px;
+	padding: 8px 0px;
+	display: block;
+	border: 1px solid #d9d9d9;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	font-weight:bold;
+	cursor: pointer;
+}
+
+
+

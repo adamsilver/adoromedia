@@ -22,24 +22,63 @@
 			
 				<div id="welcome">
 					<h1>Welcome to Capital Rentals</h1>	
-					<h2>Attention: Mini Cab Drivers</h2>
-					<p>Have you had an accident that's not your fault?</p>
-					<p>We will supply a fully licensed/plated car within 24 hours.</p>
-					<p>We have a brand new fleet of saloons, estates, 7 seater MPV's etc.</p>
+					<h2>Attention Mini Cab Drivers</h2>
+					<p class="question">Have you had an accident that's not your fault?</p>
+					
+					<ul>
+						<li>We will supply a fully licensed/plated car within 24 hours.</li>
+						<li>We have a brand new fleet of saloons, estates, 7 seater MPV's etc.</li>
+					</ul>
+					
+					<img src="img/van.jpg" alt="Van" />
 				</div>
 				
-				<div style="height: 200px;">image</div>
+				<div id="licensed">
+					<h2>Licensed</h2>
+					<p>Capital Rentals is licensed and registered by the Public Carriage Office (PCO), <br/>operating in London. </p>
+				</div>
+				
+				
 				
 			</div>
 			<div id="secondary">
-				<h2>Licensed</h2>
-				<p>Capital Rentals is licensed and registered by the Public Carriage Office (PCO), operating in London. </p>
-				
-				<h2>Contact details</h2>
+
+				<div id="contact">
+					<h2>Contact details</h2>
+						
+					<p>Telephone: 0800 987 5887</p>
+					<p>Fax: 020 8181 6887</p>
+					<p>Email: <a href="mailto:claims@capital-rentals.co.uk">claims@capital-rentals.co.uk</a></p>
+									
+				</div>
+				<div id="contactForm">
+					<h2>Contact form</h2>
+					<p>Please use the form below to get in touch with us. Fields marked with an <em>asterisk (*)</em> are mandatory.</p>
 					
-				<p>Telephone: 0800 987 5887</p>
-				<p>Fax: 020 8181 6887</p>
-				<p>Email: <a href="mailto:claims@capital-rentals.co.uk">claims@capital-rentals.co.uk</a></p>
+					<form method="post">
+					
+						<div class="field">
+							<div class="indicator"><label for="firstName">First name *</label></div>
+							<div class="singleInput"><input class="text" type="text" name="firstName" id="firstName" /></div>
+						</div>
+						<div class="field">
+							<div class="indicator"><label for="lastName">Last name</label></div>
+							<div class="singleInput"><input class="text" type="text" name="lastName" id="lastName" /></div>
+						</div>
+						<div class="field">
+							<div class="indicator"><label for="telephone">Telephone *</label></div>
+							<div class="singleInput"><input class="text" type="text" name="telephone" id="telephone" /></div>
+						</div>
+						<div class="field">
+							<div class="indicator"><label for="email">Email *</label></div>
+							<div class="singleInput"><input class="text" type="text" name="email" id="email" /></div>
+						</div>
+						<div class="actions">
+							<input type="submit" name="sendMessage" value="Submit" />
+						</div>
+						
+					</form>
+				</div>
 			</div>
 		</div>
 		
