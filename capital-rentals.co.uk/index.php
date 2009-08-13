@@ -53,7 +53,8 @@
 				</div>
 				<div id="contactForm">
 					<h2>Contact form</h2>
-					<p>Please use the form below to get in touch with us. Fields marked with an <em>asterisk (*)</em> are mandatory.</p>
+					<p>Please use the form below to get in touch with us.</p>
+					<p>Fields marked with an <em>asterisk (*)</em> are mandatory.</p>
 					
 					<form method="post">
 					
