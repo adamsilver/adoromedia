@@ -6,10 +6,11 @@
 			
 			//onclick a checkbox and it becomes checked, all checkboxes which are its children should be checked and all checkboxes which are its parents should be checked.
 
-			//onclick a checkbox and it becomes unchekced, all checkboxes which are its children should be unchecked and if its siblings which are checkboxes are also unchecked, uncheck the parent checkbox and iterate up the tree.
+			//onclick a checkbox and it becomes unchekced, all checkboxes which are its children should be unchecked 
+			//and if its siblings which are checkboxes are also unchecked, uncheck the parent checkbox and iterate up the tree.
 
 			//onclick a checkbox, all checkboxes anywhere in the tree with the same classname, should take the same state and fire their onclick events
-
+			
 			(function() {
 				var rootNode;
 				$(document).ready(function() {
@@ -54,9 +55,12 @@
 				}
 
 				function handleUnchecked(e) {
+					// lopp through all children and make it match
 					$(e.target).parent("li").find("input").each( function() {
 						this.checked = false;
 					});
+					
+					
 					var anySiblingCheckboxChecked = false;
 					$(e.target).parent("li").siblings("li").each( function() {
 						$(this).find(">input").each(function() {
