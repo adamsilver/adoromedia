@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+		<script>
+			
+			//onclick a checkbox and it becomes checked, all checkboxes which are its children should be checked and all checkboxes which are its parents should be checked.
+
+			//onclick a checkbox and it becomes unchekced, all checkboxes which are its children should be unchecked and if its siblings which are checkboxes are also unchecked, uncheck the parent checkbox and iterate up the tree.
+
+			//onclick a checkbox, all checkboxes anywhere in the tree with the same classname, should take the same state and fire their onclick events
+
+			(function() {
+				var rootNode;
+				$(document).ready(function() {
+					$("input").each(function() {
+						this.checked = false;
+					});
+					rootNode = $("div.tree>ul");
+					rootNode.bind("click", handleCheckboxChanges)
+				});
+
+				function handleCheckboxChanges(e) {
+					if (e.forcedOriginalTarget) {
+						e.target = e.forcedOriginalTarget;
+					}
+					if (e.target && e.target.tagName.toLowerCase() !== "input") return;
+					//if it becomes checked....
+					if (e.target.checked) {
+						handleChecked(e);
+					} else {
+						handleUnchecked(e);
+					}
+					if (e.runningOnClassNameCheck !== true) {
+						checkClassNameThing(e.target);
+					}
+				}
+
+				function handleChecked(e) {
+					//deal with children
+					$(e.target).parent("li").find("input").each( function() {
+						this.checked = true;
+					} );
+					//deal with parents
+					var el = e.target;
+					while (el) {
+						if (el.tagName && el.tagName.toLowerCase() === "li") {
+							$(el).find(">input").each(function() {
+								this.checked = true;
+							});
+						}
+						el = el.parentNode;
+					}
+				}
+
+				function handleUnchecked(e) {
+					$(e.target).parent("li").find("input").each( function() {
+						this.checked = false;
+					});
+					var anySiblingCheckboxChecked = false;
+					$(e.target).parent("li").siblings("li").each( function() {
+						$(this).find(">input").each(function() {
+							if (this.checked == true) {
+								anySiblingCheckboxChecked = true;
+								return false;
+							}
+						});
+						if (anySiblingCheckboxChecked) {
+							return false;
+						}
+					} );
+					if (!anySiblingCheckboxChecked) {
+						$(e.target).parent("li").parent("ul").parent("li").find(">input").each( function() {
+							this.checked = false;
+							rootNode.trigger({
+								type:"click",
+								forcedOriginalTarget: this
+							});
+						} );
+					}
+				}
+
+				function checkClassNameThing(checkbox) {
+					if (checkbox.className === "") return;
+					rootNode.find("input." + checkbox.className).each( function() {
+						if (this != checkbox) {
+							var currentCheckedState = this.checked;
+							this.checked = checkbox.checked;
+							if (this.checked != currentCheckedState) {
+								$("div.tree>ul").trigger({
+									type:"click",
+									forcedOriginalTarget: this,
+									runningOnClassNameCheck: true
+								});
+							}
+						}
+					} );
+				}
+			})();
+
+	
+		</script>
+	</head>
+	<body>
+		<div class="tree">
+			<ul>
+				<li>
+					<input type="checkbox" id="department1" name="checkboxList">
+					<label for="department1">Department 1</label>
+					<ul>
+						<li>
+							<input type="checkbox" id="category1" name="checkboxList" class="james3">
+							<label for="category1">Category 1 james3</label>
+							<ul>
+								<li>
+									<input type="checkbox" id="category1_subCategory1" name="checkboxList">
+									<label for="category1_subCategory1">Sub category 1</label>
+								</li>
+								<li>
+									<input type="checkbox" id="category1_subCategory2" name="checkboxList" >
+									<label for="category1_subCategory2">Sub category 2</label>
+								</li>
+								<li>
+									<input type="checkbox" id="category1_subCategory3" name="checkboxList">
+									<label for="category1_subCategory3">Sub category 3</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input type="checkbox" id="category2" name="checkboxList" class="james3">
+							<label for="category2">Category 2 james3</label>
+							<ul>
+								<li>
+									<input type="checkbox" id="category2_subCategory2" name="checkboxList" class="james2">
+									<label for="category2_subCategory2">Sub category 2 james2</label>
+								</li>
+							</ul>					
+						</li>				
+					</ul>
+				</li>
+				<li>
+					<input type="checkbox" id="department2" name="checkboxList">
+					<label for="department2">Department 2</label>
+					<ul>
+						<li>
+							<input type="checkbox" id="department2_category1" name="checkboxList">
+							<label for="department2_category1">Category 1</label>
+							<ul>
+								<li>
+									<input type="checkbox" id="department2_category1_subCategory1" name="checkboxList" class="james2">
+									<label for="department2_category1_subCategory1">Sub category 1 james2</label>
+								</li>
+								<li>
+									<input type="checkbox" id="department2_category1_subCategory2" name="checkboxList">
+									<label for="department2_category1_subCategory2">Sub category 2</label>
+									<ul>
+										<li>
+											<input type="checkbox" id="department2_category1_subCategory2_subCategory1" name="checkboxList">
+											<label for="department2_category1_subCategory2_subCategory1">Sub-sub category 1</label>
+										</li>
+										<li>
+											<input type="checkbox" id="department2_category1_subCategory2_subCategory2" name="checkboxList" class="james1">
+											<label for="department2_category1_subCategory2_subCategory2">Sub-sub category 2 james1</label>
+										</li>
+										<li>
+											<input type="checkbox" id="department2_category1_subCategory2_subCategory3" name="checkboxList">
+											<label for="department2_category1_subCategory2_subCategory3">Sub-sub category 3</label>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<input type="checkbox" id="department2_category1_subCategory3" name="checkboxList">
+									<label for="department2_category1_subCategory3">Sub category 3</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input type="checkbox" id="department2_category2" name="checkboxList" class="james1">
+							<label for="department2_category1">Category 2 james1</label>
+							<ul>
+								<li>
+									<input type="checkbox" id="department2_category1_subCategory4" name="checkboxList">
+									<label for="department2_category1_subCategory4">Sub category 4</label>
+								</li>
+							</ul>					
+						</li>				
+					</ul>
+				</li>		
+			</ul>
+		</div>
+	</body>
+</html>
