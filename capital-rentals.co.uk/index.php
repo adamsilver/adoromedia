@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php include("inc/Classes/Rules.php"); ?>
+<?php include("inc/Classes/FormValidator.php"); ?>
+<?php include("inc/Forms/CallMeBack.php"); ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 	<head>
 		<title>Capital Rentals - London</title> 
@@ -56,33 +59,52 @@
 					<p>Please use the form below to get in touch with us.</p>
 					<p>Fields marked with an <em>asterisk (*)</em> are mandatory.</p>
 					
-					<form method="post">
 					
-						<div class="field">
-							<div class="indicator"><label for="firstName">First name *</label></div>
-							<div class="singleInput"><input class="text" type="text" name="firstName" id="firstName" /></div>
-						</div>
-						<div class="field">
-							<div class="indicator"><label for="lastName">Last name</label></div>
-							<div class="singleInput"><input class="text" type="text" name="lastName" id="lastName" /></div>
-						</div>
-						<div class="field">
-							<div class="indicator"><label for="telephone">Telephone *</label></div>
-							<div class="singleInput"><input class="text" type="text" name="telephone" id="telephone" /></div>
-						</div>
-						<div class="field">
-							<div class="indicator"><label for="email">Email *</label></div>
-							<div class="singleInput"><input class="text" type="text" name="email" id="email" /></div>
-						</div>
-						<div class="field">
-							<div class="indicator"><label for="message">Message</label></div>
-							<div class="singleInput"><textarea id="message" name="message"></textarea></div>
-						</div>						
-						<div class="actions">
-							<input type="submit" name="sendMessage" value="Submit" />
-						</div>
-						
-					</form>
+					
+					<?php 
+						$showForm = true;
+						if(isset($_POST["actionSubmit"])) {
+							$formCallMeBack->validate();
+							if($formCallMeBack->getErrorCount() > 0) {
+								$commonErrors = $formCallMeBack->getErrors();
+								include("inc/Forms/ErrorMessageDisplay.php");
+							}
+							else {
+								include("inc/Forms/SuccessMessageDisplay.php");
+								$showForm = false;
+							}
+						}
+					?>
+					
+					<?php if($showForm) { ?>
+						<form method="post" action="index.php">
+							<input type="hidden" name="actionSubmit" value="true" />
+							<div class="field">
+								<div class="indicator"><label for="firstName">First name *</label></div>
+								<div class="singleInput"><input class="text" type="text" name="firstName" id="firstName" value="<?php echo isset($_POST["firstName"]) ? $_POST["firstName"] : "" ?>" /></div>
+							</div>
+							<div class="field">
+								<div class="indicator"><label for="lastName">Last name</label></div>
+								<div class="singleInput"><input class="text" type="text" name="lastName" id="lastName" value="<?php echo isset($_POST["lastName"]) ? $_POST["lastName"] : "" ?>"/></div>
+							</div>
+							<div class="field">
+								<div class="indicator"><label for="telephone">Telephone *</label></div>
+								<div class="singleInput"><input class="text" type="text" name="telephone" id="telephone" value="<?php echo isset($_POST["telephone"]) ? $_POST["telephone"] : "" ?>"/></div>
+							</div>
+							<div class="field">
+								<div class="indicator"><label for="email">Email *</label></div>
+								<div class="singleInput"><input class="text" type="text" name="email" id="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : "" ?>" /></div>
+							</div>
+							<div class="field">
+								<div class="indicator"><label for="message">Message</label></div>
+								<div class="singleInput"><textarea id="message" name="message"><?php echo isset($_POST["message"]) ? $_POST["message"] : "" ?></textarea></div>
+							</div>						
+							<div class="actions">
+								<input type="submit" name="sendMessage" value="Submit" />
+							</div>
+							
+						</form>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
