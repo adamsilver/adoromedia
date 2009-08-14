@@ -298,11 +298,13 @@ div.field div.singleInput {
 	width: 200px;
 }
 
-div.field div.singleInput input.text {
+div.field div.singleInput input.text,
+div.field div.singleInput textarea {
 	width: 200px;
 	border: 1px solid #d9d9d9;
 	padding: 3px;
 	font-size: 1.5em;
+	font-family: inherit;
 }
 
 div.actions {
@@ -315,8 +317,13 @@ div.actions input {
 	border: 1px solid #d9d9d9;
 	text-transform: uppercase;
 	font-size: 1.5em;
-	font-weight:bold;
 	cursor: pointer;
+}
+
+div.actions input:hover,
+div.actions input:focus {
+	background-color: #6CAF45;
+	color: #fff;
 }
 
 
