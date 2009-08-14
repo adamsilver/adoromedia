@@ -74,6 +74,10 @@
 							<div class="indicator"><label for="email">Email *</label></div>
 							<div class="singleInput"><input class="text" type="text" name="email" id="email" /></div>
 						</div>
+						<div class="field">
+							<div class="indicator"><label for="message">Message</label></div>
+							<div class="singleInput"><textarea id="message" name="message"></textarea></div>
+						</div>						
 						<div class="actions">
 							<input type="submit" name="sendMessage" value="Submit" />
 						</div>
