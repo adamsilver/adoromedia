@@ -278,6 +278,10 @@ ul li ul li,ol li ol li {
 	margin-bottom: 10px;
 }
 
+#contactForm textarea {
+	height: 100px;
+}
+
 
 div.field {
 	margin-bottom: 21px;
@@ -324,6 +328,27 @@ div.actions input:hover,
 div.actions input:focus {
 	background-color: #6CAF45;
 	color: #fff;
+}
+
+div#errorMessage {
+	
+}
+
+div#errorMessage h3 {
+	color: #ff0000;
+}
+
+div#errorMessage ul li {
+	color:#ff0000;
+}
+
+div#errorMessage ul li a{
+	color: #ff0000;
+}
+
+div#errorMessage ul li a:hover {
+	background-color: #fff;
+	text-decoration: none;
 }
 
 
