@@ -56,10 +56,6 @@
 				</div>
 				<div id="contactForm">
 					<h2>Contact form</h2>
-					<p>Please use the form below to get in touch with us.</p>
-					<p>Fields marked with an <em>asterisk (*)</em> are mandatory.</p>
-					
-					
 					
 					<?php 
 						$showForm = true;
@@ -71,12 +67,29 @@
 							}
 							else {
 								include("inc/Forms/SuccessMessageDisplay.php");
+								
+								
+								$to = "adambsilver@gmail.com";
+								$subject = "Website: Call me back";
+								$body = "<h1>The following call me back submission happend</h1>";
+								$body .= "<p>First name: <br/>" . $_POST["firstName"] . "</p>";
+								$body .= "<p>Last name: <br/>" . $_POST["lastName"] . "</p>";
+								$body .= "<p>Telephone: <br/>" . $_POST["telephone"] . "</p>";
+								$body .= "<p>Email: <br/>" . $_POST["email"] . "</p>";
+								$body .= "<p>Message: <br/>" . $_POST["message"] . "</p>";
+								$headers  = 'MIME-Version: 1.0' . "\r\n";
+								$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+								$headers .= 'From: Website <noreply@capital-rentals.co.uk>' . "\r\n";
+								mail($to, $subject, $body, $headers);
 								$showForm = false;
 							}
 						}
-					?>
+					?>					
 					
 					<?php if($showForm) { ?>
+						<p>Please use the form below to get in touch with us.</p>
+						<p>Fields marked with an <em>asterisk (*)</em> are mandatory.</p>
+					
 						<form method="post" action="index.php">
 							<input type="hidden" name="actionSubmit" value="true" />
 							<div class="field">
