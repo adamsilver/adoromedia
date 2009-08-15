@@ -15,8 +15,10 @@
 				<div id="logo">
 					<img src="img/logo.jpg" alt="Capital Rentals" />
 				</div>
-				<div id="tel">
-					<p>Call <em>free</em> 0800 987 5887</p>
+				<div id="details">
+					<p>Fax: 020 8181 6887</p>
+					<p>Email: <a href="mailto:claims@capital-rentals.co.uk">claims@capital-rentals.co.uk</a></p>
+					<p class="tel">Call free 0800 987 5887</p>
 				</div>
 			</div>
 		</div>
@@ -46,16 +48,8 @@
 			</div>
 			<div id="secondary">
 
-				<div id="contact">
-					<h2>Contact details</h2>
-						
-					<p>Telephone: 0800 987 5887</p>
-					<p>Fax: 020 8181 6887</p>
-					<p>Email: <a href="mailto:claims@capital-rentals.co.uk">claims@capital-rentals.co.uk</a></p>
-									
-				</div>
 				<div id="contactForm">
-					<h2>Contact form</h2>
+					<h2>Call me back</h2>
 					
 					<?php 
 						$showForm = true;
