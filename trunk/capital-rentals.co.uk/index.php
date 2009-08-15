@@ -13,12 +13,12 @@
 		<div id="header">
 			<div id="headerInner">
 				<div id="logo">
-					<img src="img/logo.jpg" alt="Capital Rentals" />
+					<a href="index.php"><img src="img/logo.jpg" alt="Capital Rentals" /></a>
 				</div>
 				<div id="details">
-					<p>Fax: 020 8181 6887</p>
-					<p>Email: <a href="mailto:claims@capital-rentals.co.uk">claims@capital-rentals.co.uk</a></p>
-					<p class="tel">Call free 0800 987 5887</p>
+					<p class="fax">F: 020 8181 6887</p>
+					<p class="email">E: <a href="mailto:claims@capital-rentals.co.uk">claims@capital-rentals.co.uk</a></p>
+					<p class="tel">T: 0800 987 5887</p>
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 								include("inc/Forms/SuccessMessageDisplay.php");
 								
 								
-								$to = "adambsilver@gmail.com";
+								$to = "claims@capital-rentals.co.uk";
 								$subject = "Website: Call me back";
 								$body = "<h1>The following call me back submission happend</h1>";
 								$body .= "<p>First name: <br/>" . $_POST["firstName"] . "</p>";
