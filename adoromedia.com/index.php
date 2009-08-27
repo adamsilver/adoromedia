@@ -14,7 +14,6 @@
 	    <title>Expert website designers, Adoro Media, London, UK</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
-		<link rel="stylesheet" href="css/home.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 	</head>

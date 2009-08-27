@@ -36,16 +36,14 @@ body.contact {
 
 
 /******************************************************************
-* Layout: Portfolio
+* Layout: Contact
 ******************************************************************/
 
-#pgPortfolio #primary,
 #pgContact #primary {
 	float: left;
 	width: 640px;
 }
 
-#pgPortfolio #secondary,
 #pgContact #secondary {
 	float: left;
 	width: 320px;
@@ -754,7 +752,9 @@ div#homeContact p.action a {
 * Testimonial
 ***********************************************************************/
 
-div.testimonials {}
+div.testimonials {
+	margin-left: 25px;
+}
 
 div.testimonials h2 {
 	margin: 0px 0px 0px;
@@ -764,6 +764,11 @@ div.testimonials div.testimonial {
 	border-bottom: 1px solid #e4e4e4;
 	padding-top: 20px;
 	margin-right: 20px;
+	padding-bottom: 10px;
+}
+
+div.testimonials div.testimonialLast {
+	border: 0px;
 }
 
 div.testimonials div.testimonial h3 {
@@ -775,6 +780,7 @@ div.testimonials div.testimonial h3 {
 
 div.testimonials div.testimonial p {
 	margin: 0px 0px 10px;
+	text-align: justify;
 }
 
 /******************************************************************
@@ -784,17 +790,21 @@ div.testimonials div.testimonial p {
 ul.portfolio {
     list-style: none;
     margin: 0px;
+    overflow: hidden;
 }
 
 ul.portfolio li {
-    margin: 0px 25px 25px;
 	border:1px solid #E4E4E4;
 	margin-bottom: 20px;
-	background: url(../../img/bg_gradient01.jpg) repeat-x bottom left;}
+	background: url(../../img/bg_gradient01.jpg) repeat-x bottom left;
+	float: left;
+	display: inline;
+	width: 285px;
+}
 
 ul.portfolio li h2 {
     margin: 0px;
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
 }
 
@@ -819,6 +829,7 @@ ul.portfolio li div.image {
 
 ul.portfolio li div.image img {
     display: block;
+    width: 280px;
 }
 
 ul.portfolio li p {
