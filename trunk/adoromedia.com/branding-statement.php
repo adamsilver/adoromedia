@@ -14,7 +14,6 @@
 	    <title>Branding statement, Expert website designers, Adoro Media, London, UK</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
-		<link rel="stylesheet" href="css/home.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 	</head>
@@ -56,6 +55,7 @@
 						<div id="secondaryNavigation">
 							<ul>
 								<li><a href="about.php">About us</a></li>
+								<li><a href="testimonials.php">Testimonials</a></li>
 								<li><a class="selected" href="branding-statement.php">Branding statement</a></li>
 								<!--<li><a href="faq.asp">FAQ</a></li>-->
 							</ul>

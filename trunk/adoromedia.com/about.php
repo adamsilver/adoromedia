@@ -14,7 +14,6 @@
 	    <title>About, Expert website designers, Adoro Media, London, UK</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
-		<link rel="stylesheet" href="css/home.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 	</head>
@@ -56,6 +55,7 @@
 					<div id="secondaryNavigation">
 						<ul>
 							<li><a class="selected" href="about.php">About us</a></li>
+							<li><a href="testimonials.php">Testimonials</a></li>
 							<li><a href="branding-statement.php">Branding statement</a></li>
 						</ul>
 					</div>
