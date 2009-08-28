@@ -33,22 +33,18 @@
 					
 					<h2>Introducing Adoro Media</h2>
 					
-					<p>Adoro Media are a collective of expert website designers and developers. We
-					are a fresh thinking, highly energetic, digital agency, based in London. We are
-					committed to reaching new heights, in the digital arena, by providing creative
-					and innovative solutions that work.</p>
-										
-					<p>We have been established in the business for almost a decade and our passion
-					for bespoke website design speaks for itself.</p>
+					<p>Adoro Media is a digital agency, based in London and Hertfordshire, 
+					established in 2000 which is committed to reaching new heights in the 
+					digital arena by providing creative and innovative solutions to meet all 
+					your web(?) needs.  We will build bespoke websites to meet your specification, 
+					from e-commerce to small brochure websites and beyond in order to provide your 
+					audience with a great online experience.</p>
 					
-					
-					<h2>Our team, our approach</h2>
-					<p>Our dynamic, engaging and vastly experienced team thrive on building strong
-					client relationships, paying a very high level of attention to detail in each
-					and every project. We go out of our way to deliver quality results but at a
-					very affordable value. We are flexible in our approach so we can adapt to your
-					unique requirements.</p>
-							
+					<p>Our team of expert website designers and developers is fresh thinking, 
+					highly energetic and talented.  We are dynamic, engaging and vastly experienced, 
+					and thrive on building strong client relationships, whilst remaining flexible in 
+					our approach and paying a very high level of attention to detail in each project.  
+					We are passionate about delivering quality results at affordable prices.</p>	
 				
 				</div>
 				<div id="secondary">
