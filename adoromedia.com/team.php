@@ -7,17 +7,17 @@
 	$metaKeywords = "adoro media, website, web, bespoke, new, media, solutions, london, UK";
 	$metaDescription = "Adoro Media is an agency dedicated to building new media solutions. Based in London, England.";
 	$siteSection = "about";
-	$breadcrumb = array(new BreadCrumbItem("index.php", "Home"), new BreadCrumbItem(null, "About"));
+	$breadcrumb = array(new BreadCrumbItem("index.php", "Home"), new BreadCrumbItem("about.php", "About"), new BreadCrumbItem(null, "Team"));
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	    <title>About, Expert website designers, Adoro Media, London, UK</title>
+	    <title>Team, Expert website designers, Adoro Media, London, UK</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 	</head>
-	<body id="pgAbout" class="about">
+	<body id="pgTeam" class="about">
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
@@ -29,33 +29,37 @@
 			
 				<div id="sections">
 					<div id="primary">
-					<h1>About us</h1>
+					<h1>Meet the team</h1>
 					
-					<h2>Introducing Adoro Media</h2>
-					
-					<p>Adoro Media are a collective of expert website designers and developers. We
-					are a fresh thinking, highly energetic, digital agency, based in London. We are
-					committed to reaching new heights, in the digital arena, by providing creative
-					and innovative solutions that work.</p>
-										
-					<p>We have been established in the business for almost a decade and our passion
-					for bespoke website design speaks for itself.</p>
-					
-					
-					<h2>Our team, our approach</h2>
-					<p>Our dynamic, engaging and vastly experienced team thrive on building strong
-					client relationships, paying a very high level of attention to detail in each
-					and every project. We go out of our way to deliver quality results but at a
-					very affordable value. We are flexible in our approach so we can adapt to your
-					unique requirements.</p>
+					<div id="members">
+						<div class="member">
+							<h2 class="position">Adam, Director &amp; Lead front-end developer</h2>
+							<div class="description">
+								<img src="" alt="Adam" />
+								<p>Adam is the Director of Adoro Media, a web 
+								design studio focussing on elegance, accessibility and user 
+								experience design. Adam has been developing successful 
+								websites since 2000; he is an advocate of web standards, 
+								has an obsession with detail and a passion for all things 
+								web design.</p>
+							</div>
+						</div>
+						<div class="member">
+							<h2 class="position">Steve, Django developer</h2>
+							<div class="description">
+								<img src="" alt="Steve" />
+								<p>Steve is the Django man.</p>
+							</div>
+						</div>						
+					</div>
 							
 				
 				</div>
 				<div id="secondary">
 					<div id="secondaryNavigation">
 						<ul>
-							<li><a class="selected" href="about.php">About us</a></li>
-							<li><a href="team.php">Team</a></li>
+							<li><a href="about.php">About us</a></li>
+							<li><a class="selected" href="team.php">Team</a></li>
 							<li><a href="testimonials.php">Testimonials</a></li>
 							<li><a href="branding-statement.php">Branding statement</a></li>
 						</ul>
