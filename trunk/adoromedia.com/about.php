@@ -30,13 +30,13 @@
 				<div id="sections">
 					<div id="primary">
 					<h1>About us</h1>
-					
-					<h2>Introducing Adoro Media</h2>
-					
+										
 					<p>Adoro Media is a digital agency, based in London and Hertfordshire, 
 					established in 2000 which is committed to reaching new heights in the 
 					digital arena by providing creative and innovative solutions to meet all 
-					your web(?) needs.  We will build bespoke websites to meet your specification, 
+					your website needs.</p>
+					
+					<p>We will build bespoke websites to meet your specification, 
 					from e-commerce to small brochure websites and beyond in order to provide your 
 					audience with a great online experience.</p>
 					
