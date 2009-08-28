@@ -14,7 +14,9 @@ Site.ShowReel = new (function() {
 		ul = clip.getElementsByClassName({cssClass: "pages", tags:"ul"})[0] || null;
 		ul.setStyle("width", getTotalWidthOfListItems());
 		// add next and back button
-		
+		backButton = document.createElement("a", {href:"#", innerHTML:"back", cssClass:"back"});
+		nextButton = document.createElement("a", {href:"#", innerHTML:"next", cssClass:"next"});
+		showreel.appendChild(nextButton);
 	};
 	
 	function back_onClick() {
