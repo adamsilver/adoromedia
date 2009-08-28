@@ -16,14 +16,34 @@ Site.ShowReel = new (function() {
 		// add next and back button
 		backButton = document.createElement("a", {href:"#", innerHTML:"back", cssClass:"back"});
 		nextButton = document.createElement("a", {href:"#", innerHTML:"next", cssClass:"next"});
+		backButton.addEvent("click",back_onClick);
+		nextButton.addEvent("click",next_onClick);
+		showreel.appendChild(backButton);
 		showreel.appendChild(nextButton);
 	};
 	
 	function back_onClick() {
+		ul.animate({
+			"left": {
+				to: parseInt(ul.getStyle("left"))+380,
+				time: 400,
+				transition: J2.Transitions.Exp.easeOut
+			}
+		})
+		return false;
 	};
 	
 	function next_onClick() {
+		ul.animate({
+			"left": {
+				to: parseInt(ul.getStyle("left"))-380,
+				time: 400,
+				transition: J2.Transitions.Exp.easeOut
+			}
+		})
+		return false;
 	};
+
 	
 	function getPages() {
 		return ul.getElementsByClassName({cssClass: "page", tags:"li"});
