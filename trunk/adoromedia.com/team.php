@@ -30,12 +30,12 @@
 				<div id="sections">
 					<div id="primary">
 					<h1>Meet the team</h1>
-					
+					<p>We have small team of experts, waiting to solve your next website problem.</p>
 					<div id="members">
 						<div class="member">
 							<h2 class="position">Adam, Director &amp; Lead front-end developer</h2>
 							<div class="description">
-								<img src="" alt="Adam" />
+								<img src="img/team/adam.jpg" alt="Adam" />
 								<p>Adam is the Director of Adoro Media, a web 
 								design studio focussing on elegance, accessibility and user 
 								experience design. Adam has been developing successful 
@@ -48,7 +48,8 @@
 							<h2 class="position">Steve, Django developer</h2>
 							<div class="description">
 								<img src="" alt="Steve" />
-								<p>Steve is the Django man.</p>
+								<p>Steve has special skills in Django, as well as being very 
+								experienced in accessibility, design and databse design.</p>
 							</div>
 						</div>						
 					</div>

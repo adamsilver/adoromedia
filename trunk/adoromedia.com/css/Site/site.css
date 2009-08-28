@@ -844,6 +844,8 @@ ul.portfolio li p {
 #members {
 	margin-left: 25px;
 	margin-right: 25px;
+	border-top: 1px solid #E4E4E4;
+	padding-top: 12px;
 }
 
 #members .member {
@@ -860,6 +862,10 @@ ul.portfolio li p {
 	overflow: hidden;
 	padding-top: 12px;
 	padding-bottom: 12px;
+}
+
+#members .description p {
+	margin-right: 0px;
 }
 
 #members .description  img {

@@ -31,24 +31,14 @@
 					<div id="primary">
 						<h1>Branding statement</h1>
 						
-						<p>The Arial font was used to create the Adoro brand as a celebration of its cross 
-						browser compatibility. In this industry we rely heavily on things being able to work 
-						cross-platform; Arial is the industry standard font for use with dynamic text. Adoro 
-						Media has always practiced and promoted the notion of cross browser usability and is 
-						proud to use Arial font in its branding.</p>
-						<p>The 'a' character at the end of our name has been used to create our Adoro Media 
-						logo. If you look closely, you can see that the counter (the partially or fully 
-						enclosed space within the character) has had a diagonal strip removed from it, 
-						which has transformed the shape into that of a paintbrush.</p>
-						<p>This has been done to promote two ideas that Adoro Media hold dear: </p>
-						
-						<ol>
-							<li>Firstly that at the heart of any good website is a good sense of communication 
-							through design. At Adoro we pride ourselves not only on our technical expertise but 
-							also on our creative know-how.</li>
-							<li>Secondly we believe that by removing something from an equation it is also 
-							possible to add something. The best ideas are nearly always the simple ones.</li>
-						</ol>
+						<p>Adoro Media believes that at the heart of any good website is a good sense 
+						of communication through design.  We pride ourselves not only on our technical 
+						expertise but also on our creative know-how.</p>
+						<p>We believe that by removing something from an equation, it is also possible 
+						to add something.  The best ideas are almost always the simple ones.</p>
+						<p>To demonstrate this, the Adoro brand logo was created using the Arial font.
+						You will see how the "a" at the end of our name has been transformed by removing a 
+						diagonal strip from the counter (the space within the character), into a paintbrush.</p>
 						
 					</div>
 					<div id="secondary">
