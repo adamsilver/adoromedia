@@ -61,10 +61,10 @@
 							<div id="homeServices">
 								<h2><a href="services.asp">Services</a></h2>
 								<div class="content">
-									<p>Some our expertise in summary:</p>
+									<p>In summary our expertise lies in producing:</p>
 									<ul>
 										<li>User friendly website design</li>
-										<li>High-quality user interaction design</li>
+										<li>High quality user interaction design</li>
 										<li>Natural search engine optimisation</li>
 									</ul>
 								</div>
