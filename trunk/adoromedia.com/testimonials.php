@@ -69,6 +69,7 @@
 						<div id="secondaryNavigation">
 							<ul>
 								<li><a href="about.php">About us</a></li>
+								<li><a href="team.php">Team</a></li>
 								<li><a class="selected" href="testimonials.php">Testimonials</a></li>
 								<li><a href="branding-statement.php">Branding statement</a></li>
 							</ul>

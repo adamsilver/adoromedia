@@ -55,6 +55,7 @@
 						<div id="secondaryNavigation">
 							<ul>
 								<li><a href="about.php">About us</a></li>
+								<li><a href="team.php">Team</a></li>
 								<li><a href="testimonials.php">Testimonials</a></li>
 								<li><a class="selected" href="branding-statement.php">Branding statement</a></li>
 								<!--<li><a href="faq.asp">FAQ</a></li>-->
