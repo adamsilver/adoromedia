@@ -40,9 +40,9 @@
 							</div>
 							<div id="homeFeatured">
 								<div class="image">
-									<a href="http://www.lawrencecodling.com"><img src="img/portfolio/lcodling.jpg" alt="Lawrence Codling, Graffiti Artist" /></a>
+									<a href="http://www.hartsbournecountryclub.co.uk"><img src="img/portfolio/hartsbourne.jpg" alt="Hartsbourne Country Club" /></a>
 								</div>
-								<p>Featured work: <a href="http://www.lawrencecodling.com">Lawrence Codling, Graffiti Artist</a> </p>
+								<p>Featured work: <a href="http://www.hartsbournecountryclub.co.uk">Hartsbourne Country Club</a> </p>
 							</div>
 						</div>
 					</div>

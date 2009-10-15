@@ -88,7 +88,23 @@
 										<img src="img/portfolio/adlib.jpg" alt="Ad Lib Print and Design" />
 									</a>
 								</div>
-							</li>					    
+							</li>	
+							<li class="work">
+								<h2><a href="http://www.capital-rentals.co.uk">Capital Rentals</a></h2>
+								<div class="image">
+									<a href="http://www.capital-rentals.co.uk">
+										<img src="img/portfolio/capital.jpg" alt="Capital Rentals" />
+									</a>
+								</div>
+							</li>
+							<li class="work">
+								<h2><a href="http://www.hartsbournecountryclub.co.uk">Hartsbourne Country Club</a></h2>
+								<div class="image">
+									<a href="http://www.hartsbournecountryclub.co.uk">
+										<img src="img/portfolio/hartsbourne.jpg" alt="Hartsbourne Country Club" />
+									</a>
+								</div>
+							</li>							
 						</ul>
 					</div>
 				</div>
