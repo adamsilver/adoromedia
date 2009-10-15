@@ -605,6 +605,10 @@ div#homeFeatured div.image {
 	text-align: right;
 }
 
+div#homeFeatured div.image img {
+	border: 1px solid #aaa;
+}
+
 div#homeFeatured p {
 	font-size: 1.1em;
 	margin: 0px;
