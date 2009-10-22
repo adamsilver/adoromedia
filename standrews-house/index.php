@@ -18,6 +18,10 @@
 		<?php include("inc/headJs.php"); ?>
 	</head>
 	<body id="pgHomePage" class="home">
-		
+		<div id="container">
+			<div id="content">
+				
+			</div>
+		</div>
 	</body>
 </html>
