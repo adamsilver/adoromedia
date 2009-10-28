@@ -4,13 +4,13 @@ Site.Panel = new (function(){
 	var panelActivated = false;
 	var panelTime = 200;
 	
-	addDOMReadyEvent(init);
+	$(init);
 	
 	function init() {
-		var anchors = document.getElementsByClassName({cssClass:"panelActivator", tags:"a", callback: function(){
+		var anchors = $("a.panelActivator").each(function(){
 			var panel = new Panel(this);
 			panels.push(panel);
-		}});
+		});
 	};
 	
 	function Panel(anchor) {
@@ -21,24 +21,29 @@ Site.Panel = new (function(){
 			color: "#0A0B10"
 		};
 		var time = 500;
-		var li = anchor.getParent();
+		var li = $(anchor).parents("li")[0] || null;
+		if(!li) return;
+		//console.log(li);
+		
 		var container = document.getElementById(anchor.hash.split("#")[1]);
-		var containerHeight = container.offsetHeight;
+		var containerHeight = $(container).height();
 		
-		container.setStyle("height",0);
-		container.setStyle("overflow","hidden");
-		container.setStyle("position","relative");
 		
-		defaultValues.marginBottom = li.getStyle("margin-bottom");
-		defaultValues.fontSize = li.getStyle("font-size");
-		defaultValues.color = anchor.getStyle("color");
+		$(container).css("height","0");
+		$(container).css("overflow","hidden");
+		$(container).css("position","relative");
 		
-		li.setStyle("font-size", "1.3em");
-		li.setStyle("margin-bottom", "0px");
-		anchor.addEvent("click", panelClick);
+		defaultValues.marginBottom = $(li).css("margin-bottom");
+		defaultValues.fontSize = $(li).css("font-size");
+		defaultValues.color = $(anchor).css("color");
+		
+		$(li).css("font-size", "1.3em");
+		$(li).css("margin-bottom", "0px");
+		$(anchor).bind("click", panelClick);
 		
 		function panelClick() {
 			if(!isPanelActivated()) {
+				
 				Site.Logo.activate();
 				Site.Content.activate();
 				listItemsActivate();
@@ -51,43 +56,47 @@ Site.Panel = new (function(){
 		};
 		
 		function expandButton() {
-			anchor.animate({
-				"color": {
-					to: J2.Core.CSSColor.prototype.create("#0A0B10"),
-					time: time
-				}
-			});
-			li.animate({
-				"fontSize": {
-					to: 80,
-					time: time,
-					transition: J2.Transitions.Exp.easeOut
-				}
-			},
-			function(){
-				openPanel();
-			});	
+			//anchor.animate({
+			//	"color": {
+			//		to: J2.Core.CSSColor.prototype.create("#0A0B10"),
+			//		time: time
+			//	}
+			//});
+			
+			
+			$(li).animate({"fontSize": "3em"},{complete: openPanel})
+			
 		};
 		
 		function collapseButton() {
-			anchor.animate({
-				"color": {
-					to: J2.Core.CSSColor.prototype.create(defaultValues.color.getHex()),
-					time: time
-				}
-			});
+		
+		
+			//anchor.animate({
+			//	"color": {
+			//		to: J2.Core.CSSColor.prototype.create(defaultValues.color.getHex()),
+			//		time: time
+			//	}
+			//});
 		
 			
-			li.animate({
-				"fontSize": {
-					to: 20,
-					time: time,
-					transition: J2.Transitions.Exp.easeOut
-				}
-			});
+			$(li).animate({"fontSize": "1.2em"},{})
+			
+			//li.animate({
+			//	"fontSize": {
+			//		to: 20,
+			//		time: time,
+			//		transition: J2.Transitions.Exp.easeOut
+			//	}
+			//});
 		};
 		
 		function openPanel() {
+			
+			$(container).animate({
+				"height": containerHeight+"px"
+			},{})
+			
+			return;
 			container.animate({
 				"height":{
 						to: containerHeight,
@@ -97,6 +106,11 @@ Site.Panel = new (function(){
 		};
 		
 		function closePanel() {
+			$(container).animate({
+				"height": "0px"
+			},{})
+		
+			return;
 			container.animate({
 				"height":{
 						to: 0,
@@ -106,12 +120,14 @@ Site.Panel = new (function(){
 		};
 		
 		function activate() {
-			li.animate({
-				"margin-bottom":{
-					to: -8,
-					time: panelTime
-				}
-			})
+			$(li).animate({"margin-bottom":"-8px"});
+		
+			//li.animate({
+			//	"margin-bottom":{
+			//		to: -8,
+			//		time: panelTime
+			//	}
+			//})
 		};
 		
 		this.closePanel = closePanel;
