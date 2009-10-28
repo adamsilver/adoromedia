@@ -1,6 +1,6 @@
 var Site = Site || {};
 Site.Content = new (function(){
-	addDOMReadyEvent(init);
+	$(init);
 	
 	var defaultValues = {
 		bgImage: null,
@@ -11,35 +11,37 @@ Site.Content = new (function(){
 	
 	function init() {
 		content = document.getElementById("content");
-		defaultValues.bgImage = content.getStyle("background-image");
-		defaultValues.bgColor = content.getStyle("background-color");
-		content.setStyle("background-repeat", "repeat-x");
-		content.setStyle("background-position", "top left");
-		content.setStyle("background-color", getBodyBgColor());
-		content.setStyle("background-image", getBodyBgImage());
-		content.setStyle("padding-bottom", "0px");
+		defaultValues.bgImage = $(content).css("background-image");
+		defaultValues.bgColor = $(content).css("background-color");
+		$(content).css("background-repeat", "repeat-x");
+		$(content).css("background-position", "top left");
+		$(content).css("background-color", getBodyBgColor());
+		$(content).css("background-image", getBodyBgImage());
+		$(content).css("padding-bottom", "0px");
 	};
 	
 	function activate() {
 		var time = 500;
-		content.setStyle("background-image", "none");
-		content.animate({
-			"background-color": { to: J2.Core.CSSColor.prototype.create(defaultValues.bgColor.getHex()), time: time }
-		},
-		activateComplete);
+		$(content).css("background-image", "none");
+		//$(content).animate({
+			//"background-color": { to: J2.Core.CSSColor.prototype.create(defaultValues.bgColor.getHex()), time: time }
+		//},
+		//activateComplete);
+		
+		activateComplete();
 	};
 	
 	function activateComplete() {
-		content.setStyle("background-image", defaultValues.bgImage);
-		content.setStyle("background-repeat", "repeat");
+		$(content).css("background-image", defaultValues.bgImage);
+		$(content).css("background-repeat", "repeat");
 	};
 	
 	function getBodyBgColor() {
-		return document.getElementsByTagName("body")[0].getStyle("background-color");
+		return $(document.getElementsByTagName("body")[0]).css("background-color");
 	};
 	
 	function getBodyBgImage() {
-		return document.getElementsByTagName("body")[0].getStyle("background-image");
+		return $(document.getElementsByTagName("body")[0]).css("background-image");
 	};
 	
 	this.activate = activate;
