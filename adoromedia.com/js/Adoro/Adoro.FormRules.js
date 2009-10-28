@@ -137,6 +137,32 @@ Adoro.FormRules = {
 		}
 		return valid;
 	},
+	
+	/**
+	 * Checks to see if the amount of checked items is more than the maxChecked argument
+	 * @param {Object} params The parameters for the function
+	 * @param {Number} params.maxChecked The number of items to be checked in field collection
+	 * @return {Boolean} true when less than the max has been checked otherwise false
+	 */
+	maxChecked: function(params){
+		var maxChecked = 0;
+		if(typeof params === "object") {
+			maxChecked = params.maxChecked || maxChecked;
+		}
+		var valid = true;
+		var field = this;
+		var checkedCount = 0;
+		for (var i = 0; i < field.length; i++) {
+			if (field[i].checked) {
+				checkedCount++;
+			}
+		}
+		if (checkedCount > maxChecked) {
+			valid = false;
+		}
+		return valid;
+	},		
+	
 	/**
 	 * Checks to see if the field is a valid string in the pattern of an email address.
 	 * @return {Boolean} true when the value field value is an email address otherwise false
@@ -193,6 +219,22 @@ Adoro.FormRules = {
 		}		
 		return valid;		
 	},
+	
+	/**
+	 * Check to see if the field value is a valid password
+	 * @return {Boolean} true when the value is a valid password otherwise false
+	 */
+	passwordVersion2: function() {
+		var valid = true;
+		var field = this;
+		if (field.length > 1) return valid;
+		var regex = new RegExp("(^[A-Za-z0-9]{6,12}$)");
+		if (!regex.test(field[0].value)) {
+			valid = false;
+		}		
+		return valid;		
+	},	
+	
 	/**
 	 * Check to see if the field value is a valid number
 	 * @return {Boolean} true when the field is a number otherwise false
@@ -201,7 +243,7 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var regex = new RegExp("^([0-9])+$");
+		var regex = new RegExp("^([0-9])+$|^$");
 		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
@@ -215,7 +257,7 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var regex = new RegExp("^([a-zA-Z0-9- '`.])+$");
+		var regex = new RegExp("^([a-zA-Z0-9- '`.])+$|^$");
 		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
