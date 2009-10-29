@@ -23,12 +23,10 @@ Site.Panel = new (function(){
 		var time = 500;
 		var li = $(anchor).parents("li")[0] || null;
 		if(!li) return;
-		//console.log(li);
-		
+	
 		var container = document.getElementById(anchor.hash.split("#")[1]);
 		var containerHeight = $(container).height();
-		
-		
+
 		$(container).css("height","0");
 		$(container).css("overflow","hidden");
 		$(container).css("position","relative");
@@ -43,7 +41,6 @@ Site.Panel = new (function(){
 		
 		function panelClick() {
 			if(!isPanelActivated()) {
-				
 				Site.Logo.activate();
 				Site.Content.activate();
 				listItemsActivate();
@@ -56,78 +53,60 @@ Site.Panel = new (function(){
 		};
 		
 		function expandButton() {
-			//anchor.animate({
-			//	"color": {
-			//		to: J2.Core.CSSColor.prototype.create("#0A0B10"),
-			//		time: time
-			//	}
-			//});
-			
-			
-			$(li).animate({"fontSize": "3em"},{complete: openPanel})
+			$(anchor).animate({
+				"color": "#0A0B10"
+			},{
+				duration: time
+			});		
+
+			$(li).animate({
+				"fontSize": "3em"
+			},{
+				duration: time,
+				complete: openPanel
+			});
 			
 		};
 		
 		function collapseButton() {
-		
-		
-			//anchor.animate({
-			//	"color": {
-			//		to: J2.Core.CSSColor.prototype.create(defaultValues.color.getHex()),
-			//		time: time
-			//	}
-			//});
-		
+			$(anchor).animate({
+				"color": defaultValues.color
+			},{
+				duration: time
+			});			
 			
-			$(li).animate({"fontSize": "1.2em"},{})
+			$(li).animate({
+				"fontSize": "1.2em"
+			},{
+				duration: time
+			});
 			
-			//li.animate({
-			//	"fontSize": {
-			//		to: 20,
-			//		time: time,
-			//		transition: J2.Transitions.Exp.easeOut
-			//	}
-			//});
+			//J2.Transitions.Exp.easeOut
 		};
 		
 		function openPanel() {
 			
 			$(container).animate({
 				"height": containerHeight+"px"
-			},{})
-			
-			return;
-			container.animate({
-				"height":{
-						to: containerHeight,
-						time: panelTime
-					}
+			},{
+				duration: panelTime
 			});
 		};
 		
 		function closePanel() {
 			$(container).animate({
 				"height": "0px"
-			},{})
-		
-			return;
-			container.animate({
-				"height":{
-						to: 0,
-						time: panelTime
-					}
+			},{
+				duration: panelTime
 			});
 		};
 		
 		function activate() {
-			$(li).animate({"margin-bottom":"-8px"});
-		
-			//li.animate({
-			//	"margin-bottom":{
-			//		to: -8,
-			//		time: panelTime
-			//	}
-			//})
+			$(li).animate({
+				"margin-bottom":"-8px"
+			},{
+				duration: panelTime
+			});
 		};
 		
 		this.closePanel = closePanel;
