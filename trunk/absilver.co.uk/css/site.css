@@ -12,6 +12,10 @@ body {
 	font-family: Helvetica;
 }
 
+img {
+	border: none;
+}
+
 #logo {
 	padding-bottom: 25px;
 }
