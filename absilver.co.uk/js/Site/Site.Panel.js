@@ -35,8 +35,8 @@ Site.Panel = new (function(){
 		defaultValues.fontSize = $(li).css("font-size");
 		defaultValues.color = $(anchor).css("color");
 		
-		$(li).css("font-size", "1.3em");
-		$(li).css("margin-bottom", "0px");
+		$(li).css("font-size", "1.5em");
+		$(li).css("margin-bottom", "3px");
 		$(anchor).bind("click", panelClick);
 		
 		function panelClick() {
@@ -60,7 +60,7 @@ Site.Panel = new (function(){
 			});		
 
 			$(li).animate({
-				"fontSize": "3em"
+				"fontSize": "3.2em"
 			},{
 				duration: time,
 				complete: openPanel
@@ -76,7 +76,7 @@ Site.Panel = new (function(){
 			});			
 			
 			$(li).animate({
-				"fontSize": "1.2em"
+				"fontSize": "1.5em"
 			},{
 				duration: time,
 				easing: "easeOutExpo"
@@ -102,7 +102,7 @@ Site.Panel = new (function(){
 		
 		function activate() {
 			$(li).animate({
-				"margin-bottom":"-8px"
+				"margin-bottom":"-3px"
 			},{
 				duration: panelTime
 			});
