@@ -78,10 +78,9 @@ Site.Panel = new (function(){
 			$(li).animate({
 				"fontSize": "1.2em"
 			},{
-				duration: time
+				duration: time,
+				easing: "easeOutExpo"
 			});
-			
-			//J2.Transitions.Exp.easeOut
 		};
 		
 		function openPanel() {
