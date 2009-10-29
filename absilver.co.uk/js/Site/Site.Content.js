@@ -23,12 +23,12 @@ Site.Content = new (function(){
 	function activate() {
 		var time = 500;
 		$(content).css("background-image", "none");
-		//$(content).animate({
-			//"background-color": { to: J2.Core.CSSColor.prototype.create(defaultValues.bgColor.getHex()), time: time }
-		//},
-		//activateComplete);
-		
-		activateComplete();
+		$(content).animate({
+			"backgroundColor": defaultValues.bgColor
+		},{
+			complete: activateComplete,
+			duration: time
+		});
 	};
 	
 	function activateComplete() {
