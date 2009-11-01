@@ -85,7 +85,7 @@
 					
 					<h2>JSquared JavaScript</h2>
 					<p>After James from JSquared built his library of code, he needed some help to give it an
-					identity, we worked with James closely to produce a memorable vibrant design.</p>
+					identity, we worked closely with James to produce a memorable vibrant design.</p>
 					
 				</div>		
 				
