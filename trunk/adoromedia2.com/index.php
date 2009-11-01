@@ -48,7 +48,7 @@
 						<h2>Featured work <span> / from our portfolio</span></h2>
 						
 						<div class="image">
-							<img src="img/featured/hb1.jpg" alt="Hartbsourne Country Club"/>
+							<img src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
 						</div>
 						
 						<p>Hartsbourne Country Club recently launched in October 2009</p>
