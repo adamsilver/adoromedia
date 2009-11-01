@@ -1,8 +1,8 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
 <?php
-	$metaKeywords = "adoro media, website, web, bespoke, new, media, solutions, london, UK";
-	$metaDescription = "Adoro Media is an agency dedicated to building new media solutions. Based in London, England.";
+	$metaKeywords = "adoro media, website design, website development, london";
+	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
 	$siteSection = "about";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,22 +27,22 @@
 				
 				<div class="primary">
 					<h2>Our mission</h2>
-					<p>Our mission is to help people and companies build successful web products. 
+					<p>Our mission is to help people and companies build successful websites. 
 					We do this by helping our clients articulate the right vision and by executing 
 					based on our experience in the design and development fields. We create 
-					engaging and meaningful products that people can connect to.</p>
+					engaging websites that people can easily utilise.</p>
 				</div>
 				
 				<div class="secondary">
 					<h2>Introduction to our company</h2>
 					
-					<p>Adoro is a team of designers, developers and strategists. The company as it is 
-					today was founded back in 2007 by Adam Silver. The company has since worked with a 
+					<p>Adoro is a team of designers, developers and strategists. The company, as it is 
+					today, was founded back in 2007 by Adam Silver. The company has since worked with a 
 					broad set of clients from individuals to companies, in several industries.</p>
 					
-					<p>Our projects are mostly from London UK (where we are based). We love to work with 
-					people who have a passion for what they do and particularly their ideas and creativity 
-					- if that's your case we'll get along great, <a href="contact.php">get in touch</a>.</p>
+					<p>Our clients are mostly based in London UK (as are we). We love to work with 
+					people who have a passion for what they do - if that's sounds like you
+					then we'll get along great.</p>
 
 				</div>		
 
@@ -65,6 +65,7 @@
 				
 			</div>
 			<?php include("inc/footer.php"); ?>
+			<?php include("inc/ga.php"); ?>
 		</div>
 	</body>
 </html>

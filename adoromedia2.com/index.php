@@ -1,8 +1,8 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
 <?php
-	$metaKeywords = "adoro media, website, web, bespoke, new, media, solutions, london, UK";
-	$metaDescription = "Adoro Media is an agency dedicated to building new media solutions. Based in London, England.";
+	$metaKeywords = "adoro media, website design, website development, london";
+	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
 	$siteSection = "home";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,6 +57,7 @@
 				
 			</div>
 			<?php include("inc/footer.php"); ?>
+			<?php include("inc/ga.php"); ?>
 		</div>
 	</body>
 </html>
