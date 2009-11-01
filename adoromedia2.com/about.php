@@ -47,6 +47,7 @@
 				</div>		
 
 				<div class="tertiary">
+					<!--
 					<h2>Testimonial</h2>
 					<p>"Adoro Media was recommended to me when I was looking for someone to turn my designs 
 					into a viable, working website. I am a graphic designer by trade and had no trouble in 
@@ -59,6 +60,7 @@
 					losing sight of what it actually was that I wanted. Very well done."</p>
 					<p>Lawrence Codling</p>
 					<p><a href="http://www.lawrencecodling.com">Launch website</a></p>
+					-->
 				</div>
 				
 			</div>
