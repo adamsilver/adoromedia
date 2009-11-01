@@ -12,7 +12,7 @@
 		<?php include("inc/headCSS.php"); ?>
 		<?php include("inc/headCSSIE.php"); ?>
 	</head>
-	<body>
+	<body id="pgHome">
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
@@ -44,8 +44,15 @@
 				</div>
 				
 				<div class="secondary">
-					<h2>Featured work <span> / from our portfolio</span></h2>
-					<p>Featured work thing</p>
+					<div class="featuredWork">
+						<h2>Featured work <span> / from our portfolio</span></h2>
+						
+						<div class="image">
+							<img src="img/featured/hb1.jpg" alt="Hartbsourne Country Club"/>
+						</div>
+						
+						<p>Hartsbourne Country Club recently launched in October 2009</p>
+					</div>
 				</div>				
 				
 			</div>
