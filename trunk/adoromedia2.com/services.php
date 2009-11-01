@@ -1,8 +1,8 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
 <?php
-	$metaKeywords = "adoro media, website, web, bespoke, new, media, solutions, london, UK";
-	$metaDescription = "Adoro Media is an agency dedicated to building new media solutions. Based in London, England.";
+	$metaKeywords = "adoro media, website design, website development, london";
+	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
 	$siteSection = "services";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -43,10 +43,8 @@
 				<div class="secondary">
 					<h2>Experience</h2>
 					
-					<p>With 10 years experience, we have acquired a lot knowledge.</p>
-					
-					<h3>Key areas of expertise</h3>
-					
+					<p>Our team has been in the business for over 10 years. We have 
+					lot's of experience in the following:</p>
 					<ul>
 						<li>Start-up sites and business site solution</li>
 						<li>Website applications</li>
@@ -64,8 +62,9 @@
 						<li>Branding and logo design</li>											
 					</ul>
 				</div>	
-
+	
 				<div class="tertiary">
+					<!--
 					<h2>Testimonial</h2>
 					<p>We contacted Adoro media to work on our website because we liked their designs and they came highly recommended. 
 					We were looking for something different, stylish and clean. Adam helped us understand our business from a clients 
@@ -74,10 +73,12 @@
 					special edge via their website.</p>
 					<p>Peter Perry:  PnP Decorations</p>
 					<p><a href="http://www.pnp-decorations.co.uk">Launch website</a></p>
+					-->
 				</div>
 				
 			</div>
 			<?php include("inc/footer.php"); ?>
+			<?php include("inc/ga.php"); ?>
 		</div>
 	</body>
 </html>
