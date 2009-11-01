@@ -193,3 +193,18 @@ div.tertiary {
 	color: #fff;
 	margin: 0px;
 }
+
+p.word {
+	background: url(../img/page_white_word.png) no-repeat top left;
+	padding-left: 22px;
+}
+
+p.email {
+	background: url(../img/email.png) no-repeat top left;
+	padding-left: 22px;
+}
+
+p.telephone {
+	background: url(../img/telephone.png) no-repeat top left;
+	padding-left: 22px;
+}
