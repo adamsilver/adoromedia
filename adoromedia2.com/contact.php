@@ -36,16 +36,17 @@
 				<div class="secondary">
 					<h2>Details</h2>
 					
-					<p>Email us at <a href="mailto:info@adoromedia.com">info@adoromedia.com</a></p>
+					<p class="email">Email us at <a href="mailto:info@adoromedia.com">info@adoromedia.com</a></p>
 					
-					<p>Talk to us on 07713 490 316</p>
+					<p class="telephone">Talk to us on 07713 490 316</p>
 				</div>		
 				
 				<div class="tertiary">
 					<h2>Free website planner</h2>
-					<p>Please <a href="#">download</a> a free website planner. This will 
+					<p>Please download a free website planner. This will 
 					help us determine your project requirements.</p>
 					
+					<p class="word"><a href="docs/website-planner.doc">Download free website planner</a> (word document)</p>
 					<!-- put word icon here -->
 				</div>
 
