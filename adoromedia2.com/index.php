@@ -13,7 +13,7 @@
 		<?php include("inc/headCSSIE.php"); ?>
 		<script type="text/javascript" src="js/JQuery/jquery.js"></script>
 		<script type="text/javascript" src="js/Adoro/Adoro.Carousel.js"></script>
-		<script type="text/javascript" src="js/Site/Home/Site.Home.Featured.js"></script>
+		<script type="text/javascript" src="js/Site/Home/Site.Home.FeaturedWork.js"></script>
 	</head>
 	<body id="pgHome">
 		<div id="container">
@@ -55,10 +55,10 @@
 										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
 									</li>
 									<li class="page">
-										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+										<img width="600" height="349" src="img/featured/hb2.jpg" alt="Hartsbourne Country Club"/>
 									</li>
 									<li class="page">
-										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+										<img width="600" height="349" src="img/featured/hb3.jpg" alt="Hartsbourne Country Club"/>
 									</li>
 								</ul>
 							</div>

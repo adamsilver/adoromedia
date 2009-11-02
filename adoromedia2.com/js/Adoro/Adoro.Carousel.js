@@ -13,7 +13,7 @@ Adoro.Carousel = function(container, options) {
 		clipClass: "clip",
 		vertical: false,
 		offsetReveal: 0,
-		isCircular: true,
+		isCircular: false,
 		animate: true,
 		animateEasing: "linear",
 		animateSpeed: 300,
