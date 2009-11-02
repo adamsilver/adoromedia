@@ -223,4 +223,52 @@ div.featuredWork div.image {
 	margin-bottom: 8px;
 	margin-left: 10px;
 	margin-right: 10px;
+	overflow: hidden;
 }
+
+div.featuredWork div.image  ul.pages {
+	margin: 0;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+div.featuredWork div.image  ul.pages li.page{
+	margin: 0;
+	width: 600px;
+	margin-right: 10px;
+}
+
+div.featuredWork div.image a.back {
+	float: left;
+	font-size: 1.1em;
+	margin-right: 3px;
+	height: 17px;
+	width: 23px;
+	background: url(../img/left_arrow.jpg) no-repeat;
+}
+
+div.featuredWork div.image a.back span {
+	display: none;
+}
+
+div.featuredWork div.image a.backDisabled {
+	background-image: url(../img/left_arrow_disabled.jpg);
+}
+
+div.featuredWork div.image a.forward {
+	float: left;
+	font-size: 1.1em;
+	height: 17px;
+	width: 23px;
+	background: url(../img/right_arrow.jpg) no-repeat;
+}
+
+div.featuredWork div.image a.forward span {
+	display: none;
+}
+
+div.featuredWork div.image a.forwardDisabled {
+	background-image: url(../img/right_arrow_disabled.jpg);
+}
+
+
