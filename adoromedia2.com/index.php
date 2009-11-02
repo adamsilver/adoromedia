@@ -11,6 +11,9 @@
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<?php include("inc/headCSSIE.php"); ?>
+		<script type="text/javascript" src="js/JQuery/jquery.js"></script>
+		<script type="text/javascript" src="js/Adoro/Adoro.Carousel.js"></script>
+		<script type="text/javascript" src="js/Site/Home/Site.Home.Featured.js"></script>
 	</head>
 	<body id="pgHome">
 		<div id="container">
