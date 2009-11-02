@@ -26,8 +26,6 @@
 				<p>Helping <em>people</em> &amp; companies build better websites.</p>
 			</div>
 			<div id="content">
-				
-				
 				<div class="primary">
 					<!--<h1>Recent news</h1>-->
 					
@@ -51,7 +49,19 @@
 						<h2>Featured work <span> / from our portfolio</span></h2>
 						
 						<div class="image">
-							<img src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+							<div class="clip">
+								<ul class="pages">
+									<li class="page">
+										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+									</li>
+									<li class="page">
+										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+									</li>
+									<li class="page">
+										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+									</li>
+								</ul>
+							</div>
 						</div>
 						
 						<p>Hartsbourne Country Club recently launched in October 2009</p>
