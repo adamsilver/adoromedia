@@ -30,16 +30,15 @@
 					<!--<h1>Recent news</h1>-->
 					
 					<h2>Testimonial</h2>
-					<p>"As Business Development Director for CP Plus it was my responsibility to 
-					redevelop the existing website for search visibility, and user-friendly design 
-					purposes. After looking at a wide range of designers, we decided to go with Adoro 
-					Media because they really seemed to understand the brief and what we were looking for; 
-					we have not been disappointed. Working with Adoro Media has been speedy and efficient 
-					and altogether a great experience. Adam Silver has made the process very easy and I 
-					continue to liase with Adoro Media for updates and website maintenance. The website 
-					was delivered on schedule and within an extremely cost effective budget. In short, I 
-					would highly recommend Adoro's services to any business looking to maximise their 
-					presence on the web with a modern, web standards compliant best-of-breed website."</p>
+					<p>"As Business Development Director for CP Plus, it was my responsibility to redevelop 
+					the existing website for search visibility and user-friendly design purposes. After looking 
+					at a wide range of designers, we decided to go with Adoro Media because they really understood 
+					the brief and what we were looking for; we have not been disappointed. Working with Adoro Media 
+					has been speedy and efficient and altogether a great experience. Adam Silver has made the process 
+					very easy and I continue to liaise with Adoro Media for updates and website maintenance. The website 
+					was delivered on schedule and within an extremely cost effective budget. In short, I would highly 
+					recommend Adoro's services to any business looking to maximise their presence on the web with a modern, 
+					web-standards compliant best-of-breed website."</p>
 					<p>Grahame Rose: CP Plus</p>
 					<p><a href="http://www.cp-plus.co.uk">Launch website</a></p>
 				</div>

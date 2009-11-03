@@ -30,21 +30,21 @@
 					
 					<h3>Development</h3>
 					<p>Our favourite technologies are PHP and Django (built on top of Python). 
-					We use these technologies to produce dynamic, bespoke content management systems, that 
-					are built to scale, meaning as your business grows, so can your website.</p>
-
+					We use these technologies to produce dynamic, bespoke content management systems that 
+					are built to scale so that as your business grows, so can your website.</p>
+					
+					
 					<h3>Design</h3>
 					<p>In recent years design has become a major differentiating factor between a 
-					website and its competitors. We can work with you 
-					in articulating both how your website looks and how it works through Information 
+					website and its competitors. We can work with you to assess and develop how your 
+					website looks and how it works through Information 
 					Architecture, User Interface Design and User Experience Design.</p>
 				</div>
-				
 				<div class="secondary">
 					<h2>Experience</h2>
 					
-					<p>Our team has been in the business for over 10 years. We have 
-					lot's of experience in the following:</p>
+					<p>Our team has been in the business for over 10 years. We have a wealth of 
+					experience in the following:</p>
 					<ul>
 						<li>Start-up sites and business site solution</li>
 						<li>Website applications</li>
@@ -62,7 +62,6 @@
 						<li>Branding and logo design</li>											
 					</ul>
 				</div>	
-	
 				<div class="tertiary">
 					<!--
 					<h2>Testimonial</h2>

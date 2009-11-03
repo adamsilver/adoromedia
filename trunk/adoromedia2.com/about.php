@@ -28,8 +28,8 @@
 				<div class="primary">
 					<h2>Our mission</h2>
 					<p>Our mission is to help people and companies build successful websites. 
-					We do this by helping our clients articulate the right vision and by executing 
-					based on our experience in the design and development fields. We create 
+					We do this by helping our clients articulate their vision and by executing
+					it, based on our experience in the design and development fields. We create 
 					engaging websites that people can easily utilise.</p>
 				</div>
 				
@@ -38,11 +38,11 @@
 					
 					<p>Adoro is a team of designers, developers and strategists. The company, as it is 
 					today, was founded back in 2007 by Adam Silver. The company has since worked with a 
-					broad set of clients from individuals to companies, in several industries.</p>
+					broad set of clients from individuals to companies, in many different market sectors.</p>
 					
 					<p>Our clients are mostly based in London UK (as are we). We love to work with 
 					people who have a passion for what they do - if that's sounds like you
-					then we'll get along great.</p>
+					then we'll work very well together.</p>
 
 				</div>		
 
