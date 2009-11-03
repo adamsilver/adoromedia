@@ -26,15 +26,15 @@
 				<h1>Portfolio</h1>
 				
 				<div class="primary">
-					<p>This is not an extensive list. If you would like to find out more 
-					about any project, please <a href="contact.php">get in touch</a>.</p>
-				
+					<p>This is not an extensive list but it will give you an idea of the quality
+					of some of our work. If you would like to find out more about any project, 
+					please <a href="contact.php">get in touch</a>.</p>				
 				</div>
 				
 				<div class="secondary">
 					<h2>Hartsbourne Country Club</h2>
 					<p>Hartsbourne came to us with a requirement to refresh their website 
-					with a more modern &amp elegant look. Coupled with this, they wanted a 
+					with a more modern and elegant look. Coupled with this, they wanted a 
 					bespoke content management system to allow them to maintain an online
 					calendar of events and competition results for the golf club.</p>
 					<p><a href="http://www.hartsbournecountryclub.co.uk">Launch website</a></p>
@@ -48,8 +48,11 @@
 					<h2>Ad Lib Print &amp; Design</h2>
 					<p>Ad Lib print is a small print and design company. They required a simple
 					website whereby, their potential customers could find them via Google search, and
-					make contact with a view to getting a quote.</p>
+					make contact with a view to getting a quote.</p>								
 					<p><a href="http://www.adlibprint.co.uk">Launch website</a></p>
+					
+					
+					
 					
 					<h2>DG Retro Collectables</h2>
 					<p>David Goodman runs a small dealership in retro collectables. He came to us, 
@@ -102,3 +105,4 @@
 		</div>
 	</body>
 </html>
+
