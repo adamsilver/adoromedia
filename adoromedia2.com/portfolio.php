@@ -52,7 +52,7 @@
 					<p><a href="http://www.adlibprint.co.uk">Launch website</a></p>
 					
 					<h2>DG Retro Collectables</h2>
-					<p>David Goodman runs a small dealership in retro collectable. He came to us, 
+					<p>David Goodman runs a small dealership in retro collectables. He came to us, 
 					to design and build a website with a content managed photo gallery and a blog. 
 					He was also concerned with being high up in Google.</p>
 					<p><a href="http://www.dgretro.com">Launch website</a></p>
