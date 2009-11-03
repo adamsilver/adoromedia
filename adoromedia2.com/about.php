@@ -40,7 +40,7 @@
 					today, was founded back in 2007 by Adam Silver. The company has since worked with a 
 					broad set of clients from individuals to companies, in many different market sectors.</p>
 					
-					<p>Our clients are mostly based in London UK (as are we). We love to work with 
+					<p>Our clients are mostly UK based, in London and the home counties. We love to work with 
 					people who have a passion for what they do - if that's sounds like you
 					then we'll work very well together.</p>
 
