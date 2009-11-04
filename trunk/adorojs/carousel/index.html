@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="css/end.css"/>
 		<script type="text/javascript" src="jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="Adoro.Carousel.js"></script>
 		<script type="text/javascript">
@@ -39,6 +40,19 @@
 						$(this).find("div.item").css("overflow", "auto");
 					}
 				});
+				
+				 new Adoro.Carousel(document.getElementById("navigationcarousel"), {
+					scrollCount: 1,
+					isCircular: true,
+					indicators: false,
+					stopButton: false,
+					startButton: false,
+					forwardButton: true,
+					backButton: true,
+					automaticDirectionBackwards: false
+				});
+
+				
 			});
 		</script>
 		<style type="text/css">
@@ -57,6 +71,7 @@
 			
 			#myCarousel {
 				overflow: hidden;
+				display: none;
 			}
 			
 			#myCarousel div.backContainer {
@@ -102,12 +117,134 @@
 				overflow: auto;
 			}
 			
+			
+			
+		/*img {
+			border: none;
+		}		
+			
+		#navigationcarousel {
+			border:0 none;
+			clear:both;
+			height:67px;
+			margin-bottom:3px;
+			overflow:hidden;
+			padding:0;
+			position:relative;
+			width:976px;
+		}
+		#navigationcarousel div.clip {
+			margin:0 10px;
+		}
+		#navigationcarousel div.clip ul {
+			height:67px;
+			list-style-image:none;
+			list-style-position:outside;
+			list-style-type:none;
+		}
+		#navigationcarousel div.clip ul li {
+			margin:0 0 0 0;
+			position:relative;
+			width:159px;
+		}
+		#navigationcarousel div.clip ul li a span {
+			-moz-background-clip:border;
+			-moz-background-inline-policy:continuous;
+			-moz-background-origin:padding;
+			background:transparent url(/Style%20Library/SiteImages/carousel-over.gif) repeat-x scroll 0 0;
+			display:none;
+			height:6px;
+			left:2px;
+			position:absolute;
+			top:61px;
+			width:154px;
+		}
+		#navigationcarousel div.clip ul li a:hover span, #navigationcarousel div.clip ul li a:focus span {
+			display:block;
+			width:154px;
+		}
+		#navigationcarousel a.back {
+			-moz-background-clip:border;
+			-moz-background-inline-policy:continuous;
+			-moz-background-origin:padding;
+			background:transparent url(/Style%20Library/SiteImages/carousel_control_left.gif) no-repeat scroll 0 0;
+			height:67px;
+			left:0;
+			position:absolute;
+			top:0;
+			width:11px;
+		}
+		#navigationcarousel a.back span {
+			left:-999999em;
+			position:absolute;
+			top:0;
+		}
+		#navigationcarousel a.back:hover, #navigationcarousel a.forward:hover {
+			background-position:0 -67px;
+		}
+		#navigationcarousel a.forward {
+			-moz-background-clip:border;
+			-moz-background-inline-policy:continuous;
+			-moz-background-origin:padding;
+			background:transparent url(/Style%20Library/SiteImages/carousel_control_right.gif) no-repeat scroll 0 0;
+			height:67px;
+			position:absolute;
+			right:0;
+			top:0;
+			width:11px;
+		}
+		#navigationcarousel a.forward span {
+			left:-999999em;
+			position:absolute;
+			top:0;
+		}		*/			
+			
+			
+			
+			
 
 		</style>
 	</head>
 	<body>
 		<h1>Carousel</h1>
 		<div id="container">
+		
+			 <div class="carousel" id="navigationcarousel">
+				<div class="clip">
+					<ul>
+								
+						<li><a href='http://uat.endsleigh.co.uk/Pages/musical-instrument.aspx' ><img src="img/CEIS-8.jpg" alt='Musical Instruments' /><span></span></a></li>    
+				
+						<li><a href='http://uat.endsleigh.co.uk/Pages/student-insurance.aspx' ><img src="img/CEIS-2.jpg" alt='Student insurance' /><span></span></a></li>    
+						
+								
+						<li><a href='http://uat.endsleigh.co.uk/Pages/musical-instrument.aspx' ><img src="img/CEIS-8.jpg" alt='Musical Instruments' /><span></span></a></li>    
+				
+						<li><a href='http://uat.endsleigh.co.uk/Pages/student-insurance.aspx' ><img src="img/CEIS-2.jpg" alt='Student insurance' /><span></span></a></li>    
+						
+												<li><a href='http://uat.endsleigh.co.uk/Pages/musical-instrument.aspx' ><img src="img/CEIS-8.jpg" alt='Musical Instruments' /><span></span></a></li>    
+				
+						<li><a href='http://uat.endsleigh.co.uk/Pages/student-insurance.aspx' ><img src="img/CEIS-2.jpg" alt='Student insurance' /><span></span></a></li>    
+						
+												<li><a href='http://uat.endsleigh.co.uk/Pages/musical-instrument.aspx' ><img src="img/CEIS-8.jpg" alt='Musical Instruments' /><span></span></a></li>    
+				
+						<li><a href='http://uat.endsleigh.co.uk/Pages/student-insurance.aspx' ><img src="img/CEIS-2.jpg" alt='Student insurance' /><span></span></a></li>    
+						
+												<li><a href='http://uat.endsleigh.co.uk/Pages/musical-instrument.aspx' ><img src="img/CEIS-8.jpg" alt='Musical Instruments' /><span></span></a></li>    
+				
+						<li><a href='http://uat.endsleigh.co.uk/Pages/student-insurance.aspx' ><img src="img/CEIS-2.jpg" alt='Student insurance' /><span></span></a></li>    
+					</ul>
+				</div>
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<div id="myCarousel">
 				<div class="clip">
 					<ul>
