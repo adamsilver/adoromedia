@@ -5,6 +5,9 @@ Site.Home.FeaturedWork = new (function() {
 	function init() {
 		var root = $("div.featuredWork div.image")[0] || null;
 		if(!root) return;
-		new Adoro.Carousel(root);
+		new Adoro.Carousel(root, {
+		animateEasing: "easeOutExpo",
+			animateSpeed: 600
+		});
 	};
 });
