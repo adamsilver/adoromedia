@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="Adoro.FormRules.js"></script>
+		<script type="text/javascript" src="Adoro.FormValidator3.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var formNode = $("form")[0];
+				var fv = new Adoro.FormValidator(formNode);
+				
+				fv.addValidator("username",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for username"
+					}]
+				);
+			});
+		</script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+		<h1>Argos Form Validator</h1>
+		<div id="container">
+			
+			<form method="post" action="index.html">
+				<input type="text" name="username" />
+				<input type="submit" name="submitForm" />
+			</form>
+			
+		</div>
+	</body>
+</html>
