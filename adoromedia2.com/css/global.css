@@ -271,4 +271,10 @@ div.featuredWork div.image a.forwardDisabled {
 	background-image: url(../img/right_arrow_disabled.jpg);
 }
 
+#pgHome h1 {
+	position: absolute;
+	left: -9999em;
+	top: 0;
+}
+
 

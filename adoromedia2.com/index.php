@@ -5,7 +5,7 @@
 	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
 	$siteSection = "home";
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
 	    <title>Adoro Media - Website design &amp; development agency - London</title>
 		<?php include("inc/headGlobal.php"); ?>
@@ -26,7 +26,7 @@
 			</div>
 			<div id="content">
 				<div class="primary">
-					<!--<h1>Recent news</h1>-->
+					<h1>Website design &amp; development agency - London</h1>
 					
 					<h2>Testimonial</h2>
 					<p>"As Business Development Director for CP Plus, it was my responsibility to redevelop 
