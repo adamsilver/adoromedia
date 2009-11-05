@@ -2,19 +2,53 @@
 <html>
 	<head>
 		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="jquery.color.js"></script>
 		<script type="text/javascript" src="Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="Adoro.FormValidator3.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var formNode = $("form")[0];
-				var fv = new Adoro.FormValidator(formNode);
+				var fv = new Adoro.FormValidator(formNode, {
+				});
 				
 				fv.addValidator("username",[{
 						method: Adoro.FormRules.notEmpty,
 						message: "The error message for username"
-					}]
+					},{
+						method: Adoro.FormRules.isLength,
+						message: "The username should have a length of 3",
+						params: {length: 3}
+					}], {
+						onFieldValidate: fieldValidate,
+						onFieldError: fieldError,
+						onFieldSuccess: fieldSuccess
+					}
 				);
+
+				fv.addValidator("password",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for password"
+					}],{
+						onFieldValidate: fieldValidate,
+						onFieldError: fieldError,
+						onFieldSuccess: fieldSuccess
+					}
+				);				
+				
 			});
+			
+			function fieldValidate() {
+				$(this).animate({"width":"400px", "backgroundColor": "#ec942c"},{});
+			}
+			
+			function fieldError() {
+				$(this).animate({"width":"200px", "backgroundColor": "#9F1309"},{});
+			}
+			
+			function fieldSuccess() {
+				$(this).animate({"width":"200px", "backgroundColor": "#fff"},{});
+			}			
+			
 		</script>
 		<style type="text/css">
 		
@@ -24,8 +58,16 @@
 		<h1>Argos Form Validator</h1>
 		<div id="container">
 			
+			<div id="errorContainer">
+			</div>
+			
 			<form method="post" action="index.html">
-				<input type="text" name="username" />
+				<div class="field">
+					<input type="text" name="username" />
+				</div>
+				<div class="field">
+					<input type="text" name="password" />
+				</div>
 				<input type="submit" name="submitForm" />
 			</form>
 			
