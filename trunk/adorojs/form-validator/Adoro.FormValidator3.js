@@ -38,18 +38,18 @@ Adoro.FormValidator = function(formNode, options) {
 			key = validator.key;
 			
 			// if it is a contextual submit button 
-			// make sure the validator is applied 
-			// to that contextualGroup before validating it
+			// make sure the validator is applied...
+			// ...to that contextualGroup before validating it
 			if((isContextualSubmit() && !inGroupRuleKeys(getLastFired(), key))) continue;
 			
-			// loop through all validators
+			// loop through all rules in that validator
 			validator.validate();
 		}
 		
 		if(typeof onValidateComplete === "function") onValidateComplete.call(me);
 		
 		if(hasErrors()) {
-			if(typeof onFormError === "function") onFormError.call(me);
+			if(typeof onFormError === "function") onFormError.call(me, errors);
 		}
 		else {
 			if(typeof onFormSuccess === "function") onFormSuccess.call(me);
@@ -66,12 +66,13 @@ Adoro.FormValidator = function(formNode, options) {
 		this.rules = rules;
 		
 		var options = options || {};
-		onFieldValidate = options.onFieldValidate || null;
-		onFieldError = options.onFieldError || null;
-		onFieldSuccess = options.onFieldSuccess || null;
-
+		var onFieldValidate = options.onFieldValidate || null;
+		var onFieldError = options.onFieldError || null;
+		var onFieldSuccess = options.onFieldSuccess || null;
+		
 		function validate() {
-			if(typeof onFieldValidate === "function") onFieldValidate.call(field, message);
+		
+			if(typeof onFieldValidate === "function") onFieldValidate.call(field);
 			// run thru all rules
 			var rule, valid=true, params;
 			for (var j = 0; j < rules.length; j++) {
@@ -80,13 +81,13 @@ Adoro.FormValidator = function(formNode, options) {
 				valid = rule.method.call(field, params);
 				if (!valid) {
 					addError(me.key, rule.message);
-					if(typeof onFieldError === "function") onFieldError.call(field, message);
+					if(typeof onFieldError === "function") onFieldError.call(field, rule);
 					break;
 				}
 			};
 			
 			if(valid) {
-				if(typeof onFieldSuccess === "function") onFieldSuccess.call(field, message);
+				if(typeof onFieldSuccess === "function") onFieldSuccess.call(field, rule);
 			}
 		}
 		
@@ -247,6 +248,7 @@ Adoro.FormValidator = function(formNode, options) {
 		if (validRules.length > 0) {
 			validators.push(new Validator(field, validRules, options));
 		}
+		
 		return this;
 	}	
 	
@@ -302,27 +304,6 @@ Adoro.FormValidator = function(formNode, options) {
 	this.removeValidator = removeValidator;
 	this.addContextualGroup = addContextualGroup;
 	//this.removeContextualGroup = removeContextualGroup;
-	//this.addError = addError;
+	this.addError = addError;
 	//this.removeError = removeError;
 }
-/*
-var myFVal = new Adoro.FormValidator(formNode, {
-	onValidateStart: function(){},
-	onValidateComplete: function(){},
-	onFormError: function(){},
-	onFormSuccess: function() {},
-	onClearErrors: function(){}
-});
-
-myFVAL.addValidator(
-	"username", 
-	[{
-		rule: func,
-		message: "Hello"
-	}], 
-	{
-		onFieldError: function(field) {},
-		onFieldSuccess: function(field) {}
-	}
-);
-*/
