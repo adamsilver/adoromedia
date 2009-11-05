@@ -6,9 +6,23 @@
 		<script type="text/javascript" src="Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="Adoro.FormValidator3.js"></script>
 		<script type="text/javascript">
+			
+			var h1StartHtml;
 			$(document).ready(function() {
 				var formNode = $("form")[0];
+				
+				h1StartHtml = $("h1").html();
+				
 				var fv = new Adoro.FormValidator(formNode, {
+					onValidateStart: function(){
+						$("h1").html(h1StartHtml+"(validating)");
+					},
+					onValidateComplete: function() {
+						window.setTimeout(function(){
+							$("h1").html(h1StartHtml);
+						}, 500);
+						
+					}
 				});
 				
 				fv.addValidator("username",[{
@@ -21,7 +35,8 @@
 					}], {
 						onFieldValidate: fieldValidate,
 						onFieldError: fieldError,
-						onFieldSuccess: fieldSuccess
+						onFieldSuccess: fieldSuccess,
+						validateOnBlur: true
 					}
 				);
 
@@ -39,15 +54,19 @@
 			});
 			
 			function fieldValidate() {
-				$(this).animate({"width":"400px", "backgroundColor": "#ec942c"},{});
+				var fieldContainer = $(this).parents("div.field")[0];
+				$(fieldContainer).css("background-color", "#ffffff");
+				$(fieldContainer).animate({"backgroundColor": "#eee"});
+				$(fieldContainer).animate({"backgroundColor": "#fff"});
+				$("h1").html(h1StartHtml+"(validating)");
 			}
 			
 			function fieldError() {
-				$(this).animate({"width":"200px", "backgroundColor": "#9F1309"},{});
+				$(this).css({"backgroundColor": "#9F1309"},{});
 			}
 			
 			function fieldSuccess() {
-				$(this).animate({"width":"200px", "backgroundColor": "#fff"},{});
+				$(this).css({"backgroundColor": "#fff"},{});
 			}			
 			
 		</script>
