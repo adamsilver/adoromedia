@@ -69,6 +69,11 @@ Adoro.FormValidator = function(formNode, options) {
 		var onFieldValidate = options.onFieldValidate || null;
 		var onFieldError = options.onFieldError || null;
 		var onFieldSuccess = options.onFieldSuccess || null;
+		var validateOnBlur = options.validateOnBlur || false;
+		
+		if(validateOnBlur) {
+			$(field).bind("blur", validate);
+		}
 		
 		function validate() {
 		
