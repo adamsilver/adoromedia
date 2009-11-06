@@ -43,7 +43,7 @@
 				fv.addValidator("password",[{
 						method: Adoro.FormRules.notEmpty,
 						message: "The error message for password"
-					}],{
+					}], {
 						onFieldValidate: fieldValidate,
 						onFieldError: fieldError,
 						onFieldSuccess: fieldSuccess,
@@ -51,24 +51,81 @@
 					}
 				);				
 				
+				fv.addContextualGroup("submitForm2", ["username"]);
+				
 			});
 			
 			function fieldValidate() {
-				var fieldContainer = $(this).parents("div.field")[0];
-				$(fieldContainer).css("background-color", "#ffffff");
-				$(fieldContainer).animate({"backgroundColor": "#eee"});
-				$(fieldContainer).animate({"backgroundColor": "#fff"});
-				$("h1").html(h1StartHtml+"(validating)");
+				
 			}
+			
+			
+			function ValidatorOptions() {
+				//var labelText = getFieldLabelOrLegend();
+				
+				function fieldValidate() {
+					var fieldContainer = $(this).parents("div.field")[0];
+					$(fieldContainer).css("background-color", "#ffffff");
+					$(fieldContainer).animate({"backgroundColor": "#eee"});
+					$(fieldContainer).animate({"backgroundColor": "#fff"});
+					$("h1").html(h1StartHtml+"(validating)");
+				}
+				
+				this.onFieldValidate = fieldValidate;
+				this.validateOnBlur = true;
+			}
+			
 			
 			function fieldError() {
 				$(this).css({"backgroundColor": "#9F1309"},{});
+				
+
+				
+				var label = getFieldLabelOrLegend(this);
+				if(label) {
+					var span = $(label).find("span.error")[0];
+					if(!span) {
+						$(label).append('<span class="error">Error</span>')
+					}
+				}
 			}
 			
 			function fieldSuccess() {
-				$(this).css({"backgroundColor": "#fff"},{});
-			}			
+				$(this).css({"backgroundColor": "#2CEF59"},{});
+				var label = getFieldLabelOrLegend(this);
+				if(label) {
+					$(label).find("span.error").remove();
+				}
+			}
 			
+			function getFieldLabelOrLegend(fieldNode) {
+				var singleInputLabel = $(fieldNode).parents("div.singleInput").prev("div.indicator").find("label")[0];
+				if(singleInputLabel !== undefined){
+					return singleInputLabel;
+				}
+				
+				// checkbox group
+				var checkboxesLegend = $(fieldNode).parents("div.checkboxes").find("legend")[0];
+				if(checkboxesLegend !== undefined){
+					return checkboxesLegend;
+				}
+				
+				// single checkbox (i.e. terms and conditions etc)
+				var checkboxesLabel = $(fieldNode).parents("div.checkboxes").find("div.input label")[0];
+				if(checkboxesLabel !== undefined) {
+					return checkboxesLabel;
+				}
+				
+				// multiple input (i.e. card expiry date (month/year)
+				var multipleInputLabel = $(fieldNode).parents("div.multipleInput")[0];
+				if(multipleInputLabel !== undefined) {
+					return $(fieldNode).prev("label")[0] || $(fieldNode).next("label")[0];
+				}
+				
+				return null;
+			}
+			
+
 		</script>
 	</head>
 	<body>
@@ -80,10 +137,21 @@
 			
 			<form method="post" action="index.html">
 				<div class="field">
-					<input type="text" name="username" />
+					<div class="indicator">
+						<label>YO</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="username" />
+					</div>
 				</div>
+				<input type="submit" name="submitForm2" id="submitForm2" value="validate username only"/>
 				<div class="field">
-					<input type="text" name="password" />
+					<div class="indicator">
+						<label>Password label but you don't need one</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="password" />
+					</div>
 				</div>
 				<input type="submit" name="submitForm" />
 			</form>
