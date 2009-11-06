@@ -21,7 +21,16 @@
 						window.setTimeout(function(){
 							$("h1").html(h1StartHtml);
 						}, 500);
-						
+					},
+					onClearErrors: function(validators) {
+					
+						for(var i = 0; i<validators.length; i++) {
+							$(validators[i].field).css("background-color", "");
+							var label = $(validators[i].field).parents("div.singleInput").prev("div.indicator").find("label")[0];
+							if(label) {
+								$(label).find("span.error").remove();
+							}
+						}
 					}
 				});
 				
@@ -55,11 +64,6 @@
 				
 			});
 			
-			function fieldValidate() {
-				
-			}
-			
-			
 			function ValidatorOptions() {
 				//var labelText = getFieldLabelOrLegend();
 				
@@ -78,9 +82,7 @@
 			
 			function fieldError() {
 				$(this).css({"backgroundColor": "#9F1309"},{});
-				
 
-				
 				var label = getFieldLabelOrLegend(this);
 				if(label) {
 					var span = $(label).find("span.error")[0];
@@ -100,13 +102,13 @@
 			
 			function getFieldLabelOrLegend(fieldNode) {
 				var singleInputLabel = $(fieldNode).parents("div.singleInput").prev("div.indicator").find("label")[0];
-				if(singleInputLabel !== undefined){
+				if(singleInputLabel !== undefined) {
 					return singleInputLabel;
 				}
 				
 				// checkbox group
 				var checkboxesLegend = $(fieldNode).parents("div.checkboxes").find("legend")[0];
-				if(checkboxesLegend !== undefined){
+				if(checkboxesLegend !== undefined) {
 					return checkboxesLegend;
 				}
 				
