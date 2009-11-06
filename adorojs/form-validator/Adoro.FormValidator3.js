@@ -17,12 +17,20 @@ Adoro.FormValidator = function(formNode, options) {
 	
 	// options
 	var options = options || {};
+	
+	// form level options
 	var onValidateStart = options.onValidateStart || null;
 	var onValidateComplete = options.onValidateComplete || null;
 	var onFormError = options.onFormError || null;
 	var onFormSuccess = options.onFormSuccess || null;
 	var onClearErrors = options.onClearErrors || null;
 	
+	// validator level options
+	var onFieldValidateBase = options.onFieldValidate || null;
+	var onFieldErrorBase = options.onFieldError || null;	
+	var onFieldSuccessBase = options.onFieldSuccess || null;	
+	var validateOnBlurBase = options.validateOnBlur || false;	
+		
 	$(formNode).bind("submit", function(e){
 		return validate.call(formNode);
 	});
@@ -66,10 +74,10 @@ Adoro.FormValidator = function(formNode, options) {
 		this.rules = rules;
 		
 		var options = options || {};
-		var onFieldValidate = options.onFieldValidate || null;
-		var onFieldError = options.onFieldError || null;
-		var onFieldSuccess = options.onFieldSuccess || null;
-		var validateOnBlur = options.validateOnBlur || false;
+		var onFieldValidate = options.onFieldValidate || onFieldValidateBase || null;
+		var onFieldError = options.onFieldError || onFieldErrorBase || null;
+		var onFieldSuccess = options.onFieldSuccess || onFieldSuccessBase || null;
+		var validateOnBlur = options.validateOnBlur || validateOnBlurBase || false;
 		
 		if(validateOnBlur) {
 			$(field).bind("blur", validate);
