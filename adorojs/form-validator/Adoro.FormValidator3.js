@@ -40,7 +40,7 @@ Adoro.FormValidator = function(formNode, options) {
 			// if it is a contextual submit button 
 			// make sure the validator is applied...
 			// ...to that contextualGroup before validating it
-			if((isContextualSubmit() && !inGroupRuleKeys(getLastFired(), key))) continue;
+			if((isContextualSubmit() && !inGroupRuleKeys(getLastFiredButton(), key))) continue;
 			
 			// loop through all rules in that validator
 			validator.validate();
@@ -104,7 +104,7 @@ Adoro.FormValidator = function(formNode, options) {
 		// may wanna check here to see if group even exists
 		if(getLastFiredButton() !== null) {
 			b = true;
-		}			
+		}
 		return b;
 	}
 	
@@ -124,8 +124,8 @@ Adoro.FormValidator = function(formNode, options) {
 		if(!trigger) return false;
 		var isInRuleKeys = false;
 		var group, groupKey;
-		for(var i = 0; i < groups.length; i++) {
-			group = groups[i];
+		for(var i = 0; i < contextualGroups.length; i++) {
+			group = contextualGroups[i];
 			if(group.trigger === trigger) {
 				for(var j = 0; j < group.ruleKeys.length; j++) {
 					groupKey = group.ruleKeys[j];
@@ -212,7 +212,7 @@ Adoro.FormValidator = function(formNode, options) {
 	function addContextualGroup(triggerID, ruleKeys) {
 		var trigger = document.getElementById(triggerID);
 		if(!trigger) return;
-		contextualGroups.push(new Group(trigger, ruleKeys));
+		contextualGroups.push(new ContextualGroup(trigger, ruleKeys));
 	}	
 	
 	
