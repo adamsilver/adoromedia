@@ -79,6 +79,14 @@
 				this.validateOnBlur = true;
 			}
 			
+			function fieldValidate() {
+				var fieldContainer = $(this).parents("div.field")[0];
+				$(fieldContainer).css("background-color", "#ffffff");
+				$(fieldContainer).animate({"backgroundColor": "#eee"});
+				$(fieldContainer).animate({"backgroundColor": "#fff"});
+				$("h1").html(h1StartHtml+"(validating)");
+			}
+			
 			
 			function fieldError() {
 				$(this).css({"backgroundColor": "#9F1309"},{});
