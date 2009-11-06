@@ -142,7 +142,7 @@ Adoro.FormValidator = function(formNode, options) {
 		
 	function clearErrors() {
 		errors = [];
-		if(typeof onClearErrors === "function") onClearErrors.call(me);
+		if(typeof onClearErrors === "function") onClearErrors.call(me, validators);
 	}
 	
 	function addError(fieldName, message) {
