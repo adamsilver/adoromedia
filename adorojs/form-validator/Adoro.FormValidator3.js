@@ -12,6 +12,8 @@ Adoro.FormValidator = function(formNode, options) {
 	var errors = [];
 	var contextualGroups = [];
 	
+	me.validators = validators; // temp?
+	
 	// other bits
 	var lastClickedButton = null;
 	
@@ -122,6 +124,7 @@ Adoro.FormValidator = function(formNode, options) {
 	
 	/**
 	 * check if the validator should be validated for this contextual group activation
+	 * i.e. make sure "postCodeField" is validated by this particular contextual submit button
 	 * @function
 	 * @private
 	 * @param {Node} trigger To check trigger
@@ -192,48 +195,7 @@ Adoro.FormValidator = function(formNode, options) {
 		this.message = message;
 	}
 	
-	/**
-	 * Create a new contextual group
-	 * @class Represents a contextual group
-	 * @constructor
-	 * @private
-	 * @param {Node} trigger DOM reference to contextual submit button
-	 * @param {String[]} ruleKeys Array of keys (field 'names') that reference existing form fields
-	 */
-	function ContextualGroup(trigger, ruleKeys) {
-		this.trigger = trigger;
-		this.ruleKeys = ruleKeys;
-		$(trigger).bind("click", trigger_onClick);
-		
-		function trigger_onClick() {
-			lastClickedButton = this;
-		}
-	}
-	
-	/**
-	 * add a new contextual group for the form
-	 * @function
-	 * @public
-	 * @param {String} triggerID The ID of the contextual submit button
-	 * @param {String[]} ruleKeys Array of keys that reference existing form fields
-	 */
-	function addContextualGroup(triggerID, ruleKeys) {
-		var trigger = document.getElementById(triggerID);
-		if(!trigger) return;
-		contextualGroups.push(new ContextualGroup(trigger, ruleKeys));
-	}	
-	
-	
-	// WORK IN PROGRESS
-	function removeContextualGroup(triggerId) {
-		var trigger = document.getElementById(triggerID);
-		if(!trigger) return;
-		for(var i = 0; i < contextualGroups.length; i++) {
-			if(contextualGroups[i].trigger === trigger) {
-				
-			}
-		}
-	}
+
 
 	/**
 	 * add a new validator to the form
@@ -269,39 +231,102 @@ Adoro.FormValidator = function(formNode, options) {
 	 * remove a validator from the form
 	 * remove the whole validator or remove particular rules for the validator
 	 * @param {String} key The key for the validator being the name of the field
-	 * @param {String[]} ruleKeys Array of strings representing the names of the rule methods
+	 * @param {String[]} ruleKeys Array of function references (to the rule methods)
 	 * @return {Object} this To enable chaining
 	 */
 	function removeValidator(key, ruleKeys) {
 		var ruleKeys = ruleKeys || null;
 		var validator, rule;
 		var numberOfItemsToRemoveFromArray = 1;
+		var allRulesRemoved = false;
 		for(var i = 0; i<validators.length; i++) {
 			validator = validators[i];
 			// at this point we get the key i.e name of field
 			// and if there are ruleKeys
 			if(validator.key === key) {
-				// remove just the key in question
+				// remove just the key/validator in question
 				if(Adoro.isArray(ruleKeys)) {
 					// loop thru rules in validator
 					for(var j = 0; j < validator.rules.length; j++) {
 						rule = validator.rules[j];
+						
 						for(var k = 0; k < ruleKeys.length; k++) {
-							if(Adoro.FormRules[ruleKeys[k]] === rule.method) {
+							if(ruleKeys[k] === rule.method) {
 								validator.rules.splice(j,numberOfItemsToRemoveFromArray);
-								j--; //we altered the array so carry on looping from the same point.
+								j--;
+								// if by removing a validator, all validators are removed then finish looping
+								if(validator.rules.length === 0) {
+									//console.log("about to set to true");
+									allRulesRemoved = true;
+									// remove whole validator
+									validators.splice(i, numberOfItemsToRemoveFromArray);
+									break;
+								}	
+							
 							}
+						}
+						
+						if(allRulesRemoved) {
+							break;
 						}
 					}
 				}
-				// remove whole validator
 				else {
+					// remove whole validator
 					validators.splice(i, numberOfItemsToRemoveFromArray);
 				}
+				break;
 			}
 		}
 		return this;
 	}	
+	
+	/**
+	 * Create a new contextual group
+	 * @class Represents a contextual group
+	 * @constructor
+	 * @private
+	 * @param {Node} trigger DOM reference to contextual submit button
+	 * @param {String[]} ruleKeys Array of keys (field 'names') that reference existing form fields
+	 */
+	function ContextualGroup(trigger, ruleKeys) {
+		this.trigger = trigger;
+		this.ruleKeys = ruleKeys;
+		$(trigger).bind("click", trigger_onClick);
+		
+		function trigger_onClick() {
+			setLastFiredButton(this);
+		}
+	}
+	
+	/**
+	 * add a new contextual group for the form
+	 * @function
+	 * @public
+	 * @param {String} triggerID The ID of the contextual submit button
+	 * @param {String[]} ruleKeys Array of keys that reference existing form fields
+	 */
+	function addContextualGroup(triggerID, ruleKeys) {
+		var trigger = document.getElementById(triggerID);
+		if(!trigger) return;
+		contextualGroups.push(new ContextualGroup(trigger, ruleKeys));
+	}	
+	
+	
+	// WORK IN PROGRESS
+	function removeContextualGroup(triggerId) {
+		var trigger = document.getElementById(triggerID);
+		if(!trigger) return;
+		for(var i = 0; i < contextualGroups.length; i++) {
+			if(contextualGroups[i].trigger === trigger) {
+				validators.splice(i, numberOfItemsToRemoveFromArray);
+			}
+		}
+	}	
+	
+	function setLastFiredButton(button) {
+		lastClickedButton = button;
+	}
 	
 	function getLastFiredButton() {
 		return lastClickedButton;
@@ -310,7 +335,6 @@ Adoro.FormValidator = function(formNode, options) {
 	function resetLastFiredButton() {
 		lastClickedButton = null;
 	}	
-	
 	
 	// public members
 	this.addValidator = addValidator;

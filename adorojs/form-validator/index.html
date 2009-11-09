@@ -82,7 +82,16 @@
 					}]
 				);	
 				
+				fv.addValidator("telephone", [{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for telephone"
+					}]
+				);
+				
 				fv.addContextualGroup("submitForm2", ["username"]);
+				
+				//fv.removeValidator("username", [Adoro.FormRules.notEmpty, Adoro.FormRules.isLength]);
+				//fv.removeValidator("password", [Adoro.FormRules.notEmpty]);
 				
 			});
 		</script>
@@ -95,6 +104,7 @@
 			</div>
 			
 			<form method="post" action="index.html">
+				<input type="submit" name="submitForm" />
 				<div class="field">
 					<div class="indicator">
 						<label>YO</label>
@@ -112,6 +122,16 @@
 						<input type="text" name="password" />
 					</div>
 				</div>
+				
+				<div class="field">
+					<div class="indicator">
+						<label>another field</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="telephone" />
+					</div>
+				</div>				
+				
 				<input type="submit" name="submitForm" />
 			</form>
 			
