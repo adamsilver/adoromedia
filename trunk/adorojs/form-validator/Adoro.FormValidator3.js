@@ -13,6 +13,8 @@ Adoro.FormValidator = function(formNode, options) {
 	var contextualGroups = [];
 	
 	me.validators = validators; // temp?
+	me.errors = errors; // temp?
+	me.contextualGroups = contextualGroups; // temp?
 	
 	// other bits
 	var lastClickedButton = null;
@@ -26,6 +28,7 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFormError = options.onFormError || null;
 	var onFormSuccess = options.onFormSuccess || null;
 	var onClearErrors = options.onClearErrors || null;
+	var rulesToRunPerValidatorBeforeBreak  = 1; // TODO, if becomes a requirement
 	
 	// validator level options
 	var onFieldValidateBase = options.onFieldValidate || null;
@@ -156,10 +159,6 @@ Adoro.FormValidator = function(formNode, options) {
 		if(typeof onClearErrors === "function") onClearErrors.call(me, validators);
 	}
 	
-	function addError(fieldName, message) {
-		errors.push(new Error(fieldName, message));
-	}
-	
 	/**
 	 * is rule valid
 	 * @function
@@ -194,9 +193,20 @@ Adoro.FormValidator = function(formNode, options) {
 		this.id = id;
 		this.message = message;
 	}
+
+	function addError(fieldName, message) {
+		errors.push(new Error(fieldName, message));
+	}
+
+	function removeError(fieldName) {
+		for(var i = 0; i< errors.length; i++) {
+			if(errors[i].id === fieldName) {
+				errors.splice(i, 1);
+				break;
+			}
+		}
+	}
 	
-
-
 	/**
 	 * add a new validator to the form
 	 * @function
@@ -312,26 +322,48 @@ Adoro.FormValidator = function(formNode, options) {
 		contextualGroups.push(new ContextualGroup(trigger, ruleKeys));
 	}	
 	
-	
-	// WORK IN PROGRESS
+	/**
+	 * remove a contextual group for the form
+	 * @function
+	 * @public
+	 * @param {String} triggerID The ID of the contextual submit button for the group
+	 */	
 	function removeContextualGroup(triggerId) {
-		var trigger = document.getElementById(triggerID);
+		var trigger = document.getElementById(triggerId);
 		if(!trigger) return;
+		var numberOfItemsToRemoveFromArray = 1;
 		for(var i = 0; i < contextualGroups.length; i++) {
 			if(contextualGroups[i].trigger === trigger) {
-				validators.splice(i, numberOfItemsToRemoveFromArray);
+				contextualGroups.splice(i, numberOfItemsToRemoveFromArray);
+				break;
 			}
 		}
 	}	
 	
+	/**
+	 * set the last fired button
+	 * @function
+	 * @private
+	 * @param {Node} button The reference to the button
+	 */		
 	function setLastFiredButton(button) {
 		lastClickedButton = button;
 	}
 	
+	/**
+	 * get the last fired button
+	 * @function
+	 * @private
+	 */		
 	function getLastFiredButton() {
 		return lastClickedButton;
 	}
 	
+	/**
+	 * reset the last fired button to null
+	 * @function
+	 * @private
+	 */		
 	function resetLastFiredButton() {
 		lastClickedButton = null;
 	}	
@@ -340,7 +372,19 @@ Adoro.FormValidator = function(formNode, options) {
 	this.addValidator = addValidator;
 	this.removeValidator = removeValidator;
 	this.addContextualGroup = addContextualGroup;
-	//this.removeContextualGroup = removeContextualGroup;
+	this.removeContextualGroup = removeContextualGroup;
 	this.addError = addError;
-	//this.removeError = removeError;
+	this.removeError = removeError;
+}
+
+Adoro.FormValidator.prototype.getErrors = function() {
+	return this.errors;
+}
+
+Adoro.FormValidator.prototype.getContextualGroups = function() {
+	return this.contextualGroups;
+}
+
+Adoro.FormValidator.prototype.getValidators = function() {
+	return this.validators;
 }
