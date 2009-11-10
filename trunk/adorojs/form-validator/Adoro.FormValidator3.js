@@ -303,11 +303,21 @@ Adoro.FormValidator = function(formNode, options) {
 		this.trigger = trigger;
 		this.ruleKeys = ruleKeys;
 		$(trigger).bind("click", trigger_onClick);
-		
+		var clone = $(trigger).clone()[0] || null;
+		$(clone).css("position", "absolute");
+		$(clone).css("left", "-999em");
+				
 		function trigger_onClick() {
 			setLastFiredButton(this);
 		}
-	}
+		function trigger_onFocus() {
+			$(formNode).prepend(clone);		
+		}
+		function trigger_onBlur() {
+			$(clone).remove();
+		}
+	}	
+	
 	
 	/**
 	 * add a new contextual group for the form
