@@ -1,1 +1,0 @@
-<link rel="stylesheet" href="<%=Site.URL%>/css/default.css" type="text/css" />
