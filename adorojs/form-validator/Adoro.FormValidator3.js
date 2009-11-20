@@ -389,4 +389,4 @@ Adoro.FormValidator.prototype.getContextualGroups = function() {
 
 Adoro.FormValidator.prototype.getValidators = function() {
 	return this.validators;
-}
+}1
