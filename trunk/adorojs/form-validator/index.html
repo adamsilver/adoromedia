@@ -33,14 +33,14 @@
 					}
 				});
 				
-				function cleanFields(validators) {				
+				function cleanFields(validators) {
 					for(var i = 0; i < validators.length; i++) {
 						cleanField(validators[i].field);
 					}
 				}
 				
 				function cleanField(field) {
-					$(field).css("backgroundColor", "#fff");
+					$(field).css("background-color", "#fff");
 				}
 				
 				function restoreErrorSummaryZone() {
@@ -91,7 +91,7 @@
 				
 				fv.addContextualGroup("submitForm2", ["username"]);
 				
-				console.log(fv.getErrors());
+				//console.log(fv.getErrors());
 				
 				//fv.removeValidator("username", [Adoro.FormRules.notEmpty, Adoro.FormRules.isLength]);
 				//fv.removeValidator("password", [Adoro.FormRules.notEmpty]);
