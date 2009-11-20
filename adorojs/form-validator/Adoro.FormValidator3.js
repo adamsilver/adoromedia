@@ -12,10 +12,6 @@ Adoro.FormValidator = function(formNode, options) {
 	var errors = [];
 	var contextualGroups = [];
 	
-	me.validators = validators; // temp?
-	me.errors = errors; // temp?
-	me.contextualGroups = contextualGroups; // temp?
-	
 	// other bits
 	var lastClickedButton = null;
 	
@@ -89,7 +85,6 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 		
 		function validate() {
-		
 			if(typeof onFieldValidate === "function") onFieldValidate.call(field);
 			// run thru all rules
 			var rule, valid=true, params;
@@ -377,16 +372,4 @@ Adoro.FormValidator = function(formNode, options) {
 	this.removeContextualGroup = removeContextualGroup;
 	this.addError = addError;
 	this.removeError = removeError;
-}
-
-Adoro.FormValidator.prototype.getErrors = function() {
-	return this.errors;
-}
-
-Adoro.FormValidator.prototype.getContextualGroups = function() {
-	return this.contextualGroups;
-}
-
-Adoro.FormValidator.prototype.getValidators = function() {
-	return this.validators;
 }2
