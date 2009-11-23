@@ -1,4 +1,4 @@
-$.namespace("Salmon");
+var Salmon = Salmon || {};
 Salmon.ImageRollover = function(image, newSrc) {
 	
 	var origingalSrc = image.src;
