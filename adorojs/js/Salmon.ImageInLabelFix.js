@@ -7,8 +7,6 @@ $.namespace("Salmon");
  */
 Salmon.ImageInLabelFix = new (function(){
 	$(window).bind("load", init);
-	$.subscribe(Salmon.UI.CustomEvents.quickLookDataReceived, init);
-	
 	
 	var imageLabels = [];
 	
