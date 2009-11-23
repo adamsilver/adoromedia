@@ -9,6 +9,7 @@ Adoro.FormValidator = function(formNode, options) {
 
 	// collections
 	var validators = [];
+	this.validators = validators;
 	var errors = [];
 	var contextualGroups = [];
 	
@@ -31,10 +32,12 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFieldErrorBase = options.onFieldError || null;	
 	var onFieldSuccessBase = options.onFieldSuccess || null;	
 	var validateOnBlurBase = options.validateOnBlur || false;	
-		
-	$(formNode).bind("submit", function(e){
-		return validate.call(formNode);
-	});
+	
+	if(formNode) {
+		$(formNode).bind("submit", function(e){
+			return validate.call(formNode);
+		});
+	}
 	
 	function validate() {
 		if(typeof onValidateStart === "function") onValidateStart.call(me);
@@ -213,9 +216,10 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {String} rule.message
 	 */
 	function addValidator(fieldName, rules, options) {
+		if(!formNode) return this;
 		var field = $(formNode).find("[name='"+fieldName+"']");
-		if(field.length === 0) return;
-		if(!Adoro.isArray(rules)) return;
+		if(field.length === 0) return this;
+		if(!Adoro.isArray(rules)) return this;
 		var validRules = [];
 		var rule;
 		for(var i = 0; i < rules.length; i++) {
@@ -228,7 +232,6 @@ Adoro.FormValidator = function(formNode, options) {
 		if (validRules.length > 0) {
 			validators.push(new Validator(field, validRules, options));
 		}
-		
 		return this;
 	}	
 	
@@ -372,4 +375,8 @@ Adoro.FormValidator = function(formNode, options) {
 	this.removeContextualGroup = removeContextualGroup;
 	this.addError = addError;
 	this.removeError = removeError;
-}2
+}
+
+Adoro.FormValidator.prototype.getValidators = function() {
+	return this.validators;
+}
