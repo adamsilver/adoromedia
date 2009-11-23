@@ -32,12 +32,16 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFieldErrorBase = options.onFieldError || null;	
 	var onFieldSuccessBase = options.onFieldSuccess || null;	
 	var validateOnBlurBase = options.validateOnBlur || false;	
+
+	
 	
 	if(formNode) {
 		$(formNode).bind("submit", function(e){
 			return validate.call(formNode);
 		});
 	}
+	
+	
 	
 	function validate() {
 		if(typeof onValidateStart === "function") onValidateStart.call(me);
@@ -172,6 +176,7 @@ Adoro.FormValidator = function(formNode, options) {
 		if(typeof rule.method !== "function") {
 			valid = false;
 		}
+	
 		if(typeof rule.message !== "string") {
 			valid = false;
 		}
@@ -220,6 +225,7 @@ Adoro.FormValidator = function(formNode, options) {
 		var field = $(formNode).find("[name='"+fieldName+"']");
 		if(field.length === 0) return this;
 		if(!Adoro.isArray(rules)) return this;
+	
 		var validRules = [];
 		var rule;
 		for(var i = 0; i < rules.length; i++) {
@@ -228,6 +234,7 @@ Adoro.FormValidator = function(formNode, options) {
 				validRules.push(rule);
 			}
 		}
+		
 		
 		if (validRules.length > 0) {
 			validators.push(new Validator(field, validRules, options));
