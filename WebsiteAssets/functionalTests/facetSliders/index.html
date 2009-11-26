@@ -138,14 +138,13 @@
 							indicator.innerHTML = config.sliderMaxValue - ui.value;
 						}
 					});
-					
-					//$(slider).slider("moveTo", 1);
+
 					
 					setBackgroundHeight();
 					
 					$(container).find("div.labels a").bind("click",function(){
 						var num = parseInt($(this).find("span")[0].innerHTML);
-						$(slider).slider("moveTo", num);
+						$(slider).slider("value",num);
 						return false;
 					});
 					
@@ -269,13 +268,13 @@
 				<h2>Carat</h2>
 				
 				<div class="labels">
-					<p class="value"><a href="#">2<span>0</span></a></p>
-					<p class="value"><a href="#">1.5<span>1</span></a></p>
-					<p class="value"><a href="#">1<span>2</span></a></p>
+					<p class="value"><a href="#">2<span>6</span></a></p>
+					<p class="value"><a href="#">1.5<span>5</span></a></p>
+					<p class="value"><a href="#">1<span>4</span></a></p>
 					<p class="value"><a href="#">0.75<span>3</span></a></p>
-					<p class="value"><a href="#">0.5<span>4</span></a></p>
-					<p class="value"><a href="#">0.3<span>5</span></a></p>
-					<p class="value"><a href="#">0.25<span>6</span></a></p>
+					<p class="value"><a href="#">0.5<span>2</span></a></p>
+					<p class="value"><a href="#">0.3<span>1</span></a></p>
+					<p class="value"><a href="#">0.25<span>0</span></a></p>
 				</div>
 				
 				<div class="slider">
