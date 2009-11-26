@@ -8,23 +8,24 @@ $(document).ready(function(){
 	Adoro.FieldHighlighter = new (function() {
 		var config = {cssHightlight: "highlight"};
 		var fields = $("input, textarea, select");
+
 		for(var i = fields.length-1; i>=0; i--) {
-			new FieldHighligher(fields[i]);
+			new FieldHighlighter(fields[i]);
 		}
 				
-		function FieldHighligher(field) {
-			fields.onfocus = field_onFocus;
-			fields.onblur = field_onBlur;
+		function FieldHighlighter(field) {
+			$(field).bind("focus",field_onFocus);
+			$(field).bind("blur",field_onBlur);
 		}
 		
 		function field_onFocus(e) {
-			$(this).parents("div.field").addClass(config.cssHightlight);
+			$(this).addClass(config.cssHightlight);
 		}
 		
 		function field_onBlur(e) {
-			$(this).parents("div.field").removeClass(config.cssHightlight);
+			$(this).removeClass(config.cssHightlight);
 		}		
 		
-		return FieldHighligher;		
+		return FieldHighlighter;		
 	});
 });
