@@ -32,7 +32,7 @@
  * @static
  * @name Adoro
  */
-if (typeof Adoro !== "object") { var Adoro = {}; }
+var Adoro = Adoro || {};
 
 /**
  * Add a namespace
