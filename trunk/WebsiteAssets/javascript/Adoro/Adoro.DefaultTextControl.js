@@ -30,7 +30,7 @@ if(typeof Adoro !== "object") var Adoro = {};
  * @param {Node} field The input field
  */
 Adoro.DefaultTextControl = function(field) {
-	if(field === null || field === "undefined" || field.type !== "text") return null;
+	if(!field || field.type !== "text") return;
 
 	field.onfocus = function() {
 		if(field.value === field.defaultValue) {
