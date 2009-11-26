@@ -32,9 +32,11 @@ if(typeof Adoro !== "object") var Adoro = {};
 Adoro.PrintButton = function(anchor) {
 	var anchor = anchor || null;
 	if(!anchor) return;
-	$(anchor).bind("click", print);
-	function print() {
+	$(anchor).bind("click", this.print);
+}
+Adoro.PrintButton.prototype = {
+	print: function() {
 		window.print();
 		return false;
-	}
+	}	
 }
