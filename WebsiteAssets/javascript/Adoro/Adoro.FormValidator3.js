@@ -372,4 +372,4 @@ Adoro.FormValidator = function(formNode, options) {
 	this.removeContextualGroup = removeContextualGroup;
 	this.addError = addError;
 	this.removeError = removeError;
-}2
+}
