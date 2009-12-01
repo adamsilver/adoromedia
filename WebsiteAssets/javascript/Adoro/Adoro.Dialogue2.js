@@ -24,6 +24,7 @@
 var Adoro = Adoro || {};
 $(document).ready(function(){
 	Adoro.Dialogue = new (function(){
+		var state = {showingOverlay:false};
 		var config = {
 			overlayId: "overlay", // if you change this then the css must change
 			dialogueId: "dialogue", // if you change this then the css must change
@@ -34,7 +35,7 @@ $(document).ready(function(){
 		var overlay = (function(){
 			var o;
 			o = document.createElement("div");
-			o.id = config.overlayID;
+			o.id = config.overlayId;
 			if(IE6 || FF2) {
 				$(o).css({position: "absolute"});
 			}
@@ -44,7 +45,7 @@ $(document).ready(function(){
 		var dialogue = (function(){
 			var o;
 			o = document.createElement("div");
-			o.id = config.dialogueID;
+			o.id = config.dialogueId;
 			document.body.appendChild(o);
 			return o;
 		}());
