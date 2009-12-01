@@ -88,7 +88,7 @@ $(document).ready(function(){
 		* @function
 		* @public
 		* @memberOf Adoro.Dialogue
-		* @name showLightBox
+		* @name showDialogue
 		* @param {Object} options for the function
 		* @param {Number} options.x The dialogue x coordinate for positioning, default center
 		* @param {Number} options.y The dialogue y coordinate for positioning, default center
@@ -133,7 +133,7 @@ $(document).ready(function(){
 			
 			if(IE6) {
 				$("select, object, embed").css("display", "none");
-				// needs to be done for when the lightbox increases the page size
+				// needs to be done for when the dialogue increases the page size
 				fixOverlay();
 			}
 			
@@ -187,7 +187,7 @@ $(document).ready(function(){
 		* Set the inner HTML for the dialogue
 		* @function
 		* @public
-		* @memberOf Adoro.LightBox
+		* @memberOf Adoro.Dialogue
 		* @name setHTML
 		*/			
 		function setHTML(html) {
