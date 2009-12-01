@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
+		<script type="text/javascript">
+			
+			var ArgosFormValidator = function(formNode) {
+				var errorSummary = document.getElementById("errorContainer");
+				var docTitle = document.title;
+				
+				return new Adoro.FormValidator(formNode, {
+					onClearErrors: function(validators) {
+						restoreErrorSummaryZone();
+						cleanFields(validators);
+					},
+					onFormError: function(errors) {
+						showErrorSummaryZone(errors);
+					},
+					onFieldValidate: function() {
+						var width = $(this).width();
+						$(this).animate({"width":"200px"},{});
+						$(this).animate({"width": width+"px"},{});
+					},
+					onFieldError: function() {
+						$(this).css("backgroundColor", "#f00");
+					},
+					onFieldSuccess: function() {
+						$(this).css("backgroundColor", "#31cf2d");
+					}
+				});
+				
+				function cleanFields(validators) {
+					for(var i = 0; i < validators.length; i++) {
+						cleanField(validators[i].field);
+					}
+				}
+				
+				function cleanField(field) {
+					$(field).css("background-color", "#fff");
+				}
+				
+				function restoreErrorSummaryZone() {
+					if(!errorSummary) return;
+					document.title = docTitle;
+					errorSummary.innerHTML = '';
+				}
+				
+				function showErrorSummaryZone(errors) {
+					if(!errorSummary) return;
+					var html = '<ul>';
+					for(var i = 0; i < errors.length; i++) {
+						html+=	'<li>';
+						html+=		'<a href="#'+errors[i].id+'">'+	errors[i].message + '</a>';
+						html+=	'</li>';
+					}
+					html +='</ul>';
+					errorSummary.innerHTML = html;
+					window.scrollTo(0, $(errorSummary).position().top);
+				}
+			}
+			
+			$(document).ready(function() {
+				var formNode = $("form")[0];
+				var fv = new ArgosFormValidator(formNode);
+				fv.addValidator("username",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for username"
+					},{
+						method: Adoro.FormRules.isLength,
+						message: "The username should have a length of 3",
+						params: {length: 3}
+					}]
+				);
+
+				fv.addValidator("password",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for password"
+					}]
+				);	
+				
+				fv.addValidator("telephone", [{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for telephone"
+					}]
+				);
+				
+				
+				fv.addContextualGroup("submitForm2", ["username"]);
+				
+				//console.log(fv.getErrors());
+				
+				//fv.removeValidator("username", [Adoro.FormRules.notEmpty, Adoro.FormRules.isLength]);
+				//fv.removeValidator("password", [Adoro.FormRules.notEmpty]);
+				
+			});
+		</script>
+		
+		<script>
+			var BootsFormValidator = function(formNode) {
+				var errorContainer = document.getElementById("errorMessages");				
+				
+				return new Adoro.FormValidator(formNode, {
+					onClearErrors: function(validators) {
+						restoreErrorSummaryZone();
+						cleanFields(validators);
+					},
+					onFormError: function(errors) {
+						showErrorSummaryZone(errors);
+					},
+					onFieldValidate: function() {
+						//var width = $(this).width();
+						//$(this).animate({"width":"200px"},{});
+						//$(this).animate({"width": width+"px"},{});
+					},
+					onFieldError: onFieldError,
+					onFieldSuccess: function() {
+						
+					}
+				});
+				
+				function onFieldError(rule) {
+					addErrorClassToWrapper(this);
+					addErrorSpanToField(this, rule)
+					
+				}
+				
+				function addErrorSpanToField(field, rule) {
+					var indicatorNode = getLabelOrLegend(field);
+					
+					var spanHtml = '';
+					spanHtml += '<span class="errorText">';
+					spanHtml += ' '+rule.message;
+					spanHtml += '</span>';
+					
+					$(indicatorNode).append(spanHtml);
+				}
+				
+				function removeErrorSpanFromField(field) {
+					var indicatorNode = getLabelOrLegend(field);
+					$(indicatorNode).find("span.errorText").remove();
+	
+				}
+				
+				function addErrorClassToWrapper(field) {
+					$(field).parents("div.field").addClass("error");
+				}
+				
+				function cleanFields(validators) {
+					for(var i = 0; i < validators.length; i++) {
+						cleanField(validators[i].field);
+					}
+				}
+				
+				function cleanField(field) {
+					$(field).parents("div.field").removeClass("error");
+					removeErrorSpanFromField(field);
+				}
+				
+				function getLabelOrLegend(field) {
+					var returnValue = null;
+					var singleInputLabel = $(field).parents("div.singleInput").prev("div.indicator").find("label")[0];
+					if(singleInputLabel !== undefined){
+						returnValue = singleInputLabel;
+					}					
+					var radiosLegend = $(field).parents("div.radios").find("legend")[0];
+					if(radiosLegend !== undefined){
+						returnValue = radiosLegend;
+					}					
+					var checkboxesLegend = $(field).parents("div.checkboxes").find("legend")[0];
+					if(checkboxesLegend !== undefined){
+						returnValue = checkboxesLegend;
+					}
+					var checkboxesLabel = $(field).parents("div.checkboxes").find("div.input label")[0];
+					if(checkboxesLabel !== undefined) {
+						returnValue = checkboxesLabel;
+					}
+					var multipleInputLabel = $(field).parents("div.multipleInput")[0];
+					if(multipleInputLabel !== undefined) {
+						returnValue = $(field).prev("label")[0] || $(field).next("label")[0];
+					}
+					return returnValue;
+				}
+				
+				function restoreErrorSummaryZone() {
+					if(!errorContainer) return;
+					errorContainer.innerHTML = '';
+				}				
+				
+				function showErrorSummaryZone(errors) {
+					if(!errorContainer) return;
+					var html = '<ul>';
+					for(var i = 0; i < errors.length; i++) {
+						html+=	'<li>';
+						html+=		'<a href="#'+errors[i].id+'">'+	errors[i].message + '</a>';
+						html+=	'</li>';
+					}
+					html +='</ul>';
+					errorContainer.innerHTML = html;
+					window.scrollTo(0, $(errorContainer).position().top);
+				}				
+				
+			}		
+			
+			$(document).ready(function() {
+				var formNode = document.getElementById("bootsForm");
+				var fv = new BootsFormValidator(formNode);
+
+				fv.addValidator("firstName",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "Please provide a first name"
+					}]
+				);
+				fv.addValidator("lastName",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "Please provide a last name"
+					}]
+				);			
+				fv.addValidator("favouriteColour",[{
+						method: Adoro.FormRules.minChecked,
+						message: "Please provide a favourite",
+						params: {minChecked: 1}
+					}]
+				);	
+			});			
+			
+		</script>
+	</head>
+	<body>
+		<h1>Adoro Form Validator</h1>
+		
+		<div id="container">
+			
+			<h2>Argos Form Validator</h2>
+			
+			<div id="errorContainer">
+			</div>
+			
+			<form method="post" action="index.html">
+				<input type="submit" name="submitForm" />
+				<div class="field">
+					<div class="indicator">
+						<label>YO</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="username" />
+					</div>
+				</div>
+				<input type="submit" name="submitForm2" id="submitForm2" value="validate username only"/>
+				<div class="field">
+					<div class="indicator">
+						<label>Password label but you don't need one</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="password" />
+					</div>
+				</div>
+				
+				<div class="field">
+					<div class="indicator">
+						<label>another field</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="telephone" />
+					</div>
+				</div>				
+				
+				<input type="submit" name="submitForm" />
+			</form>
+			
+			<h2>Boots Form Validator</h2>
+			
+			<div id="errorMessages">
+				
+			</div>
+			
+			<form method="post" action="index.html" id="bootsForm">
+				<div class="field">
+					<div class="indicator">
+						<label for="firstName">First name</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="firstName" id="firstName" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="indicator">
+						<label for="lastName">Last name</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="lastName" id="lastName" />
+					</div>
+				</div>
+				
+				<div class="field">
+					<div class="indicator">
+						<span class="label">Favourite colour</span>
+					</div>
+					<div class="radios">
+						<fieldset>
+							<legend><span class="legend">The legend</span></legend>
+							<div class="input">
+								<input type="radio" name="favouriteColour" id="favouriteColour01" value="1" />
+								<label for="favouriteColour01">Red</label>
+							</div>
+							<div class="input">
+								<input type="radio" name="favouriteColour" id="favouriteColour02" value="2" />
+								<label for="favouriteColour02">Blue</label>
+							</div>
+							<div class="input">
+								<input type="radio" name="favouriteColour" id="favouriteColour03" value="3" />
+								<label for="favouriteColour03">Green</label>
+							</div>					
+						</fieldset>
+					</div>
+				</div>
+				<input type="submit" name="submitForm" />
+			</form>			
+			
+		</div>
+	</body>
+</html>

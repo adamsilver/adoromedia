@@ -1,0 +1,270 @@
+/********************************************************
+ * Facet control 1: my style
+ */
+
+div#facetControlMyStyle {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+	position: relative;
+}
+
+div#facetControlMyStyle p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div#facetControlMyStyle div.labels {
+	overflow: hidden;
+	width: 232px;
+}
+
+div#facetControlMyStyle div.labels p {
+	float: left;
+	width: 116px;
+}
+
+div#facetControlMyStyle div.labels p.sleek {
+
+}
+
+div#facetControlMyStyle div.labels p.dazzling {
+	text-align: right;
+}
+
+div#facetControlMyStyle div.labels p span {
+	display: block;
+}
+
+div#facetControlMyStyle div.slider {
+	width: 232px;
+	height: 28px;
+	position: relative;
+	background-color: #CCC;
+	margin-bottom: 5px;
+}		
+
+div#facetControlMyStyle div.sliderInner {
+	width: 0px;
+	height: 28px;
+	position: absolute;
+	background-color: #898F2C;
+}		
+
+div#facetControlMyStyle a.ui-slider-handle {
+	position: absolute;
+	top: -3px;
+	left: 0px;
+	width: 8px;
+	height: 36px;
+	background: url(handle1.gif) no-repeat;
+}
+
+/********************************************************
+ * Facet control 2: my style
+ */
+
+div#facetControlPrice {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+	position: relative;
+}
+
+div#facetControlPrice p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div#facetControlPrice div.slider {
+	width: 176px;
+	height: 19px;
+	position: relative;
+	background-color: #CCCCCC;
+	margin-bottom: 5px;
+}		
+
+div#facetControlPrice div.sliderInner {
+	width: 0px;
+	height: 19px;
+	position: absolute;
+	background-color: #898F2C;
+}
+
+div#facetControlPrice a.ui-slider-handle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 8px;
+	height: 19px;
+	background: url(handle2.gif) no-repeat;	
+}
+
+div#facetControlPrice div.labels {
+	overflow: hidden;
+	width: 176px;
+}
+
+div#facetControlPrice div.labels p {
+	float: left;
+	width: 88px;
+}
+
+div#facetControlPrice div.labels p.less {
+
+}
+
+div#facetControlPrice div.labels p.more {
+	text-align: right;
+}
+
+div#facetControlPrice div.labels p span {
+	display: block;
+}
+
+/********************************************************
+ * Facet control 3: carat weight
+ */
+
+div#facetControlCarat {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+	overflow: hidden;
+	position: relative;
+}
+
+div#facetControlCarat p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div#facetControlCarat div.labels {
+	float: left;
+	width: 100px;
+	margin-right: 25px;
+}
+
+div#facetControlCarat div.labels p {
+	margin-bottom: 24px;
+}
+
+div#facetControlCarat div.labels p span {
+	display: none;
+}
+
+div#facetControlCarat div.slider {
+	height: 250px;
+	float: left;
+	width: 19px;
+	position: relative;
+	background-color: #CCCCCC;
+}
+
+div#facetControlCarat div.sliderInner {
+	width: 19px;
+	height: 0px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	background-color: #898F2C;
+}
+
+div#facetControlCarat a.ui-slider-handle{
+	position: absolute;
+	left: 0px;
+	width: 19px;
+	height: 8px;
+	background: url(handle3.gif) no-repeat;	
+}
+
+/********************************************************
+ * Facet control 4: ring material
+ */
+
+div#facetControlMaterial {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+	overflow: hidden;
+	position: relative;
+}
+
+div#facetControlMaterial p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div#facetControlMaterial ul {
+	list-style: none;
+	width: 176px;
+}
+
+div#facetControlMaterial ul li {
+	font-size: 1.2em;
+}
+
+div#facetControlMaterial ul li a {
+	border: 1px solid #f5f5f5;
+	background: transparent;
+	color: #4D595F;
+	display: block;
+	padding: 5px;
+}
+
+div#facetControlMaterial ul li a.selected,
+div#facetControlMaterial ul li a:hover {
+	border: 1px solid #333;
+	text-decoration: none;
+}
+
+/********************************************************
+ * Facet control 5: stone shape
+ */
+
+div#facetControlShape {
+	margin-bottom: 10px;
+	border: 1px solid #EEE;
+	background: #f5f5f5;
+	padding: 15px;
+	overflow: hidden;
+	position: relative;
+}
+
+div#facetControlShape p.indicator {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div#facetControlShape ul {
+	list-style: none;
+}
+
+div#facetControlShape ul li {
+	font-size: 1.2em;
+	float: left;
+	margin-right: 5px;
+}
+
+div#facetControlShape ul li a {
+	border: 1px solid #f5f5f5;
+	background: transparent;
+	color: #4D595F;
+	display: block;
+	padding: 5px;
+}
+
+div#facetControlShape ul li a.selected,
+div#facetControlShape ul li a:hover {
+	border: 1px solid #333;
+	text-decoration: none;
+}
