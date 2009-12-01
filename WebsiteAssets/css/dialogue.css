@@ -1,0 +1,17 @@
+div#overlay {
+	background-color:#FFFFFF;
+	display:none;
+	height:100%;
+	left:0;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:50;
+}
+
+div#dialogue {
+	left:-99999em;
+	position:absolute;
+	top:0;
+	z-index:99;
+}
