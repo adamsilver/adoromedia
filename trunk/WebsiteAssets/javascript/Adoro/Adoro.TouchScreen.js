@@ -1,4 +1,4 @@
-var touchScreen = {}
+var touchScreen = {};
 touchScreen.inputHandler = {
 	initalFieldID: "FirstName",
 	init: function() {
