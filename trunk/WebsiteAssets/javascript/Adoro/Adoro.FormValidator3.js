@@ -2,7 +2,7 @@ var Adoro = Adoro || {};
 
 Adoro.isArray = function(value) {
 	return Object.prototype.toString.apply(value) === '[object Array]';
-}
+};
 
 Adoro.FormValidator = function(formNode, options) {
 	var me = this;
@@ -16,7 +16,7 @@ Adoro.FormValidator = function(formNode, options) {
 	var lastClickedButton = null;
 	
 	// options
-	var options = options || {};
+	options = options || {};
 	
 	// form level options
 	var onValidateStart = options.onValidateStart || null;
@@ -37,7 +37,9 @@ Adoro.FormValidator = function(formNode, options) {
 	});
 	
 	function validate() {
-		if(typeof onValidateStart === "function") onValidateStart.call(me);
+		if(typeof onValidateStart === "function") {
+			onValidateStart.call(me);
+		}
 		clearErrors();
 	
 		var validator, field, key;
@@ -49,19 +51,27 @@ Adoro.FormValidator = function(formNode, options) {
 			// if it is a contextual submit button 
 			// make sure the validator is applied...
 			// ...to that contextualGroup before validating it
-			if((isContextualSubmit() && !inGroupRuleKeys(getLastFiredButton(), key))) continue;
+			if((isContextualSubmit() && !inGroupRuleKeys(getLastFiredButton(), key))) {
+				continue;
+			}
 			
 			// loop through all rules in that validator
 			validator.validate();
 		}
 		
-		if(typeof onValidateComplete === "function") onValidateComplete.call(me);
+		if(typeof onValidateComplete === "function") {
+			onValidateComplete.call(me);
+		}
 		
 		if(hasErrors()) {
-			if(typeof onFormError === "function") onFormError.call(me, errors);
+			if(typeof onFormError === "function") {
+				onFormError.call(me, errors);
+			}
 		}
 		else {
-			if(typeof onFormSuccess === "function") onFormSuccess.call(me);
+			if(typeof onFormSuccess === "function") {
+				onFormSuccess.call(me);
+			}
 		}
 		
 		resetLastFiredButton();
@@ -74,7 +84,7 @@ Adoro.FormValidator = function(formNode, options) {
 		this.field = field;
 		this.rules = rules;
 		
-		var options = options || {};
+		options = options || {};
 		var onFieldValidate = options.onFieldValidate || onFieldValidateBase || null;
 		var onFieldError = options.onFieldError || onFieldErrorBase || null;
 		var onFieldSuccess = options.onFieldSuccess || onFieldSuccessBase || null;
@@ -85,7 +95,9 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 		
 		function validate() {
-			if(typeof onFieldValidate === "function") onFieldValidate.call(field);
+			if(typeof onFieldValidate === "function") {
+				onFieldValidate.call(field);
+			}
 			// run thru all rules
 			var rule, valid=true, params;
 			for (var j = 0; j < rules.length; j++) {
@@ -94,18 +106,22 @@ Adoro.FormValidator = function(formNode, options) {
 				valid = rule.method.call(field, params);
 				if (!valid) {
 					addError(me.key, rule.message);
-					if(typeof onFieldError === "function") onFieldError.call(field, rule);
+					if(typeof onFieldError === "function") {
+						onFieldError.call(field, rule);
+					}
 					break;
 				}
-			};
+			}
 			
 			if(valid) {
-				if(typeof onFieldSuccess === "function") onFieldSuccess.call(field, rule);
+				if(typeof onFieldSuccess === "function") {
+					onFieldSuccess.call(field, rule);
+				}
 			}
 		}
 		
 		this.validate = validate;
-	};	
+	}	
 	
 	function isContextualSubmit() {
 		var b = false;
@@ -130,7 +146,9 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @return {Boolean} true when it should be validated false otherwise
 	 */
 	function inGroupRuleKeys(trigger, key) {
-		if(!trigger) return false;
+		if(!trigger) {
+			return false;
+		}
 		var isInRuleKeys = false;
 		var group, groupKey;
 		for(var i = 0; i < contextualGroups.length; i++) {
@@ -151,7 +169,9 @@ Adoro.FormValidator = function(formNode, options) {
 		
 	function clearErrors() {
 		errors = [];
-		if(typeof onClearErrors === "function") onClearErrors.call(me, validators);
+		if(typeof onClearErrors === "function") {
+			onClearErrors.call(me, validators);
+		}
 	}
 	
 	/**
@@ -214,8 +234,9 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
 	function addValidator(fieldName, rules, options) {
 		var field = $(formNode).find("[name='"+fieldName+"']");
-		if(field.length === 0) return;
-		if(!Adoro.isArray(rules)) return;
+		if(field.length === 0 || !Adoro.isArray(rules)) {
+			return this;
+		}
 		var validRules = [];
 		var rule;
 		for(var i = 0; i < rules.length; i++) {
@@ -240,7 +261,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @return {Object} this To enable chaining
 	 */
 	function removeValidator(key, ruleKeys) {
-		var ruleKeys = ruleKeys || null;
+		ruleKeys = ruleKeys || null;
 		var validator, rule;
 		var numberOfItemsToRemoveFromArray = 1;
 		var allRulesRemoved = false;
@@ -297,12 +318,12 @@ Adoro.FormValidator = function(formNode, options) {
 	function ContextualGroup(trigger, ruleKeys) {
 		this.trigger = trigger;
 		this.ruleKeys = ruleKeys;
-		$(trigger).bind("click", trigger_onClick);
-			
+		
 		function trigger_onClick() {
 			setLastFiredButton(this);
 		}
-
+		
+		$(trigger).bind("click", trigger_onClick);
 	}	
 	
 	
@@ -315,7 +336,9 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
 	function addContextualGroup(triggerID, ruleKeys) {
 		var trigger = document.getElementById(triggerID);
-		if(!trigger) return;
+		if(!trigger) {
+			return;
+		}
 		contextualGroups.push(new ContextualGroup(trigger, ruleKeys));
 	}	
 	
@@ -327,7 +350,9 @@ Adoro.FormValidator = function(formNode, options) {
 	 */	
 	function removeContextualGroup(triggerId) {
 		var trigger = document.getElementById(triggerId);
-		if(!trigger) return;
+		if(!trigger) {
+			return;
+		}
 		var numberOfItemsToRemoveFromArray = 1;
 		for(var i = 0; i < contextualGroups.length; i++) {
 			if(contextualGroups[i].trigger === trigger) {
@@ -372,4 +397,4 @@ Adoro.FormValidator = function(formNode, options) {
 	this.removeContextualGroup = removeContextualGroup;
 	this.addError = addError;
 	this.removeError = removeError;
-}
+};
