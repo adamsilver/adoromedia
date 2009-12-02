@@ -4,7 +4,7 @@ var Adoro = Adoro || {};
 Adoro.ContextualSubmitKeyboardHelper = function(fieldNode, submitButton) {
 	var form = $(fieldNode).parents("form")[0] || null;
 	var clone = $(submitButton).clone()[0] || null;
-	if(!fieldNode || !submitButton || form) return null;
+	if(!fieldNode || !submitButton || !form) return;
 	
 	$(fieldNode).bind("focus", fieldFocus);
 	
