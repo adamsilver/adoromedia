@@ -3,8 +3,7 @@ Site.Carousel = new (function(){
 	$(init);
 	
 	function init() {
-		var c = new Adoro.Carousel();
-		console.log(c);
+		var c = new Adoro.Carousel(document.getElementById("carousel"));
 	};
 	
 });
