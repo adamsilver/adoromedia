@@ -225,3 +225,36 @@ $(document).ready(function(){
 		
 	});
 });
+
+
+/*
+ 
+<div>
+	<div id="module1"></div>
+</div>
+
+<div>
+	<div id="module2"></div>
+</div>
+
+<div>
+	<div class="wrap">
+		<img />
+	</div>
+</div>
+
+1. get html
+2. show in <div>
+3. work out the dimensions
+4. move the <div> appropriately and show contents so that its centered
+
+1. get img url
+2. onload of image add to div
+3. work out dimensions
+4. move the <div> appropriately and show contents so that its centered
+
+
+
+
+Adoro.Dialogue.set
+*/
