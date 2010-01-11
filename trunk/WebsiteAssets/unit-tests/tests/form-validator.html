@@ -13,6 +13,46 @@
                 assertNotNull("Reference is not null", Adoro.FormValidator);  
             }
 
+            function testNoArguments() {
+                // when no arguments return null;
+                var fv = new Adoro.FormValidator();
+                assertUndefined("no arguments returns null", fv.addValidator);
+            }
+            
+			
+            function testAddValidatorWhenNoFormNode_dontAddValidator() {
+                var fv = new Adoro.FormValidator();
+				fv.addValidator("username", [{
+					method: function() {
+						return true
+					},
+					message: "helo there error"
+				}]);
+				assertEquals(0, fv.getValidators().length);
+            }
+			
+			function testAddValidatorWhenNoRules_dontAddValidator() {
+				var formNode = document.getElementById("form1");
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				
+				assertEquals(0, fv.getValidators().length);
+			}
+			
+			function testAddValidatorWhenEmptyRules_dontAddValidator() {
+				var formNode = document.getElementById("form1");
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", []);
+				assertEquals(0, fv.getValidators().length);
+			}	
+
+			function testAddValidatorWhenRulesAreEmptyObjects_dontAddValidator() {
+				var formNode = document.getElementById("form1");
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", [{}]);
+				assertEquals(0, fv.getValidators().length);
+			}	
+            
         </script>
     </head>
     
