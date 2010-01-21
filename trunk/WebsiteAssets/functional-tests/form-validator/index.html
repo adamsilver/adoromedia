@@ -6,6 +6,42 @@
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
 		<script type="text/javascript">
 			
+			var HomeBaseValidator = function(formNode) {
+				
+				return new Adoro.FormValidator(formNode, {
+					onFieldError: function(rule) {
+						alert(rule.message);
+						this.focus();
+					},
+					stopFurtherValidatorsRunningOnFirstError: true
+				})
+			
+			}
+			
+			$(document).ready(function() {
+				var formNode = $("form#homebaseForm")[0];
+				var fv = new HomeBaseValidator(formNode);
+				fv.addValidator("homebasefield",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for homebasefield1"
+					},{
+						method: Adoro.FormRules.isLength,
+						message: "The homebasefield1 should have a length of 3",
+						params: {length: 3}
+					}]
+				);
+				fv.addValidator("homebasefield2",[{
+						method: Adoro.FormRules.notEmpty,
+						message: "The error message for homebasefield2"
+					},{
+						method: Adoro.FormRules.isLength,
+						message: "The homebasefield2 should have a length of 3",
+						params: {length: 3}
+					}]
+				);				
+			});
+			
+			
 			var ArgosFormValidator = function(formNode) {
 				var errorSummary = document.getElementById("errorContainer");
 				var docTitle = document.title;
@@ -231,6 +267,28 @@
 		<h1>Adoro Form Validator</h1>
 		
 		<div id="container">
+			<h2>Homebase Form Validator</h2>
+			
+			<form method="post" action="index.html" id="homebaseForm">
+				<div class="field">
+					<div class="indicator">
+						<label for="homebasefield">homebasefield</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="homebasefield" id="homebasefield" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="indicator">
+						<label for="homebasefield2">homebasefield2</label>
+					</div>
+					<div class="singleInput">
+						<input type="text" name="homebasefield2" id="homebasefield2" />
+					</div>
+				</div>				
+
+				<input type="submit" name="submitForm" />
+			</form>	
 			
 			<h2>Argos Form Validator</h2>
 			
@@ -318,6 +376,8 @@
 				<input type="submit" name="submitForm" />
 			</form>			
 			
+			
+		
 		</div>
 	</body>
 </html>
