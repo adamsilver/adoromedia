@@ -25,6 +25,7 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFormSuccess = options.onFormSuccess || null;
 	var onClearErrors = options.onClearErrors || null;
 	var rulesToRunPerValidatorBeforeBreak  = 1; // TODO, if becomes a requirement
+	var stopFurtherValidatorsRunningOnFirstError = false || options.stopFurtherValidatorsRunningOnFirstError; // TODO, if becomes a requirement
 	
 	// validator level options
 	var onFieldValidateBase = options.onFieldValidate || null;
@@ -42,7 +43,7 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 		clearErrors();
 	
-		var validator, field, key;
+		var validator, field, key, valid = true;
 		for (var i = 0; i < validators.length; i++) {
 			validator = validators[i];
 			field = validator.field;
@@ -56,7 +57,12 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 			
 			// loop through all rules in that validator
-			validator.validate();
+			valid = validator.validate();
+
+			// if stopFurtherValidatorsRunningOnFirstError && and error has occured
+			if(stopFurtherValidatorsRunningOnFirstError && !valid) {
+				break;
+			}
 		}
 		
 		if(typeof onValidateComplete === "function") {
@@ -118,6 +124,7 @@ Adoro.FormValidator = function(formNode, options) {
 					onFieldSuccess.call(field, rule);
 				}
 			}
+			return valid;
 		}
 		
 		this.validate = validate;
