@@ -98,7 +98,7 @@
 			}
 			
 			$(document).ready(function() {
-				var formNode = $("form")[0];
+				var formNode = $("#argosForm")[0];
 				var fv = new ArgosFormValidator(formNode);
 				fv.addValidator("username",[{
 						method: Adoro.FormRules.notEmpty,
@@ -295,7 +295,7 @@
 			<div id="errorContainer">
 			</div>
 			
-			<form method="post" action="index.html">
+			<form id="argosForm" method="post" action="index.html">
 				<input type="submit" name="submitForm" />
 				<div class="field">
 					<div class="indicator">
