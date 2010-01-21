@@ -24,8 +24,8 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFormError = options.onFormError || null;
 	var onFormSuccess = options.onFormSuccess || null;
 	var onClearErrors = options.onClearErrors || null;
-	var rulesToRunPerValidatorBeforeBreak = 1; // TODO, if becomes a requirement
-	// this will stop further validators validating as soon as the first field to become invalid occurs
+	var rulesToRunPerValidatorBeforeBreak = 1; // TODO, if becomes a requirement, this at Validator level
+	// this will stop further validators validating as soon as the first field to become invalid occurs, this is at FormValidator level
 	var stopValidatingOnError = false || options.stopValidatingOnError;
 	
 	// validator level options
