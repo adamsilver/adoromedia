@@ -24,8 +24,9 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFormError = options.onFormError || null;
 	var onFormSuccess = options.onFormSuccess || null;
 	var onClearErrors = options.onClearErrors || null;
-	var rulesToRunPerValidatorBeforeBreak  = 1; // TODO, if becomes a requirement
-	var stopFurtherValidatorsRunningOnFirstError = false || options.stopFurtherValidatorsRunningOnFirstError; // TODO, if becomes a requirement
+	var rulesToRunPerValidatorBeforeBreak = 1; // TODO, if becomes a requirement
+	// this will stop further validators validating as soon as the first field to become invalid occurs
+	var stopValidatingOnError = false || options.stopValidatingOnError;
 	
 	// validator level options
 	var onFieldValidateBase = options.onFieldValidate || null;
@@ -59,8 +60,8 @@ Adoro.FormValidator = function(formNode, options) {
 			// loop through all rules in that validator
 			valid = validator.validate();
 
-			// if stopFurtherValidatorsRunningOnFirstError && and error has occured
-			if(stopFurtherValidatorsRunningOnFirstError && !valid) {
+			// if stopValidatingOnError && and an error has occured
+			if(stopValidatingOnError && !valid) {
 				break;
 			}
 		}
