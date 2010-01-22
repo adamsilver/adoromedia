@@ -356,7 +356,6 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
 	function addContextualGroup(buttonName, ruleKeys) {
 		var buttonNode = $(formNode).find('input[name="'+buttonName+'"]')[0]|| null;
-		console.log(buttonNode);
 		if(!buttonNode) {
 			return;
 		}
