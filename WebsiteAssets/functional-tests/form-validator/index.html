@@ -6,15 +6,16 @@
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
 		<script type="text/javascript">
 			
-			var HomeBaseValidator = function(formNode) {
+			var HomeBaseValidator = function(formNode, options) {
 				
-				return new Adoro.FormValidator(formNode, {
-					onFieldError: function(rule) {
-						alert(rule.message);
-						this.focus();
-					},
-					stopValidatingOnError: true
-				})
+				var options = options || {};
+				options.onFieldError = options.onFieldError || function(rule) {
+					alert(rule.message);
+					this.focus();
+				}
+				options.stopValidatingOnError = options.stopValidatingOnError || true;
+			
+				return new Adoro.FormValidator(formNode, options);
 			
 			}
 			
