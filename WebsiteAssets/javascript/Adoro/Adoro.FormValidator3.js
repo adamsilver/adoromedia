@@ -355,7 +355,8 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {String[]} ruleKeys Array of keys that reference existing form fields
 	 */
 	function addContextualGroup(buttonName, ruleKeys) {
-		var buttonNode = formNode[buttonName] || null;
+		var buttonNode = $(formNode).find('input[name="'+buttonName+'"]')[0]|| null;
+		console.log(buttonNode);
 		if(!buttonNode) {
 			return;
 		}
@@ -369,7 +370,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {String} buttonName The name of the contextual submit button for the group
 	 */	
 	function removeContextualGroup(buttonName) {
-		var buttonNode = formNode[buttonName];
+		var buttonNode = $(formNode).find('input[name="'+buttonName+'"]')[0] || null;
 		if(!buttonNode) {
 			return;
 		}
