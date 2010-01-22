@@ -7,7 +7,7 @@ Adoro.ContextualSubmitKeyboardHelper = function(fieldNode, submitButton) {
 	if(!fieldNode || !submitButton || !form) return;
 	
 	$(fieldNode).bind("focus", fieldFocus);
-	
+	$(fieldNode).bind("blur", fieldBlur);
 	function fieldFocus() {
 		$(form).prepend(clone);
 	}
