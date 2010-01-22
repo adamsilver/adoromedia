@@ -73,8 +73,8 @@
 				var docTitle = document.title;
 				
 				return new Adoro.FormValidator(formNode, {
-					runOnContextualGroupOnly: true,
-					stopValidatingOnError: true,
+					runOnContextualGroupOnly: false,
+					stopValidatingOnError: false,
 					onClearErrors: function(validators) {
 						restoreErrorSummaryZone();
 						cleanFields(validators);
@@ -338,7 +338,8 @@
 						<input type="text" name="username" />
 					</div>
 				</div>
-				<input type="submit" name="submitForm2" id="submitForm2" value="validate username only"/>
+				<!--<input type="submit" name="submitForm2" id="submitForm2" value="validate username only"/>-->
+				<input type="image" name="submitForm2" id="submitForm2" value="validate username only"/>
 				<div class="field">
 					<div class="indicator">
 						<label>Password label but you don't need one</label>
