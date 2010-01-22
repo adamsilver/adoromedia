@@ -1,10 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<!--
+		on submit 
+	// find out if a button was clicked
+		// if it wasnt (perhaps enter key)
+			// find out the name of the first submit button inside the form element
+				// if that name is a contextual submit button
+					// run the validation rules as if that was clicked
+					
+					
+					
+			<form>
+			<submit 1>
+			<submit 2>
+			
+			
+			<input 1><submit 1>
+			
+			<input 2><input 3><input 4><submit 2>
+			</form>
+		-->
 <html>
 	<head>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
 		<script type="text/javascript">
+		
+
+		
 			
 			var HomeBaseValidator = function(formNode, options) {
 				
@@ -41,7 +64,8 @@
 					}]
 				);				
 			});
-			
+		</script>
+		<script>
 			
 			var ArgosFormValidator = function(formNode) {
 				var errorSummary = document.getElementById("errorContainer");
@@ -125,7 +149,7 @@
 				
 				
 				fv.addContextualGroup("submitForm2", ["username"]);
-				
+				fv.removeContextualGroup("submitForm2");
 				//console.log(fv.getErrors());
 				
 				//fv.removeValidator("username", [Adoro.FormRules.notEmpty, Adoro.FormRules.isLength]);

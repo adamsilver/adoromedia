@@ -155,19 +155,19 @@ Adoro.FormValidator = function(formNode, options) {
 	 * i.e. make sure "postCodeField" is validated by this particular contextual submit button
 	 * @function
 	 * @private
-	 * @param {Node} trigger To check trigger
+	 * @param {Node} buttonNode To check buttonNode
 	 * @param {String} key To check rule
 	 * @return {Boolean} true when it should be validated false otherwise
 	 */
-	function inGroupRuleKeys(trigger, key) {
-		if(!trigger) {
+	function inGroupRuleKeys(buttonNode, key) {
+		if(!buttonNode) {
 			return false;
 		}
 		var isInRuleKeys = false;
 		var group, groupKey;
 		for(var i = 0; i < contextualGroups.length; i++) {
 			group = contextualGroups[i];
-			if(group.trigger === trigger) {
+			if(group.buttonNode === buttonNode) {
 				for(var j = 0; j < group.ruleKeys.length; j++) {
 					groupKey = group.ruleKeys[j];
 					if(groupKey === key) {
@@ -326,18 +326,24 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @class Represents a contextual group
 	 * @constructor
 	 * @private
-	 * @param {Node} trigger DOM reference to contextual submit button
+	 * @param {String} buttonName The name of the contextual submit button
+	 * @param {Node} buttonNode DOM reference to contextual submit button
 	 * @param {String[]} ruleKeys Array of keys (field 'names') that reference existing form fields
 	 */
-	function ContextualGroup(trigger, ruleKeys) {
-		this.trigger = trigger;
+	function ContextualGroup(buttonName, buttonNode, ruleKeys) {
+		this.buttonName = buttonName;
+		this.buttonNode = buttonNode;
 		this.ruleKeys = ruleKeys;
 		
-		function trigger_onClick() {
+		function button_onClick() {
 			setLastFiredButton(this);
 		}
 		
-		$(trigger).bind("click", trigger_onClick);
+		this.destroy = function() {
+			$(buttonNode).unbind("click", button_onClick);	
+		}
+		
+		$(buttonNode).bind("click", button_onClick);
 	}	
 	
 	
@@ -345,31 +351,32 @@ Adoro.FormValidator = function(formNode, options) {
 	 * add a new contextual group for the form
 	 * @function
 	 * @public
-	 * @param {String} triggerID The ID of the contextual submit button
+	 * @param {String} buttonName The name of the contextual submit button
 	 * @param {String[]} ruleKeys Array of keys that reference existing form fields
 	 */
-	function addContextualGroup(triggerID, ruleKeys) {
-		var trigger = document.getElementById(triggerID);
-		if(!trigger) {
+	function addContextualGroup(buttonName, ruleKeys) {
+		var buttonNode = formNode[buttonName] || null;
+		if(!buttonNode) {
 			return;
 		}
-		contextualGroups.push(new ContextualGroup(trigger, ruleKeys));
+		contextualGroups.push(new ContextualGroup(buttonName, buttonNode, ruleKeys));
 	}	
 	
 	/**
 	 * remove a contextual group for the form
 	 * @function
 	 * @public
-	 * @param {String} triggerID The ID of the contextual submit button for the group
+	 * @param {String} buttonName The name of the contextual submit button for the group
 	 */	
-	function removeContextualGroup(triggerId) {
-		var trigger = document.getElementById(triggerId);
-		if(!trigger) {
+	function removeContextualGroup(buttonName) {
+		var buttonNode = formNode[buttonName];
+		if(!buttonNode) {
 			return;
 		}
 		var numberOfItemsToRemoveFromArray = 1;
 		for(var i = 0; i < contextualGroups.length; i++) {
-			if(contextualGroups[i].trigger === trigger) {
+			if(contextualGroups[i].buttonNode === buttonNode) {
+				contextualGroups[i].destroy();
 				contextualGroups.splice(i, numberOfItemsToRemoveFromArray);
 				break;
 			}
