@@ -27,12 +27,16 @@ Adoro.FormValidator = function(formNode, options) {
 	var rulesToRunPerValidatorBeforeBreak = 1; // TODO, if becomes a requirement, this at Validator level
 	// this will stop further validators validating as soon as the first field to become invalid occurs, this is at FormValidator level
 	var stopValidatingOnError = false || options.stopValidatingOnError;
+	// this is useful when there is a large complex form with lots of different submits
+	// with different actions. Most of them don't validate anything. So if a rule has not
+	// been setup against a specific button then it won't run.
+	var runOnContextualGroupOnly = false || options.runOnContextualGroupOnly; 
 	
 	// validator level options
 	var onFieldValidateBase = options.onFieldValidate || null;
 	var onFieldErrorBase = options.onFieldError || null;	
 	var onFieldSuccessBase = options.onFieldSuccess || null;	
-	var validateOnBlurBase = options.validateOnBlur || false;	
+	var validateOnBlurBase = options.validateOnBlur || false;
 		
 	$(formNode).bind("submit", function(e){
 		return validate.call(formNode);
@@ -46,6 +50,8 @@ Adoro.FormValidator = function(formNode, options) {
 	
 		var validator, field, key, valid = true;
 		for (var i = 0; i < validators.length; i++) {
+			if(!isContextualSubmit() && runOnContextualGroupOnly) break;
+		
 			validator = validators[i];
 			field = validator.field;
 			key = validator.key;
