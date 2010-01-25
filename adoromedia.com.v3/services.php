@@ -5,7 +5,7 @@
 	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
 	$siteSection = "services";
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
 	<head>
 	    <title>Services - Adoro Media - Website design &amp; development agency - London</title>
 		<?php include("inc/headGlobal.php"); ?>
