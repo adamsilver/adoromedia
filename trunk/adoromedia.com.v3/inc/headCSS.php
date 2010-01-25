@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="css/global.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/global.css" media="screen" />

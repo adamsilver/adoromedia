@@ -1,4 +1,5 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+<meta charset="utf-8" />
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="language" content="en" />
 <meta name="author" content="Adoro Media" />
