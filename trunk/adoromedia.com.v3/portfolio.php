@@ -26,7 +26,7 @@
 				<h1>Portfolio</h1>
 				
 				<div class="primary">
-					<p>This is not an extensive list but it will give you an idea of the quality
+					<p>This list will give you an idea of the quality
 					of some of our work. If you would like to find out more about any project, 
 					please <a href="contact.php">get in touch</a>.</p>				
 				</div>
