@@ -50,13 +50,13 @@
 							<div class="clip">
 								<ul class="pages">
 									<li class="page">
-										<img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/>
+										<a href="http://www.hartsbournecountryclub.co.uk"><img width="600" height="349" src="img/featured/hb1.jpg" alt="Hartsbourne Country Club"/></a>
 									</li>
 									<li class="page">
-										<img width="600" height="349" src="img/featured/hb2.jpg" alt="Hartsbourne Country Club"/>
+										<a href="http://www.hartsbournecountryclub.co.uk"><img width="600" height="349" src="img/featured/hb2.jpg" alt="Hartsbourne Country Club"/></a>
 									</li>
 									<li class="page">
-										<img width="600" height="349" src="img/featured/hb3.jpg" alt="Hartsbourne Country Club"/>
+										<a href="http://www.hartsbournecountryclub.co.uk"><img width="600" height="349" src="img/featured/hb3.jpg" alt="Hartsbourne Country Club"/></a>
 									</li>
 								</ul>
 							</div>
