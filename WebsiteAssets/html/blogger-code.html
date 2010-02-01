@@ -8,3 +8,74 @@ username: {required: &lt;?php echo "Your username is required" ?&gt;}
 
 <pre class="brush: js">var message = ValidationMessages.username.required;
 </pre>
+
+<p>
+When I was learning JavaScript, I was lucky enough to know a friend that was a JavaScript expert. He mentored me through several little lessons, that gave me an excellent foundation. Fortunately, I made a few key notes which I plan to share here. So here is part 1.</p>
+<h2>
+Introduction</h2>
+<ul>
+<li>JavaScript is not the same as DOMScripting</li>
+<li>Images,JavaScript, Flash, Music, Media, CSS are all forms of enhancement.</li>
+<li>We use JavaScript to create client side functionality that the browser doesn't inherently provide.</li>
+<li>HTML, the raw text is the default, complete fallback solution.</li>
+<li>JavaScript has different levels of support and so there are two types of detection before we use JavaScript</li>
+</ul>
+<p>We discussed the above for half an hour and I thought I really understood the obvious things mentioned above, but after letting this seep through, it gave me a great basic understanding of JavaScript.</p>
+
+
+
+<h2>
+Detection</h2>
+<h3>Direct</h3>
+<pre class="brush: js">
+var ua = useragent;
+if (ua == "ie") {
+    this.ie = true;
+} else if (ua == "firefox") {
+    this.firefox = true;
+}
+</pre>
+<h4>Disadvantages</h4>
+<ul>
+<li>you may have to specify each browser individually</li>
+<li>targetting multiple browsers is verbose</li>
+<li>browser features may change between versions</li>
+<li>useragent strings changes between versions</li>
+</ul>
+<p>There are no real advantages of doing it this way.</p>
+
+<h3>Indirect</h3>
+<pre class="brush: js">
+if (this.getCurrentStyle) {
+    //do this
+} else if (alternative object) {
+    //do this
+}
+</pre>
+<h4>Disadvantages</h4>
+<ul>
+<li>Can cause repetitive code execution - hard to store the value to test in any way</li>
+<li>Need to know which objects to test against</li>
+</ul>
+<h4>
+Advantages:</h4>
+<ul>
+<li>Ensures that browsers cannot call methods that are unsupported</li>
+<li>Browser agnostic</li>
+<li>Feature/ability based detection</li>
+</ul>
+
+<p>An example of indirect detection:</p>
+<pre class="brush: js">
+var getComputedStyle = function() {
+	if (this.currentStyle) {
+		return function() {
+			return this.currentStyle[property];
+		}
+	} else {
+		return function() {
+			return document.defaultView.getComputedStyle(this, null).getPropertyValue(property);
+		}
+	}
+}();
+</pre>
