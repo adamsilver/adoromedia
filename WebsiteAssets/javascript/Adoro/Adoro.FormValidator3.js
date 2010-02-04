@@ -151,7 +151,7 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	/**
-	 * check if the validator should be validated for this contextual group activation
+	 * check if the validator should be validated for this contextual group submission
 	 * i.e. make sure "postCodeField" is validated by this particular contextual submit button
 	 * @function
 	 * @private
