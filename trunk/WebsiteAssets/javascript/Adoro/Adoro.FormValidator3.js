@@ -38,6 +38,8 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFieldSuccessBase = options.onFieldSuccess || null;	
 	var validateOnBlurBase = options.validateOnBlur || false;
 		
+	if(!formNode) return;
+		
 	$(formNode).bind("submit", function(e){
 		return validate.call(formNode);
 	});
