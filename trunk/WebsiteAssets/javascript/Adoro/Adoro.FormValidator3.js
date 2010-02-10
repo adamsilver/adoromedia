@@ -38,11 +38,12 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFieldSuccessBase = options.onFieldSuccess || null;	
 	var validateOnBlurBase = options.validateOnBlur || false;
 		
-	if(!formNode) return;
-		
-	$(formNode).bind("submit", function(e){
-		return validate.call(formNode);
-	});
+	
+	if(formNode) {
+		$(formNode).bind("submit", function(e){
+			return validate.call(formNode);
+		});	
+	}	
 	
 	function validate() {
 		if(typeof onValidateStart === "function") {
@@ -205,6 +206,7 @@ Adoro.FormValidator = function(formNode, options) {
 		if(typeof rule.method !== "function") {
 			valid = false;
 		}
+		// should it really have to apply a message?
 		if(typeof rule.message !== "string") {
 			valid = false;
 		}
