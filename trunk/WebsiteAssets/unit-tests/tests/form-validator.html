@@ -17,62 +17,95 @@
 				this.addError = addError;
 				this.removeError = removeError;
 			*/
+					
+			// general
 			
-			/*
-				// general
+			function testDependenciesJquery() {
+				assertNotUndefined("jQuery doesn't exist", $);
+			}
+			
+			function testAdoroFormValidatorExits() {
+				assertNotUndefined("Adoro FormValidator doesn't exist", Adoro.FormValidator);
+			}
+			
+			function testFormNodeDoesntExist_WHATDOIEXPECTHER() {
+				var fv = new Adoro.FormValidator(document.getElementById("someNonExistentNode"))
+				// how do i test this / do i test this
+			}
+			
+			function testSubmitFormWithErrors_CorrectNumberOfErrors() {
+				return;
+				var formNode = document.getElementById("form1");
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username",[{
+					method: function() {
+						return false;
+					},
+					message: "Failed"
+				}]);
+				formNode.submit();
+				// how do i test this?
+			}
+			
+			function testSubmitFormWithNoErrors_FormSubmits() {
+				return;
+				var formNode = document.getElementById("form1");
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username",[{
+					method: function() {
+						return true;
+					},
+					message: "Passed"
+				}]);
+				formNode.submit();
+				// how do i test this?
+			}
+			
+			function testContextualSubmitWithErrors_CorrectNumberOfErrors() {}
+			
+			// ? should i test that public methods exist
+			
+			// addValidator - valid params
+			
+			// ? what if form node doesnt exist - do i bother allowing the running of addValidator?
+			
+			function testAddValidatorValid_ReturnsThis() {}
+			
+			function testAddValidatorValid_ValidatorExists() {}
+			
+			// addValidator - invalid params
+			
+			function testAddValidatorWithNoParams_DoesntAddValidator() {}
+			
+			function testAddValidatorWithNoRules_DoesntAddValidator() {}
+			
+			function testAddValidatorAndFieldDoesntExist_DoesntAddValidator() {}
+			
+			function testAddValidatorParam1NotFieldNode_DoesntAddValidator() {}
+			
+			function testAddValidatorParam2NotArrayOfObjects_DoesntAddValidator() {}
+			
+			function testAddValidatorParam3NotObject_DoesntAddOptions() {}
+			
+			// removeValidator - valid params / key ruleKeys
+			
+			function testRemoveValidatorValidWithKeyOnly_RemoveWholeValidator() {}
+			
+			function testRemoveValidatorValidWithKeyAndParticularRuleKey_RemoveParticularKey() {}
+			
+			function testRemoveValidatorValidWithKeyAndMoreThanOneKey_RemoveParticularKeys() {}
+			
+			function testRemoveValidatorValidWithKeyAndAllRuleKeys_RemoveWholeValidator() {}
+			
+			function testRemoveValidatorValidKeyExistsOneRuleKeyDoesOneDoesnt_OnlyRemoveParticularKey() {}
+			
+			// removeValidator - invalid params
+			
+			function testRemoveValidatorInvalidKeyDoesntExist_DontRemove() {}
+			
+			function testRemoveValidatorInvalidKeyExistsRuleKeyDoesnt_DontRemove() {}
 				
-				function testFormNodeDoesntExist() {}
-				
-				function testSubmitFormWithErrors_CorrectNumberOfErrors() {}
-				
-				// ?
-				function testSubmitFormWithNoErrors_FormSubmits() {}
-				
-				function testContextualSubmitWithErrors_CorrectNumberOfErrors() {}
-				
-				// ? should i test that public methods exist
-				
-				// addValidator - valid params
-				
-				// ? what if form node doesnt exist - do i bother allowing the running of addValidator?
-				
-				function testAddValidatorValid_ReturnsThis() {}
-				
-				function testAddValidatorValid_ValidatorExists() {}
-				
-				// addValidator - invalid params
-				
-				function testAddValidatorWithNoParams_DoesntAddValidator() {}
-				
-				function testAddValidatorWithNoRules_DoesntAddValidator() {}
-				
-				function testAddValidatorAndFieldDoesntExist_DoesntAddValidator() {}
-				
-				function testAddValidatorParam1NotFieldNode_DoesntAddValidator() {}
-				
-				function testAddValidatorParam2NotArrayOfObjects_DoesntAddValidator() {}
-				
-				function testAddValidatorParam3NotObject_DoesntAddOptions() {}
-				
-				// removeValidator - valid params / key ruleKeys
-				
-				function testRemoveValidatorValidWithKeyOnly_RemoveWholeValidator() {}
-				
-				function testRemoveValidatorValidWithKeyAndParticularRuleKey_RemoveParticularKey() {}
-				
-				function testRemoveValidatorValidWithKeyAndMoreThanOneKey_RemoveParticularKeys() {}
-				
-				function testRemoveValidatorValidWithKeyAndAllRuleKeys_RemoveWholeValidator() {}
-				
-				function testRemoveValidatorValidKeyExistsOneRuleKeyDoesOneDoesnt_OnlyRemoveParticularKey() {}
-				
-				// removeValidator - invalid params
-				
-				function testRemoveValidatorInvalidKeyDoesntExist_DontRemove() {}
-				
-				function testRemoveValidatorInvalidKeyExistsRuleKeyDoesnt_DontRemove() {}
-				
-			*/
+			
 			
 			
 			
@@ -90,7 +123,8 @@
             */
 	    
             // how does this work when we need to do this when dom is ready?
-            function testSubmitValidateWithErrors() {
+           /*
+		     function atestSubmitValidateWithErrors() {
 				return;
                 var form = document.getElementById("form1");
                 var fv = new Adoro.FormValidator(form);
@@ -106,19 +140,19 @@
                 
             }
         
-            function testAdoroFormValidatorExists() {
+            function atestAdoroFormValidatorExists() {
                 assertNotNull("Reference is not null", Adoro.FormValidator);  
             }
 	    
             // what should i do with a class that has no arguments?
-            function testNoArguments() {
+            function atestNoArguments() {
                 // when no arguments return null;
                // var fv = new Adoro.FormValidator();
                 //assertUndefined("no arguments returns null", fv.addValidator);
             }
             
 			
-            function testAddValidatorWhenNoFormNode_dontAddValidator() {
+            function atestAddValidatorWhenNoFormNode_dontAddValidator() {
 				return;
                 var fv = new Adoro.FormValidator();
                 fv.addValidator("username", [{
@@ -130,7 +164,7 @@
                 //assertEquals(0, fv.getValidators().length);
             }
 			
-	    function testAddValidatorWhenNoRules_dontAddValidator() {
+	    function atestAddValidatorWhenNoRules_dontAddValidator() {
 			return;
             var formNode = document.getElementById("form1");
             var fv = new Adoro.FormValidator(formNode);
@@ -139,7 +173,7 @@
             //assertEquals(0, fv.getValidators().length);
 	    }
 	    
-	    function testAddValidatorWhenEmptyRules_dontAddValidator() {
+	    function atestAddValidatorWhenEmptyRules_dontAddValidator() {
 			return;
             var formNode = document.getElementById("form1");
             var fv = new Adoro.FormValidator(formNode);
@@ -147,14 +181,14 @@
             //assertEquals(0, fv.getValidators().length);
 	    }	
 
-	    function testAddValidatorWhenRulesAreEmptyObjects_dontAddValidator() {
+	    function atestAddValidatorWhenRulesAreEmptyObjects_dontAddValidator() {
 			return;
             var formNode = document.getElementById("form1");
             var fv = new Adoro.FormValidator(formNode);
             fv.addValidator("username", [{}]);
             //assertEquals(0, fv.getValidators().length);
 	    }	
-            
+		   */  
         </script>
     </head>
     
