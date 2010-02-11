@@ -9,15 +9,77 @@
         <script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
         <script type="text/javascript">
 			
-	    
+			/*
+			 	this.addValidator = addValidator;
+				this.removeValidator = removeValidator;
+				this.addContextualGroup = addContextualGroup;
+				this.removeContextualGroup = removeContextualGroup;
+				this.addError = addError;
+				this.removeError = removeError;
+			*/
+			
+			/*
+				// general
+				
+				function testFormNodeDoesntExist() {}
+				
+				function testSubmitFormWithErrors_CorrectNumberOfErrors() {}
+				
+				// ?
+				function testSubmitFormWithNoErrors_FormSubmits() {}
+				
+				function testContextualSubmitWithErrors_CorrectNumberOfErrors() {}
+				
+				// ? should i test that public methods exist
+				
+				// addValidator - valid params
+				
+				// ? what if form node doesnt exist - do i bother allowing the running of addValidator?
+				
+				function testAddValidatorValid_ReturnsThis() {}
+				
+				function testAddValidatorValid_ValidatorExists() {}
+				
+				// addValidator - invalid params
+				
+				function testAddValidatorWithNoParams_DoesntAddValidator() {}
+				
+				function testAddValidatorWithNoRules_DoesntAddValidator() {}
+				
+				function testAddValidatorAndFieldDoesntExist_DoesntAddValidator() {}
+				
+				function testAddValidatorParam1NotFieldNode_DoesntAddValidator() {}
+				
+				function testAddValidatorParam2NotArrayOfObjects_DoesntAddValidator() {}
+				
+				function testAddValidatorParam3NotObject_DoesntAddOptions() {}
+				
+				// removeValidator - valid params / key ruleKeys
+				
+				function testRemoveValidatorValidWithKeyOnly_RemoveWholeValidator() {}
+				
+				function testRemoveValidatorValidWithKeyAndParticularRuleKey_RemoveParticularKey() {}
+				
+				function testRemoveValidatorValidWithKeyAndMoreThanOneKey_RemoveParticularKeys() {}
+				
+				function testRemoveValidatorValidWithKeyAndAllRuleKeys_RemoveWholeValidator() {}
+				
+				function testRemoveValidatorValidKeyExistsOneRuleKeyDoesOneDoesnt_OnlyRemoveParticularKey() {}
+				
+				// removeValidator - invalid params
+				
+				function testRemoveValidatorInvalidKeyDoesntExist_DontRemove() {}
+				
+				function testRemoveValidatorInvalidKeyExistsRuleKeyDoesnt_DontRemove() {}
+				
+			*/
+			
+			
+			
             /*
             - test that public methods exist?
             - addValidator
-                - test that if we provide the correct arguments to it
-                - test that if we provide no arguments we dont add validator
-                - test that if we dont provide a set of rules dont add validator
                 - test that a rule has a method and a message or not a message?
-                - if all arguments are successful then add validator and check that validators length is increased by 1???
             - test when the form is submitted that it runs all the validators
                 - test that the errors length i expect
                 - fill in the fields correctly and test errors length is 0???
