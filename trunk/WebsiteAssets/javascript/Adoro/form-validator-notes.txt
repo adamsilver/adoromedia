@@ -1,0 +1,68 @@
+function FormValidator() {
+	var validators = []
+	
+	function validate(fieldNamesArray) {
+		loop through validators which matches the fieldNamesArray
+			validate them
+			valodator.validate
+	}
+	
+	function Validator(field, rules) {
+		this.fieldName = field[0].name;
+		this.rules = rules;
+	}
+	Validator.prototype = {
+		validate: function() {
+			// loop through all rules
+			if an error is found then set hasError on validator
+			set the rule to hasError true
+			
+			
+		},
+		hasError: false
+	}
+	
+	function Rule(fieldName, message) {
+	
+	}
+	Rule.prototype.hasError = false;
+}
+
+var fv = new FormValidator(node)
+
+$(document).bind("formValidator-specialTimeStamp."+field[0].name"+".onFieldError")
+
+fv.addEventHandler("onFieldError", function() {
+
+});
+
+
+
+fv.addValidator("fieldName", [{
+
+}], {
+	onValidateStart: function() {}
+})
+
+fv.getValidator("fieldName").addEventHandler("onValidateStart", function() {
+
+});
+
+fv.getValidator("fieldName").addEventHandler("onError", function() {
+
+});
+
+fv.validate();
+
+fv.addEventHandler("onValidateStart", function() {
+	alert("starting");
+})
+
+document.getElementById("formNode").onsubmit = function() {
+	var isFormValid = fv.validate();
+	return isFormValid;
+}
+
+document.getElementById("findPostCode").onclick = function() {
+	fv.validate(["postcode", "housenumber"])
+}
