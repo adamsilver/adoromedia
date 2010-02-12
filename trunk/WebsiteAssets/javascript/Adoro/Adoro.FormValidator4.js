@@ -88,10 +88,7 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 		}
 		
-		if(typeof onValidateComplete === "function") {
-			onValidateComplete.call(me);
-		}
-		
+		$(document).trigger([thisValidaterID, "onValidateComplete" ].join("."), [me]);		
         $(document).trigger([thisValidaterID, hasErrors() ? "onFormError" : "onFormSuccess" ].join("."), [me]);		
 		resetLastFiredButton();
 		return errors.length === 0;
@@ -110,14 +107,16 @@ Adoro.FormValidator = function(formNode, options) {
 		var onFieldSuccess = options.onFieldSuccess || onFieldSuccessBase || null;
 		var validateOnBlur = options.validateOnBlur || validateOnBlurBase || false;
 		
+		
+		
+		
 		if(validateOnBlur) {
 			$(field).bind("blur", validate);
 		}
 		
 		function validate() {
-			if(typeof onFieldValidate === "function") {
-				onFieldValidate.call(field);
-			}
+			$.trigger(thisValidaterID+me.key+".onFieldValidate", field);
+			
 			// run thru all rules
 			var rule, valid=true, params;
 			for (var j = 0; j < rules.length; j++) {
