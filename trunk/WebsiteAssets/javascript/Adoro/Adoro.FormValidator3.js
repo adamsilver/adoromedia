@@ -5,7 +5,9 @@ Adoro.isArray = function(value) {
 };
 
 Adoro.FormValidator = function(formNode, options) {
-	var me = this;
+    var $formNode = $(formNode);// interesting
+    // lexical scope
+    var me = this;
 
 	// collections
 	var validators = [];
@@ -37,21 +39,30 @@ Adoro.FormValidator = function(formNode, options) {
 	var onFieldErrorBase = options.onFieldError || null;	
 	var onFieldSuccessBase = options.onFieldSuccess || null;	
 	var validateOnBlurBase = options.validateOnBlur || false;
-		
+    
 	
-	if(formNode) {
-		$(formNode).bind("submit", function(e){
-			return validate.call(formNode);
-		});	
-	}	
+    $(formNode).bind("submit", function(e){
+        return validate.call(formNode);
+    });	
+	
+    
+    var thisValidaterID = new Date().getTime();
+    this.addEventHandler = function(eventType, handler) {
+        $().bind([thisValidaterID, eventType].join("."), handler);
+    }
+    this.removeEventHandler = function(eventType, handler) {
+        $().unbind(....);
+    }
+    
 	
 	function validate() {
-		if(typeof onValidateStart === "function") {
+		/*if(typeof onValidateStart === "function") {
 			onValidateStart.call(me);
-		}
+		}*/
+        $().trigger(thisValidaterID + ".onValidateState", [me]);
 		clearErrors();
 	
-		var validator, field, key, valid = true;
+		var validator, field, key, valid = true, hasErrors = false;
 		for (var i = 0; i < validators.length; i++) {
 			if(!isContextualSubmit() && runOnContextualGroupOnly) break;
 		
@@ -68,6 +79,10 @@ Adoro.FormValidator = function(formNode, options) {
 			
 			// loop through all rules in that validator
 			valid = validator.validate();
+            if (valid === false) {
+                //push error to array
+                hasErrors = true;
+            }
 
 			// if stopValidatingOnError && and an error has occured
 			if(stopValidatingOnError && !valid) {
@@ -79,6 +94,8 @@ Adoro.FormValidator = function(formNode, options) {
 			onValidateComplete.call(me);
 		}
 		
+        $().trigger([thisValidaterID, hasErrors() ? "onFormError" : "onFormSuccess" ].join("."), [me])
+        
 		if(hasErrors()) {
 			if(typeof onFormError === "function") {
 				onFormError.call(me, errors);
@@ -94,6 +111,9 @@ Adoro.FormValidator = function(formNode, options) {
 		return errors.length === 0;
 	}
 	
+    function Rule() {}
+    
+    // put everything on prototype
 	function Validator(field, rules, options) {
 		var me = this;
 		this.key = $(field).attr("name");
