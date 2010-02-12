@@ -41,25 +41,23 @@ Adoro.FormValidator = function(formNode, options) {
 	var validateOnBlurBase = options.validateOnBlur || false;
     
 	
-    $(formNode).bind("submit", function(e){
-        return validate.call(formNode);  //CHECKFORM as opposed to validate()
+    $formNode.bind("submit", function(e){
+        return validate.call();  //CHECKFORM as opposed to validate()
     });	
 	
     
-    var thisValidaterID = new Date().getTime();
-    this.addEventHandler = function(eventType, handler) {
-        $().bind([thisValidaterID, eventType].join("."), handler);
+    var thisValidaterID = "formValidator-"+new Date().getTime();
+	this.addEventHandler = function(eventType, eventHandler) {
+        $(document).bind([thisValidaterID, eventType].join("."), eventHandler);
     }
-    this.removeEventHandler = function(eventType, handler) {
-        $().unbind();
+
+    this.removeEventHandler = function(eventType, eventHandler) {
+        $(document).unbind([thisValidaterID, eventType].join("."), eventHandler);
     }
     
 	
 	function validate() {
-		/*if(typeof onValidateStart === "function") {
-			onValidateStart.call(me);
-		}*/
-        $().trigger(thisValidaterID + ".onValidateState", [me]);
+        $(document).trigger(thisValidaterID + ".onValidateStart", [me]);
 		clearErrors();
 	
 		var validator, field, key, valid = true, hasErrors = false;
@@ -94,24 +92,10 @@ Adoro.FormValidator = function(formNode, options) {
 			onValidateComplete.call(me);
 		}
 		
-        $().trigger([thisValidaterID, hasErrors() ? "onFormError" : "onFormSuccess" ].join("."), [me])
-        
-		if(hasErrors()) {
-			if(typeof onFormError === "function") {
-				onFormError.call(me, errors);
-			}
-		}
-		else {
-			if(typeof onFormSuccess === "function") {
-				onFormSuccess.call(me);
-			}
-		}
-		
+        $(document).trigger([thisValidaterID, hasErrors() ? "onFormError" : "onFormSuccess" ].join("."), [me]);		
 		resetLastFiredButton();
 		return errors.length === 0;
 	}
-	
-    function Rule() {}
     
     // put everything on prototype
 	function Validator(field, rules, options) {
@@ -271,7 +255,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {String} rule.message
 	 */
 	function addValidator(fieldName, rules, options) {
-		var field = $(formNode).find("[name='"+fieldName+"']");
+		var field = $formNode.find("[name='"+fieldName+"']");
 		if(field.length === 0 || !Adoro.isArray(rules)) {
 			return this;
 		}
@@ -379,7 +363,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {String[]} ruleKeys Array of keys that reference existing form fields
 	 */
 	function addContextualGroup(buttonName, ruleKeys) {
-		var buttonNode = $(formNode).find('input[name="'+buttonName+'"]')[0]|| null;
+		var buttonNode = $formNode.find('input[name="'+buttonName+'"]')[0]|| null;
 		if(!buttonNode) {
 			return;
 		}
@@ -393,7 +377,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {String} buttonName The name of the contextual submit button for the group
 	 */	
 	function removeContextualGroup(buttonName) {
-		var buttonNode = $(formNode).find('input[name="'+buttonName+'"]')[0] || null;
+		var buttonNode = $formNode.find('input[name="'+buttonName+'"]')[0] || null;
 		if(!buttonNode) {
 			return;
 		}
@@ -434,6 +418,15 @@ Adoro.FormValidator = function(formNode, options) {
 	function resetLastFiredButton() {
 		lastClickedButton = null;
 	}	
+	
+	function Rule(method, message) {
+		this.method = method;
+		this.message = message;
+	}
+	Rule.prototype = {
+		hasError: false
+	}
+	
 	
 	// public members
 	this.addValidator = addValidator;
