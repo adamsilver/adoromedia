@@ -22,7 +22,7 @@
 //  ---------------------------------------------------------------------------------------------------------
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
-Adoro.LightBox = {};
+Adoro.Dialogue = {};
 $(document).ready(function(){
 	/**
 	 * LightBox object which will append an overlay and dialogue to the HTML page with various public methods
