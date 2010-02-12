@@ -17,24 +17,16 @@
 				this.addError = addError;
 				this.removeError = removeError;
 			*/
-					
+			
 			// general
+
 			
-			function testDependenciesJquery() {
-				assertNotUndefined("jQuery doesn't exist", $);
-			}
-			
-			function testAdoroFormValidatorExits() {
-				assertNotUndefined("Adoro FormValidator doesn't exist", Adoro.FormValidator);
-			}
-			
-			function testFormNodeDoesntExist_WHATDOIEXPECTHER() {
-				var fv = new Adoro.FormValidator(document.getElementById("someNonExistentNode"))
-				// how do i test this / do i test this
+			function testAdoroFormValidatorExists() {
+				assertTrue("Adoro FormValidator doesn't exist", typeof Adoro.FormValidator === "function");
 			}
 			
 			function testSubmitFormWithErrors_CorrectNumberOfErrors() {
-				return;
+				
 				var formNode = document.getElementById("form1");
 				var fv = new Adoro.FormValidator(formNode);
 				fv.addValidator("username",[{
@@ -43,8 +35,8 @@
 					},
 					message: "Failed"
 				}]);
-				formNode.submit();
-				// how do i test this?
+				//formNode.submit(); // selenium test end to end not unit
+				// how do i test this? DONT
 			}
 			
 			function testSubmitFormWithNoErrors_FormSubmits() {
@@ -61,7 +53,12 @@
 				// how do i test this?
 			}
 			
-			function testContextualSubmitWithErrors_CorrectNumberOfErrors() {}
+            function testValidateTrue() {}
+            function testValidateFalse() {}
+            
+			function testContextualSubmitWithErrors_CorrectNumberOfErrors() {
+                
+            }
 			
 			// ? should i test that public methods exist
 			
