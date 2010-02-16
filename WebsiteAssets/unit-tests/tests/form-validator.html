@@ -58,7 +58,17 @@
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
-				//fv.addValidator("username", true);
+				fv.addValidator("username", [{
+					method: function() {},message: "message1"
+				}]);
+				
+				fv.addValidator("username", [{
+					method: function() {},message: "message2"
+				}]);
+				
+				alert(fv.getValidator("username").rules.length);
+				
+				
 			}
 			-->
 		</script>

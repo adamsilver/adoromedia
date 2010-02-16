@@ -24,13 +24,25 @@ Adoro.FormValidator = function(formNode, options) {
     }
 	
 	this.addValidator = function(fieldName, rules) {
+		var $field, validator;		
 		if(arguments.length === 0) return me;
 		if(typeof fieldName !== "string") return me;
-		var $field = $formNode.find("input[name='"+fieldName+"']");
+		$field = $formNode.find("input[name='"+fieldName+"']");
 		if($field.length === 0) return me;
-		if(!$.isArray(rules)) rules = [];		
-		var v = new Validator($field, fieldName, rules);
-		validators.push(v);
+		if(!$.isArray(rules)) rules = [];
+		validator = me.getValidator(fieldName);
+		
+		if(validator) {
+			for(var i = 0; i<rules.length;i++) {
+				validator.addRule(rules[i]);
+			}
+		}
+		else {
+			
+			validator = new Validator($field, fieldName, rules);
+			validators.push(validator);
+		}	
+		
 		return me;
 	}
 	
@@ -57,7 +69,15 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	this.getValidator = function(fieldName) {
-		// return validator for fieldName
+		var o = null, validator;
+		for(var i = validators.length-1; i>=0; i--) {
+			validator = validators[i];
+			if(validator.fieldName === fieldName) {
+				o = validator;
+				break;
+			}
+		}
+		return o;
 	}
 	
 	this.clearErrors = function() {
@@ -72,11 +92,14 @@ Adoro.FormValidator = function(formNode, options) {
 		var me = this;
 		this.$field = $field;
 		this.fieldName = fieldName;
-		this.rules = [];
+		this.rules = rules || [];
 	}
 	Validator.prototype = {
 		addRule: function(method, message, params) {
 			// add rule
+			
+			
+			//this.rules.push({method: method, message: message, params: params})
 		},
 		removeRule: function(method) {
 			// remove rule	
