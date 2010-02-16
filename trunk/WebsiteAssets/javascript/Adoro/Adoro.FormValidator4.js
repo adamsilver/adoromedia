@@ -43,7 +43,7 @@ Adoro.FormValidator = function(formNode, options) {
 			validators.push(validator);
 		}	
 		
-		return me;
+		return me; // should i return form of validator?
 	}
 	
 	this.removeValidator = function(fieldName, Rule) {
