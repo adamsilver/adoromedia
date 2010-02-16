@@ -32,27 +32,35 @@ Adoro.FormValidator = function(formNode, options) {
 		if(!$.isArray(rules)) rules = [];
 		validator = me.getValidator(fieldName);
 		
+		// if the validator exists then add any rules to it
 		if(validator) {
 			for(var i = 0; i<rules.length;i++) {
 				validator.addRule(rules[i]);
 			}
 		}
+		// else create a new validator
 		else {
 			
 			validator = new Validator($field, fieldName, rules);
+			
+			// at this point in the code we should potentially add the rules
+			// instead of simply passing the rules array to the constructor
+			
 			validators.push(validator);
 		}	
 		
 		return me; // should i return form of validator - i think validator?
 	}
 	
-	this.removeValidator = function(fieldName, Rule) {
-		// if no rule then remove whole validator
-		
-		// if rule then remove rule only
-		
-		// if validator has no more rules then remove whole validator
+	this.removeValidator = function(fieldName) {
+		if(arguments.length === 0) return me;
+		if(typeof fieldName !== "string") return me;
+		var validatorIndex = me.getValidatorIndex(fieldName);
+		if(validatorIndex === null) return me;
+		me.getValidators().splice(validatorIndex, 1);
+		return me;
 	}
+	
 	this.validate = function(fieldsArray, clearErrorsBoolean) {
 		/*
 			clear any errors
@@ -76,6 +84,20 @@ Adoro.FormValidator = function(formNode, options) {
 			validator = validators[i];
 			if(validator.fieldName === fieldName) {
 				o = validator;
+				break;
+			}
+		}
+		return o;
+	}
+	
+	this.getValidatorIndex = function(fieldName) {
+		var o = null, validator;
+		if(arguments.length === 0) return o;
+		if(typeof fieldName !== "string") return o;
+		for(var i = validators.length-1; i>=0; i--) {
+			validator = validators[i];
+			if(validator.fieldName === fieldName) {
+				o = i;
 				break;
 			}
 		}

@@ -97,9 +97,44 @@
 				assertTrue("", typeof v === "object");
 			}
 			
+			function test_removeValidator_noarguments_dontRemoveAnything() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				fv.removeValidator();
+				assertTrue("validator doesnt exist", fv.getValidators().length === 1);	
+			}		
 			
+			function test_removeValidator_fieldName_notString_dontRemoveAnything() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				fv.removeValidator(true);
+				assertTrue("validator doesnt exist", fv.getValidators().length === 1);				
+			}
 			
-			-->
+			function test_removeValidator_validatorDoesntExist_dontRemoveAnything() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				fv.removeValidator("usernamexxxx11111");
+				assertTrue("validator doesnt exist", fv.getValidators().length === 1);					
+			}
+			
+			function test_removeValidator_noRules_removeIt() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				fv.removeValidator("username");
+				assertTrue("validator doesnt exist", fv.getValidators().length === 0);		
+			}
+			
+			/* should i check the return value as well as how it affects the validator*/
+			-->			
 		</script>
 		
 		<!--
