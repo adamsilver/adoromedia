@@ -136,8 +136,16 @@
                 assertTrue("", v.getRules().length === 0);
             }
             
+            function test_addRule_methodNotFunction_dontAddRule() {}
+            
+            function test_addRule_messageNotString_dontAddRule() {}
+            
+            function test_addRule_paramsNotObject_addTheRule() {}
+            
+            function test_addRule_validParams_addTheRule() {}
+            
 			/* should i check the return value as well as how it affects the validator*/
-			-->			
+			-->
 		</script>
 		
 		<!--
