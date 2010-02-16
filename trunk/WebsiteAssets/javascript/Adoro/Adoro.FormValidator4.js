@@ -56,6 +56,10 @@ Adoro.FormValidator = function(formNode, options) {
 		return validators;		
 	}
 	
+	this.getValidator = function(fieldName) {
+		// return validator for fieldName
+	}
+	
 	this.clearErrors = function() {
 		// loop through all validators and its rules and set to error false
 	}
