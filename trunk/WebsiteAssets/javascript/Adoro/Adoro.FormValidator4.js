@@ -51,7 +51,7 @@ Adoro.FormValidator = function(formNode, options) {
 		
 		// if rule then remove rule only
 		
-		// if validator has no more rules then remove whole validator		
+		// if validator has no more rules then remove whole validator
 	}
 	this.validate = function(fieldsArray, clearErrorsBoolean) {
 		/*
@@ -65,7 +65,7 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	this.getValidators = function() {
-		return validators;		
+		return validators;
 	}
 	
 	this.getValidator = function(fieldName) {
@@ -87,7 +87,7 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	/**************************************************
-	* inner classes
+	* Constructor: Validator
 	**************************************************/
 	
 	function Validator($field, fieldName, rules) {
@@ -100,7 +100,9 @@ Adoro.FormValidator = function(formNode, options) {
 		addRule: function(method, message, params) {
 			// add rule
 			
+			alert(typeof Adoro.FormValidator.Rule);
 			
+			var rule = new Adoro.FormValidator.Rule();
 			//this.rules.push({method: method, message: message, params: params})
 		},
 		removeRule: function(method) {
@@ -110,11 +112,14 @@ Adoro.FormValidator = function(formNode, options) {
 			// loop through rules and set any rules to hasError true
 		}
 	}
-	//should this be public on instance or static on object
-	function Rule(method, message, params) {
-		this.method = method;
-		this.message = message;
-		this.params = params || null;
-	}
-	Rule.prototype.hasError = false;
+}
+Adoro.FormValidator.Rule = function(method, message, params) {
+	this.method = method;
+	this.message = message;
+	this.params = params || null;
+}
+Adoro.FormValidator.Rule.prototype = {
+	hasError: false,
+	setErrorState: function() {	},
+	getErrorState: function() {	}
 }
