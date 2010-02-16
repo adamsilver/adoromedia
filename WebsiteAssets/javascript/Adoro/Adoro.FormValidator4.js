@@ -100,7 +100,7 @@ Adoro.FormValidator = function(formNode, options) {
 		addRule: function(method, message, params) {
 			// add rule
 			
-			alert(typeof Adoro.FormValidator.Rule);
+			//alert(typeof Adoro.FormValidator.Rule);
 			
 			var rule = new Adoro.FormValidator.Rule();
 			//this.rules.push({method: method, message: message, params: params})
