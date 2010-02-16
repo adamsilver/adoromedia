@@ -62,14 +62,43 @@
 					method: function() {},message: "message1"
 				}]);
 				
+
 				fv.addValidator("username", [{
 					method: function() {},message: "message2"
 				}]);
 				
-				alert(fv.getValidator("username").rules.length);
-				
-				
+				assertTrue("validator doesnt exist", fv.getValidators().length === 1);	
 			}
+			
+			function test_getValidator_noArguments_returnNull() {
+				var fv = new Adoro.FormValidator();
+				var v = fv.getValidator();
+				assertTrue("", v === null);
+			}
+			
+			function test_getValidator_fieldName_notString_returnNull() {
+				var fv = new Adoro.FormValidator();
+				var v = fv.getValidator(true);
+				assertTrue("", v === null);
+			}
+			
+			function test_getValidator_fieldName_doesntExist_returnNull() {
+				var fv = new Adoro.FormValidator();
+				var v = fv.getValidator("blah123344");
+				assertTrue("", v === null);
+			}
+			
+			function test_getValidator_validParam_returnValidator() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				var v = fv.getValidator("username");
+				assertTrue("", typeof v === "object");
+			}
+			
+			
+			
 			-->
 		</script>
 		
