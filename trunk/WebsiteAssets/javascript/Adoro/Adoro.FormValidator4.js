@@ -70,6 +70,8 @@ Adoro.FormValidator = function(formNode, options) {
 	
 	this.getValidator = function(fieldName) {
 		var o = null, validator;
+		if(arguments.length === 0) return o;
+		if(typeof fieldName !== "string") return o;
 		for(var i = validators.length-1; i>=0; i--) {
 			validator = validators[i];
 			if(validator.fieldName === fieldName) {
