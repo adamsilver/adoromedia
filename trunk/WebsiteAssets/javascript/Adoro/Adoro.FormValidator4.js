@@ -29,7 +29,7 @@ Adoro.FormValidator = function(formNode, options) {
 		var $field = $formNode.find("input[name='"+fieldName+"']");
 		if($field.length === 0) return me;
 		if(!$.isArray(rules)) rules = [];		
-		var v = new Validator($field, rules);
+		var v = new Validator($field, fieldName, rules);
 		validators.push(v);
 		return me;
 	}
@@ -64,8 +64,9 @@ Adoro.FormValidator = function(formNode, options) {
 	* inner classes
 	**************************************************/
 	
-	function Validator(fieldName, rules) {
+	function Validator($field, fieldName, rules) {
 		var me = this;
+		this.$field = $field;
 		this.fieldName = fieldName;
 		this.rules = [];
 	}
