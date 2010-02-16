@@ -52,7 +52,14 @@
 				var fv = new Adoro.FormValidator(formNode);
 				fv.addValidator("username", true);
 				assertTrue("validator doesnt exist", fv.getValidators().length === 1);		
-			}			
+			}
+			
+			function test_addValidator_addTwoValidatorsWithSameField_addRuleToExistingInsteadOfCreatingNewValidator() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				//fv.addValidator("username", true);
+			}
 			-->
 		</script>
 		
