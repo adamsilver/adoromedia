@@ -125,15 +125,23 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	Validator.prototype = {
 		addRule: function(method, message, params) {
-			// add rule
+			if(arguments.length === 0) return this;
+			if(typeof method !== "function") return this;
+			if(typeof message !== "string") return this;
+			if(typeof params !== "object") params = {};
+			
 			
 			//alert(typeof Adoro.FormValidator.Rule);
 			
-			var rule = new Adoro.FormValidator.Rule();
-			//this.rules.push({method: method, message: message, params: params})
+			var rule = new Adoro.FormValidator.Rule(method, message, params);
+			//this.rules.push(rule);
+			return this;
 		},
 		removeRule: function(method) {
 			// remove rule	
+		},
+		getRules: function() {
+			return this.rules;
 		},
 		validate: function() {
 			// loop through rules and set any rules to hasError true
@@ -147,6 +155,11 @@ Adoro.FormValidator.Rule = function(method, message, params) {
 }
 Adoro.FormValidator.Rule.prototype = {
 	hasError: false,
-	setErrorState: function() {	},
-	getErrorState: function() {	}
+	setErrorState: function(value) {
+		if(typeof value !== "boolean") return;
+		this.hasError = value;
+	},
+	getErrorState: function() {
+		return this.hasError;	
+	}
 }
