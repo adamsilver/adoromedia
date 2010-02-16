@@ -58,15 +58,8 @@
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
-				fv.addValidator("username", [{
-					method: function() {},message: "message1"
-				}]);
-				
-
-				fv.addValidator("username", [{
-					method: function() {},message: "message2"
-				}]);
-				
+				fv.addValidator("username", []);
+				fv.addValidator("username", []);
 				assertTrue("validator doesnt exist", fv.getValidators().length === 1);	
 			}
 			
@@ -124,15 +117,25 @@
 				assertTrue("validator doesnt exist", fv.getValidators().length === 1);					
 			}
 			
-			function test_removeValidator_noRules_removeIt() {
+			function test_removeValidator_correctParams_removeIt() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
 				fv.addValidator("username");
 				fv.removeValidator("username");
-				assertTrue("validator doesnt exist", fv.getValidators().length === 0);		
+				assertTrue("validator doesnt exist", fv.getValidators().length === 0);
 			}
 			
+            function test_addRule_noArguments_dontAddRule() {
+                var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+                var v = fv.getValidator("username")
+                v.addRule();
+                assertTrue("", v.getRules().length === 0);
+            }
+            
 			/* should i check the return value as well as how it affects the validator*/
 			-->			
 		</script>
