@@ -148,6 +148,9 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 	}
 }
+
+// should i not do something similar for Validator?
+
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
 	this.message = message;
