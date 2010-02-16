@@ -69,7 +69,12 @@ Adoro.FormValidator = function(formNode, options) {
 		*/
 	}
 	this.getErrors = function() {
-		// return a list of errors
+		var errors = [];
+		// loop through all validators
+			// loop through all rules
+				// if rule.hasError
+					// errors.push();
+		return errors;
 	}
 	
 	this.getValidators = function() {
