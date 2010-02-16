@@ -151,7 +151,7 @@ Adoro.FormValidator = function(formNode, options) {
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
 	this.message = message;
-	this.params = params || null;
+	this.params = params || {};
 }
 Adoro.FormValidator.Rule.prototype = {
 	hasError: false,
