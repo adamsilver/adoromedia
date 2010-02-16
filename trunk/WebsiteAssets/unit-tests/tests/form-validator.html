@@ -5,27 +5,71 @@
         <title>JsUnit Test Suite</title>
         <script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
 		
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
-        <script type="text/javascript">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+        <script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator4.js"></script>
+        
+		<script type="text/javascript">
+			<!--
+			function test_AdoroFormValidator_Exists() {
+				assertTrue("Adoro FormValidator doesn't exist", typeof Adoro.FormValidator === "function");				
+			}
 			
-			/*
-			 	this.addValidator = addValidator;
-				this.removeValidator = removeValidator;
-				this.addContextualGroup = addContextualGroup;
-				this.removeContextualGroup = removeContextualGroup;
-				this.addError = addError;
-				this.removeError = removeError;
-			*/
+			function test_addValidator_noArguments_dontAdd() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator();
+				assertTrue("validator doesnt exist", fv.getValidators().length === 0);
+			}
+			
+			function test_addValidator_fieldName_notString_dontAdd() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator(true);
+				assertTrue("validator doesnt exist", fv.getValidators().length === 0);
+			}
+			
+			function test_addValidator_fieldDoesntExist_dontAdd() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username111");
+				assertTrue("validator doesnt exist", fv.getValidators().length === 0);				
+			}			
+			
+			function test_addValidator_rulesArgumentExcluded_addWithEmptyRules() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+				assertTrue("validator doesnt exist", fv.getValidators().length === 1);		
+			}
+			
+			function test_addValidator_rulesNotArray_addWithEmptyRules() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", true);
+				assertTrue("validator doesnt exist", fv.getValidators().length === 1);		
+			}			
+			-->
+		</script>
+		
+		<!--
+		<script type="text/javascript">
+			
+		
 			
 			// general
 
 			
-			function testAdoroFormValidatorExists() {
+			function atestAdoroFormValidatorExists() {
 				assertTrue("Adoro FormValidator doesn't exist", typeof Adoro.FormValidator === "function");
 			}
 			
-			function testSubmitFormWithErrors_CorrectNumberOfErrors() {
+			
+			function atestSubmitFormWithErrors_CorrectNumberOfErrors() {
 				
 				var formNode = document.getElementById("form1");
 				var fv = new Adoro.FormValidator(formNode);
@@ -39,7 +83,7 @@
 				// how do i test this? DONT
 			}
 			
-			function testSubmitFormWithNoErrors_FormSubmits() {
+			function atestSubmitFormWithNoErrors_FormSubmits() {
 				return;
 				var formNode = document.getElementById("form1");
 				var fv = new Adoro.FormValidator(formNode);
@@ -53,10 +97,10 @@
 				// how do i test this?
 			}
 			
-            function testValidateTrue() {}
-            function testValidateFalse() {}
+            function atestValidateTrue() {}
+            function atestValidateFalse() {}
             
-			function testContextualSubmitWithErrors_CorrectNumberOfErrors() {
+			function atestContextualSubmitWithErrors_CorrectNumberOfErrors() {
                 
             }
 			
@@ -66,41 +110,41 @@
 			
 			// ? what if form node doesnt exist - do i bother allowing the running of addValidator?
 			
-			function testAddValidatorValid_ReturnsThis() {}
+			function atestAddValidatorValid_ReturnsThis() {}
 			
-			function testAddValidatorValid_ValidatorExists() {}
+			function atestAddValidatorValid_ValidatorExists() {}
 			
 			// addValidator - invalid params
 			
-			function testAddValidatorWithNoParams_DoesntAddValidator() {}
+			function atestAddValidatorWithNoParams_DoesntAddValidator() {}
 			
-			function testAddValidatorWithNoRules_DoesntAddValidator() {}
+			function atestAddValidatorWithNoRules_DoesntAddValidator() {}
 			
-			function testAddValidatorAndFieldDoesntExist_DoesntAddValidator() {}
+			function atestAddValidatorAndFieldDoesntExist_DoesntAddValidator() {}
 			
-			function testAddValidatorParam1NotFieldNode_DoesntAddValidator() {}
+			function atestAddValidatorParam1NotFieldNode_DoesntAddValidator() {}
 			
-			function testAddValidatorParam2NotArrayOfObjects_DoesntAddValidator() {}
+			function atestAddValidatorParam2NotArrayOfObjects_DoesntAddValidator() {}
 			
-			function testAddValidatorParam3NotObject_DoesntAddOptions() {}
+			function atestAddValidatorParam3NotObject_DoesntAddOptions() {}
 			
 			// removeValidator - valid params / key ruleKeys
 			
-			function testRemoveValidatorValidWithKeyOnly_RemoveWholeValidator() {}
+			function atestRemoveValidatorValidWithKeyOnly_RemoveWholeValidator() {}
 			
-			function testRemoveValidatorValidWithKeyAndParticularRuleKey_RemoveParticularKey() {}
+			function atestRemoveValidatorValidWithKeyAndParticularRuleKey_RemoveParticularKey() {}
 			
-			function testRemoveValidatorValidWithKeyAndMoreThanOneKey_RemoveParticularKeys() {}
+			function atestRemoveValidatorValidWithKeyAndMoreThanOneKey_RemoveParticularKeys() {}
 			
-			function testRemoveValidatorValidWithKeyAndAllRuleKeys_RemoveWholeValidator() {}
+			function atestRemoveValidatorValidWithKeyAndAllRuleKeys_RemoveWholeValidator() {}
 			
-			function testRemoveValidatorValidKeyExistsOneRuleKeyDoesOneDoesnt_OnlyRemoveParticularKey() {}
+			function atestRemoveValidatorValidKeyExistsOneRuleKeyDoesOneDoesnt_OnlyRemoveParticularKey() {}
 			
 			// removeValidator - invalid params
 			
-			function testRemoveValidatorInvalidKeyDoesntExist_DontRemove() {}
+			function atestRemoveValidatorInvalidKeyDoesntExist_DontRemove() {}
 			
-			function testRemoveValidatorInvalidKeyExistsRuleKeyDoesnt_DontRemove() {}
+			function atestRemoveValidatorInvalidKeyExistsRuleKeyDoesnt_DontRemove() {}
 				
 			
 			
@@ -188,6 +232,7 @@
 	    }	
 		   */  
         </script>
+		-->
     </head>
     
     <body>
