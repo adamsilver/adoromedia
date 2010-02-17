@@ -43,13 +43,14 @@ Adoro.FormValidator = function(formNode, options) {
 			
 			validator = new Validator($field, fieldName, rules);
 			
+			// TO DO
 			// at this point in the code we should potentially add the rules
 			// instead of simply passing the rules array to the constructor
 			
 			validators.push(validator);
 		}	
 		
-		return me; // should i return form of validator - i think validator?
+		return validator; // should i return form or validator - i think validator?
 	}
 	
 	this.removeValidator = function(fieldName) {
@@ -125,23 +126,29 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	Validator.prototype = {
 		addRule: function(method, message, params) {
+			var rule = null;
 			if(arguments.length === 0) return this;
 			if(typeof method !== "function") return this;
 			if(typeof message !== "string") return this;
-			if(typeof params !== "object") params = {};
-			
-			
-			//alert(typeof Adoro.FormValidator.Rule);
-			
-			var rule = new Adoro.FormValidator.Rule(method, message, params);
-			//this.rules.push(rule);
+			if(typeof params !== "object") params = {};		
+			rule = new Adoro.FormValidator.Rule(method, message, params);
+			this.rules.push(rule);
 			return this;
 		},
 		removeRule: function(method) {
-			// remove rule	
+			var rules = this.getRules(),
+				i = rules.length;
+			if(!rules) return this;
+			for(i; i>=0; i--) {
+				if(rules[i].method === method) {
+					rules.splice(i, 1);
+					break;
+				}
+			}
+			return this;	
 		},
 		getRules: function() {
-			return this.rules;
+			return this.rules || null;
 		},
 		validate: function() {
 			// loop through rules and set any rules to hasError true

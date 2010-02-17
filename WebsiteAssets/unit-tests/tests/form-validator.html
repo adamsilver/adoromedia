@@ -63,6 +63,15 @@
 				assertTrue("validator doesnt exist", fv.getValidators().length === 1);	
 			}
 			
+			function test_addValidator_returnsValidator() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				var v = fv.addValidator("username");
+				
+				// can't do this one instanceof Validator etc
+			}
+			
 			function test_getValidator_noArguments_returnNull() {
 				var fv = new Adoro.FormValidator();
 				var v = fv.getValidator();
@@ -88,6 +97,7 @@
 				fv.addValidator("username");
 				var v = fv.getValidator("username");
 				assertTrue("", typeof v === "object");
+				// may wanna check something here about constructor/instanceof
 			}
 			
 			function test_removeValidator_noarguments_dontRemoveAnything() {
@@ -126,6 +136,15 @@
 				assertTrue("validator doesnt exist", fv.getValidators().length === 0);
 			}
 			
+			function test_getRules_rulesExist() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+                var v = fv.getValidator("username")
+                assertNotNull("",v.getRules());
+			}			
+			
             function test_addRule_noArguments_dontAddRule() {
                 var formNode = document.getElementById("form1");
 				if(!formNode) return;
@@ -135,8 +154,10 @@
                 v.addRule();
                 assertTrue("", v.getRules().length === 0);
             }
-            
-            function test_addRule_methodNotFunction_dontAddRule() {}
+			
+            function test_addRule_methodNotFunction_dontAddRule() {
+				
+			}
             
             function test_addRule_messageNotString_dontAddRule() {}
             
@@ -144,6 +165,7 @@
             
             function test_addRule_validParams_addTheRule() {}
             
+			
 			/* should i check the return value as well as how it affects the validator*/
 			-->
 		</script>
@@ -151,7 +173,10 @@
 		<!--
 		<script type="text/javascript">
 			
-		
+			var rules = [
+				new Adoro.FormValidator.Rule(Adoro.FormRules.notEmpty, "Enter name", {yes: true})
+			]
+			fv.addValidator("name", rules)
 			
 			// general
 
