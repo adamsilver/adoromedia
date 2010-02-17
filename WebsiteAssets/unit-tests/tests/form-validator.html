@@ -90,7 +90,7 @@
 				assertTrue("", v === null);
 			}
 			
-			function test_getValidator_validParam_returnValidator() {
+			function test_getValidator_validArguments_returnValidator() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
@@ -100,7 +100,7 @@
 				// may wanna check something here about constructor/instanceof
 			}
 			
-			function test_removeValidator_noarguments_dontRemoveAnything() {
+			function test_removeValidator_noArguments_dontRemoveAnything() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
@@ -127,7 +127,7 @@
 				assertTrue("validator doesnt exist", fv.getValidators().length === 1);					
 			}
 			
-			function test_removeValidator_correctParams_removeIt() {
+			function test_removeValidator_validArguments_removeIt() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
@@ -197,7 +197,7 @@
                 assertTrue("", v.getRules().length === 1);						
 			}
             
-            function test_addRule_validParams_addTheRule() {
+            function test_addRule_validArguments_addTheRule() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode);
@@ -224,7 +224,21 @@
 				});
 				v.removeRule();
 				assertTrue("", v.getRules().length === 1);
-				
+			}
+			
+			function test_removeRule_validArguments_removeRule() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+                var v = fv.getValidator("username")
+                v.addRule({
+					method: myRule1,
+					message: "",
+					params: {isLength: true}
+				});
+				v.removeRule(myRule1);
+				assertTrue("", v.getRules().length === 0);
 			}
 			
 			function myRule1() {}
