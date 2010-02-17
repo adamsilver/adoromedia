@@ -130,7 +130,7 @@ Adoro.FormValidator = function(formNode, options) {
 			if(arguments.length === 0) return this;
 			if(typeof method !== "function") return this;
 			if(typeof message !== "string") return this;
-			if(typeof params !== "object") params = {};		
+			if(typeof params !== "object") params = {};
 			rule = new Adoro.FormValidator.Rule(method, message, params);
 			this.rules.push(rule);
 			return this;
