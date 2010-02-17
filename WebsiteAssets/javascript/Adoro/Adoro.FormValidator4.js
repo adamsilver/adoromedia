@@ -162,16 +162,19 @@ Adoro.FormValidator = function(formNode, options) {
 				i = 0,
 				rulesLength = rules.length,
 				rule = null,
-				valid = true;
-			if(rulesLength === 0) return;
+				valid = true,
+				allValid = true;
+			if(rulesLength === 0) return allValid;
 			for(i; i<rulesLength; i++) {
 				rule = rules[i];
 				valid = rule.method.call(this.$field, rule.params);
+				if(typeof valid === "undefined") valid = true;
 				if(!valid) {
+					allValid = false;
 					rule.setErrorState(true);
 				}
 			}
-			
+			return allValid;
 		}
 	}
 }
