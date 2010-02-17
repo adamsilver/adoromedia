@@ -160,7 +160,6 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 	}
 }
-
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
 	this.message = message;
