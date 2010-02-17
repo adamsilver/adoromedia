@@ -45,12 +45,16 @@ Adoro.FormValidator = function(formNode, options) {
 			validators.push(validator);
 		}	
 		
-		return validator; // should i return form or validator - i think validator?
+		return validator;
 	}
 	
 	function addRulesToValidator(validator, rules) {
 		for(var i = 0; i<rules.length;i++) {
-			validator.addRule(rules[i]);
+			
+			// this line needs to be
+			// a) if used new Rule: validator.addRule(rules[i].method, rules[i].message, rules[i].params);
+			// b) if used object literal: validator.addRule(rules[i])
+			//validator.addRule(rules[i]);
 		}
 	}
 	
