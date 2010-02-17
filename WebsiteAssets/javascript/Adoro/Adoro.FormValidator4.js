@@ -34,23 +34,24 @@ Adoro.FormValidator = function(formNode, options) {
 		
 		// if the validator exists then add any rules to it
 		if(validator) {
-			for(var i = 0; i<rules.length;i++) {
-				validator.addRule(rules[i]);
+			if(rules.length !== 0) {
+				addRulesToValidator(validator, rules);
 			}
 		}
 		// else create a new validator
 		else {
-			
-			validator = new Validator($field, fieldName, rules);
-			
-			// TO DO
-			// at this point in the code we should potentially add the rules
-			// instead of simply passing the rules array to the constructor
-			
+			validator = new Validator($field, fieldName);
+			addRulesToValidator(validator, rules);
 			validators.push(validator);
 		}	
 		
 		return validator; // should i return form or validator - i think validator?
+	}
+	
+	function addRulesToValidator(validator, rules) {
+		for(var i = 0; i<rules.length;i++) {
+			validator.addRule(rules[i]);
+		}
 	}
 	
 	this.removeValidator = function(fieldName) {
@@ -155,8 +156,6 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 	}
 }
-
-// should i not do something similar for Validator?
 
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
