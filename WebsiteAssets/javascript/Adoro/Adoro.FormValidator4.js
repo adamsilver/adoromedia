@@ -59,7 +59,9 @@ Adoro.FormValidator = function(formNode, options) {
 		if(typeof fieldName !== "string") return me;
 		var validatorIndex = me.getValidatorIndex(fieldName);
 		if(validatorIndex === null) return me;
-		me.getValidators().splice(validatorIndex, 1);
+		var validators = me.getValidators();
+		delete validators[validatorIndex];
+		validators.splice(validatorIndex, 1);
 		return me;
 	}
 	
@@ -140,8 +142,10 @@ Adoro.FormValidator = function(formNode, options) {
 			var rules = this.getRules(),
 				i = rules.length;
 			if(!rules) return this;
+			if(!method) return this;
 			for(i; i>=0; i--) {
 				if(rules[i].method === method) {
+					delete rules[i];
 					rules.splice(i, 1);
 					break;
 				}
