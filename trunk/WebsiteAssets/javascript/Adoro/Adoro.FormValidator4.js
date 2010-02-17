@@ -4,6 +4,9 @@ Adoro.FormValidator = function(formNode, options) {
 		$formNode = $(formNode),
 		validators = [],
 		fvId = new Date().getTime(),
+		
+		invalidRulesToShowPerValidator = 0, // ??????
+		
 		// form level custom events
 		onFormValidateStart = "onFormValidate",
 		onFormValidateComplete = "onFormValidateComplete",
