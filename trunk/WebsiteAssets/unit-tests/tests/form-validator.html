@@ -211,6 +211,23 @@
                 assertTrue("", v.getRules().length === 1);		
 			}
             
+			function test_removeRule_noArguments_dontRemove() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+                var v = fv.getValidator("username")
+                v.addRule({
+					method: myRule1,
+					message: "",
+					params: {isLength: true}
+				});
+				v.removeRule();
+				assertTrue("", v.getRules().length === 1);
+				
+			}
+			
+			function myRule1() {}
 			
 			/* should i check the return value as well as how it affects the validator*/
 			-->
