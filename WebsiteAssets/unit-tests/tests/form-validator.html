@@ -72,6 +72,23 @@
 				// can't do this one instanceof Validator etc
 			}
 			
+			function test_addValidator_withRulesArray() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", [{
+					method: function() {},
+					message: "message",
+					params: {}
+				},{
+					method: function() {},
+					message: "someother message",
+					params: {}
+				}]);
+				fv.addValidator("postcode");
+				assertTrue("validator doesnt exist", fv.getValidator("username").getRules().length === 2);	
+			}
+			
 			function test_getValidator_noArguments_returnNull() {
 				var fv = new Adoro.FormValidator();
 				var v = fv.getValidator();
@@ -239,6 +256,20 @@
 				});
 				v.removeRule(myRule1);
 				assertTrue("", v.getRules().length === 0);
+			}
+			
+			function test_validator_validate_noArguments_validateAllRules() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username");
+                var v = fv.getValidator("username")
+                v.addRule({
+					method: myRule1,
+					message: "",
+					params: {isLength: true}
+				});
+				v.validate();
 			}
 			
 			function myRule1() {}
