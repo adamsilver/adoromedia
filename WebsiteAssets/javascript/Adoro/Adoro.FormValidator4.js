@@ -50,11 +50,7 @@ Adoro.FormValidator = function(formNode, options) {
 	
 	function addRulesToValidator(validator, rules) {
 		for(var i = 0; i<rules.length;i++) {
-			
-			// this line needs to be
-			// a) if used new Rule: validator.addRule(rules[i].method, rules[i].message, rules[i].params);
-			// b) if used object literal: validator.addRule(rules[i])
-			//validator.addRule(rules[i]);
+			validator.addRule(rules[i]);
 		}
 	}
 	
@@ -130,13 +126,13 @@ Adoro.FormValidator = function(formNode, options) {
 		this.rules = rules || [];
 	}
 	Validator.prototype = {
-		addRule: function(method, message, params) {
+		addRule: function(obj) {
 			var rule = null;
 			if(arguments.length === 0) return this;
-			if(typeof method !== "function") return this;
-			if(typeof message !== "string") return this;
-			if(typeof params !== "object") params = {};
-			rule = new Adoro.FormValidator.Rule(method, message, params);
+			if(typeof obj.method !== "function") return this;
+			if(typeof obj.message !== "string") return this;
+			if(typeof obj.params !== "object") obj.params = {};
+			rule = new Adoro.FormValidator.Rule(obj.method, obj.message, obj.params);
 			this.rules.push(rule);
 			return this;
 		},
