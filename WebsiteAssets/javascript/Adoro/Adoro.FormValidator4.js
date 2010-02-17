@@ -72,12 +72,30 @@ Adoro.FormValidator = function(formNode, options) {
 			run validator rules and set flag on the rule to error
 		*/
 	}
+	
+	// what would i expect here
 	this.getErrors = function() {
-		var errors = [];
-		// loop through all validators
-			// loop through all rules
-				// if rule.hasError
-					// errors.push();
+		var errors = [],
+			validators = me.getValidators(),
+			i = 0,
+			validatorsLength = validators.length,
+			j = 0,
+			rules = null,
+			validator = null;
+		
+		for(i;i<validatorsLength;i++) {
+			validator = validators[i];
+			rules = validator.getRules();
+			for(j; j < rules.length; j++) {
+				// do we want to limit how many erros per validator we show
+				// usually we want to do only 1
+				if(rules[j].hasError) {
+					
+				}
+			}
+			
+		}
+
 		return errors;
 	}
 	
@@ -188,8 +206,5 @@ Adoro.FormValidator.Rule.prototype = {
 	setErrorState: function(value) {
 		if(typeof value !== "boolean") return;
 		this.hasError = value;
-	},
-	getErrorState: function() {
-		return this.hasError;	
 	}
 }
