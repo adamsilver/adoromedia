@@ -235,7 +235,7 @@
 				fv.addValidator("username");
                 var v = fv.getValidator("username")
                 v.addRule({
-					method: myRule1,
+					method: myRule1ThatReturnsFalse,
 					message: "",
 					params: {isLength: true}
 				});
@@ -250,12 +250,12 @@
 				fv.addValidator("username");
                 var v = fv.getValidator("username")
                 v.addRule({
-					method: myRule1,
+					method: myRule1ThatReturnsFalse,
 					message: "",
 					params: {isLength: true}
 				});
-				v.removeRule(myRule1);
-				assertTrue("", v.getRules().length === 0);
+				v.removeRule(myRule1ThatReturnsFalse);
+				assertTrue("The length of the rules should be 0", v.getRules().length === 0);
 			}
 			
 			function test_validator_validate_noArguments_validateAllRules() {
@@ -265,14 +265,22 @@
 				fv.addValidator("username");
                 var v = fv.getValidator("username")
                 v.addRule({
-					method: myRule1,
+					method: myRule1ThatReturnsFalse,
 					message: "",
 					params: {isLength: true}
 				});
-				v.validate();
+				//warn("my message for v.validate()", [v.validate()])
+				assertFalse("", v.validate());
+				
 			}
 			
-			function myRule1() {}
+			function myRule1ThatReturnsFalse() {
+				return false;
+			}
+			
+			function myRule2ThatReturnsTrue() {
+				return true;
+			}
 			
 			/* should i check the return value as well as how it affects the validator*/
 			-->
