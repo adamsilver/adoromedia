@@ -1,0 +1,62 @@
+<html>
+	<title>A unit test </title>
+	<head>
+		<script type='text/javascript' src='jsunit/app/jsUnitCore.js'></script>
+		<script type='text/javascript' src='js/myApp.js'></script>
+		<script type='text/javascript'>
+
+
+			function setUp(){
+				// perform fixture set up
+			}
+			function tearDown() {
+				// clean up
+			}
+			
+			function testFunctionExists() {
+				assertNotUndefined("", sum);
+			}
+			
+			function testOnePlusOne(){
+				var value = sum(1, 1);
+				assertEquals("one and one is 2", 2, value);
+			}
+			
+			// return 0;
+			function testNoArguments() {
+				var value = sum();
+				assertEquals("no arguments returns 0", 0, value);
+			}
+			
+			// return firstArgurment;
+			function testNoSecondArgument() {
+				var value = sum(10);
+				assertEquals("this should return 10", 10, value);
+			}
+			
+			// return second argument;
+			function testFirstArgumentNotNumber() {
+				var value = sum("hello", 10);
+				assertEquals("this should return 10", 10, value);
+			}
+			
+			function testSecondArgumentNotNumber() {
+				var value = sum(12, "hello");
+				assertEquals("this should be 12", 12, value);
+			}
+			
+			function testMyObjectExists() {
+				assertNotUndefined("", MyObject);
+			}
+			
+			function testMyObjectGetName() {
+				var adam = new MyObject("adam silver").getFirstName();
+				
+				assertEquals("", "adam silver", adam);
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
