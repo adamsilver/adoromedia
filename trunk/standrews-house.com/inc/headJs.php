@@ -1,1 +1,0 @@
-<script type="text/javascript" src="js/Site/Global/Site.Global.Something.js"></script>
