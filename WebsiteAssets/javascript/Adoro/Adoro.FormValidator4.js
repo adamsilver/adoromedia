@@ -89,8 +89,7 @@ Adoro.FormValidator = function(formNode, options) {
 		for(var i = 0;i<validators.length;i++) {
 			validator = validators[i];
 			rules = validator.getRules();
-			count = 0;
-			for(var j = 0; j < rules.length; j++) {
+			for(var j = 0, count = 0; j < rules.length; j++) {
 				rule = rules[j];
 				if(rule.hasError && (count < invalidRulesToShowPerValidator)) {
 					errors.push({
