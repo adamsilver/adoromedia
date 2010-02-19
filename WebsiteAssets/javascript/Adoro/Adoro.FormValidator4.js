@@ -76,6 +76,10 @@ Adoro.FormValidator = function(formNode, options) {
 			run validator rules and set flag on the rule to error
 		*/
 		
+		var validators = me.getValidators();	
+		for(var i = 0;i<validators.length;i++) {
+			validator[i].validate();
+		}
 	}
 	
 	this.getErrors = function() {
