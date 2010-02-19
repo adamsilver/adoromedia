@@ -5,7 +5,7 @@ Adoro.FormValidator = function(formNode, options) {
 		validators = [],
 		fvId = new Date().getTime(),
 		
-		invalidRulesToShowPerValidator = 0, // ??????
+		invalidRulesToShowPerValidator = 1, // ??????
 		
 		// form level custom events
 		onFormValidateStart = "onFormValidate",
@@ -84,16 +84,24 @@ Adoro.FormValidator = function(formNode, options) {
 			validatorsLength = validators.length,
 			j = 0,
 			rules = null,
-			validator = null;
+			rule = null,
+			validator = null,
+			count = 0;
 		
 		for(i;i<validatorsLength;i++) {
 			validator = validators[i];
 			rules = validator.getRules();
+			count = 0;
 			for(j; j < rules.length; j++) {
-				// do we want to limit how many erros per validator we show
+				rule = rules[j];
+				// do we want to limit how many errors per validator we show
 				// usually we want to do only 1
-				if(rules[j].hasError) {
-					
+				if(rule.hasError && count < invalidRulesToShowPerValidator) {
+					errors.push({
+						fieldName: validator.fieldName,
+						message: rule.message						
+					})
+					count++;
 				}
 			}
 			
