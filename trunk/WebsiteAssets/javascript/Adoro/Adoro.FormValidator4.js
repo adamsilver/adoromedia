@@ -2,10 +2,11 @@ var Adoro = Adoro || {};
 Adoro.FormValidator = function(formNode, options) {
 	var me = this,
 		$formNode = $(formNode),
+		config = options || {},
 		validators = [],
 		fvId = new Date().getTime(),
 		
-		invalidRulesToShowPerValidator = 1, // ??????
+		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1, // ??????
 		
 		// form level custom events
 		onFormValidateStart = "onFormValidate",
@@ -74,29 +75,25 @@ Adoro.FormValidator = function(formNode, options) {
 			loop through the fieldsArray
 			run validator rules and set flag on the rule to error
 		*/
+		
 	}
 	
 	// what would i expect here
 	this.getErrors = function() {
 		var errors = [],
 			validators = me.getValidators(),
-			i = 0,
-			validatorsLength = validators.length,
-			j = 0,
 			rules = null,
 			rule = null,
 			validator = null,
 			count = 0;
 		
-		for(i;i<validatorsLength;i++) {
+		for(var i = 0;i<validators.length;i++) {
 			validator = validators[i];
 			rules = validator.getRules();
 			count = 0;
-			for(j; j < rules.length; j++) {
+			for(var j = 0; j < rules.length; j++) {
 				rule = rules[j];
-				// do we want to limit how many errors per validator we show
-				// usually we want to do only 1
-				if(rule.hasError && count < invalidRulesToShowPerValidator) {
+				if(rule.hasError && (count < invalidRulesToShowPerValidator)) {
 					errors.push({
 						fieldName: validator.fieldName,
 						message: rule.message						
@@ -206,6 +203,7 @@ Adoro.FormValidator = function(formNode, options) {
 			return allValid;
 		}
 	}
+	
 }
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
