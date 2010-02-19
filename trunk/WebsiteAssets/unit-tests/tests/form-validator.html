@@ -286,7 +286,10 @@
 			function test_getErrors_whenThereAreErrors_returnFilledArray() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
-				var fv = new Adoro.FormValidator(formNode);
+				var fv = new Adoro.FormValidator(formNode, {
+					// set invalid rules to 2
+					invalidRulesToShowPerValidator: 2	
+				});
 				fv.addValidator("username", [{
 					method: function() {
 						return false;
@@ -300,9 +303,30 @@
 					message: "someother message 2",
 					params: {}
 				}]);
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return false;
+					},
+					message: "message for postcode 1",
+					params: {}
+				},{
+					method: function b() {
+						return false;
+					},
+					message: "message for postcode 2",
+					params: {}
+				},{
+					method: function a() {
+						return false;
+					},
+					message: "message for postcode 3",
+					params: {}
+				}]);
+								
 				fv.getValidator("username").validate();
+				fv.getValidator("postcode").validate();
 				var errors = fv.getErrors();
-				assertTrue("", errors.length === 1);
+				assertTrue("", errors.length === 4);
 				
 			}
 			
