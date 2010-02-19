@@ -6,7 +6,7 @@ Adoro.FormValidator = function(formNode, options) {
 		validators = [],
 		fvId = new Date().getTime(),
 		
-		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1, // ??????
+		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
 		
 		// form level custom events
 		onFormValidateStart = "onFormValidate",
