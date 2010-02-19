@@ -73,13 +73,24 @@ Adoro.FormValidator = function(formNode, options) {
 		/*
 			clear any errors
 			loop through the fieldsArray
-			run validator rules and set flag on the rule to error
 		*/
 		
-		var validators = me.getValidators();	
+		if(!fieldsArray || !$.isArray(fieldsArray)) fieldsArray = [];
+		
+		var allValid = true,
+			validators = me.getValidators(),
+			valid = true;
+			
 		for(var i = 0;i<validators.length;i++) {
-			validator[i].validate();
+			// if validator not in fieldsArray continue
+			
+			
+			valid = validator[i].validate();
+			if(!valid) {
+				allValid = false;
+			}
 		}
+		return allValid;
 	}
 	
 	this.getErrors = function() {
