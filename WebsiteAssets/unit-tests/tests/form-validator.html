@@ -327,8 +327,55 @@
 				fv.getValidator("postcode").validate();
 				var errors = fv.getErrors();
 				assertTrue("", errors.length === 4);
-				
 			}
+			
+			function test_clearErrors_makeSureThereAreNoErrors() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode, {
+					// set invalid rules to 2
+					invalidRulesToShowPerValidator: 1	
+				});
+				fv.addValidator("username", [{
+					method: function() {
+						return false;
+					},
+					message: "message 1",
+					params: {}
+				},{
+					method: function() {
+						return false;
+					},
+					message: "someother message 2",
+					params: {}
+				}]);
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return false;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+								
+				fv.getValidator("username").validate();
+				fv.getValidator("postcode").validate();
+				var errors = fv.getErrors();				
+				fv.clearErrors();
+				errors = fv.getErrors();
+				assertEquals("", errors.length, 0);
+			}
+			
+			function test_clearErrors_noErrorsExist_makeSureThereAreNoErrors() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode, {
+					// set invalid rules to 2
+					invalidRulesToShowPerValidator: 1	
+				});
+				fv.clearErrors();
+				var errors = fv.getErrors();				
+				assertEquals("", errors.length, 0);
+			}			
 			
 			function myRule1ThatReturnsFalse() {
 				return false;

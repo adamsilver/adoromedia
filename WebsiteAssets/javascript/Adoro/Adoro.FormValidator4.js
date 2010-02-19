@@ -78,7 +78,6 @@ Adoro.FormValidator = function(formNode, options) {
 		
 	}
 	
-	// what would i expect here
 	this.getErrors = function() {
 		var errors = [],
 			validators = me.getValidators(),
@@ -103,7 +102,6 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 			
 		}
-
 		return errors;
 	}
 	
@@ -142,7 +140,18 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	this.clearErrors = function() {
-		// loop through all validators and its rules and set to error false
+		var validators = me.getValidators(),
+			rules = null,
+			rule = null,
+			validator = null;
+		
+		for(var i = 0;i<validators.length;i++) {
+			validator = validators[i];
+			rules = validator.getRules();
+			for(var j = 0; j < rules.length; j++) {
+				rules[j].hasError = false;
+			}
+		}
 	}
 	
 	/**************************************************
