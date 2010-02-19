@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 		<!--
 		on submit 
 	// find out if a button was clicked
@@ -23,12 +23,62 @@
 	<head>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
-		<script type="text/javascript" src="../../javascript/Adoro/Adoro.ContextualSubmitKeyboardHelper.js"></script>
-		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator3.js"></script>
+		
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator4.js"></script>
+		<script type="application/x-javascript">
+			
+			$(document).ready(function() {
+				var formNode = document.getElementById("form1");
+	
+				var fv = new Adoro.FormValidator(formNode, {
+					// set invalid rules to 2
+					invalidRulesToShowPerValidator: 2	
+				});
+				fv.addValidator("username", [{
+					method: function a() {
+						return false;
+					},
+					message: "message for username 1",
+					params: {}
+				},{
+					method: function b() {
+						return false;
+					},
+					message: "message for username 2",
+					params: {}
+				}]);
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return false;
+					},
+					message: "message for postcode 1",
+					params: {}
+				},{
+					method: function d() {
+						return false;
+					},
+					message: "message for postcode 2",
+					params: {}
+				},{
+					method: function e() {
+						return false;
+					},
+					message: "message for postcode 3",
+					params: {}
+				}]);
+				
+				var x = fv.getValidator("postcode").getRules();
+				fv.getValidator("postcode").validate();
+				var e = fv.getErrors();
+			});
+		</script>
+		
+		
+		<!--
 		<script type="text/javascript">
 		
-
 		
+			return;
 			
 			var HomeBaseValidator = function(formNode, options) {
 				
@@ -295,13 +345,14 @@
 			});			
 			
 		</script>
+		-->
 	</head>
 	<body>
 		<h1>Adoro Form Validator</h1>
 		
 		<div id="container">
 			<h2>Homebase Form Validator</h2>
-			
+			<!--
 			<form method="post" action="index.html" id="homebaseForm">
 				<div class="field">
 					<div class="indicator">
@@ -338,7 +389,7 @@
 						<input type="text" name="username" />
 					</div>
 				</div>
-				<!--<input type="submit" name="submitForm2" id="submitForm2" value="validate username only"/>-->
+				
 				<input type="image" name="submitForm2" id="submitForm2" value="validate username only"/>
 				<div class="field">
 					<div class="indicator">
@@ -409,9 +460,17 @@
 				</div>
 				<input type="submit" name="submitForm" />
 			</form>			
+			-->
 			
-			
-		
+				<form id="form1">
+					<input type="submit" id="primarySubmitDummy" name="primarySubmit" value="Primary submit" />
+					
+					<input type="text" name="postcode" />
+					<input type="submit" id="postcodeSubmit" name="postcodeSubmit" value="Post code submit" />
+					<input name="username" />
+					
+					<input type="submit" id="primarySubmit" name="primarySubmit" value="Primary submit" />
+				</form>
 		</div>
 	</body>
 </html>
