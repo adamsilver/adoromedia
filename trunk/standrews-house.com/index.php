@@ -5,15 +5,19 @@
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<link rel="stylesheet" href="css/global.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="js/JQuery/jquery.bgiframe.min.js"></script>
+		
+		<script type="text/javascript" src="js/Adoro/Adoro.DropDownMenu.js"></script>
+		<script type="text/javascript" src="js/App/App.Nav.js"></script>
 		<!--[if IE 7]><link rel="stylesheet" href="css/ie7.css" type="text/css" /><![endif]-->
 		<!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" /><![endif]-->
 	</head> 
 	<body>
 		<div id="container">
 			<div id="header">
-				<div id="logo">
-					<a href="index.php"><img src="img/logo.gif" alt=""/></a>
-				</div>
+				<?php include("inc/logo.php"); ?>
 			</div>
 			<?php include("inc/nav.php"); ?>
 						
