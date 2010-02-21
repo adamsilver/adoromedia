@@ -15,20 +15,8 @@
 					<a href="index.php"><img src="img/logo.gif" alt=""/></a>
 				</div>
 			</div>
-			<div id="nav">
-				<ul>
-					<li class="selected"><a href="index.php">Home</a></li>
-					<li><a href="index.php">About</a></li>
-					<li>
-						<a href="index.php">Services</a>
-						<div class="sub">
-							Some sub menu thing here
-						</div>
-					</li>
-					<li><a href="index.php">Contact</a></li>
-				</ul>
-			</div>
-			
+			<?php include("inc/nav.php"); ?>
+						
 			<div id="content">
 				<div id="breadcrumb">
 					<p>You are viewing:</p>
@@ -59,14 +47,12 @@
 					</div>
 				</div>
 				<div id="secondary">
-					second
+					<div id="homePageImage">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
-				
-				
 			</div>
-			<div id="footer">
-				<p>&copy; Copyright 2010 St Andrews House</p>
-			</div>			
+			<?php include("inc/footer.php"); ?>			
 		</div>
 	</body> 
 </html>
