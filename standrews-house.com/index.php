@@ -14,14 +14,19 @@
 				<div id="logo">
 					<a href="index.php"><img src="img/logo.gif" alt=""/></a>
 				</div>
-				<div id="nav">
-					<ul>
-						<li class="selected"><a href="index.php">Home</a></li>
-						<li><a href="index.php">About</a></li>
-						<li><a href="index.php">Services</a></li>
-						<li><a href="index.php">Contact</a></li>
-					</ul>
-				</div>
+			</div>
+			<div id="nav">
+				<ul>
+					<li class="selected"><a href="index.php">Home</a></li>
+					<li><a href="index.php">About</a></li>
+					<li>
+						<a href="index.php">Services</a>
+						<div class="sub">
+							Some sub menu thing here
+						</div>
+					</li>
+					<li><a href="index.php">Contact</a></li>
+				</ul>
 			</div>
 			
 			<div id="content">
@@ -31,7 +36,33 @@
 						<li>Home page</li>
 					</ul>
 				</div>
-				<h1>Serviced offices based in Gatwick</h1>
+				
+				<div id="primary">
+					
+					<div id="homepage">
+					
+						<h1>Serviced offices based in Gatwick</h1>
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at eros id metus
+						luctus dignissim vitae id turpis. Donec nec quam nisl, bibendum auctor nibh. Curabitur
+						in est ut orci tincidunt interdum. Pellentesque cursus congue massa, ac bibendum erat
+						faucibus ut. Morbi eget ante enim.</p>
+						
+						<p>Aenean quis nibh ut leo hendrerit tempor. Integer purus justo, ullamcorper ac volutpat
+						ultricies, pharetra ut sem. Pellentesque laoreet viverra commodo. Aliquam id velit vel
+						augue sagittis sollicitudin in quis mauris. In hac habitasse platea dictumst. Fusce non
+						leo lectus, quis tincidunt nisl. Aliquam condimentum cursus lacus, eu consequat massa
+						elementum at.</p>
+						
+						<p>Cras ornare pharetra tellus id imperdiet. Nullam at dui tortor. In mollis dui at mi
+						posuere id tincidunt leo tempus. Proin metus augue, tincidunt nec sodales at, egestas a urna.</p>
+					</div>
+				</div>
+				<div id="secondary">
+					second
+				</div>
+				
+				
 			</div>
 			<div id="footer">
 				<p>&copy; Copyright 2010 St Andrews House</p>
