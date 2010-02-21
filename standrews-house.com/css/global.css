@@ -145,7 +145,7 @@ selector {
 
 #nav ul li a {
 	display: block;
-	padding: 12px 25px 15px;
+	padding: 12px 30px 15px;
 	text-decoration: none;
 	color: #fff;
 	border-top: 4px solid #E2E2E9;
@@ -202,6 +202,11 @@ selector {
 	width: 600px;
 }
 
+#secondary {
+	float: left;
+	width: 340px;
+}
+
 #footer {
 	background-color: #eee;
 	padding: 10px;
@@ -221,6 +226,13 @@ selector {
 
 #homepage p {
 	line-height: 1.7em;
+}
+
+#homePageImage {
+	border: 1px solid #eee;
+	padding: 8px;
+	float: right;
+	margin-right: 10px;
 }
 
 
