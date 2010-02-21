@@ -14,15 +14,16 @@
 				<div id="logo">
 					<a href="index.php"><img src="img/logo.gif" alt=""/></a>
 				</div>
+				<div id="nav">
+					<ul>
+						<li class="selected"><a href="index.php">Home</a></li>
+						<li><a href="index.php">About</a></li>
+						<li><a href="index.php">Services</a></li>
+						<li><a href="index.php">Contact</a></li>
+					</ul>
+				</div>
 			</div>
-			<div id="nav">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="index.php">About</a></li>
-					<li><a href="index.php">Services</a></li>
-					<li><a href="index.php">Contact</a></li>
-				</ul>
-			</div>
+			
 			<div id="content">
 				<div id="breadcrumb">
 					<p>You are viewing:</p>
@@ -30,9 +31,10 @@
 						<li>Home page</li>
 					</ul>
 				</div>
-				<h1>Title of the page</h1>
+				<h1>Serviced offices based in Gatwick</h1>
 			</div>
 			<div id="footer">
+				<p>&copy; Copyright 2010 St Andrews House</p>
 			</div>			
 		</div>
 	</body> 
