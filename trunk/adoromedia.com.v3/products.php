@@ -43,26 +43,26 @@
 					<h2>Business to consumer products</h2>
 					<div class="product">
 						<h3>Domain name registration and management</h3>
-						<p class="description">We can manage aspects of the domain including
-						pointing to	a particular host and recurring yearly fees ensuring ownership.</p>
+						<p class="description">We can register and manage your domain name.</p>
 						<p>Prices <span class="price"> from &#163;19.99 per year</span></p>
 					</div>
 					<div class="product">
-						<h3>Website hosting</h3>
-						<p class="description">We can host your website no matter what the requirements,
-						including databases, CMS packages or simple static sites.</p>
+						<h3>Website hosting and email</h3>
+						<p class="description">We can host your website no matter what the requirements.
+						We can also setup your email for your computer and mobile.</p>
 						<p>Prices <span class="price"> from &#163;59.99 per year</span></p>
 					</div>
+					<!--
 					<div class="product">
 						<h3>Email</h3>
-						<p class="description">With each of our hosting packages email accounts are provided. We
-						can help create these for you and set them up so that you have access
-						on the web, on the computer or on a mobile phone.</p>
+						<p class="description">We can set you up with email on your computer or mobile.</p>
 						<p>Prices <span class="price"> from &#163;29.99 per account</span></p>
 					</div>
+					-->
 				</div>
 				<div class="tertiary">
-					<p>* Prices are subject to VAT</p>
+					
+					<p><br/><br/><br/>* Prices are subject to VAT</p>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>
