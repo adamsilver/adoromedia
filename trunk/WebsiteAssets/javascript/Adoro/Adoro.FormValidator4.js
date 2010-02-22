@@ -12,7 +12,7 @@ Adoro.FormValidator = function(formNode, options) {
 		onFormValidateStart = "onFormValidate",
 		onFormValidateComplete = "onFormValidateComplete",
 		onFormFail = "onFormFail",
-		onFormSuccess = "onFormSuccess",		
+		onFormSuccess = "onFormSuccess",
 		// field level custom events
 		onFieldValidateStart = "onFieldValidateStart",
 		onFieldValidateComplete = "onFieldValidateComplete",
@@ -70,10 +70,7 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	this.validate = function(fieldsArray, clearErrorsBoolean) {
-		/*
-			clear any errors
-			loop through the fieldsArray
-		*/
+		if(clearErrorsBoolean !== false) this.clearErrors();
 		
 		if(!fieldsArray || !$.isArray(fieldsArray)) fieldsArray = [];
 		
