@@ -82,10 +82,10 @@ Adoro.FormValidator = function(formNode, options) {
 			valid = true;
 			
 		for(var i = 0;i<validators.length;i++) {
-			// if validator not in fieldsArray continue
+			// only validate specific fields passed in as fieldsArray
+			if(fieldsArray.length > 0 && ($.inArray(validators[i].fieldName, fieldsArray) == -1) ) continue;	
+			valid = validators[i].validate();
 			
-			
-			valid = validator[i].validate();
 			if(!valid) {
 				allValid = false;
 			}

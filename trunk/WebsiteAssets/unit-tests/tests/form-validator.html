@@ -334,7 +334,7 @@
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode, {
 					// set invalid rules to 2
-					invalidRulesToShowPerValidator: 1	
+					invalidRulesToShowPerValidator: 1
 				});
 				fv.addValidator("username", [{
 					method: function() {
@@ -369,13 +369,102 @@
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
 				var fv = new Adoro.FormValidator(formNode, {
-					// set invalid rules to 2
 					invalidRulesToShowPerValidator: 1	
 				});
 				fv.clearErrors();
 				var errors = fv.getErrors();				
 				assertEquals("", errors.length, 0);
 			}			
+			
+			function test_form_validate_noValidators_returnTrue() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.validate();
+				assertEquals("", fv.validate(), true);
+			}
+			
+			function test_form_validate_invalidRules_returnFalse() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", [{
+					method: function() {
+						return true;
+					},
+					message: "message 1",
+					params: {}
+				},{
+					method: function() {
+						return false;
+					},
+					message: "someother message 2",
+					params: {}
+				}]);				
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return false;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+				assertFalse("", fv.validate());
+			}
+			
+			function test_form_validate_fieldArrayEmpty_validateAll_returnFalse() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", [{
+					method: function() {
+						return true;
+					},
+					message: "message 1",
+					params: {}
+				},{
+					method: function() {
+						return true;
+					},
+					message: "someother message 2",
+					params: {}
+				}]);				
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return true;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+				assertTrue("", fv.validate());
+			}
+			
+			function test_form_validate_specificFields_validateSpecific() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("username", [{
+					method: function() {
+						return true;
+					},
+					message: "message 1",
+					params: {}
+				},{
+					method: function() {
+						return true;
+					},
+					message: "someother message 2",
+					params: {}
+				}]);				
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return false;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+				assertFalse("", fv.validate(["postcode"]));
+				assertTrue("", fv.validate(["username"]));
+			}
 			
 			function myRule1ThatReturnsFalse() {
 				return false;
