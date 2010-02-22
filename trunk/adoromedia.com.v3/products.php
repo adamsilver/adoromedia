@@ -29,8 +29,8 @@
 					
 					<div class="product">
 						<h3>Adoro.FormValidator JavaScript Framework</h3>
-						<p class="description">In short, this is an incredibly flexible JavaScript validation
-						framework built on top of the popular jQuery library.</p>
+						<p class="description">In short, this is an incredibly flexible and powerful
+						JavaScript validation framework built on top of the popular jQuery library.</p>
 						<p class="description">Form validation is one of <em>the</em>
 						most crucial aspects of web development, yet most developers
 						find it very tedious.</p>
@@ -43,7 +43,7 @@
 					<h2>Business to consumer products</h2>
 					<div class="product">
 						<h3>Domain name registration and management</h3>
-						<p class="description">We can register and manage your domain name.</p>
+						<p class="description">We can register a domain in your name and manage it.</p>
 						<p>Prices <span class="price"> from &#163;19.99 per year</span></p>
 					</div>
 					<div class="product">
