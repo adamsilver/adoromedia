@@ -12,6 +12,14 @@
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
+				<div id="testimonial">
+					
+					<p class="quote">
+						<span>&#34;</span>Some sort of quote or one liner here, <br/>
+						two lines is better than one i think...<span>&#34;</span>
+					</p>
+					<p class="person">Jo Bloggs, Service Co.</p>
+				</div>
 			</div>
 			<?php include("inc/nav.php"); ?>
 						
@@ -33,6 +41,17 @@
 						luctus dignissim vitae id turpis. Donec nec quam nisl, bibendum auctor nibh. Curabitur
 						in est ut orci tincidunt interdum. Pellentesque cursus congue massa, ac bibendum erat
 						faucibus ut. Morbi eget ante enim.</p>
+						
+						<div class="heros">
+							<div class="hero">
+							</div>
+							<div class="hero">
+							</div>
+							<div class="hero">
+							</div>
+							<div class="hero">
+							</div>
+						</div>
 						
 						<p>Aenean quis nibh ut leo hendrerit tempor. Integer purus justo, ullamcorper ac volutpat
 						ultricies, pharetra ut sem. Pellentesque laoreet viverra commodo. Aliquam id velit vel
