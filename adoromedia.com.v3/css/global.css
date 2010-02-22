@@ -287,14 +287,6 @@ div.product h3 {
 	font-size: 1.2em;
 }
 
-div.product p {
-	margin-bottom: 0px;
-}
-
-div.product p.description {
-	margin-bottom: 10px;
-}
-
 div.product p span.price {
 	color: #dc153f;
 }
