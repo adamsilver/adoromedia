@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery history manager</title>
+		<link rel="stylesheet" href="facets.css" type="text/css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/browserhistorymanager.js"></script>
+		<script type="text/javascript">
+			
+			
+			
+			
+			var myObject = new (function(){
+				$(init);
+				
+				function init() {
+					
+					$.url.listen( "anchors", function(e, itemValue, itemName) {
+			
+						
+						showDivHtml(itemValue)
+					});
+					
+					var a1 = $("a")[0];
+					$(a1).bind("click", somethingClick)
+					
+				}
+				
+				function somethingClick() {
+					var html = "button 1 was clicked";
+					showDivHtml(html);
+					$.url.update( "anchors", html, false);
+					return false;
+				}
+				
+				function showDivHtml(html) {
+					document.getElementById("hello").innerHTML = html;
+				}
+				
+			});
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<a href="#">My link 1</a>
+		<div id="hello">
+				
+		</div>
+	</body>
+</html>
