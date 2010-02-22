@@ -22,16 +22,47 @@
 				<p>Helping <em>people</em> &amp; companies build better websites.</p>
 			</div>
 			<div id="content">
-				<h1>Products</h1>
-				
-				<p>Prices are subject to VAT</p>				
+				<h1>Products</h1>				
 				
 				<div class="primary">
 					<h2>Business to business products</h2>
 					
-					<h3>Adoro.FormValidator</h3>
-					<p>Product: <span class="price">&#163;Free</span></p>
-					<p>Consultancy: <span class="price">&#163;55.00 per hour</span></p>
+					<div class="product">
+						<h3>Adoro.FormValidator JavaScript Framework</h3>
+						<p class="description">In short, this is an incredibly flexible JavaScript validation
+						framework built on top of the popular jQuery library.</p>
+						<p class="description">Form validation is one of <em>the</em>
+						most crucial aspects of web development, yet most developers
+						find it very tedious.</p>
+						<p class="description">With this product, it will make form
+						validation easy and allow the developer to meet any specification.</p>
+						<p>Price <span class="price">&#163;55.00 per hour</span> for consultancy and documentation.</p>
+					</div>
+				</div>
+				<div class="secondary">
+					<h2>Business to consumer products</h2>
+					<div class="product">
+						<h3>Domain name registration and management</h3>
+						<p class="description">We can manage aspects of the domain including
+						pointing to	a particular host and recurring yearly fees ensuring ownership.</p>
+						<p>Prices <span class="price"> from &#163;19.99 per year</span></p>
+					</div>
+					<div class="product">
+						<h3>Website hosting</h3>
+						<p class="description">We can host your website no matter what the requirements,
+						including databases, CMS packages or simple static sites.</p>
+						<p>Prices <span class="price"> from &#163;59.99 per year</span></p>
+					</div>
+					<div class="product">
+						<h3>Email</h3>
+						<p class="description">With each of our hosting packages email accounts are provided. We
+						can help create these for you and set them up so that you have access
+						on the web, on the computer or on a mobile phone.</p>
+						<p>Prices <span class="price"> from &#163;29.99 per account</span></p>
+					</div>
+				</div>
+				<div class="tertiary">
+					<p>* Prices are subject to VAT</p>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>
