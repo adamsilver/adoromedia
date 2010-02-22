@@ -3,7 +3,8 @@
         <li class="main selected"><a href="index.php">Home</a></li>
         <li class="main"><a href="about.php">About</a></li>
         <li class="main">
-            <a href="services.php">Services</a>
+            <a class="arrow" href="services.php">Services</a>
+
             <div class="sub hide">
                 <ul>
                     <li><a href="plans.php">Plans</a></li>
@@ -14,7 +15,6 @@
                     <li><a href="security.php">Security</a></li>
                     <li><a href="telephones.php">Telephones</a></li>
                     <li><a href="costs.php">Costs and Terms</a></li>
-                    </li>
                 </ul>
             </div>
         </li>
