@@ -36,7 +36,7 @@
 						find it very tedious.</p>
 						<p class="description">With this product, it will make form
 						validation easy and allow the developer to meet any specification.</p>
-						<p>Price <span class="price">&#163;55.00 per hour</span> for consultancy and documentation.</p>
+						<p>Price <span class="price">&#163;55.00 per hour</span> (for consultancy)</p>
 					</div>
 				</div>
 				<div class="secondary">
@@ -48,8 +48,8 @@
 					</div>
 					<div class="product">
 						<h3>Website hosting and email</h3>
-						<p class="description">We can host your website no matter what the requirements.
-						We can also setup your email for your computer and mobile.</p>
+						<p class="description">We can host your website no matter what the requirements,
+						as well as setting up your email for your computer and mobile.</p>
 						<p>Prices <span class="price"> from &#163;59.99 per year</span></p>
 					</div>
 					<!--
