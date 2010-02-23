@@ -470,6 +470,7 @@
 			
 			var onFormValidateRun1 = false, onFormValidateRun2 = false;
 			function test_form_validate_customEvent() {
+				return;
 				var fv = new Adoro.FormValidator();
 				
 				fv.addEventHandler("onFormValidateStart", myForm_onValidate_event1);
@@ -488,16 +489,36 @@
 			/* CUSTOM EVENT 2: onFieldValidate */
 
 			function test_field_validate_customEvent() {
-				var fv = new Adoro.FormValidator();
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
 				fv.addValidator("postcode", [{
-					method: function c() {
+					method: function () {
 						return true;
 					},
 					message: "message for postcode 1",
 					params: {}
 				}]);
-				//fv.addEventHandler("postcode.onFieldValidate", )
-				//fv.validate();
+				fv.addValidator("username", [{
+					method: function () {
+						return true;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+				fv.addEventHandler("postcode.onFieldValidateStart", myFunc1);
+				fv.addEventHandler("postcode.onFieldValidateStart", myFunc2);
+				fv.addEventHandler("username.onFieldValidateStart", myFunc2);
+				//fv.addEventHandler("postcode.onFieldValidateStart", myFunc);
+				fv.validate();
+			}
+			
+			function myFunc1() {
+				alert("hoop1");
+			}
+			
+			function myFunc2() {
+				alert("hoop2");				
 			}
 			
 			function myRule1ThatReturnsFalse() {
