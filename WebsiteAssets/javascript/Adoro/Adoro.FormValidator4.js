@@ -1,4 +1,12 @@
 var Adoro = Adoro || {};
+/**
+* Create a new form validator object
+* @class Represents a form validator object
+* @constructor
+* @name Adoro.FormValidator
+* @param {HTMLElement} form as DOM reference
+* @param {Object} options
+*/
 Adoro.FormValidator = function(formNode, options) {
 	var me = this,
 		$formNode = $(formNode),
