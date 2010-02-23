@@ -466,6 +466,8 @@
 				assertTrue("", fv.validate(["username"]));
 			}
 			
+			/* CUSTOM EVENT 1: onFieldValidate */
+			
 			var onFormValidateRun1 = false, onFormValidateRun2 = false;
 			function test_form_validate_customEvent() {
 				var fv = new Adoro.FormValidator();
@@ -475,14 +477,14 @@
 				assertTrue("", onFormValidateRun1);
 				assertTrue("", onFormValidateRun2);
 			}
-			
 			function myForm_onValidate_event1() {
 				onFormValidateRun1 = true;
 			}
-			
 			function myForm_onValidate_event2() {
 				onFormValidateRun2 = true;				
 			}
+			
+			/* CUSTOM EVENT 2: sumnelse */
 			
 			function myRule1ThatReturnsFalse() {
 				return false;
