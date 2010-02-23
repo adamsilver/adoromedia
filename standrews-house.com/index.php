@@ -5,6 +5,8 @@
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
+		<script type="text/javascript" src="js/App/App.HomePageCycler.js"></script>
+		<script type="text/javascript" src="js/App/App.Heroes.js"></script>
 		<?php include("inc/globalCss.php"); ?>
 		<?php include("inc/globalCssIe.php"); ?>
 	</head> 
@@ -43,14 +45,39 @@
 						faucibus ut. Morbi eget ante enim.</p>
 						
 						<div class="heros">
-							<div class="hero">
-							</div>
-							<div class="hero">
-							</div>
-							<div class="hero">
-							</div>
-							<div class="hero">
-							</div>
+							<a href="#1">
+								<div class="hero">
+									<div class="textual">
+										History of St Andrews House
+									</div>
+								</div>
+							</a>
+							<a href="#1">
+								<div class="hero">
+									<div class="textual">
+										Find out about the services
+									</div>
+								</div>
+							</a>
+							<a href="#1">
+								<div class="hero">
+									<div class="textual">
+										See photos of the offices
+									</div>
+								</div>
+							</a>
+							<a href="#1">
+								<div class="hero">
+									<div class="textual">
+										Find out more about prices
+										<div>
+											More info<br/>
+											More info<br/>
+											More info<br/>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						
 						<p>Aenean quis nibh ut leo hendrerit tempor. Integer purus justo, ullamcorper ac volutpat
