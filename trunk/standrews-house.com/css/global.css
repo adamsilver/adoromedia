@@ -192,15 +192,16 @@ selector,
 }
 
 #nav ul li div.sub {
-	border: 4px solid #A7A7BF;
+	border: 1px solid #555;
 	position: absolute;
-	background-color: #333333;
+	background-color: #444;
 	padding: 15px 15px 5px 15px;
 	width: 280px;
 	top: 45px;
 	left: -1px;
+	border-top: 0px;
+	background: #444444 url(../img/bg_subnav.gif) no-repeat top right;
 }
-
 #nav ul li div.sub ul li {
 	font-size: 1em;
 	margin: 0px;
@@ -218,8 +219,8 @@ selector,
 	padding: 0px;
 }
 
-#nav ul li div.sub ul li a:hover {
-	text-decoration: underline;
+#nav ul li div.sub ul li a:hover,
+#nav ul li div.sub ul li a:focus{
 	color: #A7A7BF;
 }
 
