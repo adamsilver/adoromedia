@@ -49,6 +49,11 @@
 								<div class="hero">
 									<div class="textual">
 										History of St Andrews House
+										<div>
+											More info<br/>
+											More info<br/>
+											More info<br/>
+										</div>
 									</div>
 								</div>
 							</a>
@@ -56,6 +61,11 @@
 								<div class="hero">
 									<div class="textual">
 										Find out about the services
+										<div>
+											More info<br/>
+											More info<br/>
+											More info<br/>
+										</div>
 									</div>
 								</div>
 							</a>
@@ -63,6 +73,11 @@
 								<div class="hero">
 									<div class="textual">
 										See photos of the offices
+										<div>
+											More info<br/>
+											More info<br/>
+											More info<br/>
+										</div>
 									</div>
 								</div>
 							</a>

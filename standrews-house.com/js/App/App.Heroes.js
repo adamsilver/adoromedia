@@ -31,15 +31,16 @@ App.Heroes = new (function() {
 			$(this).addClass("heroOn");
 			$(textPart).animate({"height":"100px"}, {complete: function() {
 				$(textPart).find("div").css("display", "block");
-				$(textPart).find("div").animate({"opacity":"1"});
+				$(textPart).find("div").css({"opacity":"1"});
 			}});
 		});
 		
 		$(heroDiv).bind("mouseleave", function() {
 			$(this).removeClass("heroOn");
+			$(textPart).find("div").css("display", "none");
+			$(textPart).find("div").css({"opacity":"0"});
 			$(textPart).animate({"height":originalHeight }, {complete: function(){
-				$(textPart).find("div").css("display", "none");
-				$(textPart).find("div").animate({"opacity":"0"});
+				
 			}});
 		});
 		
