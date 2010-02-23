@@ -67,10 +67,19 @@
 					params: {}
 				}]);
 				
-				var x = fv.getValidator("postcode").getRules();
-				fv.getValidator("postcode").validate();
-				var e = fv.getErrors();
+				fv.addEventHandler("username.onFieldValidateStart", hello);
+				fv.addEventHandler("postcode.onFieldValidateStart", hello);
+				
+				fv.validate();
+				//var x = fv.getValidator("postcode").getRules();
+				//fv.getValidator("postcode").validate();
+				//var e = fv.getErrors();
 			});
+			
+			function hello() {
+				alert("hello");
+			}
+			
 		</script>
 		
 		
