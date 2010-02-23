@@ -471,8 +471,9 @@
 			var onFormValidateRun1 = false, onFormValidateRun2 = false;
 			function test_form_validate_customEvent() {
 				var fv = new Adoro.FormValidator();
-				fv.addEventHandler("onFormValidate", myForm_onValidate_event1);
-				fv.addEventHandler("onFormValidate", myForm_onValidate_event2);
+				
+				fv.addEventHandler("onFormValidateStart", myForm_onValidate_event1);
+				fv.addEventHandler("onFormValidateStart", myForm_onValidate_event2);
 				fv.validate();
 				assertTrue("", onFormValidateRun1);
 				assertTrue("", onFormValidateRun2);
@@ -484,7 +485,20 @@
 				onFormValidateRun2 = true;				
 			}
 			
-			/* CUSTOM EVENT 2: sumnelse */
+			/* CUSTOM EVENT 2: onFieldValidate */
+
+			function test_field_validate_customEvent() {
+				var fv = new Adoro.FormValidator();
+				fv.addValidator("postcode", [{
+					method: function c() {
+						return true;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+				//fv.addEventHandler("postcode.onFieldValidate", )
+				//fv.validate();
+			}
 			
 			function myRule1ThatReturnsFalse() {
 				return false;
