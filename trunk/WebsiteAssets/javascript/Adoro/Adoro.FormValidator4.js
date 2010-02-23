@@ -19,10 +19,10 @@ Adoro.FormValidator = function(formNode, options) {
 			"onFormValidateComplete",
 			"onFormFail",
 			"onFormSuccess",
-			"onFieldValidateStart",
-			"onFieldValidateComplete",
-			"onFieldFail",
-			"onFieldSuccess",
+			"onFieldValidateStart", /* have to be namespaced via field name */
+			"onFieldValidateComplete", /* have to be namespaced via field name */
+			"onFieldFail", /* have to be namespaced via field name */
+			"onFieldSuccess", /* have to be namespaced via field name */
 		];
 		
 	/**
@@ -251,7 +251,7 @@ Adoro.FormValidator = function(formNode, options) {
 			return this.rules || null;
 		},
 		validate: function() {
-			$(document).trigger([fvId, "onFieldValidateStart"].join("."), [me, this.$field]);
+			$(document).trigger([fvId, this.fieldName, "onFieldValidateStart"].join("."), [me, this.$field]);
 			var rules = this.getRules(),
 				i = 0,
 				rulesLength = rules.length,
@@ -266,15 +266,15 @@ Adoro.FormValidator = function(formNode, options) {
 				if(!valid) {
 					allValid = false;
 					rule.setErrorState(true);
-					$(document).trigger([fvId, "onFieldFail"].join("."), [me, this.$field]);
+					$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [me, this.$field]);
 				}
 			}
 			
 			if(allValid) {
-				$(document).trigger([fvId, "onFieldSuccess"].join("."), [me, this.$field]);
+				$(document).trigger([fvId, this.fieldName, "onFieldSuccess"].join("."), [me, this.$field]);
 			}
 			
-			$(document).trigger([fvId, "onFieldValidateComplete"].join("."), [me, this.$field]);
+			$(document).trigger([fvId, this.fieldName, "onFieldValidateComplete"].join("."), [me, this.$field]);
 			return allValid;
 		}
 	}
