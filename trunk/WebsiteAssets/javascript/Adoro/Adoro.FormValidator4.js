@@ -13,25 +13,55 @@ Adoro.FormValidator = function(formNode, options) {
 		config = options || {},
 		validators = [],
 		fvId = new Date().getTime(),
+		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
+		allowedEvents = [
+			"onFormValidateStart",
+			"onFormValidateComplete",
+			"onFormFail",
+			"onFormSuccess",
+			"onFieldValidateStart",
+			"onFieldValidateComplete",
+			"onFieldFail",
+			"onFieldSuccess",
+		];
 		
-		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1;
-		
-		// form level custom events
-		var onFormValidateStart = "onFormValidate",
-		onFormValidateComplete = "onFormValidateComplete",
-		onFormFail = "onFormFail",
-		onFormSuccess = "onFormSuccess",
-		// field level custom events
-		onFieldValidateStart = "onFieldValidateStart",
-		onFieldValidateComplete = "onFieldValidateComplete",
-		onFieldFail = "onFieldFail",
-		onFieldSuccess = "onFieldSuccess";
-		
-	this.addEventHandler = function(eventType, eventHandler) {
+	/**
+	 * add a custom event to the form validator
+	 * @function
+	 * @public
+	 * @param {string} eventType This can be either
+	 * "onFormValidateStart",
+	 * "onFormValidateComplete",
+	 * "onFormFail",
+	 * "onFormSuccess",
+	 * "onFieldValidateStart",
+	 * "onFieldValidateComplete",
+	 * "onFieldFail",
+	 * "onFieldSuccess"
+	 * @param {function} eventHandler This is the callback for the event
+	 */
+	function addEventHandler(eventType, eventHandler) {
+		if(!eventType || !eventHandler) return;
         $(document).bind([fvId, eventType].join("."), eventHandler);
     }
 
-    this.removeEventHandler = function(eventType, eventHandler) {
+	/**
+	 * remove a custom event from the form validator
+	 * @function
+	 * @public
+	 * @param {string} eventType This can be either
+	 * "onFormValidateStart",
+	 * "onFormValidateComplete",
+	 * "onFormFail",
+	 * "onFormSuccess",
+	 * "onFieldValidateStart",
+	 * "onFieldValidateComplete",
+	 * "onFieldFail",
+	 * "onFieldSuccess"
+	 * @param {function} eventHandler This is the callback for the event
+	 */
+    function removeEventHandler(eventType, eventHandler) {
+		if(!eventType || !eventHandler) return;
         $(document).unbind([fvId, eventType].join("."), eventHandler);
     }
 	
@@ -76,10 +106,10 @@ Adoro.FormValidator = function(formNode, options) {
 		validators.splice(validatorIndex, 1);
 		return me;
 	}
-	
-	this.validate = function(fieldsArray, clearErrorsBoolean) {
+
+	function validate(fieldsArray, clearErrorsBoolean) {
 		
-		$(document).trigger([fvId, "onFormValidate"].join("."), ["some data"]);
+		$(document).trigger([fvId, "onFormValidateStart"].join("."), [me]);
 		
 		if(clearErrorsBoolean !== false) this.clearErrors();
 		
@@ -98,6 +128,16 @@ Adoro.FormValidator = function(formNode, options) {
 				allValid = false;
 			}
 		}
+		
+		if(allValid) {
+			$(document).trigger([fvId, "onFormSuccess"].join("."), [me]);
+		}
+		else {
+			$(document).trigger([fvId, "onFormFail"].join("."), [me]);
+		}
+		
+		$(document).trigger([fvId, "onFormValidateComplete"].join("."), [me]);
+		
 		return allValid;
 	}
 	
@@ -175,11 +215,7 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 		}
 	}
-	
-	/**************************************************
-	* Constructor: Validator
-	**************************************************/
-	
+		
 	function Validator($field, fieldName, rules) {
 		var me = this;
 		this.$field = $field;
@@ -215,6 +251,7 @@ Adoro.FormValidator = function(formNode, options) {
 			return this.rules || null;
 		},
 		validate: function() {
+			$(document).trigger([fvId, "onFieldValidateStart"].join("."), [me, this.$field]);
 			var rules = this.getRules(),
 				i = 0,
 				rulesLength = rules.length,
@@ -229,11 +266,22 @@ Adoro.FormValidator = function(formNode, options) {
 				if(!valid) {
 					allValid = false;
 					rule.setErrorState(true);
+					$(document).trigger([fvId, "onFieldFail"].join("."), [me, this.$field]);
 				}
 			}
+			
+			if(allValid) {
+				$(document).trigger([fvId, "onFieldSuccess"].join("."), [me, this.$field]);
+			}
+			
+			$(document).trigger([fvId, "onFieldValidateComplete"].join("."), [me, this.$field]);
 			return allValid;
 		}
 	}
+	
+	// public members
+	this.addEventHandler = addEventHandler;
+	this.validate = validate;
 	
 }
 Adoro.FormValidator.Rule = function(method, message, params) {
