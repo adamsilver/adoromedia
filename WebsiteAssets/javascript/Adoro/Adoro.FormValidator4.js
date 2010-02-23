@@ -42,7 +42,8 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
 	function addEventHandler(eventType, eventHandler) {
 		if(!eventType || !eventHandler) return;
-        $(document).bind([fvId, eventType].join("."), eventHandler);
+		var id = [eventType, fvId].join(".");
+        $(document).bind(id, eventHandler);
     }
 
 	/**
@@ -62,7 +63,8 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
     function removeEventHandler(eventType, eventHandler) {
 		if(!eventType || !eventHandler) return;
-        $(document).unbind([fvId, eventType].join("."), eventHandler);
+		var id = [eventType, fvId].join(".");
+        $(document).unbind(id, eventHandler);
     }
 	
 	this.addValidator = function(fieldName, rules) {
@@ -109,7 +111,7 @@ Adoro.FormValidator = function(formNode, options) {
 
 	function validate(fieldsArray, clearErrorsBoolean) {
 		
-		$(document).trigger([fvId, "onFormValidateStart"].join("."), [me]);
+		$(document).trigger(["onFormValidateStart", fvId].join("."), [me]);
 		
 		if(clearErrorsBoolean !== false) this.clearErrors();
 		
@@ -130,13 +132,13 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 		
 		if(allValid) {
-			$(document).trigger([fvId, "onFormSuccess"].join("."), [me]);
+			$(document).trigger(["onFormSuccess",fvId].join("."), [me]);
 		}
 		else {
-			$(document).trigger([fvId, "onFormFail"].join("."), [me]);
+			$(document).trigger(["onFormFail", fvId].join("."), [me]);
 		}
 		
-		$(document).trigger([fvId, "onFormValidateComplete"].join("."), [me]);
+		$(document).trigger(["onFormValidateComplete", fvId].join("."), [me]);
 		
 		return allValid;
 	}
@@ -250,8 +252,9 @@ Adoro.FormValidator = function(formNode, options) {
 		getRules: function() {
 			return this.rules || null;
 		},
-		validate: function() {
-			$(document).trigger([fvId, this.fieldName, "onFieldValidateStart"].join("."), [me, this.$field]);
+		validate: function(yoyo) {
+			$(document).trigger([this.fieldName,"onFieldValidateStart", fvId].join("."));		
+			
 			var rules = this.getRules(),
 				i = 0,
 				rulesLength = rules.length,
@@ -271,10 +274,10 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 			
 			if(allValid) {
-				$(document).trigger([fvId, this.fieldName, "onFieldSuccess"].join("."), [me, this.$field]);
+				$(document).trigger([this.fieldName, "onFieldSuccess",fvId].join("."), [me, this.$field]);
 			}
 			
-			$(document).trigger([fvId, this.fieldName, "onFieldValidateComplete"].join("."), [me, this.$field]);
+			$(document).trigger([this.fieldName, "onFieldValidateComplete", fvId].join("."), [me, this.$field]);
 			return allValid;
 		}
 	}
