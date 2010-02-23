@@ -6,10 +6,10 @@ Adoro.FormValidator = function(formNode, options) {
 		validators = [],
 		fvId = new Date().getTime(),
 		
-		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
+		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1;
 		
 		// form level custom events
-		onFormValidateStart = "onFormValidate",
+		var onFormValidateStart = "onFormValidate",
 		onFormValidateComplete = "onFormValidateComplete",
 		onFormFail = "onFormFail",
 		onFormSuccess = "onFormSuccess",
@@ -70,6 +70,9 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 	
 	this.validate = function(fieldsArray, clearErrorsBoolean) {
+		
+		$(document).trigger([fvId, "onFormValidate"].join("."), ["some data"]);
+		
 		if(clearErrorsBoolean !== false) this.clearErrors();
 		
 		if(!fieldsArray || !$.isArray(fieldsArray)) fieldsArray = [];
