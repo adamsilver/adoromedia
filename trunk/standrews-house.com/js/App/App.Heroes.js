@@ -20,7 +20,7 @@ App.Heroes = new (function() {
 		var opening = false, closing = false;
 		var textPart = $(heroDiv).find("div.textual")[0];
 		
-		$(textPart).find("p").css("opacity", "0");
+		//$(textPart).find("p").css("opacity", "0");
 		$(textPart).find("p").css("display", "none");
 		
 		
@@ -34,7 +34,6 @@ App.Heroes = new (function() {
 				opening = false;
 				if(closing) return;
 				$(textPart).find("p").css("display", "block");
-				$(textPart).find("p").animate({"opacity":"1"}, {duration: 150});
 			}});
 		});
 		
@@ -42,10 +41,8 @@ App.Heroes = new (function() {
 			closing = true;
 			$(this).removeClass("heroOn");
 			$(textPart).find("p").css("display", "none");
-			$(textPart).find("p").css({"opacity":"0"});
 			$(textPart).animate({"height":originalHeight }, {complete: function(){
 				closing = false;
-				$(textPart).find("p").css("opacity", "0");
 				$(textPart).find("p").css("display", "none");
 			}});
 		});
