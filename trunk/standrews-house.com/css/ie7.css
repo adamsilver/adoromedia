@@ -2,8 +2,22 @@
 * hasLayout
 ********************************************************/
 
-selector {
+selector,
+div.field,
+div.field div.indicator,
+div.actions,
+div.photo,
+#header,
+#nav,
+#nav ul,
+#nav ul li div.sub,
+#nav ul li div.sub ul,
+#breadcrumb {
 	zoom: 1;
+}
+
+div.hero {
+	cursor: pointer;
 }
 
 /********************************************************
