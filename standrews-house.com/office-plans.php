@@ -10,9 +10,10 @@
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
-		<script type="text/javascript" src="js/App/App.HomePageCycler.js"></script>
-		<script type="text/javascript" src="js/App/App.Heroes.js"></script>
+		<script type="text/javascript" src="js/JQuery/jquery.lightbox-0.5.js"></script>
+		<script type="text/javascript" src="js/App/App.PlanGallery.js"></script>
 		<?php include("inc/globalCss.php"); ?>
+		<link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" media="screen" />
 		<?php include("inc/globalCssIe.php"); ?>
 	</head> 
 	<body>
@@ -51,7 +52,20 @@
 						we are dedicated to reducing our carbon footprint.</p>
 						
 						
-						<p>Gallery here</p>
+						<div id="planGallery">
+							<div class="item">
+								<h2>Ground floor</h2>
+								<a href="img/plan_ground_floor.gif" title="Ground floor"><img src="img/plan_ground_floor_thumb.gif" alt="" /></a>
+							</div>
+							<div class="item">
+								<h2>First floor</h2>
+								<a href="img/plan_first_floor.gif" title="First floor"><img src="img/plan_first_floor_thumb.gif" alt="" /></a>
+							</div>
+							<div class="item">
+								<h2>Second floor</h2>
+								<a href="img/plan_second_floor.gif" title="Second floor"><img src="img/plan_second_floor_thumb.gif" alt="" /></a>
+							</div>
+						</div>
 						
 					</div>
 				</div>

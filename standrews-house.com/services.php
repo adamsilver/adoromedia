@@ -10,8 +10,6 @@
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
-		<script type="text/javascript" src="js/App/App.HomePageCycler.js"></script>
-		<script type="text/javascript" src="js/App/App.Heroes.js"></script>
 		<?php include("inc/globalCss.php"); ?>
 		<?php include("inc/globalCssIe.php"); ?>
 	</head> 

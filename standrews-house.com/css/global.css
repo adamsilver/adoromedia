@@ -539,3 +539,27 @@ selector,
 #enquiryForm form {
 	
 }
+
+
+
+
+
+
+
+#planGallery {
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+#planGallery div.item {
+	float: left;
+	margin-right: 10px;
+	min-height: 190px;
+	border: 1px solid #ccc;
+}
+
+#planGallery div.item h2 {
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 3px;
+}
