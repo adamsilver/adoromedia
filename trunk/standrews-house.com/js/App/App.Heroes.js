@@ -45,8 +45,8 @@ App.Heroes = new (function() {
 			if(jQuery.support.opacity) $(textPart).find("p").css({"opacity":"0"});
 			$(textPart).animate({"height":originalHeight }, {complete: function(){
 				closing = false;
-				$(textPart).find("p").css("opacity", "0");
-				if(jQuery.support.opacity) $(textPart).find("p").css("display", "none");
+				if(jQuery.support.opacity) $(textPart).find("p").css("opacity", "0");
+				$(textPart).find("p").css("display", "none");
 			}});
 		});
 		
