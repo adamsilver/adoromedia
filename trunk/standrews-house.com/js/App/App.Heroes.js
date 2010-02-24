@@ -17,30 +17,32 @@ App.Heroes = new (function() {
 	};
 	
 	function Hero(heroDiv) {
+		var opening = false, closing = false;
 		var textPart = $(heroDiv).find("div.textual")[0];
 		
-		$(textPart).find("div").css("display", "none");
-		$(textPart).find("div").css("opacity", "0");
+		$(textPart).find("p").css("display", "none");
+		$(textPart).find("p").css("opacity", "0");
 		
-		var originalHeight = $(textPart).css("height");
-		//alert(originalHeight);
-		
-		
+		var originalHeight = $(textPart).height();		
 		
 		$(heroDiv).bind("mouseenter", function() {
 			$(this).addClass("heroOn");
-			$(textPart).animate({"height":"100px"}, {complete: function() {
-				$(textPart).find("div").css("display", "block");
-				$(textPart).find("div").css({"opacity":"1"});
+			opening = true;
+			$(textPart).animate({"height":"75px"}, {complete: function() {
+				opening = false;
+				if(closing) return;
+				$(textPart).find("p").css("display", "block");
+				$(textPart).find("p").css({"opacity":"1"});
 			}});
 		});
 		
 		$(heroDiv).bind("mouseleave", function() {
+			closing = true;
 			$(this).removeClass("heroOn");
-			$(textPart).find("div").css("display", "none");
-			$(textPart).find("div").css({"opacity":"0"});
+			$(textPart).find("p").css("display", "none");
+			$(textPart).find("p").css({"opacity":"0"});
 			$(textPart).animate({"height":originalHeight }, {complete: function(){
-				
+				closing = false;
 			}});
 		});
 		
