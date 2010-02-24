@@ -9,9 +9,9 @@
             <div class="sub hide">
                 <ul>
                     <li><a href="offices.php">The offices</a></li>
-                    <li><a href="plans.php">Plans</a></li>                    
+                    <li><a href="office-plans.php">Plans</a></li>                    
                     <li><a href="virtual-offices.php">Virtual offices</a></li>
-                    <li><a href="meeting-rooms.php">Meeting Room</a></li>
+                    <li><a href="meeting-room.php">Meeting room</a></li>
                     <li><a href="security.php">Security</a></li>
                     <li><a href="telephones.php">Telephones</a></li>
                 </ul>
