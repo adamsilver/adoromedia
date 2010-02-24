@@ -165,7 +165,8 @@ selector,
 
 #nav ul:after,
 #header:after,
-#breadcrumb:after{
+#breadcrumb:after,
+div.sub ul:after{
 	content: "";
 	display: block;
 	height: 0;
