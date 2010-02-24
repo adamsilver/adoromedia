@@ -94,9 +94,11 @@
 					</div>
 				</div>
 				<div id="secondary">
+					<!--
 					<div id="enquiryCall">
 						<a href="contact.php">Enquiry</a>
 					</div>
+					-->
 					
 					<div id="homePageImage">
 						<img src="img/banner01.jpg" alt="" />

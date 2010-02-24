@@ -4,6 +4,6 @@ App.Nav = new (function() {
 	function init() {
 		var container = document.getElementById("map")
 		if(!container) return;
-		new Adoro.GoogleMap(container, "Hartsbourne Golf Club, Hartsbourne Avenue, Bushey Heath, WD23 1JW");
+		new Adoro.GoogleMap(container, "St Andrews House 26 Brighton Rd, Crawley, West Sussex, RH10 6AA");
 	}
 });
