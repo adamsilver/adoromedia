@@ -85,8 +85,7 @@
 						</div>
 						
 						<p>Aenean quis nibh ut leo hendrerit tempor. Integer purus justo, ullamcorper ac volutpat
-						ultricies, pharetra ut sem. Pellentesque laoreet viverra commodo. Aliquam id velit vel
-						augue sagittis sollicitudin in quis mauris. In hac habitasse platea dictumst. Fusce non
+						ultricies, pharetra ut sem.Quis mauris. In hac habitasse platea dictumst. Fusce non
 						leo lectus, quis tincidunt nisl. Aliquam condimentum cursus lacus, eu consequat massa
 						elementum at.</p>
 						
@@ -95,6 +94,10 @@
 					</div>
 				</div>
 				<div id="secondary">
+					<div id="enquiryCall">
+						<a href="contact.php">Enquiry</a>
+					</div>
+					
 					<div id="homePageImage">
 						<img src="img/banner01.jpg" alt="" />
 					</div>

@@ -28,7 +28,53 @@ a, a:visited, a:link {
 }
 
 a:hover, a:active, a:focus {
-	text-decoration: underline;
+	text-decoration: none;
+}
+
+/****************************************************
+* Forms
+****************************************************/
+
+div.field {
+	margin-bottom: 10px;
+}
+
+div.field div.indicator {
+	margin-bottom: 2px;
+}
+
+div.field div.indicator label {
+	font-size: 1.2em;
+}
+
+div.field input.text {
+	font-size: 1.2em;
+	width: 280px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	background-color: #f5f5f5;
+}
+
+div.field textarea {
+	font-size: 1.2em;
+	width: 280px;
+	padding: 4px;
+	border: 1px solid #ccc;
+	font-family: arial;
+	background-color: #f5f5f5;
+	height: 80px;
+}
+
+div.actions {
+	
+}
+
+div.actions input {
+	width: 280px;
+	padding: 10px 15px;
+	font-size: 1.1em;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 /****************************************************
@@ -44,6 +90,10 @@ h1 {
 }
 
 h2 {
+	color: #333;
+	font-size: 1.6em;
+	font-family: georgia;
+	margin-bottom: 10px;
 }
 
 h3 {
@@ -225,13 +275,13 @@ selector,
 }
 
 /****************************************************
-* nav
+* breadcrumb
 ****************************************************/
 
 #breadcrumb {
 	background-color: #eee;
+	border-bottom: 1px solid #ccc;
 	padding: 10px;
-	margin-bottom: 15px;
 }
 
 #breadcrumb p {
@@ -253,6 +303,10 @@ selector,
 	padding-top: 1px;
 }
 
+/****************************************************
+* Layout
+****************************************************/
+
 #content {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -263,12 +317,19 @@ selector,
 #primary {
 	float: left;
 	width: 600px;
+	padding-top: 15px;
 }
 
 #secondary {
 	float: left;
 	width: 340px;
+	padding-top: 15px;
+	background: url(../img/bg_secondary.gif) repeat-x;
 }
+
+/****************************************************
+* Footer
+****************************************************/
 
 #footer {
 	background-color: #eee;
@@ -276,12 +337,17 @@ selector,
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	border-top: 1px solid #ccc;
 }
 
 #footer p {
 	margin-bottom: 0px;
 	font-size: 1.1em;
 }
+
+/****************************************************
+* Home page
+****************************************************/
 
 #homepage {
 	padding-left: 10px;
@@ -308,15 +374,18 @@ selector,
 	border: 1px solid #555;
 }
 
+#homepage div.heros a {
+	text-decoration: none;
+}
+
 #homepage div.heros div.hero div.textual {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 110px;
-	
 	padding: 10px;
 	border-top: 1px solid #ccc;
-	background-color: #fff;
+	background-color: #f5f5f5;
 	/*-webkit-borderradius: 10px;
 	-moz-border-radius-bottomleft: 10px;
 	-moz-border-radius-bottomright: 10px;
@@ -327,6 +396,7 @@ selector,
 #homepage div.heros div.hero div.textual h2 {
 	font-family: georgia;
 	font-size: 1.3em;
+	margin-bottom: 0px;
 }
 
 #homepage div.heros div.hero div.textual p {
@@ -350,64 +420,89 @@ selector,
 	line-height: 1.7em;
 }
 
+#enquiryCall {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	display: none;
+}
+
+#enquiryCall a {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 2em;
+	border: 1px solid #ccc;
+	text-transform: uppercase;
+	color: #67AF44;
+	font-weight: bold;
+	font-family: georgia;
+}
+
+#enquiryCall a:focus,
+#enquiryCall a:hover {
+	background-color: #f5f5f5;
+}
+
+/****************************************************
+* Home page cycler
+****************************************************/
+
 #homePageImage {
 	margin-bottom: 10px;
-	margin-left: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 #homePageImage img {
-	border: 1px solid #ccc;
 	padding: 8px;
 	background: url(../img/bg_body.gif) repeat-x;
-	width: 300px;
 	height: 251px;
 }
 
 
-/*
 
-h1 {
+
+
+
+
+#pgContact div#primary {
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 580px;
+}
+
+#pgContact div#secondary {
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 320px;
+	background: url(../img/bg_secondary.gif) repeat-x;
+}
+
+
+#contact {
+
+}
+
+#contact #map {
+	height: 300px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+#contact p {
+	line-height: 1.7em;
+}
+
+#contactDetails {
+}
+
+#enquiryForm {
+	padding: 10px;
+	background: url(../img/bg_body.gif) repeat-x;
+}
+
+#enquiryForm form {
 	
-
 }
-
-#content {
-	background-color: #fff;
-	min-height: 500px;
-	padding: 10px;
-}
-
-#breadcrumb {
-	padding: 10px;
-	margin-bottom: 15px;
-	background-color: #f5f5f5;
-	overflow: hidden;
-}
-
-#breadcrumb p {
-	float: left;
-	margin-right: 10px;
-	font-size: 1.1em;
-}
-
-#breadcrumb ul {
-	float: left;
-	list-style: none;
-}
-
-#breadcrumb ul li {
-	font-size: 1.1em;
-}
-
-#footer {
-	padding: 10px;
-	margin-bottom: 15px;
-	background-color: #f5f5f5;
-	overflow: hidden;
-}
-
-#footer p {
-	color: #64649c;
-	font-size: 1.1em;
-}
-*/
