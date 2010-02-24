@@ -25,6 +25,8 @@ a img {
 
 a, a:visited, a:link {
 	color: #8D7342;
+	color:#67AF44;
+	font-weight: bold;
 }
 
 a:hover, a:active, a:focus {
@@ -301,6 +303,8 @@ selector,
 	background: url(../img/arrow_right_peppermint.png) no-repeat 0px 3px;
 	padding-left: 12px;
 	padding-top: 1px;
+	float: left;
+	margin-right: 3px;
 }
 
 /****************************************************
@@ -465,7 +469,31 @@ selector,
 
 
 
+/****************************************************
+* Offices
+****************************************************/
 
+#offices {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+
+#offices ul {
+	list-style: none;
+}
+
+#offices ul li {
+	margin-bottom: 15px;
+	color: #333;
+	background: url(../img/arrow_right_peppermint.png) no-repeat 0px 3px;
+	padding-left: 13px;
+}
+
+
+/****************************************************
+* Contact
+****************************************************/
 
 #pgContact div#primary {
 	padding-left: 10px;
@@ -496,6 +524,11 @@ selector,
 }
 
 #contactDetails {
+	margin-bottom: 15px;
+}
+
+#contactDetails p {
+	margin-bottom: 5px;
 }
 
 #enquiryForm {

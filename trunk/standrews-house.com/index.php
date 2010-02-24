@@ -66,10 +66,10 @@
 									</div>
 								</div>
 							</a>
-							<a href="#1">
+							<a href="offices.php">
 								<div class="hero" id="heroOffices">
 									<div class="textual">
-										<h2>View offices</h2>
+										<h2>The offices</h2>
 										<p>See the plans and photos of the offices.</p>
 									</div>
 								</div>
