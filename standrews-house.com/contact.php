@@ -72,6 +72,8 @@
 					<div id="contactDetails">
 						<h2>General details</h2>				
 						
+						<p class="address"><strong>St Andrews House</strong><br/> 26 Brighton Rd,<br/> Crawley, <br/>West Sussex, <br/>RH10 6AA</p>
+						
 						<p class="telephone">Call us: 01293 543 641</p>
 						
 						<p class="email">Email: <a href="mailto:enquiries@standrews-house.com">enquiries@standrews-house.com</a></p>
@@ -105,7 +107,7 @@
 							<div class="field">
 								<div class="indicator">
 									<label for="message">
-										Your message:
+										Your requirement:
 									</label>
 								</div>
 								<div class="singleInput">

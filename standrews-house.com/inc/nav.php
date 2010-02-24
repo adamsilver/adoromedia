@@ -8,14 +8,12 @@
 
             <div class="sub hide">
                 <ul>
-                    <li><a href="plans.php">Plans</a></li>
                     <li><a href="offices.php">The offices</a></li>
+                    <li><a href="plans.php">Plans</a></li>                    
                     <li><a href="virtual-offices.php">Virtual offices</a></li>
-                    <li><a href="office-gallery.php">Office Gallery</a></li>
                     <li><a href="meeting-rooms.php">Meeting Room</a></li>
                     <li><a href="security.php">Security</a></li>
                     <li><a href="telephones.php">Telephones</a></li>
-                    <li><a href="costs.php">Costs and Terms</a></li>
                 </ul>
             </div>
         </li>
