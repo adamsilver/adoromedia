@@ -12,12 +12,22 @@ div.photo,
 #nav ul,
 #nav ul li div.sub,
 #nav ul li div.sub ul,
+#nav ul li div.sub ul li,
+#nav ul li div.sub ul li a,
 #breadcrumb {
 	zoom: 1;
 }
 
+/********************************************************
+* Random
+********************************************************/
+
 div.hero {
 	cursor: pointer;
+}
+
+#nav ul li div.sub {
+	padding-bottom: 10px;
 }
 
 /********************************************************
