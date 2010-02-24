@@ -2,8 +2,8 @@
 <div id="nav">
     <ul>
         <li class="main <?php if($siteSection == "home") echo $cssSelected; ?>"><a href="index.php">Home</a></li>
-        <li class="main"><a href="about.php">About</a></li>
-        <li class="main">
+        <li class="main <?php if($siteSection == "about") echo $cssSelected; ?>"><a href="about.php">About</a></li>
+        <li class="main <?php if($siteSection == "services") echo $cssSelected; ?>">
             <a class="arrow" href="services.php">Services</a>
 
             <div class="sub hide">
@@ -19,7 +19,7 @@
                 </ul>
             </div>
         </li>
-        <li class="main"><a href="pricing.php">Pricing</a></li>
+        <li class="main <?php if($siteSection == "pricing") echo $cssSelected; ?>"><a href="pricing.php">Pricing</a></li>
         <li class="main <?php if($siteSection == "contact") echo $cssSelected; ?>"><a href="contact.php">Contact</a></li>
     </ul>
 </div>

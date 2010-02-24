@@ -35,6 +35,7 @@
 				<div id="breadcrumb">
 					<p>You are viewing:</p>
 					<ul>
+						<li><a href="index.php">Home page</a></li>
 						<li>Contact</li>
 					</ul>
 				</div>
@@ -71,9 +72,9 @@
 					<div id="contactDetails">
 						<h2>General details</h2>				
 						
-						<p>To call us: telephone 01293 543641</p>
+						<p class="telephone">Call us: 01293 543 641</p>
 						
-						<p>To email us: enquiries@standrews-house.com </p>
+						<p class="email">Email: <a href="mailto:enquiries@standrews-house.com">enquiries@standrews-house.com</a></p>
 						
 					</div>
 					
