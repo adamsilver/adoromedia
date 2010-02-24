@@ -25,7 +25,8 @@
 				<div id="breadcrumb">
 					<p>You are viewing:</p>
 					<ul>
-						<li>Home page</li>
+						<li><a href="index.php">Home page</a></li>
+						<li>About</li>
 					</ul>
 				</div>
 				
