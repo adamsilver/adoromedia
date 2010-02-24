@@ -51,6 +51,7 @@
 						with room sizes, power point and low-energy light positions -
 						we are dedicated to reducing our carbon footprint.</p>
 						
+						<p>Please click on the plans below to zoom in.</p>
 						
 						<div id="planGallery">
 							<div class="item">
@@ -71,7 +72,7 @@
 				</div>
 				<div id="secondary">
 					<div class="photo">
-						<img src="img/banner01.jpg" alt="" />
+						<img src="img/banner04.jpg" alt="" />
 					</div>
 				</div>
 			</div>
