@@ -17,17 +17,9 @@
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
-				<div id="testimonial">
-					
-					<p class="quote">
-						<span>&#34;</span>Some sort of quote or one liner here, <br/>
-						two lines is better than one i think...<span>&#34;</span>
-					</p>
-					<p class="person">Jo Bloggs, Service Co.</p>
-				</div>
+				<?php include("inc/testimonial.php"); ?>
 			</div>
-			<?php include("inc/nav.php"); ?>
-						
+			<?php include("inc/nav.php"); ?>						
 			<div id="content">
 				<div id="breadcrumb">
 					<p>You are viewing:</p>
@@ -35,14 +27,10 @@
 						<li><a href="index.php">Home page</a></li>
 						<li>Pricing</li>
 					</ul>
-				</div>
-				
-				<div id="primary">
-					
-					<div id="pricing">
-					
-						<h1>Pricing</h1>
-						
+				</div>				
+				<div id="primary">					
+					<div id="pricing">					
+						<h1>Pricing</h1>						
 						<ul class="generic">
 							<li>A returnable deposit of &#163;500 (less the cost of redecoration) is required for each office.</li>
 							<li>The office rental is subject to a full three calendar month notice of termination.</li>
@@ -50,10 +38,8 @@
 							<li>See OFFICE AGREEMENT FORM.</li>
 							<li>See BUSINESS SERVICES AGREEMENT FORM.</li>
 							<li>See SERVICE AND FACILITY Price List.</li>
-						</ul>
-						
-						<p>You can make an enquiry using our online <a href="contact.php#enquiryForm">enquiry form</a>.</p>
-						
+						</ul>						
+						<p>You can make an enquiry using our online <a href="contact.php#enquiryForm">enquiry form</a>.</p>						
 					</div>
 				</div>
 				<div id="secondary">

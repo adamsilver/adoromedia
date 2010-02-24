@@ -17,14 +17,7 @@
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
-				<div id="testimonial">
-					
-					<p class="quote">
-						<span>&#34;</span>Some sort of quote or one liner here, <br/>
-						two lines is better than one i think...<span>&#34;</span>
-					</p>
-					<p class="person">Jo Bloggs, Service Co.</p>
-				</div>
+				<?php include("inc/testimonial.php"); ?>
 			</div>
 			<?php include("inc/nav.php"); ?>
 						
@@ -36,20 +29,14 @@
 						<li><a href="services.php">Services</a></li>
 						<li>Virtual offices</li>
 					</ul>
-				</div>
-				
-				<div id="primary">
-					
-					<div id="virtualOffices">
-					
-						<h1>Virtual offices</h1>
-						
+				</div>				
+				<div id="primary">					
+					<div id="virtualOffices">					
+						<h1>Virtual offices</h1>						
 						<p>For those requiring the image of St Andrews House as their postal
 						and/or telephone base, this is an economical alternative to renting
-						an office.</p>
-						
-						<p>A register of all Postal Accounts is kept for Police scrutiny.</p>
-						
+						an office.</p>						
+						<p>A register of all Postal Accounts is kept for Police scrutiny.</p>						
 					</div>
 				</div>
 				<div id="secondary">

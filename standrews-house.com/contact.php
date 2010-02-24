@@ -20,14 +20,7 @@
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
-				<div id="testimonial">
-					
-					<p class="quote">
-						<span>&#34;</span>Some sort of quote or one liner here, <br/>
-						two lines is better than one i think...<span>&#34;</span>
-					</p>
-					<p class="person">Jo Bloggs, Service Co.</p>
-				</div>
+				<?php include("inc/testimonial.php"); ?>
 			</div>
 			<?php include("inc/nav.php"); ?>
 						

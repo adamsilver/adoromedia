@@ -17,17 +17,9 @@
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
-				<div id="testimonial">
-					
-					<p class="quote">
-						<span>&#34;</span>Some sort of quote or one liner here, <br/>
-						two lines is better than one i think...<span>&#34;</span>
-					</p>
-					<p class="person">Jo Bloggs, Service Co.</p>
-				</div>
+				<?php include("inc/testimonial.php"); ?>
 			</div>
-			<?php include("inc/nav.php"); ?>
-						
+			<?php include("inc/nav.php"); ?>						
 			<div id="content">
 				<div id="breadcrumb">
 					<p>You are viewing:</p>
@@ -35,16 +27,11 @@
 						<li><a href="index.php">Home page</a></li>
 						<li>Services landing page</li>
 					</ul>
-				</div>
-				
-				<div id="primary">
-					
-					<div id="services">
-					
-						<h1>Services</h1>
-						
-						<p>Find out about the services we provide be following the links below:</p>
-						
+				</div>				
+				<div id="primary">					
+					<div id="services">					
+						<h1>Services</h1>						
+						<p>Find out about the services we provide be following the links below:</p>						
 						 <ul class="generic">
 							<li><a href="offices.php">The offices</a></li>
 							<li><a href="office-plans.php">Plans</a></li>                    
@@ -52,8 +39,7 @@
 							<li><a href="meeting-room.php">Meeting room</a></li>
 							<li><a href="security.php">Security</a></li>
 							<li><a href="telephones.php">Telephones</a></li>
-						</ul>
-						
+						</ul>						
 					</div>
 				</div>
 				<div id="secondary">
