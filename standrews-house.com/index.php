@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+	$metaKeywords = "adoro media, website design, website development, london";
+	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
+	$siteSection = "home";
+?>
 <html lang="en"> 
 	<head>
 		<title>Solent Serviced Offices: St Andrews House</title> 
