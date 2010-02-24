@@ -305,7 +305,7 @@ selector,
 }
 
 #homepage div.heros div.heroOn {
-	border: 1px solid #000;
+	border: 1px solid #555;
 }
 
 #homepage div.heros div.hero div.textual {
@@ -315,7 +315,7 @@ selector,
 	width: 110px;
 	
 	padding: 10px;
-	
+	border-top: 1px solid #ccc;
 	background-color: #fff;
 	/*-webkit-borderradius: 10px;
 	-moz-border-radius-bottomleft: 10px;
@@ -332,6 +332,18 @@ selector,
 #homepage div.heros div.hero div.textual p {
 	line-height: 1.2em;
 	margin-top: 6px;
+}
+
+#homepage div.heros #heroServices {
+	background: url(../img/bg_tel.jpg) no-repeat;
+}
+
+#homepage div.heros #heroOffices {
+	background: url(../img/bg_plan.jpg) no-repeat;
+}
+
+#homepage div.heros #heroFindUs {
+	background: url(../img/bg_gmap.jpg) no-repeat;
 }
 
 #homepage p {
