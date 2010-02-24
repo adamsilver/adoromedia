@@ -91,6 +91,8 @@
 					<div id="homePageImage" class="photo">
 						<img src="img/banner01.jpg" alt="" />
 					</div>
+					
+					<h2>Office located close to Gatwick Aiport...</h2>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			
