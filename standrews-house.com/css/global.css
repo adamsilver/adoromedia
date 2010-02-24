@@ -313,15 +313,25 @@ selector,
 	bottom: 0;
 	left: 0;
 	width: 110px;
-	font-size: 1.2em;
+	
 	padding: 10px;
-	font-family: georgia;
+	
 	background-color: #fff;
 	/*-webkit-borderradius: 10px;
 	-moz-border-radius-bottomleft: 10px;
 	-moz-border-radius-bottomright: 10px;
 	-webkit-border-bottom-right-radius: 10px;
 	-webkit-border-bottom-left-radius: 10px;*/
+}
+
+#homepage div.heros div.hero div.textual h2 {
+	font-family: georgia;
+	font-size: 1.3em;
+}
+
+#homepage div.heros div.hero div.textual p {
+	line-height: 1.2em;
+	margin-top: 6px;
 }
 
 #homepage p {
@@ -337,6 +347,8 @@ selector,
 	border: 1px solid #ccc;
 	padding: 8px;
 	background: url(../img/bg_body.gif) repeat-x;
+	width: 300px;
+	height: 251px;
 }
 
 

@@ -48,48 +48,32 @@
 							<a href="#1">
 								<div class="hero">
 									<div class="textual">
-										History of St Andrews House
-										<div>
-											More info<br/>
-											More info<br/>
-											More info<br/>
-										</div>
+										<h2>About us</h2>
+										<p>Find out a little more about the company.</p>
 									</div>
 								</div>
 							</a>
 							<a href="#1">
 								<div class="hero">
 									<div class="textual">
-										Find out about the services
-										<div>
-											More info<br/>
-											More info<br/>
-											More info<br/>
-										</div>
+										<h2>Services</h2>
+										<p>Find out more about the services we provide.</p>
 									</div>
 								</div>
 							</a>
 							<a href="#1">
 								<div class="hero">
 									<div class="textual">
-										See photos of the offices
-										<div>
-											More info<br/>
-											More info<br/>
-											More info<br/>
-										</div>
+										<h2>View offices</h2>
+										<p>See the plans and photos of the offices.</p>
 									</div>
 								</div>
 							</a>
 							<a href="#1">
 								<div class="hero">
 									<div class="textual">
-										Find out more about prices
-										<div>
-											More info<br/>
-											More info<br/>
-											More info<br/>
-										</div>
+										<h2>Find us</h2>
+										<p>Locate us using the interactive Google map.</p>
 									</div>
 								</div>
 							</a>
