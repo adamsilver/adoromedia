@@ -54,7 +54,7 @@
 								</div>
 							</a>
 							<a href="#1">
-								<div class="hero">
+								<div class="hero" id="heroServices">
 									<div class="textual">
 										<h2>Services</h2>
 										<p>Find out more about the services we provide.</p>
@@ -62,15 +62,15 @@
 								</div>
 							</a>
 							<a href="#1">
-								<div class="hero">
+								<div class="hero" id="heroOffices">
 									<div class="textual">
 										<h2>View offices</h2>
 										<p>See the plans and photos of the offices.</p>
 									</div>
 								</div>
 							</a>
-							<a href="#1">
-								<div class="hero">
+							<a href="contact.php">
+								<div class="hero" id="heroFindUs">
 									<div class="textual">
 										<h2>Find us</h2>
 										<p>Locate us using the interactive Google map.</p>
