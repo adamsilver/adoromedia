@@ -1,6 +1,7 @@
+<?php $cssSelected = "selected";?>
 <div id="nav">
     <ul>
-        <li class="main selected"><a href="index.php">Home</a></li>
+        <li class="main <?php if($siteSection == "home") echo $cssSelected; ?>"><a href="index.php">Home</a></li>
         <li class="main"><a href="about.php">About</a></li>
         <li class="main">
             <a class="arrow" href="services.php">Services</a>
@@ -19,6 +20,6 @@
             </div>
         </li>
         <li class="main"><a href="pricing.php">Pricing</a></li>
-        <li class="main"><a href="contact.php">Contact</a></li>
+        <li class="main <?php if($siteSection == "contact") echo $cssSelected; ?>"><a href="contact.php">Contact</a></li>
     </ul>
 </div>
