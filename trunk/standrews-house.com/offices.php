@@ -10,9 +10,6 @@
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhSRzqVAvSH2EqOQ921DUd7Df9NMbxRb0xJQDPO-txXGN07SrOmhr1spig" type="text/javascript"></script>
-		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
-		<script type="text/javascript" src="js/App/App.Map.js"></script>
 		<?php include("inc/globalCss.php"); ?>
 		<?php include("inc/globalCssIe.php"); ?>
 	</head> 

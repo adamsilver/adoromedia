@@ -50,7 +50,7 @@
 						faucibus ut. Morbi eget ante enim.</p>
 						
 						<div class="heros">
-							<a href="#1">
+							<a href="about.php">
 								<div class="hero">
 									<div class="textual">
 										<h2>About us</h2>
@@ -58,7 +58,7 @@
 									</div>
 								</div>
 							</a>
-							<a href="#1">
+							<a href="services.php">
 								<div class="hero" id="heroServices">
 									<div class="textual">
 										<h2>Services</h2>
