@@ -20,14 +20,7 @@
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
-				<div id="testimonial">
-					
-					<p class="quote">
-						<span>&#34;</span>Some sort of quote or one liner here, <br/>
-						two lines is better than one i think...<span>&#34;</span>
-					</p>
-					<p class="person">Jo Bloggs, Service Co.</p>
-				</div>
+				<?php include("inc/testimonial.php"); ?>
 			</div>
 			<?php include("inc/nav.php"); ?>
 						
@@ -42,17 +35,12 @@
 				</div>
 				
 				<div id="primary">
-					
-					<div id="officePlans">
-					
-						<h1>Office plans</h1>
-						
+					<div id="officePlans">					
+						<h1>Office plans</h1>						
 						<p>See scaled drawings which show each floor of the building,
 						with room sizes, power point and low-energy light positions -
-						we are dedicated to reducing our carbon footprint.</p>
-						
-						<p>Please click on the plans below to zoom in.</p>
-						
+						we are dedicated to reducing our carbon footprint.</p>						
+						<p>Please click on the plans below to zoom in.</p>						
 						<div id="planGallery">
 							<div class="item">
 								<h2>Ground floor</h2>
@@ -66,8 +54,7 @@
 								<h2>Second floor</h2>
 								<a href="img/plan_second_floor.gif" title="Second floor"><img src="img/plan_second_floor_thumb.gif" alt="" /></a>
 							</div>
-						</div>
-						
+						</div>						
 					</div>
 				</div>
 				<div id="secondary">
