@@ -6,17 +6,16 @@
 ?>
 <html lang="en"> 
 	<head>
-		<title>Offices, St Andrews House, Solent Serviced Offices based in Gatwick</title> 
+		<title>Solent Serviced Offices: St Andrews House</title> 
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhSRzqVAvSH2EqOQ921DUd7Df9NMbxRb0xJQDPO-txXGN07SrOmhr1spig" type="text/javascript"></script>
-		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
-		<script type="text/javascript" src="js/App/App.Map.js"></script>
+		<script type="text/javascript" src="js/App/App.HomePageCycler.js"></script>
+		<script type="text/javascript" src="js/App/App.Heroes.js"></script>
 		<?php include("inc/globalCss.php"); ?>
 		<?php include("inc/globalCssIe.php"); ?>
 	</head> 
-	<body id="pgOffices">
+	<body>
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
@@ -37,28 +36,27 @@
 					<ul>
 						<li><a href="index.php">Home page</a></li>
 						<li><a href="services.php">Services</a></li>
-						<li>Offices</li>
+						<li>Security</li>
 					</ul>
 				</div>
 				
 				<div id="primary">
 					
-					<div id="offices">
-						<h1>The offices</h1>
-						<ul>
-							<li>Your clients are greeted by our dedicated staff at the reception and you are informed of their arrival.</li>
-							<li>Email, word processing, facsimile and photocopying are chargeable services available - you only pay for what you use.</li>
-							<li>The offices are freshly decorated, regularly cleaned and unfurnished - you decide the image you want.</li>
-							<li>All offices have good natural light with all windows double glazed.</li>
-							<li>There is ample free car parking with parking monitored on CCTV.</li>
-							<li>The independent kitchen staff can provide sandwiches and buffet lunches to order.</li>
-							<li>Council rates, heating and lighting costs are included - there are no hidden extras.</li>
-						</ul>
+					<div id="homepage">
 					
+						<h1>Security</h1>
+						
+						<ul>
+							<li>The offices are covered by 24 hour CCTV.</li>
+							<li>Front door entry is via a programmable key fob.</li>
+							<li>Same key fob activates an individual alarm to each office.</li>
+							<li>Office alarms are linked to central station and monitored by the Police.</li>
+						</ul>
+						
 					</div>
 				</div>
 				<div id="secondary">
-					<h2>What could go here?</h2>
+					
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			
