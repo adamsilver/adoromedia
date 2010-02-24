@@ -40,11 +40,11 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="telephones">
 					
 						<h1>Telephones</h1>
 						
-						<ul>
+						<ul class="generic">
 							<li>The building is pre-wired with a Meridian Nortsar system.</li>
 							<li>Each office has numerous telephone points, linked to the main switchboard.</li>
 							<li>BT and Virgin networks are immediately available.</li>
@@ -55,7 +55,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

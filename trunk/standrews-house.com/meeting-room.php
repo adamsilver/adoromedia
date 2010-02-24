@@ -40,16 +40,18 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="meetingRooms">
 					
 						<h1>Meeting room</h1>
 						
-						<p>Our meeting room is available at short notice and is wifi enabled</p>
+						<p>Our meeting room is available at short notice and is wifi enabled.</p>
 						
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

@@ -43,7 +43,7 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="officePlans">
 					
 						<h1>Office plans</h1>
 						
@@ -61,7 +61,7 @@
 								<h2>First floor</h2>
 								<a href="img/plan_first_floor.gif" title="First floor"><img src="img/plan_first_floor_thumb.gif" alt="" /></a>
 							</div>
-							<div class="item">
+							<div class="item itemLast">
 								<h2>Second floor</h2>
 								<a href="img/plan_second_floor.gif" title="Second floor"><img src="img/plan_second_floor_thumb.gif" alt="" /></a>
 							</div>
@@ -70,7 +70,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			
