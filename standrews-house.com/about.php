@@ -53,10 +53,13 @@
 						of a family-run company since 1978 and staffed by enthusiastic people, who
 						will assist in the day to day running of the businesses within.</p>
 						
+						<p>Find out more in the <a href="services.php">services</a> section of our website.</p>
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

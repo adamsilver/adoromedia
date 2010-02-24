@@ -66,11 +66,11 @@
 									</div>
 								</div>
 							</a>
-							<a href="offices.php">
+							<a href="office-plans.php">
 								<div class="hero" id="heroOffices">
 									<div class="textual">
-										<h2>The offices</h2>
-										<p>See the plans and photos of the offices.</p>
+										<h2>Office plans</h2>
+										<p>See the plans of the offices.</p>
 									</div>
 								</div>
 							</a>
@@ -91,16 +91,11 @@
 						
 						<p>Cras ornare pharetra tellus id imperdiet. Nullam at dui tortor. In mollis dui at mi
 						posuere id tincidunt leo tempus. Proin metus augue, tincidunt nec sodales at, egestas a urna.</p>
+						
 					</div>
 				</div>
-				<div id="secondary">
-					<!--
-					<div id="enquiryCall">
-						<a href="contact.php">Enquiry</a>
-					</div>
-					-->
-					
-					<div id="homePageImage">
+				<div id="secondary">					
+					<div id="homePageImage" class="photo">
 						<img src="img/banner01.jpg" alt="" />
 					</div>
 				</div>

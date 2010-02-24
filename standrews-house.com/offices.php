@@ -42,7 +42,7 @@
 					
 					<div id="offices">
 						<h1>The offices</h1>
-						<ul>
+						<ul class="generic">
 							<li>Your clients are greeted by our dedicated staff at the reception and you are informed of their arrival.</li>
 							<li>Email, word processing, facsimile and photocopying are chargeable services available - you only pay for what you use.</li>
 							<li>The offices are freshly decorated, regularly cleaned and unfurnished - you decide the image you want.</li>
@@ -55,7 +55,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					<h2>What could go here?</h2>
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

@@ -39,11 +39,11 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="pricing">
 					
 						<h1>Pricing</h1>
 						
-						<ul>
+						<ul class="generic">
 							<li>A returnable deposit of &#163;500 (less the cost of redecoration) is required for each office.</li>
 							<li>The office rental is subject to a full three calendar month notice of termination.</li>
 							<li>The rental term can be varied upwards from 3 months to suit individual needs.</li>
@@ -52,10 +52,14 @@
 							<li>See SERVICE AND FACILITY Price List.</li>
 						</ul>
 						
+						<p>You can make an enquiry using our online <a href="contact.php#enquiryForm">enquiry form</a>.</p>
+						
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

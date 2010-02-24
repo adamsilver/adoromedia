@@ -40,11 +40,11 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="security">
 					
 						<h1>Security</h1>
 						
-						<ul>
+						<ul class="generic">
 							<li>The offices are covered by 24 hour CCTV.</li>
 							<li>Front door entry is via a programmable key fob.</li>
 							<li>Same key fob activates an individual alarm to each office.</li>
@@ -54,7 +54,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

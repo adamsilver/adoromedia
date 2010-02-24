@@ -122,6 +122,37 @@ ol li {
 }
 
 /****************************************************
+* Generic ul
+****************************************************/
+
+ul.generic {
+	list-style: none;
+}
+
+ul.generic li {
+	margin-bottom: 15px;
+	color: #333;
+	background: url(../img/arrow_right_peppermint.png) no-repeat 0px 3px;
+	padding-left: 13px;
+}
+
+/****************************************************
+* Generic ul
+****************************************************/
+
+div.photo {
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+div.photo img {
+	padding: 8px;
+	background: url(../img/bg_body.gif) repeat-x;
+	height: 251px;
+}
+
+/****************************************************
 * Off screen
 ****************************************************/
 
@@ -320,7 +351,9 @@ selector,
 
 #primary {
 	float: left;
-	width: 600px;
+	width: 580px;
+	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 15px;
 }
 
@@ -354,7 +387,6 @@ selector,
 ****************************************************/
 
 #homepage {
-	padding-left: 10px;
 }
 
 #homepage div.heros {
@@ -417,6 +449,7 @@ selector,
 }
 
 #homepage div.heros #heroFindUs {
+	margin-right: 0px;
 	background: url(../img/bg_gmap.jpg) no-repeat;
 }
 
@@ -450,26 +483,6 @@ selector,
 }
 
 /****************************************************
-* Home page cycler
-****************************************************/
-
-#homePageImage {
-	margin-bottom: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-#homePageImage img {
-	padding: 8px;
-	background: url(../img/bg_body.gif) repeat-x;
-	height: 251px;
-}
-
-
-
-
-
-/****************************************************
 * Offices
 ****************************************************/
 
@@ -479,35 +492,15 @@ selector,
 	margin-right: 10px;
 }
 
-#offices ul {
-	list-style: none;
-}
-
-#offices ul li {
-	margin-bottom: 15px;
-	color: #333;
-	background: url(../img/arrow_right_peppermint.png) no-repeat 0px 3px;
-	padding-left: 13px;
-}
-
-
 /****************************************************
 * Contact
 ****************************************************/
-
-#pgContact div#primary {
-	padding-left: 10px;
-	padding-right: 10px;
-	width: 580px;
-}
 
 #pgContact div#secondary {
 	padding-left: 10px;
 	padding-right: 10px;
 	width: 320px;
-	background: url(../img/bg_secondary.gif) repeat-x;
 }
-
 
 #contact {
 
@@ -558,8 +551,13 @@ selector,
 	border: 1px solid #ccc;
 }
 
+#planGallery div.itemLast {
+	margin-right: 0px;
+}
+
 #planGallery div.item h2 {
 	padding: 10px;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 3px;
+	background-color: #F5F5F5;
 }

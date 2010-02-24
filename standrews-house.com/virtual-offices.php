@@ -40,7 +40,7 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="virtualOffices">
 					
 						<h1>Virtual offices</h1>
 						
@@ -53,7 +53,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			

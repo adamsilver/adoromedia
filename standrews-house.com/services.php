@@ -39,13 +39,13 @@
 				
 				<div id="primary">
 					
-					<div id="homepage">
+					<div id="services">
 					
 						<h1>Services</h1>
 						
 						<p>Find out about the services we provide be following the links below:</p>
 						
-						 <ul>
+						 <ul class="generic">
 							<li><a href="offices.php">The offices</a></li>
 							<li><a href="office-plans.php">Plans</a></li>                    
 							<li><a href="virtual-offices.php">Virtual offices</a></li>
@@ -57,7 +57,9 @@
 					</div>
 				</div>
 				<div id="secondary">
-					
+					<div class="photo">
+						<img src="img/banner01.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			
