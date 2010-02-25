@@ -91,8 +91,14 @@
 					<div id="homePageImage" class="photo">
 						<img src="img/banner01.jpg" alt="" />
 					</div>
-					
-					<h2>Office located close to Gatwick Aiport...</h2>
+					<div id="locations">
+						<h2>Our serviced offices are located close to Gatwick Aiport</h2>
+						<p>Some more seo text</p>
+						<h2>Renting our serviced offices couldn't be easier</h2>
+						<p>Some more text</p>
+						<h2>Serviced offices in the heart of Crawley</h2>
+						<p>Hire a serviced office now and receive 10% off for the first 3 months.</p>
+					</div>
 				</div>
 			</div>
 			<?php include("inc/footer.php"); ?>			
