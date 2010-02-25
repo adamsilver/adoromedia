@@ -488,6 +488,7 @@
 			
 			/* CUSTOM EVENT 2: onFieldValidate */
 			
+			var onFieldValidateFunc1Run = false, onFieldValidateFunc2Run = false;
 			function test_field_validate_customEvent() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
@@ -506,20 +507,51 @@
 					message: "message for postcode 1",
 					params: {}
 				}]);
-				//fv.addEventHandler("postcode.onFieldValidateStart", myFunc1);
+				fv.addEventHandler("postcode.onFieldValidateStart", myFunc1);
+				fv.addEventHandler("postcode.onFieldValidateStart", myFunc2);
+				fv.addEventHandler("username.onFieldValidateStart", myFunc1);
+				fv.addEventHandler("username.onFieldValidateStart", myFunc2);
+				fv.validate();
+				assertTrue("", onFieldValidateFunc1Run);
+			}
+			function myFunc1(event, $field) {
+				if($field.attr("name") === ("postcode" || "username")) {
+					onFieldValidateFunc1Run = true;
+				}
+			}
+			function myFunc2(event, $field) {
+				if($field.attr("name") === ("postcode" || "username")) {
+					onFieldValidateFunc2Run = true;
+				}
+			}			
+			
+			function test_field_error_customEvent() {
+				var formNode = document.getElementById("form1");
+				if(!formNode) return;
+				var fv = new Adoro.FormValidator(formNode);
+				fv.addValidator("postcode", [{
+					method: function () {
+						return false;
+					},
+					message: "message for postcode 1",
+					params: {}
+				}]);
+				
+				fv.addEventHandler("postcode.onFieldFail", fieldError);
 				//fv.addEventHandler("postcode.onFieldValidateStart", myFunc2);
 				//fv.addEventHandler("username.onFieldValidateStart", myFunc1);
 				//fv.addEventHandler("username.onFieldValidateStart", myFunc2);
 				fv.validate();
 			}
 			
-			function myFunc1() {
-				alert("hoop1");
+			function fieldError(event, $field, rule) {
+				//alert($field[0]);
+				//alert(rule.message);
 			}
 			
-			function myFunc2() {
-				alert("hoop2");				
-			}
+			
+			
+
 			
 			function myRule1ThatReturnsFalse() {
 				return false;

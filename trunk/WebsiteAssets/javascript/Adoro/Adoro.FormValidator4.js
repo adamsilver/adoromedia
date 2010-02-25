@@ -111,7 +111,7 @@ Adoro.FormValidator = function(formNode, options) {
 
 	function validate(fieldsArray, clearErrorsBoolean) {
 		
-		$(document).trigger(["onFormValidateStart", fvId].join("."), [me]);
+		$(document).trigger([fvId,"onFormValidateStart"].join("."), [me]);
 		
 		if(clearErrorsBoolean !== false) this.clearErrors();
 		
@@ -132,13 +132,13 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 		
 		if(allValid) {
-			$(document).trigger(["onFormSuccess",fvId].join("."), [me]);
+			$(document).trigger([fvId,"onFormSuccess"].join("."), [me]);
 		}
 		else {
-			$(document).trigger(["onFormFail", fvId].join("."), [me]);
+			$(document).trigger([fvId,"onFormFail"].join("."), [me]);
 		}
 		
-		$(document).trigger(["onFormValidateComplete", fvId].join("."), [me]);
+		$(document).trigger([fvId,"onFormValidateComplete"].join("."), [me]);
 		
 		return allValid;
 	}
@@ -253,7 +253,7 @@ Adoro.FormValidator = function(formNode, options) {
 			return this.rules || null;
 		},
 		validate: function(yoyo) {
-			$(document).trigger([fvId, this.fieldName,"onFieldValidateStart"].join("."));		
+			$(document).trigger([fvId, this.fieldName,"onFieldValidateStart"].join("."), [this.$field]);		
 			
 			var rules = this.getRules(),
 				i = 0,
@@ -269,7 +269,7 @@ Adoro.FormValidator = function(formNode, options) {
 				if(!valid) {
 					allValid = false;
 					rule.setErrorState(true);
-					$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [me, this.$field]);
+					$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [this.$field, rule]);
 				}
 			}
 			
