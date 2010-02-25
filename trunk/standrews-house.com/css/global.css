@@ -95,7 +95,7 @@ ul.generic li {
 ****************************************************/
 
 div.photo {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -322,7 +322,7 @@ div.actions input {
 }
 
 #nav ul li a.arrow {
-	background: transparant url(../img/arrow_down.gif) no-repeat 80% 45%;
+	background: url(../img/arrow_down.gif) no-repeat 80% 45%;
 	padding-right: 40px;
 }
 
@@ -524,6 +524,11 @@ div.actions input {
 
 #homepage p {
 	line-height: 1.7em;
+}
+
+#locations {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 /****************************************************
