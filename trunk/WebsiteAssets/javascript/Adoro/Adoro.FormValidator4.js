@@ -66,8 +66,8 @@ Adoro.FormValidator = function(formNode, options) {
 		var id = [eventType, fvId].join(".");
         $(document).unbind(id, eventHandler);
     }
-	
-	this.addValidator = function(fieldName, rules) {
+		
+	function addValidator(fieldName, rules) {
 		var $field, validator;		
 		if(arguments.length === 0) return me;
 		if(typeof fieldName !== "string") return me;
@@ -98,7 +98,7 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 	}
 	
-	this.removeValidator = function(fieldName) {
+	function removeValidator(fieldName) {
 		if(arguments.length === 0) return me;
 		if(typeof fieldName !== "string") return me;
 		var validatorIndex = me.getValidatorIndex(fieldName);
@@ -143,7 +143,7 @@ Adoro.FormValidator = function(formNode, options) {
 		return allValid;
 	}
 	
-	this.getErrors = function() {
+	function getErrors() {
 		var errors = [],
 			validators = me.getValidators(),
 			rules = null,
@@ -169,11 +169,11 @@ Adoro.FormValidator = function(formNode, options) {
 		return errors;
 	}
 	
-	this.getValidators = function() {
+	function getValidators() {
 		return validators;
 	}
 	
-	this.getValidator = function(fieldName) {
+	function getValidator(fieldName) {
 		var o = null, validator;
 		if(arguments.length === 0) return o;
 		if(typeof fieldName !== "string") return o;
@@ -187,7 +187,7 @@ Adoro.FormValidator = function(formNode, options) {
 		return o;
 	}
 	
-	this.getValidatorIndex = function(fieldName) {
+	function getValidatorIndex(fieldName) {
 		var o = null,
 			validator = null,
 			i = validators.length-1;
@@ -203,7 +203,7 @@ Adoro.FormValidator = function(formNode, options) {
 		return o;
 	}
 	
-	this.clearErrors = function() {
+	function clearErrors() {
 		var validators = me.getValidators(),
 			rules = null,
 			rule = null,
@@ -274,18 +274,24 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 			
 			if(allValid) {
-				$(document).trigger([fvId,this.fieldName, "onFieldSuccess"].join("."), [me, this.$field]);
+				$(document).trigger([fvId,this.fieldName, "onFieldSuccess"].join("."), [this.$field]);
 			}
 			
-			$(document).trigger([fvId,this.fieldName, "onFieldValidateComplete", fvId].join("."), [me, this.$field]);
+			$(document).trigger([fvId,this.fieldName, "onFieldValidateComplete", fvId].join("."), [this.$field]);
 			return allValid;
 		}
 	}
 	
 	// public members
 	this.addEventHandler = addEventHandler;
+	this.addValidator = addValidator;
+	this.removeValidator = removeValidator;
 	this.validate = validate;
-	
+	this.getErrors = getErrors;
+	this.getValidators = getValidators;
+	this.getValidator = getValidator;
+	this.getValidatorIndex = getValidatorIndex;
+	this.clearErrors = clearErrors;
 }
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
