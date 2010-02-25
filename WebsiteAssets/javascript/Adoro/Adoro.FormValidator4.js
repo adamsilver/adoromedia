@@ -115,6 +115,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @public
 	 * @param {array[string]} fieldsArray Array of field names in string format to validate
 	 * @param {boolean} clearErrors If false will clear any existing errors, otherwise it wont - default is true
+	 * @return {boolean} False when there are errors, otherwise True
 	 */
 	function validate(fieldsArray, clearErrors) {
 		
