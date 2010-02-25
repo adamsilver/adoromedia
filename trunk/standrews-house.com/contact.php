@@ -4,6 +4,9 @@
 	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
 	$siteSection = "contact";
 ?>
+<?php include("inc/Rules.php"); ?>
+<?php include("inc/FormValidator.php"); ?>
+<?php include("inc/enquiryForm.php"); ?>
 <html lang="en"> 
 	<head>
 		<title>Contact St Andrews House, Solent Serviced Offices based in Gatwick</title> 
@@ -76,41 +79,69 @@
 					<div id="enquiryForm">
 						<h2>Enquiry form</h2>
 						
-						<form action="#" method="post">
-							<div class="field">
-								<div class="indicator">
-									<label for="yourname">
-										Your name:
-									</label>
+						<?php 
+							$showForm = true;
+							if(isset($_POST["actionSubmit"])) {
+								$formCallMeBack->validate();
+								if($formCallMeBack->getErrorCount() > 0) {
+									$commonErrors = $formCallMeBack->getErrors();
+									include("inc/errorMessageDisplay.php");
+								}
+								else {
+									include("inc/successMessageDisplay.php");
+									$to = "enquiries@standrews-house.com";
+									$subject = "Website: Enquiry";
+									$body = "<h1>The following enquiry submission</h1>";
+									$body .= "<p>Name: <br/>" . $_POST["yourname"] . "</p>";
+									$body .= "<p>Email: <br/>" . $_POST["email"] . "</p>";
+									$body .= "<p>Message: <br/>" . $_POST["message"] . "</p>";
+									$headers  = 'MIME-Version: 1.0' . "\r\n";
+									$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+									$headers .= 'From: Website <noreply@standrews-house.com>' . "\r\n";
+									mail($to, $subject, $body, $headers);
+									$showForm = false;
+								}
+							}
+						?>					
+					
+						<?php if($showForm) { ?>						
+							<form action="contact.php" method="post">
+								<input type="hidden" name="actionSubmit" value="true" />
+								<div class="field">
+									<div class="indicator">
+										<label for="yourname">
+											Your name: *
+										</label>
+									</div>
+									<div class="singleInput">
+										<input type="text" class="text" name="yourname" id="yourname" />
+									</div>
 								</div>
-								<div class="singleInput">
-									<input type="text" class="text" name="yourname" id="yourname" />
+								<div class="field">
+									<div class="indicator">
+										<label for="email">
+											Your email: *
+										</label>
+									</div>
+									<div class="singleInput">
+										<input type="text" class="text" name="email" id="email" />
+									</div>
 								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="email">
-										Your email:
-									</label>
+								<div class="field">
+									<div class="indicator">
+										<label for="message">
+											Your requirement: *
+										</label>
+									</div>
+									<div class="singleInput">
+										<textarea name="message" id="message"></textarea>
+									</div>
 								</div>
-								<div class="singleInput">
-									<input type="text" class="text" name="email" id="email" />
+								<div class="actions">
+									<input type="submit" name="send" id="send" value="Send enquiry" />
 								</div>
-							</div>
-							<div class="field">
-								<div class="indicator">
-									<label for="message">
-										Your requirement:
-									</label>
-								</div>
-								<div class="singleInput">
-									<textarea name="message" id="message"></textarea>
-								</div>
-							</div>
-							<div class="actions">
-								<input type="submit" name="send" id="send" value="Send enquiry" />
-							</div>
-						</form>
+							</form>
+						<?php } ?>
 						
 					</div>
 				</div>
