@@ -34,52 +34,6 @@ a:hover, a:active, a:focus {
 }
 
 /****************************************************
-* Forms
-****************************************************/
-
-div.field {
-	margin-bottom: 10px;
-}
-
-div.field div.indicator {
-	margin-bottom: 2px;
-}
-
-div.field div.indicator label {
-	font-size: 1.2em;
-}
-
-div.field input.text {
-	font-size: 1.2em;
-	width: 280px;
-	padding: 2px;
-	border: 1px solid #ccc;
-	background-color: #f5f5f5;
-}
-
-div.field textarea {
-	font-size: 1.2em;
-	width: 280px;
-	padding: 4px;
-	border: 1px solid #ccc;
-	font-family: arial;
-	background-color: #f5f5f5;
-	height: 80px;
-}
-
-div.actions {
-	
-}
-
-div.actions input {
-	width: 280px;
-	padding: 10px 15px;
-	font-size: 1.1em;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-/****************************************************
 * Text
 ****************************************************/
 
@@ -175,6 +129,52 @@ div.sub ul:after{
 }
 
 /****************************************************
+* Forms
+****************************************************/
+
+div.field {
+	margin-bottom: 10px;
+}
+
+div.field div.indicator {
+	margin-bottom: 2px;
+}
+
+div.field div.indicator label {
+	font-size: 1.2em;
+}
+
+div.field input.text {
+	font-size: 1.2em;
+	width: 280px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	background-color: #f5f5f5;
+}
+
+div.field textarea {
+	font-size: 1.2em;
+	width: 280px;
+	padding: 4px;
+	border: 1px solid #ccc;
+	font-family: arial;
+	background-color: #f5f5f5;
+	height: 80px;
+}
+
+div.actions {
+	
+}
+
+div.actions input {
+	width: 280px;
+	padding: 10px 15px;
+	font-size: 1.1em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/****************************************************
 * Error messages
 ****************************************************/
 
@@ -245,10 +245,18 @@ div.sub ul:after{
 	background: url(../img/bg_header.gif) repeat-x;
 }
 
+/****************************************************
+* logo
+****************************************************/
+
 #logo {
 	float: left;
 	margin-left: 10px;
 }
+
+/****************************************************
+* testimonial in header
+****************************************************/
 
 #testimonial {
 	float: right;
@@ -381,7 +389,7 @@ div.sub ul:after{
 }
 
 /****************************************************
-* Layout
+* content primary and secondary
 ****************************************************/
 
 #content {
@@ -425,7 +433,7 @@ div.sub ul:after{
 }
 
 /****************************************************
-* Home page
+* Home page heroes
 ****************************************************/
 
 #homepage {
@@ -499,6 +507,10 @@ div.sub ul:after{
 	line-height: 1.7em;
 }
 
+/****************************************************
+* Enquiry call to action
+****************************************************/
+
 #enquiryCall {
 	margin-left: 10px;
 	margin-right: 10px;
@@ -566,6 +578,10 @@ div.sub ul:after{
 	margin-bottom: 8px;
 }
 
+/****************************************************
+* Enquiry form
+****************************************************/
+
 #enquiryForm {
 	padding: 10px;
 	background: url(../img/bg_body.gif) repeat-x;
@@ -575,11 +591,9 @@ div.sub ul:after{
 	
 }
 
-
-
-
-
-
+/****************************************************
+* plan gallery
+****************************************************/
 
 #planGallery {
 	margin-bottom: 15px;
