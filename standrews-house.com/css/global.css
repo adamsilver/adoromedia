@@ -175,6 +175,47 @@ div.sub ul:after{
 }
 
 /****************************************************
+* Error messages
+****************************************************/
+
+#errorMessage {
+	margin-bottom: 15px;
+}
+
+#errorMessage h3 {
+	color: #333;
+	margin-bottom: 3px;
+}
+
+#errorMessage ul li {
+	margin-bottom: 0px;
+}
+
+#errorMessage ul li a {
+	color: #ff0000;
+}
+
+/****************************************************
+* Success messages
+****************************************************/
+
+#successMessage {
+	margin-bottom: 15px;
+	padding: 10px;
+	background-color: #67AF44;
+}
+
+#successMessage h3 {
+	color: #fff;
+	margin-bottom: 3px;
+}
+
+#successMessage p {
+	color: #fff;
+	margin-bottom: 0px;
+}
+
+/****************************************************
 * Layout structure
 ****************************************************/
 
