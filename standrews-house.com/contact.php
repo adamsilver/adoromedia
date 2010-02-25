@@ -13,7 +13,7 @@
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhSRzqVAvSH2EqOQ921DUd7Df9NMbxRb0xJQDPO-txXGN07SrOmhr1spig" type="text/javascript"></script>
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhRlgHUB7bTgx1y4m6xktoUIz_8KBBTQPVYTkabONVgXodH-RSM8fnnovQ" type="text/javascript"></script>
 		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
 		<script type="text/javascript" src="js/App/App.Map.js"></script>
 		<?php include("inc/globalCss.php"); ?>
@@ -91,7 +91,7 @@
 									include("inc/successMessageDisplay.php");
 									$to = "enquiries@standrews-house.com";
 									$subject = "Website: Enquiry";
-									$body = "<h1>The following enquiry submission</h1>";
+									$body = "<h1>You have received the following enquiry through the website</h1>";
 									$body .= "<p>Name: <br/>" . $_POST["yourname"] . "</p>";
 									$body .= "<p>Email: <br/>" . $_POST["email"] . "</p>";
 									$body .= "<p>Message: <br/>" . $_POST["message"] . "</p>";
