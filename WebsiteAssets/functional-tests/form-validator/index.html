@@ -70,7 +70,13 @@
 				fv.addEventHandler("username.onFieldValidateStart", hello);
 				fv.addEventHandler("postcode.onFieldValidateStart", hello);
 				
-				fv.validate();
+				
+				$(formNode).bind("submit", function() {			
+					return fv.validate();
+				});
+				
+				
+				
 				//var x = fv.getValidator("postcode").getRules();
 				//fv.getValidator("postcode").validate();
 				//var e = fv.getErrors();
