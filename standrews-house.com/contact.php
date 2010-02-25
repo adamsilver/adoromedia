@@ -82,9 +82,9 @@
 						<?php 
 							$showForm = true;
 							if(isset($_POST["actionSubmit"])) {
-								$formCallMeBack->validate();
-								if($formCallMeBack->getErrorCount() > 0) {
-									$commonErrors = $formCallMeBack->getErrors();
+								$formEnquiry->validate();
+								if($formEnquiry->getErrorCount() > 0) {
+									$commonErrors = $formEnquiry->getErrors();
 									include("inc/errorMessageDisplay.php");
 								}
 								else {
