@@ -109,11 +109,18 @@ Adoro.FormValidator = function(formNode, options) {
 		return me;
 	}
 
-	function validate(fieldsArray, clearErrorsBoolean) {
+	/**
+	 * validate the form
+	 * @function
+	 * @public
+	 * @param {array[string]} fieldsArray Array of field names in string format to validate
+	 * @param {boolean} clearErrors If false will clear any existing errors, otherwise it wont - default is true
+	 */
+	function validate(fieldsArray, clearErrors) {
 		
 		$(document).trigger([fvId,"onFormValidateStart"].join("."), [me]);
 		
-		if(clearErrorsBoolean !== false) this.clearErrors();
+		if(clearErrors !== false) this.clearErrors();
 		
 		if(!fieldsArray || !$.isArray(fieldsArray)) fieldsArray = [];
 		
