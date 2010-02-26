@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-	$metaKeywords = "adoro media, website design, website development, london";
-	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
+	$metaKeywords = "Serviced, Offices, Crawley, Gatwick, Area, Hire, Rent, St, Andrews, House";
+	$metaDescription = "Serviced offices for hire, based in Crawley &amp; Gatwick, St Andrews House";
 	$siteSection = "contact";
 ?>
 <?php include("inc/Rules.php"); ?>
@@ -10,14 +10,13 @@
 <html lang="en"> 
 	<head>
 		<title>Contact, Services, Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
-		<meta charset="utf-8" /> 
-		<meta name="robots" content="all,index,follow" /> 
+		<?php include("inc/headGlobal.php"); ?>
+		<?php include("inc/globalCss.php"); ?>
+		<?php include("inc/globalCssIe.php"); ?>
 		<?php include("inc/globalJs.php"); ?>
 		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcCPnNaC9ucSS0iuyWMhdNhRlgHUB7bTgx1y4m6xktoUIz_8KBBTQPVYTkabONVgXodH-RSM8fnnovQ" type="text/javascript"></script>
 		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
 		<script type="text/javascript" src="js/App/App.Map.js"></script>
-		<?php include("inc/globalCss.php"); ?>
-		<?php include("inc/globalCssIe.php"); ?>
 	</head> 
 	<body id="pgContact">
 		<div id="container">
