@@ -286,10 +286,7 @@
 			function test_getErrors_whenThereAreErrors_returnFilledArray() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
-				var fv = new Adoro.FormValidator(formNode, {
-					// set invalid rules to 2
-					invalidRulesToShowPerValidator: 2	
-				});
+				var fv = new Adoro.FormValidator(formNode);
 				fv.addValidator("username", [{
 					method: function() {
 						return false;
@@ -326,7 +323,7 @@
 				fv.getValidator("username").validate();
 				fv.getValidator("postcode").validate();
 				var errors = fv.getErrors();
-				assertTrue("", errors.length === 4);
+				assertTrue("", errors.length === 5);
 			}
 			
 			function test_clearErrors_makeSureThereAreNoErrors() {
@@ -544,8 +541,8 @@
 				assertTrue("", onFieldFailRan)
 			}
 			
-			function fieldError(event, $field, rule) {
-				if($field.attr("name") === "postcode" && rule.message === "message for postcode 1") {
+			function fieldError(event, $field, rules) {
+				if($field.attr("name") === "postcode" && rules[0].message === "message for postcode 1") {
 					onFieldFailRan = true;
 				}
 			}
