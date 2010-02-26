@@ -466,7 +466,7 @@
 				assertTrue("", fv.validate(["username"]));
 			}
 			
-			/* CUSTOM EVENT 1: onFieldValidate */
+			/* CUSTOM EVENT: onFormValidateStart */
 			
 			var onFormValidateRun1 = false, onFormValidateRun2 = false;
 			function test_form_validate_customEvent() {
@@ -486,7 +486,7 @@
 				onFormValidateRun2 = true;				
 			}
 			
-			/* CUSTOM EVENT 2: onFieldValidate */
+			/* CUSTOM EVENT: onFieldValidateStart */
 			
 			var onFieldValidateFunc1Run = false, onFieldValidateFunc2Run = false;
 			function test_field_validate_customEvent() {
@@ -523,8 +523,11 @@
 				if($field.attr("name") === ("postcode" || "username")) {
 					onFieldValidateFunc2Run = true;
 				}
-			}			
+			}
 			
+			/* CUSTOM EVENT: onFieldFail */
+			
+			var onFieldFailRan = false
 			function test_field_error_customEvent() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
@@ -536,22 +539,16 @@
 					message: "message for postcode 1",
 					params: {}
 				}]);
-				
 				fv.addEventHandler("postcode.onFieldFail", fieldError);
-				//fv.addEventHandler("postcode.onFieldValidateStart", myFunc2);
-				//fv.addEventHandler("username.onFieldValidateStart", myFunc1);
-				//fv.addEventHandler("username.onFieldValidateStart", myFunc2);
 				fv.validate();
+				assertTrue("", onFieldFailRan)
 			}
 			
 			function fieldError(event, $field, rule) {
-				//alert($field[0]);
-				//alert(rule.message);
+				if($field.attr("name") === "postcode" && rule.message === "message for postcode 1") {
+					onFieldFailRan = true;
+				}
 			}
-			
-			
-			
-
 			
 			function myRule1ThatReturnsFalse() {
 				return false;
@@ -561,190 +558,8 @@
 				return true;
 			}
 			
-			/* should i check the return value as well as how it affects the validator*/
 			-->
 		</script>
-		
-		<!--
-		<script type="text/javascript">
-			
-			var rules = [
-				new Adoro.FormValidator.Rule(Adoro.FormRules.notEmpty, "Enter name", {yes: true})
-			]
-			fv.addValidator("name", rules)
-			
-			// general
-
-			
-			function atestAdoroFormValidatorExists() {
-				assertTrue("Adoro FormValidator doesn't exist", typeof Adoro.FormValidator === "function");
-			}
-			
-			
-			function atestSubmitFormWithErrors_CorrectNumberOfErrors() {
-				
-				var formNode = document.getElementById("form1");
-				var fv = new Adoro.FormValidator(formNode);
-				fv.addValidator("username",[{
-					method: function() {
-						return false;
-					},
-					message: "Failed"
-				}]);
-				//formNode.submit(); // selenium test end to end not unit
-				// how do i test this? DONT
-			}
-			
-			function atestSubmitFormWithNoErrors_FormSubmits() {
-				return;
-				var formNode = document.getElementById("form1");
-				var fv = new Adoro.FormValidator(formNode);
-				fv.addValidator("username",[{
-					method: function() {
-						return true;
-					},
-					message: "Passed"
-				}]);
-				formNode.submit();
-				// how do i test this?
-			}
-			
-            function atestValidateTrue() {}
-            function atestValidateFalse() {}
-            
-			function atestContextualSubmitWithErrors_CorrectNumberOfErrors() {
-                
-            }
-			
-			// ? should i test that public methods exist
-			
-			// addValidator - valid params
-			
-			// ? what if form node doesnt exist - do i bother allowing the running of addValidator?
-			
-			function atestAddValidatorValid_ReturnsThis() {}
-			
-			function atestAddValidatorValid_ValidatorExists() {}
-			
-			// addValidator - invalid params
-			
-			function atestAddValidatorWithNoParams_DoesntAddValidator() {}
-			
-			function atestAddValidatorWithNoRules_DoesntAddValidator() {}
-			
-			function atestAddValidatorAndFieldDoesntExist_DoesntAddValidator() {}
-			
-			function atestAddValidatorParam1NotFieldNode_DoesntAddValidator() {}
-			
-			function atestAddValidatorParam2NotArrayOfObjects_DoesntAddValidator() {}
-			
-			function atestAddValidatorParam3NotObject_DoesntAddOptions() {}
-			
-			// removeValidator - valid params / key ruleKeys
-			
-			function atestRemoveValidatorValidWithKeyOnly_RemoveWholeValidator() {}
-			
-			function atestRemoveValidatorValidWithKeyAndParticularRuleKey_RemoveParticularKey() {}
-			
-			function atestRemoveValidatorValidWithKeyAndMoreThanOneKey_RemoveParticularKeys() {}
-			
-			function atestRemoveValidatorValidWithKeyAndAllRuleKeys_RemoveWholeValidator() {}
-			
-			function atestRemoveValidatorValidKeyExistsOneRuleKeyDoesOneDoesnt_OnlyRemoveParticularKey() {}
-			
-			// removeValidator - invalid params
-			
-			function atestRemoveValidatorInvalidKeyDoesntExist_DontRemove() {}
-			
-			function atestRemoveValidatorInvalidKeyExistsRuleKeyDoesnt_DontRemove() {}
-				
-			
-			
-			
-			
-            /*
-			- what do i do if i need to reset state per test but use same form?
-            - test that public methods exist?
-            - addValidator
-                - test that a rule has a method and a message or not a message?
-            - test when the form is submitted that it runs all the validators
-                - test that the errors length i expect
-                - fill in the fields correctly and test errors length is 0???
-            - test a contextual submit
-                - force a click event on particular submit that is contextual
-                - check that the errors length is equal to the errors i expect when adding validators to that contextual group
-            
-            */
-	    
-            // how does this work when we need to do this when dom is ready?
-           /*
-		     function atestSubmitValidateWithErrors() {
-				return;
-                var form = document.getElementById("form1");
-                var fv = new Adoro.FormValidator(form);
-                fv.addValidator("username",[{
-                    method: function() {
-                        return false;
-                    },
-                    message: "Failed"
-                }]);
-                document.getElementById("primarySubmit").click();
-                // i need to check the the amount of errors is 1
-                //assertEquals(1, fv.getErrors().length);???
-                
-            }
-        
-            function atestAdoroFormValidatorExists() {
-                assertNotNull("Reference is not null", Adoro.FormValidator);  
-            }
-	    
-            // what should i do with a class that has no arguments?
-            function atestNoArguments() {
-                // when no arguments return null;
-               // var fv = new Adoro.FormValidator();
-                //assertUndefined("no arguments returns null", fv.addValidator);
-            }
-            
-			
-            function atestAddValidatorWhenNoFormNode_dontAddValidator() {
-				return;
-                var fv = new Adoro.FormValidator();
-                fv.addValidator("username", [{
-                    method: function() {
-                        return true
-                    },
-                    message: "helo there error"
-                }]);
-                //assertEquals(0, fv.getValidators().length);
-            }
-			
-	    function atestAddValidatorWhenNoRules_dontAddValidator() {
-			return;
-            var formNode = document.getElementById("form1");
-            var fv = new Adoro.FormValidator(formNode);
-            fv.addValidator("username");
-            
-            //assertEquals(0, fv.getValidators().length);
-	    }
-	    
-	    function atestAddValidatorWhenEmptyRules_dontAddValidator() {
-			return;
-            var formNode = document.getElementById("form1");
-            var fv = new Adoro.FormValidator(formNode);
-            fv.addValidator("username", []);
-            //assertEquals(0, fv.getValidators().length);
-	    }	
-
-	    function atestAddValidatorWhenRulesAreEmptyObjects_dontAddValidator() {
-			return;
-            var formNode = document.getElementById("form1");
-            var fv = new Adoro.FormValidator(formNode);
-            fv.addValidator("username", [{}]);
-            //assertEquals(0, fv.getValidators().length);
-	    }	
-		   */  
-        </script>
-		-->
     </head>
     
     <body>
