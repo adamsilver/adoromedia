@@ -21,7 +21,6 @@ Adoro.FormValidator = function(formNode, options) {
 		config = options || {},
 		validators = [],
 		fvId = new Date().getTime(),
-		//invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
 		allowedEvents = [
 			"onFormValidateStart",
 			"onFormValidateComplete",
@@ -150,7 +149,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {boolean} clearErrors If false will clear any existing errors, otherwise it wont - default is true
 	 * @return {boolean} False when there are errors, otherwise True
 	 */
-	function validate(fieldsArray, stopValidatingAfterErrorCount, clearErrors) {
+	function validate(fieldsArray, clearErrors) {
 		
 		$(document).trigger([fvId,"onFormValidateStart"].join("."), [me]);
 		
@@ -162,17 +161,13 @@ Adoro.FormValidator = function(formNode, options) {
 			validators = me.getValidators(),
 			valid = true;
 			
-		for(var i = 0, count = 0;i<validators.length;i++) {
+		for(var i = 0;i<validators.length;i++) {
 			// only validate specific fields passed in as fieldsArray
 			if(fieldsArray.length > 0 && ($.inArray(validators[i].fieldName, fieldsArray) == -1) ) continue;	
 			valid = validators[i].validate();
 			
 			if(!valid) {
-				allValid = false;
-				count++;
-				if(typeof stopValidatingAfterErrorCount === "number" && (stopValidatingAfterErrorCount === count) ) {
-					break;
-				}			
+				allValid = false;	
 			}
 		}
 		
