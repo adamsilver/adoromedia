@@ -9,7 +9,7 @@
 <?php include("inc/enquiryForm.php"); ?>
 <html lang="en"> 
 	<head>
-		<title>Contact St Andrews House, Solent Serviced Offices based in Gatwick</title> 
+		<title>Contact, Services, Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
@@ -39,7 +39,7 @@
 				<div id="primary">
 					
 					<div id="contact">
-						<h1>Contact St Andrews House</h1>
+						<h1>Contact us about our serviced offices</h1>
 						<p>We are situated a few minutes walk from Crawley Station and Gatwick Airport
 						is only a 10 minute <br/>drive by car.</p>
 						

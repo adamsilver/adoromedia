@@ -6,7 +6,7 @@
 ?>
 <html lang="en"> 
 	<head>
-		<title>Solent Serviced Offices: St Andrews House</title> 
+		<title>About, Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
@@ -34,7 +34,7 @@
 					
 					<div id="homepage">
 					
-						<h1>About St Andrews House</h1>
+						<h1>About St Andrews House and our serviced offices</h1>
 						
 						<p>St Andrews House is an integral part of the Solent Serviced Offices
 						Ltd group of bespoke offices, an Edwardian Character  building, in a

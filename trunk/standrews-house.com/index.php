@@ -6,7 +6,7 @@
 ?>
 <html lang="en"> 
 	<head>
-		<title>Solent Serviced Offices: St Andrews House</title> 
+		<title>Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" />
 		<?php include("inc/globalCss.php"); ?>
