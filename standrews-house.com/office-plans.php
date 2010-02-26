@@ -6,7 +6,7 @@
 ?>
 <html lang="en"> 
 	<head>
-		<title>Solent Serviced Offices: St Andrews House</title> 
+		<title>Office plans, Services, Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
 		<meta charset="utf-8" /> 
 		<meta name="robots" content="all,index,follow" /> 
 		<?php include("inc/globalJs.php"); ?>
@@ -30,7 +30,7 @@
 					<ul>
 						<li><a href="index.php">Home page</a></li>
 						<li><a href="services.php">Services</a></li>
-						<li>Plans</li>
+						<li>Office plans</li>
 					</ul>
 				</div>
 				
