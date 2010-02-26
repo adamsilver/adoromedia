@@ -82,14 +82,23 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {string} fieldName The name of the field to validate
 	 * @param {rules[{rule}]} rules An array of rule objects to run against the field
 	 * a rule object looks like {method: function() {}, message: "In string format etc"}
-	 * @return {Object} The instance of the validator
+	 * @example
+	 * var fv = new Adoro.FormValidator();
+	 * fv.addValidator("username", [{
+	 * 	method: function(){},
+	 * 	message: "Username is required"
+	 * },{
+	 * 	method: function(){},
+	 * 	message: "Username must letters"
+	 * }]);
+	 * @return {Object} The instance of the validator or null
 	 */	
 	function addValidator(fieldName, rules) {
-		var $field, validator;		
-		if(arguments.length === 0) return me;
-		if(typeof fieldName !== "string") return me;
+		var $field, validator = null;		
+		if(arguments.length === 0) return validator;
+		if(typeof fieldName !== "string") return validator;
 		$field = $formNode.find("input[name='"+fieldName+"']");
-		if($field.length === 0) return me;
+		if($field.length === 0) return validator;
 		if(!$.isArray(rules)) rules = [];
 		validator = me.getValidator(fieldName);
 		
