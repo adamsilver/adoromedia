@@ -4,7 +4,7 @@
 */
 /**
 * @namespace Root namespace for holding all Adoro objects
-* @name J2
+* @name Adoro
 */
 var Adoro = Adoro || {};
 /**
@@ -74,7 +74,16 @@ Adoro.FormValidator = function(formNode, options) {
 		var id = [eventType, fvId].join(".");
         $(document).unbind(id, eventHandler);
     }
-		
+	
+	/**
+	 * add a validator to the form validator object
+	 * @function
+	 * @public
+	 * @param {string} fieldName The name of the field to validate
+	 * @param {rules[{rule}]} rules An array of rule objects to run against the field
+	 * a rule object looks like {method: function() {}, message: "In string format etc"}
+	 * @return {Object} The instance of the validator
+	 */	
 	function addValidator(fieldName, rules) {
 		var $field, validator;		
 		if(arguments.length === 0) return me;
@@ -298,6 +307,7 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 	}
 	
+
 	// public members
 	this.addEventHandler = addEventHandler;
 	this.addValidator = addValidator;
