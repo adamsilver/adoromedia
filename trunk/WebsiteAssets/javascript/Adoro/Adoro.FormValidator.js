@@ -20,7 +20,7 @@ Adoro.FormValidator = function(formNode, options) {
 		$formNode = $(formNode),
 		config = options || {},
 		validators = [],
-		fvId = new Date().getTime(),
+		fvId = new Date().getTime(),		
 		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
 		allowedEvents = [
 			"onFormValidateStart",
@@ -93,7 +93,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * }]);
 	 * @return {Object} The instance of the validator or null
 	 */	
-	function addValidator(fieldName, rules) {
+	function addValidator(fieldName, rules, options) {
 		var $field, validator = null;		
 		if(arguments.length === 0) return validator;
 		if(typeof fieldName !== "string") return validator;
@@ -114,6 +114,13 @@ Adoro.FormValidator = function(formNode, options) {
 			addRulesToValidator(validator, rules);
 			validators.push(validator);
 		}	
+		
+		for(var key in options) {
+			addEventHandler([fieldName, key].join("."), options[key]);
+		}
+		
+		// for each option key
+			//addEventHandler(fieldName+key, options[key]);
 		
 		return validator;
 	}
@@ -294,16 +301,19 @@ Adoro.FormValidator = function(formNode, options) {
 				rulesLength = rules.length,
 				rule = null,
 				valid = true,
-				allValid = true;
+				allValid = true,
+				count = 0;
 			if(rulesLength === 0) return allValid;
-			for(i; i<rulesLength; i++) {
+			for(i, count=0; i<rulesLength; i++) {
 				rule = rules[i];
 				valid = rule.method.call(this.$field, rule.params);
 				if(typeof valid === "undefined") valid = true;
-				if(!valid) {
+				if(!valid && (count < invalidRulesToShowPerValidator)) {
 					allValid = false;
 					rule.setErrorState(true);
 					$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [this.$field, rule]);
+					count++;
+					
 				}
 			}
 			
