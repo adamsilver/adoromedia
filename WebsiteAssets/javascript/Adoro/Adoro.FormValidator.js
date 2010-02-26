@@ -21,8 +21,7 @@ Adoro.FormValidator = function(formNode, options) {
 		config = options || {},
 		validators = [],
 		fvId = new Date().getTime(),
-		stopValidatingAfterErrorCount = config.stopValidatingAfterErrorCount || null,
-		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
+		//invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
 		allowedEvents = [
 			"onFormValidateStart",
 			"onFormValidateComplete",
@@ -151,7 +150,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 * @param {boolean} clearErrors If false will clear any existing errors, otherwise it wont - default is true
 	 * @return {boolean} False when there are errors, otherwise True
 	 */
-	function validate(fieldsArray, clearErrors) {
+	function validate(fieldsArray, stopValidatingAfterErrorCount, clearErrors) {
 		
 		$(document).trigger([fvId,"onFormValidateStart"].join("."), [me]);
 		
@@ -199,16 +198,16 @@ Adoro.FormValidator = function(formNode, options) {
 		
 		for(var i = 0;i<validators.length;i++) {
 			validator = validators[i];
-			rules = validator.getRules();
+			rules = validator.getInvalidRules();
 			for(var j = 0, count = 0; j < rules.length; j++) {
 				rule = rules[j];
-				if(rule.hasError && (count < invalidRulesToShowPerValidator)) {
-					errors.push({
-						fieldName: validator.fieldName,
-						message: rule.message						
-					})
-					count++;
-				}
+				//if(count < invalidRulesToShowPerValidator) {
+				errors.push({
+					fieldName: validator.fieldName,
+					message: rule.message						
+				})
+				count++;
+				//}
 			}
 			
 		}
@@ -257,7 +256,7 @@ Adoro.FormValidator = function(formNode, options) {
 		
 		for(var i = 0;i<validators.length;i++) {
 			validator = validators[i];
-			rules = validator.getRules();
+			rules = validator.getInvalidRules();
 			for(var j = 0; j < rules.length; j++) {
 				rules[j].hasError = false;
 			}
@@ -298,6 +297,17 @@ Adoro.FormValidator = function(formNode, options) {
 		getRules: function() {
 			return this.rules || null;
 		},
+		getInvalidRules: function() {
+			var invalidRules = [],
+				rules = this.getRules();
+				
+			for(var i = 0; i < rules.length; i++) {
+				if(rules[i].hasError) {
+					invalidRules.push(rules[i]);
+				}
+			}
+			return invalidRules;
+		},
 		validate: function(yoyo) {
 			$(document).trigger([fvId, this.fieldName,"onFieldValidateStart"].join("."), [this.$field]);		
 			
@@ -306,24 +316,23 @@ Adoro.FormValidator = function(formNode, options) {
 				rulesLength = rules.length,
 				rule = null,
 				valid = true,
-				allValid = true,
-				count = 0;
+				allValid = true;
 			if(rulesLength === 0) return allValid;
-			for(i, count=0; i<rulesLength; i++) {
+			for(i; i<rulesLength; i++) {
 				rule = rules[i];
 				valid = rule.method.call(this.$field, rule.params);
 				if(typeof valid === "undefined") valid = true;
-				if(!valid && (count < invalidRulesToShowPerValidator)) {
+				if(!valid) {
 					allValid = false;
-					rule.setErrorState(true);
-					$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [this.$field, rule]);
-					count++;
-					
+					rule.setErrorState(true);				
 				}
 			}
 			
 			if(allValid) {
 				$(document).trigger([fvId,this.fieldName, "onFieldSuccess"].join("."), [this.$field]);
+			}
+			else {
+				$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [this.$field, this.getInvalidRules()]);
 			}
 			
 			$(document).trigger([fvId,this.fieldName, "onFieldValidateComplete", fvId].join("."), [this.$field]);
