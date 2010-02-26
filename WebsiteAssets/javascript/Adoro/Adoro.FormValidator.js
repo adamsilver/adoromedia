@@ -1,3 +1,11 @@
+/**
+* @fileOverview Adoro FormValidator object
+* @name FormValidator
+*/
+/**
+* @namespace Root namespace for holding all Adoro objects
+* @name J2
+*/
 var Adoro = Adoro || {};
 /**
 * Create a new form validator object
