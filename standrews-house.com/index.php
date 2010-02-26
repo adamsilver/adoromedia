@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-	$metaKeywords = "adoro media, website design, website development, london";
-	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
+	$metaKeywords = "Serviced, Offices, Crawley, Gatwick, Area, Hire, Rent, St, Andrews, House";
+	$metaDescription = "Serviced offices for hire, based in Crawley &amp; Gatwick, St Andrews House";
 	$siteSection = "home";
 ?>
 <html lang="en"> 
@@ -14,7 +14,6 @@
 		<?php include("inc/globalJs.php"); ?>
 		<script type="text/javascript" src="js/App/App.HomePageCycler.js"></script>
 		<script type="text/javascript" src="js/App/App.Heroes.js"></script>
-		
 	</head> 
 	<body>
 		<div id="container">
