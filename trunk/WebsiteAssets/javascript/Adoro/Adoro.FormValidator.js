@@ -20,7 +20,8 @@ Adoro.FormValidator = function(formNode, options) {
 		$formNode = $(formNode),
 		config = options || {},
 		validators = [],
-		fvId = new Date().getTime(),		
+		fvId = new Date().getTime(),
+		stopValidatingAfterErrorCount = config.stopValidatingAfterErrorCount || null,
 		invalidRulesToShowPerValidator = config.invalidRulesToShowPerValidator || 1,
 		allowedEvents = [
 			"onFormValidateStart",
@@ -71,7 +72,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
     function removeEventHandler(eventType, eventHandler) {
 		if(!eventType || !eventHandler) return;
-		var id = [eventType, fvId].join(".");
+		var id = [fvId, eventType].join(".");
         $(document).unbind(id, eventHandler);
     }
 	
@@ -162,13 +163,17 @@ Adoro.FormValidator = function(formNode, options) {
 			validators = me.getValidators(),
 			valid = true;
 			
-		for(var i = 0;i<validators.length;i++) {
+		for(var i = 0, count = 0;i<validators.length;i++) {
 			// only validate specific fields passed in as fieldsArray
 			if(fieldsArray.length > 0 && ($.inArray(validators[i].fieldName, fieldsArray) == -1) ) continue;	
 			valid = validators[i].validate();
 			
 			if(!valid) {
 				allValid = false;
+				count++;
+				if(typeof stopValidatingAfterErrorCount === "number" && (stopValidatingAfterErrorCount === count) ) {
+					break;
+				}			
 			}
 		}
 		
@@ -329,6 +334,7 @@ Adoro.FormValidator = function(formNode, options) {
 
 	// public members
 	this.addEventHandler = addEventHandler;
+	this.removeEventHandler = removeEventHandler;
 	this.addValidator = addValidator;
 	this.removeValidator = removeValidator;
 	this.validate = validate;
