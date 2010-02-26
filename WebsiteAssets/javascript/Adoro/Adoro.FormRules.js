@@ -171,7 +171,7 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var regex = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$");
+		var regex = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$|^$");
 		if (!regex.test(field[0].value)) {
 			valid = false;
 		}
