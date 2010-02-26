@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <?php
-	$metaKeywords = "adoro media, website design, website development, london";
-	$metaDescription = "Adoro Media is a website design and development agency. Based in London.";
+	$metaKeywords = "Serviced, Offices, Crawley, Gatwick, Area, Hire, Rent, St, Andrews, House";
+	$metaDescription = "Serviced offices for hire, based in Crawley &amp; Gatwick, St Andrews House";
 	$siteSection = "services";
 ?>
 <html lang="en"> 
 	<head>
 		<title>Office plans, Services, Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
-		<meta charset="utf-8" /> 
-		<meta name="robots" content="all,index,follow" /> 
+		<?php include("inc/headGlobal.php"); ?>
+		<?php include("inc/globalCss.php"); ?>
+		<link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" media="screen" />
+		<?php include("inc/globalCssIe.php"); ?>		
 		<?php include("inc/globalJs.php"); ?>
 		<script type="text/javascript" src="js/JQuery/jquery.lightbox-0.5.js"></script>
 		<script type="text/javascript" src="js/App/App.PlanGallery.js"></script>
-		<?php include("inc/globalCss.php"); ?>
-		<link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" media="screen" />
-		<?php include("inc/globalCssIe.php"); ?>
 	</head> 
 	<body>
 		<div id="container">

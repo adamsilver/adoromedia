@@ -7,8 +7,7 @@
 <html lang="en"> 
 	<head>
 		<title>Serviced offices based in Crawley &amp; Gatwick, St Andrews House</title> 
-		<meta charset="utf-8" /> 
-		<meta name="robots" content="all,index,follow" />
+		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/globalCss.php"); ?>
 		<?php include("inc/globalCssIe.php"); ?>
 		<?php include("inc/globalJs.php"); ?>
