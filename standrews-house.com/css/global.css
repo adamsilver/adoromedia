@@ -88,8 +88,8 @@ ul.generic {
 ul.generic li {
 	margin-bottom: 15px;
 	color: #333;
-	background: url(../img/arrow_right_peppermint.png) no-repeat 0px 3px;
 	padding-left: 13px;
+	background: url(../img/arrow.gif) no-repeat 4px 5px;
 }
 
 /****************************************************
@@ -303,7 +303,7 @@ div.actions input {
 #nav ul li.main {
 	float: left;
 	font-size: 1.1em;
-	border-right: 1px solid #555;
+	border-right: 1px solid #1a1b38;
 	text-transform: uppercase;
 	font-weight: bold;
 	position: relative;
@@ -337,7 +337,7 @@ div.actions input {
 }
 
 #nav ul li div.sub {
-	border: 1px solid #555;
+	border: 1px solid #1a1b38;
 	position: absolute;
 	padding: 15px 15px 5px 15px;
 	width: 280px;
@@ -392,7 +392,7 @@ div.actions input {
 
 #breadcrumb ul li {
 	font-size: 1.1em;
-	background: url(../img/arrow_right_peppermint.png) no-repeat 0px 3px;
+	background: url(../img/arrow.gif) no-repeat 4px 5px;
 	padding-left: 12px;
 	padding-top: 1px;
 	float: left;
