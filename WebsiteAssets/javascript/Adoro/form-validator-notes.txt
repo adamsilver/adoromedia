@@ -1,68 +1,29 @@
-function FormValidator() {
-	var validators = []
-	
-	function validate(fieldNamesArray) {
-		loop through validators which matches the fieldNamesArray
-			validate them
-			valodator.validate
-	}
-	
-	function Validator(field, rules) {
-		this.fieldName = field[0].name;
-		this.rules = rules;
-	}
-	Validator.prototype = {
-		validate: function() {
-			// loop through all rules
-			if an error is found then set hasError on validator
-			set the rule to hasError true
-			
-			
-		},
-		hasError: false
-	}
-	
-	function Rule(fieldName, message) {
-	
-	}
-	Rule.prototype.hasError = false;
-}
+1. Should we let users do
 
-var fv = new FormValidator(node)
+fv.addEventHandler("fieldName1.event", func)
+fv.addEventHandler("fieldName2.event", func)
 
-$(document).bind("formValidator-specialTimeStamp."+field[0].name"+".onFieldError")
+or should we allow a nice interface like
 
-fv.addEventHandler("onFieldError", function() {
+fv.addEventHandlerToAllValidators("event", func)
 
-});
+or something like
 
-
-
-fv.addValidator("fieldName", [{
-
-}], {
-	onValidateStart: function() {}
+new Adoro.FormValidator(formNode {
+	event: [func]	
 })
 
-fv.getValidator("fieldName").addEventHandler("onValidateStart", function() {
+2. Should Validator inner class be similar to Rule class?
 
-});
 
-fv.getValidator("fieldName").addEventHandler("onError", function() {
 
-});
 
-fv.validate();
 
-fv.addEventHandler("onValidateStart", function() {
-	alert("starting");
-})
 
-document.getElementById("formNode").onsubmit = function() {
-	var isFormValid = fv.validate();
-	return isFormValid;
-}
 
-document.getElementById("findPostCode").onclick = function() {
-	fv.validate(["postcode", "housenumber"])
-}
+
+
+
+
+
+
