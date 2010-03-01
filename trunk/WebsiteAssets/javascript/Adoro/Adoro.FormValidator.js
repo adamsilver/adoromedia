@@ -415,6 +415,16 @@ Adoro.FormValidator = function(formNode, options) {
 	this.getValidatorIndex = getValidatorIndex;
 	this.clearErrors = clearErrors;
 }
+/**
+ * Represents a rule object
+ * @class Represents a rule used in a validator object
+ * @constructor
+ * @public
+ * @param {function} method The function to be called for the rule to pass
+ * @param {string} message The error message when the method fails
+ * @param {object} params The params object to be sent to as the first argument to the method
+ * @return {object} The object as an instance of Adoro.FormValidator.Rule
+ */	
 Adoro.FormValidator.Rule = function(method, message, params) {
 	this.method = method;
 	this.message = message;
