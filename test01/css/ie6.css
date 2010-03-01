@@ -1,0 +1,34 @@
+/********************************************************
+* hasLayout
+********************************************************/
+
+#nav,
+#nav ul,
+#content,
+#ourFocus,
+#news,
+#news div.article,
+#news div.article blockquote,
+#moreInformation,
+#moreInformation div.field,
+#whatWeDo,
+#ourFocus ul,
+#ourFocus ul li {
+	height: 1%;
+}
+
+/********************************************************
+* double margin
+********************************************************/
+
+selector {
+	display: inline;
+}
+
+/********************************************************
+* min-height
+********************************************************/
+
+selector {
+	height: 100px;
+}

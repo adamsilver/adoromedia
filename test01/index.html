@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Test, AKQA</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/global.css" type="text/css" media="screen" />
+		<!--[if IE 7]><link rel="stylesheet" href="css/ie7.css" type="text/css" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" /><![endif]-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/Adoro/Adoro.FormRules.js"></script>
+		<script type="text/javascript" src="js/Adoro/Adoro.FormValidator.js"></script>
+		<script type="text/javascript" src="js/App/App.NewsToggler.js"></script>
+		<script type="text/javascript" src="js/App/App.MoreInformationFormValidator.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<!-- Could put skip links in... -->
+			<a id="logo" href="#"><img src="img/logo.jpg" alt="AKQA" /></a>
+			<div id="nav">
+				<ul>
+					<li><a href="#">Menu 1</a></li>
+					<li><a href="#">Menu 2</a></li>
+					<li><a class="last" href="#">Menu 3</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<h1>About <abbr title="I'm not sure what this stands for yet">AKQA</abbr></h1>				
+				<div id="whatWeDo">
+					<h2>What we do</h2>
+					<p><span class="akqa">AKQA's</span> e-commerce solutions are inspired by the innovative application of technology.
+					We integrate with CRM systems and databases to provide a seamless customer experience.
+					<span class="akqa">AKQA</span> manages technology projects using structured development processes and our QA team
+					ensures that the final implementation is delivered to the highest quality standards. We
+					also provide clients with a high-quality, ISO 9000-certified, managed hosting service.</p>
+				</div>				
+				<div id="ourFocus">
+					<h2>Our focus</h2>
+					<ul>
+						<li>Interactive</li>
+						<li>Mobile</li>
+						<li>Technology</li>
+					</ul>
+					<p class="download"><a href="#">Click here to download a <abbr title="Portable Document Format">PDF</abbr> of our recent work</a></p>
+				</div>				
+				<div id="news">
+					<h2>News</h2>					
+					<div class="article">
+						<p><span class="akqa">AKQA's</span> site for NBA superstar Lebron Spa&#223; <a href="#">www.lebron23 -23.com</a> was featured in USA today
+						on January 5, 2007. James and Coca-Cola's Sprite plan to announce a national contect Friday
+						inviting consumers to create theme songs for new Sprite TV commercials airing during NBA
+						All-Star Weekend next month. </p>					
+						<blockquote cite="Something">
+							<p>
+								"I wanted to do something new and different. Sprite came to me with the idea. I
+								thought it was cool. Without the fans, there's no players."
+							</p>
+						</blockquote>						
+					</div>					
+				</div>				
+				<div id="moreInformation">
+					<h2>More information</h2>
+					<p>For more information about the services AKQA offer, and how we can work with you,
+					please provide us with the following items of information</p>					
+					<p class="required">Items marker with * are required fields</p>
+					<form id="contactForm" method="post" action="#">
+						<div class="field">
+							<label for="contactName">Contact name<span class="required">*</span>:</label>
+							<input type="text" name="contactName" id="contactName" />
+						</div>
+						<div class="field">
+							<label for="contactEmail">Contact email<span class="required">*</span>:</label>
+							<input type="text" name="contactEmail" id="contactEmail" />
+						</div>
+						<div class="field">
+							<label for="contactPhoneNumber">Contact phone number:</label>
+							<input type="text" name="contactPhoneNumber" id="contactPhoneNumber" maxlength="11" />
+						</div>
+						<div class="actions">
+							<input type="submit" name="submit" value="Submit" />
+						</div>
+					</form>					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

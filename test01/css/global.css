@@ -1,0 +1,296 @@
+/****************************************************
+* Global
+****************************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial;
+	background: #000 url(../img/bg_body.jpg) no-repeat top left;
+}
+
+a img {
+	border: 0px;
+}
+
+abbr {
+	border-bottom: 0px;
+}
+
+/****************************************************
+* Links
+****************************************************/
+
+a, a:visited, a:link {
+	color: #fff000;
+	text-decoration: none;
+	font-style: italic;
+}
+
+a:hover, a:active, a:focus {
+
+}
+
+/****************************************************
+* Text
+****************************************************/
+
+h1 {
+	color: #e91a57;
+	font-size: 2.4em;
+	margin-bottom: 18px;
+}
+
+h2 {
+	font-size: 1.8em;
+	color: #fff;
+	margin-bottom: 18px;
+}
+
+p {
+	color: #cccccc;
+	font-size: 1.2em;
+	line-height: 1.1em;
+	margin-bottom: 15px;
+}
+
+/* because not sure that akqa should be stronger so using a span */
+strong, span.akqa {
+	color:#fff;
+	font-weight:bold;
+}
+
+ul li {
+	color: #ffffff;
+}
+
+/****************************************************
+* Hide
+****************************************************/
+
+.hide {
+	display: none;
+}
+
+/****************************************************
+* Off screen
+****************************************************/
+
+selector,
+.off {
+	position: absolute !important;
+	left: -99999em !important;
+	top: 0em !important;
+}
+
+/****************************************************
+* Clearfix
+****************************************************/
+
+#nav ul:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#container {
+	width: 364px;
+	padding-bottom: 92px;
+}
+
+
+/****************************************************
+* logo
+****************************************************/
+
+#logo {
+	margin-left: 39px;
+	margin-top: 21px;
+	display: block;
+	margin-bottom: 35px;
+	width: 100px;
+}
+
+#logo img {
+	display: block;
+}
+
+/****************************************************
+* nav
+****************************************************/
+
+#nav {
+	margin-left: 35px;
+	margin-bottom: 13px;
+}
+
+#nav ul {
+	list-style: none;
+}
+
+#nav ul li {
+	float: left;
+	border-bottom: 1px solid #000;
+	font-size: 1.2em;	
+}
+
+#nav ul li a {
+	background: url(../img/bg_nav_item.jpg) top left no-repeat;
+	padding-left: 21px;
+	padding-top: 5px;
+	padding-right: 17px;
+	padding-bottom: 4px;
+	color: #fff;	
+	text-decoration: none;
+	font-style: normal;
+	float: left;
+}
+
+#nav ul li a.last {
+	border-right: 1px solid #1f1e1e;
+}
+
+/****************************************************
+* content
+****************************************************/
+
+#content {
+	margin-left: 35px;
+}
+
+/****************************************************
+* ourFocus
+****************************************************/
+
+#ourFocus {
+}
+
+#ourFocus h2 {
+	color: #fff000;
+	font-size: 1.4em;
+	margin-bottom: 7px;
+}
+
+#ourFocus ul {
+	list-style: none;
+	margin-bottom: 16px;
+}
+
+#ourFocus ul li {
+	font-size: 1.2em;
+	margin-bottom: 1px;
+	padding-left: 8px;
+	background: url(../img/bg_focus_item.gif) no-repeat 0px 6px;
+}
+
+#ourFocus p.download {
+	margin-bottom: 20px;
+}
+
+/****************************************************
+* news
+****************************************************/
+
+#news {
+	padding-bottom: 5px;
+}
+
+#news h2 {
+	margin-bottom: 13px;
+	color: #cccccc;
+}
+
+#news p.toggler {
+	padding-left: 21px;
+	margin-bottom: 11px;
+	background: url(../img/bg_toggler_arrow.gif) no-repeat 4px 3px;
+}
+
+#news p.toggler a {
+	color: #e91a57;
+	text-decoration: none;
+	font-weight: bold;
+	font-style: normal;
+}
+
+#news div.article {
+	
+}
+
+#news div.article p {
+	margin-bottom: 13px;
+}
+
+#news div.article blockquote {
+	margin-left: 34px;
+}
+
+#news div.article blockquote p {
+}
+
+/****************************************************
+* more information
+****************************************************/
+
+#moreInformation {
+}
+
+#moreInformation h2 {
+	color: #cccccc;
+	margin-bottom: 10px;
+}
+
+#moreInformation p {
+	color: #fff;
+}
+
+#moreInformation p.required {
+	font-size: 1.1em;
+}
+
+#moreInformation div.field {
+}
+
+#moreInformation div.field label {
+	display: block;
+	color: #fff;
+	font-size: 1.2em;
+	margin-bottom: 4px;
+}
+
+#moreInformation div.field label span.error {
+	color: #e91a57;
+	background-color: #000;
+	font-weight: bold;
+}
+
+#moreInformation div.field p.errorInline {
+	color: #e91a57;
+	font-weight: bold;
+	background-color: #000;
+	padding: 5px;
+}
+
+#moreInformation div.field input {
+	font-size: 1.2em;
+	display: block;
+	margin-bottom: 6px;
+}
+
+#moreInformation div.actions {
+	padding-top: 4px;
+}
+
+#moreInformation #contactName {
+	width: 161px;
+}
+#moreInformation #contactEmail,
+#moreInformation #contactPhoneNumber{
+	width: 236px;
+}
