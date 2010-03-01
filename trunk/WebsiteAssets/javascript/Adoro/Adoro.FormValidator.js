@@ -33,7 +33,7 @@ Adoro.FormValidator = function(formNode, options) {
 		];
 		
 	/**
-	 * add a custom event to the form validator
+	 * Add a custom event to the form validator
 	 * @function
 	 * @public
 	 * @param {string} eventType This can be either
@@ -54,7 +54,7 @@ Adoro.FormValidator = function(formNode, options) {
     }
 
 	/**
-	 * remove a custom event from the form validator
+	 * Remove a custom event from the form validator
 	 * @function
 	 * @public
 	 * @param {string} eventType This can be either
@@ -75,7 +75,7 @@ Adoro.FormValidator = function(formNode, options) {
     }
 	
 	/**
-	 * add a validator to the form validator object
+	 * Add a validator to the form validator object
 	 * @function
 	 * @public
 	 * @param {string} fieldName The name of the field to validate
@@ -124,17 +124,31 @@ Adoro.FormValidator = function(formNode, options) {
 		return validator;
 	}
 	
+	/**
+	 * Add rules to validator
+	 * @function
+	 * @private
+	 * @param {object} validator Validator object to add the rules to
+	 * @param {array} rules Array of rule objects
+	 */	
 	function addRulesToValidator(validator, rules) {
 		for(var i = 0; i<rules.length;i++) {
 			validator.addRule(rules[i]);
 		}
 	}
 	
+	/**
+	 * Remove a validator
+	 * @function
+	 * @public
+	 * @param {string} fieldName The field name
+	 * @return {object} The instance of the form validator
+	 */		
 	function removeValidator(fieldName) {
 		if(arguments.length === 0) return me;
 		if(typeof fieldName !== "string") return me;
 		var validatorIndex = me.getValidatorIndex(fieldName);
-		if(validatorIndex === null) return me;
+		if(validatorIndex < 0) return me;
 		var validators = me.getValidators();
 		delete validators[validatorIndex];
 		validators.splice(validatorIndex, 1);
@@ -142,7 +156,7 @@ Adoro.FormValidator = function(formNode, options) {
 	}
 
 	/**
-	 * validate the form
+	 * Validate the form
 	 * @function
 	 * @public
 	 * @param {array[string]} fieldsArray Array of field names in string format to validate
@@ -183,6 +197,12 @@ Adoro.FormValidator = function(formNode, options) {
 		return allValid;
 	}
 	
+	/**
+	 * Get errors for the form
+	 * @function
+	 * @public
+	 * @return {array[object]} Array of objects {"fieldName": "fieldName", message: "message"}
+	 */	
 	function getErrors() {
 		var errors = [],
 			validators = me.getValidators(),
@@ -209,10 +229,23 @@ Adoro.FormValidator = function(formNode, options) {
 		return errors;
 	}
 	
+	/**
+	 * Get validators
+	 * @function
+	 * @public
+	 * @return {array[object]} Array of validator objects
+	 */	
 	function getValidators() {
 		return validators;
 	}
 	
+	/**
+	 * Get validator
+	 * @function
+	 * @public
+	 * @param {string} fieldName The field name
+	 * @return {object} Validator object or null if not found
+	 */		
 	function getValidator(fieldName) {
 		var o = null, validator;
 		if(arguments.length === 0) return o;
@@ -227,8 +260,15 @@ Adoro.FormValidator = function(formNode, options) {
 		return o;
 	}
 	
+	/**
+	 * Get validator index
+	 * @function
+	 * @public
+	 * @param {string} fieldName The field name
+	 * @return {number} Index of the validator in the array or -1 if not found
+	 */		
 	function getValidatorIndex(fieldName) {
-		var o = null,
+		var o = -1,
 			validator = null,
 			i = validators.length-1;
 		if(arguments.length === 0) return o;
@@ -243,6 +283,12 @@ Adoro.FormValidator = function(formNode, options) {
 		return o;
 	}
 	
+	/**
+	 * Clear errors
+	 * @description Set all states of any invalid rules back to false
+	 * @function
+	 * @public
+	 */		
 	function clearErrors() {
 		var validators = me.getValidators(),
 			rules = null,
@@ -257,7 +303,19 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 		}
 	}
-		
+	
+	/**
+	 * Represents a Validator object
+	 * @class
+	 * @constructor
+	 * @name Validator
+	 * @memberOf Adoro.FormValidator
+	 * @private
+	 * @param {object} $field The jQuery object representing the field
+	 * @param {string} fieldName The field name
+	 * @param {array} rules The rules
+	 * @return {object} The instance of the validator
+	 */
 	function Validator($field, fieldName, rules) {
 		var me = this;
 		this.$field = $field;
@@ -265,6 +323,16 @@ Adoro.FormValidator = function(formNode, options) {
 		this.rules = rules || [];
 	}
 	Validator.prototype = {
+		/*
+		 * Add rule to validator
+		 * @function
+		 * @public
+		 * @param {object} obj The rule object
+		 * obj.method {function} The function to run
+		 * obj.message {string } The error message
+		 * obj.params {object} The paramaters object to pass to the function when called
+		 * @return {object} The instance of the validator
+		 */
 		addRule: function(obj) {
 			var rule = null;
 			if(arguments.length === 0) return this;
@@ -335,7 +403,6 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 	}
 	
-
 	// public members
 	this.addEventHandler = addEventHandler;
 	this.removeEventHandler = removeEventHandler;
