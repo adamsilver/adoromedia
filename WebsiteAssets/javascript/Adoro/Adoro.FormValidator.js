@@ -96,7 +96,7 @@ Adoro.FormValidator = function(formNode, options) {
 		var $field, validator = null;		
 		if(arguments.length === 0) return validator;
 		if(typeof fieldName !== "string") return validator;
-		$field = $formNode.find("input[name='"+fieldName+"']");
+		$field = $formNode.find("[name='"+fieldName+"']");
 		if($field.length === 0) return validator;
 		if(!$.isArray(rules)) rules = [];
 		validator = me.getValidator(fieldName);

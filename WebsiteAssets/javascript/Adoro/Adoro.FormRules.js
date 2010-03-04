@@ -384,7 +384,37 @@ Adoro.FormRules = {
 			valid = false;
 		}		
 		return valid;
+	},
+	
+	emailAddress2: function() {
+		var valid = true;
+		var field = this;
+		if (field.length > 1) return valid;
+		
+		var SP        = "\\!\\#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~";
+        var ATEXT     = "[a-zA-Z0-9" + SP + "]";
+        var ATOM      = ATEXT + "+";
+        var DOTATOM   = "\\." + ATOM;
+        var LOCALPART = ATOM + "(" + DOTATOM + ")*";
+      
+        //RFC 1035 tokens for domain names:
+        var LETTER    = "[a-zA-Z]";
+        var LETDIG    = "[a-zA-Z0-9]";
+        var LETDIGHYP = "[a-zA-Z0-9-]";
+        var RFCLABEL  = LETDIG + "(" + LETDIGHYP + "{0,61}" + LETDIG + ")?";
+        var DOMAIN    = RFCLABEL + "(\\." + RFCLABEL + ")*\\." + LETTER + "{2,6}";
+       
+        //Combined together, these form the allowed email regexp allowed by RFC 2822:
+        var ADDRSPEC  = "^" + LOCALPART + "@" + DOMAIN + "$";
+        
+		var regex = new RegExp(ADDRSPEC+"|^$");
+		if (!regex.test(field[0].value)) {
+			valid = false;
+		}
+		
+		return valid;			
 	}
+	
 }
 
 
