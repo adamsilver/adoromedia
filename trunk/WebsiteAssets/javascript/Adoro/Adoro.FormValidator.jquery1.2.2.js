@@ -7,6 +7,11 @@
 * @name Adoro
 */
 var Adoro = Adoro || {};
+
+Adoro.isArray = function(value) {
+	return Object.prototype.toString.apply(value) === '[object Array]';
+}
+
 /**
 * Create a new form validator object
 * @class Represents a form validator object
@@ -49,7 +54,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
 	function addEventHandler(eventType, eventHandler) {
 		if(!eventType || !eventHandler) return;
-		var id = [fvId, eventType].join(".");
+		var id = [eventType, fvId].join(".");
         $(document).bind(id, eventHandler);
     }
 
@@ -70,7 +75,7 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
     function removeEventHandler(eventType, eventHandler) {
 		if(!eventType || !eventHandler) return;
-		var id = [fvId, eventType].join(".");
+		var id = [eventType,fvId].join(".");
         $(document).unbind(id, eventHandler);
     }
 	
@@ -98,7 +103,7 @@ Adoro.FormValidator = function(formNode, options) {
 		if(typeof fieldName !== "string") return validator;
 		$field = $formNode.find("input[name='"+fieldName+"']");
 		if($field.length === 0) return validator;
-		if(!$.isArray(rules)) rules = [];
+		if(!Adoro.isArray(rules)) rules = [];
 		validator = me.getValidator(fieldName);
 		
 		// if the validator exists then add any rules to it
@@ -165,11 +170,11 @@ Adoro.FormValidator = function(formNode, options) {
 	 */
 	function validate(fieldsArray, clearErrors) {
 		
-		$(document).trigger([fvId,"onFormValidateStart"].join("."), [me]);
+		$(document).trigger(["onFormValidateStart",fvId].join("."), [me]);
 		
 		if(clearErrors !== false) this.clearErrors();
 		
-		if(!fieldsArray || !$.isArray(fieldsArray)) fieldsArray = [];
+		if(!fieldsArray || !Adoro.isArray(fieldsArray)) fieldsArray = [];
 		
 		var allValid = true,
 			validators = me.getValidators(),
@@ -186,13 +191,13 @@ Adoro.FormValidator = function(formNode, options) {
 		}
 		
 		if(allValid) {
-			$(document).trigger([fvId,"onFormSuccess"].join("."), [me]);
+			$(document).trigger(["onFormSuccess",fvId].join("."), [me]);
 		}
 		else {
-			$(document).trigger([fvId,"onFormFail"].join("."), [me]);
+			$(document).trigger(["onFormFail",fvId].join("."), [me]);
 		}
 		
-		$(document).trigger([fvId,"onFormValidateComplete"].join("."), [me]);
+		$(document).trigger(["onFormValidateComplete",fvId].join("."), [me]);
 		
 		return allValid;
 	}
@@ -372,7 +377,7 @@ Adoro.FormValidator = function(formNode, options) {
 			return invalidRules;
 		},
 		validate: function(yoyo) {
-			$(document).trigger([fvId, this.fieldName,"onFieldValidateStart"].join("."), [this.$field]);		
+			$(document).trigger([this.fieldName,"onFieldValidateStart",fvId].join("."), [this.$field]);		
 			
 			var rules = this.getRules(),
 				i = 0,
@@ -392,13 +397,13 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 			
 			if(allValid) {
-				$(document).trigger([fvId,this.fieldName, "onFieldSuccess"].join("."), [this.$field]);
+				$(document).trigger([this.fieldName, "onFieldSuccess",fvId].join("."), [this.$field]);
 			}
 			else {
-				$(document).trigger([fvId, this.fieldName, "onFieldFail"].join("."), [this.$field, this.getInvalidRules()]);
+				$(document).trigger([this.fieldName, "onFieldFail",fvId].join("."), [this.$field, this.getInvalidRules()]);
 			}
 			
-			$(document).trigger([fvId,this.fieldName, "onFieldValidateComplete"].join("."), [this.$field]);
+			$(document).trigger([this.fieldName, "onFieldValidateComplete", fvId].join("."), [this.$field]);
 			return allValid;
 		}
 	}
