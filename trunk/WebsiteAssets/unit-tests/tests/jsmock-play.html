@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JsUnit Test Suite</title>
         <script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
-		<script type="text/javascript" src="../qmock/qmock.js"></script>
+		<script type="text/javascript" src="../jsmock/jsmock.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
        
 	   <script>
@@ -18,7 +18,10 @@
 			status: false,
 			swing: function() {
 				this.status = true;			
-			}			
+			},
+			getStatus: function() {
+				return this.status;
+			}
 		}
 		
 	   </script>
@@ -30,19 +33,19 @@
 			function test_WITHOUT_MOCK() {
 				SUC.run();
 				
-				assertTrue("", collaborator.status);
+				//assertTrue("", collaborator.status);
 			}
 			
 			function test_WITH_MOCK() {
-				var mockCollaborator = new Mock();
-				mockCollaborator
-					.expects(1)
-						.method("swing")
-						.property("status")
-						.andReturn(true)
-				
-				alert(typeof mockCollaborator.verify());
-				SUC.run();
+				var mockControl = new MockControl();
+				collaboratorMock = mockControl.createMock(collaborator);
+		
+				collaboratorMock.expects().getStatus().andReturn(true);
+		
+				var result = collaboratorMock.getStatus();
+		
+				//assertEquals('hello', result);	
+				alert(mockControl.verify());
 				
 				
 			}
