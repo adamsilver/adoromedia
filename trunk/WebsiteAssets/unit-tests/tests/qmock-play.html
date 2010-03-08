@@ -8,19 +8,23 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
        
 	   <script>
-		var SUC = {
-			run: function() {
-				collaborator.swing();	
-			}			
-		}
-		
-		var collaborator = {
-			status: false,
-			swing: function() {
-				this.status = true;			
-			}			
-		}
-		
+			// system under test / object under test / primary object
+			var SUC = {
+				run: function() {
+					collaborator.setStatus(true);	
+				}			
+			}
+			
+			var collaborator = {
+				status: false,
+				setStatus: function(newValue) {
+					this.status = newValue;			
+				},
+				getStatus: function() {
+					return this.status;
+					
+				}
+			}		
 	   </script>
 	   
         
@@ -30,53 +34,43 @@
 			function test_WITHOUT_MOCK() {
 				SUC.run();
 				
-				assertTrue("", collaborator.status);
+				assertTrue("", collaborator.getStatus());
 			}
 			
 			function test_WITH_MOCK() {
-				var mockCollaborator = new Mock();
-				mockCollaborator
-					.expects(1)
-						.method("swing")
-						.property("status")
-						.andReturn(true)
+				//var mock = new Mock();
+				//mock
+				//	.expects(1)
+				//		.method("getStatus")
+				//		.andReturn(true);	
 				
-				alert(typeof mockCollaborator.verify());
-				SUC.run();
+				//mock.getStatus();
+				
+				//SUC.run();
+				//mock.verify();
+				
+				var ninja = new Mock();
+				ninja
+					.expects(1)
+							.method('swing')
+							.withArguments('hard')
+							//.andReturn('hit');
+								
+				
+				//var rv = ninja.swing("hard");
+				
+				//alert(ninja.swing());
+				
+				assertUndefined("", ninja.swing());
+				//ninja.verify();				
+				
+				
+				
+				
+				
 				
 				
 			}
-		
-			//function 1test_play() {
-			//	var ninja = new Mock();
-			//	ninja
-			//		.expects(1)
-             //           .method('swing');
-			//	
-				
-			//	var r = ninja.verify();
-			//	alert(typeof r);
-				
-				
-				
-					
-			//}();
-			
-			<!--
-			//function 1test_qmock1() {
-				
-				//var ninja = new Mock();
-				//ninja
-				//	.expects(1)
-                 //       .method('swing');
-				
-				
-				//var r = ninja.verify();
-				//alert(typeof r);
-				
-				//assertTrue("", ninja.verify());				
-			//}
-			
 			-->
 		</script>
     </head>
