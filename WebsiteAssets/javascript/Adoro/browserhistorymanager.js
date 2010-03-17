@@ -77,6 +77,7 @@ $.extend((function() {
 				if (members[key].bhmValue !== currentURLVal) {
 					members[key].bhmValue = currentURLVal;
 					$(document).trigger("url." + key, [currentURLVal, key]);
+					
 				}
 			}
 			startChecking();
