@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hash and history for IE</title>
+    <script type="text/javascript">
+    var hashIndex = 0;
+    
+    function onFrameLoaded(hash) {
+        document.getElementById("currentHash").innerHTML = hash;
+        location.hash = hash;
+    }
+    
+    function makeNewHash() {
+        window.location.hash = hashIndex;
+        var doc = document.getElementById("historyFrame").contentWindow.document;
+        doc.open("javascript:'<html></html>'");
+        doc.write("<html><head><scri" + "pt type=\"text/javascript\">parent.onFrameLoaded("+ (hashIndex++) + ");</scri" + "pt></head><body></body></html>");
+        doc.close();
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" value="Generate new hash" onclick="makeNewHash()" />
+        <h1>Current hash:</h1>
+        <div id="currentHash"></div>
+        <iframe id="historyFrame" src="HistoryFrame.htm" style="visibility:none"></iframe>
+    </div>
+</body>
+</html>
