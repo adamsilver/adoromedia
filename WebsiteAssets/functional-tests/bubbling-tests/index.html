@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<style>
+			#logger {
+				height: 100px;
+				overflow: scroll;
+				display: none;
+			}
+		
+			#div1 {
+				background-color: red;
+				padding: 30px;
+			}
+			
+			#div2 {
+				background-color: yellow;
+				padding: 30px;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				var $logger = $("#logger");
+				function logIt(newLog) {
+					var currentLog = $logger.html();
+					$logger.html(newLog+currentLog);
+					
+				}
+				
+				$("#div1").bind("mouseover", function(e) {
+					//console.log("show div2");
+					e.preventDefault();
+				})
+				$("#div2").bind("mouseover", function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+				})
+				
+				$("#div1").bind("mouseout", function(e) {
+					// if we are moving from div2 to div1 ignore
+					// this is doing similar stuff to mouseleave
+					if(e.relatedTarget === this) {
+						alert("moved from inner to outer");
+					}
+					return false;
+				})		
+				
+			});
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>Bubbling</h1>
+		
+		<div id="logger">
+		</div>
+		
+		<h2>Mouseover</h2>
+		
+		<div id="div1">
+			<div id="div2">
+				<a href="#">The link</a>
+			</div>
+		</div>
+		
+		<hr/>
+		<br/><br/><br/><br/><br/><br/><br/>
+	</body>
+</html>

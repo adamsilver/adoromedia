@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Hash and history - FF and Safari 3 MAC</title>
+		<script type="text/javascript">
+		var hashIndex = 0;
+		var timerCookie;
+		
+		function onLoad() {
+			// this doesn't help, Opera is currently broken:
+			if (window.opera && window.history) {
+				history.navigationMode = 'compatible';
+			}
+			// Set-up the polling:
+			timerCookie = window.setTimeout(onTick, 200);
+		}
+		
+		function onTick() {
+			timerCookie = null;
+			document.getElementById("currentHash").innerHTML = (document.location.hash || "null");
+			timerCookie = window.setTimeout(onTick, 200);
+		}
+		
+		function makeNewHash() {
+			window.location.hash = hashIndex++;
+		}
+		
+		function onUnload() {
+			if (timerCookie) {
+				window.clearTimeout(timerCookie);
+			}
+		}
+		</script>
+	</head>
+	<body onload="onLoad()" onunload="onUnload()">
+		<div>
+			<input type="button" value="Generate new hash" onclick="makeNewHash()" />
+			<h1>Current hash:</h1>
+			<div id="currentHash"></div>
+		</div>
+	</body>
+</html>

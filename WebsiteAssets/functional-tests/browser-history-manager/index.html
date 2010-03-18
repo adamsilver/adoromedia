@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>jQuery history manager</title>
-		<!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />-->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/browserhistorymanager.js"></script>
 		<script type="text/javascript">
 			
@@ -18,7 +18,7 @@
 					$.url.listen( "anchors", function(e, itemValue, itemName) {
 			
 						
-						//showDivHtml(itemValue)
+						showDivHtml(itemValue);
 					});
 					
 					var a1 = $("a")[0];
@@ -30,7 +30,7 @@
 					
 					var html = "hello";
 					showDivHtml(html);
-					$.url.update( "anchors", html, false);
+					$.url.update( "anchors", html);
 					return false;
 				}
 				

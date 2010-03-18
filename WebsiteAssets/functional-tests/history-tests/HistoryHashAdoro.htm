@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Hash and history - Adoro</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			var HistoryManager = new (function() {
+				var timer = null, currentHash = "", delim = "&";
+				
+				var members = {}
+				
+				$(init);
+				function init() {
+					//return;
+					// start listening for a change in hash
+					timer = window.setTimeout(timeoutHandler, 100);
+				}
+				
+				function getBrowserUrl() {
+					return location.hash.slice(1);
+				}
+				
+				function timeoutHandler() {
+					timer = null;					
+					var hash = getHash();
+					var itemName = getItemName(hash);
+					
+					if(members[itemName] && (currentHash !== hash) ) {
+						console.log(itemName);
+						currentHash = hash;
+					}
+				
+					timer = window.setTimeout(timeoutHandler, 100);
+				}		
+							
+				function getHash() {
+					var returnVal = "";
+					if(location.hash) {
+						returnVal = location.hash.split("#")[1];
+					}
+					return returnVal;
+				}
+				
+				function getItemName(hash) {
+					return hash.split("=")[0];
+				}
+				
+				this.listen = function(itemName, fn) {
+					if(members[itemName]) return;
+					// add a member to listen for
+					members[itemName] = {};
+					members[itemName].currentValue = "";
+					$(document).bind("history."+itemName, fn);
+				}
+				
+				this.update = function(itemName, itemValue) {
+					if(!members[itemName]) return;
+					members[itemName].currentValue = itemValue;
+					var newValue = itemName + "=" + itemValue;
+					location.hash = newValue;
+					currentHash = newValue;
+				}
+				
+			});
+			
+			
+			$(document).ready(function(){
+				var mySomethingHashIndex = 0;
+				
+				HistoryManager.listen("mySomethingModuleHashChanged", function(e, itemName, itemValue) {
+					alert("mySomethingModuleHashChanged");
+				});
+				
+				HistoryManager.update("mySomethingModuleHashChanged", ""+mySomethingHashIndex++);
+			})
+			
+			
+			
+		</script>
+		
+		<script type="text/javascript">
+			var hashIndex = 0;
+			var timerCookie;
+			
+			function onLoad() {
+				return;
+				// this doesn't help, Opera is currently broken:
+				if (window.opera && window.history) {
+					history.navigationMode = 'compatible';
+				}
+				// Set-up the polling:
+				timerCookie = window.setTimeout(onTick, 200);
+			}
+			
+			function onTick() {
+				timerCookie = null;
+				document.getElementById("currentHash").innerHTML = (document.location.hash || "null");
+				timerCookie = window.setTimeout(onTick, 200);
+			}
+			
+			function makeNewHash() {
+				window.location.hash = hashIndex++;
+			}
+			
+			function onUnload() {
+				if (timerCookie) {
+					window.clearTimeout(timerCookie);
+				}
+			}
+		</script>
+	</head>
+	<body onload="onLoad()" onunload="onUnload()">
+		<div>
+			<input type="button" value="Generate new hash" onclick="makeNewHash()" />
+			<h1>Current hash:</h1>
+			<div id="currentHash"></div>
+		</div>
+	</body>
+</html>

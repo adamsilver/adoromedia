@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery history manager</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.History.js"></script>
+		<script type="text/javascript">
+			
+			
+			
+			
+			var myObject = new (function(){
+				$(init);
+				
+				function init() {
+					
+					//$.url.listen( "anchors", function(e, itemValue, itemName) {
+			
+						
+						//showDivHtml(itemValue)
+					//});
+					
+					
+					Adoro.History.listen("anchors", function() {
+						alert("there is anchors in url");	
+					})
+					
+					
+					var a1 = $("a")[0];
+					$(a1).bind("click", somethingClick)
+					
+				}
+				
+				function somethingClick() {
+					
+					var html = "hello";
+					showDivHtml(html);
+					//$.url.update( "anchors", html, false);
+					debugger;
+					Adoro.History.update("anchors", "something");
+					return false;
+				}
+				
+				function showDivHtml(html) {
+					//alert("function called")
+					document.getElementById("hello").innerHTML = html;
+				}
+				
+			});
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+
+	
+		<a href="#">My link 1</a>
+		<div id="hello">
+				
+		</div>
+		<!--[if lt IE 8]>
+			<iframe id="yui-history-iframe" src="index.html"></iframe>
+		<![endif]-->
+		<input id="yui-history-field" type="hidden"/>
+	</body>
+</html>

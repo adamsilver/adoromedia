@@ -28,10 +28,15 @@ $.extend((function() {
 			startChecking();
 		}
 		var getBrowserUrl, setBrowserUrl;
+		
+
+		
 		$(document).ready(function() {
 			getBrowserUrl = function() {
 				if (document.getElementById("URLFrame")) {
 					return function() {
+						
+						// when doing this, ie doesnt like it when its done all the time (polled)
 						location.hash = document.frames["URLFrame"].location.search.slice(1);
 						return document.frames["URLFrame"].location.search.slice(1);
 					};
