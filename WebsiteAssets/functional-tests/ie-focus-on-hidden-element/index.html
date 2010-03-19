@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#wrapper {
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">			
+			window.onload = function() {
+				document.getElementById("textBox").focus();
+				
+				alert(1);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Focus on hidden element</h1>
+		<div id="wrapper">
+			<input type="text" id="textBox" />
+		</div>
+	</body>
+</html>
+<!--
+	IE8/7/6 error:
+	Error: Can't move focus to the control because it is invisible, not enabled, or of a type that does not accept the focus.
+
+I recently wrote a JavaScript form validator. It was designed so that when a 
+form encountered an erroneous field, it would stop validating the other fields 
+and focus on that particular field. However due to some show/hide logic on that
+particular form field, it was hidden at that particular moment it tried to receive
+focus.
+
+Internet Explorer didn't like this very much. Below is a an example page where the Internet
+Explorer error is shown.
+	
+<pre class="brush: xml">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;style&gt;
+			#wrapper {
+				display: none; /* visibility: hidden; causes the same issue*/
+			}
+		&lt;/style&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;			
+			window.onload = function() {
+				document.getElementById(&quot;textBox&quot;).focus();
+			}
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Focus on hidden element&lt;/h1&gt;
+		&lt;div id=&quot;wrapper&quot;&gt;
+			&lt;input type=&quot;text&quot; id=&quot;textBox&quot; /&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;	
+</pre>
+
+When this code is ran in Internet Explorer the following error is displayed:
+
+"Error: Can't move focus to the control because it is invisible, not enabled, or of a type that does not accept the focus."
+
+The way I solved it was to fix a different issue, in that the field should never have been validated when it was hidden, however
+you could easily fix the bug by checking if the field is "showing" before trying to focus on it.
+
+-->
