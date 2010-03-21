@@ -96,10 +96,10 @@ $.extend((function() {
 					// code added: (it's getting messy now)
 					if (document.getElementById("URLFrame")) {
 						if(currentURLVal !== "") {
-							location.hash = key + "=" + currentURLVal;
+							location.hash = document.frames["URLFrame"].location.search.slice(1);
 						}
 						else {
-							location.hash = "#";
+							location.hash = "#default";
 						}
 					}
 				}
