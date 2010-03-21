@@ -28,24 +28,10 @@ $.extend((function() {
 			startChecking();
 		}
 		var getBrowserUrl, setBrowserUrl;
-		
-		
-		
 		$(document).ready(function() {
 			getBrowserUrl = function() {
 				if (document.getElementById("URLFrame")) {
 					return function() {
-						
-						//if(location.hash === document.frames["URLFrame"].location.search.slice(1)) {
-							//return null;
-						//}
-						
-						//if(document.frames["URLFrame"].location.search.slice(1) === "") {
-						//	return "";
-						//}
-						
-						//document.getElementById("hello").innerHTML += ";"+document.frames["URLFrame"].location.search.slice(1)
-						
 						// when doing this, ie doesnt like it when its done all the time (polled)
 						//location.hash = document.frames["URLFrame"].location.search.slice(1);
 						return document.frames["URLFrame"].location.search.slice(1);
