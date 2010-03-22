@@ -1,43 +1,91 @@
 var Adoro = Adoro || {};
 Adoro.History = new (function(){
-	
-	var currentHash = "";
-	
-	var members = {};
-	
-	var iframeNode = null;
+	var members = {},
+		delim = "&",
+		timeout = null,
+		timeoutLength = 100,
+		iframe = null,
+		currentUrl = getBrowserUrl();
 	
 	$(init);
 	
 	function init() {
-		
-		currentHash = location.hash || "";
-		
-		setInterval(function () {
-			var newHash = location.hash || "";
-			if(currentHash !== newHash) {
-				currentHash = newHash;
-				
-				if(members[currentHash]) {
-					members[currentHash]();
-				}
-				
-				// when hash has changed we need to invoke the callback for that particular hash
-			}
+		// start listening for the change in hash
+		startCheckingUrl();
+	}
+	
+	function update(key, value) {
+		stopCheckingUrl();
+		if(!members[key]) {
+			addMember(key, value);
+		}
+		// at this point we need to update the url and set the current url to that too
+		// so a "hash changed" event is not fired
+		startCheckingUrl();
+	}
+	
+	function listen(key, fn) {
+		if(!members[key]) {
+			addMember(key);
+		}
+		$(document).bind("url."+key, fn);
+	}
+	
+	function stopCheckingUrl() {
+		clearTimeout(timeout);		
+	}
+	
+	function startCheckingUrl() {
+		timeout = setTimeout(timeoutHandler, timeoutLength);
+	}
+	
+	// every 100ms check the URL
+	function timeoutHandler() {
+		var browserUrl = getBrowserUrl();
+		// if the hash portion of the URL has changed
+		if(currentUrl !== browserUrl) {
+			currentUrl = browserUrl;
+			console.log(["hash changed", browserUrl]);
 			
-		}, 50);
-		
+			// if the key in question has changed
+			// i.e. #yourKey=someVal has changed to yourKey=someVal2
+				// fire an event to say its changed
+		}
+			
+		startCheckingUrl();
 	}
 	
-	this.update = function(itemName, itemValue) {
-		
-		
-		
-		// when we create a history point we need to create a member
-		location.hash = itemName+"="+itemValue;
+	function addMember(key, value) {
+		members[key] = {
+			bhmValue: value ? value : ""
+		}
 	}
 	
-	this.listen = function(e, itemName, callback) {
-		members[itemName] = callback;
+	function getBrowserUrl() {
+		return location.hash.slice(1);
 	}
+	
+	function setBrowserUrl(newUrl) {
+		location.hash = newUrl;
+	}
+	
+	this.listen = listen;
+	this.update = update;
+	
+	function Member() {
+	}
+	Member.prototype = {
+		currentValue : "",
+		setCurrentValue: function(newVal) {
+			this.currentValue = newVal;
+		},
+		getCurrentValue: function() {
+			return this.currentValue;
+		}
+	}
+	
+	
 });
+
+
+
