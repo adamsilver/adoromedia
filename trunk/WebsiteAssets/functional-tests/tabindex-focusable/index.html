@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>tabindex and focusable</title>
+		<script type="text/javascript">
+
+			window.onload = function() {
+				document.getElementById("element1").focus();
+				
+				document.getElementById("element2").focus();
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<a href="#">normal tab 1</a>
+	
+		<div id="element1" tabindex="-1">
+			tabindex -1 - i can't navigate to it via keyboard
+		</div>
+		
+		<a href="#">normal tab 2</a>
+		
+		<div id="element2" tabindex="0">
+			tabindex 0 - i can navigate to it via keyboard
+		</div>		
+		
+		<a href="#">normal tab 3</a>
+	</body>
+</html>
