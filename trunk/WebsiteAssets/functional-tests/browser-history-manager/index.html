@@ -17,22 +17,24 @@
 					
 					$.url.listen( "anchors", function(e, itemValue, itemName) {
 			
+						//console.log("anchors=something happened");
+						
 						
 						showDivHtml(itemValue);
 					});
 					
-					$.url.listen("blah", function(e, itemValue, itemName) {
-						alert("blah has been changed");
-					});
+					//$.url.listen("blah", function(e, itemValue, itemName) {
+					//	alert("blah has been changed");
+					//});
 					
 					var a1 = $("a")[0];
 					$(a1).bind("click", somethingClick)
 					
-					var a2 = $("a")[1];
-					$(a2).bind("click", somethingClick2)
+					//var a2 = $("a")[1];
+					//$(a2).bind("click", somethingClick2)
 					
-					var a3 = $("a")[2];
-					$(a3).bind("click", somethingClick3)
+					//var a3 = $("a")[2];
+					//$(a3).bind("click", somethingClick3)
 				}
 				
 				function somethingClick2() {

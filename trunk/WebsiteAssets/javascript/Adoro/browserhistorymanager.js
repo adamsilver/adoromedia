@@ -74,9 +74,13 @@ $.extend((function() {
 			var currentURL = getURLObject(),
 				currentURLVal;
 			for (var key in members) {
-				currentURLVal = currentURL[key] || "";
+				
 				if (members[key].bhmValue !== currentURLVal) {
+					currentURLVal = currentURL[key] || "";
 					members[key].bhmValue = currentURLVal;
+					
+					//console.log([currentURLVal, key]);
+					
 					$(document).trigger("url." + key, [currentURLVal, key]);
 					
 					// code added: (it's getting messy now)
