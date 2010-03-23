@@ -115,7 +115,6 @@ $.extend((function() {
 			setBrowserUrl(newUrl);
 		}
 		
-		
 		return {
 			url: {
 				listen: listen,
