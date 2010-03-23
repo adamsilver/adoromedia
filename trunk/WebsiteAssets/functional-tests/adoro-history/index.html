@@ -10,8 +10,8 @@
 				
 				function init() {
 										
-					Adoro.History.listen("anchors", function() {
-						alert("there is anchors in url");	
+					Adoro.History.listen("anchors", function(e, itemValue, itemName) {
+						console.log(["Adoro.History.listen", itemValue, itemName]);
 					});
 					
 					
