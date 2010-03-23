@@ -3,7 +3,7 @@ Adoro.History = new (function(){
 	var members = {},
 		delim = "&",
 		timeout = null,
-		timeoutLength = 100,
+		timeoutLength = 1000,
 		iframe = null,
 		/*
 		 * we want to set this as nothing so that after the page refreshes/reloads and
@@ -70,6 +70,9 @@ Adoro.History = new (function(){
 	// every 100ms check the URL
 	function timeoutHandler() {
 		var browserUrl = getBrowserUrl();
+		
+		
+		
 		// if the hash portion of the URL has changed
 		if(currentUrl !== browserUrl) {
 			
@@ -129,3 +132,7 @@ Adoro.History = new (function(){
 	this.listen = listen;
 	this.update = update;
 });
+
+function logIt(html) {
+	document.getElementById("logger").innerHTML += "<br/>"+html;
+}
