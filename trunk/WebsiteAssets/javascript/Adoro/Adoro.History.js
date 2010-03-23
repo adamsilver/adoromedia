@@ -5,7 +5,7 @@ Adoro.History = new (function(){
 		timeout = null,
 		timeoutLength = 100,
 		iframe = null,
-		currentUrl = getBrowserUrl();
+		currentUrl = "";
 	
 	$(init);
 	
@@ -19,6 +19,8 @@ Adoro.History = new (function(){
 		if(!members[key]) {
 			addMember(key, value);
 		}
+		
+		// TO DO URGENT
 		// at this point we need to update the url and set the current url to that too
 		// so a "hash changed" event is not fired
 		startCheckingUrl();
@@ -32,7 +34,7 @@ Adoro.History = new (function(){
 	}
 	
 	function stopCheckingUrl() {
-		clearTimeout(timeout);		
+		clearTimeout(timeout);
 	}
 	
 	function startCheckingUrl() {
@@ -42,17 +44,65 @@ Adoro.History = new (function(){
 	// every 100ms check the URL
 	function timeoutHandler() {
 		var browserUrl = getBrowserUrl();
+		
 		// if the hash portion of the URL has changed
 		if(currentUrl !== browserUrl) {
 			currentUrl = browserUrl;
-			console.log(["hash changed", browserUrl]);
+			//console.log(["hash changed", browserUrl]);
 			
-			// if the key in question has changed
+			// this is the same as currentUrl but as an object - easy to interrogate
+			var urlObj = getUrlObject();
+			
+			var member = null, urlMemberValue = null;
+			for(var key in urlObj) {
+				// if there is a member in the url
+				urlMemberValue = urlObj[key];
+				member = members[key]
+				if(member) {
+					//console.log(["member", member]);
+					
+					// if the member has changed
+					if(member.bhmValue !== urlMemberValue) {
+						member.bhmValue = urlMemberValue;
+						// fire an event
+						//console.log(["member", urlMemberValue]);
+						$(document).trigger("url."+key, [urlMemberValue, key]);
+					}
+				}
+			}
+
+			// split the url in to bits that can be interoggated
+			//var urlParams = currentUrl.split(delim);
+			//for(var i = 0; i < urlParams.length; i++) {
+				//var keyValuePairs = urlParams[i].split("=");				
+				//for(var j = 0; j < keyValuePairs.length; j++) {	
+					// if the member exists in url				
+					//console.log(["key", keyValuePairs[j][0]]);
+					//var member = members[keyValuePairs[j][0]] || null;					
+					//console.log(member);					
+					//if(member) {
+						//console.log(["key exists in members", keys[j]]);
+						//if(member.bhmValue !=="") {						
+						//}
+					//}
+				//}
+			//}
 			// i.e. #yourKey=someVal has changed to yourKey=someVal2
 				// fire an event to say its changed
 		}
 			
 		startCheckingUrl();
+	}
+	
+	function getUrlObject() {
+		var url = getBrowserUrl(), urlObject = {}, key, value, itemData;
+		url = url.split(delim);
+		for (var i = url.length-1; i>=0; i--) {
+			itemData = url[i].split("=");
+			key = itemData[0];
+			urlObject[key] = itemData.slice(1).join("=");
+		}
+		return urlObject;
 	}
 	
 	function addMember(key, value) {
@@ -67,24 +117,10 @@ Adoro.History = new (function(){
 	
 	function setBrowserUrl(newUrl) {
 		location.hash = newUrl;
-	}
+	}	
 	
 	this.listen = listen;
 	this.update = update;
-	
-	function Member() {
-	}
-	Member.prototype = {
-		currentValue : "",
-		setCurrentValue: function(newVal) {
-			this.currentValue = newVal;
-		},
-		getCurrentValue: function() {
-			return this.currentValue;
-		}
-	}
-	
-	
 });
 
 
