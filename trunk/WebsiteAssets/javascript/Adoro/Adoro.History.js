@@ -1,40 +1,83 @@
+/**
+* @fileOverview Adoro History object
+* @name History
+*/
+/**
+* @namespace Root namespace for holding all Adoro objects
+* @name Adoro
+*/
+
+/*
+ LOGIC
+ 
+if user clicks link
+- stop checking url
+- update the url (location.hash)
+- update the current url variable
+- (update iframe url) to create history point
+
+check the hash
+- if the location.hash != currentUrl
+	- set current url variable to location.hash
+	- (set iframe url) to create history point
+	- loop through all members and trigger custom event with new URL value
+- startCheckingUrl again
+*/
+
+
 var Adoro = Adoro || {};
+
+/**
+ * History object
+ * @constructor
+ * @static
+ */
 Adoro.History = new (function(){
-	var members = {},
-		delim = "&",
-		timeout = null,
-		timeoutLength = 1000,
-		iframe = null,
-		/*
-		 * we want to set this as nothing so that after the page refreshes/reloads and
-		 * we startCheckingUrl() that a change has occured
-		 */
-		currentUrl = ""; 
+	// contains the names and values of history points to listen for changes
+	var members = {};
 	
+	// the delimiter character for the hash i.e. www.example.com/#param1=value1&param2=value2
+	var delim = "&";
+	
+	// the timout object to continuously check the URL hash value
+	var timeout = null;
+	
+	// the amount of time to wait between polling
+	var timeoutLength = 100;
+	
+	// set as nothing to begin with so that after startCheckingUrl() kicks in, a change will be recognised
+	var currentUrl = ""; 
+	
+	// initialise
 	$(init);
 	
-	var setBrowserUrl;
-	
+	/**
+	 * Will initialise the object by setting up the setBrowserUrl function and to start checking the Url.
+	 * @name init
+	 * @private
+	 * @function
+	 * @memberOf Adoro.History
+	 */
 	function init() {
 		
-		setBrowserUrl = function() {
-			if (document.getElementById("URLFrame")) {
-				document.frames["URLFrame"].location.replace(document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
-				return function(newUrl) {
-					document.getElementById("URLFrame").setAttribute("src", document.frames["URLFrame"].location.pathname + "?" + newUrl);
-					location.hash = newUrl;
-				};
-			} else {
-				return function(newUrl) {
-					location.hash = newUrl;
-				};
-			}
-		}();
+		// if user has come from book mark update the iframe to match
+		if (document.getElementById("URLFrame")) {
+			document.frames["URLFrame"].location.replace(document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
+		}
 		
+	
 		// start listening for the change in hash
 		startCheckingUrl();
 	}
 	
+	/**
+	 * Will update the browser Url programatically - to stop firing a hash change
+	 * event the checking will stop until this function has finished
+	 * @name update
+	 * @public
+	 * @function
+	 * @memberOf Adoro.History
+	 */	
 	function update(key, value) {
 		stopCheckingUrl();
 		var member = members[key]
@@ -67,31 +110,50 @@ Adoro.History = new (function(){
 		timeout = setTimeout(timeoutHandler, timeoutLength);
 	}
 	
-	// every 100ms check the URL
+	/**
+	 * check the url every xxx seconds to see if it has changed
+	 * if the url has changed notify the listeners
+	 * @name timeoutHandler
+	 * @memberOf Adoro.History
+	 * @private
+	 * @function
+	 */
 	function timeoutHandler() {
+		// uncommon: NOT CATERED FOR - user could change the URL manually by typing into it
+		// common: they have clicked back or forward or book marked
+		
+		// get the browser url
 		var browserUrl = getBrowserUrl();
-		
-		
 		
 		// if the hash portion of the URL has changed
 		if(currentUrl !== browserUrl) {
 			
-			// if getting url from iframe then we need to manually update the actual location.hash to match
+			// if getting url from iframe then we need to manually update the
+			// actual location.hash to match
+			// all the functionality works without this but the location #value does not change
 			if(document.getElementById("URLFrame")) {
 				location.hash = browserUrl;
 			}
 			
+			// because the url has changed update the stored currentUrl variable
 			currentUrl = browserUrl;
-			//console.log(["hash changed", browserUrl]);
-			
-			// a) set member.bhmValue to whatever value they are
+
+			// a) set member.bhmValue to whatever value they are from the url
 			// b) notify the listeners/fire the custom event
 			var urlObj = getUrlObject();
 			for(var key in members) {
+				
+				// set the member value to match the url value
 				members[key].bhmValue = urlObj[key] || "";
+				
+				// TODO MAYBE: Check if member has changed before notifying
+				
+				// notify the listener with new value
 				$(document).trigger("url."+key, [members[key].bhmValue, key]);
 			}	
 		}
+		
+		// start checking the Url again
 		startCheckingUrl();
 	}
 	
@@ -119,6 +181,19 @@ Adoro.History = new (function(){
 		return location.hash.slice(1);
 	}
 	
+	function setBrowserUrl(newUrl) {
+		if (document.getElementById("URLFrame")) {
+			document.getElementById("URLFrame").setAttribute("src", document.frames["URLFrame"].location.pathname + "?" + newUrl);
+			location.hash = newUrl;
+		} else {
+			location.hash = newUrl;
+		}
+	}
+	
+	function getIframeUrl() {
+		return document.frames["URLFrame"].location.search.slice(1);
+	}
+	
 	function updateBrowserUrl() {
 		var newUrl = "";
 		for (var key in members) {
@@ -132,7 +207,3 @@ Adoro.History = new (function(){
 	this.listen = listen;
 	this.update = update;
 });
-
-function logIt(html) {
-	document.getElementById("logger").innerHTML += "<br/>"+html;
-}
