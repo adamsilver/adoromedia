@@ -2,10 +2,6 @@
 * @fileOverview Adoro History object
 * @name History
 */
-/**
-* @namespace Root namespace for holding all Adoro objects
-* @name Adoro
-*/
 
 /*
  LOGIC
@@ -24,7 +20,10 @@ check the hash
 - startCheckingUrl again
 */
 
-
+/**
+* @namespace Root namespace for holding all Adoro objects
+* @name Adoro
+*/
 var Adoro = Adoro || {};
 
 /**
@@ -64,7 +63,6 @@ Adoro.History = new (function(){
 		if (document.getElementById("URLFrame")) {
 			document.frames["URLFrame"].location.replace(document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
 		}
-		
 	
 		// start listening for the change in hash
 		startCheckingUrl();
@@ -194,16 +192,28 @@ Adoro.History = new (function(){
 		return document.frames["URLFrame"].location.search.slice(1);
 	}
 	
+	/**
+	 * Update the browser url
+	 * @name updateBrowserUrl
+	 * @private
+	 * @function
+	 * @memberOf Adoro.History
+	 */
 	function updateBrowserUrl() {
 		var newUrl = "";
+		// form newUrl based on the members values which have already been set by this point
 		for (var key in members) {
 			newUrl = newUrl + (newUrl.length === 0 ? "" : delim);
 			newUrl = newUrl + key + "=" + members[key].bhmValue;
 		}
 		setBrowserUrl(newUrl);
+		
+		// very important - if we change the URL address bar then we must change the stored currentUrl value
+		// so that a hash changed event does not occur when we start checking the url again
 		currentUrl = newUrl;
 	}
 	
+	// public members
 	this.listen = listen;
 	this.update = update;
 });
