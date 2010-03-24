@@ -51,7 +51,7 @@ Adoro.History = new (function(){
 	$(init);
 	
 	/**
-	 * Will initialise the object by setting up the setBrowserUrl function and to start checking the Url.
+	 * Initalise...
 	 * @name init
 	 * @private
 	 * @function
@@ -59,8 +59,9 @@ Adoro.History = new (function(){
 	 */
 	function init() {
 		
-		// if user has come from book mark update the iframe to match
+		// if there is iframe (ie6/7)
 		if (document.getElementById("URLFrame")) {
+			// set iframe url to match URL address bar so that when checking the url occurs that a hash change occurs
 			document.frames["URLFrame"].location.replace(document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
 		}
 	
