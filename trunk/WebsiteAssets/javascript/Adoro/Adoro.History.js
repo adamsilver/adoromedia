@@ -1,35 +1,12 @@
-/**
-* @fileOverview Adoro History object
-* @name History
-*/
-
-/*
- LOGIC
- 
-if user clicks link
-- stop checking url
-- update the url (location.hash)
-- update the current url variable
-- (update iframe url) to create history point
-
-check the hash
-- if the location.hash != currentUrl
-	- set current url variable to location.hash
-	- (set iframe url) to create history point
-	- loop through all members and trigger custom event with new URL value
-- startCheckingUrl again
-*/
-
-/**
-* @namespace Root namespace for holding all Adoro objects
-* @name Adoro
-*/
 var Adoro = Adoro || {};
 
 /**
  * History object
  * @constructor
  * @static
+ * @name History
+ * @memberOf Adoro
+ * @requires jQuery 1.4.2
  */
 Adoro.History = new (function(){
 	// contains the names and values of history points to listen for changes
@@ -55,6 +32,7 @@ Adoro.History = new (function(){
 	 * @name init
 	 * @private
 	 * @function
+	 * @memberOf Adoro.History
 	 */
 	function init() {
 		
@@ -69,11 +47,15 @@ Adoro.History = new (function(){
 	}
 	
 	/**
-	 * Will update the browser Url programatically - to stop firing a hash change
-	 * event the checking will stop until this function has finished
+	 * Will update the browser Url programatically
+	 * Note: to stop firing a hash change event the checking will stop until this function has finished
 	 * @name update
 	 * @public
 	 * @function
+	 * @memberOf Adoro.History
+	 * @param {string} key The name of the key to update
+	 * @param {string} value The value the key is being updated to
+	 * @example Adoro.History.update("myName", "myState1");
 	 */	
 	function update(key, value) {
 		stopCheckingUrl();
@@ -93,10 +75,15 @@ Adoro.History = new (function(){
 	}
 	
 	/**
-	 * Listen to a particular key in URL
+	 * Listen to a particular key in URL, if it changes the callback function will be fired. This will
+	 * be used to update the page based in the URL changing to maintain state.
 	 * @name listen
 	 * @public
 	 * @function
+	 * @memberOf Adoro.History
+	 * @param {string} key The key in the url to listen for when it changes
+	 * @param {function} fn The callback function that is fired when the key is notified of a change
+	 * @example Adoro.History.listen("myName", function(e, itemValue, itemName) {})
 	 */
 	function listen(key, fn) {
 		if(!members[key]) {
