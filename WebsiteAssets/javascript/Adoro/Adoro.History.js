@@ -48,7 +48,7 @@ Adoro.History = new (function(){
 	
 	/**
 	 * Will update the browser Url programatically
-	 * Note: to stop firing a hash change event the checking will stop until this function has finished
+	 * <br/><br/>Note: to stop firing a hash change event the checking will stop until this function has finished
 	 * @name update
 	 * @public
 	 * @function
