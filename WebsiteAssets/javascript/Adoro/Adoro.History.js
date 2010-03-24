@@ -55,7 +55,6 @@ Adoro.History = new (function(){
 	 * @name init
 	 * @private
 	 * @function
-	 * @memberOf Adoro.History
 	 */
 	function init() {
 		
@@ -75,7 +74,6 @@ Adoro.History = new (function(){
 	 * @name update
 	 * @public
 	 * @function
-	 * @memberOf Adoro.History
 	 */	
 	function update(key, value) {
 		stopCheckingUrl();
@@ -94,6 +92,12 @@ Adoro.History = new (function(){
 		startCheckingUrl();
 	}
 	
+	/**
+	 * Listen to a particular key in URL
+	 * @name listen
+	 * @public
+	 * @function
+	 */
 	function listen(key, fn) {
 		if(!members[key]) {
 			addMember(key);
@@ -101,10 +105,22 @@ Adoro.History = new (function(){
 		$(document).bind("url."+key, fn);
 	}
 	
+	/**
+	 * stop checking the url by clearing the timeout
+	 * @name stopCheckingUrl
+	 * @private
+	 * @function
+	 */
 	function stopCheckingUrl() {
 		clearTimeout(timeout);
 	}
 	
+	/**
+	 * start checking the url by setting the timeout
+	 * @name startCheckingUrl
+	 * @private
+	 * @function
+	 */	
 	function startCheckingUrl() {
 		timeout = setTimeout(timeoutHandler, timeoutLength);
 	}
@@ -118,15 +134,24 @@ Adoro.History = new (function(){
 	 * @function
 	 */
 	function timeoutHandler() {
-		// uncommon: NOT CATERED FOR - user could change the URL manually by typing into it
-		// common: they have clicked back or forward or book marked
+		// NOT CATERED FOR IE6/7
+		// If the user changes the URL manually by typing etc
+		// the IFRAME URL has not changed, therefor this code
+		// will not currently recognise a change in the URL
+		// to get around this, we will have to check whether
+		// location.hash does not equal currentUrl and if it doesnt
+		// change the IFRAME URL before running all code that appears
+		// after this comment - lets attempt with the following code:
+		if(document.getElementById("URLFrame") && location.hash.slice(1) !== currentUrl) {
+			document.getElementById("URLFrame").setAttribute("src", document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
+		}
 		
 		// get the browser url
 		var browserUrl = getBrowserUrl();
 		
 		// if the hash portion of the URL has changed
 		if(currentUrl !== browserUrl) {
-			
+			//alert("location has changed");
 			// if getting url from iframe then we need to manually update the
 			// actual location.hash to match
 			// all the functionality works without this but the location #value does not change
