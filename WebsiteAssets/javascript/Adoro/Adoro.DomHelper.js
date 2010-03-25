@@ -33,6 +33,7 @@ var Adoro = Adoro || {};
  * <br/><br/> Helps get valid XML/XHTML string from the DOM
  * <br/><br/> Useful for parsing valid XML/XHTML into Flash as .innerHTML doesn't parse
  * @constructor
+ * @class (singleton) Represents the DomHelper object
  * @static
  * @name DomHelper
  * @memberOf Adoro
