@@ -160,6 +160,9 @@ Adoro.History = new (function(){
 			var urlObj = getUrlObject();
 			for(var key in members) {
 				
+				// if the url hasn't changed from the stored value then ignore
+				if(members[key].bhmValue === urlObj[key]) continue;
+				
 				// set the member value to match the url value
 				members[key].bhmValue = urlObj[key] || "";
 				
