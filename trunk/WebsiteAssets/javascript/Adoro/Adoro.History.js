@@ -7,6 +7,7 @@ var Adoro = Adoro || {};
 
 /**
  * History object
+ * @class (singleton) Represents the history object
  * @constructor
  * @static
  * @name History
