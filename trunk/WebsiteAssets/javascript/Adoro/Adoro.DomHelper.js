@@ -21,10 +21,34 @@
 //  ---------------------------------------------------------------------------------------------------------
 //  ---------------------------------------------------------------------------------------------------------
 
+/**
+* @fileOverview Adoro DomHelper object
+* @name DomHelper
+*/
+
 var Adoro = Adoro || {};
 
+/**
+ * Dom helper object
+ * <br/><br/> Helps get valid XML/XHTML string from the DOM
+ * <br/><br/> Useful for parsing valid XML/XHTML into Flash as .innerHTML doesn't parse
+ * @constructor
+ * @static
+ * @name DomHelper
+ * @memberOf Adoro
+ * @requires jQuery 1.3.1
+ */
 Adoro.DomHelper = new (function() {
-	this.getInnerXml = getInnerXml;
+	
+	/**
+	 * get inner xml/xhtml
+	 * @function
+	 * @public
+	 * @name getInnerXml
+	 * @memberOf Adoro.DomHelper
+	 * @param {DOMNode} node The node which is used to get the innerXml
+	 * @returns {string} i.e. '<div id="theId">hello</div>'
+	 */	
 	function getInnerXml(node) {
 		var s = "";
 		
@@ -71,8 +95,15 @@ Adoro.DomHelper = new (function() {
 		return s;
 	};
 	
-	this.getAttributesAsString = getAttributesAsString;
-	
+	/**
+	 * get attributes as a string
+	 * @function
+	 * @public
+	 * @name getAttributesAsString
+	 * @memberOf Adoro.DomHelper
+	 * @param {DOMNode} node Any attributes this node has will be returned as a string
+	 * @returns {string} i.e. 'id="theId" src="path/to/img"'
+	 */
 	function getAttributesAsString(node) {
 		var s = "";
 		var allowedTags = ["id", "src", "href", "class", "alt"];
@@ -89,5 +120,8 @@ Adoro.DomHelper = new (function() {
 		};
 		return s;
 	};
-
+	
+	// public members
+	this.getInnerXml = getInnerXml;
+	this.getAttributesAsString = getAttributesAsString;
 });
