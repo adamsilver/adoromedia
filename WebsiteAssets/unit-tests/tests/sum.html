@@ -4,7 +4,15 @@
 		
 		<script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
 		
-        <script type="text/javascript" src="../../javascript/play/sum.js"></script>
+        <script type="text/javascript">
+		function sum(a, b) {
+			if(arguments.length === 0) return 0;
+			if(!b) return a;	
+			if(typeof a !== "number") return b;
+			if(typeof b !== "number") return a;
+			return a+b;
+		}
+		</script>
 		<script type='text/javascript'>
 
 
