@@ -2,10 +2,7 @@
 * @fileOverview Adoro FormValidator object
 * @name FormValidator
 */
-/**
-* @namespace Root namespace for holding all Adoro objects
-* @name Adoro
-*/
+
 var Adoro = Adoro || {};
 /**
 * Create a new form validator object
@@ -14,6 +11,7 @@ var Adoro = Adoro || {};
 * @name Adoro.FormValidator
 * @param {HTMLElement} form as DOM reference
 * @param {Object} options
+* @requires jQuery 1.4.2
 */
 Adoro.FormValidator = function(formNode, options) {
 	var me = this,

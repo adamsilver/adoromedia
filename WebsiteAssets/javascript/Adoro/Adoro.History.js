@@ -1,3 +1,8 @@
+/**
+* @fileOverview Adoro History object
+* @name History
+*/
+
 var Adoro = Adoro || {};
 
 /**
