@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" media="screen" href="../../css/dialogue.css"  />
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.Dialogue2.js"></script>
 
 		
@@ -27,8 +27,10 @@
 				//alert($("h1").offset().x);
 				Adoro.Dialogue.showDialogue({overlayOpacity: "1",x: $("h1").offset().left+100, y: $("h1").offset().top+100, closeOnOverlayClick: false});
 				
-				$("div.testScreenWrapper").find("form").bind("submit", function(){
-		
+				
+				$("div.testScreen").find("form").bind("submit", function(){
+					$("div.testScreen").html("submitted");
+					return false;
 				})
 				
 			});			
