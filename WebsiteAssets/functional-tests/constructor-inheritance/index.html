@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>constructor when inheriting</title>
+		
+		<script type="text/javascript">
+			/* example 1 */			
+			function Base1() {
+			
+			}
+			var inst1 = new Base1();
+			console.log(["inst1 Base1 constructor", inst1.constructor]); // base1	
+			console.log(["inst1 Base1 instanceof", inst1 instanceof Base1]); // true				
+		</script>
+		
+		<script type="text/javascript">
+			/* example 2 */
+			function Base2() {
+				
+			}
+			function Sub2() {
+				
+			}
+			Sub2.prototype = new Base2();
+			inst2 = new Sub2();
+			console.log(["inst2 Sub2", inst2.constructor]); // base2		
+			console.log(["inst2 Base2 instanceof", inst2 instanceof Base2]); // true				
+			console.log(["inst2 Base2 instanceof", inst2 instanceof Sub2]); // true	
+		</script>		
+	</head>
+	<body>
+	</body>
+</html>
