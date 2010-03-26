@@ -21,10 +21,16 @@
 //  ---------------------------------------------------------------------------------------------------------
 //  ---------------------------------------------------------------------------------------------------------
 
+/**
+* @fileOverview Adoro Dialogue object
+* @name Dialogue
+*/
+
+
 var Adoro = Adoro || {};
 /**
- * Dialogue object which will append an overlay and dialogue to the HTML page with various public methods
- * @class 
+ * Dialogue object
+ * @class (singleton) Represents the dialogue object
  * @constructor
  * @static
  */
@@ -32,7 +38,7 @@ Adoro.Dialogue = new (function(){
 	/*
 	 * Known, fixed issues.
 	 * a) IE6 cannot do the overlay correctly with position fixed width and height 100%
-	 * b) FF2 and below cannot show a cursor inside form elements when inside absolute lightbox on top of fixed overlay
+	 * b) FF2 and below cannot show a cursor inside form elements when inside absolute dialogue on top of fixed overlay
 	 * c) IE6 has zIndex issues with flash elements and select elements
 	 */
 	var me = this,
@@ -80,7 +86,7 @@ Adoro.Dialogue = new (function(){
 	* Show overlay
 	* @function
 	* @private
-	* @memberOf Adoro.LightBox
+	* @memberOf Adoro.Dialogue
 	* @name showOverlay
 	*/			
 	function showOverlay(options) {
@@ -116,7 +122,7 @@ Adoro.Dialogue = new (function(){
 	* Hide overlay
 	* @function
 	* @private
-	* @memberOf Adoro.LightBox
+	* @memberOf Adoro.Dialogue
 	* @name hideOverlay
 	*/			
 	function hideOverlay(options){
@@ -128,8 +134,8 @@ Adoro.Dialogue = new (function(){
 	* Show dialogue
 	* @function
 	* @public
-	* @memberOf Adoro.LightBox
-	* @name showLightBox
+	* @memberOf Adoro.Dialogue
+	* @name showDialogue
 	* @param {Object} options for the function
 	* @param {Number} options.x The dialogue x coordinate for positioning, default center
 	* @param {Number} options.y The dialogue y coordinate for positioning, default center
@@ -192,9 +198,8 @@ Adoro.Dialogue = new (function(){
 			$(dialogue).fadeIn();
 		}
 		
-		// needs to be done for when the lightbox increases the page size
+		// needs to be done for when the dialogue increases the page size
 		if(IE6) {
-			//$("select, object, embed").css("display", "none");
 			$(dialogue).bgiframe();
 			fixOverlay();
 		}
@@ -210,8 +215,8 @@ Adoro.Dialogue = new (function(){
 	* Hide dialogue
 	* @function
 	* @public
-	* @memberOf Adoro.LightBox
-	* @name hideLightBox
+	* @memberOf Adoro.Dialogue
+	* @name hideDialogue
 	*/	
 	function hideDialogue(options) {
 		var config = {
@@ -225,12 +230,7 @@ Adoro.Dialogue = new (function(){
 		$(dialogue).css({left: "-99999em"});			
 		if(config.closeOverlay) {
 			hideOverlay();
-		}
-		
-		//if (IE6) {
-		//	$("select, object, embed").css("display", "block");
-		//}
-		
+		}		
 		return false;
 	}
 
@@ -238,7 +238,7 @@ Adoro.Dialogue = new (function(){
 	* Set the inner HTML for the dialogue
 	* @function
 	* @public
-	* @memberOf Adoro.LightBox
+	* @memberOf Adoro.Dialogue
 	* @name setHTML
 	*/			
 	function setHTML(html) {
@@ -249,8 +249,6 @@ Adoro.Dialogue = new (function(){
 			dialogue.innerHTML = "";
 			dialogue.appendChild(html);
 		}
-	
-		
 		setCloseEvent();
 	}
 	
