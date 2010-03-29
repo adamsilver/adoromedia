@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS Fatal Error</title>
+		<script type="text/javascript">
+			
+			(function(){
+				alert("program 1: starts");
+				
+				// syntax error
+				var x = (1;
+				
+				// runtime error
+				something;
+				
+				alert("program 1: ends");
+			}());
+			
+			(function(){
+				alert("program 2: starts");
+				
+				
+				
+				alert("program 2: ends");
+			}());
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
