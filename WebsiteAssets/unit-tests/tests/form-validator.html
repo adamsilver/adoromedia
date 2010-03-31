@@ -329,10 +329,7 @@
 			function test_clearErrors_makeSureThereAreNoErrors() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
-				var fv = new Adoro.FormValidator(formNode, {
-					// set invalid rules to 2
-					invalidRulesToShowPerValidator: 1
-				});
+				var fv = new Adoro.FormValidator(formNode);
 				fv.addValidator("username", [{
 					method: function() {
 						return false;
@@ -365,9 +362,7 @@
 			function test_clearErrors_noErrorsExist_makeSureThereAreNoErrors() {
 				var formNode = document.getElementById("form1");
 				if(!formNode) return;
-				var fv = new Adoro.FormValidator(formNode, {
-					invalidRulesToShowPerValidator: 1	
-				});
+				var fv = new Adoro.FormValidator(formNode);
 				fv.clearErrors();
 				var errors = fv.getErrors();				
 				assertEquals("", errors.length, 0);
