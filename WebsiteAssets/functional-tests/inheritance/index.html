@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>inheritance</title>
+
+		<script type="text/javascript">
+			
+			function Person(name) {
+				this.name = name;
+			}
+			Person.prototype = {
+				getName: function() {
+					return this.name;
+				}
+			}
+			
+			function Author(name, books) {
+			
+				// this calls Person with this being referred to as of course the instance of Author
+				// meaning that what ever is in the constructor of Person is applied to the instance of Author
+				// in this case "name"
+				//Person.call(this, name);
+				
+				//alternative to Person.call ....
+				this.superClass.call(this, name);
+				
+				// stuff that is unique to author
+				this.books = books;
+			}
+			Author.prototype = {
+				superClass: Person,
+				getBooks: function() {
+					return this.books;
+				}
+			}
+			
+			var a = new Author("James", ["some book"]);
+			console.log(a);
+			
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
