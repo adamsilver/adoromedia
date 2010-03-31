@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JsUnit Test Suite</title>
         <script type="text/javascript" src="../jsunit/app/jsUnitCore.js"></script>
-		<script type="text/javascript" src="../qmock/qmock.js"></script>
+		<script type="text/javascript" src="../bfmock/BetfairMock.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
        
 	   <script>
@@ -17,7 +17,7 @@
 					collaborator.setStatus(true);	
 				}			
 			}
-			
+			/*
 			var collaborator = {
 				status: false,
 				setStatus: function(newValue) {
@@ -27,50 +27,33 @@
 					return this.status;
 					
 				}
-			}		
+			}*/	
 	   </script>
 	   
         
 		<script type="text/javascript">
 			// before mocking
-			
 			function test_WITHOUT_MOCK() {
+				//SUC.run();
+				//assertTrue("", collaborator.getStatus());
+			}
+			
+			// after mocking
+			function test_WITH_MOCK() {
+				
+				var collaborator = {
+					setStatus: Mock.Function.empty,
+					getStatus: Mock.Function.returnValue(true)
+				}
+				
 				SUC.run();
 				
 				assertTrue("", collaborator.getStatus());
-			}
-			
-			function test_WITH_MOCK() {
-				var ninja = new Mock();
-				ninja
-					    .method('swing')
-                        //.withArguments('hard')
-                        .andReturn({});
-						
-				//var rv = "hit";
-				//ninja.verify();
 				
-				//assertEquals(rv, "hit");
 				
-				//if(!mock.getStatus()) {
-				//	fail("some fail comment");
-				//}
-				
-				//SUC.run();
-				//mock.verify();
-				
-				//var ninja = new Mock();
-				
-				//alert(ninja.expects(1).method("swing").andReturn("hit"));
-				
-				//ninja
-				//	.expects(1)
-				//		.method('swing')
-						//	.withArguments('hard')
-						//	.andReturn('hit')
-							
-							
-				
+				//var mock = new Mock();
+				//collaborator.setStatus = 
+				//collaborator.setStat
 			}
 			-->
 		</script>
