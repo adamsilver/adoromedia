@@ -7,81 +7,61 @@
 		<script type="text/javascript" src="../jsmock/jsmock.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
        
-	   <script>
-		var SUC = {
-			run: function() {
-				collaborator.swing();	
-			}			
-		}
-		
-		var collaborator = {
-			status: false,
-			swing: function() {
-				this.status = true;			
-			},
-			getStatus: function() {
-				return this.status;
-			}
-		}
-		
-	   </script>
-	   
-        
 		<script type="text/javascript">
-			// before mocking
-			
-			function test_WITHOUT_MOCK() {
-				SUC.run();
-				
-				//assertTrue("", collaborator.status);
+			function Worker() {
+				this.doSomething = function() {}
 			}
-			
-			function test_WITH_MOCK() {
-				var mockControl = new MockControl();
-				collaboratorMock = mockControl.createMock(collaborator);
-		
-				collaboratorMock.expects().getStatus().andReturn(true);
-		
-				var result = collaboratorMock.getStatus();
-		
-				//assertEquals('hello', result);	
-				alert(mockControl.verify());
-				
-				
-			}
-		
-			//function 1test_play() {
-			//	var ninja = new Mock();
-			//	ninja
-			//		.expects(1)
-             //           .method('swing');
-			//	
-				
-			//	var r = ninja.verify();
-			//	alert(typeof r);
-				
-				
-				
-					
-			//}();
-			
-			<!--
-			//function 1test_qmock1() {
-				
-				//var ninja = new Mock();
-				//ninja
-				//	.expects(1)
-                 //       .method('swing');
-				
-				
-				//var r = ninja.verify();
-				//alert(typeof r);
-				
-				//assertTrue("", ninja.verify());				
-			//}
-			
-			-->
 		</script>
+		<script type="text/javascript">
+		
+			<!-- basic example -->
+			function test_basic_mock() {
+				var mock = new MockControl();
+				var workerMock = mock.createMock(Worker);
+				workerMock.expects().doSomething().andReturn("foo");
+				
+				var result = workerMock.doSomething();
+				
+				assertEquals('foo', result);
+				mock.verify();
+			}
+		</script>
+		
+		<script type="text/javascript">
+			function ClassA(obj) {
+				this.getValue = function() {
+					return obj.doSomething();
+				}
+			}
+			
+			function ClassB(theName) {
+				this.doSomething = function() {
+					return theName;
+				}
+			}
+		</script>
+		
+		<script type="text/javascript">
+			
+			function test_without_mock() {
+				var objb = new ClassB("adam"); // bad because we have to kinda test objb
+				var obja = new ClassA(objb);				
+				var result = obja.getValue();				
+				assertEquals("", result, "adam");
+			}
+			
+			function test_with_mock() {
+				var mock = new MockControl();
+				var objbMock = mock.createMock(ClassB);
+				objbMock.expects(2).doSomething().andReturn("adam");
+				var obja = new ClassA(objbMock);
+				var result = obja.getValue();
+				mock.verify();
+				assertEquals("", result, "adam");
+			}
+			
+		</script>
+		
     </head>
     
     <body>
