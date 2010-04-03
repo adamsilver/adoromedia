@@ -10,6 +10,7 @@
 	    <title>Adoro Media - Website design &amp; development agency - London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
+		<link rel="stylesheet" href="css/nivo-slider.css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 		<script type="text/javascript" src="js/Site/Home/Site.Home.FeaturedWork.js"></script>
@@ -62,7 +63,7 @@
 							</div>
 						</div>
 						
-						<p>Hartsbourne Country Club recently launched in October 2009</p>
+						<!--<p>Hartsbourne Country Club recently launched in October 2009</p>-->
 					</div>
 				</div>				
 				
