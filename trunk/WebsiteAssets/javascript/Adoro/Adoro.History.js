@@ -64,6 +64,9 @@ Adoro.History = new (function(){
 	 * @example Adoro.History.update("myName", "myState1");
 	 */	
 	function update(key, value) {
+		if(arguments.length !== 2) {
+			return;
+		}
 		stopCheckingUrl();
 		var member = members[key]
 		if(!member) {
