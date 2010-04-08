@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Sum test</title>
+        <script type="text/javascript" src="../../../jsunit/app/jsUnitCore.js"></script>		
+		<script type="text/javascript">
+			function sum(a, b) {
+				var returnVal = 0;
+				if(arguments.length === 0) return returnVal;
+				for(var i = arguments.length-1; i>=0; i--) {
+					if(typeof arguments[i] !== "number") {
+						return returnVal;
+						break;
+					}
+				}				
+				return parseInt(a) + parseInt(b);
+			}			
+		</script>
+		<script type="text/javascript">
+			<!--
+			
+			function test_noArgs_returnZero() {
+				var result = sum();
+				assertEquals("", result, 0);
+			}
+			
+			function test_inValidArguments_returnZero() {
+				var result = sum(null, null);
+				assertTrue("Invalid arguments returns 0 and returns:" + result, result === 0);
+			}
+			
+			-->
+		</script>
+    </head>    
+    <body>
+    </body>
+</html>
