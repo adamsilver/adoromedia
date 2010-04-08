@@ -9,11 +9,36 @@
 		<script type="text/javascript">
 			<!--
 			function test_History_Exists() {
-				assertTrue("Adoro FormValidator doesn't exist", typeof Adoro.FormValidator === "function");				
+				assertTrue("History object exists", typeof Adoro.History === "object");			
 			}
+			
+			function test_update_noArguments_urlNotUpdated() {
+				var cl1 = window.location.hash;
+				Adoro.History.update();
+				var cl2 = window.location.hash;
+				assertEquals("", cl1, cl2);
+			}
+			
+			function test_update_noValueInArgument_urlNotUpdated() {
+				var cl1 = window.location.hash;
+				Adoro.History.update("someKey");
+				var cl2 = window.location.hash;
+				assertEquals("", cl1, cl2);
+			}
+			
+			function test_update_argumentsExist_urlNotUpdated() {				
+				Adoro.History.update("someKey", "someValue");
+				var cl1 = window.location.hash;
+				assertEquals("", cl1, "#someKey=someValue");
+			}			
+			
 			-->
 		</script>
     </head>    
     <body>
+		
+		<!--[if lt IE 8]>
+		<iframe src="iframe.html" width="0" height="0" id="URLFrame" style="visibility:none;" />
+		<![endif]-->			
     </body>
 </html>
