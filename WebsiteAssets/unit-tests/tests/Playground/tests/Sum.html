@@ -6,28 +6,53 @@
         <script type="text/javascript" src="../../../jsunit/app/jsUnitCore.js"></script>		
 		<script type="text/javascript">
 			function sum(a, b) {
-				var returnVal = 0;
-				if(arguments.length === 0) return returnVal;
-				for(var i = arguments.length-1; i>=0; i--) {
-					if(typeof arguments[i] !== "number") {
-						return returnVal;
-						break;
-					}
-				}				
-				return parseInt(a) + parseInt(b);
-			}			
+				if(arguments.length === 0) return 0;
+				if(!b) return a;	
+				if(typeof a !== "number") return b;
+				if(typeof b !== "number") return a;
+				return a+b;
+			}		
 		</script>
 		<script type="text/javascript">
 			<!--
 			
-			function test_noArgs_returnZero() {
-				var result = sum();
-				assertEquals("", result, 0);
+			function setUp(){
+				// perform fixture set up
+			}
+			function tearDown() {
+				// clean up
 			}
 			
-			function test_inValidArguments_returnZero() {
-				var result = sum(null, null);
-				assertTrue("Invalid arguments returns 0 and returns:" + result, result === 0);
+			function testFunctionExists() {
+				assertNotUndefined("", sum);
+			}
+			
+			function testOnePlusOne(){
+				var value = sum(1, 1);
+				assertEquals("one and one is 2", 2, value);
+			}
+			
+			// return 0;
+			function testNoArguments() {
+				var value = sum();
+				assertEquals("no arguments returns 0", 0, value);
+			}
+			
+			// return firstArgurment;
+			function testNoSecondArgument() {
+				var value = sum(10);
+				assertEquals("this should return 10", 10, value);
+			}
+			
+			// return second argument;
+			function testFirstArgumentNotNumber() {
+				var value = sum("hello", 10);
+				assertEquals("this should return 10", 10, value);
+			}
+			
+			function testSecondArgumentNotNumber() {
+				var value = sum(12, "hello");
+				assertEquals("this should be 12", 12, value);
 			}
 			
 			-->
