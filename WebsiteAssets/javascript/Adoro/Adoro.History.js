@@ -25,7 +25,7 @@ Adoro.History = new (function(){
 	var timeout = null;
 	
 	// the amount of time to wait between polling
-	var timeoutLength = 100;
+	var timeoutLength = 10;
 	
 	// set as nothing to begin with so that after startCheckingUrl() kicks in, a change will be recognised
 	var currentUrl = ""; 
@@ -95,10 +95,13 @@ Adoro.History = new (function(){
 	 * @example Adoro.History.listen("myName", function(e, itemValue, itemName) {})
 	 */
 	function listen(key, fn) {
+		if(arguments.length !== 2) return;
+		stopCheckingUrl();
 		if(!members[key]) {
 			addMember(key);
 		}
 		$(document).bind("url."+key, fn);
+		startCheckingUrl();
 	}
 	
 	/**
@@ -162,7 +165,6 @@ Adoro.History = new (function(){
 			// b) notify the listeners/fire the custom event
 			var urlObj = getUrlObject();
 			for(var key in members) {
-				
 				// if the url hasn't changed from the stored value then ignore
 				if(members[key].bhmValue === urlObj[key]) continue;
 				
