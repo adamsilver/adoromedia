@@ -53,7 +53,8 @@ Adoro.History = new (function(){
 	}
 	
 	/**
-	 * Get the member from a passed in key
+	 * Get the member from key
+	 * <br/><br/>Note: Can interogate bhmValue as a property of the member to find currentValue
 	 * @name getMember
 	 * @public
 	 * @function
