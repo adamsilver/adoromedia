@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Adoro.History test</title>
         <script type="text/javascript" src="../../../jsunit/app/jsUnitCore.js"></script>
+		<script type="text/javascript" src="../../../jsunit/app/jsUnitMockTimeout.js"></script>		
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
         <script type="text/javascript" src="../../../../javascript/Adoro/Adoro.History.js"></script>
 		<script type="text/javascript">
@@ -52,16 +53,16 @@
 			 */
 			
 			function test_listen_validArgs_callbackRun() {
+				//Clock.reset();
 				var wasCalled = false;
 				Adoro.History.listen("someKey", function() {
 					wasCalled = true;
 				});
-				window.location.hash = "someKey=someValue2";
-				//alert(Clock);
-				//Clock.tick(1000);
-				assertTrue("", wasCalled);
-			}
 
+				window.location.hash = "someKey=someValue2";
+				Clock.tick(100);
+				assertTrue("Listen callback was invoked", wasCalled);
+			}
 			
 			-->
 		</script>
