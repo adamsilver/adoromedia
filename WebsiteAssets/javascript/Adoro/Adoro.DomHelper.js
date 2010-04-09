@@ -37,7 +37,7 @@ var Adoro = Adoro || {};
  * @static
  * @name DomHelper
  * @memberOf Adoro
- * @requires jQuery 1.3.1
+ * @requires jQuery 1.3.1 or above
  */
 Adoro.DomHelper = new (function() {
 	
@@ -52,6 +52,8 @@ Adoro.DomHelper = new (function() {
 	 */	
 	function getInnerXml(node) {
 		var s = "";
+		
+		if(!node) return s;
 		
 		var childNode = null;
 		for(var i = 0; i<node.childNodes.length; i++) {
