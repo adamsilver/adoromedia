@@ -53,6 +53,19 @@ Adoro.History = new (function(){
 	}
 	
 	/**
+	 * Get the member from a passed in key
+	 * @name getMember
+	 * @public
+	 * @function
+	 * @memberOf Adoro.History
+	 * @param {String} key The name of the member
+	 * @return {Object} The member object or null if not found
+	 */
+	function getMember(key) {
+		return members[key] || null;
+	}
+	
+	/**
 	 * Will update the browser Url programatically
 	 * <br/><br/>Note: to stop firing a hash change event the checking will stop until this function has finished
 	 * @name update
@@ -64,9 +77,9 @@ Adoro.History = new (function(){
 	 * @example Adoro.History.update("myName", "myState1");
 	 */	
 	function update(key, value) {
-		if(arguments.length !== 2) {
-			return;
-		}
+		if(arguments.length !== 2) return;
+		if(typeof key !== "string") return;
+		if(typeof value !== "string") return;
 		stopCheckingUrl();
 		var member = members[key]
 		if(!member) {
@@ -96,6 +109,8 @@ Adoro.History = new (function(){
 	 */
 	function listen(key, fn) {
 		if(arguments.length !== 2) return;
+		if(typeof key !== "string") return;
+		if(typeof fn !== "function") return;
 		stopCheckingUrl();
 		if(!members[key]) {
 			addMember(key);
@@ -160,18 +175,17 @@ Adoro.History = new (function(){
 			
 			// because the url has changed update the stored currentUrl variable
 			currentUrl = browserUrl;
-
+			
 			// a) set member.bhmValue to whatever value they are from the url
 			// b) notify the listeners/fire the custom event
 			var urlObj = getUrlObject();
 			for(var key in members) {
-				// if the url hasn't changed from the stored value then ignore
+				// if the particular member in the url hasn't changed from the
+				// stored value then ignore
 				if(members[key].bhmValue === urlObj[key]) continue;
 				
 				// set the member value to match the url value
 				members[key].bhmValue = urlObj[key] || "";
-				
-				// TODO MAYBE: Check if member has changed before notifying
 				
 				// notify the listener with new value
 				$(document).trigger("url."+key, [members[key].bhmValue, key]);
@@ -243,4 +257,5 @@ Adoro.History = new (function(){
 	// public members
 	this.listen = listen;
 	this.update = update;
+	this.getMember = getMember;
 });

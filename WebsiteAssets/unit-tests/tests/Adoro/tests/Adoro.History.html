@@ -42,7 +42,21 @@
 				assertEquals("", cl1, cl2);
 			}
 			
-			function test_update_argumentsExist_urlNotUpdated() {				
+			function test_update_invalidKeyArgument_urlNotUpdated() {
+				var loc = window.location.hash;
+				Adoro.History.update(true, "someValue");
+				var locAfter = window.location.hash;
+				assertEquals("", loc, locAfter);
+			}
+			
+			function test_update_invalidValueArgument_urlNotUpdated() {
+				var loc = window.location.hash;
+				Adoro.History.update("someKey", 1);
+				var locAfter = window.location.hash;
+				assertEquals("", loc, locAfter);
+			}			
+			
+			function test_update_argumentsExist_urlUpdated() {				
 				Adoro.History.update("someKey", "someValue");
 				var cl1 = window.location.hash;
 				assertEquals("", cl1, "#someKey=someValue");
@@ -53,16 +67,78 @@
 			 */
 			
 			function test_listen_validArgs_callbackRun() {
-				//Clock.reset();
+				Clock.reset();
 				var wasCalled = false;
 				Adoro.History.listen("someKey", function() {
 					wasCalled = true;
 				});
-
 				window.location.hash = "someKey=someValue2";
 				Clock.tick(100);
 				assertTrue("Listen callback was invoked", wasCalled);
 			}
+			
+			function test_listen_invalidArgsLength_dontListen() {
+				var wasCalled = false;
+				Clock.reset();
+				Adoro.History.listen("x");		
+				$(document).bind("url.x", function() {
+					wasCalled = true;
+				});
+				window.location.hash="y=2&x=1";
+				// we don't want the url.x to be triggered
+				Clock.tick(100);
+				assertFalse("", wasCalled);
+			}
+			
+			function test_listen_key_notString_dontListen() {
+				var wasCalled = false;
+				Clock.reset();
+				Adoro.History.listen(true, function() {
+					wasCalled = true;
+				});
+				window.location.hash="y=2&x=1";
+				// we don't want the url.x to be triggered
+				Clock.tick(100);
+				assertFalse("", wasCalled);
+			}
+			
+			function test_listen_fn_notFunction_dontListen() {
+				var wasCalled = false;
+				Clock.reset();
+				Adoro.History.listen("x", true);
+				$(document).bind("url.x", function() {
+					wasCalled = true;
+				});
+				window.location.hash="y=2&x=1";
+				// we don't want the url.x to be triggered
+				Clock.tick(100);
+				assertFalse("", wasCalled);
+			}
+			
+			/**
+			 * Adoro.History.getMember
+			 */			
+			
+			function test_getMember_noArgs_returnNull() {
+				var r = Adoro.History.getMember();
+				assertNull("", r);
+			}
+			
+			function test_getMember_invalidArgs_returnNull() {
+				var r = Adoro.History.getMember(1);
+				assertNull("", r);
+			}
+			
+			function test_getMember_validArgsButDoesntExist_returnNull() {
+				var r = Adoro.History.getMember("x");
+				assertNull("", r);
+			}
+			
+			function test_getMember_validArgsAndExists_returnObject() {
+				Adoro.History.update("x", "");
+				var r = Adoro.History.getMember("x");
+				assertNotNull("", r);
+			}				
 			
 			-->
 		</script>
