@@ -8,9 +8,24 @@
         <script type="text/javascript" src="../../../../javascript/Adoro/Adoro.History.js"></script>
 		<script type="text/javascript">
 			<!--
+			
+			function setUp() {
+				//Clock.reset();
+				window.location.hash = "";
+			}
+			
+			
+			function tearDown() {
+	
+			}
+			
 			function test_History_Exists() {
 				assertTrue("History object exists", typeof Adoro.History === "object");			
 			}
+			
+			/**
+			 * Adoro.History.update
+			 */
 			
 			function test_update_noArguments_urlNotUpdated() {
 				var cl1 = window.location.hash;
@@ -30,7 +45,23 @@
 				Adoro.History.update("someKey", "someValue");
 				var cl1 = window.location.hash;
 				assertEquals("", cl1, "#someKey=someValue");
-			}			
+			}
+			
+			/**
+			 * Adoro.History.listen
+			 */
+			
+			function test_listen_validArgs_callbackRun() {
+				var wasCalled = false;
+				Adoro.History.listen("someKey", function() {
+					wasCalled = true;
+				});
+				window.location.hash = "someKey=someValue2";
+				//alert(Clock);
+				//Clock.tick(1000);
+				assertTrue("", wasCalled);
+			}
+
 			
 			-->
 		</script>
