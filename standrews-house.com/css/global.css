@@ -462,11 +462,6 @@ div.actions input {
 * Home page heroes
 ****************************************************/
 
-#pgHome p.adoro {
-	left: 0;
-	position: static;
-}
-
 #homepage {
 }
 
@@ -585,6 +580,12 @@ div.actions input {
 /****************************************************
 * Contact
 ****************************************************/
+
+
+#pgContact p.adoro {
+	left: 0;
+	position: static;
+}
 
 #pgContact div#secondary {
 	padding-left: 10px;
