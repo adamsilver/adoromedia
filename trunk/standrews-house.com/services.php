@@ -30,7 +30,7 @@
 				<div id="primary">					
 					<div id="services">					
 						<h1>Services</h1>				
-						<p>Find out about the services we provide be following the links below:</p>						
+						<p>Find out about our services by following the links below:</p>						
 						<ul class="generic">
 						   <li><a href="offices.php">The offices</a></li>
 						   <li><a href="office-plans.php">Plans</a></li>                    

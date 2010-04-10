@@ -35,16 +35,28 @@
 					
 						<h1>About St Andrews House and our serviced offices</h1>
 						
-						<p>St Andrews House is an integral part of the Solent Serviced Offices
-						Ltd group of bespoke offices, an Edwardian Character  building, in a
-						conservation area, dedicated to providing a friendly and efficient work
-						place for the discerning client.</p>
+						<p>St Andrews house, an integral part of the Solent Serviced Offices
+						Ltd group of bespoke offices, is an Edwardian building of character, set
+						within a conservation area and dedicated to providing a friendly, efficient
+						work place for	the discerning client. </p>
 						
-						<h2>Family run business</h2>
+						<p>It is the focus of a development of freehold office buildings known
+						as Gleneagles Court, in Southgate, Crawley.</p>
 						
-						<p>It is a place open for business 24 hours a day, 365 days a year, part
-						of a family-run company since 1978 and staffed by enthusiastic people, who
-						will assist in the day to day running of the businesses within.</p>
+						<p>Our offices are located close to Gatwick Airport and a short walk
+						from Crawley Main Line Railway Station.</p>
+						
+						<p>Step outside and the shops and restaurants of Crawley are a mere
+						stroll.</p>
+						
+						<p>Renting our serviced offices couldn't be easier - click here for our
+						online enquiry form.</p>
+						
+						<h2>Family Business</h2>
+						
+						<p>We are open for business 24 hours a day, 365 days a year - part of a
+						family run company since 1978 and staffed by enthusiastic people who will
+						assist - if required - in the day to day running of the businesses within.</p>
 						
 						<p>Find out more in the <a href="services.php">services</a> section of our website.</p>
 					</div>

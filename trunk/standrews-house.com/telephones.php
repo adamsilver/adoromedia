@@ -32,7 +32,7 @@
 					<div id="telephones">					
 						<h1>Telephones</h1>						
 						<ul class="generic">
-							<li>The building is pre-wired with a Meridian Nortsar system.</li>
+							<li>The building is pre-wired with a Meridian Norstar system.</li>
 							<li>Each office has numerous telephone points, linked to the main switchboard.</li>
 							<li>BT and Virgin networks are immediately available.</li>
 							<li>The system includes voice mail recording.</li>

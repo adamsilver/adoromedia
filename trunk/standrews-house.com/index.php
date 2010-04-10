@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="js/App/App.HomePageCycler.js"></script>
 		<script type="text/javascript" src="js/App/App.Heroes.js"></script>
 	</head> 
-	<body>
+	<body id="pgHome">
 		<div id="container">
 			<div id="header">
 				<?php include("inc/logo.php"); ?>
@@ -34,12 +34,9 @@
 					
 					<div id="homepage">
 					
-						<h1>Serviced offices based in Crawley</h1>
+						<h1>St Andrews House - Serviced Offices in Crawley</h1>
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at eros id metus
-						luctus dignissim vitae id turpis. Donec nec quam nisl, bibendum auctor nibh. Curabitur
-						in est ut orci tincidunt interdum. Pellentesque cursus congue massa, ac bibendum erat
-						faucibus ut. Morbi eget ante enim.</p>
+						<p>Some further text?</p>
 						
 						<div class="heros">
 							<a href="about.php">
@@ -76,14 +73,8 @@
 							</a>
 						</div>
 						
-						<p>Aenean quis nibh ut leo hendrerit tempor. Integer purus justo, ullamcorper ac volutpat
-						ultricies, pharetra ut sem.Quis mauris. In hac habitasse platea dictumst. Fusce non
-						leo lectus, quis tincidunt nisl. Aliquam condimentum cursus lacus, eu consequat massa
-						elementum at.</p>
-						
-						<p>Cras ornare pharetra tellus id imperdiet. Nullam at dui tortor. In mollis dui at mi
-						posuere id tincidunt leo tempus. Proin metus augue, tincidunt nec sodales at, egestas a urna.</p>
-						
+						<p>Some further text?</p>
+
 					</div>
 				</div>
 				<div id="secondary">					

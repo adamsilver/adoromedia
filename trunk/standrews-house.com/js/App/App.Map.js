@@ -4,6 +4,6 @@ App.Nav = new (function() {
 	function init() {
 		var container = document.getElementById("map")
 		if(!container) return;
-		new Adoro.GoogleMap(container, "St Andrews House 26 Brighton Rd, Crawley, West Sussex, RH10 6AA");
+		new Adoro.GoogleMap(container, "26 Brighton Road, Crawley, West Sussex, RH10 6AA");
 	}
 });
