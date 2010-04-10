@@ -40,8 +40,10 @@
 							<li>The offices are freshly decorated, regularly cleaned and unfurnished - you decide the image you want.</li>
 							<li>All offices have good natural light with all windows double glazed.</li>
 							<li>There is ample free car parking with parking monitored on CCTV.</li>
-							<li>The independent kitchen staff can provide sandwiches and buffet lunches to order.</li>
-							<li>Council rates, heating and lighting costs are included - there are no hidden extras.</li>
+							<li>Council rates, heating, lighting and cleaning costs are included -
+							there are no hidden extras.</li>
+							<li>The independent kitchen staff can provide breakfast, sandwiches and
+							buffet lunches to order.</li>							
 						</ul>
 					
 					</div>

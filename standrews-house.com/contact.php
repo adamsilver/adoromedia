@@ -39,10 +39,11 @@
 					
 					<div id="contact">
 						<h1>Contact us about our serviced offices</h1>
+						
+						
+						<h2>See our location map </h2>
 						<p>We are situated a few minutes walk from Crawley Station and Gatwick Airport
 						is only a 10 minute <br/>drive by car.</p>
-						
-						
 						<div id="map">
 							
 						</div>
@@ -69,15 +70,16 @@
 						
 						<p class="address"><strong>St Andrews House</strong><br/> 26 Brighton Rd,<br/> Crawley, <br/>West Sussex, <br/>RH10 6AA</p>
 						
-						<p class="telephone">Call us: 01293 543 641</p>
+						<p class="telephone">To call us: telephone 01293 543641</p>
 						
-						<p class="email">Email: <a href="mailto:enquiries@standrews-house.com">enquiries@standrews-house.com</a></p>
+						<p class="email">To email us: <a href="mailto:enquiries@standrews-house.com">enquiries@standrews-house.com</a></p>
 						
 					</div>
 					
 					<div id="enquiryForm">
 						<h2>Enquiry form</h2>
-						
+						<p>Should you have any specific requirements or requests just let us
+						know and we will try to accommodate you.</p>
 						<?php 
 							$showForm = true;
 							if(isset($_POST["actionSubmit"])) {

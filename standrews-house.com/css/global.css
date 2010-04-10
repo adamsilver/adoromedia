@@ -449,6 +449,8 @@ div.actions input {
 
 #footer p.adoro {
 	float: right;
+	position: absolute;
+	left: -9999em;
 }
 
 #footer p.adoro a {
@@ -459,6 +461,11 @@ div.actions input {
 /****************************************************
 * Home page heroes
 ****************************************************/
+
+#pgHome p.adoro {
+	left: 0;
+	position: static;
+}
 
 #homepage {
 }
