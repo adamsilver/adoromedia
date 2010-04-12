@@ -33,9 +33,8 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
  * @param {String} options.cssHideClass The hide class for the menu when in off state (position off screen), default "hide".
  */
 Adoro.DropDownMenu = function(ul, options) {
-	var ul = ul || null;
 	if(!ul) return;
-	
+	alert(1);
 	var config = {
 		subMenuType: "ul",
 		cssActiveClass: "selected",
@@ -76,6 +75,9 @@ Adoro.DropDownMenu = function(ul, options) {
 	 * @param {Node} subMenuLink
 	 */
 	function AnchorHandler(link, li, subMenu, subMenuLink) {
+		
+		console.log([link, li, subMenu, subMenuLink]);
+		
 		var me = this;
 		link = link;
 		li = li;
