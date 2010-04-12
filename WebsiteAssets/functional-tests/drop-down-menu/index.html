@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="Adoro.DropDownMenu.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var root = document.getElementById("dropDownMenu");
 				var ul = $(root).find("ul")[0] || null;
-				new Adoro.DropDownMenu(ul, { cssHideClass: "off" });
+				new Adoro.DropDownMenu(ul, { cssHideClass: "off", delay: 1 });
 			});
 		</script>
 		<style type="text/css">
@@ -90,7 +90,12 @@
 				float: none;
 				display: block;
 				border-right: 0px;
-			}			
+			}		
+
+			div#dropDownMenu ul li ul li ul {
+				left: 200px;
+				top: 0px;
+			}						
 			
 
 		</style>
@@ -112,7 +117,12 @@
 				<li>
 					<a href="#7"><span>Gift</span></a>
 					<ul class="off">
-						<li><a href="#8"><span>Skincare</span></a></li>
+						<li>
+							<a href="#8"><span>Skincare</span></a>
+							<ul class="off">
+								<li><a href="#a"><span>a</span></a></li>
+							</ul>							
+						</li>
 						<li><a href="#9"><span>Hair</span></a></li>
 						<li><a href="#10"><span>Offers</span></a></li>
 						<li><a href="#11"><span>Weight Loss</span></a></li>
