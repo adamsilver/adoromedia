@@ -40,15 +40,14 @@ Adoro.DropDownMenu = function(ul, options) {
 		subMenuType: "ul",
 		cssActiveClass: "selected",
 		cssHideClass: "hide", 
-		delay: true
+		delay: 300
 	};
 	
-	if(typeof options === "object") {
-		config.subMenuType = (typeof options.subMenuType === "string") ? options.subMenuType : config.subMenuType;
-		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
-		config.cssHideClass = (typeof options.cssHideClass === "string") ? options.cssHideClass : config.cssHideClass;
-		config.delay = (options.delay) ? options.delay:config.delay;
-	}
+	var options = options || {};
+	config.subMenuType = options.subMenuType || config.subMenuType;
+	config.cssActiveClass = options.cssActiveClass || config.cssActiveClass;
+	config.cssHideClass = options.cssHideClass || config.cssHideClass;
+	config.delay = options.delay || config.delay;
 	
 	var links = $(ul).find("a"), link, subMenu, subLinks, li;
 	for(var i=links.length-1; i>=0;i--) {
@@ -91,20 +90,13 @@ Adoro.DropDownMenu = function(ul, options) {
 		
 		$(subMenu).bgiframe();
 
-		// sublinks do not need this bit - only focus and blur - so not sure best way to make efficient yet
-		
-		//console.log(isSubMenuLink);
-		
-		if(config.delay && !isSubMenuLink) {
-			$(link).bind("mouseenter", showSubMenuDelay);
+		if(config.delay > 0) {
+			$(li).bind("mouseenter", showSubMenuDelay);
 			$(li).bind("mouseleave", hideSubMenuDelay);
-			
-			// submenuenter
-			//$(subMenu).bind("mouseenter", subMenu_onMouseEnter);
 		}
 		else {
-			//$(link).bind("mouseenter", showSubMenu);
-			//$(li).bind("mouseleave", hideSubMenu);
+			$(li).bind("mouseenter", showSubMenu);
+			$(li).bind("mouseleave", hideSubMenu);
 		}
 		
 		$(link).bind("focus", showSubMenu);
@@ -122,28 +114,19 @@ Adoro.DropDownMenu = function(ul, options) {
 		
 		var hideTimer = null, showTimer;
 		
-		// this is defo righto
 		function showSubMenuDelay() {
-			//console.log("show sub menu delay");
 			clearTimeout(hideTimer);
 			showTimer = window.setTimeout(function(){
 				showSubMenu();
-			}, 300);
-		}		
-		
+			}, config.delay);
+		}
 		
 		function hideSubMenuDelay() {
 			clearTimeout(showTimer);
 			hideTimer = window.setTimeout(function(){
 				hideSubMenu();
-			}, 300);
+			}, config.delay);
 			
-		}
-		
-		function subMenu_onMouseEnter() {
-			//clearTimeout(hideTimer);
-			//clearTimeout(showTimer);
-			//showSubMenu();
 		}
 		
 	}
