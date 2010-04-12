@@ -34,7 +34,6 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
  */
 Adoro.DropDownMenu = function(ul, options) {
 	if(!ul) return;
-	alert(1);
 	var config = {
 		subMenuType: "ul",
 		cssActiveClass: "selected",
@@ -74,10 +73,7 @@ Adoro.DropDownMenu = function(ul, options) {
 	 * @param {Node} subMenu
 	 * @param {Node} subMenuLink
 	 */
-	function AnchorHandler(link, li, subMenu, subMenuLink) {
-		
-		console.log([link, li, subMenu, subMenuLink]);
-		
+	function AnchorHandler(link, li, subMenu, subMenuLink) {	
 		var me = this;
 		link = link;
 		li = li;
