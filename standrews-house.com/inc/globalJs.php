@@ -3,3 +3,7 @@
 <script type="text/javascript" src="js/JQuery/jquery.cycle.all.min.js"></script>
 <script type="text/javascript" src="js/Adoro/Adoro.DropDownMenu.js"></script>
 <script type="text/javascript" src="js/App/App.Nav.js"></script>
+
+<!--
+<script type="text/javascript" src="min/?f=js/Adoro/AdoroDropDownMenu.js,js/App/App.Nav.js"></script>
+-->
