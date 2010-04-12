@@ -15,6 +15,13 @@ var Adoro = Adoro || {};
  * @requires jQuery 1.4.2
  */
 Adoro.History = new (function(){
+	// BUG: In firefox (for example), if you set some history points
+	// and you use back button to go back to url without hash e.g. example/com/whatever/
+	// and then at that point you create some further history points
+	// the previous set of history will be lost in that session
+	// YUI does this as well currently
+	
+	
 	// contains the names and values of history points to listen for changes
 	var members = {};
 	
@@ -30,6 +37,12 @@ Adoro.History = new (function(){
 	// set as nothing to begin with so that after startCheckingUrl() kicks in, a change will be recognised
 	var currentUrl = ""; 
 	
+	// iframe element (only exists for ie6/7)
+	var iframeHtmlNode = null;
+	
+	// iframe window object (only exists for ie6/7)
+	var iframeWindowObject = null;
+	
 	// initialise
 	$(init);
 	
@@ -41,15 +54,27 @@ Adoro.History = new (function(){
 	 * @memberOf Adoro.History
 	 */
 	function init() {
-		
-		// if there is iframe (ie6/7)
-		if (document.getElementById("URLFrame")) {
-			// set iframe url to match URL address bar so that when checking the url occurs that a hash change occurs
-			document.frames["URLFrame"].location.replace(document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
+		iframeHtmlNode = document.getElementById("URLFrame");
+		if (iframeHtmlNode) {
+			// set iframe url to match URL address bar so that
+			// when checking the url, a hash change occurs
+			setIframeLocation(getWindowHashValue())
 		}
-	
+		
 		// start listening for the change in hash
 		startCheckingUrl();
+	}
+	
+	function getIframeWindow() {
+		return document.frames["URLFrame"];
+	}
+	
+	function getWindowHashValue() {
+		return location.hash.slice(1);
+	}
+	
+	function setIframeLocation(newLocation) {
+		getIframeWindow().location.replace(getIframeWindow().location.pathname + "?" + newLocation);
 	}
 	
 	/**
@@ -157,8 +182,8 @@ Adoro.History = new (function(){
 		// location.hash does not equal currentUrl and if it doesnt
 		// change the IFRAME URL before running all code that appears
 		// after this comment - lets attempt with the following code:
-		if(document.getElementById("URLFrame") && location.hash.slice(1) !== currentUrl) {
-			document.getElementById("URLFrame").setAttribute("src", document.frames["URLFrame"].location.pathname + "?" + location.hash.slice(1));
+		if(iframeHtmlNode && getWindowHashValue() !== currentUrl) {
+			iframeHtmlNode.setAttribute("src", getIframeWindow().location.pathname + "?" + getWindowHashValue());
 		}
 		
 		// get the browser url
@@ -166,11 +191,10 @@ Adoro.History = new (function(){
 		
 		// if the hash portion of the URL has changed
 		if(currentUrl !== browserUrl) {
-			//alert("location has changed");
 			// if getting url from iframe then we need to manually update the
 			// actual location.hash to match
 			// all the functionality works without this but the location #value does not change
-			if(document.getElementById("URLFrame")) {
+			if(iframeHtmlNode) {
 				location.hash = browserUrl;
 			}
 			
@@ -215,23 +239,19 @@ Adoro.History = new (function(){
 	}
 	
 	function getBrowserUrl() {
-		if(document.getElementById("URLFrame")) {
-			return document.frames["URLFrame"].location.search.slice(1);		
+		if(iframeHtmlNode) {
+			return getIframeWindow().location.search.slice(1);		
 		}
-		return location.hash.slice(1);
+		return getWindowHashValue();
 	}
 	
 	function setBrowserUrl(newUrl) {
-		if (document.getElementById("URLFrame")) {
-			document.getElementById("URLFrame").setAttribute("src", document.frames["URLFrame"].location.pathname + "?" + newUrl);
+		if (iframeHtmlNode) {
+			iframeHtmlNode.setAttribute("src", getIframeWindow().location.pathname + "?" + newUrl);
 			location.hash = newUrl;
 		} else {
 			location.hash = newUrl;
 		}
-	}
-	
-	function getIframeUrl() {
-		return document.frames["URLFrame"].location.search.slice(1);
 	}
 	
 	/**
