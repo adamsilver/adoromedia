@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.bgiframe.js"></script>
-		<script type="text/javascript" src="Adoro.DropDownMenu.js"></script>
+		<script type="text/javascript" src="../../javascript/jQuery/jquery.bgiframe.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.DropDownMenu.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var root = document.getElementById("dropDownMenu");
 				var ul = $(root).find("ul")[0] || null;
-				new Adoro.DropDownMenu(ul, { cssHideClass: "off", delay: 1 });
+				new Adoro.DropDownMenu(ul, { cssHideClass: "off", delay: 300 });
 			});
 		</script>
 		<style type="text/css">
@@ -94,7 +94,7 @@
 
 			div#dropDownMenu ul li ul li ul {
 				left: 200px;
-				top: 0px;
+				top: -1px;
 			}						
 			
 
