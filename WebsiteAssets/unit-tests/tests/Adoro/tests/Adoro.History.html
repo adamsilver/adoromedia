@@ -65,18 +65,7 @@
 			/**
 			 * Adoro.History.listen
 			 */
-			
-			function test_listen_validArgs_callbackRun() {
-				Clock.reset();
-				var wasCalled = false;
-				Adoro.History.listen("someKey", function() {
-					wasCalled = true;
-				});
-				window.location.hash = "someKey=someValue2";
-				Clock.tick(100);
-				assertTrue("Listen callback was invoked", wasCalled);
-			}
-			
+		
 			function test_listen_invalidArgsLength_dontListen() {
 				var wasCalled = false;
 				Clock.reset();
@@ -113,6 +102,17 @@
 				// we don't want the url.x to be triggered
 				Clock.tick(100);
 				assertFalse("", wasCalled);
+			}		
+			
+			function test_listen_validArgs_callbackRun() {
+				Clock.reset();
+				var wasCalled = false;
+				Adoro.History.listen("someKey", function() {
+					wasCalled = true;
+				});
+				window.location.hash = "someKey=someValue2";
+				Clock.tick(100);
+				assertTrue("Listen callback was invoked", wasCalled);
 			}
 			
 			/**
