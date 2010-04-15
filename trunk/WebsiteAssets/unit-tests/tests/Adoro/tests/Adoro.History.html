@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Adoro.History test case</title>
         <script type="text/javascript" src="../../../jsunit/app/jsUnitCore.js"></script>
-		<script type="text/javascript" src="../../../jsunit/app/jsUnitMockTimeout.js"></script>		
+		<script type="text/javascript" src="../../../jsunit/lib/jsUnitMockTimeout.js"></script>		
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
         <script type="text/javascript" src="../../../../javascript/Adoro/Adoro.History.js"></script>
 		<script type="text/javascript">
@@ -28,28 +28,28 @@
 			 * Adoro.History.update
 			 */
 			
-			function test_update_noArguments_urlNotUpdated() {
+			function est_update_noArguments_urlNotUpdated() {
 				var cl1 = window.location.hash;
 				Adoro.History.update();
 				var cl2 = window.location.hash;
 				assertEquals("", cl1, cl2);
 			}
 			
-			function test_update_noValueInArgument_urlNotUpdated() {
+			function est_update_noValueInArgument_urlNotUpdated() {
 				var cl1 = window.location.hash;
 				Adoro.History.update("someKey");
 				var cl2 = window.location.hash;
 				assertEquals("", cl1, cl2);
 			}
 			
-			function test_update_invalidKeyArgument_urlNotUpdated() {
+			function est_update_invalidKeyArgument_urlNotUpdated() {
 				var loc = window.location.hash;
 				Adoro.History.update(true, "someValue");
 				var locAfter = window.location.hash;
 				assertEquals("", loc, locAfter);
 			}
 			
-			function test_update_invalidValueArgument_urlNotUpdated() {
+			function est_update_invalidValueArgument_urlNotUpdated() {
 				var loc = window.location.hash;
 				Adoro.History.update("someKey", 1);
 				var locAfter = window.location.hash;
@@ -130,13 +130,13 @@
 			}
 			
 			function test_getMember_validArgsButDoesntExist_returnNull() {
-				var r = Adoro.History.getMember("x");
+				var r = Adoro.History.getMember("z");
 				assertNull("", r);
 			}
 			
 			function test_getMember_validArgsAndExists_returnObject() {
-				Adoro.History.update("x", "");
-				var r = Adoro.History.getMember("x");
+				Adoro.History.update("someKey", "someValue");
+				var r = Adoro.History.getMember("someKey");
 				assertNotNull("", r);
 			}
 			
