@@ -33,6 +33,8 @@ var Adoro = Adoro || {};
  * @class (singleton) Represents the dialogue object
  * @constructor
  * @static
+ * @name Dialogue
+ * @memberOf Adoro
  */
 Adoro.Dialogue = new (function(){
 	/*
@@ -256,6 +258,8 @@ Adoro.Dialogue = new (function(){
 	 * apply close event to close buttons
 	 * @function
 	 * @private
+	 * @name setCloseEvent
+	 * @memberOf Adoro.Dialogue
 	 */
 	function setCloseEvent() {
 		$(dialogue).find("a."+config.closeClass).bind("click", hideDialogue);
