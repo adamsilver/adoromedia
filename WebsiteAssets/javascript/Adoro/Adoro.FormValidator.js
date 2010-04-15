@@ -306,8 +306,6 @@ Adoro.FormValidator = function(formNode, options) {
 	 * Represents a Validator object
 	 * @class
 	 * @constructor
-	 * @name Validator
-	 * @memberOf Adoro.FormValidator
 	 * @private
 	 * @param {object} $field The jQuery object representing the field
 	 * @param {string} fieldName The field name
