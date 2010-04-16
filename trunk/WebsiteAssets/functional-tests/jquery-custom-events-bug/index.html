@@ -5,11 +5,11 @@
 		
 		<script type="text/javascript">
 			
-			$(document).bind("hello", function() {
-				alert("hello");
+			$(document).bind("hello", function(arg1, arg2) {
+				console.log(arg2)
 			});
 			
-			$(document).trigger("hello");
+			$(document).trigger("hello", {x:1});
 		
 			$(document).ready(function() {
 				
