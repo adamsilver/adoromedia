@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Salmon.Global.ProductAdder</title>
+        <script type="text/javascript" src="../../../jsunit/app/jsUnitCore.js"></script>
+		<script type="text/javascript" src="../../../jsunit/lib/jsUnitAjax.js"></script>
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+        <script type="text/javascript">
+			
+			function ProductAdder(formNode) {	
+				this.formNode = formNode;
+			}
+			
+			ProductAdder.prototype = {
+				addToBasket: function(successFn) {
+					return $.ajax({
+						url: "hello",
+						type: "post",
+						data: $(this.formNode).serialize(),
+						success: successFn
+					});
+				}
+			}
+
+		</script>
+        
+		<script type="text/javascript">
+			<!--
+			
+			function setUp() {
+				$.ajax = function(options) {
+					var r = new MockXmlHttpRequest();
+					r.open(options.type, options.url);
+					r.send(options.data);
+					return r;
+				}
+			}
+			
+			function test_ProductAdder_Exists() {
+				assertNotNull("", ProductAdder);				
+			}
+			
+			function test_addToBasket() {
+				var wasCalled = false;
+				var form = document.getElementById("form1");
+				var inst = new ProductAdder(form);
+				var xhr = inst.addToBasket();
+				assertTrue(xhr.sendCalled);
+				assertEquals("", xhr.url, "hello");
+				assertEquals("", xhr.method, "post");
+				assertEquals("", xhr.data, $(form).serialize());
+			}
+			
+			-->
+		</script>
+    </head>    
+    <body>
+		<form id="form1">
+			<input type="submit" name="add" />
+		</form>
+	
+    </body>
+</html>
