@@ -5,6 +5,12 @@
 		
 		<script type="text/javascript">
 			
+			$(document).bind("hello", function() {
+				alert("hello");
+			});
+			
+			$(document).trigger("hello");
+		
 			$(document).ready(function() {
 				
 				var myCallBackUsedBy2DifferenCustomEvents = function(param) {
@@ -13,11 +19,11 @@
 				
 				// bind two custom events
 				
-				$(document).bind("123.hello1.customEvent", myCallBackUsedBy2DifferenCustomEvents);
-				$(document).bind("123.hello1.customEvent", myCallBackUsedBy2DifferenCustomEvents);
+				//$(document).bind("123.hello1.customEvent", myCallBackUsedBy2DifferenCustomEvents);
+				//$(document).bind("123.hello1.customEvent", myCallBackUsedBy2DifferenCustomEvents);
 				
-				$(document).trigger("123.hello1.customEvent"); // 		
-				$(document).trigger("123.hello2.customEvent"); // 
+				//$(document).trigger("123.hello1.customEvent"); // 		
+				//$(document).trigger("123.hello2.customEvent"); // 
 				
 				
 				
