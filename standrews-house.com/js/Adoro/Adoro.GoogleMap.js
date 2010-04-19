@@ -39,7 +39,7 @@ Adoro.GoogleMap = function(container, address) {
 		var marker = new GMarker(point);
 		map.addControl(new GLargeMapControl());
 		map.addControl(new GMapTypeControl());
-		map.setCenter(point, 16);
+		map.setCenter(point, 13);
 		map.addOverlay(marker);
 	});	
 }

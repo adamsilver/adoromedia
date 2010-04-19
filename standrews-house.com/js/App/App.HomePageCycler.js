@@ -6,7 +6,7 @@ App.HomePageCycler = new (function() {
 		if(!banner) return;
 		
 		var img = new Image();
-		img.src = "img/banner02.jpg";
+		img.src = "img/banner05.jpg";
 		
 		var img2 = new Image();
 		img2.src = "img/banner03.jpg";
