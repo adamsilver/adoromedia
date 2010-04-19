@@ -36,7 +36,7 @@
 				<div id="primary">
 					<div id="officePlans">					
 						<h1>Office plans</h1>						
-						<p>	Scaled drawings of each floor, with room sizes, power point and
+						<p>	Scaled drawings of each floor are shown below, with room sizes, power point and
 						low-energy light positions - we are dedicated to reducing our carbon
 						footprint.</p>						
 						<p>Please click on the plans below to zoom in.</p>						
@@ -58,7 +58,7 @@
 				</div>
 				<div id="secondary">
 					<div class="photo">
-						<img src="img/banner04.jpg" alt="" />
+						<img src="img/banner10.jpg" alt="" />
 					</div>
 				</div>
 			</div>

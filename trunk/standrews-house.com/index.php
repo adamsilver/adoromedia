@@ -36,11 +36,12 @@
 					
 						<h1>St Andrews House - Serviced Offices in Crawley</h1>
 						
-						<p>Some further text?</p>
+						<h2><a href="contact.php#map">Our offices are located close to Gatwick Aiport</a></h2>
+	
 						
 						<div class="heros">
 							<a href="about.php">
-								<div class="hero">
+								<div class="hero" id="heroAbout">
 									<div class="textual">
 										<h2>About us</h2>
 										<p>Find out a little more about the company.</p>
@@ -73,21 +74,13 @@
 							</a>
 						</div>
 						
-						<p>Some further text?</p>
+						<h2><a href="contact.php#enquiryForm">Renting our serviced offices couldn't be easier</a></h2>
 
 					</div>
 				</div>
 				<div id="secondary">					
 					<div id="homePageImage" class="photo">
 						<img src="img/banner01.jpg" alt="" />
-					</div>
-					<div id="locations">
-						<h2>Our serviced offices are located close to Gatwick Aiport</h2>
-						<p>Some more seo text</p>
-						<h2>Renting our serviced offices couldn't be easier</h2>
-						<p>Some more text</p>
-						<h2>Serviced offices in the heart of Crawley</h2>
-						<p>Hire a serviced office now and receive 10% off for the first 3 months.</p>
 					</div>
 				</div>
 			</div>

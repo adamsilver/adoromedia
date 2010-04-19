@@ -35,7 +35,7 @@
 					
 						<h1>About St Andrews House and our serviced offices</h1>
 						
-						<p>St Andrews house, an integral part of the Solent Serviced Offices
+						<p>St Andrews House, an integral part of the Solent Serviced Offices
 						Ltd group of bespoke offices, is an Edwardian building of character, set
 						within a conservation area and dedicated to providing a friendly, efficient
 						work place for	the discerning client. </p>
@@ -49,8 +49,8 @@
 						<p>Step outside and the shops and restaurants of Crawley are a mere
 						stroll.</p>
 						
-						<p>Renting our serviced offices couldn't be easier - click here for our
-						online enquiry form.</p>
+						<p>Renting our serviced offices couldn't be easier - <a href="contact.php#enquiryForm">click here for our
+						online enquiry form</a>.</p>
 						
 						<h2>Family Business</h2>
 						
