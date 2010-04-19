@@ -51,7 +51,7 @@
 				</div>
 				<div id="secondary">
 					<div class="photo">
-						<img src="img/banner02.jpg" alt="" />
+						<img src="img/banner13.jpg" alt="" />
 					</div>
 				</div>
 			</div>
