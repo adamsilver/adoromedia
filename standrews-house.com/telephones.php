@@ -42,7 +42,7 @@
 				</div>
 				<div id="secondary">
 					<div class="photo">
-						<img src="img/banner04.jpg" alt="" />
+						<img src="img/banner12.jpg" alt="" />
 					</div>
 				</div>
 			</div>

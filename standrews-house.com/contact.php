@@ -68,7 +68,11 @@
 					<div id="contactDetails">
 						<h2>General details</h2>				
 						
-						<p class="address"><strong>St Andrews House</strong><br/> 26 Brighton Rd,<br/> Crawley, <br/>West Sussex, <br/>RH10 6AA</p>
+						<p class="address"><strong>St Andrews House</strong>
+							<br/>26 Brighton Rd
+							<br/>Crawley
+							<br/>West Sussex
+							<br/>RH10 6AA</p>
 						
 						<p class="telephone">To call us: telephone 01293 543641</p>
 						
