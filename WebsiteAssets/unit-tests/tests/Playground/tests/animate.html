@@ -9,6 +9,10 @@
         
 		<script>
 			
+			$().animate = function() {
+				alert(this);
+			}
+			
 			function animate() {
 				window.setTimeout(function() {
 					$("#testDiv").animate({
@@ -19,6 +23,11 @@
 					
 				}, 100);			
 			}
+			
+			function myFunc() {
+				$("div#testDiv").animate();
+			}
+			
 		</script>
 		
 		<script type="text/javascript">
@@ -35,6 +44,11 @@
 				assertTrue("", hasClass);
 			}
 			
+			
+			function testMockAnimate() {
+				
+				myFunc();
+			}
 			
 			-->
 		</script>
