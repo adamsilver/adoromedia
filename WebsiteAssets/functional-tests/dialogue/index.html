@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
+		<title>Functional test: Adoro.Dialogue</title>
 		<link rel="stylesheet" type="text/css" media="screen" href="../../css/dialogue.css"  />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		
 		
-		<script type="text/javascript" src="../../javascript/JQuery/jquery.bgiframe.js"></script>
+		<script type="text/javascript" src="../../javascript/jQuery/jquery.bgiframe.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.Dialogue.js"></script>
 
 		
@@ -32,7 +33,11 @@
 				
 				
 				$("div.testScreen").find("form").bind("submit", function(){
-					$("div.testScreen").html("submitted");
+					$("div.testScreen").html("submitted<br/><br/><a class='close' href='#'>Close</a>");
+					$("div.testScreen").find("a.close").bind("click", function(e) {
+						Adoro.Dialogue.hideDialogue();
+						e.preventDefault();
+					});
 					return false;
 				})
 				
