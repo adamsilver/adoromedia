@@ -229,7 +229,7 @@ Adoro.Dialogue = new (function(){
 			config.closeOverlay = (typeof options.closeOverlay === "boolean" && options.closeOverlay === false) ? false : true;
 		}
 		
-		$(dialogue).css({left: "-99999em"});			
+		$(dialogue).css({left: "-9999em"});			
 		if(config.closeOverlay) {
 			hideOverlay();
 		}		
