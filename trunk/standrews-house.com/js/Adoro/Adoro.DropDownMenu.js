@@ -21,7 +21,7 @@
 //  ---------------------------------------------------------------------------------------------------------
 //  ---------------------------------------------------------------------------------------------------------
 
-if (typeof Adoro !== "object") { var Adoro = {}; }
+var Adoro = Adoro || {};
 
 /**
  * @class Represents a drop down menu
@@ -33,20 +33,20 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
  * @param {String} options.cssHideClass The hide class for the menu when in off state (position off screen), default "hide".
  */
 Adoro.DropDownMenu = function(ul, options) {
-	var ul = ul || null;
 	if(!ul) return;
-	
+		
 	var config = {
 		subMenuType: "ul",
 		cssActiveClass: "selected",
-		cssHideClass: "hide"
+		cssHideClass: "hide", 
+		delay: 300
 	};
 	
-	if(typeof options === "object") {
-		config.subMenuType = (typeof options.subMenuType === "string") ? options.subMenuType : config.subMenuType;
-		config.cssActiveClass = (typeof options.cssActiveClass === "string") ? options.cssActiveClass : config.cssActiveClass;
-		config.cssHideClass = (typeof options.cssHideClass === "string") ? options.cssHideClass : config.cssHideClass;
-	}
+	var options = options || {};
+	config.subMenuType = options.subMenuType || config.subMenuType;
+	config.cssActiveClass = options.cssActiveClass || config.cssActiveClass;
+	config.cssHideClass = options.cssHideClass || config.cssHideClass;
+	config.delay = options.delay || config.delay;
 	
 	var links = $(ul).find("a"), link, subMenu, subLinks, li;
 	for(var i=links.length-1; i>=0;i--) {
@@ -76,17 +76,27 @@ Adoro.DropDownMenu = function(ul, options) {
 	 * @param {Node} subMenuLink
 	 */
 	function AnchorHandler(link, li, subMenu, subMenuLink) {
+		var timerHide, timerShow;
+		
 		var me = this;
 		link = link;
 		li = li;
 		subMenu = subMenu;
+		
+		var isSubMenuLink = (subMenuLink !== undefined);
+		
 		subMenuLink = subMenuLink || link; // subMenuLink only exists for links in the sub menu otherwise its the same as link.
 		
 		$(subMenu).bgiframe();
-		
-		// sublinks do not need this bit - only focus and blur - so not sure best way to make efficient yet
-		$(link).bind("mouseenter", showSubMenu);
-		$(li).bind("mouseleave", hideSubMenu);
+
+		if(config.delay > 0) {
+			$(li).bind("mouseenter", showSubMenuDelay);
+			$(li).bind("mouseleave", hideSubMenuDelay);
+		}
+		else {
+			$(li).bind("mouseenter", showSubMenu);
+			$(li).bind("mouseleave", hideSubMenu);
+		}
 		
 		$(link).bind("focus", showSubMenu);
 		$(link).bind("blur", hideSubMenu);
@@ -100,5 +110,23 @@ Adoro.DropDownMenu = function(ul, options) {
 			$(subMenu).addClass(config.cssHideClass);
 			$(subMenuLink).removeClass(config.cssActiveClass); // could probably add class instead?
 		}
+		
+		var hideTimer = null, showTimer;
+		
+		function showSubMenuDelay() {
+			clearTimeout(hideTimer);
+			showTimer = window.setTimeout(function(){
+				showSubMenu();
+			}, config.delay);
+		}
+		
+		function hideSubMenuDelay() {
+			clearTimeout(showTimer);
+			hideTimer = window.setTimeout(function(){
+				hideSubMenu();
+			}, config.delay);
+			
+		}
+		
 	}
 }
