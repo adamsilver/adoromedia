@@ -317,18 +317,19 @@ div.actions input {
 	border-top: 4px solid #E2E2E9;
 }
 
+#nav ul li a.arrow {
+	background: url(../img/arrow_down.gif) no-repeat 80% 45%;
+	padding-right: 40px;
+}
+
 #nav ul li.selected a,
+#nav ul li.selected a.arrow,
 #nav ul li a:hover,
 #nav ul li a:focus,
 #nav ul li a.selected {
 	border-top: 4px solid #ccc;
 	color: #fff;
 	background-color:#353668;
-}
-
-#nav ul li a.arrow {
-	background: url(../img/arrow_down.gif) no-repeat 80% 45%;
-	padding-right: 40px;
 }
 
 #nav ul li a.arrow.selected {
