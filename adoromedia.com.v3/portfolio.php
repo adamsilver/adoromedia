@@ -61,7 +61,7 @@
 					<p>After already having a website built for the musical show, Richard approached
 					us, to scale down the website to show a review of the event with a live video of all 
 					the action.</p>
-					<p><a href="http://www.filmscorespectacular.co.uk">Launch website</a></p>
+					<p><a href="http://www.filmscorespectacular.com/index.php">Launch website</a></p>
 				</div>		
 
 				<div class="tertiary">
