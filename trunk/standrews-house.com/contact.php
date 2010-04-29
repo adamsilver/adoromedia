@@ -119,7 +119,7 @@
 										</label>
 									</div>
 									<div class="singleInput">
-										<input type="text" class="text" name="yourname" id="yourname" />
+										<input type="text" class="text" name="yourname" id="yourname" value="<?php echo isset($_POST["yourname"]) ? $_POST["yourname"] : "" ?>"/>
 									</div>
 								</div>
 								<div class="field">
@@ -129,7 +129,7 @@
 										</label>
 									</div>
 									<div class="singleInput">
-										<input type="text" class="text" name="email" id="email" />
+										<input type="text" class="text" name="email" id="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : "" ?>"/>
 									</div>
 								</div>
 								<div class="field">
@@ -139,7 +139,7 @@
 										</label>
 									</div>
 									<div class="singleInput">
-										<textarea name="message" id="message"></textarea>
+										<textarea name="message" id="message"><?php echo isset($_POST["message"]) ? $_POST["message"] : "" ?></textarea>
 									</div>
 								</div>
 								<div class="actions">
