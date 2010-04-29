@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				function GameFormValidator(node) {
+					var fv = new Adoro.FormValidator(node);
+					
+					function FieldHandler($input) {						
+						var $field = $input.parents("div.field");
+						
+						this.fail = function(message) {
+							$field.find("div.message").remove();
+							$field.append('<div class="message">'+message+'</div>');
+						}
+						
+						this.success = function() {
+							var message = "all gooooOOooood!";
+							$field.find("div.message").remove();
+							$field.append('<div class="message">'+message+'</div>');
+						}
+					}
+					
+					this.addValidator = function(fieldName, rules, options) {
+						var v = fv.addValidator(fieldName, rules, options);
+						
+						var fh;
+						
+						fv.addEventHandler(fieldName+".onFieldFail", function(e, field, invalidRules) {
+							if(!fh) {
+								fh = new FieldHandler($(field));
+							}
+							fh.fail(invalidRules[0].message);
+						});
+						
+						fv.addEventHandler(fieldName+".onFieldSuccess", function(e, field) {
+							if(!fh) {
+								fh = new FieldHandler($(field));
+							}
+							fh.success();
+						});						
+						
+						$(node).find('input[name="'+fieldName+'"]').bind("blur", function(e){
+							fv.getValidator(fieldName).validate();
+						});
+						
+						return v;
+					}
+					
+					for(var key in fv) {
+						if(this[key]) continue;
+						this[key] = fv[key];
+					}		
+					
+				}
+				
+				var node = document.getElementById("form1");
+				var fv = new GameFormValidator(node);
+				
+				$(node).submit(function() {
+					return fv.validate();	
+				});
+				
+				fv.addValidator("firstName", [{
+					method: Adoro.FormRules.notEmpty,
+					message: "First name is invalid"
+				}]);
+				
+				fv.addValidator("lastName", [{
+					method: Adoro.FormRules.notEmpty,
+					message: "Last name is invalid"
+				},{
+					method: Adoro.FormRules.emailAddress,
+					message: "last name should be email"
+				}]);
+				
+				fv.addValidator("postcode", [{
+					method: Adoro.FormRules.notEmpty,
+					message: "Postcode is invalid"
+				}]);
+				
+				fv.addValidator("terms", [{
+					method: Adoro.FormRules.minChecked,
+					params: {minChecked: 1},
+					message: "Check terms etc"
+				}]);
+				
+			});
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>Game Form Validator</h1>
+		
+		<div id="container">
+			<form id="form1" action="#/blah/blah" method="post">
+				<div class="field">
+					<div class="indicator">
+						<label for="firstName">first name</label>
+					</div>
+					<div class="element">
+						<input type="text" name="firstName" id="firstName" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="indicator">
+						<label for="lastName">last name</label>
+					</div>
+					<div class="element">
+						<input type="text" name="lastName" id="lastName" />
+					</div>
+				</div>
+				
+				<div class="field">
+					<div class="indicator">
+						<label for="postcode">post code</label>
+					</div>
+					<div class="element">
+						<input type="text" name="postcode" id="postcode" />
+					</div>
+				</div>				
+				
+				<input type="submit" id="submitPostcode" name="submitPostcode" value="Submit post code" />
+				
+				<div class="field">
+					<div class="indicator">
+						<span class="label">Terms</span>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" name="terms" id="terms" />
+						<label for="terms">Terms</label>
+					</div>
+					<!--<div class="message">from server side</div>-->
+				</div>				
+				<input type="submit" id="primarySubmit" name="primarySubmit" value="Primary submit" />
+			</form>
+		</div>	
+	</body>
+</html>
