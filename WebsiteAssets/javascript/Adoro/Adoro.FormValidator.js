@@ -115,10 +115,7 @@ Adoro.FormValidator = function(formNode, options) {
 		for(var key in options) {
 			addEventHandler([fieldName, key].join("."), options[key]);
 		}
-		
-		// for each option key
-			//addEventHandler(fieldName+key, options[key]);
-		
+				
 		return validator;
 	}
 	
