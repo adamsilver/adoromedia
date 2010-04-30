@@ -2,10 +2,6 @@
 * @fileOverview Adoro FormValidator object
 * @name FormValidator
 */
-/**
-* @namespace Root namespace for holding all Adoro objects
-* @name Adoro
-*/
 var Adoro = Adoro || {};
 
 Adoro.isArray = function(value) {
