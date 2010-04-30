@@ -27,11 +27,6 @@
  * @version 1
  */
 
-/**
- * @namespace Root namespace for holding all Adoro objects
- * @static
- * @name Adoro
- */
 var Adoro = Adoro || {};
 
 /**

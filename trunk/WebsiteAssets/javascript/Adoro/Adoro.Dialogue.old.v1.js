@@ -24,11 +24,6 @@
 var Adoro = Adoro || {};
 Adoro.Dialogue = {};
 $(document).ready(function(){
-	/**
-	 * LightBox object which will append an overlay and dialogue to the HTML page with various public methods
-	 * @constructor
-	 * @static
-	 */
 	Adoro.Dialogue = new (function(){
 		/*
 		 * Known, fixed issues.
@@ -68,13 +63,6 @@ $(document).ready(function(){
 			$(window).scroll(fixOverlay);
 		}
 		
-		/**
-		* Show overlay
-		* @function
-		* @private
-		* @memberOf Adoro.LightBox
-		* @name showOverlay
-		*/			
 		function showOverlay(options) {
 			if(state.showingOverlay) return;
 			var config = {animate: false,opacity: "0.8"};
@@ -94,33 +82,11 @@ $(document).ready(function(){
 			state.showingOverlay = true;
 		}
 
-		/**
-		* Hide overlay
-		* @function
-		* @private
-		* @memberOf Adoro.LightBox
-		* @name hideOverlay
-		*/			
 		function hideOverlay(options){
 			state.showingOverlay = false;
 			$(overlay).css("display", "none");
 		}
-		
-		/**
-		* Show dialogue
-		* @function
-		* @public
-		* @memberOf Adoro.LightBox
-		* @name showLightBox
-		* @param {Object} options for the function
-		* @param {Number} options.x The dialogue x coordinate for positioning, default center
-		* @param {Number} options.y The dialogue y coordinate for positioning, default center
-		* @param {Boolean} options.animateDialogue If true the dialogue will animate, default false
-		* @param {Boolean} options.animateOverlay If true the overlay will animate, defailt false
-		* @param {Boolean} options.showOverlay If true the overlay will be shown, otherwise it will not be shown, default true.
-		* @param {Boolean} options.closeOnOverlayClick If true the dialogue and overlay will close when the overlay is clicked, otherwise false, default true
-		* @param {String} options.overlayOpacity The opacity value between "0" and "1". Default value "0.8"
-		*/			
+				
 		function showDialogue(options) {
 			var config = {
 				animateDialogue: false,
@@ -187,13 +153,6 @@ $(document).ready(function(){
 			return false;
 		}
 		
-		/**
-		* Hide dialogue
-		* @function
-		* @public
-		* @memberOf Adoro.LightBox
-		* @name hideLightBox
-		*/	
 		function hideDialogue(options) {
 			var config = {
 				closeOverlay: true
@@ -214,33 +173,16 @@ $(document).ready(function(){
 			
 			return false;
 		}
-
-		/**
-		* Set the inner HTML for the dialogue
-		* @function
-		* @public
-		* @memberOf Adoro.LightBox
-		* @name setHTML
-		*/			
+		
 		function setHTML(html) {
 			dialogue.innerHTML = html;
 			setCloseEvent();
 		}
-		
-		/**
-		 * apply close event to close buttons
-		 * @function
-		 * @private
-		 */
+
 		function setCloseEvent() {
 			$(dialogue).find("a."+config.closeClass).bind("click", hideDialogue);
 		}		
-		
-		/**
-		 * Fixes overlay by setting coordinates and dimensions
-		 * @function
-		 * @private
-		 */
+
 		function fixOverlay() {
 			$(overlay).css({
 				height: $(window).height()+"px",
