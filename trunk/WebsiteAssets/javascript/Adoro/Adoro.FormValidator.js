@@ -292,10 +292,7 @@ Adoro.FormValidator = function(formNode, options) {
 		
 		for(var i = 0;i<validators.length;i++) {
 			validator = validators[i];
-			rules = validator.getInvalidRules();
-			for(var j = 0; j < rules.length; j++) {
-				rules[j].hasError = false;
-			}
+			rules = validator.clearErrors();
 		}
 	}
 	
@@ -364,8 +361,16 @@ Adoro.FormValidator = function(formNode, options) {
 			}
 			return invalidRules;
 		},
-		validate: function(yoyo) {
+		clearErrors: function() {
+			var rules = this.getInvalidRules();
+			for(var j = 0; j < rules.length; j++) {
+				rules[j].hasError = false;
+			}
+		},
+		validate: function(clearErrors) {
 			$(document).trigger([fvId, this.fieldName,"onFieldValidateStart"].join("."), [this.$field]);		
+			
+			if(clearErrors !== false) this.clearErrors();
 			
 			var rules = this.getRules(),
 				i = 0,
