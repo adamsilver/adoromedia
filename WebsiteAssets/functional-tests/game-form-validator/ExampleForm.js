@@ -91,7 +91,7 @@ $(function() {
 		// validate and find out if ok
 		// if !ok then return otherwise show success message
 		// add events - just incase they then blur off the year field		
-		
+		return;
 		fv.removeEventHandler("year.onFieldFail", fieldOnFail);
 		fv.removeEventHandler("year.onFieldSuccess", fieldOnSuccess);
 		var v = fv.getValidator("year").validate();		
@@ -112,7 +112,14 @@ $(function() {
 	elements["year"] = {};
 	elements["year"].element = $form.find('[name="year"]');
 	elements["year"].fh = new FieldHandler(elements["year"].element);
-	fv.addEventHandler("year.onFieldFail", fieldOnFail);
+	fv.addEventHandler("year.onFieldFail", function(e, field, invalidRules) {
+		// this is good when the form is submitted as opposed to the field being blurred
+		// it means that if month has invalid rules then dont override with year rules
+		// as the field is sharing a space in the html to output a message etc
+		// doesn't affect on blur really - would need to check
+		if(fv.getValidator("month").getInvalidRules().length > 0) return;
+		elements[field.attr("name")].fh.fail(invalidRules[0].message);
+	});
 	fv.addEventHandler("year.onFieldSuccess", fieldOnSuccess);
 	elements["year"].element.bind("blur", function() {
 		if(!fv.getValidator("month").validate()) return;		
@@ -174,8 +181,8 @@ $(function() {
 		submitPostCodeClicked  =true;
 	});
 	
-	$(node).submit(function() {
-	
+	$form.submit(function() {
+		$form.find("div.message").remove();
 		var valid = true;
 		if(submitPostCodeClicked) {
 			valid = fv.validate(["postcode"]);
@@ -186,79 +193,5 @@ $(function() {
 		submitPostCodeClicked = false;
 		return valid;
 	});
-	
-	//var $input = $form.find("input[name='firstName']");
-	//var fh = new FieldHandler($input);
-	
-	//fv.addEventHandler("firstName.onFieldFail", function(e, field, invalidRules) {
-		//fh.fail(invalidRules[0].message);
-	//});
-	/*
-	$input.bind("blur", function() {
-		fv.getValidator("firstName").validate();
-	});*/
 
-	
-	return;	
-	
-	/* option 2 */
-				
-				var node = document.getElementById("form1");
-				var fv = new GameFormValidator(node);
-				
-				fv.addValidator("firstName", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "First name required"
-				}]);
-				
-				fv.addValidator("email", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "Email required"
-				},{
-					method: Adoro.FormRules.emailAddress,
-					message: "Email is invalid"
-				}]);
-				
-				fv.addValidator("month", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "month is required"
-				}]);
-				
-				fv.addValidator("year", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "year is required"
-				}]);				
-				
-				fv.addValidator("postcode", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "Postcode is invalid"
-				}]);
-				
-				
-				
-				fv.addValidator("terms", [{
-					method: Adoro.FormRules.minChecked,
-					params: {minChecked: 1},
-					message: "Check terms etc"
-				}]);
-				
-				var submitPostCodeClicked = false;
-				
-				$("#submitPostcode").bind("click", function() {
-					submitPostCodeClicked  =true;
-				});
-				
-				$(node).submit(function() {
-					var valid = true;
-					if(submitPostCodeClicked) {
-						valid = fv.validate(["postcode"]);
-					}
-					else {
-						valid = fv.validate();
-					}
-					submitPostCodeClicked = false;
-					return valid;
-				});
-				
-				
-			});
+});
