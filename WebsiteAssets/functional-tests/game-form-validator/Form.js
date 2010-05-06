@@ -1,6 +1,4 @@
-
 $(function() {
-
 	var node = document.getElementById("form1");
 	var fv = new Adoro.FormValidator(node);
 	var $form = $(node);
@@ -179,7 +177,7 @@ $(function() {
 	var submitPostCodeClicked = false;
 	
 	$("#submitPostcode").bind("click", function() {
-		submitPostCodeClicked  =true;
+		submitPostCodeClicked  = true;
 	});
 	
 	$form.submit(function() {
