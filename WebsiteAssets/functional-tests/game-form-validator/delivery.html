@@ -5,6 +5,9 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.Tooltip.js"></script>
+		<script type="text/javascript" src="../../javascript/jQuery/jquery.bgiframe.js"></script>
+		<script type="text/javascript" src="FormHints.js"></script>
 		<script type="text/javascript" src="Delivery.js"></script>
 		<style>
 			#container {
@@ -49,6 +52,14 @@
 				color: #ff0000;
 			}
 			
+			
+			
+			div.hintTipAdam {
+				border: 1px solid #ccc;
+				background-color: #fff;
+				padding: 10px;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -71,6 +82,9 @@
 							<option value="">Select</option>
 							<option value="Mr">Mr</option>
 						</select>
+					</div>
+					<div class="hint">
+						<div class="info">This is a hint for the field</div>
 					</div>
 				</div>
 				<div class="field">
