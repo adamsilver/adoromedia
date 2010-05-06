@@ -1,120 +1,123 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<title>Game Form Validator prototype</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				
-				function GameFormValidator(node) {
-					var fv = new Adoro.FormValidator(node);
-					
-					function FieldHandler($input) {						
-						var $field = $input.parents("div.field");
-						
-						this.fail = function(message) {
-							$field.find("div.message").remove();
-							$field.append('<div class="message">'+message+'</div>');
-						}
-						
-						this.success = function() {
-							var message = "all gooooOOooood!";
-							$field.find("div.message").remove();
-							$field.append('<div class="message">'+message+'</div>');
-						}
-					}
-					
-					this.addValidator = function(fieldName, rules, options) {
-						var v = fv.addValidator(fieldName, rules, options);
-						
-						var fh;
-						
-						fv.addEventHandler(fieldName+".onFieldFail", function(e, field, invalidRules) {
-							if(!fh) {
-								fh = new FieldHandler($(field));
-							}
-							fh.fail(invalidRules[0].message);
-						});
-						
-						fv.addEventHandler(fieldName+".onFieldSuccess", function(e, field) {
-							if(!fh) {
-								fh = new FieldHandler($(field));
-							}
-							fh.success();
-						});						
-						
-						$(node).find('input[name="'+fieldName+'"]').bind("blur", function(e){
-							fv.getValidator(fieldName).validate();
-						});
-						
-						return v;
-					}
-					
-					for(var key in fv) {
-						if(this[key]) continue;
-						this[key] = fv[key];
-					}		
-					
-				}
-				
-				var node = document.getElementById("form1");
-				var fv = new GameFormValidator(node);
-				
-				$(node).submit(function() {
-					return fv.validate();	
-				});
-				
-				fv.addValidator("firstName", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "First name is invalid"
-				}]);
-				
-				fv.addValidator("lastName", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "Last name is invalid"
-				},{
-					method: Adoro.FormRules.emailAddress,
-					message: "last name should be email"
-				}]);
-				
-				fv.addValidator("postcode", [{
-					method: Adoro.FormRules.notEmpty,
-					message: "Postcode is invalid"
-				}]);
-				
-				fv.addValidator("terms", [{
-					method: Adoro.FormRules.minChecked,
-					params: {minChecked: 1},
-					message: "Check terms etc"
-				}]);
-				
-			});
-			
-			
+		
+		<script type="text/javascript" src="GameFormValidator.js"></script>
+		
+		<script type="application/x-javascript">
+		
+			var error1 = "${}"
+			var error2 = "${}"
+			var error3 = "${}"
 			
 		</script>
+		
+		<script src="path/to/jsp"></script>
+		
+		<!--path/to/jsp:
+		
+		var error1 = ${}-->
+		
+		
+		<script type="text/javascript" src="ExampleForm.js"></script>
+		<script type="text/javascript">
+			
+		</script>
+		<style>
+			div.field {
+				border: 1px solid #ccc;
+				padding: 10px;
+				margin-bottom: 10px;
+				overflow: hidden;
+			}
+			
+			div.field div.message {
+				clear: both;
+				padding-top: 10px;
+			}
+			
+			div.field div.indicator {
+				float: left;
+				width: 100px;
+			}
+			
+			#primarySubmit2 {
+				position: absolute;
+				left: -999em;
+			}
+			
+			div.expiryDate div.input {
+				float: left;
+				margin-right: 10px;
+			}
+			
+			div.expiryDate label,
+			div.select label {
+				position: absolute;
+				left: -999em;
+			}
+			
+			div.expiryDate div.element {
+				overflow: hidden;
+			}
+			
+			div.radios,
+			div.multiple {
+				float: left;
+				width: 600px;
+			}
+			
+			div.select {
+				float: left;
+			}
+			
+			
+		</style>
 	</head>
 	<body>
 		<h1>Game Form Validator</h1>
 		
 		<div id="container">
+			
+
 			<form id="form1" action="#/blah/blah" method="post">
-				<div class="field">
+				<input type="submit" id="primarySubmit2" name="primarySubmit" value="Primary submit" />
+				<div class="field ">
 					<div class="indicator">
 						<label for="firstName">first name</label>
 					</div>
 					<div class="element">
 						<input type="text" name="firstName" id="firstName" />
-					</div>
+					</div>					
 				</div>
+				
 				<div class="field">
 					<div class="indicator">
-						<label for="lastName">last name</label>
+						<label for="email">email</label>
 					</div>
 					<div class="element">
-						<input type="text" name="lastName" id="lastName" />
+						<input type="text" name="email" id="email" />
 					</div>
+				</div>
+				
+				<div class="field expiryDate">
+					<div class="indicator">
+						<span class="label">expiry date</span>
+					</div>
+					<div class="element">
+						<div class="input">
+							<label for="month">month</label>
+							<input type="text" name="month" id="month" />							
+						</div>
+						<div class="input">
+							<label for="year">year</label>
+							<input type="text" name="year" id="year" />							
+						</div>
+					</div>					
 				</div>
 				
 				<div class="field">
@@ -124,10 +127,9 @@
 					<div class="element">
 						<input type="text" name="postcode" id="postcode" />
 					</div>
-				</div>				
-				
+				</div>
 				<input type="submit" id="submitPostcode" name="submitPostcode" value="Submit post code" />
-				
+				<br/><br/>
 				<div class="field">
 					<div class="indicator">
 						<span class="label">Terms</span>
@@ -137,7 +139,58 @@
 						<label for="terms">Terms</label>
 					</div>
 					<!--<div class="message">from server side</div>-->
-				</div>				
+				</div>			
+
+				<div class="field">
+					<div class="indicator">
+						<span class="label">Choice</span>
+					</div>
+					<div class="radios">
+						<div class="radio">
+							<input type="radio" name="choice" id="choice1" />
+							<label for="choice1">Choice 1</label>
+						</div>
+						<div class="radio">
+							<input type="radio" name="choice" id="choice2" />
+							<label for="choice2">Choice 2</label>
+						</div>
+						<div class="radio">
+							<input type="radio" name="choice" id="choice3" />
+							<label for="choice3">Choice 3</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="field">
+					<div class="indicator">
+						<span class="label">Date</span>
+					</div>
+					<div class="multiple">
+						<div class="select">
+							<label for="date_dd">day</label>
+							<select name="date_dd" id="date_dd">
+								<option value="">Please select</option>
+								<option value="1">A value</option>
+							</select>
+						</div>
+						<div class="select">
+							<label for="date_mm">month</label>
+							<select name="date_mm" id="date_mm">
+								<option value="">Please select</option>
+								<option value="1">A value</option>
+							</select>
+						</div>
+						<div class="select">
+							<label for="date_yy">year</label>
+							<select name="date_yy" id="date_yy">
+								<option value="">Please select</option>
+								<option value="1">A value</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				
 				<input type="submit" id="primarySubmit" name="primarySubmit" value="Primary submit" />
 			</form>
 		</div>	
