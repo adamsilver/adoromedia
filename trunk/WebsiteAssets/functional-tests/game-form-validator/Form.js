@@ -194,3 +194,29 @@ $(function() {
 	});
 
 });
+
+
+/* TEST CODE TO TRY OUT AT SOME POINT
+var fv = new Adoro.FormValidator();
+fv.addValidator("month", [{}]);
+fv.addValidator("year", [{}]);
+fv.addEventHandler("month.onFieldFail", function(e, field, invalidRules) {
+	// create error message for field
+});
+fv.addEventHandler("month.onFieldSuccess", function(e, field) {
+	// if year is valid then show success message
+});
+fv.addEventHandler("year.onFieldFail", function(e, field, invalidRules) {
+	// if the month is valid then show the error message
+});
+fv.addEventHandler("year.onFieldSuccess", function(e, field) {
+	// if the month is valid then show the error message
+});
+*/
+
+
+
+
+
+
+
