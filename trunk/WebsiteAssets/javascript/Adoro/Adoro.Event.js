@@ -59,45 +59,14 @@ Adoro.Event = function() {
 	this.handler = handler;
 	this.events = events;
 		
-	/**
-	* Contains accessor methods for the first and last indexes.
-	* Created automatically with each instance of J2.Event
-	* @class
-	* @static
-	* @name eventIndexes
-	* @memberOf J2.Event
-	*/
+
 	this.eventIndexes = new (function() {
 		var first = 999, last = -999;
-		/**
-		* Retrieve the first index.
-		* Decrements the value of the first index each time. 
-		* @name first
-		* @function
-		* @memberOf J2.Event.eventIndexes
-		* @return {Number}
-		*/
 		this.first = function() { return first--; };
-		/**
-		* Retrieve the last index.
-		* Increments the value of the first index each time. 
-		* @name last
-		* @function
-		* @memberOf J2.Event.eventIndexes
-		* @return {Number}
-		*/
+
 		this.last = function() { return last++; };
 	});
-	/**
-	* Add a new subscriber to this event 
-	* @name listen
-	* @memberOf Adoro.Event
-	* @function
-	* @param {Function} fn The function to subscribe to this event handler
-	* @param {Object} [context] The context that the handler should be called in.  Defaults to the event handler object itself.
-	* @param {Number} [sortIndex] The sort index for this subscriber
-	* @return {Function} The function subscribed to the event handler
-	*/
+
 	this.listen = function(fn, context, sortIndex) {
 		var event = [fn, context || this, sortIndex || 99]
 		if (handler.firing)
@@ -106,13 +75,7 @@ Adoro.Event = function() {
 			events.push(event);
 		return fn;
 	};
-	/**
-	* Remove a subscriber from this event
-	* @name removeListener
-	* @memberOf J2.Event
-	* @function
-	* @param {Function} fn The function to remove as a subscriber from the event handler
-	*/
+
 	this.removeListener = function(fn) {
 		//find the event handler
 		//the event handler could have been added multiple times hence loop through complete array
@@ -125,27 +88,13 @@ Adoro.Event = function() {
 			}
 		}
 	};
-	/**
-	* Remove all subscribers from this event
-	* @name removeAllListeners
-	* @memberOf J2.Event
-	* @function
-	*/
+
 	this.removeAllListeners = function() {
 		if (handler.firing)
 			handler.removeAllListeners();
 		else
 			events = [];
 	}
-	/**
-	* Event handler binding function.
-	* Use this function to fire the event this instance of the J2.Event is being used for
-	* Can be called directly to manually fire the event handling routing
-	* @name fire
-	* @memberOf J2.Event
-	* @function
-	* @param {Object} e Event object (or empty object for manual firing)
-	* @return {Boolean} Subscriber return values.  Default return is true. If any subscriber returns false, handleEvent will return false
-	*/
+
 	this.fire = handler.fire;
 };

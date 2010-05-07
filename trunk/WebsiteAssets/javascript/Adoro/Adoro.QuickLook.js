@@ -1,6 +1,6 @@
 if(typeof Adoro !== "object") var Adoro = {};
 
-/**
+/*
 * Convert a double delimited list such as the querystring into an object.  The delimiters can be defined as any set of two delimeters or they will default to & and = as per a querystring.
 * @param {Array} delimeters An array of delimiters to split the string by
 * @return {Object}

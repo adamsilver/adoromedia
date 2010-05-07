@@ -23,11 +23,11 @@
 
 if(typeof Adoro !== "object") var Adoro = {};
 
-/**
+/*
 * Create a new form validator object
 * @class Represents a form validator object
 * @constructor
-* @name Adoro.FormValidator
+* @name Adoro.FormValidator.old.v1
 * @param {HTMLElement} form as DOM reference
 * @param {Object} options
 * @param {String} options.errorClass
@@ -35,7 +35,7 @@ if(typeof Adoro !== "object") var Adoro = {};
 * @param {String} options.hideClass
 * @param {String} options.errorSpanClass
 */
-Adoro.FormValidator = function(form, options) {
+Adoro.FormValidatorOldV1 = function(form, options) {
 	var docTitle = document.title;
 
 	var config = { 
@@ -200,8 +200,9 @@ Adoro.FormValidator = function(form, options) {
 	/**
 	 * Create a new form validator object
 	 * @class Represents a validator object
+	 * @private
 	 * @constructor
-	 * @name Adoro.FormValidator
+	 * @name Validator
 	 * @param {Node[]} field An array of nodes
 	 * @param {Array} rules The rules for the validator
 	 */

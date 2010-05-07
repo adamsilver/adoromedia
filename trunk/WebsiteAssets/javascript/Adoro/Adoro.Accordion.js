@@ -1,8 +1,8 @@
 var Adoro = Adoro || {};
 Adoro.Accordion = function(anchors, options) {
-	var anchors = jQuery.makeArray(anchors);
+	anchors = jQuery.makeArray(anchors);
 	var animating = false;
-	var options = options || {};
+	options = options || {};
 	var extraSets = options.extraSets || [];
 	var cssActiveClass = options.cssActiveClass || "selected";
 	var alwaysOpen = options.alwaysOpen || false;
