@@ -1,6 +1,6 @@
 var Adoro = Adoro || {}
 $(document).ready(function(){
-	/**
+	/*
 	 * Scan document for all inputs, textareas and selects and add field highlighting functionality
 	 * @constructor
 	 * @static

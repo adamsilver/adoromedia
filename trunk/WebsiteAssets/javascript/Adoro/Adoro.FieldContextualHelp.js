@@ -1,6 +1,6 @@
 if(typeof Adoro !== "object") var Adoro = {};
 
-/**
+/*
  * @constructor Creates a contextual help hint
  * @class Represents a Field contextual help hint
  * @param {Node} field The field which shows the contextual help

@@ -23,11 +23,14 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 /**
- * Create a Google Map
  * @constructor
- * @class Represents a Google Map
+ * @class Populate an HTML element with an interactive Google Map from an address string
  * @param {Node} container Container node for the map to be injected
- * @param {String} address Address string to show a map
+ * @param {String} address The address of the map you wish to show
+ * @example
+ * var container = document.getElementById("mapContainer");
+ * var address = "10 Downing St, Westminster, London SW1A 2, UK"
+ * new Adoro.GoogleMap(container, address);
  */
 Adoro.GoogleMap = function(container, address) {
 	if(container === null) return;
