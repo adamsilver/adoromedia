@@ -23,7 +23,7 @@
 
 if(typeof Adoro !== "object") var Adoro = {};
 
-/**
+/*
  * Create a new tabset module.
  * @constructor
  * @class Represents a tabset.
