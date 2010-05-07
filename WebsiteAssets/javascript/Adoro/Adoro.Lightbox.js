@@ -1,9 +1,5 @@
 if (typeof Adoro !== "object") { var Adoro = {}; }
 
-/**
- * @constructor
- * @class Represents a light box image group
- */
 Adoro.Lightbox = function(anchors, options) {
 	if(anchors.length === 0) return null;
 	var lightBoxImages = [];

@@ -1,17 +1,10 @@
-/**
-* @fileOverview Adoro History object
-* @name History
-*/
-
 var Adoro = Adoro || {};
 
 /**
- * History object
- * @class (singleton) Represents the history object
  * @constructor
  * @static
- * @name History
- * @memberOf Adoro
+ * @namespace A control to provide AJAX and JavaScript history management
+ * including browser back button, forward button and bookmarking.
  * @requires jQuery 1.4.2
  */
 Adoro.History = new (function(){

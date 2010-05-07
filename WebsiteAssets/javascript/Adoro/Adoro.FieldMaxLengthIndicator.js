@@ -23,8 +23,7 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 /**
- * Create a new field max length indicator
- * @class Represents a FieldMaxLength
+ * @class Create an indicator that shows how many characters you have left before input reaches it's limit
  * @constructor
  * @param {Node} field Reference to field element
  * @param {Object} options The options for the instance

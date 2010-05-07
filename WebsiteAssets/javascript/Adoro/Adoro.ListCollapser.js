@@ -24,8 +24,7 @@
 if(typeof Adoro !== "object") var Adoro = {};
 
 /**
- * Create a collapseable list
- * @class Represents a collapseable list
+ * @class A control to expand and collapse a certain amount of list elements within a list
  * @constructor 
  * @param {Node} activator DOM reference to activator which controls the showing and hiding
  * @param {Node} ul The DOM reference to the UL which has collapseable list items
