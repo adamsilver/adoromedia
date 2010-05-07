@@ -23,11 +23,7 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 $(document).ready(function(){ 
-	/**
-	 * Scans dom for all promotions and also provides an add method
-	 * @constructor
-	 * @static
-	 */
+
 	Adoro.Promo = new (function() {
 		var promos = $("div.promotions");
 		for (var i = promos.length-1; i >= 0; i--) {

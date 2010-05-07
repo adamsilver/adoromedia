@@ -24,8 +24,7 @@
 if (typeof Adoro !== "object") var Adoro = {};
 
 /**
- * Create a new star rating GUI.
- * @class Represents a StarRating
+ * @class Control to enhance a set of radios into a star rating user interface component
  * @constructor
  * @param {Nodes[]} radios Collection of radio input elements
  */

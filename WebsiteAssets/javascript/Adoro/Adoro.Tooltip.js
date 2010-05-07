@@ -24,8 +24,7 @@
 if (typeof Adoro !== "object") var Adoro = {};
 
 /**
- * Create a new tooltip
- * @class Represents a tooltip
+ * @class Create tooltips that can optionally follow the mouse and detect viewport thresholds.
  * @constructor
  * @param {Node} activator The element that triggers the showing of a tooltip
  * @param {String} content The "innerHTML" for the contents of the tooltip
