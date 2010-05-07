@@ -1,4 +1,10 @@
 var Adoro = Adoro || {};
+
+/**
+ * @class For a given checkbox group, this control will ensure that there is a maximum amount of
+ * checkboxes that can be checked.
+ * @constructor
+ */
 Adoro.CheckboxDisabler = new(function(){
 	function toggleCheckboxes(checkboxes) {
 		var count = getCheckedCount(checkboxes);

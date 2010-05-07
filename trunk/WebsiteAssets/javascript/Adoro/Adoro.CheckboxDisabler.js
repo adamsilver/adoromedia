@@ -22,7 +22,7 @@
 //  ---------------------------------------------------------------------------------------------------------
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
-/**
+/*
  * Create CheckboxDisabler instances
  * @class Represents a CheckboxDisabler module
  * @constructor

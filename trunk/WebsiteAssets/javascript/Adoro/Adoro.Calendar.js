@@ -23,10 +23,9 @@
 
 if (typeof Adoro !== "object") { var Adoro = {}; }
 /**
-* Create a new calendar
-* @class Represents a calendar
+* 
+* @class Create a calendar control to help fill in form elements that require a date format
 * @constructor
-* @name Adoro.Calendar
 * @param {Object} options Optional properties for this calendar instance
 * @param {Date} options.dateStart The start date
 * @param {Date} options.dateEnd The end date
@@ -46,7 +45,6 @@ if (typeof Adoro !== "object") { var Adoro = {}; }
 * @param {HTMLElement} options.appendCalendarTo The element that the calendar will be appended into the DOM
 * @param {String} options.hasLinkClass The class name for the associated link
 */
-
 Adoro.Calendar = function() {
 	var config = { 
 		dateStart: (function() {

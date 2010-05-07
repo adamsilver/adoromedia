@@ -1,9 +1,8 @@
 var Adoro = Adoro || {};
 /**
-* Cookie object for adding, getting, setting and deleting cookies.
 * @constructor
-* @name Adoro.Cookie
 * @static
+* @namespace Create, get and set cookie values
 */
 Adoro.Cookie = new (function() {
 	var Collection = null;

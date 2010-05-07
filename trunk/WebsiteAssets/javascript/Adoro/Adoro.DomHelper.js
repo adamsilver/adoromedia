@@ -1,43 +1,10 @@
-//  ---------------------------------------------------------------------------------------------------------
-//  --- license header; ---
-//  ---------------------------------------------------------------------------------------------------------
-/* Copyright (c) 2008 - 2009 by Adoro Media
-	info@adoromedia.com
-  	
-  	This file is part of Adoro Media open source projects
-  	
-    Adoro Media projects are free software: you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
- 
-    The projects are distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
- 
-    See <http://www.gnu.org/licenses/> for information on the GNU Lesser General Public License.
-*/
-//  ---------------------------------------------------------------------------------------------------------
-//  ---------------------------------------------------------------------------------------------------------
-
-/**
-* @fileOverview Adoro DomHelper object
-* @name DomHelper
-*/
-
 var Adoro = Adoro || {};
 
 /**
- * Dom helper object
- * <br/><br/> Helps get valid XML/XHTML string from the DOM
- * <br/><br/> Useful for parsing valid XML/XHTML into Flash as .innerHTML doesn't parse
  * @constructor
- * @class (singleton) Represents the DomHelper object
+ * @namespace Container for Dom helper methods. Useful for parsing valid xml/xhtml into Flash as
+ * .innerHTML doesn't parse
  * @static
- * @name DomHelper
- * @memberOf Adoro
- * @requires jQuery 1.3.1 or above
  */
 Adoro.DomHelper = new (function() {
 	
@@ -49,6 +16,7 @@ Adoro.DomHelper = new (function() {
 	 * @memberOf Adoro.DomHelper
 	 * @param {DOMNode} node The node which is used to get the innerXml
 	 * @returns {string} i.e. '<div id="theId">hello</div>'
+	 * @requires jQuery 1.3.1 or above
 	 */	
 	function getInnerXml(node) {
 		var s = "";
@@ -106,6 +74,7 @@ Adoro.DomHelper = new (function() {
 	 * @memberOf Adoro.DomHelper
 	 * @param {DOMNode} node Any attributes this node has will be returned as a string
 	 * @returns {string} i.e. 'id="theId" src="path/to/img"'
+	 * @requires jQuery 1.3.1 or above
 	 */
 	function getAttributesAsString(node) {
 		var s = "";
