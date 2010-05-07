@@ -24,9 +24,8 @@
 if(typeof Adoro !== "object") var Adoro = {};
 
 /**
- * Creates a collapseable area which can toggle show and hide
  * @constructor
- * @class Represents a collapseable object
+ * @class Create collapsable areas that can be optionally animated
  * @param {Node} panel The DOM reference to the collapseable panel
  * @param {Object} options The options for the instance
  * @param {Boolean} options.startOpen When true the collapseable panel is open on object creation (typically onload/domready)

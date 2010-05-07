@@ -12,8 +12,8 @@ if(typeof Adoro !== "object") var Adoro = {};
  * @param {Sring} options.placement The placement of the contextual help relative to the field. can be "right", "left", "top" or "bottom".
  */
 Adoro.FieldContextualHelp = function(field, content, options) {
-	var field = field || null;
-	var content = content || null;
+	field = field || null;
+	content = content || null;
 	if(!field || !content) return null;
 	
 	document.body.appendChild(content);	

@@ -24,8 +24,7 @@
 var Adoro = Adoro || {};
 
 /**
- * Creates a field thats default value is a placeholder
- * @class Represents an input default field.
+ * @class Apply a default value to a form element.
  * @constructor
  * @param {Node} field The input field
  */

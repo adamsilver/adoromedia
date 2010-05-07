@@ -24,7 +24,7 @@
 var Adoro = Adoro || {};
 
 /**
- * @class Represents a drop down menu
+ * @class Create a drop down menu from a nested list
  * @constructor Create a drop down menu
  * @param {Node} ul The root ul node for the drop down menu
  * @param {Object} options The options for the instance
@@ -42,7 +42,7 @@ Adoro.DropDownMenu = function(ul, options) {
 		delay: 300
 	};
 	
-	var options = options || {};
+	options = options || {};
 	config.subMenuType = options.subMenuType || config.subMenuType;
 	config.cssActiveClass = options.cssActiveClass || config.cssActiveClass;
 	config.cssHideClass = options.cssHideClass || config.cssHideClass;
@@ -70,6 +70,7 @@ Adoro.DropDownMenu = function(ul, options) {
 	
 	/**
 	 * The abstraction to handle the interaction between a link and the associated sub menu.
+	 * @private
 	 * @param {Node} link
 	 * @param {Node} li
 	 * @param {Node} subMenu

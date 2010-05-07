@@ -2,7 +2,9 @@ var Adoro = Adoro || {};
 
 /**
  * Dialogue object
- * @class Singleton - represents the dialogue object
+ * @constructor
+ * @static
+ * @namespace Control the contents and display of a dialogue with a screen overlay
  * @example
  * // example
  * Adoro.Dialogue.setHtml("&lt;p&gt;my html string&lt;/p&gt;");
