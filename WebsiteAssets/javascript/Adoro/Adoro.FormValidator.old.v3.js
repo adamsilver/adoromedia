@@ -51,7 +51,7 @@ Adoro.FormValidator = function(formNode, options) {
         $().bind([thisValidaterID, eventType].join("."), handler);
     }
     this.removeEventHandler = function(eventType, handler) {
-        $().unbind(....);
+        //$().unbind(....);
     }
     
 	
@@ -444,7 +444,6 @@ Adoro.FormValidator = function(formNode, options) {
 	this.removeError = removeError;
 };
 
-/******************************************************************************************/
 
 var Adoro = Adoro || {};
 
@@ -881,7 +880,6 @@ Adoro.FormValidator2 = function(formNode, options) {
 	this.removeError = removeError;
 };
 
-/****************************************************************************************************/
 
 (function(){
 /*

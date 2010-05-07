@@ -1,8 +1,3 @@
-/**
-* @fileOverview Adoro FormValidator object
-* @name FormValidator
-*/
-
 var Adoro = Adoro || {};
 /**
 * Create a new form validator object
