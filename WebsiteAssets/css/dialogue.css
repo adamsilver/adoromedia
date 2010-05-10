@@ -1,5 +1,5 @@
 div#overlay {
-	background-color:#FFFFFF;
+	background-color:#CCC;
 	display:none;
 	height:100%;
 	left:0;
@@ -9,9 +9,13 @@ div#overlay {
 	z-index:50;
 }
 
-div#dialogue {
+div#dialogue, div.dialogue {
 	left:-99999em;
 	position:absolute;
 	top:0;
 	z-index:99;
+}
+
+.hide {
+	display: none;
 }
