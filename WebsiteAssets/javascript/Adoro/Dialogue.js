@@ -1,66 +1,57 @@
 
 var Dialogue = new (function() {
-	
-	var $window = $(window);
-	
-	var IE6 = ($.browser.msie && parseInt($.browser.version) === 6);
-	
-	var FF2 = ($.browser.mozilla && parseInt($.browser.versionX) === 2);
-	
-	// all dialogues share one overlay...
-	var Overlay = new (function() {
-		
-		var me = this;
-		
-		var root = null;
-		
-		$(init);
-		
-		function fix() {
-			root.css({
-				height: $window.height()+"px",
-				width: $window.width()+"px",
-				left: $window.scrollLeft()+"px",
-				top: $window.scrollTop()+"px"
-			});
-		}
-	
-		this.show = function() {
-			root.css("display", "block");
-			// needs to be done for when the dialogue increases the page size
-			if(IE6) {
-				$(dialogue).bgiframe();
-				fixOverlay();
+	var $window = $(window),
+		IE6 = ($.browser.msie && parseInt($.browser.version) === 6),
+		FF2 = ($.browser.mozilla && parseInt($.browser.versionX) === 2),
+		cssHideClass = "hide",
+		Overlay = new (function() {
+			var me = this,
+				root = null;
+			
+			$(init);
+			
+			function fix() {
+				root.css({
+					height: $window.height()+"px",
+					width: $window.width()+"px",
+					left: $window.scrollLeft()+"px",
+					top: $window.scrollTop()+"px"
+				});
 			}
-		}
 		
-		this.hide = function() {
-			root.css("display", "none");
-		}
-		
-		function init() {
-			root = $('<div/>', {
-				id: "overlay"
-			}).appendTo("body");
-			root.bgiframe();
-			$window.bind("resize scroll", fix);
-			me.hide();
-		}	
-		
-	});
+			this.show = function() {
+				root.css("display", "block");
+				// needs to be done for when the dialogue increases the page size
+				if(IE6) {
+					$(dialogue).bgiframe();
+					fixOverlay();
+				}
+			}
+			
+			this.hide = function() {
+				root.css("display", "none");
+			}
+			
+			function init() {
+				root = $('<div/>', {
+					id: "overlay"
+				}).appendTo("body");
+				root.bgiframe();
+				if(IE6 || FF2) {
+					$window.bind("resize", fix);
+					$window.bind("scroll", fix);
+				}
+				me.hide();
+			}	
+			
+		});
 	
-	
-	var cssHideClass = "hide";
-	
-	// can have many dialogues...
 	function Dialogue(id) {
 		id = id || "dialogue"+new Date.getTime();
 		this.root = $('<div/>', {
 			id: id,
 			class: "dialogue"
 		}).appendTo("body");
-		// give class of "dialogue" to inherit all styles from dialogue.css
-		// id used for dialogue specific styles
 	}
 	Dialogue.prototype = {
 		show: function(options) {
