@@ -1,43 +1,34 @@
-//  ---------------------------------------------------------------------------------------------------------
-//  --- license header; ---
-//  ---------------------------------------------------------------------------------------------------------
-/* Copyright (c) 2008 - 2009 by Adoro Media
-	info@adoromedia.com
-  	
-  	This file is part of Adoro Media open source projects
-  	
-    Adoro Media projects are free software: you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
- 
-    The projects are distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
- 
-    See <http://www.gnu.org/licenses/> for information on the GNU Lesser General Public License.
-*/
-//  ---------------------------------------------------------------------------------------------------------
-//  ---------------------------------------------------------------------------------------------------------
-
 var Adoro = Adoro || {};
 
 /**
  * @class Apply a default value to a form element.
+ * <br/><br/>
+ * If the user focuses and the value in the field
+ * is the default value then the form element will
+ * become blank.
+ * <br/><br/>
+ * If the user blurs and the value in the field is
+ * either empty or the default value then the form
+ * element returns to the default value.
  * @constructor
  * @param {Node} field The input field
+ * @requires jQuery
+ * @example
+ * new Adoro.DefaultTextControl(document.getElementById("myInput"));
  */
 Adoro.DefaultTextControl = function(field) {
-	if(!field || field.type !== "text") return;
-
-	field.onfocus = function() {
+	var $field = $(field);
+	
+	$field.bind("focus", field_onFocus);
+	$field.bind("blur", field_onBlur);
+	
+	function field_onFocus(e) {
 		if(field.value === field.defaultValue) {
 			field.value = "";
 		}
 	}
 	
-	field.onblur = function() {
+	function field_onBlur(e) {
 		if(field.value === "" || field.value === field.defaultValue) {
 			field.value = field.defaultValue;
 		}
