@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Functional test: Filter</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script>
+			/*
+			new PS(hitSurver)
+			1) user types
+			2) onkeyup
+			3) is value in cache
+			3.1) call server to get some data
+			4) data will hold first 10 results
+			5) store each data set agianst value in text box
+			6) showResults - function(data, config) {
+					var currentCategory = "";
+					// loop through each data
+						// if(currentCategory != data[i].category) {
+							<h2>Category</h2>
+						}
+						// for each
+							<li>value<li>
+								
+					
+			   }
+			*/
+			
+			var inputField = document.getElementBy("inputField");
+			var dataSource = [];
+			var dataSource = "http://url.com/search/";
+			var options = {
+				minLengthChars: 3,
+				delayBeforeDataIsChecked: 100,
+				onSearch: function() {
+					// the point in which the search is about to being
+					// return false here to stop search happening in certain situations
+				},
+				onRender: function(data, options) {
+					// return the markup to shove in the drop down overlay
+				}
+			}
+			var ps = new PredictiveSearch(inputField, dataSource, options);
+			
+			
+			
+			var data = ["call of duty", "b", "hcallh", "tbc", "something call", "call1"];
+			
+			var value = "call";
+			
+			function filter(value, data) {
+				var filteredSet = [];
+				var matchAnyCharacter = false;
+				var expression = matchAnyCharacter === true ? value : "^" + value + ".*$";
+				var regEx = new RegExp(expression, "i"), regExResult = false;
+				for (var i = 0, j = data.length; i<j; i++) {
+					regExResult = regEx.test(data[i]);
+					if (regExResult === true) {
+						filteredSet.push(data[i]);
+					}
+				}
+				return filteredSet;				
+			}
+			
+			var result = filter(value, data);
+			
+			console.log(result);
+			
+		
+		</script>
+	</head>
+	<body>
+		<h1>Filter</h1>
+		
+
+		
+		
+		
+	</body>
+</html>
+
+
