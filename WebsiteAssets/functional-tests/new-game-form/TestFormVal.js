@@ -8,7 +8,7 @@ var AppFormHelper = {
 			var $errorMessage = $errorMessage = $("<div></div>", {
 				class: "errorMessage"
 			}).appendTo($divField);
-			$errorMessage.html(invalidRules[0].message);
+			$errorMessage.html(invalidRules[0].messages[0]);
 		});
 		fv.addEventHandler(fieldName+".onFieldValidateStart", function(e, $field) {
 			var $divField = $field.parents("div.field");
@@ -27,10 +27,12 @@ var AppFormHelper = {
 		var $h2 = $("<h2>Some generic error message</h2>");
 		var $ul = $("<ul></ul>");
 		
-		var html = "";
+		var html = "", currentFieldName = null;
 		for(var i = 0; i < errors.length; i++) {
+			if(currentFieldName === errors[i].fieldName) continue;
+			currentFieldName = errors[i].fieldName;
 			html += '<li><a href="#'+errors[i].fieldName+'">';
-			html += errors[i].message;
+			html += errors[i].messages[1];
 			html += '</a></li>';
 		}			
 		
@@ -64,7 +66,7 @@ var TestFormVal = new (function(){
 	}
 	
 	function setupEnter() {
-		$formNode.bind("keydown", function(e) {
+		$formNode.find("input, select, textarea").bind("keydown", function(e) {
 			if (e.keyCode === 13) {
 				$formNode.find("div.helpHint").hide();
 			}
@@ -86,7 +88,7 @@ var TestFormVal = new (function(){
 		
 		fv.addValidator("firstName", [{
 			method: Adoro.FormRules.notEmpty,
-			message: "First name cannot be empty"
+			messages: ["Required", "First name is empty, please fill it"]
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "firstName");
 		
@@ -94,13 +96,13 @@ var TestFormVal = new (function(){
 		
 		fv.addValidator("lastName", [{
 			method: Adoro.FormRules.notEmpty,
-			message: "Last name cannot be empty"
+			messages: ["Required", "Last name is empty, please fill it"]
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "lastName");
 		
 		fv.addValidator("noVal", [{
 			method: Adoro.FormRules.noValidation,
-			message: "blah"
+			message: ["blah", "blah"]
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "noVal");
 		
@@ -108,10 +110,10 @@ var TestFormVal = new (function(){
 		
 		fv.addValidator("telephone", [{
 			method: Adoro.FormRules.number,
-			message: "Telephone name must be a number yah?"	
+			messages: ["Must be a number", "Telephone name must be a number yah?"]
 		},{
 			method: Adoro.FormRules.minLength,
-			message: "Should have a min length of 5",
+			messages: ["blah","Should have a min length of 5"],
 			params: {length: 5}
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "telephone");		
