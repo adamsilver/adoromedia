@@ -76,6 +76,7 @@ var TestFormVal = new (function(){
 			var $divField = $(this).parents("div.field");
 			$divField.find("div.errorMessage").remove();
 			$divField.removeClass("fieldError");
+			$divField.removeClass("fieldSuccess");
 		});
 	}
 	
@@ -87,22 +88,7 @@ var TestFormVal = new (function(){
 			method: Adoro.FormRules.notEmpty,
 			message: "First name cannot be empty"
 		}]);
-		fv.addEventHandler("firstName.onFieldFail", function(e, $field, invalidRules) {
-			var $divField = $field.parents("div.field");
-			$divField.addClass("fieldError");
-
-			var $errorMessage = $errorMessage = $("<div></div>", {
-				class: "errorMessage"
-			}).appendTo($divField);
-			$errorMessage.html(invalidRules[0].message);
-		});
-		fv.addEventHandler("firstName.onFieldValidateStart", function(e, $field) {
-			var $divField = $field.parents("div.field");
-			$divField.find("div.errorMessage").remove();
-		});
-		$formNode.find("input[name='firstName']").bind("blur", function() {
-			fv.getValidator("firstName").validate();
-		});
+		AppFormHelper.createBasicField(fv, $formNode, "firstName");
 		
 		/* lastName */
 		
@@ -112,14 +98,21 @@ var TestFormVal = new (function(){
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "lastName");
 		
+		fv.addValidator("noVal", [{
+			method: Adoro.FormRules.noValidation,
+			message: "blah"
+		}]);
+		AppFormHelper.createBasicField(fv, $formNode, "noVal");
+		
 		/* telephone */
 		
 		fv.addValidator("telephone", [{
-			method: Adoro.FormRules.notEmpty,
-			message: "Telephone name cannot be empty"
-		},{
 			method: Adoro.FormRules.number,
 			message: "Telephone name must be a number yah?"	
+		},{
+			method: Adoro.FormRules.minLength,
+			message: "Should have a min length of 5",
+			params: {length: 5}
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "telephone");		
 		

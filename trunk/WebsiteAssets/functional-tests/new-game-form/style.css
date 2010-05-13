@@ -87,3 +87,7 @@ div.tooltip div.tooltipInner {
 	background: #fff;
 	padding: 10px;
 }
+
+.highlight {
+	background-color: pink;
+}
