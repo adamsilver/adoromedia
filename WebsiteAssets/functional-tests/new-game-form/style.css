@@ -22,6 +22,10 @@ div.fieldError {
 	border-color: #f00;
 }
 
+div.fieldSuccess {
+	border-color: lightgreen;
+}
+
 div.field div.indicator {
 	float: left;
 	width: 150px;
@@ -29,7 +33,7 @@ div.field div.indicator {
 
 div.field div.element {
 	float: left;
-	width: 200px;
+	width: 170px;
 }
 
 div.field div.helpHint {
@@ -50,6 +54,11 @@ div.field div.tooltip div.tooltipInner {
 	display: none;
 }
 
+div.field div.errorMessage {
+	float: left;
+	width: 400px;
+	border: 1px solid #f00;
+}
 
 
 
