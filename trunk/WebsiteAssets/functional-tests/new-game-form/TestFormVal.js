@@ -14,6 +14,11 @@ var AppFormHelper = {
 			var $divField = $field.parents("div.field");
 			$divField.find("div.errorMessage").remove();
 		});
+		fv.addEventHandler(fieldName+".onFieldSuccess", function(e, $field) {
+			var $divField = $field.parents("div.field");
+			$divField.addClass("fieldSuccess");
+		});
+		
 		$formNode.find("[name="+fieldName+"]").bind("blur", function() {
 			fv.getValidator(fieldName).validate();
 		});
