@@ -62,7 +62,7 @@ Adoro.FormRules = {
 		return valid;
 	},
 	minLength: function(params) {
-		var params = params || {}
+		params = params || {}
 		var length = params.length || 2;
 		var valid = true;
 		var field = this;
@@ -300,7 +300,7 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var regex = new RegExp("^([a-zA-Z])+$");
+		var regex = new RegExp("^([a-zA-Z])+$|^$");
 		if (!regex.test(field[0].value)) {
 			valid = false;
 		}		
@@ -354,7 +354,7 @@ Adoro.FormRules = {
 		var valid = true;
 		var field = this;
 		if (field.length > 1) return valid;
-		var params = params || {};
+		params = params || {};
 		var checkedField = params.checkedField || null;
 
 		if(checkedField && checkedField.checked) {
@@ -413,6 +413,10 @@ Adoro.FormRules = {
 		}
 		
 		return valid;			
+	},
+	
+	noValidation: function() {
+		return true;
 	}
 	
 }
