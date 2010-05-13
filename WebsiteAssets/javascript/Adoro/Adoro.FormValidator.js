@@ -179,7 +179,7 @@ Adoro.FormValidator = function(formNode, options) {
 			$(document).trigger([fvId,"onFormSuccess"].join("."), [me]);
 		}
 		else {
-			$(document).trigger([fvId,"onFormFail"].join("."), [me]);
+			$(document).trigger([fvId,"onFormFail"].join("."), [me, this.getErrors()]);
 		}
 		
 		$(document).trigger([fvId,"onFormValidateComplete"].join("."), [me]);
