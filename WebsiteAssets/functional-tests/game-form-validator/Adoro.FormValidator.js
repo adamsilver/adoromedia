@@ -385,7 +385,7 @@ Adoro.FormValidator = function(formNode, options) {
 				if(typeof valid === "undefined") valid = true;
 				if(!valid) {
 					allValid = false;
-					rule.setErrorState(true);				
+					rule.setErrorState(true);	
 				}
 			}
 			

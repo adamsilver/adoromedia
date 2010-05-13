@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
 		
 		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator.js"></script>
+		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FieldHighlighter.js"></script>
 		<script type="application/x-javascript">
 			/*
 			 * PLAN
@@ -30,6 +31,7 @@
 		<script type="text/javascript" src="TestFormHints.js"></script>
 		<script type="text/javascript" src="TestFormTips.js"></script>
 		<script type="text/javascript" src="TestFormSummary.js"></script>
+		<!--<script type="text/javascript" src="TestFormHighlight.js"></script>-->
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		
 	</head>
@@ -48,7 +50,7 @@
 				
 				<div class="field">
 					<div class="indicator">
-						<label for="firstName">first name</label>
+						<label for="firstName">first name *</label>
 					</div>
 					<div class="element">
 						<input type="text" name="firstName" id="firstName" />
@@ -66,10 +68,25 @@
 				
 				<div class="field">
 					<div class="indicator">
-						<label for="lastName">last name</label>
+						<label for="lastName">last name *</label>
 					</div>
 					<div class="element">
 						<input type="text" name="lastName" id="lastName" />
+					</div>					
+					<div class="tooltip">
+						<div class="tooltipInner">
+							This is stuff that will be shown inside a tool tip on hover and has nothing what so ever to do with
+							validation, but this should always be output by server side.
+						</div>
+					</div>
+				</div>
+				
+				<div class="field">
+					<div class="indicator">
+						<label for="noVal">no validation what so ever</label>
+					</div>
+					<div class="element">
+						<input type="text" name="noVal" id="noVal" />
 					</div>					
 					<div class="tooltip">
 						<div class="tooltipInner">
