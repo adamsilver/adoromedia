@@ -14,7 +14,7 @@ var TestFormTips = new (function(){
 		$tip.bind("mouseleave", tip_mouseLeave);
 		
 		var $tipInner = $tip.find("div.tooltipInner");
-		
+		$tipInner.hide();
 		function tip_mouseEnter(e) {
 			$tipInner.show();
 		}

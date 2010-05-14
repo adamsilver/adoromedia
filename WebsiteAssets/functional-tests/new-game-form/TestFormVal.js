@@ -1,12 +1,11 @@
-
 var AppFormHelper = {
 	createBasicField: function(fv, $formNode, fieldName) {
 		fv.addEventHandler(fieldName+".onFieldFail", function(e, $field, invalidRules) {
 			var $divField = $field.parents("div.field");
 			$divField.addClass("fieldError");
 
-			var $errorMessage = $errorMessage = $("<div></div>", {
-				class: "errorMessage"
+			var $errorMessage = $("<div></div>", {
+				"class": "errorMessage"
 			}).appendTo($divField);
 			$errorMessage.html(invalidRules[0].messages[0]);
 		});
@@ -100,12 +99,14 @@ var TestFormVal = new (function(){
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "lastName");
 		
+		/*
 		fv.addValidator("noVal", [{
 			method: Adoro.FormRules.noValidation,
-			message: ["blah", "blah"]
+			messages: ["blah", "blah"]
 		}]);
 		AppFormHelper.createBasicField(fv, $formNode, "noVal");
-		
+		*/
+
 		/* telephone */
 		
 		fv.addValidator("telephone", [{
