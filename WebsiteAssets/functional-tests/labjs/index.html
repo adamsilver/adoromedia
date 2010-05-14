@@ -4,10 +4,7 @@
 		<title>LabJS test</title>
 		<link rel="stylesheet" href="carousel.css" type="text/css" />
 		
-		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.ui.all.js"></script>
-		<script type="text/javascript" src="Adoro.Carousel.js"></script>
-		<script type="text/javascript" src="Site.Carousel.js"></script>-->
+
 
 	</head>
 	<body>
@@ -90,9 +87,8 @@
 		</div>
 		<script type="text/javascript" src="LAB.src.js"></script>
 		<script>
-			//return;
-		   $LAB
-		   .script("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js").
+			$LAB.setOptions({AppendTo: "body"})
+			.script("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js").
 		   wait().script("jquery.ui.all.js")
 			.wait()
 		   .script("Adoro.Carousel.js").wait()
