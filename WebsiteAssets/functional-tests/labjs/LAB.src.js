@@ -1,5 +1,5 @@
 // LAB.js (LABjs :: Loading And Blocking JavaScript)
-// v1.0.1 (c) Kyle Simpson
+// v1.0.2rc1 (c) Kyle Simpson
 // MIT License
 
 (function(global){
@@ -15,14 +15,19 @@
 		sCOMPLETE = "complete",
 		sDONE = "done",
 		sWHICH = "which",
+		sPRESERVE = "preserve",
 		sONREADYSTATECHANGE = "onreadystatechange",
 		sONLOAD = "onload",
 		sHASOWNPROPERTY = "hasOwnProperty",
+		sSCRIPTCACHE = "script/cache",
+		sTYPEOBJ = "[object ",
+		sTYPEFUNC = sTYPEOBJ+"Function]",
+		sTYPEARRAY = sTYPEOBJ+"Array]",
 		nNULL = null,
 		bTRUE = true,
 		bFALSE = false,
 		oDOC = global.document,
-		oDOCLOC = oDOC.location,
+		oWINLOC = global.location,
 		oACTIVEX = global.ActiveXObject,
 		fSETTIMEOUT = global.setTimeout,
 		fCLEARTIMEOUT = global.clearTimeout,
@@ -31,7 +36,7 @@
 		fNOOP = function(){},
 		append_to = {},
 		all_scripts = {},
-		PAGEROOT = /^[^?#]*\//.exec(oDOCLOC.href)[0], // these ROOTs do not support file:/// usage, only http:// type usage
+		PAGEROOT = /^[^?#]*\//.exec(oWINLOC.href)[0], // these ROOTs do not support file:/// usage, only http:// type usage
 		DOCROOT = /^\w+\:\/\/\/?[^\/]+/.exec(PAGEROOT)[0], // optional third / in the protocol portion of this regex so that LABjs doesn't blow up when used in file:/// usage
 		docScripts = fGETELEMENTSBYTAGNAME(sSCRIPT),
 
@@ -40,7 +45,7 @@
 		// you know of a feature test please contact me ASAP. Feature inference is used
 		// instead of user agent sniffing because the UA string can be easily
 		// spoofed and is not adequate for such a mission critical part of the code.
-		is_opera = global.opera && fOBJTOSTRING.call(global.opera) == "[object Opera]",
+		is_opera = global.opera && fOBJTOSTRING.call(global.opera) == sTYPEOBJ+"Opera]",
 		is_gecko = (function(o) { o[o] = o+""; return o[o] != o+""; })(new String("__count__")),
 
 		global_defs = {
@@ -48,17 +53,17 @@
 			order:is_gecko||is_opera, // FF/Opera preserve execution order with script tags automatically, so just add all scripts as fast as possible
 			xhr:bTRUE, // use XHR trick to preload local scripts
 			dupe:bTRUE, // allow duplicate scripts? defaults to true now 'cause is slightly more performant that way (less checks)
-			preserve:bFALSE, // preserve execution order of all loaded scripts (regardless of preloading)
 			base:"", // base path to prepend to all non-absolute-path scripts
 			which:sHEAD // which DOM object ("head" or "body") to append scripts to
 		}
 	;
+	global_defs[sPRESERVE] = bFALSE; // force preserve execution order of all loaded scripts (regardless of preloading)
 	global_defs[sPRELOAD] = bTRUE; // use various tricks for "preloading" scripts
 	
 	append_to[sHEAD] = fGETELEMENTSBYTAGNAME(sHEAD);
 	append_to[sBODY] = fGETELEMENTSBYTAGNAME(sBODY);
 	
-	function isFunc(func) { return fOBJTOSTRING.call(func) === "[object Function]"; }
+	function isFunc(func) { return fOBJTOSTRING.call(func) === sTYPEFUNC; }
 	function canonicalScriptURI(src,base_path) {
 		var regex = /^\w+\:\/\//, ret; 
 		if (typeof src !== sSTRING) src = "";
@@ -68,9 +73,9 @@
 	}
 	function sameDomain(src) { return (canonicalScriptURI(src).indexOf(DOCROOT) === 0); }
 	function scriptTagExists(uri) { // checks if a script uri has ever been loaded into this page's DOM
-		var i = 0, script;
-		while (script = docScripts[i++]) {
-			if (typeof script.src === sSTRING && uri === canonicalScriptURI(script.src) && script.getAttribute("rel") !== sPRELOAD) return bTRUE;
+		var script, idx=-1;
+		while (script = docScripts[++idx]) {
+			if (typeof script.src === sSTRING && uri === canonicalScriptURI(script.src) && script.type !== sSCRIPTCACHE) return bTRUE;
 		}
 		return bFALSE;
 	}
@@ -83,16 +88,17 @@
 			_use_cache_preload = _use_preload && opts.cache,
 			_use_script_order = _use_preload && opts.order,
 			_use_xhr_preload = _use_preload && opts.xhr,
-			_auto_wait = opts.preserve,
+			_auto_wait = opts[sPRESERVE],
 			_which = opts.which,
 			_base_path = opts.base,
 			waitFunc = fNOOP,
 			scripts_loading = bFALSE,
 			publicAPI,
+
 			first_pass = bTRUE,
 			scripts = {},
 			exec = [],
-			end_of_chain_check_interval = null
+			end_of_chain_check_interval = nNULL
 		;
 		
 		_use_preload = _use_cache_preload || _use_xhr_preload || _use_script_order; // if all flags are turned off, preload is moot so disable it
@@ -123,7 +129,7 @@
 			if (!isScriptLoaded(elem,scriptentry)) return;
 			scriptentry[sPRELOADDONE] = bTRUE;
 			fSETTIMEOUT(function(){
-				append_to[scriptentry[sWHICH]][0].removeChild(elem); // remove preload script node
+				append_to[scriptentry[sWHICH]].removeChild(elem); // remove preload script node
 				loadTriggerExecute(scriptentry);
 			},0);
 		}
@@ -134,21 +140,25 @@
 				fSETTIMEOUT(function(){ loadTriggerExecute(scriptentry); },0);
 			}
 		}
-		function createScriptTag(scriptentry,src,type,charset,rel,onload,scriptText) {
-			fSETTIMEOUT(function(){
-				if (append_to[scriptentry[sWHICH]][0] === nNULL) { // append_to object not yet ready
-					fSETTIMEOUT(arguments.callee,25); 
-					return;
+		function createScriptTag(scriptentry,src,type,charset,onload,scriptText) {
+			var _script_which = scriptentry[sWHICH];
+			fSETTIMEOUT(function() { // this setTimeout waiting "hack" prevents a nasty race condition browser hang (IE) when the document.write("<script defer=true>") type dom-ready hack is present in the page
+				if ("item" in append_to[_script_which]) { // check if ref is still a live node list
+					if (!append_to[_script_which][0]) { // append_to node not yet ready
+						fSETTIMEOUT(arguments.callee,25); // try again in a little bit -- note, will recall the anonymous functoin in the outer setTimeout, not the parent createScriptTag()
+						return;
+					}
+					append_to[_script_which] = append_to[_script_which][0]; // reassign from live node list ref to pure node ref -- avoids nasty IE bug where changes to DOM invalidate live node lists
 				}
-				var scriptElem = oDOC.createElement(sSCRIPT), fSETATTRIBUTE = function(attr,val){scriptElem.setAttribute(attr,val);};
-				fSETATTRIBUTE("type",type);
-				fSETATTRIBUTE("rel",rel);
-				if (typeof charset === sSTRING) fSETATTRIBUTE("charset",charset);
+				var scriptElem = oDOC.createElement(sSCRIPT);
+				scriptElem.type = type;
+				if (typeof charset === sSTRING) scriptElem.charset = charset;
 				if (isFunc(onload)) { // load script via 'src' attribute, set onload/onreadystatechange listeners
 					scriptElem[sONLOAD] = scriptElem[sONREADYSTATECHANGE] = function(){onload(scriptElem,scriptentry);};
-					fSETATTRIBUTE("src",src);
+					scriptElem.src = src;
 				}
-				append_to[scriptentry[sWHICH]][0].appendChild(scriptElem);
+				// only for appending to <head>, fix a bug in IE6 if <base> tag is present -- otherwise, insertBefore(...,null) acts just like appendChild()
+				append_to[_script_which].insertBefore(scriptElem,(_script_which===sHEAD?append_to[_script_which].firstChild:nNULL));
 				if (typeof scriptText === sSTRING) { // script text already avaiable from XHR preload, so just inject it
 					scriptElem.text = scriptText;
 					handleScriptLoad(scriptElem,scriptentry,bTRUE); // manually call 'load' callback function, skipReadyCheck=true
@@ -157,13 +167,13 @@
 		}
 		function loadScriptElem(scriptentry,src,type,charset) {
 			all_scripts[scriptentry[sSRCURI]] = bTRUE;
-			createScriptTag(scriptentry,src,type,charset,"",handleScriptLoad);
+			createScriptTag(scriptentry,src,type,charset,handleScriptLoad);
 		}
 		function loadScriptCache(scriptentry,src,type,charset) {
 			var args = arguments;
 			if (first_pass && scriptentry[sPRELOADDONE] == nNULL) { // need to preload into cache
 				scriptentry[sPRELOADDONE] = bFALSE;
-				createScriptTag(scriptentry,src,"text/html",charset,sPRELOAD,handleScriptPreload); // "text/html" causes a fetch into cache, but no execution
+				createScriptTag(scriptentry,src,sSCRIPTCACHE,charset,handleScriptPreload); // fake mimetype causes a fetch into cache, but no execution
 			}
 			else if (!first_pass && scriptentry[sPRELOADDONE] != nNULL && !scriptentry[sPRELOADDONE]) { // preload still in progress, make sure trigger is set for execution later
 				scriptentry[sLOADTRIGGER] = function(){loadScriptCache.apply(nNULL,args);};
@@ -186,7 +196,7 @@
 			}
 			else if (!first_pass) { // preload done, so "execute" script via injection
 				all_scripts[scriptentry[sSRCURI]] = bTRUE;
-				createScriptTag(scriptentry,src,type,charset,"",nNULL,scriptentry.xhr.responseText);
+				createScriptTag(scriptentry,src,type,charset,nNULL,scriptentry.xhr.responseText);
 				scriptentry.xhr = nNULL;
 			}
 		}
@@ -227,10 +237,10 @@
 			if (!queueExec || _use_preload) execBody(); // if engine is either not queueing, or is queuing in preload mode, go ahead and execute
 		}
 		function serializeArgs(args) {
-			var sargs = [], i;
-			for (i=0; i<args.length; i++) {
-				if (fOBJTOSTRING.call(args[i]) === "[object Array]") sargs = sargs.concat(serializeArgs(args[i]));
-				else sargs[sargs.length] = args[i];
+			var sargs = [], idx;
+			for (idx=-1; ++idx<args.length;) {
+				if (fOBJTOSTRING.call(args[idx]) === sTYPEARRAY) sargs = sargs.concat(serializeArgs(args[idx]));
+				else sargs[sargs.length] = args[idx];
 			}
 			return sargs;
 		}
@@ -238,22 +248,22 @@
 		publicAPI = {
 			script:function() {
 				fCLEARTIMEOUT(end_of_chain_check_interval);
-				var args = serializeArgs(arguments), use_engine = publicAPI;
+				var args = serializeArgs(arguments), use_engine = publicAPI, idx;
 				if (_auto_wait) {
-					for (var i=0; i<args.length; i++) {
-						if (i===0) {
+					for (idx=-1; ++idx<args.length;) {
+						if (idx===0) {
 							queueAndExecute(function(){
 								loadScript((typeof args[0] === sSTRING) ? {src:args[0]} : args[0]);
 							});
 						}
-						else use_engine = use_engine.script(args[i]);
+						else use_engine = use_engine.script(args[idx]);
 						use_engine = use_engine.wait();
 					}
 				}
 				else {
 					queueAndExecute(function(){
-						for (var i=0; i<args.length; i++) {
-							loadScript((typeof args[i] === sSTRING) ? {src:args[i]} : args[i]);
+						for (idx=-1; ++idx<args.length;) {
+							loadScript((typeof args[idx] === sSTRING) ? {src:args[idx]} : args[idx]);
 						}
 					});
 				}
@@ -272,7 +282,7 @@
 				delete e.trigger; // remove the 'trigger' property from e's public API, since only used internally
 				var fn = function(){
 					if (scripts_loading && !ready) waitFunc = wfunc;
-					else fSETTIMEOUT(wfunc,0);
+					else wfunc();
 				};
 
 				if (queueExec && !scripts_loading) onlyQueue(fn);
@@ -285,8 +295,8 @@
 			// if queueing, return a function that the previous chain's waitFunc function can use to trigger this 
 			// engine's queue. NOTE: this trigger function is captured and removed from the public chain API before return
 			publicAPI.trigger = function() {
-				var i=0, fn; 
-				while (fn = exec[i++]) fn();
+				var fn, idx=-1;
+				while (fn = exec[++idx]) fn();
 				exec = []; 
 			};
 		}
@@ -294,8 +304,8 @@
 	}
 	function processOpts(opts) {
 		var k, newOpts = {}, 
-			boolOpts = {"UseCachePreload":"cache","UseLocalXHR":"xhr","UsePreloading":sPRELOAD,"AlwaysPreserveOrder":"preserve","AllowDuplicates":"dupe"},
-			allOpts = {"AppendTo":"which","BasePath":"base"}
+			boolOpts = {"UseCachePreload":"cache","UseLocalXHR":"xhr","UsePreloading":sPRELOAD,"AlwaysPreserveOrder":sPRESERVE,"AllowDuplicates":"dupe"},
+			allOpts = {"AppendTo":sWHICH,"BasePath":"base"}
 		;
 		for (k in boolOpts) allOpts[k] = boolOpts[k];
 		newOpts.order = !(!global_defs.order);

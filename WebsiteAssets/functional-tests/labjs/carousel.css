@@ -1,19 +1,20 @@
-#carousel {
+.carousel {
 	width: 600px;
 	border: 1px solid #333;
+	display: none;
 }
 
-#carousel div.clip {
+.carousel div.clip {
 	overflow: hidden;
 	position: relative;
 }
 
-#carousel div.clip ul.pages {
+.carousel div.clip ul.pages {
 	overflow: hidden;
 	position: relative;
 }
 
-#carousel div.clip ul.pages li.page {
+.carousel div.clip ul.pages li.page {
 	width: 200px;
 	display: inline;
 	float: left;
