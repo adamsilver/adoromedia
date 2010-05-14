@@ -3,10 +3,10 @@
 	<head>
 		<title>Game Form Validator prototype</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormRules.js"></script>
+		<script type="text/javascript" src="Adoro.FormRules.js"></script>
 		
-		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FormValidator.game.js"></script>
-		<script type="text/javascript" src="../../javascript/Adoro/Adoro.FieldHighlighter.js"></script>
+		<script type="text/javascript" src="Adoro.FormValidator.game.js"></script>
+		<script type="text/javascript" src="Adoro.FieldHighlighter.js"></script>
 		<script type="application/x-javascript">
 			/*
 			 * PLAN
@@ -36,6 +36,17 @@
 		
 	</head>
 	<body>
+		<noscript>
+			<style>
+				div.field div.tooltip {
+					width: auto;
+					height: auto;
+				}
+				div.field div.tooltip div.tooltipInner {
+					position: static;
+				}
+			</style>
+		</noscript>
 		<h1>Game Form Validator prototype</h1>
 		
 		<div id="container">
@@ -57,12 +68,11 @@
 					</div>					
 					<div class="tooltip">
 						<div class="tooltipInner">
-							This is stuff that will be shown inside a tool tip on hover and has nothing what so ever to do with
-							validation, but this should always be output by server side.
+							This is further information shown in a tooltip.
 						</div>
 					</div>					
 					<div class="helpHint">
-						This is stuff that from a server side perspective is always shown. JS will show this on focus if an error isnt present
+						This is a help hint on focus i.e. exactly 8 chars etc
 					</div>
 				</div>
 				
