@@ -12,8 +12,14 @@
 		<?php include("inc/headCSS.php"); ?>
 		<link rel="stylesheet" href="css/nivo-slider.css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
+		<script type="text/javascript" src="js/LAB/LAB.js"></script>
+		<script>
+			function addMoreScripts() {
+				$LAB.script("js/Site/Home/Site.Home.FeaturedWork.js")
+			}
+		</script>		
 		<?php include("inc/headJS.php"); ?>
-		<script type="text/javascript" src="js/Site/Home/Site.Home.FeaturedWork.js"></script>
+
 	</head>
 	<body id="pgHome">
 		<div id="container">
