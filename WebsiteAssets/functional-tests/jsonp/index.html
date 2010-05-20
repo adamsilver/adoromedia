@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" media="screen" href="../../css/dialogue.css"  />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="J2ADIJ.js"></script>
+		<script>
+					
+					function callback() {
+						console.log(arguments)				
+					}
+					
+					var ad = new J2.ADIJ({
+						URL: "json.html",
+						onSuccess: function(data) {
+							alert(1)
+						}
+					});
+					ad.send();
+					ad.handleResponse();
+					
+					/*
+					$.ajax({
+						url: "jsonp.html",
+						dataType: "json",
+						success: function() {
+							console.log(arguments)		
+							
+						}
+					})*/
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
