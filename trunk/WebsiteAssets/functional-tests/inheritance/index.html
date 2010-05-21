@@ -7,6 +7,11 @@
 			
 			function Person(name) {
 				this.name = name;
+				
+				//this.blah = function() {
+				//	alert(1);
+				//}
+				
 			}
 			Person.prototype = {
 				getName: function() {
@@ -26,11 +31,19 @@
 				
 				// stuff that is unique to author
 				this.books = books;
+				
+				// this is more dominant than from within Person
+				//this.blah = function() {
+				//	alert(3);
+				//}
 			}
 			Author.prototype = {
 				superClass: Person,
 				getBooks: function() {
 					return this.books;
+				},
+				blah: function() {
+					alert(2);
 				}
 			}
 			
