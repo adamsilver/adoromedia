@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>leak</title>
+		<script type="text/javascript">
+		window.onload=function(){
+			// obj will be gc'ed as soon as 
+			// it goes out of scope therefore no leak.
+			
+			
+			for(var i = 0; i < 10000; i++) {
+			
+				var obj = document.getElementById("element");
+				
+				// this creates a closure over "element"
+				// and will leak if not handled properly.
+				obj.onclick=function(evt){
+				};
+			}
+		};
+		</script>
+		<script type="text/javascript">
+			function LeakMemory(){
+				var parentDiv = document.createElement("div");
+								  parentDiv.onclick=function(){
+					foo();
+				};
+
+				parentDiv.bigString = 
+				  new Array(1000).join(new Array(2000).join("XXXXX"));
+			}
+		</script>		
+	</head>
+	<body>	
+		<div id="element"></div>
+		<input type="button" 
+       value="Memory Leaking Insert" onclick="LeakMemory()" />
+	</body>
+</html>
