@@ -5,6 +5,15 @@
 
 		<script type="text/javascript">
 			
+			function Base() {}
+			Base.prototype.myMethod = function(){}
+
+			function Sub() {}
+			Sub.prototype.myMethod = function() {
+				//...
+				Base.prototype.myMethod.call(this);
+			}
+			
 			function Person(name) {
 				this.name = name;
 				
