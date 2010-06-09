@@ -37,3 +37,25 @@
 	padding-right: 95px;
 }
 
+#claimForm #title {
+	width: 40px;
+}
+
+#claimForm #firstName,
+#claimForm #lastName,
+#claimForm #dayTimePhone,
+#claimForm #alternativePhone,
+#claimForm #town{
+	width: 200px;
+}
+
+#claimForm #dob,
+#claimForm #postCode{
+	width: 100px;
+}
+
+#claimForm #emailAddress,
+#claimForm #addressLine1,
+#claimForm #addressLine2{
+	width: 300px;
+}

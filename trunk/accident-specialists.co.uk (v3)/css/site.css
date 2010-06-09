@@ -186,7 +186,7 @@ ul li {
 
 #sections {
 	overflow: hidden;
-	background: url(../img/bglogo.jpg) bottom right no-repeat;
+	/*background: url(../img/bglogo.jpg) bottom right no-repeat;*/
 }
 
 #sections #primary {
