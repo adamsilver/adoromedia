@@ -1,0 +1,21 @@
+/********************************************************************************
+* faq
+********************************************************************************/
+
+#faqs {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+div.question {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+div.answerHidden {
+    padding-bottom: 10px;
+}
+
+div.answerHidden div.answer {
+    display: none;
+}

@@ -103,7 +103,10 @@
 									</div>
 								</div>								
 								<div class="actions">	
-								<input type="image" class="image" src="img/btn_call_me_back.jpg" alt="" />				
+									<!--<input type="image" class="image" src="img/btn_call_me_back.jpg" alt="" />-->
+								
+									<input type="submit" class="submit" name="send" value="Call me back" />
+								
 								</div>
 							</form>
 						</div>
