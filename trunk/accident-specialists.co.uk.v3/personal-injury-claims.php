@@ -5,7 +5,7 @@
 <?php
 	$metaKeywords = "hello there cowboy keywords";
 	$metaDescription = "hello there cowboy";
-	$siteSection = "claim";
+	$siteSection = "services";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -16,7 +16,7 @@
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 	</head>
-	<body id="pgClaimsProcess" class="claim">
+	<body id="pgPersonalInjuryClaims" class="services">
 		<div id="container">
 			<?php include("inc/header.php"); ?>
 			<?php include("inc/primaryNavigation.php"); ?>
@@ -34,12 +34,21 @@
 
 
 						<p>We will put you in touch with a specialist solicitor suited to your circumstances who will be able to advise you about your claim through our free no win no fee  service.* Personal injury claims can vary depending on the type of accident you have had. Personal injuries may occur from negligence in health and safety from a range of different sources, from the public sector to an accident at work. If you are injured due to the negligence on someone else's part, you may be entitled to injury compensation.</p>
+						
 						<h2>Injury claims made simple</h2>
 
-						<p>The Accident Specialists aim to make every personal injury claim simple and stress free, whether it’s a car accident claim or a medical negligence case we will ensure that the clients are informed regularly by the appointed solicitor and that they receive the maximum compensation allocated for the personal injury. We guarantee that the client shall receive 100% compensation awarded for the claim.*</p>					
+						<p>The Accident Specialists aim to make every personal injury claim simple and stress free, whether it's a car accident claim or a medical negligence case we will ensure that the clients are informed regularly by the appointed solicitor and that they receive the maximum compensation allocated for the personal injury. We guarantee that the client shall receive 100% compensation awarded for the claim.*</p>					
 					
 					</div>
 					<div id="secondary">
+						<div id="secondaryNavigation">
+							<h2>Further information</h2>
+							<ul>
+								<li><a href="claims-process.php">Claim process</a></li>
+								<li><a class="selected" href="personal-injury-claims.php">Personal injury claims</a></li>
+								<li><a href="other-accident-types.php">Other accident types</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -23,11 +23,23 @@
 	padding-left: 35px;
 	margin-left: 0px;
 	padding-bottom: 5px;
-	color: #ED0503;
+	color: #BD0209;
 }
 
 #splash p {
 	margin-bottom: 0px;
+}
+
+#splash .submit {
+	background-color:#BD0209;
+	border:3px solid #DDDDDD;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-size:1.1em;
+	font-weight:bold;
+	padding:8px;
+	text-transform:uppercase;
+	text-decoration: none;
 }
 
 /********************************************************************************

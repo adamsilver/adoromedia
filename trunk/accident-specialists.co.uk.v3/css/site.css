@@ -359,7 +359,8 @@ div.faqPanel ul li {
 	background:transparent url(../img/arrow.gif) no-repeat 10px 50%;
 }
 
-#secondaryNavigation li a:hover {
+#secondaryNavigation li a:hover,
+#secondaryNavigation li a.selected{
 	background-color: #eee;
 }
 

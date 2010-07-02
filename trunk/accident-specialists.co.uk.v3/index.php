@@ -32,7 +32,7 @@
 								<li>100% compensation</li>
 								<li>No win no fee</li>
 							</ul>
-							<p><a href=""><img src="img/btn_claim_now.jpg" alt="" /></a></p>
+							<p ><a class="submit" href="claim.php">Claim now</a></p>
 						</div>
 					
 						<div id="homeInfo">
