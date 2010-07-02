@@ -38,7 +38,7 @@
 						<div id="homeInfo">
 							<h1>The Accident Specialists</h1>
 
-							<p>Since 1999 The Accident Specialists have been helping people who have suffered a Personal Injury, through no fault of their own, gain access to justice and claim the compensation they deserve. <a href="about.php">Find our more about The Accident Specialists</a></p>
+							<p>Since 1999 The Accident Specialists have been helping people who have suffered a Personal Injury, through no fault of their own, gain access to justice and claim the compensation they deserve. <a href="about.php">Find out more about The Accident Specialists</a></p>
 							
 							
 							
@@ -55,7 +55,7 @@
 							<p>We will put you in touch with our specialist Personal Injury Solicitors who will act on your behalf, so you never pay a penny to claim. Often you have suffered not just physically, but financially too, so we can also help you claim back any costs you have incurred due to your injury.</p>
 							-->
 							<h2>Personal injury</h2>							
-							<p>If you have suffered an accident in the last three years call our free phone helpline on 0208 455 4199 to speak to a member of our team. Or simply submit your details on our brief online claim form and we will contact you within the hour. <a href="personal-injury-claims.php">Find out more about personal injury</a></p>
+							<p>If you have suffered an accident in the last three years call our phone helpline on 0208 455 4199 to speak to a member of our team. Or simply submit your details on our brief online claim form and we will contact you within the hour. <a href="personal-injury-claims.php">Find out more about personal injury</a></p>
 							<!--<p>For more information call our team of friendly adviser's or fill out a short claim online form and we will get back to you. It really is that simple. </p>-->
 							
 							<h2>London based</h2>							
