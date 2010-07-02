@@ -194,8 +194,8 @@
 						
 						<div class="testimonial">
 							<h2>What our clients say</h2>							
-							
-							<p>"The Accident Specialists helped me through a very traumatic case where an uninsured motorist collided with my vehicle. They assured me that they would do their best to help and lived up to their word! They had me in a free courtesy car within 4 hours of the incident, my car placed into secure storage and shortly thereafter repaired in an approved body shop. Thank you so much for all your assistance! The compensation they gained, with all of the above alleviated so much time and hassle!"</p>
+
+							<p>The Accident Specialists helped me through a traumatic case where an uninsured motorist collided with my vehicle. They had me in a free courtesy car within 4 hours of the incident, my car placed into secure storage and shortly thereafter repaired in an approved body shop. The compensation they obtained for me, with all of the above alleviated so much time and hassle</p>
 						</div>
 						
 					</div>
