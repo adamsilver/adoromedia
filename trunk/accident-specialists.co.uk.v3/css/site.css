@@ -65,7 +65,7 @@ ul li {
 	font-size: 1.2em;
 	margin-left: 15px;
 	padding-left: 20px;
-	background: url(../img/arrow.gif) no-repeat 0 50%;
+	background: url(../img/arrow.gif) no-repeat 0 0;
 }
 
 a:link, a:visited {

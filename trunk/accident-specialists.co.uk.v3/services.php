@@ -26,33 +26,36 @@
 				
 					<div id="primary">
 						
-						<h1>Services we offer</h1>
+						<h1>Our services</h1>
 							
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
+						<p>Some general stuff for Josh</p>
 						
-						<h2>Sub title</h2>
+						<h2>Claims process</h2>
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
+						<p>Some general stuff for Josh</p>
+
+						<h2>Personal injury</h2>
+						<p>Some general stuff for Josh</p>
+						<!--
+						<h2>No win no fee claim</h2>
+						<p>Some general stuff for Josh</p>
+						-->
+						<h2>Other accident types</h2>
+						<p>Some general stuff for Josh</p>
 
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-
 						
-						<p>Lorem ipsum fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
 						
 					</div>
 					<div id="secondary">
-						
+						<div id="secondaryNavigation">
+							<h2>Further information</h2>
+							<ul>
+								<li><a href="claims-process.php">Claim process</a></li>
+								<li><a href="personal-injury-claims.php">Personal injury</a></li>
+								<li><a href="other-accident-types.php">Other accident types</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
