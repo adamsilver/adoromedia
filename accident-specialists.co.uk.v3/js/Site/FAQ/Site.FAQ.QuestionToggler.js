@@ -18,16 +18,16 @@ Site.FAQ.QuestionToggler = new (function() {
 	function Toggler(root) {
 		var $link = root.find("h2 a");
 		var $answer = $(document.getElementById($link.get(0).hash.slice(1)));
-		$answer.hide();
+		root.addClass("answerHidden");
 
 		$link.bind("click", toggle);
 		
 		function toggle(e) {
 			if($answer.css("display") === "none") {
-				$answer.show();			
+				root.removeClass("answerHidden");		
 			}
 			else {
-				$answer.hide();	
+				root.addClass("answerHidden");
 			}
 			return false;
 		}		
