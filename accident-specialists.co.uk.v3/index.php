@@ -55,11 +55,11 @@
 							<p>We will put you in touch with our specialist Personal Injury Solicitors who will act on your behalf, so you never pay a penny to claim. Often you have suffered not just physically, but financially too, so we can also help you claim back any costs you have incurred due to your injury.</p>
 							-->
 							<h2>Personal injury</h2>							
-							<p>If you have suffered an accident in the last three years call our free phone helpline on 0208 455 4199 to speak to a member of our team. Or simply submit your details on our brief online claim form and we will contact you within the hour. <a href="personal-injury.php">Find out more about personal injury</a></p>
+							<p>If you have suffered an accident in the last three years call our free phone helpline on 0208 455 4199 to speak to a member of our team. Or simply submit your details on our brief online claim form and we will contact you within the hour. <a href="personal-injury-claims.php">Find out more about personal injury</a></p>
 							<!--<p>For more information call our team of friendly adviser's or fill out a short claim online form and we will get back to you. It really is that simple. </p>-->
 							
 							<h2>London based</h2>							
-							<p>The Accident Specialists are based in North London in Hampstead Garden Suburb and have an open door policy, we want to walk you through the claims process each step of the way and welcome our clients. The Accident Specialists prefer to deal with our clients on a personal basis to provide the customer service we feel they deserve.</p>
+							<p>The Accident Specialists are based in North London in Hampstead Garden Suburb and have an open door policy, we want to walk you through the claims process each step of the way and welcome our clients. The Accident Specialists prefer to deal with our clients on a personal basis to provide the customer service we feel they deserve. <a href="contact.php">Contact The Accident Specialists</a></p>
 
 						</div>
 						
@@ -114,11 +114,6 @@
 						<div class="testimonial">
 							<h2>What our clients say</h2>							
 							<p>"The Accident Specialists provide a first class service. Their claim management is fantastic, I was kept up to date with the claims process through each step of the way and they successfully gained the compensation I deserved."</p>
-							
-							<p>Josh making testimonial shorter below...i think we should spread the 3 testimonials on to different pages - looks better</p>
-							
-							<p>"The Accident Specialists helped me through a very traumatic case where an uninsured motorist collided with my vehicle. They assured me that they would do their best to help and lived up to their word! They had me in a free courtesy car within 4 hours of the incident, my car placed into secure storage and shortly thereafter repaired in an approved body shop. Thank you so much for all your assistance! The compensation they gained, with all of the above alleviated so much time and hassle!"</p>
-							<!--<p>"I'm a private hire driver in London and was unfortunately rear-ended when  was stationary at a traffic light. Due to the nature of my job it was of the utmost importance that the claim was dealt with as quickly as possible so that i could continue to work. The Accident Specialists had me in a PCO'd vehicle within 4 hours of my accident and sorted everything else out for me. I had passengers in my vehicle and we were all walked through the process and gained the compensation we deserved. The Accident Specialists are the best of the best, thank you so much. I wouldn't hesitate to recommend you to anyone that is in the unfortunate position of having a Road Traffic Accident" </p>-->
 
 						</div>
 						
