@@ -32,27 +32,28 @@ h1, h2, h3, h4, h5, h6, p {
 h1 {
 	font-size: 2.3em;
 	margin-bottom: 8px;
-	color: #13007D;
+	color: #2B2774;
 	text-transform: uppercase;
 }
 
 h2 {
 	font-size: 1.4em;
 	margin-bottom: 4px;
-	color: #13007D;
+	color: #2B2774;
 	text-transform: uppercase;
 }
 
 h3 {
 	font-size: 1.8em;
 	margin-bottom: 4px;
-	color: #13007D;
+	color: #2B2774;
 }
 
 p {
 	font-size: 1.2em;
 	margin-bottom: 16px;
 	line-height: 1.5em;
+	text-align: justify;
 }
 
 ul {
@@ -65,6 +66,14 @@ ul li {
 	margin-left: 15px;
 	padding-left: 20px;
 	background: url(../img/arrow.gif) no-repeat 0 50%;
+}
+
+a:link, a:visited {
+	color: #2B2774
+}
+
+a:hover, a:active, a:focus {
+	color: #B72726;
 }
 
 /********************************************************************************
@@ -101,7 +110,7 @@ ul li {
 
 #footer {
 	padding: 10px;
-	background-color: #13007D;
+	background-color: #2B2774;
 }
 
 #footer p {
@@ -117,7 +126,7 @@ ul li {
 ********************************************************************************/
 
 #primaryNavigation {
-	border-bottom: 7px solid #13007D;
+	border-bottom: 7px solid #2B2774;
 }
 
 #primaryNavigationInner {
@@ -169,7 +178,7 @@ ul li {
 #primaryNavigation ul li.selected a,
 #primaryNavigation ul li a:hover {
 	color: #fff;
-	background-color: #13007D;
+	background-color: #2B2774;
 	background-image: none;
 }
 
@@ -238,7 +247,7 @@ div.field div.singleInput textarea  {
 }
 
 div.field div.singleInput select {
-	width: 356px;
+	width: 200px;
 }
 
 div.field div.singleInput textarea {
@@ -285,7 +294,7 @@ div.testimonial {
 div.testimonial p.clientName {
 	font-weight: bold;
 	font-style: italic;
-	color: #13007D;
+	color: #2B2774;
 }
 
 /********************************************************************************
@@ -319,7 +328,7 @@ div.faqPanel ul li {
 
 #secondaryNavigation h2 {
 	background-color: #ddd;
-	color: #13007D;
+	color: #2B2774;
 	padding: 8px 10px;
 	margin: 0px;
 	font-size: 1.6em;
@@ -338,7 +347,7 @@ div.faqPanel ul li {
 }
 
 #secondaryNavigation li a {
-	color: #13007D;
+	color: #2B2774;
 	text-decoration: none;
 	padding: 8px 8px 8px 28px;
 	display: block;
@@ -348,4 +357,10 @@ div.faqPanel ul li {
 
 #secondaryNavigation li a:hover {
 	background-color: #eee;
+}
+
+div.question {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
 }

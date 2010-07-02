@@ -33,7 +33,7 @@
 						
 						<h1>Contact details</h1>
 							
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
+						<p>Josh coming up with text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
 						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
 						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
 						
@@ -43,7 +43,17 @@
 						
 					</div>
 					<div id="secondary">
+						<h2>Address</h2>
+						<p>Address here</p>
 						
+						<h2>Telephone</h2>
+						<p>020 8455 4199</p>
+						
+						<h2>Fax</h2>
+						<p>Some number</p>
+						
+						<h2>Email</h2>
+						<p></p>
 					</div>
 				</div>
 			</div>

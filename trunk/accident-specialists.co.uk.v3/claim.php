@@ -26,7 +26,7 @@
 				
 					<div id="primary">
 						<h1>Claim form</h1>
-						<p>Lorem ipsum dollar</p>
+						<p>Josh writing a small paragraph</p>
 						
 						<div id="claimForm">
 						
@@ -39,7 +39,20 @@
 									</div>
 									<div class="singleInput">
 										<select id="accidentType" name="accidentType">
-											<option value="1">1</option>
+											<option value="1">Accidents / Illness abroad</option>
+											<option value="2">Accidents at work</option>
+											<option value="3">Animal attacks</option>
+											<option value="4">Criminal injury</option>
+											<option value="5">Cycling accidents</option>
+											<option value="6">Faulty products</option>
+											<option value="7">Major disasters</option>
+											<option value="8">Medical negligence</option>
+											<option value="9">Professional negligence</option>
+											<option value="10">Public Liability</option>
+											<option value="11">Road traffic accident</option>
+											<option value="12">Slipping and tripping</option>
+											<option value="13">Sport / leisure injury</option>
+											<option value="14">Work-related disease</option>
 										</select>
 									</div>
 								</div>
@@ -49,7 +62,11 @@
 									</div>
 									<div class="singleInput">
 										<select id="incidentDate" name="incidentDate">
-											<option value="1">Last 6 months</option>
+											<option value="1">Last 3 months</option>
+											<option value="2">Last 6 months</option>
+											<option value="3">1 year</option>
+											<option value="4">2 years</option>
+											<option value="5">3 years</option>
 										</select>
 									</div>
 								</div>
@@ -60,7 +77,8 @@
 									<div class="singleInput">
 										<textarea id="basicDescription" name="basicDescription"><?php echo isset($_POST["basicDescription"]) ? $_POST["basicDescription"] : "" ?></textarea>
 									</div>
-								</div>						
+								</div>
+								<!--
 								<div class="field">
 									<div class="indicator">
 										<label for="title">Title: </label>
@@ -69,14 +87,16 @@
 										<input class="text" type="text" name="title" id="title" />
 									</div>
 								</div>
+								-->
 								<div class="field">
 									<div class="indicator">
-										<label for="firstName">First name: </label>
+										<label for="firstName">Full name: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="firstName" id="firstName" value="<?php echo isset($_POST["firstName"]) ? $_POST["firstName"] : "" ?>" />
 									</div>
 								</div>
+								<!--
 								<div class="field">
 									<div class="indicator">
 										<label for="lastName">Last name: </label>
@@ -84,13 +104,13 @@
 									<div class="singleInput">
 										<input class="text" type="text" name="lastName" id="lastName" value="<?php echo isset($_POST["lastName"]) ? $_POST["lastName"] : "" ?>" />
 									</div>
-								</div>
+								</div>-->
 								<div class="field">
 									<div class="indicator">
 										<label for="dob">Date of birth: </label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="dob" id="dob" />
+										<input class="text" type="text" name="dob" id="dob"/> i.e. 19/10/1975 
 									</div>
 								</div>
 								<div class="field">
@@ -119,12 +139,13 @@
 								</div>	
 								<div class="field">
 									<div class="indicator">
-										<label for="addressLine1">Address line 1: </label>
+										<label for="addressLine1">Address line: </label>
 									</div>
 									<div class="singleInput">
 										<input class="text" type="text" name="addressLine1" id="addressLine1" />
 									</div>
 								</div>
+								<!--
 								<div class="field">
 									<div class="indicator">
 										<label for="addressLine2">Address line 2: </label>
@@ -133,6 +154,7 @@
 										<input class="text" type="text" name="addressLine2" id="addressLine2" />
 									</div>
 								</div>
+								
 								<div class="field">
 									<div class="indicator">
 										<label for="town">Town/City: </label>
@@ -141,6 +163,7 @@
 										<input class="text" type="text" name="town" id="town" />
 									</div>
 								</div>
+								-->
 								<div class="field">
 									<div class="indicator">
 										<label for="postCode">Post code:</label>
@@ -162,20 +185,19 @@
 						<div id="secondaryNavigation">
 							<h2>Further information</h2>
 							<ul>
-								<li><a href="#">No win, no fee claim</a></li>
-								<li><a href="#">Claim form</a></li>
-								<li><a href="#">Claim process</a></li>
-								<li><a href="#">What can I claim?</a></li>
+								<li><a href="faq.php#noWinNoFeeClaim">No win, no fee claim</a></li>
+								<li><a href="claims-process.php">Claim process</a></li>
+								<li><a href="about.php">About The Accident Specialists</a></li>
+								<li><a href="faq.php#howMuch">How much will it cost me?</a></li>
 							</ul>
 						</div>
-						<div class="faqPanel">
-							<h2>Questions and answers</h2>
-							<ul>
-								<li>Why choose Accidents Direct?</li>
-								<li>What does the claim process involve?</li>
-								<li>How much will it cost me?</li>
-							</ul>
+						
+						<div class="testimonial">
+							<h2>What our clients say</h2>							
+							
+							<p>"The Accident Specialists helped me through a very traumatic case where an uninsured motorist collided with my vehicle. They assured me that they would do their best to help and lived up to their word! They had me in a free courtesy car within 4 hours of the incident, my car placed into secure storage and shortly thereafter repaired in an approved body shop. Thank you so much for all your assistance! The compensation they gained, with all of the above alleviated so much time and hassle!"</p>
 						</div>
+						
 					</div>
 				</div>
 			</div>

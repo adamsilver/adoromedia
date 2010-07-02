@@ -25,41 +25,20 @@
 				<div id="sections">
 				
 					<div id="primary">
-						
 						<h1>About The Accident Specialists</h1>
-							
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
+						<p>We rank as one of the UK's leading Accident Claim Specialists and with our national network of Accident Claim Solicitors we are nationwide. </p>
 						
-						<h2>Sub title</h2>
+						<p>Our leading UK compensation solicitors are fully qualified and hand-picked for their high standard of service and expertise in handling your claim. </p>
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-
+						<p>Even with our expertise you still pay absolutely nothing to claim through our No Win No Fee policy and we guarantee that you will keep 100% of your compensation.*</p>
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-
+						<p>Our priority is to ensure the claims process is as simple and straightforward as possible in gaining you maximum compensation for your injury. </p>
 						
-						<p>Lorem ipsum fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
-					
+						<p>Contact us on 0208 455 4199 or simply fill out our brief online claim form to start your claim today.</p>
 					</div>
 					<div id="secondary">
-						<div id="secondaryNavigation">
-							<h2>Further information</h2>
-							<ul>
-								<li><a href="#">Accreditations</a></li>
-								<li><a href="#">Testimonials</a></li>
-								<li><a href="#">Meet the specialists</a></li>
-							</ul>
-						</div>
+						<h2>Accreditations</h2>
+						<p>Josh doing</p>
 					</div>
 				</div>
 			</div>
