@@ -26,7 +26,9 @@
 				
 					<div id="primary">
 						<h1>Claim form</h1>
-						<p>Josh writing a small paragraph</p>
+						<p>If you would like to find out how our accident specialists can help you make a no win no fee
+						claim, simply fill in our short form below for a free claim assessment - with no obligation.</p>
+						
 						
 						<div id="claimForm">
 						
@@ -194,8 +196,8 @@
 						
 						<div class="testimonial">
 							<h2>What our clients say</h2>							
-
 							<p>The Accident Specialists helped me through a traumatic case where an uninsured motorist collided with my vehicle. They had me in a free courtesy car within 4 hours of the incident, my car placed into secure storage and shortly thereafter repaired in an approved body shop. The compensation they obtained for me, with all of the above alleviated so much time and hassle</p>
+							<p class="clientName">Aileen McNamara</p>
 						</div>
 						
 					</div>

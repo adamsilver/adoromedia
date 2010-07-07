@@ -12,8 +12,16 @@ div.question {
 	border-bottom: 1px solid #eee;
 }
 
+div.question h2 {
+    margin-bottom: 12px;
+}
+
 div.answerHidden {
     padding-bottom: 10px;
+}
+
+div.answerHidden h2 {
+    margin-bottom: 4px;
 }
 
 div.answerHidden div.answer {

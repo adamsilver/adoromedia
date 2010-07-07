@@ -33,9 +33,9 @@
 						
 						<h1>Contact details</h1>
 							
-						<p>Josh coming up with text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel lectus ligula, at gravida velit. 
-						Sed massa sem, feugiat id lobortis sed, sodales a turpis. Donec eleifend tellus a nisl bibendum eget 
-						malesuada nunc iaculis. Fusce facilisis, felis et euismod ullamcorper, nulla est sodales neque.</p>
+						<p>You can contact us anytime between 8am-8pm, Monday to Saturday to talk to a specialist advisor.
+						If you phone us at any other time, you will be able to leave a message for one of our accident specialists
+						to call you back at a convenient time.</p>
 						
 						<div id="map">
 							You must have JavaScript enabled to use Google Maps.
@@ -44,16 +44,16 @@
 					</div>
 					<div id="secondary">
 						<h2>Address</h2>
-						<p>Address here</p>
+						<p>1C Market Place, Hampstead Garden Suburb, NW11 6LB</p>
 						
 						<h2>Telephone</h2>
 						<p>020 8455 4199</p>
 						
 						<h2>Fax</h2>
-						<p>Some number</p>
+						<p>0208 455 9888</p>
 						
 						<h2>Email</h2>
-						<p></p>
+						<p><a href="mailto: enquiries@accident-specialists.co.uk">enquiries@accident-specialists.co.uk</a></p>
 					</div>
 				</div>
 			</div>
