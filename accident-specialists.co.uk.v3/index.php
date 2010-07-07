@@ -42,6 +42,8 @@
 							
 							
 							
+							
+							
 							<!--
 							<p>We are one of the leading accident claim firms in the UK, who guarantee a No Win No Fee service - that means, if successful you receive 100% of the compensation. *</p>
 							
@@ -114,7 +116,7 @@
 						<div class="testimonial">
 							<h2>What our clients say</h2>							
 							<p>"The Accident Specialists provide a first class service. Their claim management is fantastic, I was kept up to date with the claims process through each step of the way and they successfully gained the compensation I deserved."</p>
-
+							<p class="clientName">Mohammed Jama</p>
 						</div>
 						
 					</div>

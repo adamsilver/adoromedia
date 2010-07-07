@@ -37,14 +37,16 @@
 						<p>Contact us on 0208 455 4199 or simply fill out our brief online claim form to start your claim today.</p>
 					</div>
 					<div id="secondary">
-						<h2>Accreditations</h2>
-						<p>Josh doing</p>
-						
+						<div id="accreditations">
+							<h2>Accreditations</h2>
+							<p>The Accident Specialists are regulated by the Ministry of Justice in respect of regulated claims management activities.
+							Authorisation Number: CRM________. <a href="http://www.claimsregulation.gov.uk">www.claimsregulation.gov.uk</a>
+						<!--
 						<div class="testimonial">
 							<h2>What our clients say</h2>							
 							<p>"I'm a private hire driver in London and was unfortunately rear-ended when  was stationary at a traffic light. Due to the nature of my job it was of the utmost importance that the claim was dealt with as quickly as possible so that i could continue to work. The Accident Specialists had me in a PCO'd vehicle within 4 hours of my accident and sorted everything else out for me. I had passengers in my vehicle and we were all walked through the process and gained the compensation we deserved. The Accident Specialists are the best of the best, thank you so much. I wouldn't hesitate to recommend you to anyone that is in the unfortunate position of having a Road Traffic Accident" </p>
 
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

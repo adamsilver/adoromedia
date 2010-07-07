@@ -295,10 +295,15 @@ div.testimonial {
 	padding: 16px 16px 0px 16px;
 }
 
+div.testimonial p {
+	margin-bottom: 0px;
+}
+
 div.testimonial p.clientName {
 	font-weight: bold;
 	font-style: italic;
 	color: #2B2774;
+	margin-bottom: 16px;
 }
 
 /********************************************************************************

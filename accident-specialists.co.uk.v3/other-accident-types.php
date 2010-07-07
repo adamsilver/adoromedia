@@ -38,7 +38,7 @@
 							<li>Whiplash injury claims</li>
 							<li>Work accidents</li>
 							<li>Slips, trips and falls</li>
-							<li>Repetitive Strain Injury</li>
+							<li>Repetitive Strain Syndrome</li>
 							<li>Industrial Disease</li>
 							<li>Other types of accidents</li>
 							</ul>
