@@ -29,7 +29,7 @@ QUnit.specify("Tabset", function(){
 			assert(tabPanel3.is(":visible")).isFalse();
 		});
 	});
-	/*
+	/* old manual way
 	describe("When a tab is clicked", function() {
 		var tabsetControl;
 		var tabPanel1;
@@ -62,17 +62,20 @@ QUnit.specify("Tabset", function(){
 	*/
 	describe("When a tab is clicked", function() {
 		
+		var tabsetControl;
 		var tabs;
 		var panels;
 		
 		before(function(){
 			rootNode = $("div.tabset");
+			realRootNode = rootNode.clone(true);
+			tabsetControl = new Tabset(rootNode);
 			tabs = rootNode.find(".tab");
 			panels = rootNode.find(".tabPanel");
 		});
 
 		after(function() {
-			//rootNode.replaceWith(realRootNode);
+			rootNode.replaceWith(realRootNode);
 		})
 
 		it("shows it's related tab", function() {
@@ -95,22 +98,36 @@ QUnit.specify("Tabset", function(){
 				related = $("#"+tab.hash.slice(1));
 				$(tabs[i]).click();
 				others = panels.not(related);
-				console.log("others");
 				for(var j = 0; j < others.length; j++) {
-					console.log(others[j]);
-					console.log($(others[j]).is(":visible"));
 					assert($(others[j]).is(":visible")).isFalse();
 				}
-				
-				
 			}
 		});
 		
-		//it("highlights the tab", function() {
-			
-		//});
+		it("highlights the tab", function() {
+			var tab = null;
+			var related = null;
+			for(var i = 0; i < tabs.length; i++) {
+				tab = tabs[i];
+				related = $("#"+tab.hash.slice(1));
+				$(tabs[i]).click();
+				assert($(tabs[i]).hasClass("highlight")).isTrue();
+			}
+		});
 		
+		it("unhighlights all other tabs", function() {
+			var otherTabs = [];
+			var otherTabHighlighted = false;
+			var tab = null;
+			var others = null;
+			for(var i = 0; i < tabs.length; i++) {
+				tab = tabs[i];
+				$(tabs[i]).click();
+				otherTabs = tabs.not(tabs[i]);
+				for(var j = 0; j < otherTabs.length; j++) {
+					assert($(otherTabs[i]).hasClass("highlight")).isFalse();
+				}
+			}
+		});
 	});
-	
-	
 });
