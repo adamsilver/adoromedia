@@ -1,7 +1,8 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
-<?php include("inc/Classes/Rules.php"); ?>
-<?php include("inc/Classes/FormValidator.php"); ?>
+<?php include("inc/Rules.php"); ?>
+<?php include("inc/FormValidator.php"); ?>
+<?php include("inc/claimForm.php"); ?>
 <?php
 	$metaKeywords = "hello there cowboy keywords";
 	$metaDescription = "hello there cowboy";
@@ -33,6 +34,33 @@
 						<div id="claimForm">
 						
 							
+							<?php 
+								$showForm = true;
+								if(isset($_POST["actionSubmit"])) {
+									$formClaim->validate();
+									if($formClaim->getErrorCount() > 0) {
+										$commonErrors = $formClaim->getErrors();
+										include("inc/errorMessageDisplay.php");
+									}
+									else {
+										include("inc/successMessageDisplay.php");
+										$to = "enquiries@accident-specialists.co.uk";
+										$subject = "Website: Enquiry";
+										$body = "<h1>You have received the following enquiry through the website</h1>";
+										$body .= "<p>Name: <br/>" . $_POST["fullName"] . "</p>";
+										$body .= "<p>Phone: <br/>" . $_POST["phone"] . "</p>";
+										$body .= "<p>Post code: <br/>" . $_POST["postCode"] . "</p>";
+										$body .= "<p>Email: <br/>" . $_POST["email"] . "</p>";
+										$headers  = 'MIME-Version: 1.0' . "\r\n";
+										$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+										$headers .= 'From: Website <noreply@accident-specialists.co.uk>' . "\r\n";
+										mail($to, $subject, $body, $headers);
+										$showForm = false;
+									}
+								}
+							?>					
+					
+							<?php if($showForm) { ?>
 							<form method="post" action="claim.php">
 								<input type="hidden" name="actionSubmit" value="true" />
 								<div class="field">
@@ -74,39 +102,20 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="basicDescription">Basic description: </label>
+										<label for="basicDescription">Basic description: *</label>
 									</div>
 									<div class="singleInput">
 										<textarea id="basicDescription" name="basicDescription"><?php echo isset($_POST["basicDescription"]) ? $_POST["basicDescription"] : "" ?></textarea>
 									</div>
 								</div>
-								<!--
 								<div class="field">
 									<div class="indicator">
-										<label for="title">Title: </label>
+										<label for="fullName">Full name: *</label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="title" id="title" />
+										<input class="text" type="text" name="fullName" id="fullName" value="<?php echo isset($_POST["fullName"]) ? $_POST["fullName"] : "" ?>" />
 									</div>
 								</div>
-								-->
-								<div class="field">
-									<div class="indicator">
-										<label for="firstName">Full name: </label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="firstName" id="firstName" value="<?php echo isset($_POST["firstName"]) ? $_POST["firstName"] : "" ?>" />
-									</div>
-								</div>
-								<!--
-								<div class="field">
-									<div class="indicator">
-										<label for="lastName">Last name: </label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="lastName" id="lastName" value="<?php echo isset($_POST["lastName"]) ? $_POST["lastName"] : "" ?>" />
-									</div>
-								</div>-->
 								<div class="field">
 									<div class="indicator">
 										<label for="dob">Date of birth: </label>
@@ -117,10 +126,10 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="dayTimePhone">Daytime phone:</label>
+										<label for="dayTimePhone">Daytime phone: *</label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
+										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" value="<?php echo isset($_POST["dayTimePhone"]) ? $_POST["dayTimePhone"] : "" ?>"/>
 									</div>
 								</div>
 								<div class="field">
@@ -128,7 +137,7 @@
 										<label for="alternativePhone">Alternative phone: </label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="alternativePhone" id="alternativePhone" />
+										<input class="text" type="text" name="alternativePhone" id="alternativePhone" value="<?php echo isset($_POST["alternativePhone"]) ? $_POST["alternativePhone"] : "" ?>"/>
 									</div>
 								</div>
 								<div class="field">
@@ -136,50 +145,31 @@
 										<label for="emailAddress">Email address: </label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="emailAddress" id="emailAddress" />
+										<input class="text" type="text" name="emailAddress" id="emailAddress" value="<?php echo isset($_POST["emailAddress"]) ? $_POST["emailAddress"] : "" ?>"/>
 									</div>
 								</div>	
 								<div class="field">
 									<div class="indicator">
-										<label for="addressLine1">Address line: </label>
+										<label for="addressLine1">Address: *</label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="addressLine1" id="addressLine1" />
+										<input class="text" type="text" name="addressLine1" id="addressLine1" value="<?php echo isset($_POST["addressLine1"]) ? $_POST["addressLine1"] : "" ?>"/>
 									</div>
 								</div>
-								<!--
 								<div class="field">
 									<div class="indicator">
-										<label for="addressLine2">Address line 2: </label>
+										<label for="postCode">Post code: *</label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="addressLine2" id="addressLine2" />
+										<input class="text" type="text" name="postCode" id="postCode" value="<?php echo isset($_POST["postCode"]) ? $_POST["postCode"] : "" ?>"/>
 									</div>
 								</div>
-								
-								<div class="field">
-									<div class="indicator">
-										<label for="town">Town/City: </label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="town" id="town" />
-									</div>
-								</div>
-								-->
-								<div class="field">
-									<div class="indicator">
-										<label for="postCode">Post code:</label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="postCode" id="postCode" />
-									</div>
-								</div>
-								<div class="actions">	
-									<!--<input type="image" class="image" name="send" src="img/btn_claim_now.jpg" alt="Submit claim" />					-->
-									
+								<div class="actions">
 									<input type="submit" class="submit" name="send" value="Submit claim" />
 								</div>
 							</form>
+							
+							<?php } ?>
 						</div>
 						
 					</div>

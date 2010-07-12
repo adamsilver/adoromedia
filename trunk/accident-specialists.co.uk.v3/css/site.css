@@ -26,6 +26,11 @@ img {
 * Text
 ********************************************************************************/
 
+textarea {
+	font-size: 1.2em;
+	font-family: arial;
+}
+
 h1, h2, h3, h4, h5, h6, p {
 }
 
@@ -369,3 +374,44 @@ div.faqPanel ul li {
 	background-color: #eee;
 }
 
+/********************************************************************************
+* Error messages
+********************************************************************************/
+
+div#errorMessage {
+
+}
+
+div#errorMessage h3 {
+	color: #ff0000;
+	font-size: 1.2em;
+}
+
+div#errorMessage ul li {
+	color:#ff0000;
+	background: none;
+	list-style: square;
+	padding-left: 0px;
+}
+
+div#errorMessage ul li a{
+	color: #ff0000;
+}
+
+div#errorMessage ul li a:hover {
+	background-color: #fff;
+	text-decoration: none;
+}
+
+/********************************************************************************
+* Success message
+********************************************************************************/
+
+#successMessage {
+	
+}
+
+#successMessage h3 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
