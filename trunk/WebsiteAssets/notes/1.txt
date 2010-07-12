@@ -1,0 +1,19 @@
+<html>
+<head>
+
+controllers = {
+	......
+};
+
+</head>
+<body>
+	Loading......
+<script>
+	loadControllers();
+</script>
+</body>
+</html>
+
+
+
+dynamically muteable language

@@ -1,0 +1,183 @@
+- models get and post data to server - they dont do anything else - espec in thick client application
+- models will typically be singletons
+- views are typically constructors even tho only 1 is instantiated
+- controllers - singletons in example but dont have to be
+
+
+
+
+views: constructors
+app.views.base
+app.views.moduleType.base
+app.views.moduleType.specificInstanceofModuleType
+
+iBarclays = iBarclays || {};
+iBarclays.Views = iBarclays.Views || {};
+
+iBarclays.Views.AccountList = function (controller, rootNode) {
+
+	this.setUp(controller, rootNode);
+
+	var me = this;
+
+	this.tabs = rootNode.find('ul.account-list-tabs li');
+	this.tabLinks = this.tabs.find('a');
+	this.accountLists = rootNode.find('div.account-list').each( function() { me.setAccountListAttributes($(this)); } );
+
+	// logic for persisting account view?
+	// at the moment just show the first one
+	var initialVisibleAccountList = this.accountLists.eq(0);
+	this.setNewVisibleAccountList(initialVisibleAccountList);
+
+	this.tabLinks.click ( this.getHandler(this.switchVisiblePanel) );
+}
+
+iBarclays.Views.AccountList.prototype = new iBarclays.Views.Base();
+
+iBarclays.Views.AccountList.prototype.clearPreviousVisibleAccountList = function() {
+	if(this.currentVisibleAccountList && this.currentVisibleAccountList.length) {
+		this.tabs.eq(this.currentVisibleAccountList.attr('relatedTabIndex')).removeClass('current');
+		this.currentVisibleAccountList.hide();
+	}
+	this.currentVisibleAccountListId = null;
+	this.currentVisibleAccountList = null;
+}
+iBarclays.Views.AccountList.prototype.setAccountListAttributes = function(accountList) {
+	// three variables separated for readability - this could all be done in one line of unreadable code
+	var listId = accountList.attr('id');
+	var relatedLink = this.tabLinks.filter('a[href=#' + listId + ']');
+	var relatedTab = relatedLink.closest('li');
+
+	accountList.attr( 'relatedTabIndex', this.tabs.index(relatedTab) );
+}
+iBarclays.Views.AccountList.prototype.setNewVisibleAccountList = function(newAccountList) {
+	// clear previous
+	this.clearPreviousVisibleAccountList();
+	// store reference to this panel
+	this.currentVisibleAccountList = newAccountList;
+	// store this panel id
+	this.currentVisibleAccountListId = this.currentVisibleAccountList.attr('id');
+	// show this panel
+	this.currentVisibleAccountList.fadeIn();
+	// highlight the related tab
+	this.tabs.eq(this.currentVisibleAccountList.attr('relatedTabIndex')).addClass('current');
+}
+iBarclays.Views.AccountList.prototype.switchVisiblePanel = function(e) {
+	var $target = $(e.target);
+	var targetId = $target.attr('href');
+	if (targetId) {
+		$target.parents('li').addClass('current');
+		var newPanel = this.rootNode.find(targetId);
+		if(targetId !== '#' + this.currentVisibleAccountListId) {
+			this.setNewVisibleAccountList(newPanel);
+		}
+	}
+	e.preventDefault();
+}
+
+
+controllers:
+load = [controllers.something, controllers.somethingElse]
+
+$().ready(function() {
+	run thru load stuff and new controllers[i]
+})
+
+
+controller
+	domready
+		new View(controller[, rootNode])
+
+	function doSomethingWithModel() {
+		iBarclays.model.getSomething();
+	}
+
+
+app.controllers.base
+app.controllers.moduleType.base
+app.controllers.moduleType.specificInstanceModuleType (singleton)
+
+iBarclays.Controllers.AccountList = (function() {
+	
+	// do it this way because its a singleton
+	var me = new iBarclays.Controllers.Base();
+
+	$().ready( function() {
+		me.view = new iBarclays.Views.AccountList(me, $('#moduleAccountSummary'));
+	} );
+
+	return me;
+})();
+
+
+
+data (singleton generall)
+
+iBarclays.Data.AccountName = new (function() {
+	
+	var data = {};
+	
+	this.get = whatever
+
+})
+
+iBarclays.Data.AccountName = (function() {
+	function updateAccountNames(form) {
+		
+		var requestAction = form.attr('action');
+		var requestData = form.serialize();
+		
+		var req = new iBarclays.Data.Request('post',requestAction,requestData,function(){
+			// this function has no callback
+		},'text');
+		
+		req.send();
+	}
+	return {
+		post: updateAccountNames
+	};
+})();
+
+
+Game.CustomEvents = {};
+Game.GameSpecificSomething = {};
+
+
+
+
+
+
+App.Models.AccountName = new (function() {
+	
+	this.post = function() {
+		var req = new App.Models.Request("post", etc, etc);
+		req.send();
+	}
+	
+});
+
+App.Views.AccountName = function(controller, rootNode) {
+
+}
+App.Views.AccountName.prototype = {
+
+}
+
+App.Controllers.AccountName = new (function() {
+	var me = new App.Controllers.Base();
+
+	$(document).ready( function() {
+		me.view = new App.Views.AccountName(me, $('#moduleAccountName'));
+	} );
+	return me;
+})
+
+
+
+
+
+
+
+
+
+
