@@ -1,7 +1,8 @@
 <?php include("inc/doctype.php"); ?>
 <?php include("inc/site.php"); ?>
-<?php include("inc/Classes/Rules.php"); ?>
-<?php include("inc/Classes/FormValidator.php"); ?>
+<?php include("inc/Rules.php"); ?>
+<?php include("inc/FormValidator.php"); ?>
+<?php include("inc/callMeBackForm.php"); ?>
 <?php
 	$metaKeywords = "hello there cowboy keywords";
 	$metaDescription = "hello there cowboy";
@@ -70,47 +71,75 @@
 						<div id="callMeBack">
 							<h2>Call me back</h2>
 							<p>An Accident Specialist, will call you back within minutes to help you with your claim.</p>
-							<form method="post" action="index.php">
-								<input type="hidden" name="actionSubmit" value="true" />
-								<div class="field">
-									<div class="indicator">
-										<label for="incidentDate">Name: </label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="nameof" value="" />
-									</div>
-								</div>					
-								<div class="field">
-									<div class="indicator">
-										<label for="firstName">Phone: </label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="firstName" id="firstName" value="<?php echo isset($_POST["firstName"]) ? $_POST["firstName"] : "" ?>" />
-									</div>
-								</div>
-								<div class="field">
-									<div class="indicator">
-										<label for="dayTimePhone">Post code:</label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
-									</div>
-								</div>
-								<div class="field">
-									<div class="indicator">
-										<label for="dayTimePhone">Email:</label>
-									</div>
-									<div class="singleInput">
-										<input class="text" type="text" name="dayTimePhone" id="dayTimePhone" />
-									</div>
-								</div>								
-								<div class="actions">	
-									<!--<input type="image" class="image" src="img/btn_call_me_back.jpg" alt="" />-->
+							
+							<?php 
+								$showForm = true;
+								if(isset($_POST["actionSubmit"])) {
+									$formCallMeBack->validate();
+									if($formCallMeBack->getErrorCount() > 0) {
+										$commonErrors = $formCallMeBack->getErrors();
+										include("inc/errorMessageDisplay.php");
+									}
+									else {
+										include("inc/successMessageDisplay.php");
+										$to = "enquiries@accident-specialists.co.uk";
+										$subject = "Website: Enquiry";
+										$body = "<h1>You have received the following enquiry through the website</h1>";
+										$body .= "<p>Name: <br/>" . $_POST["fullName"] . "</p>";
+										$body .= "<p>Phone: <br/>" . $_POST["phone"] . "</p>";
+										$body .= "<p>Post code: <br/>" . $_POST["postCode"] . "</p>";
+										$body .= "<p>Email: <br/>" . $_POST["email"] . "</p>";
+										$headers  = 'MIME-Version: 1.0' . "\r\n";
+										$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+										$headers .= 'From: Website <noreply@accident-specialists.co.uk>' . "\r\n";
+										mail($to, $subject, $body, $headers);
+										$showForm = false;
+									}
+								}
+							?>					
+					
+							<?php if($showForm) { ?>								
 								
-									<input type="submit" class="submit" name="send" value="Call me back" />
-								
-								</div>
-							</form>
+							
+								<form method="post" action="index.php">
+									<input type="hidden" name="actionSubmit" value="true" />
+									<div class="field">
+										<div class="indicator">
+											<label for="fullName">Name: *</label>
+										</div>
+										<div class="singleInput">
+											<input class="text" type="text" name="fullName" value="<?php echo isset($_POST["fullName"]) ? $_POST["fullName"] : "" ?>" />
+										</div>
+									</div>					
+									<div class="field">
+										<div class="indicator">
+											<label for="phone">Phone: *</label>
+										</div>
+										<div class="singleInput">
+											<input class="text" type="text" name="phone" id="phone" value="<?php echo isset($_POST["phone"]) ? $_POST["phone"] : "" ?>" />
+										</div>
+									</div>
+									<div class="field">
+										<div class="indicator">
+											<label for="postCode">Post code:</label>
+										</div>
+										<div class="singleInput">
+											<input class="text" type="text" name="postCode" id="postCode" value="<?php echo isset($_POST["postCode"]) ? $_POST["postCode"] : "" ?>" />
+										</div>
+									</div>
+									<div class="field">
+										<div class="indicator">
+											<label for="email">Email:</label>
+										</div>
+										<div class="singleInput">
+											<input class="text" type="text" name="email" id="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : "" ?>" />
+										</div>
+									</div>								
+									<div class="actions">
+										<input type="submit" class="submit" name="send" value="Call me back" />
+									</div>
+								</form>
+							<?php } ?>
 						</div>
 						
 						<div class="testimonial">
