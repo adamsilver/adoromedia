@@ -4,13 +4,15 @@
 <?php include("inc/FormValidator.php"); ?>
 <?php include("inc/callMeBackForm.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "accident specialists, accident claims, persoanl injury, north, west, london";
+	$metaDescription = "The Accident Specialists based in North West London are one of the UK's leading Accident Claim Specialists.";
 	$siteSection = "home";
 ?>
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	    <title>The Accident Specialists, North West London</title>
+	    <title>The Accident Specialists, North West London - 100% compensation, no win no fee, personal injury</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<link rel="stylesheet" href="css/home.css" type="text/css" media="screen" />
@@ -37,7 +39,7 @@
 						</div>
 					
 						<div id="homeInfo">
-							<h1>The Accident Specialists</h1>
+							<h1>The Accident Specialists <span>- accident claims, no win no fee and personal injury, North West London</span></h1>
 
 							<p>Since 1999 The Accident Specialists have been helping people who have suffered a Personal Injury, through no fault of their own, gain access to justice and claim the compensation they deserve. <a href="about.php">Find out more about The Accident Specialists</a></p>
 							

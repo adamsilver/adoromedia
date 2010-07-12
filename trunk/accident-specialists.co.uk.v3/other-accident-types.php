@@ -3,13 +3,13 @@
 <?php include("inc/Classes/Rules.php"); ?>
 <?php include("inc/Classes/FormValidator.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "other, types, accident, Road traffic accidents, Whiplash injury claims, Work accidents";
+	$metaDescription = "The Accident Specialists are experts in many different accident types including road traffic accidents, work accidents and more.";
 	$siteSection = "services";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	    <title>Other accident types, The Accident Specialists, North West London</title>
+	    <title>Road traffic accidents, whiplash injury claims and more, The Accident Specialists, North West London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<link rel="stylesheet" href="css/otherAccidentTypes.css" type="text/css" media="screen" />

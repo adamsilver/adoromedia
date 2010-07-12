@@ -3,13 +3,13 @@
 <?php include("inc/Classes/Rules.php"); ?>
 <?php include("inc/Classes/FormValidator.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "accident claims, advice, personal injury";
+	$metaDescription = "The Accident Specialists offer many different services including free personal injury adivce and accident claims";
 	$siteSection = "services";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	    <title>Services, The Accident Specialists, North West London</title>
+	    <title>Our services, Free personal injury advice and accident claims, The Accident Specialists, North West London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<link rel="stylesheet" href="css/services.css" type="text/css" media="screen" />

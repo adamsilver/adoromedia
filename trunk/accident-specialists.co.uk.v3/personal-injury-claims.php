@@ -3,13 +3,13 @@
 <?php include("inc/Classes/Rules.php"); ?>
 <?php include("inc/Classes/FormValidator.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "personal injury, no win no fee claim, accidents";
+	$metaDescription = "Personal injury claims for compensation by No Win No Fee Solicitors at The Accident Specialists.";
 	$siteSection = "services";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	    <title>Personal injury claims, The Accident Specialists, North West London</title>
+	    <title>Personal injury claims for compensation by No Win No Fee Solicitors, The Accident Specialists, North West London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<link rel="stylesheet" href="css/claim.css" type="text/css" media="screen" />
