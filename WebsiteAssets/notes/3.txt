@@ -1,0 +1,131 @@
+// lots of modules
+// controller creates lots of modules
+// modules have links
+// some links could be special links
+// some are normal links
+
+
+
+// App.Controllers.Panels.js
+App.Controllers.Panels = new (function() {
+	
+	this = new App.Controllers.Base();
+	
+	$(init);
+	
+	function init() {
+		// find all divs with a meta class
+			new App.Views.Panels.Panel(root, this);
+	}
+	
+});
+
+
+// App.Views.Panels.Panel.js
+App.Views.Panels.Panel = function(root, controller) {
+
+	this.controller = controller;
+	
+	var me = this;
+
+	root.find("a").bind("click", panel_anchor_click);
+	
+	function panel_anchor_click(e) {
+		if(me.controller.followLinks(e)) {
+			// handle it
+		}
+	}
+}
+App.Views.Panels.Panel.prototype = new App.Views.Base();
+
+
+
+
+--------------------------------------------------------------------------------------
+ADAM LEARNT:
+
+App.Data.MyModule = new (function() {
+	
+	this.get = function() {}
+
+});
+
+App.Views.MyModule = function(controller, rootNode) {
+	// bind events to relevant parts of the view
+	
+	this.setup(rootNode);
+}
+App.Views.MyModule.prototype = {
+	show: function(){},
+	hide: function(){},
+	setup: function(){}
+}
+
+App.Controllers.MyModule = new (function() {
+	var me = new App.Controllers.Base();
+	var view = new App.Views.MyModule(me, $("#myModule"));
+});
+
+
+App.Loader = new (function() {
+	var load = [];
+	
+	this.addController = function(name) {
+		var c = App.Controllers[name];
+		if(!c) return;
+		load.push(c);
+	}
+	
+	this.load = function() {
+		for(var i = 0; i < load.length; i++) {
+			new load[i]();
+		}
+	}
+
+});
+
+	<script>
+		App.Loader.addController("MyModule");
+		App.Loader.addController("MyModule2");
+		App.Loader.addController("MyModule3");
+		App.Loader.load();
+	</script>
+</body>
+
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Controllers.MegaMenu = new (function() {
+	$(function() {
+		// find all menus
+		new Views.MegaMenu(root);
+	})
+	
+	this.closeAll = function() {}
+	
+});
+
+
+Views.MegaMenu = function(root) {
+	var isOpen = false;
+	
+	var a = root.find("a").bind("click", function(e) {
+		isOpen ? hide() : show();
+	});
+
+	this.show = function() {}
+	
+	this.hide = function() {}
+}
+
+

@@ -25,8 +25,6 @@ QUnit.specify("History", function(){
 					assert(calledMyHandler).isTrue();
 				}); 
 				
-				
-				
 			});
 			
 		});
