@@ -40,7 +40,7 @@
 						<div id="accreditations">
 							<h2>Accreditations</h2>
 							<p>The Accident Specialists are regulated by the Ministry of Justice in respect of regulated claims management activities.
-							Authorisation Number: CRM________. <a href="http://www.claimsregulation.gov.uk">www.claimsregulation.gov.uk</a>
+							Authorisation Number: CRM 2343. <a href="http://www.claimsregulation.gov.uk">www.claimsregulation.gov.uk</a>
 						<!--
 						<div class="testimonial">
 							<h2>What our clients say</h2>							
