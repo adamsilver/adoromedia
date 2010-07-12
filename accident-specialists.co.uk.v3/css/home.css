@@ -99,3 +99,8 @@
 	padding: 0px 8px;
 }
 
+#homeInfo h1 span {
+	position: absolute;
+	left: -99999em;
+}
+

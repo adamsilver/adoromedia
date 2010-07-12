@@ -4,13 +4,14 @@
 <?php include("inc/FormValidator.php"); ?>
 <?php include("inc/claimForm.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "accident claim, personal injury claim, claim online";
+	$metaDescription = "Make a free accident claim with The Accident Specialists on 020 8455 4199. All advice is Free.";
 	$siteSection = "claim";
 ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	    <title>Claim, The Accident Specialists, North West London</title>
+	    <title>Make an accident claim online, The Accident Specialists, North West London</title>
 		<?php include("inc/headGlobal.php"); ?>
 		<?php include("inc/headCSS.php"); ?>
 		<link rel="stylesheet" href="css/claim.css" type="text/css" media="screen" />
@@ -46,11 +47,19 @@
 										include("inc/successMessageDisplay.php");
 										$to = "enquiries@accident-specialists.co.uk";
 										$subject = "Website: Enquiry";
+										
 										$body = "<h1>You have received the following enquiry through the website</h1>";
-										$body .= "<p>Name: <br/>" . $_POST["fullName"] . "</p>";
-										$body .= "<p>Phone: <br/>" . $_POST["phone"] . "</p>";
-										$body .= "<p>Post code: <br/>" . $_POST["postCode"] . "</p>";
+										$body .= "<p>Accident type: <br/>" . $_POST["accidentType"] . "</p>";
+										$body .= "<p>Incident date <br/>" . $_POST["incidentDate"] . "</p>";
+										$body .= "<p>Basic description: <br/>" . $_POST["basicDescription"] . "</p>";
+										$body .= "<p>Full name: <br/>" . $_POST["fullName"] . "</p>";
+										$body .= "<p>DOB: <br/>" . $_POST["dob"] . "</p>";
+										$body .= "<p>Day time phone: <br/>" . $_POST["dayTimePhone"] . "</p>";
+										$body .= "<p>Alternative phone: <br/>" . $_POST["alternativePhone"] . "</p>";
 										$body .= "<p>Email: <br/>" . $_POST["email"] . "</p>";
+										$body .= "<p>Address: <br/>" . $_POST["addressLine1"] . "</p>";
+										$body .= "<p>Post code: <br/>" . $_POST["postCode"] . "</p>";								
+										
 										$headers  = 'MIME-Version: 1.0' . "\r\n";
 										$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 										$headers .= 'From: Website <noreply@accident-specialists.co.uk>' . "\r\n";
@@ -142,10 +151,10 @@
 								</div>
 								<div class="field">
 									<div class="indicator">
-										<label for="emailAddress">Email address: </label>
+										<label for="email">Email address: </label>
 									</div>
 									<div class="singleInput">
-										<input class="text" type="text" name="emailAddress" id="emailAddress" value="<?php echo isset($_POST["emailAddress"]) ? $_POST["emailAddress"] : "" ?>"/>
+										<input class="text" type="text" name="email" id="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : "" ?>"/>
 									</div>
 								</div>	
 								<div class="field">

@@ -3,8 +3,8 @@
 <?php include("inc/Classes/Rules.php"); ?>
 <?php include("inc/Classes/FormValidator.php"); ?>
 <?php
-	$metaKeywords = "hello there cowboy keywords";
-	$metaDescription = "hello there cowboy";
+	$metaKeywords = "faq, frequently answered questions, accident specialists, accident claims, personal injury, no win, no fee";
+	$metaDescription = "The Accident Specialists Frequently asked questions";
 	$siteSection = "faq";
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
