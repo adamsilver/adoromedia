@@ -1,5 +1,0 @@
-(function(){
-
-	tddjs.namespace("ui");
-
-}())
