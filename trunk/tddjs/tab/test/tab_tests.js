@@ -9,7 +9,6 @@
 			</ol>*/
 		
 		this.tabs = document.getElementById("tabs");
-		//jstestdriver.console.log(this.tabs);
 	}
 	
 	TestCase("TabController tests", {
@@ -33,5 +32,30 @@
 			assertClassName("js-tab-controller", this.tabs);
 		}
 	});
+	
+	TestCase("Tabcontroller activateTab", {
+		setUp: function() {
+			setUp.call(this);
+			this.controller = tabController.create(this.tabs);
+			this.links = this.tabs.getElementsByTagName("a");
+			this.lis = this.tabs.getElementsByTagName("li");
+		},
+		"test should not fail without an anchor": function() {
+			var controller = this.controller;
+			assertNoException(function(){
+				controller.activateTab();
+			});
+		},
+		"test should mark anchor as active": function() {
+			this.controller.activateTab(this.links[0]);
+			assertClassName("active-tab", this.links[0]);
+		},
+		"test should deactivate previous tab": function() {
+			this.controller.activateTab(this.links[0]);
+			this.controller.activateTab(this.links[1]);
+			assertNoMatch(/(^|\s)active-tab (\s|$)/, this.links[0]);
+			assertClassName("active-tab", this.links[1]);
+		}
+	})
 	
 }());
