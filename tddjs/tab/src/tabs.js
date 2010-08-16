@@ -32,14 +32,25 @@
 		
 	}
 	
-	function activateTab() {
+	function activateTab(element) {
+		if(!element || !element.tagName || element.tagName.toLowerCase() != this.tabTagName) {
+			return;
+		}
 	
+		var className = "active-tab";
+		dom.removeClassName(this.prevTab, className);
+		dom.addClassName(element, className);
+		var previous = this.prevTab;
+		this.prevTab = element;
+		this.onTabChange(element, previous);
 	}
 	
 	tddjs.namespace("ui").tabController = {
 		create: create,
 		handleTabClick: handleTabClick,
-		activateTab: activateTab
+		activateTab: activateTab,
+		onTabChange: function(anchor, previous) {},
+		tabTagName: "a"
 	}
 
 }())
