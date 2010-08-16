@@ -42,20 +42,50 @@
 		},
 		"test should not fail without an anchor": function() {
 			var controller = this.controller;
+			
 			assertNoException(function(){
 				controller.activateTab();
 			});
 		},
 		"test should mark anchor as active": function() {
 			this.controller.activateTab(this.links[0]);
+			
 			assertClassName("active-tab", this.links[0]);
 		},
 		"test should deactivate previous tab": function() {
 			this.controller.activateTab(this.links[0]);
 			this.controller.activateTab(this.links[1]);
-			assertNoMatch(/(^|\s)active-tab (\s|$)/, this.links[0]);
+			
+			//assertNoMatch(/(^|\s)active-tab(\s|$)/, this.links[0]);
+			
+			assertFalse(this.links[0].className.indexOf("active-tab") > 0);
 			assertClassName("active-tab", this.links[1]);
+		},
+		"test should not activate unsupported element types": function() {
+			this.controller.activateTab(this.links[0]);
+			this.controller.activateTab(this.lis[0]);
+			
+			assertFalse(this.lis[0].className.indexOf("active-tab") > 0);
+			
+			//assertNoMatch(/(^|\s)active-tab(\s|$)/, this.lis[0]);
+			assertClassName("active-tab", this.links[0]);
+		},
+		"test should fire onTabChange": function() {
+			var actualPrevious, actualCurrent;
+			this.controller.activateTab(this.links[0]);
+			
+			this.controller.onTabChange = function(curr, prev) {
+				actualPrevious = prev;
+				actualCurrent = curr;
+			}
+			
+			this.controller.activateTab(this.links[1]);
+			
+			assertSame(actualPrevious, this.links[0]);
+			assertSame(actualCurrent, this.links[1]);
+			
 		}
+		
 	})
 	
 }());
