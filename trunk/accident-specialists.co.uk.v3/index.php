@@ -110,7 +110,7 @@
 											<label for="fullName">Name: *</label>
 										</div>
 										<div class="singleInput">
-											<input class="text" type="text" name="fullName" value="<?php echo isset($_POST["fullName"]) ? $_POST["fullName"] : "" ?>" />
+											<input class="text" type="text" name="fullName" id="fullName" value="<?php echo isset($_POST["fullName"]) ? $_POST["fullName"] : "" ?>" />
 										</div>
 									</div>					
 									<div class="field">

@@ -29,8 +29,6 @@
 						<div id="services">
 						
 							<h1>Our services</h1>
-								
-							<p>Some general stuff for Josh</p>
 							
 							<h2>Claims process</h2>
 							
