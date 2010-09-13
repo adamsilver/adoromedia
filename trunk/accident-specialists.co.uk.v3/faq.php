@@ -16,6 +16,7 @@
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
 		<script type="text/javascript" src="js/Site/FAQ/Site.FAQ.QuestionToggler.js"></script>
+		<?php include("inc/ga.php"); ?>
 	</head>
 	<body id="pgFaq" class="faq">
 		<div id="container">
