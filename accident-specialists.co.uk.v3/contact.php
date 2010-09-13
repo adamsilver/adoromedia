@@ -20,6 +20,7 @@
 		
 		<script type="text/javascript" src="js/Adoro/Adoro.GoogleMap.js"></script>
 		<script type="text/javascript" src="js/Site/Contact/Site.Contact.GoogleMap.js"></script>
+		<?php include("inc/ga.php"); ?>
 	</head>
 	<body id="pgContact" class="contact">
 		<div id="container">

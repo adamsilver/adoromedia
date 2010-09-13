@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/claimsProcess.css" type="text/css" media="screen" />
 		<?php include("inc/headCSSIE.php"); ?>
 		<?php include("inc/headJS.php"); ?>
+		<?php include("inc/ga.php"); ?>
 	</head>
 	<body id="pgClaimsProcess" class="claim">
 		<div id="container">
