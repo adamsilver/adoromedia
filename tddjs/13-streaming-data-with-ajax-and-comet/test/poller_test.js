@@ -6,9 +6,12 @@
             this.ajaxCreate = ajax.create;
             this.xhr = Object.create(fakeXMLHttpRequest);
             ajax.create = stubFn(this.xhr);
+            this.poller = Object.create(ajax.poller);
+            this.poller.url = "/url";
         },
         tearDown: function() {
             ajax.create = this.ajaxCreate;
+            Clock.reset();
         },
         "test should be object": function(){
             assertObject(ajax.poller);
@@ -52,6 +55,58 @@
             // it hasn't been called, then we test it has been called after 1 second.
         
             assert(this.xhr.send.called);
+        },
+        "test should not make a new request until 1000 ms passed": function() {
+            this.poller.start();
+            this.xhr.complete();
+            this.xhr.send = stubFn();
+            Clock.tick(999);
+            assertFalse(this.xhr.send.called);
+        },
+        "test should configure request interval": function() {
+            this.poller.interval = 350;
+            this.poller.start();
+            this.xhr.complete();
+            this.xhr.send = stubFn();
+            Clock.tick(349);
+            assertFalse(this.xhr.send.called);
+            
+            Clock.tick(1);
+            assert(this.xhr.send.called);
+        },
+        "test should pass headers to request": function() {
+            this.poller.headers = {
+                "header-one": "1",
+                "header-two": "2"
+            };
+            
+            this.poller.start();
+            
+            var actual = this.xhr.headers;
+            var expected = this.poller.headers;
+            
+            assertEquals(expected["header-one"], actual["header-one"]);
+            assertEquals(expected["header-two"], actual["header-two"]);
+        },
+        "test should pass success callback": function() {
+            this.poller.success = stubFn();
+            this.poller.start();
+            this.xhr.complete();
+            assert(this.poller.success.called);
+        },
+        "test should pass failure callback": function() {
+            this.poller.failure = stubFn();
+            
+            this.poller.start();
+            this.xhr.complete(400);
+            
+            assert(this.poller.failure.called);
+        },
+        "test should pass the complete callback": function() {
+            this.poller.complete = stubFn();
+            this.poller.start();
+            this.xhr.complete();
+            assert(this.poller.complete.called);
         }
     });
 })();

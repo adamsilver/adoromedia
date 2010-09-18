@@ -6,14 +6,27 @@
             throw new TypeError("Must specify url to poll");
         }
         
+        var interval = 1000;
+        
+        if(typeof this.interval == "number") {
+            interval = this.interval;
+        }
+        
+
         var poller = this;
         
         ajax.request(this.url, {
             complete: function(){
                 setTimeout(function(){
                     poller.start();
-                }, 1000);
-            }
+                }, interval);
+                if(typeof poller.complete == "function") {
+                    poller.complete();
+                }
+            },
+            headers: poller.headers,
+            success: poller.success,
+            failure: poller.failure
         });
     }
     
