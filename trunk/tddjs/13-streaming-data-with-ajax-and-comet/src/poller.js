@@ -34,4 +34,13 @@
         start: start    
     };
     
+    function poll(url) {
+        var poller = Object.create(ajax.poller);
+        poller.url = url;
+        poller.start();
+        return poller;
+    }
+    
+    ajax.poll = poll;
+    
 })();

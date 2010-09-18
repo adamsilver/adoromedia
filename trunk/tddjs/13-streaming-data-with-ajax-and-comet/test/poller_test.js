@@ -109,4 +109,27 @@
             assert(this.poller.complete.called);
         }
     });
+    
+    TestCase("poll test", {
+        setUp: function() {
+            this.request = ajax.request;
+            this.create = Object.create;
+            ajax.request = stubFn();
+        },
+        tearDown: function() {
+            ajax.request = this.request;
+            Object.create = this.create;
+        },
+        "test should call start on poller object": function() {
+            var poller = {start: stubFn()};
+            Object.create = stubFn(poller);
+            ajax.poll("/url");
+            assert(poller.start.called);
+        },
+        "test should set url property on poller object": function() {
+            var poller = ajax.poll("/url");
+            assertSame("/url", poller.url);
+        }
+    });
+    
 })();
