@@ -3,7 +3,7 @@ var Adoro = Adoro || {};
  * Label with images fix for Internet Explorer 6 and 7
  * @constructor
  * @static
- * @name Salmon.ImageInLabelFix
+ * @name Adoro.ImageInLabelFix
  */
 Adoro.ImageInLabelFix = new (function(){
 	$(window).bind("load", init);
@@ -71,7 +71,6 @@ Adoro.ImageInLabelFix = new (function(){
 		};
 	};
 	
-
 	function imageLabelExists(imageNode) {
 		var found = false;
 		for(var i = imageLabels.length-1; i>=0; i--) {
@@ -82,5 +81,4 @@ Adoro.ImageInLabelFix = new (function(){
 		};
 		return found;
 	};
-	
 });
