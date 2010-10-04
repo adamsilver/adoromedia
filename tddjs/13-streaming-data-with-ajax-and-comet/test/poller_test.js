@@ -33,13 +33,20 @@
         
         "test should make XHR request with URL": function() {
             var poller = Object.create(ajax.poller);
+            
+            var date = new Date();
+            var ts = date.getTime();
+            stubDateConstructor(date);
+            
             poller.url = "/url";
             poller.start();
             
-            var expectedArgs = ["GET", poller.url, true];
+
+            
+            var expectedArgs = ["GET", poller.url+"?"+ts, true];
             var actualArgs = [].slice.call(this.xhr.open.args);
             assert(this.xhr.open.called);
-            assertEquals(poller.url, this.xhr.open.args[1]);
+            assertEquals(poller.url+"?"+ts, this.xhr.open.args[1]);
             assertEquals(expectedArgs, actualArgs);
             assert(this.xhr.send.called);
         },
@@ -120,7 +127,17 @@
             this.xhr.complete();
             Clock.tick(0);
             assert(ajax.request.called);
-        }
+        },
+        "test should add cache buster to URL": function () {
+            var date = new Date();
+            var ts = date.getTime();
+            stubDateConstructor(date);
+            this.poller.url = "/url";
+      
+            this.poller.start();
+      
+            assertEquals("/url?" + ts, this.xhr.open.args[1]);
+          }
     });
     
     TestCase("poll test", {
