@@ -1,4 +1,6 @@
 (function(){
+    if(typeof tddjs == "undefined") return;
+    
     var ajax = tddjs.namespace("ajax");
     
     function start(){
@@ -16,7 +18,7 @@
         
         var poller = this;
         
-        ajax.request(this.url, {
+        ajax.request(this.url + "?" + requestStart, {
             complete: function(){
                 
                 var elapsed = new Date().getTime() - requestStart;
