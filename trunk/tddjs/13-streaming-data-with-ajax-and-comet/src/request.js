@@ -29,8 +29,8 @@ tddjs.noop = function () {};
         options.failure(transport);
       }
     }
-  
-    if(typeof options.complete == "function") {
+
+    if (typeof options.complete == "function") {
       options.complete(transport);
     }
   }

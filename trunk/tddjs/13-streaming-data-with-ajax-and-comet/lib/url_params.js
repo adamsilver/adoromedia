@@ -10,6 +10,10 @@
       return "";
     }
 
+    if (typeof object == "string") {
+      return encodeURI(object);
+    }
+
     var pieces = [];
 
     tddjs.each(object, function (prop, val) {
