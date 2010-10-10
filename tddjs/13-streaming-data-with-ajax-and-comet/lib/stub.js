@@ -11,15 +11,13 @@ function stubFn(returnValue) {
   return fn;
 }
 
-(function(global){
-  
+(function (global) {
   var NativeDate = global.Date;
-  
-  global.stubDateConstructor = function(fakeDate) {
-    global.Date = function() {
+
+  global.stubDateConstructor = function (fakeDate) {
+    global.Date = function () {
       global.Date = NativeDate;
-      return fakeDate
-    }
-  }
-    
-})(this)
+      return fakeDate;
+    };
+  };
+}(this));
