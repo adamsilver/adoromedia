@@ -1,1 +1,0 @@
-<link rel="stylesheet" href="<%=Adoro.URL%>/css/Site/site.css" type="text/css" />
